@@ -1,4 +1,5 @@
 import { Star, Check, ExternalLink, Award, Shield, Zap, DollarSign } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 
 const FeaturedBroker = () => {
@@ -88,8 +89,8 @@ const FeaturedBroker = () => {
                     Open Account
                     <ExternalLink className="w-4 h-4" />
                   </Button>
-                  <Button variant="outlineGold" className="flex-1">
-                    Read Full Review
+                  <Button variant="outlineGold" className="flex-1" asChild>
+                    <Link to="/review/fxglory">Read Full Review</Link>
                   </Button>
                 </div>
               </div>
