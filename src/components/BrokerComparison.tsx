@@ -1,5 +1,6 @@
 import { Star, ExternalLink, Check, X } from "lucide-react";
 import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
 const brokers = [
   {
@@ -10,6 +11,7 @@ const brokers = [
     spreads: "0.1 pips",
     usAccepted: true,
     featured: true,
+    reviewUrl: "/review/fxglory",
   },
   {
     name: "OANDA",
@@ -19,6 +21,7 @@ const brokers = [
     spreads: "1.0 pips",
     usAccepted: true,
     featured: false,
+    reviewUrl: null,
   },
   {
     name: "IG Markets",
@@ -28,6 +31,17 @@ const brokers = [
     spreads: "0.6 pips",
     usAccepted: true,
     featured: false,
+    reviewUrl: null,
+  },
+  {
+    name: "eToro",
+    rating: 4.5,
+    minDeposit: "$50",
+    leverage: "1:30",
+    spreads: "1.0 pips",
+    usAccepted: true,
+    featured: false,
+    reviewUrl: "/review/etoro",
   },
   {
     name: "Forex.com",
@@ -37,6 +51,7 @@ const brokers = [
     spreads: "1.2 pips",
     usAccepted: true,
     featured: false,
+    reviewUrl: null,
   },
   {
     name: "TD Ameritrade",
@@ -46,6 +61,7 @@ const brokers = [
     spreads: "1.0 pips",
     usAccepted: true,
     featured: false,
+    reviewUrl: null,
   },
 ];
 
@@ -112,14 +128,28 @@ const BrokerComparison = () => {
                     )}
                   </td>
                   <td className="px-6 py-4 text-center">
-                    <Button 
-                      variant={broker.featured ? "gold" : "outline"} 
-                      size="sm"
-                      className="gap-1"
-                    >
-                      Visit
-                      <ExternalLink className="w-3 h-3" />
-                    </Button>
+                    {broker.reviewUrl ? (
+                      <Button 
+                        variant={broker.featured ? "gold" : "outline"} 
+                        size="sm"
+                        className="gap-1"
+                        asChild
+                      >
+                        <Link to={broker.reviewUrl}>
+                          Review
+                          <ExternalLink className="w-3 h-3" />
+                        </Link>
+                      </Button>
+                    ) : (
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        className="gap-1"
+                      >
+                        Visit
+                        <ExternalLink className="w-3 h-3" />
+                      </Button>
+                    )}
                   </td>
                 </tr>
               ))}
@@ -165,13 +195,26 @@ const BrokerComparison = () => {
                 </div>
               </div>
 
-              <Button 
-                variant={broker.featured ? "gold" : "outline"} 
-                className="w-full gap-2"
-              >
-                Visit Broker
-                <ExternalLink className="w-4 h-4" />
-              </Button>
+              {broker.reviewUrl ? (
+                <Button 
+                  variant={broker.featured ? "gold" : "outline"} 
+                  className="w-full gap-2"
+                  asChild
+                >
+                  <Link to={broker.reviewUrl}>
+                    Read Review
+                    <ExternalLink className="w-4 h-4" />
+                  </Link>
+                </Button>
+              ) : (
+                <Button 
+                  variant="outline" 
+                  className="w-full gap-2"
+                >
+                  Visit Broker
+                  <ExternalLink className="w-4 h-4" />
+                </Button>
+              )}
             </div>
           ))}
         </div>
