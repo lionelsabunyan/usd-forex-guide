@@ -1,4 +1,5 @@
 import { TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -6,14 +7,14 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="md:col-span-2">
-            <a href="/" className="flex items-center gap-2 mb-4">
+            <Link to="/" className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-lg bg-gradient-gold flex items-center justify-center">
                 <TrendingUp className="w-5 h-5 text-primary-foreground" />
               </div>
               <span className="font-heading text-xl font-bold text-foreground">
                 Forex<span className="text-gradient-gold">Scout</span>
               </span>
-            </a>
+            </Link>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-md">
               Your trusted source for unbiased forex broker reviews and comparisons. 
               We help American traders make informed decisions.
@@ -24,24 +25,24 @@ const Footer = () => {
             <h4 className="font-semibold text-foreground mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#reviews" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                <a href="/#reviews" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                   Broker Reviews
                 </a>
               </li>
               <li>
-                <a href="#compare" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                <a href="/#compare" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                   Compare Brokers
                 </a>
               </li>
               <li>
-                <a href="#guides" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                <Link to="/guides" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                   Trading Guides
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#faq" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                <Link to="/faq" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                   FAQ
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
