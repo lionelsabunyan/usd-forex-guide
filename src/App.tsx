@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import FXGloryReview from "./pages/FXGloryReview";
 import N1CMReview from "./pages/N1CMReview";
 import EToroReview from "./pages/EToroReview";
+import FXProReview from "./pages/FXProReview";
 import FAQPage from "./pages/FAQPage";
 import GuidesPage from "./pages/GuidesPage";
 import NotFound from "./pages/NotFound";
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/review/fxglory" element={<FXGloryReview />} />
           <Route path="/review/n1cm" element={<N1CMReview />} />
           <Route path="/review/etoro" element={<EToroReview />} />
+          <Route path="/review/fxpro" element={<FXProReview />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/guides" element={<GuidesPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
