@@ -3,28 +3,18 @@ import { Button } from "./ui/button";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden pt-16">
+    <section className="relative min-h-[85vh] flex items-center justify-center bg-gradient-hero overflow-hidden pt-20">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/3 rounded-full blur-3xl" />
       </div>
-
-      {/* Grid pattern overlay */}
-      <div 
-        className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage: `linear-gradient(hsl(var(--primary) / 0.1) 1px, transparent 1px),
-                           linear-gradient(90deg, hsl(var(--primary) / 0.1) 1px, transparent 1px)`,
-          backgroundSize: '50px 50px'
-        }}
-      />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border mb-8 animate-fade-up">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8 animate-fade-up">
             <Shield className="w-4 h-4 text-primary" />
-            <span className="text-sm text-muted-foreground">Trusted by 50,000+ US Traders</span>
+            <span className="text-sm text-foreground/70 font-medium">Trusted by 50,000+ US Traders</span>
           </div>
 
           <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
@@ -43,28 +33,28 @@ const Hero = () => {
               View Top Brokers
               <ArrowRight className="w-5 h-5" />
             </Button>
-            <Button variant="outlineGold" size="xl">
+            <Button variant="outline" size="xl" className="border-primary/30 text-foreground hover:bg-primary/5">
               Read Our Reviews
             </Button>
           </div>
 
           <div className="grid grid-cols-3 gap-6 mt-16 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: '0.4s' }}>
             <div className="text-center">
-              <div className="flex items-center justify-center w-12 h-12 mx-auto mb-3 rounded-xl bg-secondary">
+              <div className="flex items-center justify-center w-12 h-12 mx-auto mb-3 rounded-xl bg-primary/10">
                 <Shield className="w-6 h-6 text-primary" />
               </div>
               <p className="text-2xl font-bold text-foreground">100%</p>
               <p className="text-sm text-muted-foreground">Unbiased Reviews</p>
             </div>
             <div className="text-center">
-              <div className="flex items-center justify-center w-12 h-12 mx-auto mb-3 rounded-xl bg-secondary">
+              <div className="flex items-center justify-center w-12 h-12 mx-auto mb-3 rounded-xl bg-primary/10">
                 <Award className="w-6 h-6 text-primary" />
               </div>
               <p className="text-2xl font-bold text-foreground">25+</p>
               <p className="text-sm text-muted-foreground">Brokers Reviewed</p>
             </div>
             <div className="text-center">
-              <div className="flex items-center justify-center w-12 h-12 mx-auto mb-3 rounded-xl bg-secondary">
+              <div className="flex items-center justify-center w-12 h-12 mx-auto mb-3 rounded-xl bg-primary/10">
                 <TrendingUp className="w-6 h-6 text-primary" />
               </div>
               <p className="text-2xl font-bold text-foreground">$0</p>

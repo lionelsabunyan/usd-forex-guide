@@ -6,54 +6,54 @@
 
 @layer base {
   :root {
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
 
-    --card: 222 47% 8%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
 
-    --popover: 222 47% 8%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 45 93% 58%;
-    --primary-foreground: 222 47% 6%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 217 33% 14%;
-    --muted-foreground: 215 20% 55%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 45 93% 58%;
-    --accent-foreground: 222 47% 6%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
     --success: 142 76% 36%;
-    --success-foreground: 210 40% 98%;
+    --success-foreground: 0 0% 100%;
 
     --warning: 38 92% 50%;
-    --warning-foreground: 222 47% 6%;
+    --warning-foreground: 222 47% 11%;
 
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 45 93% 58%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
 
     --radius: 0.75rem;
 
     --chart-up: 142 76% 36%;
     --chart-down: 0 84% 60%;
 
-    --gold: 45 93% 58%;
-    --gold-glow: 45 93% 68%;
+    --gold: 217 91% 60%;
+    --gold-glow: 217 91% 70%;
 
-    --gradient-gold: linear-gradient(135deg, hsl(45 93% 58%), hsl(38 92% 50%));
-    --gradient-card: linear-gradient(180deg, hsl(222 47% 10%), hsl(222 47% 6%));
-    --gradient-hero: radial-gradient(ellipse at top, hsl(222 47% 12%), hsl(222 47% 6%));
+    --gradient-gold: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 50%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 14% 98%));
+    --gradient-hero: linear-gradient(180deg, hsl(220 14% 98%), hsl(0 0% 100%));
 
-    --shadow-gold: 0 0 40px hsl(45 93% 58% / 0.15);
-    --shadow-card: 0 10px 40px -10px hsl(0 0% 0% / 0.5);
+    --shadow-gold: 0 0 40px hsl(217 91% 60% / 0.15);
+    --shadow-card: 0 4px 20px -4px hsl(222 47% 11% / 0.08);
 
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;

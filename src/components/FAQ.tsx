@@ -34,7 +34,7 @@ const faqs = [
 
 const FAQ = () => {
   return (
-    <section id="faq" className="py-20 bg-muted/30">
+    <section id="faq" className="py-20 bg-secondary/50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4">
@@ -51,7 +51,7 @@ const FAQ = () => {
               <AccordionItem 
                 key={i} 
                 value={`item-${i}`}
-                className="bg-card border border-border rounded-xl px-6 overflow-hidden"
+                className="bg-card border border-border rounded-xl px-6 overflow-hidden shadow-sm"
               >
                 <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary py-5 hover:no-underline">
                   {faq.question}

@@ -75,7 +75,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border pt-8">
-          <div className="bg-secondary/50 rounded-xl p-4 mb-6">
+          <div className="bg-secondary rounded-xl p-4 mb-6">
             <p className="text-xs text-muted-foreground leading-relaxed">
               <strong className="text-foreground">Risk Disclaimer:</strong> Trading foreign exchange on margin carries a high level of risk, and may not be suitable for all investors. 
               Past performance is not indicative of future results. The high degree of leverage can work against you as well as for you. 

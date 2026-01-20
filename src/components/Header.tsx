@@ -7,7 +7,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2">
@@ -20,22 +20,22 @@ const Header = () => {
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
-            <a href="/#reviews" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="/#reviews" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
               Reviews
             </a>
-            <a href="/#compare" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="/#compare" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
               Compare
             </a>
-            <Link to="/guides" className="text-muted-foreground hover:text-foreground transition-colors">
+            <Link to="/guides" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
               Guides
             </Link>
-            <Link to="/faq" className="text-muted-foreground hover:text-foreground transition-colors">
+            <Link to="/faq" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
               FAQ
             </Link>
           </nav>
 
           <div className="hidden md:block">
-            <Button variant="gold" size="sm">
+            <Button variant="default" size="sm">
               Get Started
             </Button>
           </div>
@@ -51,19 +51,19 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border animate-fade-in">
             <nav className="flex flex-col gap-4">
-              <a href="/#reviews" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="/#reviews" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
                 Reviews
               </a>
-              <a href="/#compare" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="/#compare" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
                 Compare
               </a>
-              <Link to="/guides" className="text-muted-foreground hover:text-foreground transition-colors" onClick={() => setIsMenuOpen(false)}>
+              <Link to="/guides" className="text-muted-foreground hover:text-foreground transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
                 Guides
               </Link>
-              <Link to="/faq" className="text-muted-foreground hover:text-foreground transition-colors" onClick={() => setIsMenuOpen(false)}>
+              <Link to="/faq" className="text-muted-foreground hover:text-foreground transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
                 FAQ
               </Link>
-              <Button variant="gold" size="sm" className="w-fit">
+              <Button variant="default" size="sm" className="w-fit">
                 Get Started
               </Button>
             </nav>
