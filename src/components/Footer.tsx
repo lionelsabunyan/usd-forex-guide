@@ -11,8 +11,8 @@ const Footer = () => {
               <div className="w-10 h-10 rounded-lg bg-gradient-gold flex items-center justify-center">
                 <TrendingUp className="w-5 h-5 text-primary-foreground" />
               </div>
-              <span className="font-heading text-xl font-bold text-foreground">
-                Forex<span className="text-gradient-gold">Scout</span>
+              <span className="font-heading text-lg font-bold text-foreground">
+                Forex Beginner<span className="text-gradient-gold"> Guide</span>
               </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-md">
@@ -85,7 +85,7 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-            <p>© 2024 ForexScout. All rights reserved.</p>
+            <p>© 2024 Forex Beginner Guide. All rights reserved.</p>
             <p>
               Affiliate Disclosure: We may receive compensation when you click on links to products we review.
             </p>

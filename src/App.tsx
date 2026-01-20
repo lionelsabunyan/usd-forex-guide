@@ -10,6 +10,12 @@ import EToroReview from "./pages/EToroReview";
 import FXProReview from "./pages/FXProReview";
 import FAQPage from "./pages/FAQPage";
 import GuidesPage from "./pages/GuidesPage";
+import BeginnersGuide from "./pages/guides/BeginnersGuide";
+import USForexRegulations from "./pages/guides/USForexRegulations";
+import BrokerComparisonGuide from "./pages/guides/BrokerComparisonGuide";
+import RiskManagement from "./pages/guides/RiskManagement";
+import TechnicalAnalysis from "./pages/guides/TechnicalAnalysis";
+import FundamentalAnalysis from "./pages/guides/FundamentalAnalysis";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +34,12 @@ const App = () => (
           <Route path="/review/fxpro" element={<FXProReview />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/guides" element={<GuidesPage />} />
+          <Route path="/guides/beginners-guide" element={<BeginnersGuide />} />
+          <Route path="/guides/us-forex-regulations" element={<USForexRegulations />} />
+          <Route path="/guides/broker-comparison" element={<BrokerComparisonGuide />} />
+          <Route path="/guides/risk-management" element={<RiskManagement />} />
+          <Route path="/guides/technical-analysis" element={<TechnicalAnalysis />} />
+          <Route path="/guides/fundamental-analysis" element={<FundamentalAnalysis />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
