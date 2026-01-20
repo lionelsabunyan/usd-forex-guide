@@ -34,7 +34,7 @@ const FeaturedBroker = () => {
         </div>
 
         <div className="max-w-5xl mx-auto">
-          <div className="bg-gradient-card rounded-2xl border border-border p-8 shadow-card">
+          <div className="bg-card rounded-2xl border border-border p-8 shadow-card">
             <div className="flex flex-col lg:flex-row gap-8">
               {/* Left side - Broker info */}
               <div className="flex-1">
@@ -85,11 +85,11 @@ const FeaturedBroker = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Button variant="hero" className="flex-1">
+                  <Button variant="default" className="flex-1">
                     Open Account
                     <ExternalLink className="w-4 h-4" />
                   </Button>
-                  <Button variant="outlineGold" className="flex-1" asChild>
+                  <Button variant="outline" className="flex-1" asChild>
                     <Link to="/review/fxglory">Read Full Review</Link>
                   </Button>
                 </div>

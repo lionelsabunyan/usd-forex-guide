@@ -41,7 +41,7 @@ const brokers = [
     spreads: "0.6 pips",
     usAccepted: false,
     featured: false,
-    reviewUrl: null,
+    reviewUrl: "/review/fxpro",
   },
   {
     name: "OANDA",
@@ -67,7 +67,7 @@ const brokers = [
 
 const BrokerComparison = () => {
   return (
-    <section id="compare" className="py-20 bg-muted/30">
+    <section id="compare" className="py-20 bg-secondary/50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4">
@@ -130,7 +130,7 @@ const BrokerComparison = () => {
                   <td className="px-6 py-4 text-center">
                     {broker.reviewUrl ? (
                       <Button 
-                        variant={broker.featured ? "gold" : "outline"} 
+                        variant={broker.featured ? "default" : "outline"} 
                         size="sm"
                         className="gap-1"
                         asChild
@@ -162,7 +162,7 @@ const BrokerComparison = () => {
           {brokers.map((broker) => (
             <div 
               key={broker.name}
-              className={`rounded-xl border border-border p-4 ${broker.featured ? 'bg-primary/5 border-primary/30' : 'bg-card'}`}
+              className={`rounded-xl border border-border p-4 bg-card ${broker.featured ? 'border-primary/30' : ''}`}
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
@@ -197,7 +197,7 @@ const BrokerComparison = () => {
 
               {broker.reviewUrl ? (
                 <Button 
-                  variant={broker.featured ? "gold" : "outline"} 
+                  variant={broker.featured ? "default" : "outline"} 
                   className="w-full gap-2"
                   asChild
                 >
