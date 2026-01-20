@@ -139,9 +139,9 @@ const GuidesPage = () => {
                   ))}
                 </div>
                 
-                <button className="flex items-center gap-2 text-primary font-medium text-sm group-hover:gap-3 transition-all mt-auto">
+                <Link to={`/guides/${guide.id}`} className="flex items-center gap-2 text-primary font-medium text-sm group-hover:gap-3 transition-all mt-auto">
                   Read Guide <ArrowRight className="w-4 h-4" />
-                </button>
+                </Link>
               </div>
             ))}
           </div>
