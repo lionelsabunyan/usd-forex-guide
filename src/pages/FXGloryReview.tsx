@@ -3,6 +3,10 @@ import Footer from "@/components/Footer";
 import { Star, Check, ExternalLink, Shield, Zap, DollarSign, Award, Clock, CreditCard, Users, TrendingUp, AlertTriangle, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { brokers } from "@/lib/brokers";
+import BrokerLogo from "@/components/BrokerLogo";
+import SEO from "@/components/SEO";
+import ReviewForm from "@/components/ReviewForm";
 
 const FXGloryReview = () => {
   const overallRating = 4.8;
@@ -82,7 +86,7 @@ const FXGloryReview = () => {
       name: "Michael R.",
       location: "Texas, USA",
       rating: 5,
-      date: "December 2024",
+      date: "December 2026",
       title: "Finally a broker that accepts US clients!",
       review: "I've been trading with FXGlory for over a year now. The high leverage and low spreads are fantastic. Withdrawals are processed within 24 hours. Highly recommend for US traders looking for offshore options.",
       verified: true,
@@ -91,7 +95,7 @@ const FXGloryReview = () => {
       name: "Sarah L.",
       location: "California, USA",
       rating: 5,
-      date: "November 2024",
+      date: "November 2026",
       title: "Great customer service",
       review: "The 24/7 support is a game changer. Had an issue with my deposit and they resolved it within an hour. Trading conditions are excellent with the ECN account.",
       verified: true,
@@ -100,7 +104,7 @@ const FXGloryReview = () => {
       name: "James K.",
       location: "Florida, USA",
       rating: 4,
-      date: "October 2024",
+      date: "October 2026",
       title: "Solid broker overall",
       review: "Been using their MT5 platform for 6 months. Execution is fast and spreads are competitive. Only downside is the limited educational content, but I'm an experienced trader so it doesn't affect me much.",
       verified: true,
@@ -109,7 +113,7 @@ const FXGloryReview = () => {
       name: "David M.",
       location: "New York, USA",
       rating: 5,
-      date: "September 2024",
+      date: "September 2026",
       title: "Best offshore option for Americans",
       review: "After trying several brokers, FXGlory stands out. The crypto deposit option makes funding easy. Leverage of 1:3000 is incredible for my trading style. No complaints so far.",
       verified: true,
@@ -139,6 +143,29 @@ const FXGloryReview = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="FXGlory Review 2026"
+        description="Complete FXGlory review for US traders. Learn about leverage up to 1:3000, low spreads from 0.1 pips, cryptocurrency deposits, and why FXGlory is our Editor's Choice for American traders."
+        canonical="/review/fxglory"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Review",
+          "itemReviewed": {
+            "@type": "FinancialService",
+            "name": "FXGlory",
+            "url": brokers.fxglory.siteUrl,
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "US Forex Guide",
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": overallRating,
+            "bestRating": "5",
+          },
+        }}
+      />
       <Header />
       
       {/* Hero Section */}
@@ -149,13 +176,11 @@ const FXGloryReview = () => {
               <div className="flex-1">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
                   <Award className="w-4 h-4 text-primary" />
-                  <span className="text-sm text-primary font-medium">Editor's Choice 2024</span>
+                  <span className="text-sm text-primary font-medium">Editor's Choice 2026</span>
                 </div>
                 
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-24 h-24 rounded-2xl bg-gradient-gold flex items-center justify-center text-3xl font-bold text-primary-foreground">
-                    FX
-                  </div>
+                  <BrokerLogo broker={brokers.fxglory} className="w-24 h-24 rounded-2xl" imgClassName="p-3" />
                   <div>
                     <h1 className="font-heading text-4xl md:text-5xl font-bold text-foreground">
                       FXGlory Review
@@ -179,12 +204,16 @@ const FXGloryReview = () => {
                 </p>
 
                 <div className="flex flex-wrap gap-3">
-                  <Button variant="hero" size="lg">
-                    Open Account
-                    <ExternalLink className="w-5 h-5" />
+                  <Button variant="hero" size="lg" asChild>
+                    <a href={brokers.fxglory.affiliateUrl} target="_blank" rel="noopener noreferrer">
+                      Open Account
+                      <ExternalLink className="w-5 h-5" />
+                    </a>
                   </Button>
-                  <Button variant="outlineGold" size="lg">
-                    Visit Website
+                  <Button variant="outlineGold" size="lg" asChild>
+                    <a href={brokers.fxglory.siteUrl} target="_blank" rel="noopener noreferrer">
+                      Visit Website
+                    </a>
                   </Button>
                 </div>
               </div>
@@ -354,8 +383,14 @@ const FXGloryReview = () => {
                         </li>
                       ))}
                     </ul>
-                    <Button variant={account.popular ? "hero" : "outlineGold"} className="w-full mt-4">
-                      Open Account
+                    <Button
+                      variant={account.popular ? "hero" : "outlineGold"}
+                      className="w-full mt-4"
+                      asChild
+                    >
+                      <a href={brokers.fxglory.affiliateUrl} target="_blank" rel="noopener noreferrer">
+                        Open Account
+                      </a>
                     </Button>
                   </CardContent>
                 </Card>
@@ -487,6 +522,15 @@ const FXGloryReview = () => {
         </div>
       </section>
 
+      {/* Review Form Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <ReviewForm brokerName="FXGlory" brokerId="fxglory" />
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-hero">
         <div className="container mx-auto px-4">
@@ -498,12 +542,16 @@ const FXGloryReview = () => {
               Open your account today and take advantage of high leverage, low spreads, and fast withdrawals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="lg">
-                Open Account Now
-                <ExternalLink className="w-5 h-5" />
+              <Button variant="hero" size="lg" asChild>
+                <a href={brokers.fxglory.affiliateUrl} target="_blank" rel="noopener noreferrer">
+                  Open Account Now
+                  <ExternalLink className="w-5 h-5" />
+                </a>
               </Button>
-              <Button variant="outlineGold" size="lg">
-                Compare with Other Brokers
+              <Button variant="outlineGold" size="lg" asChild>
+                <a href="/#compare">
+                  Compare with Other Brokers
+                </a>
               </Button>
             </div>
             <p className="text-sm text-muted-foreground mt-6">

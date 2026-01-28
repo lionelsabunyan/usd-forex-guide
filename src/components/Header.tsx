@@ -1,7 +1,9 @@
-import { TrendingUp, Menu, X } from "lucide-react";
+import { Menu, X, ExternalLink } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { brokers } from "@/lib/brokers";
+import Logo from "./Logo";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,32 +13,39 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-lg bg-gradient-gold flex items-center justify-center">
-              <TrendingUp className="w-5 h-5 text-primary-foreground" />
-            </div>
+            <Logo variant="default" size="md" />
             <span className="font-heading text-lg font-bold text-foreground">
-              Forex Beginner<span className="text-gradient-gold"> Guide</span>
+              US Forex<span className="text-gradient-gold"> Guide</span>
             </span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
-            <a href="/#reviews" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
-              Reviews
-            </a>
-            <a href="/#compare" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
-              Compare
-            </a>
-            <Link to="/guides" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
+            <Link to="/" className="text-foreground/90 hover:text-foreground transition-colors font-semibold uppercase text-sm tracking-wide">
+              Home
+            </Link>
+            <Link to="/brokers" className="text-foreground/90 hover:text-foreground transition-colors font-semibold uppercase text-sm tracking-wide">
+              Brokers
+            </Link>
+            <Link to="/guides" className="text-foreground/90 hover:text-foreground transition-colors font-semibold uppercase text-sm tracking-wide">
               Guides
             </Link>
-            <Link to="/faq" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
+            <Link to="/blog" className="text-foreground/90 hover:text-foreground transition-colors font-semibold uppercase text-sm tracking-wide">
+              Blog
+            </Link>
+            <Link to="/faq" className="text-foreground/90 hover:text-foreground transition-colors font-semibold uppercase text-sm tracking-wide">
               FAQ
+            </Link>
+            <Link to="/contact" className="text-foreground/90 hover:text-foreground transition-colors font-semibold uppercase text-sm tracking-wide">
+              Contact
             </Link>
           </nav>
 
           <div className="hidden md:block">
-            <Button variant="default" size="sm">
-              Get Started
+            <Button variant="default" size="sm" asChild>
+              <a href={brokers.fxglory.affiliateUrl} target="_blank" rel="noopener noreferrer">
+                Get Started
+                <ExternalLink className="w-4 h-4" />
+              </a>
             </Button>
           </div>
 
@@ -51,20 +60,53 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border animate-fade-in">
             <nav className="flex flex-col gap-4">
-              <a href="/#reviews" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
-                Reviews
-              </a>
-              <a href="/#compare" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
-                Compare
-              </a>
-              <Link to="/guides" className="text-muted-foreground hover:text-foreground transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
+              <Link
+                to="/"
+                className="text-foreground/90 hover:text-foreground transition-colors font-semibold uppercase text-sm tracking-wide"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                to="/brokers"
+                className="text-foreground/90 hover:text-foreground transition-colors font-semibold uppercase text-sm tracking-wide"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Brokers
+              </Link>
+              <Link
+                to="/guides"
+                className="text-foreground/90 hover:text-foreground transition-colors font-semibold uppercase text-sm tracking-wide"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Guides
               </Link>
-              <Link to="/faq" className="text-muted-foreground hover:text-foreground transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
+              <Link
+                to="/blog"
+                className="text-foreground/90 hover:text-foreground transition-colors font-semibold uppercase text-sm tracking-wide"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Blog
+              </Link>
+              <Link
+                to="/faq"
+                className="text-foreground/90 hover:text-foreground transition-colors font-semibold uppercase text-sm tracking-wide"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 FAQ
               </Link>
-              <Button variant="default" size="sm" className="w-fit">
-                Get Started
+              <Link
+                to="/contact"
+                className="text-foreground/90 hover:text-foreground transition-colors font-semibold uppercase text-sm tracking-wide"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
+              <Button variant="default" size="sm" className="w-fit" asChild>
+                <a href={brokers.fxglory.affiliateUrl} target="_blank" rel="noopener noreferrer">
+                  Get Started
+                  <ExternalLink className="w-4 h-4" />
+                </a>
               </Button>
             </nav>
           </div>

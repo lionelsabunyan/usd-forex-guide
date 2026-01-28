@@ -1,6 +1,8 @@
 import { Star, Check, ExternalLink, Award, Shield, Zap, DollarSign } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
+import { brokers } from "@/lib/brokers";
+import BrokerLogo from "@/components/BrokerLogo";
 
 const FeaturedBroker = () => {
   const pros = [
@@ -23,10 +25,10 @@ const FeaturedBroker = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
             <Award className="w-4 h-4 text-primary" />
-            <span className="text-sm text-primary font-medium">Editor's Choice 2024</span>
+            <span className="text-sm text-primary font-medium">Editor's Choice 2026</span>
           </div>
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4">
-            Featured Broker Review
+            Featured <span className="text-gradient-gold">Broker Review</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Our in-depth analysis of the top forex broker for US traders
@@ -39,9 +41,7 @@ const FeaturedBroker = () => {
               {/* Left side - Broker info */}
               <div className="flex-1">
                 <div className="flex items-start gap-4 mb-6">
-                  <div className="w-20 h-20 rounded-xl bg-gradient-gold flex items-center justify-center text-2xl font-bold text-primary-foreground shrink-0">
-                    FX
-                  </div>
+                  <BrokerLogo broker={brokers.fxglory} className="w-20 h-20 rounded-xl" imgClassName="p-3" />
                   <div>
                     <h3 className="font-heading text-2xl font-bold text-foreground mb-1">
                       FXGlory
@@ -85,9 +85,11 @@ const FeaturedBroker = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Button variant="default" className="flex-1">
-                    Open Account
-                    <ExternalLink className="w-4 h-4" />
+                  <Button variant="default" className="flex-1" asChild>
+                    <a href={brokers.fxglory.affiliateUrl} target="_blank" rel="noopener noreferrer">
+                      Open Account
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
                   </Button>
                   <Button variant="outline" className="flex-1" asChild>
                     <Link to="/review/fxglory">Read Full Review</Link>

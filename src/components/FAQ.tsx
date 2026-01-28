@@ -38,7 +38,7 @@ const FAQ = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4">
-            Frequently Asked Questions
+            Frequently Asked <span className="text-gradient-gold">Questions</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Get answers to common questions about forex trading and broker selection

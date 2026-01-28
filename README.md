@@ -1,73 +1,131 @@
-# Welcome to your Lovable project
+# US Forex Guide
 
-## Project info
+A comprehensive forex broker review and comparison website for US traders. Built with React, TypeScript, and Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Features
 
-## How can I edit this code?
+- **Broker Reviews**: Detailed reviews of top forex brokers for US traders
+- **Comparison Tools**: Side-by-side comparison of broker features, spreads, and leverage
+- **Trading Guides**: Educational content for beginners and advanced traders
+- **Blog**: Latest insights and trading strategies
+- **SEO Optimized**: Full SEO implementation with meta tags and structured data
+- **Contact Form**: Get in touch with questions or feedback
+- **Review System**: Users can submit reviews for brokers
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- **Framework**: React 18 with TypeScript
+- **Routing**: React Router DOM v6
+- **Styling**: Tailwind CSS with custom design system
+- **UI Components**: shadcn/ui (Radix UI)
+- **SEO**: react-helmet-async
+- **Build Tool**: Vite
+- **Deployment**: Netlify (via GitHub)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js 18+ and npm (or bun)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```bash
+# Install dependencies
+npm install
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-**Edit a file directly in GitHub**
+## Environment Variables
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Create a `.env` file in the root directory:
 
-**Use GitHub Codespaces**
+```env
+# Google Analytics
+VITE_GA_ID=G-XXXXXXXXXX
+VITE_GTM_ID=GTM-XXXXXXX
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Affiliate Links (Optional - defaults are in brokers.ts)
+VITE_FXGLORY_AFFILIATE_URL=https://app.fxglory.com/auth/register?ib=82027
+VITE_N1CM_AFFILIATE_URL=https://register.n1cmpro.com/en?partner_id=250473
+```
 
-## What technologies are used for this project?
+## Project Structure
 
-This project is built with:
+```
+src/
+├── components/       # Reusable React components
+│   ├── ui/          # shadcn/ui components
+│   ├── Header.tsx   # Navigation header
+│   ├── Footer.tsx   # Site footer
+│   ├── SEO.tsx      # SEO component
+│   └── ...
+├── pages/           # Page components
+│   ├── Index.tsx    # Homepage
+│   ├── BrokersPage.tsx
+│   ├── ContactPage.tsx
+│   ├── review/      # Broker review pages
+│   ├── guides/      # Trading guide pages
+│   ├── blog/        # Blog pages
+│   └── legal/       # Legal pages
+├── lib/             # Utilities and data
+│   ├── brokers.ts   # Broker data and affiliate links
+│   ├── blog.ts      # Blog post data
+│   └── utils.ts     # Helper functions
+└── hooks/           # Custom React hooks
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Deployment
 
-## How can I deploy this project?
+### Netlify (via GitHub)
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+1. Push your code to GitHub
+2. Connect your repository to Netlify
+3. Netlify will automatically detect the build settings from `netlify.toml`
+4. Set environment variables in Netlify dashboard:
+   - `VITE_GA_ID`
+   - `VITE_GTM_ID`
+   - Any affiliate link variables if needed
 
-## Can I connect a custom domain to my Lovable project?
+### Build Settings
 
-Yes, you can!
+- **Build command**: `npm run build`
+- **Publish directory**: `dist`
+- **Node version**: 18
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## SEO
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+The site includes comprehensive SEO:
+
+- Meta tags (title, description, Open Graph, Twitter Cards)
+- Canonical URLs
+- JSON-LD structured data
+- Sitemap.xml
+- Robots.txt
+
+## Google Analytics
+
+Google Analytics and Tag Manager are integrated via environment variables. Set `VITE_GA_ID` and `VITE_GTM_ID` in your environment to enable tracking.
+
+## Contributing
+
+1. Create a feature branch
+2. Make your changes
+3. Test locally
+4. Submit a pull request
+
+## License
+
+© 2026 US Forex Guide. All rights reserved.
+
+## Affiliate Disclosure
+
+This website contains affiliate links. We may receive compensation when you click on links to products we review. This does not affect our editorial independence or the accuracy of our reviews.

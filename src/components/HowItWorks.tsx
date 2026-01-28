@@ -29,7 +29,7 @@ const HowItWorks = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4">
-            How to Get Started
+            How to <span className="text-gradient-gold">Get Started</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Follow these simple steps to find and open your forex trading account

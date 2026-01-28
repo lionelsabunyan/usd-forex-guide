@@ -1,11 +1,15 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
+import ReviewForm from "@/components/ReviewForm";
 import { Star, Check, ExternalLink, Shield, Zap, DollarSign, Award, Clock, CreditCard, Users, TrendingUp, AlertTriangle, MessageCircle, Copy, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
+const ETORO_URL = "https://www.etoro.com";
+
 const EToroReview = () => {
-  const overallRating = 4.5;
+  const overallRating = 4.3;
   
   const ratings = [
     { label: "Trading Conditions", score: 4.3 },
@@ -80,7 +84,7 @@ const EToroReview = () => {
       name: "Jennifer M.",
       location: "New York, USA",
       rating: 5,
-      date: "December 2024",
+      date: "December 2026",
       title: "Love the copy trading feature!",
       review: "As a beginner, eToro's copy trading has been a game changer. I can follow experienced traders and learn from their strategies. The social feed is also great for market insights.",
       verified: true,
@@ -89,7 +93,7 @@ const EToroReview = () => {
       name: "Robert K.",
       location: "California, USA",
       rating: 4,
-      date: "November 2024",
+      date: "November 2026",
       title: "Great platform, wish spreads were lower",
       review: "The platform is incredibly user-friendly and the variety of assets is impressive. My only complaint is that spreads can be higher than some competitors. But for the features you get, it's worth it.",
       verified: true,
@@ -98,7 +102,7 @@ const EToroReview = () => {
       name: "Amanda S.",
       location: "Texas, USA",
       rating: 5,
-      date: "October 2024",
+      date: "October 2026",
       title: "Best for beginners",
       review: "I tried several brokers before eToro and this is by far the most beginner-friendly. The virtual portfolio lets you practice without risk, and the educational content is excellent.",
       verified: true,
@@ -107,7 +111,7 @@ const EToroReview = () => {
       name: "Chris T.",
       location: "Florida, USA",
       rating: 4,
-      date: "September 2024",
+      date: "September 2026",
       title: "Solid all-around broker",
       review: "Been using eToro for 2 years now. The platform is stable, withdrawals are processed within a few days, and customer support is responsive. Good for long-term investing.",
       verified: true,
@@ -138,6 +142,29 @@ const EToroReview = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="eToro Review 2026"
+        description="Complete eToro review for US traders. Social trading platform with copy trading, $50 minimum deposit, and 30M+ users. Learn about eToro's features, fees, and trading conditions."
+        canonical="/review/etoro"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Review",
+          "itemReviewed": {
+            "@type": "FinancialService",
+            "name": "eToro",
+            "url": ETORO_URL,
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "US Forex Guide",
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": overallRating,
+            "bestRating": "5",
+          },
+        }}
+      />
       <Header />
       
       {/* Hero Section */}
@@ -178,12 +205,16 @@ const EToroReview = () => {
                 </p>
 
                 <div className="flex flex-wrap gap-3">
-                  <Button variant="hero" size="lg">
-                    Open Account
-                    <ExternalLink className="w-5 h-5" />
+                  <Button variant="hero" size="lg" asChild>
+                    <a href={ETORO_URL} target="_blank" rel="noopener noreferrer">
+                      Open Account
+                      <ExternalLink className="w-5 h-5" />
+                    </a>
                   </Button>
-                  <Button variant="outlineGold" size="lg">
-                    Visit Website
+                  <Button variant="outlineGold" size="lg" asChild>
+                    <a href={ETORO_URL} target="_blank" rel="noopener noreferrer">
+                      Visit Website
+                    </a>
                   </Button>
                 </div>
               </div>
@@ -383,8 +414,14 @@ const EToroReview = () => {
                         </li>
                       ))}
                     </ul>
-                    <Button variant={account.popular ? "hero" : "outlineGold"} className="w-full mt-4">
-                      Open Account
+                    <Button
+                      variant={account.popular ? "hero" : "outlineGold"}
+                      className="w-full mt-4"
+                      asChild
+                    >
+                      <a href={ETORO_URL} target="_blank" rel="noopener noreferrer">
+                        Open Account
+                      </a>
                     </Button>
                   </CardContent>
                 </Card>
@@ -551,17 +588,30 @@ const EToroReview = () => {
               Join millions of traders and investors on eToro's award-winning platform. Practice with a free $100,000 virtual portfolio.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button variant="hero" size="lg">
-                Open Free Account
-                <ExternalLink className="w-5 h-5" />
+              <Button variant="hero" size="lg" asChild>
+                <a href={ETORO_URL} target="_blank" rel="noopener noreferrer">
+                  Open Free Account
+                  <ExternalLink className="w-5 h-5" />
+                </a>
               </Button>
-              <Button variant="outlineGold" size="lg">
-                Try Demo Account
+              <Button variant="outlineGold" size="lg" asChild>
+                <a href={ETORO_URL} target="_blank" rel="noopener noreferrer">
+                  Try Demo Account
+                </a>
               </Button>
             </div>
             <p className="text-sm text-muted-foreground mt-6">
               67% of retail investor accounts lose money when trading CFDs with this provider.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Review Form Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <ReviewForm brokerName="eToro" brokerId="etoro" />
           </div>
         </div>
       </section>

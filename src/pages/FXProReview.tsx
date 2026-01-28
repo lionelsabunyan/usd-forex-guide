@@ -1,8 +1,11 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
+import ReviewForm from "@/components/ReviewForm";
 import { Star, Check, ExternalLink, Shield, Zap, DollarSign, Award, Clock, CreditCard, Users, TrendingUp, AlertTriangle, MessageCircle, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { brokers } from "@/lib/brokers";
 
 const FXProReview = () => {
   const overallRating = 4.3;
@@ -91,7 +94,7 @@ const FXProReview = () => {
       name: "Michelle R.",
       location: "Florida, USA",
       rating: 4,
-      date: "December 2024",
+      date: "December 2026",
       title: "Great variety of instruments",
       review: "Love the wide selection of stocks CFDs alongside forex. Customer service has always been helpful. Only downside is the spreads can widen during news events.",
       verified: true,
@@ -100,7 +103,7 @@ const FXProReview = () => {
       name: "Kevin T.",
       location: "California, USA",
       rating: 4,
-      date: "November 2024",
+      date: "November 2026",
       title: "Reliable and trustworthy",
       review: "Chose FxPro because of their strong regulation and long track record. Withdrawals are processed quickly. The educational content helped me improve my trading.",
       verified: true,
@@ -109,7 +112,7 @@ const FXProReview = () => {
       name: "Lisa M.",
       location: "Texas, USA",
       rating: 5,
-      date: "October 2024",
+      date: "October 2026",
       title: "Best platforms in the industry",
       review: "Having access to MT4, MT5, and cTrader is amazing. I use cTrader for manual trading and MT4 for running my EAs. The mobile apps work great too.",
       verified: true,
@@ -139,6 +142,29 @@ const FXProReview = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="FxPro Review 2026"
+        description="Complete FxPro review for US traders. Multi-regulated broker with 2,100+ instruments, 1:200 leverage, and professional trading platforms. Learn about FxPro's features and trading conditions."
+        canonical="/review/fxpro"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Review",
+          "itemReviewed": {
+            "@type": "FinancialService",
+            "name": "FxPro",
+            "url": brokers.fxpro.siteUrl,
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "US Forex Guide",
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": overallRating,
+            "bestRating": "5",
+          },
+        }}
+      />
       <Header />
       
       {/* Hero Section */}
@@ -577,6 +603,15 @@ const FXProReview = () => {
                 </a>
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Review Form Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <ReviewForm brokerName="FxPro" brokerId="fxpro" />
           </div>
         </div>
       </section>

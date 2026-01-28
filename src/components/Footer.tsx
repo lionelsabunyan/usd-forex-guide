@@ -1,5 +1,5 @@
-import { TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
+import Logo from "./Logo";
 
 const Footer = () => {
   return (
@@ -8,11 +8,9 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-gradient-gold flex items-center justify-center">
-                <TrendingUp className="w-5 h-5 text-primary-foreground" />
-              </div>
+              <Logo variant="default" size="md" />
               <span className="font-heading text-lg font-bold text-foreground">
-                Forex Beginner<span className="text-gradient-gold"> Guide</span>
+                US Forex<span className="text-gradient-gold"> Guide</span>
               </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-md">
@@ -35,6 +33,11 @@ const Footer = () => {
                 </a>
               </li>
               <li>
+                <Link to="/brokers" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  All Brokers
+                </Link>
+              </li>
+              <li>
                 <Link to="/guides" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                   Trading Guides
                 </Link>
@@ -44,6 +47,11 @@ const Footer = () => {
                   FAQ
                 </Link>
               </li>
+              <li>
+                <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  Contact Us
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -51,24 +59,24 @@ const Footer = () => {
             <h4 className="font-semibold text-foreground mb-4">Legal</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                <Link to="/legal/privacy" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                <Link to="/legal/terms" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                   Terms of Service
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                <Link to="/legal/disclaimer" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                   Disclaimer
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                <Link to="/legal/affiliate-disclosure" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                   Affiliate Disclosure
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -85,7 +93,7 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-            <p>© 2024 Forex Beginner Guide. All rights reserved.</p>
+            <p>© 2026 US Forex Guide. All rights reserved.</p>
             <p>
               Affiliate Disclosure: We may receive compensation when you click on links to products we review.
             </p>

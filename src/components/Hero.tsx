@@ -29,12 +29,21 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up" style={{ animationDelay: '0.3s' }}>
-            <Button variant="hero" size="xl">
-              View Top Brokers
-              <ArrowRight className="w-5 h-5" />
+            <Button variant="hero" size="xl" asChild>
+              <a href="#compare">
+                View Top Brokers
+                <ArrowRight className="w-5 h-5" />
+              </a>
             </Button>
-            <Button variant="outline" size="xl" className="border-primary/30 text-foreground hover:bg-primary/5">
-              Read Our Reviews
+            <Button
+              variant="outline"
+              size="xl"
+              className="border-primary/30 text-foreground hover:bg-primary/5"
+              asChild
+            >
+              <a href="#reviews">
+                Read Our Reviews
+              </a>
             </Button>
           </div>
 

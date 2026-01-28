@@ -1,77 +1,31 @@
 import { Star, ExternalLink, Check, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
-
-const brokers = [
-  {
-    name: "FXGlory",
-    rating: 4.8,
-    minDeposit: "$1",
-    leverage: "1:3000",
-    spreads: "0.1 pips",
-    usAccepted: true,
-    featured: true,
-    reviewUrl: "/review/fxglory",
-  },
-  {
-    name: "N1CM",
-    rating: 4.2,
-    minDeposit: "$1",
-    leverage: "1:1000",
-    spreads: "0.5 pips",
-    usAccepted: true,
-    featured: false,
-    reviewUrl: "/review/n1cm",
-  },
-  {
-    name: "eToro",
-    rating: 4.5,
-    minDeposit: "$50",
-    leverage: "1:30",
-    spreads: "1.0 pips",
-    usAccepted: true,
-    featured: false,
-    reviewUrl: "/review/etoro",
-  },
-  {
-    name: "FXPro",
-    rating: 4.4,
-    minDeposit: "$100",
-    leverage: "1:200",
-    spreads: "0.6 pips",
-    usAccepted: false,
-    featured: false,
-    reviewUrl: "/review/fxpro",
-  },
-  {
-    name: "OANDA",
-    rating: 4.5,
-    minDeposit: "$0",
-    leverage: "1:50",
-    spreads: "1.0 pips",
-    usAccepted: true,
-    featured: false,
-    reviewUrl: null,
-  },
-  {
-    name: "IG Markets",
-    rating: 4.6,
-    minDeposit: "$250",
-    leverage: "1:50",
-    spreads: "0.6 pips",
-    usAccepted: true,
-    featured: false,
-    reviewUrl: null,
-  },
-];
+import { reviewedBrokers, brokers as allBrokers } from "@/lib/brokers";
+import BrokerLogo from "./BrokerLogo";
 
 const BrokerComparison = () => {
+  // Combine reviewed brokers with non-reviewed ones for comparison
+  // Sort by rating (highest first), then by name
+  const comparisonBrokers = [
+    ...reviewedBrokers,
+    allBrokers.oanda,
+    allBrokers.ig,
+  ].sort((a, b) => {
+    const ratingA = a.rating || 0;
+    const ratingB = b.rating || 0;
+    if (ratingB !== ratingA) {
+      return ratingB - ratingA; // Higher rating first
+    }
+    return a.name.localeCompare(b.name); // Alphabetical if same rating
+  });
+
   return (
     <section id="compare" className="py-20 bg-secondary/50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4">
-            Compare Top Brokers
+            Compare Top <span className="text-gradient-gold">Brokers</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Side-by-side comparison of forex brokers accepting US clients
@@ -93,16 +47,14 @@ const BrokerComparison = () => {
               </tr>
             </thead>
             <tbody>
-              {brokers.map((broker, i) => (
+              {comparisonBrokers.map((broker, i) => (
                 <tr 
-                  key={broker.name} 
+                  key={broker.id} 
                   className={`border-t border-border transition-colors hover:bg-secondary/50 ${broker.featured ? 'bg-primary/5' : ''}`}
                 >
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-3">
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold ${broker.featured ? 'bg-gradient-gold text-primary-foreground' : 'bg-secondary text-foreground'}`}>
-                        {broker.name.slice(0, 2).toUpperCase()}
-                      </div>
+                      <BrokerLogo broker={broker} className="w-10 h-10 rounded-lg" />
                       <div>
                         <p className="font-semibold text-foreground">{broker.name}</p>
                         {broker.featured && (
@@ -114,7 +66,7 @@ const BrokerComparison = () => {
                   <td className="px-6 py-4 text-center">
                     <div className="flex items-center justify-center gap-1">
                       <Star className="w-4 h-4 fill-primary text-primary" />
-                      <span className="font-semibold text-foreground">{broker.rating}</span>
+                      <span className="font-semibold text-foreground">{broker.rating?.toFixed(1)}</span>
                     </div>
                   </td>
                   <td className="px-6 py-4 text-center text-foreground">{broker.minDeposit}</td>
@@ -129,8 +81,8 @@ const BrokerComparison = () => {
                   </td>
                   <td className="px-6 py-4 text-center">
                     {broker.reviewUrl ? (
-                      <Button 
-                        variant={broker.featured ? "default" : "outline"} 
+                      <Button
+                        variant={broker.featured ? "default" : "outline"}
                         size="sm"
                         className="gap-1"
                         asChild
@@ -140,16 +92,23 @@ const BrokerComparison = () => {
                           <ExternalLink className="w-3 h-3" />
                         </Link>
                       </Button>
-                    ) : (
-                      <Button 
-                        variant="outline" 
+                    ) : broker.siteUrl ? (
+                      <Button
+                        variant="outline"
                         size="sm"
                         className="gap-1"
+                        asChild
                       >
-                        Visit
-                        <ExternalLink className="w-3 h-3" />
+                        <a
+                          href={broker.siteUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Visit
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
                       </Button>
-                    )}
+                    ) : null}
                   </td>
                 </tr>
               ))}
@@ -159,21 +118,19 @@ const BrokerComparison = () => {
 
         {/* Mobile Cards */}
         <div className="lg:hidden space-y-4">
-          {brokers.map((broker) => (
+              {comparisonBrokers.map((broker) => (
             <div 
-              key={broker.name}
+              key={broker.id}
               className={`rounded-xl border border-border p-4 bg-card ${broker.featured ? 'border-primary/30' : ''}`}
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className={`w-12 h-12 rounded-lg flex items-center justify-center text-sm font-bold ${broker.featured ? 'bg-gradient-gold text-primary-foreground' : 'bg-secondary text-foreground'}`}>
-                    {broker.name.slice(0, 2).toUpperCase()}
-                  </div>
+                  <BrokerLogo broker={broker} className="w-12 h-12 rounded-lg" />
                   <div>
                     <p className="font-semibold text-foreground">{broker.name}</p>
                     <div className="flex items-center gap-1">
                       <Star className="w-4 h-4 fill-primary text-primary" />
-                      <span className="text-sm font-medium text-foreground">{broker.rating}</span>
+                      <span className="text-sm font-medium text-foreground">{broker.rating?.toFixed(1)}</span>
                     </div>
                   </div>
                 </div>
@@ -196,8 +153,8 @@ const BrokerComparison = () => {
               </div>
 
               {broker.reviewUrl ? (
-                <Button 
-                  variant={broker.featured ? "default" : "outline"} 
+                <Button
+                  variant={broker.featured ? "default" : "outline"}
                   className="w-full gap-2"
                   asChild
                 >
@@ -206,15 +163,22 @@ const BrokerComparison = () => {
                     <ExternalLink className="w-4 h-4" />
                   </Link>
                 </Button>
-              ) : (
-                <Button 
-                  variant="outline" 
+              ) : broker.siteUrl ? (
+                <Button
+                  variant="outline"
                   className="w-full gap-2"
+                  asChild
                 >
-                  Visit Broker
-                  <ExternalLink className="w-4 h-4" />
+                  <a
+                    href={broker.siteUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Visit Broker
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
                 </Button>
-              )}
+              ) : null}
             </div>
           ))}
         </div>

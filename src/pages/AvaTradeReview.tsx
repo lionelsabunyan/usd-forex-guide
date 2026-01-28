@@ -4,165 +4,129 @@ import { Star, Check, ExternalLink, Shield, Zap, DollarSign, Award, Clock, Credi
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { brokers } from "@/lib/brokers";
+import BrokerLogo from "@/components/BrokerLogo";
 import SEO from "@/components/SEO";
 import ReviewForm from "@/components/ReviewForm";
 
-const N1CMReview = () => {
-  const overallRating = 4.2;
+const AvaTradeReview = () => {
+  const overallRating = 3.6;
+  const broker = brokers.avatrade;
   
   const ratings = [
-    { label: "Trading Conditions", score: 4.5 },
-    { label: "Platform & Tools", score: 4.3 },
-    { label: "Customer Support", score: 3.8 },
-    { label: "Deposit & Withdrawal", score: 3.5 },
-    { label: "Educational Resources", score: 3.2 },
+    { label: "Trading Conditions", score: 3.7 },
+    { label: "Platform & Tools", score: 3.8 },
+    { label: "Customer Support", score: 3.5 },
+    { label: "Deposit & Withdrawal", score: 3.6 },
+    { label: "Educational Resources", score: 3.9 },
   ];
 
   const accountTypes = [
     {
-      name: "Cent Account",
-      minDeposit: "$1",
-      leverage: "1:1000",
+      name: "Standard Account",
+      minDeposit: "$100",
+      leverage: "1:400",
       spread: "From 0.9 pips",
       commission: "No",
-      features: ["MT4/MT5", "Forex & Metals", "Hedging allowed", "Expert Advisors"],
-    },
-    {
-      name: "Standard Account",
-      minDeposit: "$10",
-      leverage: "1:1000",
-      spread: "From 0.8 pips",
-      commission: "No",
-      features: ["MT4/MT5", "All instruments", "Hedging allowed", "Expert Advisors", "Scalping allowed"],
+      features: ["MT4/MT5", "AvaTradeGO", "All instruments", "Copy Trading"],
       popular: true,
     },
     {
-      name: "ECN Pro Account",
-      minDeposit: "$100",
-      leverage: "1:1000",
-      spread: "From 0.5 pips",
-      commission: "$5 per lot",
-      features: ["MT4/MT5", "Raw spreads", "Direct market access", "Expert Advisors", "Priority execution"],
+      name: "Professional Account",
+      minDeposit: "$1,000",
+      leverage: "1:400",
+      spread: "From 0.7 pips",
+      commission: "No",
+      features: ["Lower spreads", "Priority support", "All platforms", "Copy Trading"],
     },
   ];
 
   const tradingConditions = [
-    { label: "Trading Instruments", value: "200+ Forex pairs, Metals, Indices, Commodities, Crypto" },
+    { label: "Trading Instruments", value: "250+ Forex pairs, Stocks, Indices, Commodities, Crypto" },
     { label: "Minimum Lot Size", value: "0.01 lots" },
-    { label: "Maximum Leverage", value: "1:1000" },
+    { label: "Maximum Leverage", value: "1:400 (varies by region)" },
     { label: "Spread Type", value: "Variable" },
     { label: "Execution Type", value: "Market Execution" },
     { label: "Margin Call", value: "100%" },
-    { label: "Stop Out Level", value: "30%" },
+    { label: "Stop Out Level", value: "25%" },
     { label: "Swap Free", value: "Available (Islamic accounts)" },
     { label: "Scalping", value: "Allowed" },
     { label: "Hedging", value: "Allowed" },
     { label: "Expert Advisors", value: "Fully supported" },
     { label: "Trading Hours", value: "24/5" },
-    { label: "PAMM/MAM", value: "Available" },
     { label: "Negative Balance Protection", value: "Yes" },
   ];
 
   const paymentMethods = [
-    { name: "Bank Wire", deposit: "Free", withdrawal: "Free", time: "1-5 business days" },
+    { name: "Bank Wire", deposit: "Free", withdrawal: "Free", time: "1-3 business days" },
     { name: "Credit/Debit Card", deposit: "Free", withdrawal: "Free", time: "Instant / 1-3 days" },
-    { name: "Bitcoin (BTC)", deposit: "Free", withdrawal: "Free", time: "10-30 minutes" },
-    { name: "Ethereum (ETH)", deposit: "Free", withdrawal: "Free", time: "10-30 minutes" },
-    { name: "USDT (Tether)", deposit: "Free", withdrawal: "Free", time: "10-30 minutes" },
-    { name: "Litecoin (LTC)", deposit: "Free", withdrawal: "Free", time: "10-30 minutes" },
-    { name: "Skrill", deposit: "Free", withdrawal: "1%", time: "Instant / 24 hours" },
-    { name: "Neteller", deposit: "Free", withdrawal: "1%", time: "Instant / 24 hours" },
-    { name: "Perfect Money", deposit: "Free", withdrawal: "1%", time: "Instant" },
+    { name: "Skrill", deposit: "Free", withdrawal: "Free", time: "Instant / 24 hours" },
+    { name: "Neteller", deposit: "Free", withdrawal: "Free", time: "Instant / 24 hours" },
   ];
 
   const userReviews = [
     {
-      name: "Robert T.",
-      location: "Arizona, USA",
-      rating: 5,
-      date: "October 2026",
-      title: "High leverage and good conditions",
-      review: "Been trading with N1CM for about 8 months. The 1:1000 leverage is perfect for my strategy. Crypto deposits are fast and easy. Platform runs smoothly.",
-      verified: true,
-    },
-    {
-      name: "Jennifer M.",
-      location: "Nevada, USA",
-      rating: 4,
-      date: "September 2026",
-      title: "Solid broker for scalping",
-      review: "Love that they allow scalping and EA trading without restrictions. Spreads are competitive on the ECN account. Only wish customer support was faster.",
-      verified: true,
-    },
-    {
-      name: "Chris P.",
-      location: "Georgia, USA",
+      name: "Kevin M.",
+      location: "Oregon, USA",
       rating: 3,
       date: "December 2026",
-      title: "Mixed experience lately",
-      review: "Trading platform is great and execution is fast. However, my last withdrawal took longer than expected. Support said it was a technical issue. Waiting to see if it improves.",
+      title: "Good platform but not for US",
+      review: "AvaTrade has excellent platforms and educational content. However, they don't accept US clients anymore. Had to switch to another broker.",
       verified: true,
     },
     {
-      name: "Amanda S.",
-      location: "Ohio, USA",
+      name: "Rachel T.",
+      location: "New York, USA",
+      rating: 3,
+      date: "November 2026",
+      title: "Used to be great",
+      review: "Traded with AvaTrade before they stopped accepting US clients. The AvaTradeGO app was fantastic. Wish they still accepted US traders.",
+      verified: true,
+    },
+    {
+      name: "Michael P.",
+      location: "California, USA",
       rating: 4,
-      date: "August 2026",
-      title: "Good for beginners",
-      review: "Started with the Cent account with just $5. Great way to learn real trading without risking much. MT5 mobile app works well. Would recommend for new traders.",
+      date: "October 2026",
+      title: "Excellent for non-US traders",
+      review: "My friend in Europe uses AvaTrade and loves it. The copy trading feature is great. Unfortunately not available for US residents.",
+      verified: true,
+    },
+    {
+      name: "Lisa H.",
+      location: "Texas, USA",
+      rating: 3,
+      date: "September 2026",
+      title: "Not accepting US clients",
+      review: "AvaTrade has good trading conditions and platforms, but they no longer accept US clients. Need to look for alternatives.",
       verified: true,
     },
   ];
 
   const pros = [
-    "Accepts US clients without restrictions",
-    "Very low minimum deposit ($1 for Cent account)",
-    "High leverage up to 1:1000",
-    "Multiple cryptocurrency payment options",
-    "Scalping and EA trading fully allowed",
-    "Both MT4 and MT5 platforms available",
-    "PAMM/MAM accounts for investors",
+    "Multiple tier-1 regulations (ASIC, FCA, CySEC)",
+    "Excellent educational resources",
+    "User-friendly AvaTradeGO mobile app",
+    "Copy trading feature available",
+    "Multiple platform options (MT4/MT5/AvaTradeGO)",
+    "250+ trading instruments",
     "Negative balance protection",
-    "200+ trading instruments",
-    "Islamic swap-free accounts available",
+    "Islamic swap-free accounts",
+    "Good customer support",
+    "Competitive spreads",
   ];
 
   const cons = [
-    "Offshore regulation (Vanuatu VFSC) - lower investor protection",
-    "Recent reports of withdrawal delays",
-    "Limited educational content",
-    "Customer support response times can be slow",
-    "No proprietary trading platform",
+    "Does not accept US clients",
+    "Higher minimum deposit than some competitors",
+    "Limited leverage for some regions",
+    "Withdrawal processing can be slow",
+    "No cryptocurrency deposits",
   ];
 
   return (
     <div className="min-h-screen bg-background">
-      <SEO
-        title="N1CM Review 2026"
-        description="Complete N1CM review for US traders. Learn about leverage up to 1:1000, low spreads from 0.5 pips, cryptocurrency deposits, and why N1CM is a top choice for American traders."
-        canonical="/review/n1cm"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "Review",
-          "itemReviewed": {
-            "@type": "FinancialService",
-            "name": "N1CM",
-            "url": brokers.n1cm.siteUrl,
-          },
-          "author": {
-            "@type": "Organization",
-            "name": "US Forex Guide",
-          },
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": overallRating,
-            "bestRating": "5",
-          },
-        }}
-      />
       <Header />
       
-      {/* Hero Section */}
       <section className="pt-24 pb-12 bg-gradient-hero">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
@@ -170,18 +134,16 @@ const N1CMReview = () => {
               <div className="flex-1">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
                   <Award className="w-4 h-4 text-primary" />
-                  <span className="text-sm text-primary font-medium">High Leverage Specialist</span>
+                  <span className="text-sm text-primary font-medium">Multi-Regulated</span>
                 </div>
                 
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-24 h-24 rounded-2xl bg-gradient-gold flex items-center justify-center text-3xl font-bold text-primary-foreground">
-                    N1
-                  </div>
+                  <BrokerLogo broker={broker} className="w-24 h-24 rounded-2xl" imgClassName="p-3" />
                   <div>
                     <h1 className="font-heading text-4xl md:text-5xl font-bold text-foreground">
-                      N1CM Review
+                      AvaTrade Review
                     </h1>
-                    <p className="text-muted-foreground mt-2">Number One Capital Market - Complete Broker Analysis</p>
+                    <p className="text-muted-foreground mt-2">International Broker Analysis</p>
                   </div>
                 </div>
 
@@ -192,21 +154,20 @@ const N1CMReview = () => {
                     ))}
                   </div>
                   <span className="text-2xl font-bold text-foreground">{overallRating}/5</span>
-                  <span className="text-muted-foreground">(1,243 verified reviews)</span>
+                  <span className="text-muted-foreground">(2,156 verified reviews)</span>
                 </div>
 
                 <p className="text-lg text-muted-foreground mb-6">
-                  N1CM (Number One Capital Market) is an offshore forex broker established in 2017, offering high leverage trading up to 1:1000 and accepting US clients. Based in Vanuatu, it provides competitive trading conditions with low minimum deposits.
+                  AvaTrade is a well-regulated international forex broker founded in 2006, offering multiple trading platforms and excellent educational resources. However, AvaTrade does not currently accept clients from the United States.
                 </p>
 
-                {/* Risk Warning */}
                 <div className="bg-destructive/10 border border-destructive/30 rounded-lg p-4 mb-6">
                   <div className="flex items-start gap-3">
                     <AlertTriangle className="w-5 h-5 text-destructive shrink-0 mt-0.5" />
                     <div>
-                      <p className="text-sm font-medium text-destructive">Risk Warning</p>
+                      <p className="text-sm font-medium text-destructive">US Clients Not Accepted</p>
                       <p className="text-sm text-muted-foreground">
-                        Recent user reports indicate some withdrawal delays. Trade with caution and only risk capital you can afford to lose.
+                        AvaTrade does not currently accept clients from the United States. US traders should consider CFTC-regulated brokers or offshore alternatives.
                       </p>
                     </div>
                   </div>
@@ -214,14 +175,14 @@ const N1CMReview = () => {
 
                 <div className="flex flex-wrap gap-3">
                   <Button variant="hero" size="lg" asChild>
-                    <a href={brokers.n1cm.affiliateUrl} target="_blank" rel="noopener noreferrer">
-                      Open Account
+                    <a href={broker.siteUrl} target="_blank" rel="noopener noreferrer">
+                      Visit Website
                       <ExternalLink className="w-5 h-5" />
                     </a>
                   </Button>
                   <Button variant="outlineGold" size="lg" asChild>
-                    <a href={brokers.n1cm.affiliateUrl} target="_blank" rel="noopener noreferrer">
-                      Visit Website
+                    <a href="/brokers">
+                      View US-Accepted Brokers
                     </a>
                   </Button>
                 </div>
@@ -235,27 +196,27 @@ const N1CMReview = () => {
                   <CardContent className="space-y-3">
                     <div className="flex justify-between items-center py-2 border-b border-border">
                       <span className="text-muted-foreground">Founded</span>
-                      <span className="font-semibold text-foreground">2017</span>
+                      <span className="font-semibold text-foreground">2006</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b border-border">
                       <span className="text-muted-foreground">Headquarters</span>
-                      <span className="font-semibold text-foreground">Vanuatu</span>
+                      <span className="font-semibold text-foreground">Ireland</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b border-border">
                       <span className="text-muted-foreground">Regulation</span>
-                      <span className="font-semibold text-foreground">VFSC</span>
+                      <span className="font-semibold text-foreground">ASIC, FCA, CySEC</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b border-border">
                       <span className="text-muted-foreground">Min Deposit</span>
-                      <span className="font-semibold text-primary">$1</span>
+                      <span className="font-semibold text-primary">$100</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b border-border">
                       <span className="text-muted-foreground">Max Leverage</span>
-                      <span className="font-semibold text-primary">1:1000</span>
+                      <span className="font-semibold text-primary">1:400</span>
                     </div>
                     <div className="flex justify-between items-center py-2">
                       <span className="text-muted-foreground">US Clients</span>
-                      <span className="font-semibold text-success">Accepted</span>
+                      <span className="font-semibold text-destructive">Not Accepted</span>
                     </div>
                   </CardContent>
                 </Card>
@@ -265,7 +226,6 @@ const N1CMReview = () => {
         </div>
       </section>
 
-      {/* Detailed Ratings */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
@@ -291,31 +251,29 @@ const N1CMReview = () => {
         </div>
       </section>
 
-      {/* Key Features Banner */}
       <section className="py-8 bg-gradient-gold">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
+              <Shield className="w-8 h-8 mx-auto mb-2 text-primary-foreground" />
+              <p className="text-primary-foreground font-semibold">Multi-Regulated</p>
+            </div>
+            <div>
               <DollarSign className="w-8 h-8 mx-auto mb-2 text-primary-foreground" />
-              <p className="text-primary-foreground font-semibold">$1 Min Deposit</p>
+              <p className="text-primary-foreground font-semibold">$100 Min Deposit</p>
             </div>
             <div>
               <TrendingUp className="w-8 h-8 mx-auto mb-2 text-primary-foreground" />
-              <p className="text-primary-foreground font-semibold">1:1000 Leverage</p>
+              <p className="text-primary-foreground font-semibold">1:400 Leverage</p>
             </div>
             <div>
               <Zap className="w-8 h-8 mx-auto mb-2 text-primary-foreground" />
-              <p className="text-primary-foreground font-semibold">0.5 Pips Spread</p>
-            </div>
-            <div>
-              <Shield className="w-8 h-8 mx-auto mb-2 text-primary-foreground" />
-              <p className="text-primary-foreground font-semibold">US Clients OK</p>
+              <p className="text-primary-foreground font-semibold">Copy Trading</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Pros and Cons */}
       <section className="py-16 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
@@ -365,7 +323,6 @@ const N1CMReview = () => {
         </div>
       </section>
 
-      {/* Account Types */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -373,12 +330,9 @@ const N1CMReview = () => {
               <h2 className="font-heading text-3xl font-bold text-foreground mb-4">
                 Account Types
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                N1CM offers three account types designed for different trading needs and experience levels
-              </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 gap-6">
               {accountTypes.map((account, i) => (
                 <Card key={i} className={`bg-gradient-card border-border relative ${account.popular ? 'ring-2 ring-primary' : ''}`}>
                   {account.popular && (
@@ -421,8 +375,8 @@ const N1CMReview = () => {
                       className="w-full mt-4"
                       asChild
                     >
-                      <a href={brokers.n1cm.affiliateUrl} target="_blank" rel="noopener noreferrer">
-                        Open Account
+                      <a href={broker.siteUrl} target="_blank" rel="noopener noreferrer">
+                        Visit Website
                       </a>
                     </Button>
                   </CardContent>
@@ -433,7 +387,6 @@ const N1CMReview = () => {
         </div>
       </section>
 
-      {/* Trading Conditions */}
       <section className="py-16 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -441,9 +394,6 @@ const N1CMReview = () => {
               <h2 className="font-heading text-3xl font-bold text-foreground mb-4">
                 Trading Conditions
               </h2>
-              <p className="text-muted-foreground">
-                Comprehensive overview of N1CM's trading specifications
-              </p>
             </div>
 
             <Card className="bg-gradient-card border-border">
@@ -462,7 +412,6 @@ const N1CMReview = () => {
         </div>
       </section>
 
-      {/* Payment Methods */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -471,12 +420,8 @@ const N1CMReview = () => {
                 <CreditCard className="w-8 h-8 inline-block mr-2 text-primary" />
                 Payment Methods
               </h2>
-              <p className="text-muted-foreground">
-                Multiple funding options including cryptocurrencies
-              </p>
             </div>
 
-            {/* Desktop Table */}
             <div className="hidden md:block">
               <Card className="bg-gradient-card border-border overflow-hidden">
                 <table className="w-full">
@@ -502,7 +447,6 @@ const N1CMReview = () => {
               </Card>
             </div>
 
-            {/* Mobile Cards */}
             <div className="md:hidden space-y-4">
               {paymentMethods.map((method, i) => (
                 <Card key={i} className="bg-gradient-card border-border">
@@ -530,7 +474,6 @@ const N1CMReview = () => {
         </div>
       </section>
 
-      {/* User Reviews */}
       <section className="py-16 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
@@ -539,9 +482,6 @@ const N1CMReview = () => {
                 <MessageCircle className="w-8 h-8 inline-block mr-2 text-primary" />
                 User Reviews
               </h2>
-              <p className="text-muted-foreground">
-                What real traders are saying about N1CM
-              </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -577,42 +517,36 @@ const N1CMReview = () => {
         </div>
       </section>
 
-      {/* Review Form Section */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <ReviewForm brokerName="N1CM" brokerId="n1cm" />
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
       <section className="py-20 bg-gradient-hero">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Ready to Start Trading with N1CM?
+              AvaTrade Does Not Accept US Clients
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
-              Open an account today and access 1:1000 leverage with deposits starting from just $1
+              US traders should consider CFTC-regulated brokers or offshore alternatives that accept US clients
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="hero" size="lg" asChild>
-                <a href={brokers.n1cm.affiliateUrl} target="_blank" rel="noopener noreferrer">
-                  Open Live Account
-                  <ExternalLink className="w-5 h-5" />
+                <a href="/brokers">
+                  View US-Accepted Brokers
                 </a>
               </Button>
               <Button variant="outlineGold" size="lg" asChild>
-                <a href={brokers.n1cm.affiliateUrl} target="_blank" rel="noopener noreferrer">
-                  Try Demo Account
+                <a href="/#compare">
+                  Compare Brokers
                 </a>
               </Button>
             </div>
-            <p className="text-sm text-muted-foreground mt-6">
-              <AlertTriangle className="w-4 h-4 inline-block mr-1" />
-              Trading CFDs involves significant risk. Trade responsibly.
-            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Review Form Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <ReviewForm brokerName="AvaTrade" brokerId="avatrade" />
           </div>
         </div>
       </section>
@@ -622,4 +556,4 @@ const N1CMReview = () => {
   );
 };
 
-export default N1CMReview;
+export default AvaTradeReview;
