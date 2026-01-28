@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 
 type SEOProps = {
   title: string;
@@ -23,37 +23,76 @@ const SEO = ({
   const siteUrl = "https://usforexguide.com";
   const fullCanonical = canonical ? `${siteUrl}${canonical}` : siteUrl;
 
-  return (
-    <Helmet>
-      {/* Basic Meta Tags */}
-      <title>{fullTitle}</title>
-      <meta name="description" content={description} />
-      {noindex && <meta name="robots" content="noindex, nofollow" />}
-      {!noindex && <meta name="robots" content="index, follow" />}
-      <link rel="canonical" href={fullCanonical} />
+  useEffect(() => {
+    // Update document title
+    document.title = fullTitle;
 
-      {/* Open Graph Tags */}
-      <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
-      <meta property="og:type" content={ogType} />
-      <meta property="og:url" content={fullCanonical} />
-      <meta property="og:image" content={ogImage} />
-      <meta property="og:site_name" content="US Forex Guide" />
+    // Helper function to update or create meta tag
+    const updateMetaTag = (property: string, content: string, isProperty = false) => {
+      const selector = isProperty ? `meta[property="${property}"]` : `meta[name="${property}"]`;
+      let meta = document.querySelector(selector) as HTMLMetaElement;
+      
+      if (!meta) {
+        meta = document.createElement("meta");
+        if (isProperty) {
+          meta.setAttribute("property", property);
+        } else {
+          meta.setAttribute("name", property);
+        }
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute("content", content);
+    };
 
-      {/* Twitter Card Tags */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
+    // Helper function to update or create link tag
+    const updateLinkTag = (rel: string, href: string) => {
+      let link = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement;
+      if (!link) {
+        link = document.createElement("link");
+        link.setAttribute("rel", rel);
+        document.head.appendChild(link);
+      }
+      link.setAttribute("href", href);
+    };
 
-      {/* JSON-LD Structured Data */}
-      {jsonLd && (
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLd)}
-        </script>
-      )}
-    </Helmet>
-  );
+    // Basic Meta Tags
+    updateMetaTag("description", description);
+    updateMetaTag("robots", noindex ? "noindex, nofollow" : "index, follow");
+    updateLinkTag("canonical", fullCanonical);
+
+    // Open Graph Tags
+    updateMetaTag("og:title", fullTitle, true);
+    updateMetaTag("og:description", description, true);
+    updateMetaTag("og:type", ogType, true);
+    updateMetaTag("og:url", fullCanonical, true);
+    updateMetaTag("og:image", ogImage, true);
+    updateMetaTag("og:site_name", "US Forex Guide", true);
+
+    // Twitter Card Tags
+    updateMetaTag("twitter:card", "summary_large_image");
+    updateMetaTag("twitter:title", fullTitle);
+    updateMetaTag("twitter:description", description);
+    updateMetaTag("twitter:image", ogImage);
+
+    // JSON-LD Structured Data
+    if (jsonLd) {
+      let script = document.querySelector('script[type="application/ld+json"]') as HTMLScriptElement;
+      if (!script) {
+        script = document.createElement("script");
+        script.setAttribute("type", "application/ld+json");
+        document.head.appendChild(script);
+      }
+      script.textContent = JSON.stringify(jsonLd);
+    }
+
+    // Cleanup function (optional, but good practice)
+    return () => {
+      // Cleanup can be added here if needed
+    };
+  }, [fullTitle, description, canonical, ogImage, ogType, noindex, jsonLd, fullCanonical]);
+
+  // This component doesn't render anything
+  return null;
 };
 
 export default SEO;
