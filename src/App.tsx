@@ -36,7 +36,7 @@ import GoogleAnalytics from "./components/GoogleAnalytics";
 const queryClient = new QueryClient();
 
 // Google Analytics IDs - Set these in your environment variables or replace with actual IDs
-const GA_ID = import.meta.env.VITE_GA_ID || "";
+const GA_ID = import.meta.env.VITE_GA_ID || "G-P860PCCF1T";
 const GTM_ID = import.meta.env.VITE_GTM_ID || "";
 
 const App = () => (
