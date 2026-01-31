@@ -5,15 +5,10 @@ import { Link } from "react-router-dom";
 import { Star, ExternalLink, Shield, Award, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import BrokerLogo from "@/components/BrokerLogo";
-import { reviewedBrokers, brokers as allBrokers } from "@/lib/brokers";
+import { reviewedBrokers } from "@/lib/brokers";
 
 const BrokersPage = () => {
-  // Include all brokers: reviewed ones + OANDA and IG Markets
-  const allBrokersList = [
-    ...reviewedBrokers,
-    allBrokers.oanda,
-    allBrokers.ig,
-  ].sort((a, b) => {
+  const allBrokersList = [...reviewedBrokers].sort((a, b) => {
     const ratingA = a.rating || 0;
     const ratingB = b.rating || 0;
     if (ratingB !== ratingA) {

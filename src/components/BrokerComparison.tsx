@@ -1,17 +1,12 @@
 import { Star, ExternalLink, Check, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
-import { reviewedBrokers, brokers as allBrokers } from "@/lib/brokers";
+import { reviewedBrokers } from "@/lib/brokers";
 import BrokerLogo from "./BrokerLogo";
 
 const BrokerComparison = () => {
-  // Combine reviewed brokers with non-reviewed ones for comparison
   // Sort by rating (highest first), then by name
-  const comparisonBrokers = [
-    ...reviewedBrokers,
-    allBrokers.oanda,
-    allBrokers.ig,
-  ].sort((a, b) => {
+  const comparisonBrokers = [...reviewedBrokers].sort((a, b) => {
     const ratingA = a.rating || 0;
     const ratingB = b.rating || 0;
     if (ratingB !== ratingA) {

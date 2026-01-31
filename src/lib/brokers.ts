@@ -31,7 +31,7 @@ export const brokers: Record<BrokerId, Broker> = {
     usAccepted: true,
     featured: true,
     reviewUrl: "/review/fxglory",
-    siteUrl: "https://www.fxglory.com",
+    siteUrl: env.VITE_FXGLORY_VISIT_URL || "https://fxglory.com/?ib=82027",
     affiliateUrl: env.VITE_FXGLORY_AFFILIATE_URL || "https://app.fxglory.com/auth/register?ib=82027",
     logoSrc: "/brokers/fxglory.png",
   },
