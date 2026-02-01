@@ -47,7 +47,7 @@ export const brokers: Record<BrokerId, Broker> = {
     reviewUrl: "/review/hankotrade",
     siteUrl: "https://hankotrade.com",
     affiliateUrl: "https://login.hankotrade.com/register?refLink=OTE0Mzk=&refRm=11",
-    logoSrc: "/brokers/hankotrade.png",
+    logoSrc: "/brokers/hankotrade.svg",
   },
   midasfx: {
     id: "midasfx",
