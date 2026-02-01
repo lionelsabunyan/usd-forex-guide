@@ -1,4 +1,4 @@
-export type BrokerId = "fxglory" | "n1cm" | "etoro" | "fxpro" | "oanda" | "ig" | "forexcom" | "interactivebrokers" | "avatrade";
+export type BrokerId = "fxglory" | "midasfx" | "n1cm" | "etoro" | "fxpro" | "oanda" | "ig" | "forexcom" | "interactivebrokers" | "avatrade";
 
 export type Broker = {
   id: BrokerId;
@@ -34,6 +34,20 @@ export const brokers: Record<BrokerId, Broker> = {
     siteUrl: env.VITE_FXGLORY_VISIT_URL || "https://fxglory.com/?ib=82027",
     affiliateUrl: env.VITE_FXGLORY_AFFILIATE_URL || "https://app.fxglory.com/auth/register?ib=82027",
     logoSrc: "/brokers/fxglory.png",
+  },
+  midasfx: {
+    id: "midasfx",
+    name: "MidasFX",
+    rating: 4.7,
+    minDeposit: "$10",
+    leverage: "1:1000",
+    spreads: "0.0 pips",
+    usAccepted: true,
+    featured: true,
+    reviewUrl: "/review/midasfx",
+    siteUrl: "https://www.tradersway.com/?ib=1679928",
+    affiliateUrl: "https://www.tradersway.com/?ib=1679928",
+    logoSrc: "/brokers/midasfx.png",
   },
   n1cm: {
     id: "n1cm",
@@ -136,6 +150,7 @@ export const brokers: Record<BrokerId, Broker> = {
 
 export const topBrokers = [
   brokers.fxglory,
+  brokers.midasfx,
   brokers.n1cm,
   brokers.etoro,
   brokers.fxpro,
@@ -148,6 +163,7 @@ export const topBrokers = [
 
 export const reviewedBrokers = [
   brokers.fxglory,
+  brokers.midasfx,
   brokers.n1cm,
   brokers.etoro,
   brokers.fxpro,

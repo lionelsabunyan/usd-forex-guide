@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import FXGloryReview from "./pages/FXGloryReview";
+import MidasFXReview from "./pages/MidasFXReview";
 import N1CMReview from "./pages/N1CMReview";
 import EToroReview from "./pages/EToroReview";
 import FXProReview from "./pages/FXProReview";
@@ -64,6 +65,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/review/fxglory" element={<FXGloryReview />} />
+          <Route path="/review/midasfx" element={<MidasFXReview />} />
           <Route path="/review/n1cm" element={<N1CMReview />} />
           <Route path="/review/etoro" element={<EToroReview />} />
           <Route path="/review/fxpro" element={<FXProReview />} />

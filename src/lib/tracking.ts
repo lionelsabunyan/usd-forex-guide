@@ -14,7 +14,7 @@ export interface UTMParams {
  * IB (Introducing Broker) partnerships - these are our main revenue sources
  * Track these separately for better conversion analysis
  */
-export const IB_BROKERS: BrokerId[] = ["fxglory", "n1cm"];
+export const IB_BROKERS: BrokerId[] = ["fxglory", "midasfx", "n1cm"];
 
 /**
  * Check if a broker is an IB partner
