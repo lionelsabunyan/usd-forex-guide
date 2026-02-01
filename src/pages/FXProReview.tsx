@@ -6,6 +6,7 @@ import { Star, Check, ExternalLink, Shield, Zap, DollarSign, Award, Clock, Credi
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { brokers } from "@/lib/brokers";
+import BrokerLogo from "@/components/BrokerLogo";
 
 const FXProReview = () => {
   const overallRating = 4.3;
@@ -179,9 +180,7 @@ const FXProReview = () => {
                 </div>
                 
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center text-2xl font-bold text-white">
-                    FxPro
-                  </div>
+                  <BrokerLogo broker={brokers.fxpro} className="w-24 h-24 rounded-2xl" imgClassName="p-3" />
                   <div>
                     <h1 className="font-heading text-4xl md:text-5xl font-bold text-foreground">
                       FxPro Review

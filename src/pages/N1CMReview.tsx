@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { brokers } from "@/lib/brokers";
 import { getAffiliateUrl, trackAffiliateClick, UTM_CONFIGS } from "@/lib/tracking";
+import BrokerLogo from "@/components/BrokerLogo";
 import SEO from "@/components/SEO";
 import ReviewForm from "@/components/ReviewForm";
 
@@ -175,9 +176,7 @@ const N1CMReview = () => {
                 </div>
                 
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-24 h-24 rounded-2xl bg-gradient-gold flex items-center justify-center text-3xl font-bold text-primary-foreground">
-                    N1
-                  </div>
+                  <BrokerLogo broker={brokers.n1cm} className="w-24 h-24 rounded-2xl" imgClassName="p-3" />
                   <div>
                     <h1 className="font-heading text-4xl md:text-5xl font-bold text-foreground">
                       N1CM Review

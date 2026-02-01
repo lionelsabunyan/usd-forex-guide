@@ -3,6 +3,8 @@ import Footer from "@/components/Footer";
 import { Star, Check, ExternalLink, Shield, Zap, DollarSign, Award, Clock, CreditCard, Users, TrendingUp, AlertTriangle, MessageCircle, Building2, Scale } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { brokers } from "@/lib/brokers";
+import BrokerLogo from "@/components/BrokerLogo";
 import SEO from "@/components/SEO";
 import ReviewForm from "@/components/ReviewForm";
 
@@ -166,9 +168,7 @@ const TastyfxReview = () => {
                 </div>
 
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
-                    <span className="text-white font-bold text-2xl">tfx</span>
-                  </div>
+                  <BrokerLogo broker={brokers.tastyfx} className="w-24 h-24 rounded-2xl" imgClassName="p-3" />
                   <div>
                     <h1 className="font-heading text-4xl md:text-5xl font-bold text-foreground">
                       tastyfx Review

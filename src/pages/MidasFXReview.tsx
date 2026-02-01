@@ -182,9 +182,7 @@ const MidasFXReview = () => {
                 </div>
 
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-amber-500 to-yellow-600 flex items-center justify-center">
-                    <span className="text-white font-bold text-2xl">MFX</span>
-                  </div>
+                  <BrokerLogo broker={brokers.midasfx} className="w-24 h-24 rounded-2xl" imgClassName="p-3" />
                   <div>
                     <h1 className="font-heading text-4xl md:text-5xl font-bold text-foreground">
                       MidasFX Review
