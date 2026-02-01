@@ -1,4 +1,4 @@
-export type BrokerId = "fxglory" | "midasfx" | "n1cm" | "etoro" | "fxpro" | "oanda" | "ig" | "forexcom" | "interactivebrokers" | "avatrade";
+export type BrokerId = "fxglory" | "hankotrade" | "midasfx" | "n1cm" | "etoro" | "fxpro" | "oanda" | "ig" | "forexcom" | "interactivebrokers" | "avatrade";
 
 export type Broker = {
   id: BrokerId;
@@ -35,10 +35,24 @@ export const brokers: Record<BrokerId, Broker> = {
     affiliateUrl: env.VITE_FXGLORY_AFFILIATE_URL || "https://app.fxglory.com/auth/register?ib=82027",
     logoSrc: "/brokers/fxglory.png",
   },
+  hankotrade: {
+    id: "hankotrade",
+    name: "Hankotrade",
+    rating: 4.7,
+    minDeposit: "$10",
+    leverage: "1:500",
+    spreads: "0.0 pips",
+    usAccepted: true,
+    featured: true,
+    reviewUrl: "/review/hankotrade",
+    siteUrl: "https://hankotrade.com",
+    affiliateUrl: "https://login.hankotrade.com/register?refLink=OTE0Mzk=&refRm=11",
+    logoSrc: "/brokers/hankotrade.png",
+  },
   midasfx: {
     id: "midasfx",
     name: "MidasFX",
-    rating: 4.7,
+    rating: 4.6,
     minDeposit: "$10",
     leverage: "1:1000",
     spreads: "0.0 pips",
@@ -150,6 +164,7 @@ export const brokers: Record<BrokerId, Broker> = {
 
 export const topBrokers = [
   brokers.fxglory,
+  brokers.hankotrade,
   brokers.midasfx,
   brokers.n1cm,
   brokers.etoro,
@@ -163,6 +178,7 @@ export const topBrokers = [
 
 export const reviewedBrokers = [
   brokers.fxglory,
+  brokers.hankotrade,
   brokers.midasfx,
   brokers.n1cm,
   brokers.etoro,
