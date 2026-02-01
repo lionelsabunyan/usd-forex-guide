@@ -1,4 +1,4 @@
-export type BrokerId = "fxglory" | "hankotrade" | "midasfx" | "n1cm" | "etoro" | "fxpro" | "oanda" | "ig" | "forexcom" | "interactivebrokers" | "avatrade";
+export type BrokerId = "fxglory" | "hankotrade" | "midasfx" | "n1cm" | "etoro" | "fxpro" | "oanda" | "ig" | "forexcom" | "interactivebrokers" | "avatrade" | "charlesschwab" | "tastyfx";
 
 export type Broker = {
   id: BrokerId;
@@ -160,6 +160,30 @@ export const brokers: Record<BrokerId, Broker> = {
     siteUrl: "https://www.avatrade.com",
     logoSrc: "/brokers/avatrade.svg",
   },
+  charlesschwab: {
+    id: "charlesschwab",
+    name: "Charles Schwab",
+    rating: 4.4,
+    minDeposit: "$0",
+    leverage: "1:50",
+    spreads: "Variable",
+    usAccepted: true,
+    reviewUrl: "/review/charles-schwab",
+    siteUrl: "https://www.schwab.com",
+    logoSrc: "/brokers/charlesschwab.svg",
+  },
+  tastyfx: {
+    id: "tastyfx",
+    name: "tastyfx",
+    rating: 4.5,
+    minDeposit: "$0",
+    leverage: "1:50",
+    spreads: "0.2 pips",
+    usAccepted: true,
+    reviewUrl: "/review/tastyfx",
+    siteUrl: "https://tastyfx.com",
+    logoSrc: "/brokers/tastyfx.png",
+  },
 };
 
 export const topBrokers = [
@@ -174,6 +198,7 @@ export const topBrokers = [
   brokers.forexcom,
   brokers.interactivebrokers,
   brokers.avatrade,
+  brokers.charlesschwab,
 ] as const;
 
 export const reviewedBrokers = [
@@ -188,5 +213,6 @@ export const reviewedBrokers = [
   brokers.forexcom,
   brokers.interactivebrokers,
   brokers.avatrade,
+  brokers.charlesschwab,
 ] as const;
 

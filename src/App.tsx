@@ -15,6 +15,8 @@ import InteractiveBrokersReview from "./pages/InteractiveBrokersReview";
 import AvaTradeReview from "./pages/AvaTradeReview";
 import OANDAReview from "./pages/OANDAReview";
 import IGMarketsReview from "./pages/IGMarketsReview";
+import CharlesSchwabReview from "./pages/CharlesSchwabReview";
+import TastyfxReview from "./pages/TastyfxReview";
 import FAQPage from "./pages/FAQPage";
 import GuidesPage from "./pages/GuidesPage";
 import BrokersPage from "./pages/BrokersPage";
@@ -76,6 +78,8 @@ const App = () => (
           <Route path="/review/forexcom" element={<ForexComReview />} />
           <Route path="/review/interactive-brokers" element={<InteractiveBrokersReview />} />
           <Route path="/review/avatrade" element={<AvaTradeReview />} />
+          <Route path="/review/charles-schwab" element={<CharlesSchwabReview />} />
+          <Route path="/review/tastyfx" element={<TastyfxReview />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/brokers" element={<BrokersPage />} />
           <Route path="/guides" element={<GuidesPage />} />
