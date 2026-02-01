@@ -1,0 +1,49 @@
+name: Telegram Triggered Report
+
+on:
+  repository_dispatch:
+    types: [telegram-report, telegram-daily, telegram-weekly, telegram-status]
+
+jobs:
+  handle-request:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests google-api-python-client google-auth
+
+      - name: Handle Telegram Request
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+          REQUEST_TYPE: ${{ github.event.action }}
+        run: |
+          if [ "$REQUEST_TYPE" = "telegram-daily" ]; then
+            python scripts/telegram_report.py daily
+          elif [ "$REQUEST_TYPE" = "telegram-weekly" ] || [ "$REQUEST_TYPE" = "telegram-report" ]; then
+            python scripts/telegram_report.py weekly
+          elif [ "$REQUEST_TYPE" = "telegram-status" ]; then
+            python -c "
+import requests
+import os
+token = os.getenv('TELEGRAM_BOT_TOKEN')
+chat_id = os.getenv('TELEGRAM_CHAT_ID')
+requests.post(f'https://api.telegram.org/bot{token}/sendMessage', json={
+    'chat_id': chat_id,
+    'text': '✅ Sistem aktif!\n\n• GitHub Actions: Çalışıyor\n• Raporlama: Hazır\n• Claude Code: Beklemede',
+    'parse_mode': 'Markdown'
+})
+"
+          fi
