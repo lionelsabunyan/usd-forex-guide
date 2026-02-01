@@ -86,7 +86,7 @@ export const brokers: Record<BrokerId, Broker> = {
     usAccepted: true,
     reviewUrl: "/review/etoro",
     siteUrl: "https://www.etoro.com",
-    logoSrc: "/brokers/etoro.svg",
+    logoSrc: "/brokers/etoro.png",
   },
   fxpro: {
     id: "fxpro",
@@ -170,7 +170,7 @@ export const brokers: Record<BrokerId, Broker> = {
     usAccepted: true,
     reviewUrl: "/review/charles-schwab",
     siteUrl: "https://www.schwab.com",
-    logoSrc: "/brokers/charlesschwab.svg",
+    logoSrc: "/brokers/charlesschwab.png",
   },
   tastyfx: {
     id: "tastyfx",
@@ -191,6 +191,7 @@ export const topBrokers = [
   brokers.hankotrade,
   brokers.midasfx,
   brokers.n1cm,
+  brokers.tastyfx,
   brokers.etoro,
   brokers.fxpro,
   brokers.oanda,
@@ -206,6 +207,7 @@ export const reviewedBrokers = [
   brokers.hankotrade,
   brokers.midasfx,
   brokers.n1cm,
+  brokers.tastyfx,
   brokers.etoro,
   brokers.fxpro,
   brokers.oanda,
