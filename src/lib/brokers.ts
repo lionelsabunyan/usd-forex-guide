@@ -66,7 +66,7 @@ export const brokers: Record<BrokerId, Broker> = {
   n1cm: {
     id: "n1cm",
     name: "N1CM",
-    rating: 4.6,
+    rating: 4.3,
     minDeposit: "$1",
     leverage: "1:1000",
     spreads: "0.5 pips",
@@ -79,7 +79,7 @@ export const brokers: Record<BrokerId, Broker> = {
   etoro: {
     id: "etoro",
     name: "eToro",
-    rating: 4.3,
+    rating: 4.0,
     minDeposit: "$50",
     leverage: "1:30",
     spreads: "1.0 pips",
@@ -91,7 +91,7 @@ export const brokers: Record<BrokerId, Broker> = {
   fxpro: {
     id: "fxpro",
     name: "FxPro",
-    rating: 4.1,
+    rating: 3.8,
     minDeposit: "$100",
     leverage: "1:200",
     spreads: "0.6 pips",
@@ -103,7 +103,7 @@ export const brokers: Record<BrokerId, Broker> = {
   oanda: {
     id: "oanda",
     name: "OANDA",
-    rating: 4.0,
+    rating: 3.7,
     minDeposit: "$0",
     leverage: "1:50",
     spreads: "1.0 pips",
@@ -115,7 +115,7 @@ export const brokers: Record<BrokerId, Broker> = {
   ig: {
     id: "ig",
     name: "IG Markets",
-    rating: 3.9,
+    rating: 3.6,
     minDeposit: "$250",
     leverage: "1:50",
     spreads: "0.6 pips",
@@ -127,7 +127,7 @@ export const brokers: Record<BrokerId, Broker> = {
   forexcom: {
     id: "forexcom",
     name: "Forex.com",
-    rating: 3.8,
+    rating: 3.5,
     minDeposit: "$100",
     leverage: "1:50",
     spreads: "0.8 pips",
@@ -139,7 +139,7 @@ export const brokers: Record<BrokerId, Broker> = {
   interactivebrokers: {
     id: "interactivebrokers",
     name: "Interactive Brokers",
-    rating: 3.7,
+    rating: 3.4,
     minDeposit: "$0",
     leverage: "1:50",
     spreads: "0.5 pips",
@@ -151,7 +151,7 @@ export const brokers: Record<BrokerId, Broker> = {
   avatrade: {
     id: "avatrade",
     name: "AvaTrade",
-    rating: 3.6,
+    rating: 3.3,
     minDeposit: "$100",
     leverage: "1:400",
     spreads: "0.9 pips",
@@ -163,7 +163,7 @@ export const brokers: Record<BrokerId, Broker> = {
   charlesschwab: {
     id: "charlesschwab",
     name: "Charles Schwab",
-    rating: 4.4,
+    rating: 4.1,
     minDeposit: "$0",
     leverage: "1:50",
     spreads: "Variable",
@@ -175,7 +175,7 @@ export const brokers: Record<BrokerId, Broker> = {
   tastyfx: {
     id: "tastyfx",
     name: "tastyfx",
-    rating: 4.5,
+    rating: 4.2,
     minDeposit: "$0",
     leverage: "1:50",
     spreads: "0.2 pips",
