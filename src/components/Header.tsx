@@ -2,7 +2,7 @@ import { Menu, X, ExternalLink } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { brokers } from "@/lib/brokers";
+import { getAffiliateUrl, trackAffiliateClick, UTM_CONFIGS } from "@/lib/tracking";
 import Logo from "./Logo";
 
 const Header = () => {
@@ -42,7 +42,12 @@ const Header = () => {
 
           <div className="hidden md:block">
             <Button variant="default" size="sm" asChild>
-              <a href={brokers.fxglory.affiliateUrl} target="_blank" rel="noopener noreferrer">
+              <a
+                href={getAffiliateUrl("fxglory", UTM_CONFIGS.HEADER_CTA)}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackAffiliateClick("fxglory", "header", "get_started")}
+              >
                 Get Started
                 <ExternalLink className="w-4 h-4" />
               </a>
@@ -103,7 +108,12 @@ const Header = () => {
                 Contact
               </Link>
               <Button variant="default" size="sm" className="w-fit" asChild>
-                <a href={brokers.fxglory.affiliateUrl} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={getAffiliateUrl("fxglory", UTM_CONFIGS.HEADER_CTA)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackAffiliateClick("fxglory", "header_mobile", "get_started")}
+                >
                   Get Started
                   <ExternalLink className="w-4 h-4" />
                 </a>

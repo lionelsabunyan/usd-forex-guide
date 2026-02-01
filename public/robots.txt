@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://usforexguide.com/sitemap.xml
+Sitemap: https://beginnerfxguide.com/sitemap.xml
 
 # Disallow admin or private areas if any
 # Disallow: /admin/

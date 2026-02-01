@@ -16,7 +16,7 @@ const BlogCover = ({ post, variant = "style1", className }: Props) => {
           <>
             <img
               src={post.coverImage}
-              alt={post.title}
+              alt={`Cover image for forex article: ${post.title}`}
               className="w-full h-full object-cover"
               loading="lazy"
             />
@@ -46,7 +46,7 @@ const BlogCover = ({ post, variant = "style1", className }: Props) => {
           <>
             <img
               src={post.coverImage}
-              alt={post.title}
+              alt={`Cover image for forex article: ${post.title}`}
               className="w-full h-full object-cover"
               loading="lazy"
             />
@@ -71,7 +71,7 @@ const BlogCover = ({ post, variant = "style1", className }: Props) => {
             <div className="w-2/3 relative">
               <img
                 src={post.coverImage}
-                alt={post.title}
+                alt={`Cover image for forex article: ${post.title}`}
                 className="w-full h-full object-cover"
                 loading="lazy"
               />

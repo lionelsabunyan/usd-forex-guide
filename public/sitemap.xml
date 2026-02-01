@@ -1,93 +1,160 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Pages -->
   <url>
-    <loc>https://usforexguide.com/</loc>
-    <lastmod>2026-01-28</lastmod>
+    <loc>https://beginnerfxguide.com/</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://usforexguide.com/brokers</loc>
-    <lastmod>2026-01-28</lastmod>
+    <loc>https://beginnerfxguide.com/brokers</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://usforexguide.com/guides</loc>
-    <lastmod>2026-01-28</lastmod>
+    <loc>https://beginnerfxguide.com/guides</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usforexguide.com/blog</loc>
-    <lastmod>2026-01-28</lastmod>
+    <loc>https://beginnerfxguide.com/blog</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usforexguide.com/faq</loc>
-    <lastmod>2026-01-28</lastmod>
+    <loc>https://beginnerfxguide.com/faq</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://usforexguide.com/contact</loc>
-    <lastmod>2026-01-28</lastmod>
+    <loc>https://beginnerfxguide.com/contact</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
+  <!-- Broker Reviews -->
   <url>
-    <loc>https://usforexguide.com/review/fxglory</loc>
-    <lastmod>2026-01-28</lastmod>
+    <loc>https://beginnerfxguide.com/review/fxglory</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://usforexguide.com/review/n1cm</loc>
-    <lastmod>2026-01-28</lastmod>
+    <loc>https://beginnerfxguide.com/review/n1cm</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://usforexguide.com/review/etoro</loc>
-    <lastmod>2026-01-28</lastmod>
+    <loc>https://beginnerfxguide.com/review/etoro</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usforexguide.com/review/fxpro</loc>
-    <lastmod>2026-01-28</lastmod>
+    <loc>https://beginnerfxguide.com/review/fxpro</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usforexguide.com/review/oanda</loc>
-    <lastmod>2026-01-28</lastmod>
+    <loc>https://beginnerfxguide.com/review/oanda</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usforexguide.com/review/ig-markets</loc>
-    <lastmod>2026-01-28</lastmod>
+    <loc>https://beginnerfxguide.com/review/ig-markets</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usforexguide.com/review/forexcom</loc>
-    <lastmod>2026-01-28</lastmod>
+    <loc>https://beginnerfxguide.com/review/forexcom</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usforexguide.com/review/interactive-brokers</loc>
-    <lastmod>2026-01-28</lastmod>
+    <loc>https://beginnerfxguide.com/review/interactive-brokers</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usforexguide.com/review/avatrade</loc>
-    <lastmod>2026-01-28</lastmod>
+    <loc>https://beginnerfxguide.com/review/avatrade</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Guide Pages -->
+  <url>
+    <loc>https://beginnerfxguide.com/guides/beginners-guide</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/guides/us-forex-regulations</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/guides/broker-comparison</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/guides/risk-management</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/guides/technical-analysis</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/guides/fundamental-analysis</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Legal Pages (lower priority) -->
+  <url>
+    <loc>https://beginnerfxguide.com/legal/privacy</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/legal/terms</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/legal/disclaimer</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/legal/affiliate-disclosure</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

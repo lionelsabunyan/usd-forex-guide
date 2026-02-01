@@ -2,10 +2,26 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { Newspaper, ArrowLeft, Clock, Calendar, TrendingUp, TrendingDown, AlertCircle, DollarSign, Users, BarChart3 } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const FundamentalAnalysis = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Fundamental Analysis Guide for Forex | Economic Indicators"
+        description="Learn fundamental analysis for forex trading. Understand economic indicators, central bank policies, interest rates, and how news affects currency prices."
+        canonical="/guides/fundamental-analysis"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Fundamental Analysis Guide for Forex Trading",
+          "description": "Complete guide to fundamental analysis including economic indicators, central bank policies, and news trading.",
+          "author": { "@type": "Organization", "name": "US Forex Guide" },
+          "publisher": { "@type": "Organization", "name": "US Forex Guide" },
+          "datePublished": "2024-01-15",
+          "dateModified": "2026-01-15"
+        }}
+      />
       <Header />
       
       {/* Hero Section */}

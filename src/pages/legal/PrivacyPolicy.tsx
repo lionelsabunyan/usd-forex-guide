@@ -46,7 +46,7 @@ const PrivacyPolicy = () => {
       <h2>Contact</h2>
       <p>
         If you have questions about this policy, contact us at{" "}
-        <a href="mailto:support@usforexguide.com">support@usforexguide.com</a>.
+        <a href="mailto:support@beginnerfxguide.com">support@beginnerfxguide.com</a>.
       </p>
     </LegalLayout>
   );

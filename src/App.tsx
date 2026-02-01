@@ -32,6 +32,18 @@ import BlogPage from "./pages/blog/BlogPage";
 import BlogPostPage from "./pages/blog/BlogPostPage";
 import ContactPage from "./pages/ContactPage";
 import GoogleAnalytics from "./components/GoogleAnalytics";
+import MobileStickyFooter from "./components/MobileStickyFooter";
+import ExitIntentPopup from "./components/ExitIntentPopup";
+
+// Admin Pages
+import AdminLayout from "./pages/admin/AdminLayout";
+import AdminLogin from "./pages/admin/AdminLogin";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminMessages from "./pages/admin/AdminMessages";
+import AdminSubscribers from "./pages/admin/AdminSubscribers";
+import AdminReviews from "./pages/admin/AdminReviews";
+import AdminAnalytics from "./pages/admin/AdminAnalytics";
+import AdminSettings from "./pages/admin/AdminSettings";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +59,8 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <MobileStickyFooter />
+        <ExitIntentPopup />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/review/fxglory" element={<FXGloryReview />} />
@@ -74,6 +88,18 @@ const App = () => (
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/contact" element={<ContactPage />} />
+
+          {/* Admin Routes */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<AdminDashboard />} />
+            <Route path="messages" element={<AdminMessages />} />
+            <Route path="subscribers" element={<AdminSubscribers />} />
+            <Route path="reviews" element={<AdminReviews />} />
+            <Route path="analytics" element={<AdminAnalytics />} />
+            <Route path="settings" element={<AdminSettings />} />
+          </Route>
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

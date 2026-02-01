@@ -2,10 +2,26 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { Shield, ArrowLeft, Clock, CheckCircle, AlertCircle, Ban, FileCheck } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const USForexRegulations = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="US Forex Regulations Guide | CFTC, NFA & Legal Requirements"
+        description="Complete guide to US forex regulations. Learn about CFTC, NFA requirements, legal trading options for Americans, and how to trade forex legally in the USA."
+        canonical="/guides/us-forex-regulations"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "US Forex Regulations Guide",
+          "description": "Understanding the regulatory landscape for forex trading in the United States including CFTC and NFA requirements.",
+          "author": { "@type": "Organization", "name": "US Forex Guide" },
+          "publisher": { "@type": "Organization", "name": "US Forex Guide" },
+          "datePublished": "2024-01-15",
+          "dateModified": "2026-01-15"
+        }}
+      />
       <Header />
       
       {/* Hero Section */}

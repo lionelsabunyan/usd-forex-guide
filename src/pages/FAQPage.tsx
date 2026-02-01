@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { HelpCircle, Shield, Users, CreditCard, BarChart3, Banknote } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const faqCategories = [
   {
@@ -145,8 +146,30 @@ const faqCategories = [
 ];
 
 const FAQPage = () => {
+  // Generate FAQ schema from all categories
+  const faqSchemaItems = faqCategories.flatMap(cat =>
+    cat.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  );
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Forex Trading FAQ | Common Questions Answered"
+        description="Find answers to frequently asked questions about forex trading, US regulations, broker selection, leverage, spreads, and more."
+        canonical="/faq"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqSchemaItems
+        }}
+      />
       <Header />
       
       {/* Hero Section */}

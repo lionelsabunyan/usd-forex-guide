@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { reviewStore } from "@/lib/adminStore";
 
 type ReviewFormProps = {
   brokerName: string;
@@ -39,8 +40,23 @@ const ReviewForm = ({ brokerName, brokerId }: ReviewFormProps) => {
 
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Save to local store
+      reviewStore.add({
+        brokerId,
+        brokerName,
+        authorName: formData.name,
+        authorEmail: formData.email,
+        rating: formData.rating,
+        title: formData.title,
+        review: formData.review,
+        pros: "",
+        cons: "",
+      });
+
+      // Small delay for UX
+      await new Promise((resolve) => setTimeout(resolve, 500));
+
       setIsSubmitting(false);
       toast({
         title: "Review Submitted!",
@@ -54,7 +70,14 @@ const ReviewForm = ({ brokerName, brokerId }: ReviewFormProps) => {
         review: "",
         location: "",
       });
-    }, 1000);
+    } catch (error) {
+      setIsSubmitting(false);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

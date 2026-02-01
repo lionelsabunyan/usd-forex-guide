@@ -24,7 +24,7 @@ const AffiliateDisclosure = () => {
 
       <p>
         If you have questions, email{" "}
-        <a href="mailto:support@usforexguide.com">support@usforexguide.com</a>.
+        <a href="mailto:support@beginnerfxguide.com">support@beginnerfxguide.com</a>.
       </p>
     </LegalLayout>
   );

@@ -2,10 +2,26 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { Target, ArrowLeft, Clock, CheckCircle, AlertCircle, TrendingDown, Calculator, ShieldCheck } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const RiskManagement = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Forex Risk Management Guide | Protect Your Trading Capital"
+        description="Learn essential forex risk management strategies. Position sizing, stop-loss orders, risk-reward ratios, and how to protect your trading capital."
+        canonical="/guides/risk-management"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Forex Risk Management Essentials",
+          "description": "Master risk management strategies to protect your trading capital and improve long-term profitability.",
+          "author": { "@type": "Organization", "name": "US Forex Guide" },
+          "publisher": { "@type": "Organization", "name": "US Forex Guide" },
+          "datePublished": "2024-01-15",
+          "dateModified": "2026-01-15"
+        }}
+      />
       <Header />
       
       {/* Hero Section */}

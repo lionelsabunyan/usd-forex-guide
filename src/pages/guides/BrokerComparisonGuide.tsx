@@ -2,10 +2,26 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { Scale, ArrowLeft, Clock, CheckCircle, AlertCircle, DollarSign, Headphones, Shield, Zap } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const BrokerComparisonGuide = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="How to Compare Forex Brokers | Complete Comparison Guide"
+        description="Learn how to compare forex brokers like a pro. Evaluate spreads, leverage, regulation, platforms, and find the best broker for your trading style."
+        canonical="/guides/broker-comparison"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "How to Compare Forex Brokers",
+          "description": "Complete guide to evaluating and comparing forex brokers including key factors like spreads, regulation, and trading platforms.",
+          "author": { "@type": "Organization", "name": "US Forex Guide" },
+          "publisher": { "@type": "Organization", "name": "US Forex Guide" },
+          "datePublished": "2024-01-15",
+          "dateModified": "2026-01-15"
+        }}
+      />
       <Header />
       
       {/* Hero Section */}

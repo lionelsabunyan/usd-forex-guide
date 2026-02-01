@@ -4,6 +4,7 @@ import { Star, Check, ExternalLink, Shield, Zap, DollarSign, Award, Clock, Credi
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { brokers } from "@/lib/brokers";
+import { getAffiliateUrl, trackAffiliateClick, UTM_CONFIGS } from "@/lib/tracking";
 import BrokerLogo from "@/components/BrokerLogo";
 import SEO from "@/components/SEO";
 import ReviewForm from "@/components/ReviewForm";
@@ -205,7 +206,12 @@ const FXGloryReview = () => {
 
                 <div className="flex flex-wrap gap-3">
                   <Button variant="hero" size="lg" asChild>
-                    <a href={brokers.fxglory.affiliateUrl} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={getAffiliateUrl("fxglory", UTM_CONFIGS.REVIEW_HERO)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => trackAffiliateClick("fxglory", "review_hero", "open_account")}
+                    >
                       Open Account
                       <ExternalLink className="w-5 h-5" />
                     </a>
@@ -388,7 +394,12 @@ const FXGloryReview = () => {
                       className="w-full mt-4"
                       asChild
                     >
-                      <a href={brokers.fxglory.affiliateUrl} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={getAffiliateUrl("fxglory", UTM_CONFIGS.REVIEW_ACCOUNT_TYPE)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => trackAffiliateClick("fxglory", "review_account_types", account.name)}
+                      >
                         Open Account
                       </a>
                     </Button>
@@ -543,7 +554,12 @@ const FXGloryReview = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="hero" size="lg" asChild>
-                <a href={brokers.fxglory.affiliateUrl} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={getAffiliateUrl("fxglory", UTM_CONFIGS.REVIEW_BOTTOM)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackAffiliateClick("fxglory", "review_bottom", "open_account")}
+                >
                   Open Account Now
                   <ExternalLink className="w-5 h-5" />
                 </a>

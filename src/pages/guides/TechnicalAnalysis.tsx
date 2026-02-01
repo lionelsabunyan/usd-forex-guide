@@ -2,10 +2,26 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { LineChart, ArrowLeft, Clock, TrendingUp, TrendingDown, BarChart3, Activity } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const TechnicalAnalysis = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Technical Analysis Guide for Forex | Charts, Indicators & Patterns"
+        description="Master technical analysis for forex trading. Learn chart patterns, indicators, support/resistance, and how to analyze price action like a pro."
+        canonical="/guides/technical-analysis"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Technical Analysis Guide for Forex Trading",
+          "description": "Complete guide to technical analysis including chart patterns, indicators, and price action strategies.",
+          "author": { "@type": "Organization", "name": "US Forex Guide" },
+          "publisher": { "@type": "Organization", "name": "US Forex Guide" },
+          "datePublished": "2024-01-15",
+          "dateModified": "2026-01-15"
+        }}
+      />
       <Header />
       
       {/* Hero Section */}

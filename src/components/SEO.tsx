@@ -14,13 +14,13 @@ const SEO = ({
   title,
   description,
   canonical,
-  ogImage = "https://usforexguide.com/og-image.png",
+  ogImage = "https://beginnerfxguide.com/og-image.png",
   ogType = "website",
   noindex = false,
   jsonLd,
 }: SEOProps) => {
   const fullTitle = title.includes("US Forex Guide") ? title : `${title} | US Forex Guide`;
-  const siteUrl = "https://usforexguide.com";
+  const siteUrl = "https://beginnerfxguide.com";
   const fullCanonical = canonical ? `${siteUrl}${canonical}` : siteUrl;
 
   useEffect(() => {

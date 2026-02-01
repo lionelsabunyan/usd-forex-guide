@@ -2,10 +2,32 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { BookOpen, ArrowLeft, Clock, CheckCircle, AlertCircle, TrendingUp, DollarSign } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const BeginnersGuide = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Beginner's Guide to Forex Trading | Learn Forex Basics"
+        description="Complete beginner's guide to forex trading. Learn currency pairs, market mechanics, trading terminology, and how to start trading forex as a US trader."
+        canonical="/guides/beginners-guide"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Beginner's Guide to Forex Trading",
+          "description": "Everything you need to know to start trading Forex. Learn the basics of currency pairs, market mechanics, and essential terminology.",
+          "author": {
+            "@type": "Organization",
+            "name": "US Forex Guide"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "US Forex Guide"
+          },
+          "datePublished": "2024-01-15",
+          "dateModified": "2026-01-15"
+        }}
+      />
       <Header />
       
       {/* Hero Section */}

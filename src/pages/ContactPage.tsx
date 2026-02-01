@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { contactStore } from "@/lib/adminStore";
 
 const ContactPage = () => {
   const { toast } = useToast();
@@ -24,15 +25,32 @@ const ContactPage = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Save to local store
+      contactStore.add({
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      });
+
+      // Small delay for UX
+      await new Promise((resolve) => setTimeout(resolve, 500));
+
       setIsSubmitting(false);
       toast({
         title: "Message Sent!",
         description: "Thank you for contacting us. We'll get back to you soon.",
       });
       setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 1000);
+    } catch (error) {
+      setIsSubmitting(false);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -169,8 +187,8 @@ const ContactPage = () => {
                         </div>
                         <div>
                           <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                          <a href="mailto:contact@usforexguide.com" className="text-muted-foreground hover:text-primary transition-colors">
-                            contact@usforexguide.com
+                          <a href="mailto:info@beginnerfxguide.com" className="text-muted-foreground hover:text-primary transition-colors">
+                            info@beginnerfxguide.com
                           </a>
                         </div>
                       </div>

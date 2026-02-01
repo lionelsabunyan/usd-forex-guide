@@ -4,6 +4,7 @@ import { Star, Check, ExternalLink, Shield, Zap, DollarSign, Award, Clock, Credi
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { brokers } from "@/lib/brokers";
+import { getAffiliateUrl, trackAffiliateClick, UTM_CONFIGS } from "@/lib/tracking";
 import SEO from "@/components/SEO";
 import ReviewForm from "@/components/ReviewForm";
 
@@ -214,13 +215,13 @@ const N1CMReview = () => {
 
                 <div className="flex flex-wrap gap-3">
                   <Button variant="hero" size="lg" asChild>
-                    <a href={brokers.n1cm.affiliateUrl} target="_blank" rel="noopener noreferrer">
+                    <a href={getAffiliateUrl("n1cm", UTM_CONFIGS.REVIEW_HERO)} onClick={() => trackAffiliateClick("n1cm", "review", "cta")} target="_blank" rel="noopener noreferrer">
                       Open Account
                       <ExternalLink className="w-5 h-5" />
                     </a>
                   </Button>
                   <Button variant="outlineGold" size="lg" asChild>
-                    <a href={brokers.n1cm.affiliateUrl} target="_blank" rel="noopener noreferrer">
+                    <a href={getAffiliateUrl("n1cm", UTM_CONFIGS.REVIEW_HERO)} onClick={() => trackAffiliateClick("n1cm", "review", "cta")} target="_blank" rel="noopener noreferrer">
                       Visit Website
                     </a>
                   </Button>
@@ -421,7 +422,7 @@ const N1CMReview = () => {
                       className="w-full mt-4"
                       asChild
                     >
-                      <a href={brokers.n1cm.affiliateUrl} target="_blank" rel="noopener noreferrer">
+                      <a href={getAffiliateUrl("n1cm", { ...UTM_CONFIGS.REVIEW_ACCOUNT_TYPE, content: account.name.toLowerCase().replace(/\s+/g, '_') })} onClick={() => trackAffiliateClick("n1cm", "account_types", account.name)} target="_blank" rel="noopener noreferrer">
                         Open Account
                       </a>
                     </Button>
@@ -598,13 +599,13 @@ const N1CMReview = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="hero" size="lg" asChild>
-                <a href={brokers.n1cm.affiliateUrl} target="_blank" rel="noopener noreferrer">
+                <a href={getAffiliateUrl("n1cm", UTM_CONFIGS.REVIEW_BOTTOM)} onClick={() => trackAffiliateClick("n1cm", "review_bottom", "open_account")} target="_blank" rel="noopener noreferrer">
                   Open Live Account
                   <ExternalLink className="w-5 h-5" />
                 </a>
               </Button>
               <Button variant="outlineGold" size="lg" asChild>
-                <a href={brokers.n1cm.affiliateUrl} target="_blank" rel="noopener noreferrer">
+                <a href={getAffiliateUrl("n1cm", UTM_CONFIGS.REVIEW_BOTTOM)} onClick={() => trackAffiliateClick("n1cm", "review_bottom", "demo_account")} target="_blank" rel="noopener noreferrer">
                   Try Demo Account
                 </a>
               </Button>

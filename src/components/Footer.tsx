@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
+import NewsletterSignup from "./NewsletterSignup";
 
 const Footer = () => {
   return (
     <footer className="bg-card border-t border-border py-12">
       <div className="container mx-auto px-4">
+        {/* Newsletter Section */}
+        <div className="mb-10">
+          <NewsletterSignup variant="card" />
+        </div>
+
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
@@ -14,7 +20,7 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-md">
-              Your trusted source for unbiased forex broker reviews and comparisons. 
+              Your trusted source for unbiased forex broker reviews and comparisons.
               We help American traders make informed decisions.
             </p>
           </div>

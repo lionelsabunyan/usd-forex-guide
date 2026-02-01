@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { getBlogPost } from "@/lib/blog";
 import NotFound from "../NotFound";
 import BlogCover from "@/components/BlogCover";
+import SEO from "@/components/SEO";
+
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? getBlogPost(slug) : undefined;
@@ -13,6 +15,28 @@ const BlogPostPage = () => {
   if (!post) {
     return <NotFound />;
   }
+
+  // Blog post SEO schema
+  const blogPostSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": post.excerpt,
+    "author": {
+      "@type": "Organization",
+      "name": "US Forex Guide"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "US Forex Guide"
+    },
+    "datePublished": "2026-01-15",
+    "dateModified": "2026-01-15",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://beginnerfxguide.com/blog/${slug}`
+    }
+  };
 
   // Simple markdown-like rendering
   const renderContent = (content: string) => {
@@ -148,8 +172,14 @@ const BlogPostPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={`${post.title} | US Forex Guide Blog`}
+        description={post.excerpt}
+        canonical={`/blog/${slug}`}
+        jsonLd={blogPostSchema}
+      />
       <Header />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-12 bg-gradient-hero">
         <div className="container mx-auto px-4">

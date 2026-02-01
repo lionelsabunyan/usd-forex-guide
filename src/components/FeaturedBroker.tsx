@@ -1,6 +1,7 @@
 import { Star, Check, ExternalLink, Award, Shield, Zap, DollarSign } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
+import { getAffiliateUrl, trackAffiliateClick, UTM_CONFIGS } from "@/lib/tracking";
 import { brokers } from "@/lib/brokers";
 import BrokerLogo from "@/components/BrokerLogo";
 
@@ -86,7 +87,12 @@ const FeaturedBroker = () => {
 
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button variant="default" className="flex-1" asChild>
-                    <a href={brokers.fxglory.affiliateUrl} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={getAffiliateUrl("fxglory", UTM_CONFIGS.FEATURED_BROKER)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => trackAffiliateClick("fxglory", "featured_broker", "open_account")}
+                    >
                       Open Account
                       <ExternalLink className="w-4 h-4" />
                     </a>

@@ -7,6 +7,7 @@ import BlogPreview from "@/components/BlogPreview";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import TrustSignals from "@/components/TrustSignals";
 
 const Index = () => {
   return (
@@ -19,11 +20,11 @@ const Index = () => {
           "@context": "https://schema.org",
           "@type": "WebSite",
           "name": "US Forex Guide",
-          "url": "https://usforexguide.com",
+          "url": "https://beginnerfxguide.com",
           "description": "Independent forex broker reviews and guides for US traders",
           "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://usforexguide.com/search?q={search_term_string}",
+            "target": "https://beginnerfxguide.com/search?q={search_term_string}",
             "query-input": "required name=search_term_string",
           },
         }}
@@ -31,6 +32,7 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
+        <TrustSignals />
         <FeaturedBroker />
         <BrokerComparison />
         <HowItWorks />

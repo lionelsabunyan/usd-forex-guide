@@ -36,7 +36,7 @@ const TermsOfService = () => {
       <h2>Contact</h2>
       <p>
         For questions, contact{" "}
-        <a href="mailto:support@usforexguide.com">support@usforexguide.com</a>.
+        <a href="mailto:support@beginnerfxguide.com">support@beginnerfxguide.com</a>.
       </p>
     </LegalLayout>
   );
