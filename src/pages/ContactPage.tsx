@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { contactStore } from "@/lib/adminStore";
+import { sendContactNotification } from "@/lib/emailService";
 
 const ContactPage = () => {
   const { toast } = useToast();
@@ -34,8 +35,13 @@ const ContactPage = () => {
         message: formData.message,
       });
 
-      // Small delay for UX
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      // Send email notification
+      await sendContactNotification({
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      });
 
       setIsSubmitting(false);
       toast({

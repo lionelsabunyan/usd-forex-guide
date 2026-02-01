@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { reviewStore } from "@/lib/adminStore";
+import { sendReviewNotification } from "@/lib/emailService";
 
 type ReviewFormProps = {
   brokerName: string;
@@ -54,8 +55,15 @@ const ReviewForm = ({ brokerName, brokerId }: ReviewFormProps) => {
         cons: "",
       });
 
-      // Small delay for UX
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      // Send email notification
+      await sendReviewNotification({
+        brokerName,
+        authorName: formData.name,
+        authorEmail: formData.email,
+        rating: formData.rating,
+        title: formData.title,
+        review: formData.review,
+      });
 
       setIsSubmitting(false);
       toast({
