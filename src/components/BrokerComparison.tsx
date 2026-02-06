@@ -1,36 +1,19 @@
 import { Star, ExternalLink, Check, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
-import { reviewedBrokers, BrokerId, usBrokers, intlBrokers } from "@/lib/brokers";
+import { reviewedBrokers, BrokerId, topBrokers } from "@/lib/brokers";
 import BrokerLogo from "./BrokerLogo";
 import { getAffiliateUrl, trackAffiliateClick } from "@/lib/tracking";
-import { useRegion } from "@/hooks/useRegion";
-import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 const BrokerComparison = () => {
-  const detectedRegion = useRegion();
-  const [preferredRegion] = useLocalStorage('preferred_region', null);
-
-  // Use preferred region if set, otherwise use detected region
-  const activeRegion = preferredRegion || detectedRegion;
-
-  // Filter brokers by region
-  const regionBrokers = activeRegion === 'US' ? usBrokers : intlBrokers;
-
-  // Sort by rating (highest first), then by name
-  // For international table, boost pure INTL brokers to prioritize them
-  const comparisonBrokers = [...regionBrokers].sort((a, b) => {
+  // Show all brokers sorted by rating
+  const comparisonBrokers = [...topBrokers].sort((a, b) => {
     const ratingA = a.rating || 0;
     const ratingB = b.rating || 0;
-
-    // Apply priority boost for INTL brokers in international table
-    const scoreA = activeRegion === 'INTL' && a.region === 'INTL' ? ratingA + 1.0 : ratingA;
-    const scoreB = activeRegion === 'INTL' && b.region === 'INTL' ? ratingB + 1.0 : ratingB;
-
-    if (scoreB !== scoreA) {
-      return scoreB - scoreA; // Higher score first
+    if (ratingB !== ratingA) {
+      return ratingB - ratingA; // Higher rating first
     }
-    return a.name.localeCompare(b.name); // Alphabetical if same score
+    return a.name.localeCompare(b.name); // Alphabetical if same rating
   });
 
   return (
@@ -41,30 +24,9 @@ const BrokerComparison = () => {
             Compare Top <span className="text-gradient-gold">Brokers</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Side-by-side comparison of {activeRegion === 'US' ? 'US' : 'international'} forex brokers
+            Side-by-side comparison of top forex brokers
           </p>
         </div>
-
-        {/* Region Banner */}
-        {activeRegion === 'INTL' && (
-          <div className="max-w-6xl mx-auto mb-6">
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 flex items-center justify-between">
-              <p className="text-sm text-blue-800">
-                🌍 <span className="font-medium">Showing international brokers.</span> These brokers do not accept US clients.
-              </p>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => {
-                  localStorage.setItem('preferred_region', JSON.stringify('US'));
-                  window.location.reload();
-                }}
-              >
-                View US brokers
-              </Button>
-            </div>
-          </div>
-        )}
 
         {/* Desktop Table */}
         <div className="hidden lg:block max-w-6xl mx-auto overflow-hidden rounded-2xl border border-border bg-card shadow-card">

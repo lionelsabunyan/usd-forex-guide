@@ -4,21 +4,12 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import BrokerCard from "@/components/compare/BrokerCard";
 import CompareFilters, { SortOption, BrokerTypeFilter } from "@/components/compare/CompareFilters";
-import { topBrokers, Broker, usBrokers, intlBrokers } from "@/lib/brokers";
+import { topBrokers, Broker } from "@/lib/brokers";
 import { Scale, BarChart3, Shield, Award } from "lucide-react";
-import { RegionSwitcher } from "@/components/RegionSwitcher";
-import { useRegion } from "@/hooks/useRegion";
-import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 const ComparePage = () => {
-  const detectedRegion = useRegion();
-  const [preferredRegion] = useLocalStorage('preferred_region', null);
-
-  // Use preferred region if set, otherwise use detected region
-  const activeRegion = preferredRegion || detectedRegion;
-
-  // Get region-appropriate broker list
-  const regionBrokers = activeRegion === 'US' ? usBrokers : intlBrokers;
+  // Use all brokers
+  const regionBrokers = topBrokers;
 
   // Filter states
   const [usAcceptedOnly, setUsAcceptedOnly] = useState(false);
@@ -59,12 +50,7 @@ const ComparePage = () => {
     // Apply sorting
     switch (sortBy) {
       case "rating":
-        // For international table, boost pure INTL brokers to prioritize them
-        result.sort((a, b) => {
-          const scoreA = activeRegion === 'INTL' && a.region === 'INTL' ? a.rating + 1.0 : a.rating;
-          const scoreB = activeRegion === 'INTL' && b.region === 'INTL' ? b.rating + 1.0 : b.rating;
-          return scoreB - scoreA;
-        });
+        result.sort((a, b) => b.rating - a.rating);
         break;
       case "minDeposit":
         result.sort((a, b) => a.minDeposit - b.minDeposit);
@@ -169,11 +155,6 @@ const ComparePage = () => {
       {/* Main Content */}
       <section className="py-12">
         <div className="container mx-auto px-4">
-          {/* Region Switcher */}
-          <div className="mb-8 max-w-5xl mx-auto">
-            <RegionSwitcher />
-          </div>
-
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Sidebar - Filters */}
             <aside className="lg:w-72 flex-shrink-0">
