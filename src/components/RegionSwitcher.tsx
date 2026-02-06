@@ -9,7 +9,11 @@ export function RegionSwitcher() {
   const activeRegion = preferredRegion || detectedRegion;
 
   const handleRegionChange = (region: UserRegion) => {
+    console.log('[RegionSwitcher] Changing region to:', region);
+    console.log('[RegionSwitcher] Current preferredRegion:', preferredRegion);
+    console.log('[RegionSwitcher] Current detectedRegion:', detectedRegion);
     setPreferredRegion(region);
+    console.log('[RegionSwitcher] Set preferredRegion, reloading...');
     // Force page reload to apply new region filter
     window.location.reload();
   };

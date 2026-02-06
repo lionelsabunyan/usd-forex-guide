@@ -1,4 +1,4 @@
-import { Menu, X, ArrowRight, Globe } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -48,12 +48,6 @@ const Header = () => {
               About
             </Link>
             <ThemeToggle />
-            <Button variant="ghost" size="sm" asChild className="gap-2">
-              <Link to="/tr">
-                <Globe className="w-4 h-4" />
-                TR
-              </Link>
-            </Button>
             <Button
               variant="default"
               size="sm"
@@ -107,14 +101,6 @@ const Header = () => {
                 <span className="text-foreground/70 text-sm font-medium">Theme</span>
                 <ThemeToggle />
               </div>
-              <Link
-                to="/tr"
-                className="flex items-center gap-2 text-foreground/70 hover:text-foreground transition-colors text-sm font-medium py-3"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <Globe className="w-4 h-4" />
-                Türkçe
-              </Link>
               <div className="pt-4 border-t border-border/40">
                 <Button
                   variant="default"
