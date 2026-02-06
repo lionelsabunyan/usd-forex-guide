@@ -59,7 +59,12 @@ const ComparePage = () => {
     // Apply sorting
     switch (sortBy) {
       case "rating":
-        result.sort((a, b) => b.rating - a.rating);
+        // For international table, boost pure INTL brokers to prioritize them
+        result.sort((a, b) => {
+          const scoreA = activeRegion === 'INTL' && a.region === 'INTL' ? a.rating + 1.0 : a.rating;
+          const scoreB = activeRegion === 'INTL' && b.region === 'INTL' ? b.rating + 1.0 : b.rating;
+          return scoreB - scoreA;
+        });
         break;
       case "minDeposit":
         result.sort((a, b) => a.minDeposit - b.minDeposit);

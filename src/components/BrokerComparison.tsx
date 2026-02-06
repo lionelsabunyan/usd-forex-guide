@@ -18,13 +18,19 @@ const BrokerComparison = () => {
   const regionBrokers = activeRegion === 'US' ? usBrokers : intlBrokers;
 
   // Sort by rating (highest first), then by name
+  // For international table, boost pure INTL brokers to prioritize them
   const comparisonBrokers = [...regionBrokers].sort((a, b) => {
     const ratingA = a.rating || 0;
     const ratingB = b.rating || 0;
-    if (ratingB !== ratingA) {
-      return ratingB - ratingA; // Higher rating first
+
+    // Apply priority boost for INTL brokers in international table
+    const scoreA = activeRegion === 'INTL' && a.region === 'INTL' ? ratingA + 1.0 : ratingA;
+    const scoreB = activeRegion === 'INTL' && b.region === 'INTL' ? ratingB + 1.0 : ratingB;
+
+    if (scoreB !== scoreA) {
+      return scoreB - scoreA; // Higher score first
     }
-    return a.name.localeCompare(b.name); // Alphabetical if same rating
+    return a.name.localeCompare(b.name); // Alphabetical if same score
   });
 
   return (
