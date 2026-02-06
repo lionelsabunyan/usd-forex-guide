@@ -1,8 +1,9 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { Target, ArrowLeft, Clock, CheckCircle, AlertCircle, TrendingDown, Calculator, ShieldCheck } from "lucide-react";
+import { Target, Clock, CheckCircle, AlertCircle, TrendingDown, Calculator, ShieldCheck } from "lucide-react";
 import SEO from "@/components/SEO";
+import Breadcrumb from "@/components/Breadcrumb";
 import ReadingProgressBar from "@/components/ReadingProgressBar";
 import TableOfContents from "@/components/TableOfContents";
 import QuotableFact from "@/components/QuotableFact";
@@ -76,10 +77,13 @@ const RiskManagement = () => {
       <section className="pt-24 pb-12 bg-gradient-hero relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent" />
         <div className="container mx-auto px-4 relative z-10">
-          <Link to="/guides" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary mb-6 transition-colors">
-            <ArrowLeft className="w-4 h-4" />
-            Back to Guides
-          </Link>
+          <Breadcrumb
+            items={[
+              { label: "Guides", href: "/guides" },
+              { label: "Risk Management" }
+            ]}
+            className="mb-6"
+          />
           <div className="flex items-center gap-4 mb-6">
             <div className="w-16 h-16 rounded-xl bg-gradient-gold flex items-center justify-center">
               <Target className="w-8 h-8 text-primary-foreground" />

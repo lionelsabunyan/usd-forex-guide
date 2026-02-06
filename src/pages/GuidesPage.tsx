@@ -1,18 +1,31 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
-import { 
-  BookOpen, 
-  Shield, 
-  Scale, 
-  Target, 
-  LineChart, 
+import {
+  BookOpen,
+  Shield,
+  Scale,
+  Target,
+  LineChart,
   Newspaper,
   Clock,
-  ArrowRight
+  ArrowRight,
+  Flag,
+  Star
 } from "lucide-react";
 
 const guides = [
+  {
+    id: "forex-trading-usa",
+    title: "Forex Trading in the USA: Complete Guide",
+    description: "The ultimate guide for US traders: regulations, brokers, leverage limits, taxes (Section 988 vs 1256), and how to start trading legally.",
+    icon: Flag,
+    readTime: "25 min read",
+    difficulty: "Beginner",
+    topics: ["CFTC/NFA", "US Brokers", "Offshore Options", "Forex Taxes"],
+    featured: true
+  },
   {
     id: "beginners-guide",
     title: "Beginner's Guide to Forex",
@@ -24,7 +37,7 @@ const guides = [
   },
   {
     id: "us-forex-regulations",
-    title: "Forex Trading in the US",
+    title: "US Forex Regulations",
     description: "Understand the regulatory landscape for US-based traders. Learn about CFTC, NFA requirements, and how to trade legally and safely.",
     icon: Shield,
     readTime: "12 min read",
@@ -78,6 +91,21 @@ const difficultyColors: Record<string, string> = {
 const GuidesPage = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Forex Trading Guides for Beginners | Learn to Trade"
+        description="Comprehensive forex trading guides for beginners. Learn technical analysis, risk management, US regulations, and trading strategies step by step."
+        canonical="/guides"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Forex Trading Guides",
+          "description": "Comprehensive forex trading guides for beginners and intermediate traders.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Beginner FX Guide",
+          },
+        }}
+      />
       <Header />
       
       {/* Hero Section */}
@@ -100,14 +128,22 @@ const GuidesPage = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {guides.map((guide, index) => (
-              <div 
+            {guides.map((guide: any, index) => (
+              <div
                 key={guide.id}
-                className="group bg-gradient-card border border-border rounded-2xl p-6 shadow-card hover:border-primary/50 transition-all duration-300 animate-fade-up flex flex-col"
+                className={`group bg-gradient-card border rounded-2xl p-6 shadow-card hover:border-primary/50 transition-all duration-300 animate-fade-up flex flex-col ${
+                  guide.featured ? "border-primary/30 ring-1 ring-primary/20 md:col-span-2 lg:col-span-1" : "border-border"
+                }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
+                {guide.featured && (
+                  <div className="flex items-center gap-2 mb-3">
+                    <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+                    <span className="text-xs font-medium text-yellow-600">Featured Guide</span>
+                  </div>
+                )}
                 <div className="flex items-start justify-between mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-gold flex items-center justify-center">
+                  <div className={`w-14 h-14 rounded-xl flex items-center justify-center ${guide.featured ? "bg-primary" : "bg-gradient-gold"}`}>
                     <guide.icon className="w-7 h-7 text-primary-foreground" />
                   </div>
                   <span className={`px-3 py-1 rounded-full text-xs font-medium ${difficultyColors[guide.difficulty]}`}>

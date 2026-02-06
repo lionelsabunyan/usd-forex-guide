@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep", 
+      "WebFetch",
+      "WebSearch",
+      "Task",
+      "Bash(npm run build*)",
+      "Bash(npm install*)",
+      "Bash(npx wrangler pages deploy*)",
+      "Bash(CLOUDFLARE_API_TOKEN=*)",
+      "Bash(node *)",
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(curl *)",
+      "Bash(mkdir *)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git add *)",
+      "Edit",
+      "Write"
+    ],
+    "deny": []
+  }
+}

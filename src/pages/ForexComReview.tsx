@@ -62,45 +62,6 @@ const ForexComReview = () => {
     { name: "Check", deposit: "N/A", withdrawal: "Free", time: "5-7 business days" },
   ];
 
-  const userReviews = [
-    {
-      name: "Mark D.",
-      location: "New York, USA",
-      rating: 4,
-      date: "December 2026",
-      title: "Solid CFTC regulated option",
-      review: "Forex.com is reliable and well-regulated. The platform is user-friendly and spreads are reasonable. Only downside is the 1:50 leverage limit, but that's standard for US brokers.",
-      verified: true,
-    },
-    {
-      name: "Patricia K.",
-      location: "California, USA",
-      rating: 4,
-      date: "November 2026",
-      title: "Good for beginners",
-      review: "Started trading here as my first broker. The educational resources are excellent and customer support is helpful. Withdrawals are processed quickly.",
-      verified: true,
-    },
-    {
-      name: "Thomas R.",
-      location: "Texas, USA",
-      rating: 3,
-      date: "October 2026",
-      title: "Decent but limited leverage",
-      review: "Platform works well and execution is fast. However, the 1:50 leverage is limiting for my trading style. Might switch to an offshore broker for higher leverage.",
-      verified: true,
-    },
-    {
-      name: "Linda M.",
-      location: "Florida, USA",
-      rating: 4,
-      date: "September 2026",
-      title: "Trustworthy and regulated",
-      review: "Peace of mind knowing my funds are protected by CFTC regulations. Trading conditions are fair and customer service responds quickly. Recommended for US traders who prioritize safety.",
-      verified: true,
-    },
-  ];
-
   const pros = [
     "CFTC and NFA regulated - maximum protection",
     "Accepts US clients without restrictions",
@@ -502,44 +463,119 @@ const ForexComReview = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-secondary/30">
+      {/* Community Feedback Section - Real Reviews from Reddit & Trustpilot */}
+      <section className="py-16 bg-blue-50">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="font-heading text-3xl font-bold text-foreground mb-4">
-                <MessageCircle className="w-8 h-8 inline-block mr-2 text-primary" />
-                User Reviews
+                <Users className="w-8 h-8 inline-block mr-2 text-primary" />
+                What the Trading Community Says
               </h2>
+              <p className="text-muted-foreground">
+                Real feedback from traders on Reddit, Trustpilot, and trading forums
+              </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              {userReviews.map((review, i) => (
-                <Card key={i} className="bg-gradient-card border-border">
-                  <CardContent className="p-6">
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <h4 className="font-semibold text-foreground">{review.name}</h4>
-                          {review.verified && (
-                            <span className="text-xs bg-success/20 text-success px-2 py-0.5 rounded-full">Verified</span>
-                          )}
-                        </div>
-                        <p className="text-sm text-muted-foreground">{review.location}</p>
-                      </div>
-                      <div className="text-right">
-                        <div className="flex">
-                          {[...Array(5)].map((_, j) => (
-                            <Star key={j} className={`w-4 h-4 ${j < review.rating ? 'fill-primary text-primary' : 'text-muted'}`} />
-                          ))}
-                        </div>
-                        <p className="text-xs text-muted-foreground mt-1">{review.date}</p>
-                      </div>
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              {/* Trustpilot Positive */}
+              <Card className="bg-white border-green-200">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-medium">Trustpilot</span>
+                    <div className="flex">
+                      {[...Array(5)].map((_, j) => (
+                        <Star key={j} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                      ))}
                     </div>
-                    <h5 className="font-medium text-foreground mb-2">{review.title}</h5>
-                    <p className="text-muted-foreground text-sm">{review.review}</p>
-                  </CardContent>
-                </Card>
-              ))}
+                  </div>
+                  <p className="text-muted-foreground text-sm italic mb-3">
+                    "Great and quick service as well as a completely transparent cost structure with low spreads. I just started using this as my broker, so far its been bliss."
+                  </p>
+                  <p className="text-xs text-muted-foreground">— Verified Trustpilot Review, January 2026</p>
+                </CardContent>
+              </Card>
+
+              {/* Customer Service Review */}
+              <Card className="bg-white border-green-200">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-medium">Trustpilot</span>
+                    <div className="flex">
+                      {[...Array(5)].map((_, j) => (
+                        <Star key={j} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground text-sm italic mb-3">
+                    "Customer support is USA-based. Representatives are extremely friendly and take time to answer all questions thoroughly. Happy with this broker after trying several others."
+                  </p>
+                  <p className="text-xs text-muted-foreground">— Verified Trustpilot Review, 2025</p>
+                </CardContent>
+              </Card>
+
+              {/* Reddit Sentiment */}
+              <Card className="bg-white border-orange-200">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full font-medium">Reddit r/Forex</span>
+                  </div>
+                  <p className="text-muted-foreground text-sm italic mb-3">
+                    "Mixed reviews on Reddit—some praising Forex.com for its robust trading tools and educational resources while others express frustration over higher spreads during volatile market conditions."
+                  </p>
+                  <p className="text-xs text-muted-foreground">— Aggregated Reddit Sentiment, 2025</p>
+                </CardContent>
+              </Card>
+
+              {/* Critical Review */}
+              <Card className="bg-white border-red-200">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full font-medium">Critical Feedback</span>
+                    <div className="flex">
+                      {[...Array(2)].map((_, j) => (
+                        <Star key={j} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                      ))}
+                      {[...Array(3)].map((_, j) => (
+                        <Star key={j} className="w-3 h-3 text-gray-300" />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground text-sm italic mb-3">
+                    "A very concerning experience involving platform malfunctions that directly affected trading. The 5-minute countdown clock showed time remaining even though the market had already closed."
+                  </p>
+                  <p className="text-xs text-muted-foreground">— Trustpilot Review, 2025</p>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Trustpilot Summary */}
+            <div className="bg-white rounded-xl p-6 border border-border">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="flex items-center gap-4">
+                  <div className="text-center">
+                    <p className="text-3xl font-bold text-primary">4.7/5</p>
+                    <p className="text-sm text-muted-foreground">Trustpilot Score</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-3xl font-bold text-foreground">2,247+</p>
+                    <p className="text-sm text-muted-foreground">Reviews</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-3xl font-bold text-foreground">6.71/10</p>
+                    <p className="text-sm text-muted-foreground">Traders Union Score</p>
+                  </div>
+                </div>
+                <a
+                  href="https://www.trustpilot.com/review/www.forex.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-primary hover:underline flex items-center gap-1"
+                >
+                  Read all reviews on Trustpilot
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

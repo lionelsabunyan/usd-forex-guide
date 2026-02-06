@@ -1,12 +1,24 @@
 import { Star, ExternalLink, Check, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
-import { reviewedBrokers } from "@/lib/brokers";
+import { reviewedBrokers, BrokerId, usBrokers, intlBrokers } from "@/lib/brokers";
 import BrokerLogo from "./BrokerLogo";
+import { getAffiliateUrl, trackAffiliateClick } from "@/lib/tracking";
+import { useRegion } from "@/hooks/useRegion";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 const BrokerComparison = () => {
+  const detectedRegion = useRegion();
+  const [preferredRegion] = useLocalStorage('preferred_region', null);
+
+  // Use preferred region if set, otherwise use detected region
+  const activeRegion = preferredRegion || detectedRegion;
+
+  // Filter brokers by region
+  const regionBrokers = activeRegion === 'US' ? usBrokers : intlBrokers;
+
   // Sort by rating (highest first), then by name
-  const comparisonBrokers = [...reviewedBrokers].sort((a, b) => {
+  const comparisonBrokers = [...regionBrokers].sort((a, b) => {
     const ratingA = a.rating || 0;
     const ratingB = b.rating || 0;
     if (ratingB !== ratingA) {
@@ -23,9 +35,30 @@ const BrokerComparison = () => {
             Compare Top <span className="text-gradient-gold">Brokers</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Side-by-side comparison of forex brokers accepting US clients
+            Side-by-side comparison of {activeRegion === 'US' ? 'US' : 'international'} forex brokers
           </p>
         </div>
+
+        {/* Region Banner */}
+        {activeRegion === 'INTL' && (
+          <div className="max-w-6xl mx-auto mb-6">
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 flex items-center justify-between">
+              <p className="text-sm text-blue-800">
+                🌍 <span className="font-medium">Showing international brokers.</span> These brokers do not accept US clients.
+              </p>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  localStorage.setItem('preferred_region', JSON.stringify('US'));
+                  window.location.reload();
+                }}
+              >
+                View US brokers
+              </Button>
+            </div>
+          </div>
+        )}
 
         {/* Desktop Table */}
         <div className="hidden lg:block max-w-6xl mx-auto overflow-hidden rounded-2xl border border-border bg-card shadow-card">
@@ -75,35 +108,40 @@ const BrokerComparison = () => {
                     )}
                   </td>
                   <td className="px-6 py-4 text-center">
-                    {broker.reviewUrl ? (
-                      <Button
-                        variant={broker.featured ? "default" : "outline"}
-                        size="sm"
-                        className="gap-1"
-                        asChild
-                      >
-                        <Link to={broker.reviewUrl}>
-                          Review
-                          <ExternalLink className="w-3 h-3" />
-                        </Link>
-                      </Button>
-                    ) : broker.siteUrl ? (
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="gap-1"
-                        asChild
-                      >
-                        <a
-                          href={broker.siteUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                    <div className="flex items-center justify-center gap-2">
+                      {broker.reviewUrl && (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="gap-1"
+                          asChild
                         >
-                          Visit
-                          <ExternalLink className="w-3 h-3" />
-                        </a>
-                      </Button>
-                    ) : null}
+                          <Link to={broker.reviewUrl}>
+                            Review
+                          </Link>
+                        </Button>
+                      )}
+                      {(broker.affiliateUrl || broker.siteUrl) && (
+                        <Button
+                          variant={broker.featured ? "default" : "outline"}
+                          size="sm"
+                          className="gap-1"
+                          asChild
+                        >
+                          <a
+                            href={broker.affiliateUrl
+                              ? getAffiliateUrl(broker.id as BrokerId, { source: "comparison", medium: "button", campaign: "comparison_table" })
+                              : broker.siteUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => broker.affiliateUrl && trackAffiliateClick(broker.id as BrokerId, "comparison_table", "open_account", activeRegion)}
+                          >
+                            Open Account
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
+                        </Button>
+                      )}
+                    </div>
                   </td>
                 </tr>
               ))}
@@ -114,7 +152,7 @@ const BrokerComparison = () => {
         {/* Mobile Cards */}
         <div className="lg:hidden space-y-4">
               {comparisonBrokers.map((broker) => (
-            <div 
+            <div
               key={broker.id}
               className={`rounded-xl border border-border p-4 bg-card ${broker.featured ? 'border-primary/30' : ''}`}
             >
@@ -147,35 +185,50 @@ const BrokerComparison = () => {
                 </div>
               </div>
 
-              {broker.reviewUrl ? (
-                <Button
-                  variant={broker.featured ? "default" : "outline"}
-                  className="w-full gap-2"
-                  asChild
-                >
-                  <Link to={broker.reviewUrl}>
-                    Read Review
-                    <ExternalLink className="w-4 h-4" />
-                  </Link>
-                </Button>
-              ) : broker.siteUrl ? (
-                <Button
-                  variant="outline"
-                  className="w-full gap-2"
-                  asChild
-                >
-                  <a
-                    href={broker.siteUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+              <div className="flex gap-2">
+                {broker.reviewUrl && (
+                  <Button
+                    variant="outline"
+                    className="flex-1"
+                    size="sm"
+                    asChild
                   >
-                    Visit Broker
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-                </Button>
-              ) : null}
+                    <Link to={broker.reviewUrl}>
+                      Review
+                    </Link>
+                  </Button>
+                )}
+                {(broker.affiliateUrl || broker.siteUrl) && (
+                  <Button
+                    variant={broker.featured ? "default" : "outline"}
+                    className="flex-1 gap-1"
+                    size="sm"
+                    asChild
+                  >
+                    <a
+                      href={broker.affiliateUrl
+                        ? getAffiliateUrl(broker.id as BrokerId, { source: "comparison", medium: "button", campaign: "comparison_mobile" })
+                        : broker.siteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => broker.affiliateUrl && trackAffiliateClick(broker.id as BrokerId, "comparison_mobile", "open_account", activeRegion)}
+                    >
+                      Open Account
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </Button>
+                )}
+              </div>
             </div>
           ))}
+        </div>
+
+        {/* Risk Disclaimer for comparison table */}
+        <div className="max-w-6xl mx-auto mt-6">
+          <p className="text-xs text-muted-foreground text-center leading-relaxed">
+            <span className="font-medium text-yellow-600">Risk Warning:</span> Forex and CFD trading involves substantial risk of loss and is not suitable for all investors.
+            74-89% of retail investor accounts lose money when trading CFDs. Consider whether you understand how CFDs work and whether you can afford the high risk of losing your money.
+          </p>
         </div>
       </div>
     </section>

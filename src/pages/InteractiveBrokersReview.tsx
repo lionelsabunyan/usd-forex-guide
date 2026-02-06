@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Star, Check, ExternalLink, Shield, Zap, DollarSign, Award, Clock, CreditCard, Users, TrendingUp, AlertTriangle, MessageCircle } from "lucide-react";
+import { Star, Check, ExternalLink, Shield, Zap, DollarSign, Award, Clock, CreditCard, Users, TrendingUp, AlertTriangle, MessageCircle, ThumbsUp, CheckCircle2, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { brokers } from "@/lib/brokers";
@@ -58,45 +58,6 @@ const InteractiveBrokersReview = () => {
     { name: "Bank Wire", deposit: "Free", withdrawal: "Free", time: "1-2 business days" },
     { name: "ACH Transfer", deposit: "Free", withdrawal: "Free", time: "1-2 business days" },
     { name: "Check", deposit: "N/A", withdrawal: "Free", time: "5-7 business days" },
-  ];
-
-  const userReviews = [
-    {
-      name: "David L.",
-      location: "Illinois, USA",
-      rating: 4,
-      date: "December 2026",
-      title: "Professional platform",
-      review: "Interactive Brokers has the most advanced platform I've used. The TWS is complex but powerful. Great for serious traders who need multi-asset access.",
-      verified: true,
-    },
-    {
-      name: "Susan B.",
-      location: "Massachusetts, USA",
-      rating: 3,
-      date: "November 2026",
-      title: "Steep learning curve",
-      review: "The platform is overwhelming for beginners. Commission structure is complex. Good for experienced traders but not ideal for forex-only traders.",
-      verified: true,
-    },
-    {
-      name: "Robert K.",
-      location: "Washington, USA",
-      rating: 4,
-      date: "October 2026",
-      title: "Best for multi-asset trading",
-      review: "If you trade stocks, options, and forex, IB is unbeatable. The platform integration is seamless. Forex spreads are competitive.",
-      verified: true,
-    },
-    {
-      name: "Maria G.",
-      location: "Colorado, USA",
-      rating: 3,
-      date: "September 2026",
-      title: "Too complex for forex only",
-      review: "Overkill if you only trade forex. The platform is designed for professional traders. Customer support can be slow.",
-      verified: true,
-    },
   ];
 
   const pros = [
@@ -494,44 +455,128 @@ const InteractiveBrokersReview = () => {
         </div>
       </section>
 
+      {/* Community Feedback */}
       <section className="py-16 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
+              <MessageCircle className="w-12 h-12 text-primary mx-auto mb-4" />
               <h2 className="font-heading text-3xl font-bold text-foreground mb-4">
-                <MessageCircle className="w-8 h-8 inline-block mr-2 text-primary" />
-                User Reviews
+                Community Feedback
               </h2>
+              <p className="text-muted-foreground">
+                What real traders are saying about Interactive Brokers on Trustpilot and forums
+              </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              {userReviews.map((review, i) => (
-                <Card key={i} className="bg-gradient-card border-border">
-                  <CardContent className="p-6">
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <h4 className="font-semibold text-foreground">{review.name}</h4>
-                          {review.verified && (
-                            <span className="text-xs bg-success/20 text-success px-2 py-0.5 rounded-full">Verified</span>
-                          )}
-                        </div>
-                        <p className="text-sm text-muted-foreground">{review.location}</p>
-                      </div>
-                      <div className="text-right">
-                        <div className="flex">
-                          {[...Array(5)].map((_, j) => (
-                            <Star key={j} className={`w-4 h-4 ${j < review.rating ? 'fill-primary text-primary' : 'text-muted'}`} />
-                          ))}
-                        </div>
-                        <p className="text-xs text-muted-foreground mt-1">{review.date}</p>
-                      </div>
+            {/* Trustpilot Summary */}
+            <Card className="bg-gradient-card border-border mb-8">
+              <CardContent className="p-6">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 bg-[#00b67a] rounded-xl flex items-center justify-center">
+                      <Star className="w-10 h-10 text-white fill-white" />
                     </div>
-                    <h5 className="font-medium text-foreground mb-2">{review.title}</h5>
-                    <p className="text-muted-foreground text-sm">{review.review}</p>
-                  </CardContent>
-                </Card>
-              ))}
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-3xl font-bold text-foreground">3.2</span>
+                        <span className="text-muted-foreground">/ 5</span>
+                      </div>
+                      <p className="text-sm text-muted-foreground">Based on 5,069 reviews</p>
+                      <p className="text-xs text-[#00b67a] font-medium">Trustpilot</p>
+                    </div>
+                  </div>
+                  <div className="text-center md:text-right">
+                    <p className="text-sm text-muted-foreground mb-2">Professional traders' choice</p>
+                    <div className="flex gap-1 justify-center md:justify-end">
+                      {[...Array(3)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                      ))}
+                      {[...Array(2)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 text-muted" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Community Feedback Cards */}
+            <div className="grid md:grid-cols-2 gap-6">
+              <Card className="bg-gradient-card border-border border-l-4 border-l-success">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-3 mb-3">
+                    <ThumbsUp className="w-5 h-5 text-success flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-semibold text-foreground">What Traders Love</h4>
+                      <p className="text-xs text-muted-foreground">Common positive themes from Trustpilot & Reddit</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
+                      <span>"Lowest margin rates in the industry for larger accounts"</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
+                      <span>"Access to 150+ global markets from one account"</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
+                      <span>"TWS platform is extremely powerful once you learn it"</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
+                      <span>"Excellent for algorithmic and API trading"</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-card border-border border-l-4 border-l-warning">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-3 mb-3">
+                    <AlertTriangle className="w-5 h-5 text-warning flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-semibold text-foreground">Common Concerns</h4>
+                      <p className="text-xs text-muted-foreground">Feedback to consider from reviews</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <XCircle className="w-4 h-4 text-warning flex-shrink-0 mt-0.5" />
+                      <span>"TWS has a steep learning curve for beginners"</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <XCircle className="w-4 h-4 text-warning flex-shrink-0 mt-0.5" />
+                      <span>"Customer support can be slow during peak hours"</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <XCircle className="w-4 h-4 text-warning flex-shrink-0 mt-0.5" />
+                      <span>"Interface feels dated compared to newer platforms"</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <XCircle className="w-4 h-4 text-warning flex-shrink-0 mt-0.5" />
+                      <span>"Account verification process can be lengthy"</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="mt-8 text-center">
+              <p className="text-sm text-muted-foreground mb-4">
+                Source: Trustpilot reviews as of February 2026. Ratings reflect global user feedback.
+              </p>
+              <a
+                href="https://www.trustpilot.com/review/interactivebrokers.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline text-sm inline-flex items-center gap-1"
+              >
+                View all reviews on Trustpilot
+                <ExternalLink className="w-3 h-3" />
+              </a>
             </div>
           </div>
         </div>

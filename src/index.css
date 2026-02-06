@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 @layer base {
   :root {
@@ -15,17 +15,17 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    /* Primary/Accent now follow the patriot palette for consistency across buttons/icons */
-    --primary: var(--patriot-blue);
+    /* Primary/Accent now follow finance navy palette */
+    --primary: var(--finance-navy);
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 14% 96%;
+    --secondary: 40 15% 96%;
     --secondary-foreground: 222 47% 11%;
 
-    --muted: 220 14% 96%;
+    --muted: 40 15% 96%;
     --muted-foreground: 220 9% 46%;
 
-    --accent: var(--patriot-red);
+    --accent: 220 70% 45%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -39,34 +39,82 @@
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: var(--patriot-red);
+    --ring: var(--finance-navy);
 
     --radius: 0.75rem;
 
     --chart-up: 142 76% 36%;
     --chart-down: 0 84% 60%;
 
-    /* Patriot palette (subtle US flag vibe) */
-    --patriot-blue: 220 52% 18%;
-    --patriot-red: 355 85% 52%;
+    /* Modern Finance Palette - Trust & Professionalism */
+    --finance-navy: 220 60% 20%;
+    --finance-navy-light: 220 50% 30%;
+    --finance-slate: 215 20% 65%;
+    --finance-cream: 40 20% 98%;
 
-    --gold: var(--patriot-blue);
-    --gold-glow: 220 52% 26%;
+    --gold: var(--finance-navy);
+    --gold-glow: 220 60% 28%;
 
-    --gradient-gold: linear-gradient(135deg, hsl(var(--patriot-blue)), hsl(var(--patriot-red)));
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 14% 98%));
-    --gradient-hero: linear-gradient(180deg, hsl(220 14% 98%), hsl(0 0% 100%));
+    --gradient-gold: linear-gradient(135deg, hsl(var(--finance-navy)), hsl(var(--finance-navy-light)));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(40 20% 98%));
+    --gradient-hero: linear-gradient(180deg, hsl(40 20% 98%), hsl(0 0% 100%));
 
-    --shadow-gold: 0 0 40px hsl(217 91% 60% / 0.15);
-    --shadow-card: 0 4px 20px -4px hsl(222 47% 11% / 0.08);
+    --shadow-gold: 0 0 40px hsl(220 60% 20% / 0.12);
+    --shadow-card: 0 4px 20px -4px hsl(222 47% 11% / 0.06);
 
-    --font-heading: 'Space Grotesk', sans-serif;
+    --font-heading: 'Lora', Georgia, serif;
     --font-body: 'Inter', sans-serif;
   }
 
   .dark {
     --background: 222 47% 6%;
     --foreground: 210 40% 98%;
+
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 220 70% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 222 47% 14%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 47% 14%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 220 70% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 47% 11%;
+
+    --border: 222 47% 18%;
+    --input: 222 47% 18%;
+    --ring: 220 70% 50%;
+
+    --finance-navy: 220 70% 50%;
+    --finance-navy-light: 220 60% 60%;
+    --finance-slate: 215 20% 50%;
+    --finance-cream: 222 47% 12%;
+
+    --gold: 220 70% 55%;
+    --gold-glow: 220 70% 45%;
+
+    --gradient-gold: linear-gradient(135deg, hsl(220 70% 50%), hsl(220 60% 60%));
+    --gradient-card: linear-gradient(180deg, hsl(222 47% 9%), hsl(222 47% 7%));
+    --gradient-hero: linear-gradient(180deg, hsl(222 47% 8%), hsl(222 47% 6%));
+
+    --shadow-gold: 0 0 40px hsl(220 70% 50% / 0.2);
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
   }
 }
 

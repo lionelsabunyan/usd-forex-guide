@@ -298,9 +298,9 @@ export const adminAuth = {
 
 // Analytics helpers (simulated data for demo)
 export const analyticsStore = {
-  trackEvent: (eventType: string, data: Record<string, unknown>): void => {
+  trackEvent: (_eventType: string, _data: Record<string, unknown>): void => {
     // In production, send to analytics service
-    console.log("Analytics Event:", eventType, data);
+    // Events are silently tracked - no console output in production
   },
 
   getOverview: () => {

@@ -1,0 +1,55 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bgGrad)" />
+
+  <!-- Decorative circles -->
+  <circle cx="1000" cy="150" r="200" fill="#10b981" opacity="0.1" />
+  <circle cx="200" cy="500" r="150" fill="#34d399" opacity="0.08" />
+
+  <!-- Grid pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.3" opacity="0.1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)" />
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="1200" height="6" fill="url(#accentGrad)" />
+
+  <!-- Category badge -->
+  <rect x="60" y="60" width="180" height="36" rx="18" fill="url(#accentGrad)" />
+  <text x="150" y="84" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="white" text-anchor="middle">GETTING STARTED</text>
+
+  <!-- Icon -->
+  <g transform="translate(60, 150)">
+    <circle cx="50" cy="50" r="50" fill="white" opacity="0.15"/>
+    <text x="50" y="65" font-family="Arial, sans-serif" font-size="48" text-anchor="middle">🚀</text>
+  </g>
+
+  <!-- Title placeholder area -->
+  <rect x="60" y="280" width="800" height="80" rx="8" fill="white" opacity="0.1"/>
+  <text x="80" y="330" font-family="Arial, sans-serif" font-size="14" fill="white" opacity="0.6">[BLOG TITLE HERE]</text>
+
+  <!-- Subtitle placeholder -->
+  <rect x="60" y="380" width="600" height="40" rx="4" fill="white" opacity="0.05"/>
+
+  <!-- Brand footer -->
+  <g transform="translate(60, 540)">
+    <circle cx="20" cy="20" r="20" fill="#10b981"/>
+    <text x="20" y="26" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">FX</text>
+    <text x="55" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="white">Beginner FX Guide</text>
+    <text x="55" y="45" font-family="Arial, sans-serif" font-size="12" fill="white" opacity="0.7">beginnerfxguide.com</text>
+  </g>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="624" width="1200" height="6" fill="url(#accentGrad)" />
+</svg>

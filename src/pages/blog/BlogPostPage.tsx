@@ -12,6 +12,7 @@ import ReadingProgressBar from "@/components/ReadingProgressBar";
 import SocialShare from "@/components/SocialShare";
 import RelatedPosts from "@/components/RelatedPosts";
 import NewsletterCTA from "@/components/NewsletterCTA";
+import LeadMagnetBanner from "@/components/LeadMagnetBanner";
 
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -126,12 +127,12 @@ const BlogPostPage = () => {
     lines.forEach((line, idx) => {
       const trimmed = line.trim();
 
-      // Insert newsletter CTA at ~50% of content
+      // Insert lead magnet CTA at ~50% of content
       if (!newsletterInserted && idx > totalLines * 0.5) {
         flushParagraph();
         flushList();
         elements.push(
-          <NewsletterCTA key="newsletter-mid" variant="inline" />
+          <LeadMagnetBanner key="leadmagnet-mid" variant="inline" />
         );
         newsletterInserted = true;
       }
@@ -260,8 +261,8 @@ const BlogPostPage = () => {
                 <SocialShare url={`/blog/${slug}`} title={post.title} />
               </div>
 
-              {/* Newsletter CTA at End */}
-              <NewsletterCTA variant="card" />
+              {/* Lead Magnet CTA at End */}
+              <LeadMagnetBanner variant="card" />
 
               {/* Related Posts */}
               <RelatedPosts currentSlug={slug || ""} />

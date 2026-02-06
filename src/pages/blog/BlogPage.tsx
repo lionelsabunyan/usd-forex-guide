@@ -11,9 +11,16 @@ import { useState } from "react";
 const BlogPage = () => {
   const [selectedCategory, setSelectedCategory] = useState<BlogCategory | "all">("all");
 
+  // Sort by date (newest first) and filter by category
+  const sortedPosts = [...blogPosts].sort((a, b) => {
+    const dateA = new Date(a.date).getTime();
+    const dateB = new Date(b.date).getTime();
+    return dateB - dateA;
+  });
+
   const filteredPosts = selectedCategory === "all"
-    ? blogPosts
-    : blogPosts.filter(post => post.category === selectedCategory);
+    ? sortedPosts
+    : sortedPosts.filter(post => post.category === selectedCategory);
 
   return (
     <div className="min-h-screen bg-background">

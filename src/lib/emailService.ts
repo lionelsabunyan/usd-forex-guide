@@ -8,6 +8,7 @@ const EMAILJS_PUBLIC_KEY = '6_XN-2IB_gK754TNe';
 const TEMPLATES = {
   CONTACT: 'template_spjf2wq',
   REVIEW: 'template_v7s9u2c',
+  LEAD_MAGNET: 'template_leadmagnet', // TODO: Create this template in EmailJS dashboard
 };
 
 // Initialize EmailJS
@@ -29,10 +30,9 @@ export const sendContactNotification = async (data: {
       subject: data.subject,
       message: data.message,
     });
-    console.log('Contact email sent successfully');
     return true;
   } catch (error) {
-    console.error('Failed to send contact email:', error);
+    // Email sending failed - error handled by caller
     return false;
   }
 };
@@ -57,10 +57,28 @@ export const sendReviewNotification = async (data: {
       title: data.title,
       review: data.review,
     });
-    console.log('Review email sent successfully');
     return true;
   } catch (error) {
-    console.error('Failed to send review email:', error);
+    // Email sending failed - error handled by caller
+    return false;
+  }
+};
+
+/**
+ * Send lead magnet (US Forex Checklist) delivery email
+ */
+export const sendLeadMagnetEmail = async (data: {
+  email: string;
+  downloadLink?: string;
+}): Promise<boolean> => {
+  try {
+    await emailjs.send(EMAILJS_SERVICE_ID, TEMPLATES.LEAD_MAGNET, {
+      to_email: data.email,
+      download_link: data.downloadLink || 'https://beginnerfxguide.com/downloads/US-Forex-Checklist.pdf',
+    });
+    return true;
+  } catch (error) {
+    // Email sending failed - error handled by caller
     return false;
   }
 };

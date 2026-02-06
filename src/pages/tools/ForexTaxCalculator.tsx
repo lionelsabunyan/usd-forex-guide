@@ -1,0 +1,485 @@
+import { useState, useMemo } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { DollarSign, Info, Scale, FileText, AlertTriangle } from "lucide-react";
+import SEO from "@/components/SEO";
+import Breadcrumb from "@/components/Breadcrumb";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import FAQSection from "@/components/FAQSection";
+import NewsletterCTA from "@/components/NewsletterCTA";
+import { Link } from "react-router-dom";
+
+const taxBrackets2026 = [
+  { min: 0, max: 11600, rate: 0.10 },
+  { min: 11600, max: 47150, rate: 0.12 },
+  { min: 47150, max: 100525, rate: 0.22 },
+  { min: 100525, max: 191950, rate: 0.24 },
+  { min: 191950, max: 243725, rate: 0.32 },
+  { min: 243725, max: 609350, rate: 0.35 },
+  { min: 609350, max: Infinity, rate: 0.37 },
+];
+
+const faqs = [
+  {
+    question: "What is Section 988 for forex traders?",
+    answer: "Section 988 is the default tax treatment for retail forex traders in the US. Under this section, forex gains and losses are treated as ordinary income/loss. This means profits are taxed at your regular income tax rate (up to 37%), but you can also deduct unlimited losses against ordinary income."
+  },
+  {
+    question: "What is Section 1256 for forex trading?",
+    answer: "Section 1256 provides a special 60/40 tax treatment: 60% of gains are taxed as long-term capital gains (max 20%) and 40% as short-term (your ordinary rate). To use Section 1256, you must trade forex futures or options, or make an election to opt out of Section 988 for spot forex."
+  },
+  {
+    question: "How do I elect out of Section 988?",
+    answer: "To opt out of Section 988, you must make an internal election before you start trading for the year. Keep a written record with the date of election, attached to your records. Note: you cannot elect out of 988 after year-end to cherry-pick favorable treatment."
+  },
+  {
+    question: "Which section is better for forex taxes?",
+    answer: "It depends on your situation. Section 1256 is usually better for profitable traders due to the lower 60/40 rate. Section 988 may be better if you have losses (unlimited ordinary loss deduction) or if you're in a lower tax bracket. Use our calculator to compare both scenarios."
+  },
+  {
+    question: "Can I deduct forex losses on my taxes?",
+    answer: "Yes! Under Section 988, forex losses are ordinary losses with no limit on deduction against other income. Under Section 1256, losses are capital losses limited to $3,000/year against ordinary income, but can carry forward. Losses can also offset Section 1256 gains from prior 3 years."
+  },
+  {
+    question: "Do I need to report every forex trade?",
+    answer: "You must report your net forex gains or losses for the year. While you don't need to report each trade individually on your return, you should keep detailed records of all trades. Your broker may provide a 1099-B, but many forex brokers do not, so track your own P&L."
+  }
+];
+
+const ForexTaxCalculator = () => {
+  const [forexProfit, setForexProfit] = useState("10000");
+  const [otherIncome, setOtherIncome] = useState("75000");
+  const [filingStatus, setFilingStatus] = useState<"single" | "married">("single");
+  const [hasLosses, setHasLosses] = useState(false);
+
+  const calculation = useMemo(() => {
+    const profit = parseFloat(forexProfit) || 0;
+    const income = parseFloat(otherIncome) || 0;
+    const isLoss = profit < 0;
+    const absProfit = Math.abs(profit);
+
+    // Married filing jointly doubles the brackets
+    const brackets = filingStatus === "married"
+      ? taxBrackets2026.map(b => ({ ...b, min: b.min * 2, max: b.max === Infinity ? Infinity : b.max * 2 }))
+      : taxBrackets2026;
+
+    // Calculate marginal tax rate for the total income
+    const getMarginalRate = (totalIncome: number) => {
+      for (const bracket of [...brackets].reverse()) {
+        if (totalIncome > bracket.min) {
+          return bracket.rate;
+        }
+      }
+      return brackets[0].rate;
+    };
+
+    // Calculate total tax for given income
+    const calculateTax = (totalIncome: number) => {
+      let tax = 0;
+      let remaining = totalIncome;
+      for (const bracket of brackets) {
+        if (remaining <= 0) break;
+        const taxableInBracket = Math.min(remaining, bracket.max - bracket.min);
+        tax += taxableInBracket * bracket.rate;
+        remaining -= taxableInBracket;
+      }
+      return tax;
+    };
+
+    // Section 988: All ordinary income
+    const section988TotalIncome = income + profit;
+    const section988Tax = isLoss
+      ? calculateTax(Math.max(0, section988TotalIncome))
+      : calculateTax(section988TotalIncome);
+    const section988ForexTax = isLoss
+      ? -(calculateTax(income) - section988Tax)
+      : section988Tax - calculateTax(income);
+    const section988EffectiveRate = absProfit > 0 ? (Math.abs(section988ForexTax) / absProfit) * 100 : 0;
+
+    // Section 1256: 60% long-term (15% for most), 40% short-term (ordinary)
+    const longTermRate = income + (absProfit * 0.4) > 47150 * (filingStatus === "married" ? 2 : 1) ? 0.15 : 0;
+    const shortTermRate = getMarginalRate(income + (absProfit * 0.4));
+
+    const section1256LongTermTax = absProfit * 0.6 * longTermRate;
+    const section1256ShortTermTax = absProfit * 0.4 * shortTermRate;
+    const section1256ForexTax = isLoss
+      ? -Math.min(absProfit, 3000) * getMarginalRate(income) // Capital loss limit
+      : section1256LongTermTax + section1256ShortTermTax;
+    const section1256EffectiveRate = absProfit > 0 ? (Math.abs(section1256ForexTax) / absProfit) * 100 : 0;
+
+    // Calculate savings
+    const savings = section988ForexTax - section1256ForexTax;
+    const betterOption = isLoss
+      ? (section988ForexTax < section1256ForexTax ? "Section 988" : "Section 1256")
+      : (savings > 0 ? "Section 1256" : "Section 988");
+
+    return {
+      profit,
+      isLoss,
+      section988: {
+        totalTax: section988ForexTax,
+        effectiveRate: section988EffectiveRate,
+        marginalRate: getMarginalRate(section988TotalIncome) * 100,
+      },
+      section1256: {
+        totalTax: section1256ForexTax,
+        effectiveRate: section1256EffectiveRate,
+        longTermPortion: absProfit * 0.6,
+        shortTermPortion: absProfit * 0.4,
+        longTermRate: longTermRate * 100,
+        shortTermRate: shortTermRate * 100,
+      },
+      savings: Math.abs(savings),
+      betterOption,
+      marginalRate: getMarginalRate(income) * 100,
+    };
+  }, [forexProfit, otherIncome, filingStatus]);
+
+  const formatCurrency = (value: number) => {
+    const formatted = Math.abs(value).toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    });
+    return value < 0 ? `-${formatted}` : formatted;
+  };
+
+  return (
+    <div className="min-h-screen bg-background">
+      <SEO
+        title="Forex Tax Calculator USA 2026 - Section 988 vs 1256"
+        description="Free forex tax calculator for US traders. Compare Section 988 vs Section 1256 tax treatment. Estimate your forex trading taxes and find the best option."
+        canonical="/tools/forex-tax-calculator"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "Forex Tax Calculator",
+          "description": "Calculate and compare forex trading taxes under Section 988 and Section 1256",
+          "applicationCategory": "FinanceApplication",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "operatingSystem": "Any"
+        }}
+      />
+      <Header />
+
+      {/* Hero */}
+      <section className="pt-24 pb-8 bg-gradient-hero relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent" />
+        <div className="container mx-auto px-4 relative z-10">
+          <Breadcrumb
+            items={[
+              { label: "Tools", href: "/tools" },
+              { label: "Forex Tax Calculator" },
+            ]}
+          />
+          <div className="max-w-3xl mt-4">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center">
+                <DollarSign className="w-6 h-6 text-red-600" />
+              </div>
+              <span className="px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700">
+                US Traders Only
+              </span>
+            </div>
+            <h1 className="text-3xl md:text-4xl font-heading font-bold mb-3">
+              Forex Tax <span className="text-gradient-gold">Calculator</span>
+            </h1>
+            <p className="text-muted-foreground">
+              Compare Section 988 vs Section 1256 tax treatment for your forex trading profits.
+              Find the best option based on your income and trading results.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Calculator */}
+      <section className="py-8">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-8">
+              {/* Input Panel */}
+              <div className="bg-card border border-border rounded-2xl p-6">
+                <h2 className="text-lg font-semibold mb-6 flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-primary" />
+                  Your Tax Information
+                </h2>
+
+                <div className="space-y-5">
+                  {/* Filing Status */}
+                  <div>
+                    <Label className="text-sm font-medium mb-2 block">Filing Status</Label>
+                    <div className="flex gap-3">
+                      <Button
+                        variant={filingStatus === "single" ? "default" : "outline"}
+                        className="flex-1"
+                        onClick={() => setFilingStatus("single")}
+                      >
+                        Single
+                      </Button>
+                      <Button
+                        variant={filingStatus === "married" ? "default" : "outline"}
+                        className="flex-1"
+                        onClick={() => setFilingStatus("married")}
+                      >
+                        Married Filing Jointly
+                      </Button>
+                    </div>
+                  </div>
+
+                  {/* Other Income */}
+                  <div>
+                    <Label htmlFor="otherIncome" className="text-sm font-medium mb-2 block">
+                      Other Annual Income (W-2, 1099, etc.)
+                    </Label>
+                    <div className="relative">
+                      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">$</span>
+                      <Input
+                        id="otherIncome"
+                        type="number"
+                        value={otherIncome}
+                        onChange={(e) => setOtherIncome(e.target.value)}
+                        className="pl-8"
+                        placeholder="75000"
+                      />
+                    </div>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      Your taxable income before forex gains/losses
+                    </p>
+                  </div>
+
+                  {/* Forex Profit/Loss */}
+                  <div>
+                    <Label htmlFor="forexProfit" className="text-sm font-medium mb-2 block">
+                      Forex Net Profit/Loss (2026)
+                    </Label>
+                    <div className="relative">
+                      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">$</span>
+                      <Input
+                        id="forexProfit"
+                        type="number"
+                        value={forexProfit}
+                        onChange={(e) => setForexProfit(e.target.value)}
+                        className="pl-8"
+                        placeholder="10000"
+                      />
+                    </div>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      Enter negative number for losses (e.g., -5000)
+                    </p>
+                  </div>
+
+                  {/* Info Box */}
+                  <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mt-4">
+                    <div className="flex gap-3">
+                      <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                      <div className="text-sm text-amber-800">
+                        <p className="font-medium mb-1">Disclaimer</p>
+                        <p>This calculator provides estimates only. Consult a tax professional for advice specific to your situation. Tax laws change frequently.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Results Panel */}
+              <div className="space-y-4">
+                {/* Best Option Banner */}
+                <div className={`rounded-2xl p-6 ${
+                  calculation.betterOption === "Section 1256"
+                    ? "bg-gradient-to-br from-green-500 to-emerald-600"
+                    : "bg-gradient-to-br from-blue-500 to-indigo-600"
+                } text-white`}>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm opacity-90">Recommended Option</span>
+                    <Scale className="w-5 h-5 opacity-80" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-1">{calculation.betterOption}</h3>
+                  <p className="text-sm opacity-90">
+                    {calculation.isLoss
+                      ? `Save ${formatCurrency(calculation.savings)} in tax deductions`
+                      : `Save ${formatCurrency(calculation.savings)} in taxes`}
+                  </p>
+                </div>
+
+                {/* Section 988 */}
+                <div className="bg-card border border-border rounded-2xl p-5">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="font-semibold">Section 988</h3>
+                    <span className="text-xs px-2 py-1 bg-muted rounded">Default</span>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground text-sm">Tax Treatment</span>
+                      <span className="text-sm font-medium">100% Ordinary Income</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground text-sm">Marginal Rate</span>
+                      <span className="text-sm font-medium">{calculation.section988.marginalRate.toFixed(0)}%</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground text-sm">Effective Rate on Forex</span>
+                      <span className="text-sm font-medium">{calculation.section988.effectiveRate.toFixed(1)}%</span>
+                    </div>
+                    <div className="border-t border-border pt-3 flex justify-between">
+                      <span className="font-medium">{calculation.isLoss ? "Tax Savings" : "Tax Owed"}</span>
+                      <span className={`font-bold text-lg ${calculation.isLoss ? "text-green-600" : "text-red-600"}`}>
+                        {formatCurrency(Math.abs(calculation.section988.totalTax))}
+                      </span>
+                    </div>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-3">
+                    {calculation.isLoss
+                      ? "Full loss deduction against ordinary income (no limit)"
+                      : "Taxed at your ordinary income tax rate"}
+                  </p>
+                </div>
+
+                {/* Section 1256 */}
+                <div className="bg-card border border-border rounded-2xl p-5">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="font-semibold">Section 1256</h3>
+                    <span className="text-xs px-2 py-1 bg-green-100 text-green-700 rounded">60/40 Rule</span>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground text-sm">Long-Term (60%)</span>
+                      <span className="text-sm font-medium">
+                        {formatCurrency(calculation.section1256.longTermPortion)} @ {calculation.section1256.longTermRate.toFixed(0)}%
+                      </span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground text-sm">Short-Term (40%)</span>
+                      <span className="text-sm font-medium">
+                        {formatCurrency(calculation.section1256.shortTermPortion)} @ {calculation.section1256.shortTermRate.toFixed(0)}%
+                      </span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground text-sm">Effective Rate on Forex</span>
+                      <span className="text-sm font-medium">{calculation.section1256.effectiveRate.toFixed(1)}%</span>
+                    </div>
+                    <div className="border-t border-border pt-3 flex justify-between">
+                      <span className="font-medium">{calculation.isLoss ? "Tax Savings" : "Tax Owed"}</span>
+                      <span className={`font-bold text-lg ${calculation.isLoss ? "text-green-600" : "text-red-600"}`}>
+                        {formatCurrency(Math.abs(calculation.section1256.totalTax))}
+                      </span>
+                    </div>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-3">
+                    {calculation.isLoss
+                      ? "Capital loss limit: $3,000/year (can carry forward)"
+                      : "60% taxed as long-term capital gains (lower rate)"}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Educational Content */}
+            <div className="mt-12 bg-card border border-border rounded-2xl p-6">
+              <h2 className="text-xl font-semibold mb-6">Understanding Forex Taxes in the USA</h2>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="font-semibold mb-3 flex items-center gap-2">
+                    <div className="w-6 h-6 rounded bg-blue-100 flex items-center justify-center text-blue-600 text-sm font-bold">1</div>
+                    Section 988 (Default)
+                  </h3>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Default treatment for spot forex retail traders</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Gains taxed as ordinary income (up to 37%)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Unlimited loss deduction against other income</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Best for: Traders with losses or low income</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="font-semibold mb-3 flex items-center gap-2">
+                    <div className="w-6 h-6 rounded bg-green-100 flex items-center justify-center text-green-600 text-sm font-bold">2</div>
+                    Section 1256 (Election Required)
+                  </h3>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Must elect OUT of Section 988 before trading</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>60% long-term gains (15-20%), 40% short-term</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>$3,000/year capital loss limit (carry forward)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Best for: Profitable traders in higher brackets</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mt-6 p-4 bg-muted/50 rounded-lg">
+                <h4 className="font-medium mb-2">How to Elect Section 1256</h4>
+                <ol className="text-sm text-muted-foreground space-y-1 list-decimal list-inside">
+                  <li>Create written record of your election before your first trade of the year</li>
+                  <li>Include: Your name, date of election, statement electing out of Section 988</li>
+                  <li>Attach this record to your tax documents (do not file with IRS)</li>
+                  <li>Keep records of all trades to support your election</li>
+                </ol>
+              </div>
+            </div>
+
+            {/* Related Tools */}
+            <div className="mt-8 grid md:grid-cols-2 gap-4">
+              <Link
+                to="/tools/pip-calculator"
+                className="bg-card border border-border rounded-xl p-4 hover:border-primary/50 transition-colors"
+              >
+                <h3 className="font-medium mb-1">Pip Calculator →</h3>
+                <p className="text-sm text-muted-foreground">Calculate pip value for any forex pair</p>
+              </Link>
+              <Link
+                to="/tools/position-size-calculator"
+                className="bg-card border border-border rounded-xl p-4 hover:border-primary/50 transition-colors"
+              >
+                <h3 className="font-medium mb-1">Position Size Calculator →</h3>
+                <p className="text-sm text-muted-foreground">Calculate proper position size based on risk</p>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-12 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <FAQSection
+              title="Forex Tax FAQ"
+              faqs={faqs}
+            />
+          </div>
+        </div>
+      </section>
+
+      <NewsletterCTA />
+      <Footer />
+    </div>
+  );
+};
+
+export default ForexTaxCalculator;

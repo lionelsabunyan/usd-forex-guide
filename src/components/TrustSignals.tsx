@@ -1,9 +1,9 @@
-import { Shield, Users, Star, Clock, Award, TrendingUp } from "lucide-react";
+import { Shield, FileText, RefreshCw, Award, TrendingUp, CheckCircle, Scale, Eye } from "lucide-react";
 
 /**
  * Trust Signals Component
- * Displays social proof and trust indicators to increase conversions
- * Expected conversion increase: 10-20%
+ * Displays honest, verifiable trust indicators
+ * Hybrid approach: Numbers (verifiable) + Checkmarks (methodology promises)
  */
 
 interface TrustSignalsProps {
@@ -11,41 +11,44 @@ interface TrustSignalsProps {
   showStats?: boolean;
 }
 
+// Only verifiable, honest statistics
 const stats = [
   {
-    icon: Users,
-    value: "50,000+",
-    label: "Active Traders",
+    icon: Award,
+    value: "25+",
+    label: "Brokers Reviewed",
     color: "text-blue-600",
     bgColor: "bg-blue-100",
   },
   {
-    icon: Star,
-    value: "4.8/5",
-    label: "User Rating",
-    color: "text-yellow-600",
-    bgColor: "bg-yellow-100",
-  },
-  {
-    icon: Clock,
-    value: "5+ Years",
-    label: "Industry Experience",
+    icon: FileText,
+    value: "50+",
+    label: "Trading Guides",
     color: "text-green-600",
     bgColor: "bg-green-100",
   },
   {
-    icon: Award,
-    value: "100+",
-    label: "Broker Reviews",
+    icon: RefreshCw,
+    value: "Monthly",
+    label: "Updates",
     color: "text-purple-600",
     bgColor: "bg-purple-100",
   },
+  {
+    icon: TrendingUp,
+    value: "$0",
+    label: "Min. Deposit Options",
+    color: "text-yellow-600",
+    bgColor: "bg-yellow-100",
+  },
 ];
 
+// Methodology promises with checkmarks
 const trustBadges = [
+  { icon: CheckCircle, label: "Transparent Methodology" },
+  { icon: Scale, label: "Unbiased Comparisons" },
+  { icon: Eye, label: "No Paid Placements" },
   { icon: Shield, label: "SSL Secured" },
-  { icon: TrendingUp, label: "Expert Analysis" },
-  { icon: Award, label: "Unbiased Reviews" },
 ];
 
 const TrustSignals = ({ variant = "horizontal", showStats = true }: TrustSignalsProps) => {

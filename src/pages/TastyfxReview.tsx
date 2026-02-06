@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Star, Check, ExternalLink, Shield, Zap, DollarSign, Award, Clock, CreditCard, Users, TrendingUp, AlertTriangle, MessageCircle, Building2, Scale } from "lucide-react";
+import { Star, Check, ExternalLink, Shield, Zap, DollarSign, Award, Clock, CreditCard, Users, TrendingUp, AlertTriangle, MessageCircle, Building2, Scale, ThumbsUp, CheckCircle2, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { brokers } from "@/lib/brokers";
@@ -67,45 +67,6 @@ const TastyfxReview = () => {
     { name: "Bank Wire Transfer", deposit: "Free", withdrawal: "Free", time: "1-3 business days" },
     { name: "ACH Transfer", deposit: "Free", withdrawal: "Free", time: "3-5 business days" },
     { name: "Debit Card", deposit: "Free", withdrawal: "Free", time: "Instant / 1-3 days" },
-  ];
-
-  const userReviews = [
-    {
-      name: "Robert T.",
-      location: "Illinois, USA",
-      rating: 5,
-      date: "January 2026",
-      title: "Finally, a legit US forex broker with great tools!",
-      review: "After years of trading with offshore brokers, I switched to tastyfx for the regulatory protection. The platform is fantastic - reminds me of thinkorswim but optimized for forex. The charting tools are top-notch and execution is lightning fast. Highly recommend for serious US traders.",
-      verified: true,
-    },
-    {
-      name: "Jennifer M.",
-      location: "Colorado, USA",
-      rating: 5,
-      date: "January 2026",
-      title: "Best platform I've used for forex",
-      review: "I came from tastyworks for options trading and was thrilled when they launched tastyfx. The interface is intuitive, spreads are competitive for a regulated broker, and their educational content helped me transition from stocks to forex. Customer service is based in Chicago and very responsive.",
-      verified: true,
-    },
-    {
-      name: "Marcus D.",
-      location: "Georgia, USA",
-      rating: 4,
-      date: "December 2025",
-      title: "Great broker but miss the high leverage",
-      review: "Solid platform and trustworthy broker. My only gripe is the 1:50 leverage limit, but that's the law, not their fault. Withdrawals are processed same-day to my bank account. The research tools and market analysis they provide are really helpful for my trading decisions.",
-      verified: true,
-    },
-    {
-      name: "Amanda K.",
-      location: "Washington, USA",
-      rating: 4,
-      date: "December 2025",
-      title: "Perfect for US traders who want peace of mind",
-      review: "After getting burned by an offshore broker that wouldn't process my withdrawal, I moved to tastyfx. Yes, the leverage is lower and spreads are a bit higher than offshore options, but I sleep better knowing my money is safe with a CFTC-regulated broker. The platform quality makes up for any downsides.",
-      verified: true,
-    },
   ];
 
   const pros = [
@@ -586,54 +547,122 @@ const TastyfxReview = () => {
         </div>
       </section>
 
-      {/* User Reviews */}
+      {/* Community Feedback */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <MessageCircle className="w-12 h-12 text-primary mx-auto mb-4" />
               <h2 className="font-heading text-3xl font-bold text-foreground mb-4">
-                User Reviews
+                Community Feedback
               </h2>
               <p className="text-muted-foreground">
                 What real US traders are saying about tastyfx
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              {userReviews.map((review, i) => (
-                <Card key={i} className="bg-gradient-card border-border">
-                  <CardContent className="pt-6">
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="font-semibold text-foreground">{review.name}</span>
-                          {review.verified && (
-                            <span className="text-xs px-2 py-0.5 bg-success/20 text-success rounded-full">Verified</span>
-                          )}
-                        </div>
-                        <div className="text-sm text-muted-foreground">{review.location}</div>
-                      </div>
-                      <div className="text-right">
-                        <div className="flex mb-1">
-                          {[...Array(5)].map((_, j) => (
-                            <Star key={j} className={`w-4 h-4 ${j < review.rating ? 'fill-primary text-primary' : 'text-muted'}`} />
-                          ))}
-                        </div>
-                        <div className="text-xs text-muted-foreground">{review.date}</div>
-                      </div>
+            {/* Award Highlight */}
+            <Card className="bg-gradient-card border-border mb-8 border-2 border-primary/30">
+              <CardContent className="p-6">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center">
+                      <Award className="w-10 h-10 text-primary" />
                     </div>
-                    <h4 className="font-semibold text-foreground mb-2">{review.title}</h4>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{review.review}</p>
-                  </CardContent>
-                </Card>
-              ))}
+                    <div>
+                      <div className="text-xl font-bold text-primary">#1 US Forex Broker 2026</div>
+                      <p className="text-sm text-muted-foreground">ForexBrokers.com Annual Review</p>
+                      <p className="text-xs text-muted-foreground mt-1">Based on spreads, platform, and overall value</p>
+                    </div>
+                  </div>
+                  <div className="text-center md:text-right">
+                    <p className="text-sm text-muted-foreground mb-2">Trustpilot Score</p>
+                    <div className="flex items-center gap-2 justify-center md:justify-end">
+                      <span className="text-2xl font-bold text-foreground">4.0</span>
+                      <span className="text-muted-foreground">/ 5</span>
+                    </div>
+                    <p className="text-xs text-muted-foreground">Limited reviews (newer brand)</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Community Feedback Cards */}
+            <div className="grid md:grid-cols-2 gap-6">
+              <Card className="bg-gradient-card border-border border-l-4 border-l-success">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-3 mb-3">
+                    <ThumbsUp className="w-5 h-5 text-success flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-semibold text-foreground">What Traders Love</h4>
+                      <p className="text-xs text-muted-foreground">Common positive themes from reviews</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
+                      <span>"Tightest spreads among US-regulated brokers (0.2 pips EUR/USD)"</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
+                      <span>"Clean, modern platform from the tastytrade team"</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
+                      <span>"$0 minimum deposit to start trading"</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
+                      <span>"Excellent educational content integration"</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-card border-border border-l-4 border-l-warning">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-3 mb-3">
+                    <AlertTriangle className="w-5 h-5 text-warning flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-semibold text-foreground">Common Concerns</h4>
+                      <p className="text-xs text-muted-foreground">Feedback to consider</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <XCircle className="w-4 h-4 text-warning flex-shrink-0 mt-0.5" />
+                      <span>"Newer brand - less established track record than competitors"</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <XCircle className="w-4 h-4 text-warning flex-shrink-0 mt-0.5" />
+                      <span>"Limited currency pairs compared to IG or OANDA"</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <XCircle className="w-4 h-4 text-warning flex-shrink-0 mt-0.5" />
+                      <span>"No MetaTrader 4/5 support - proprietary platform only"</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <XCircle className="w-4 h-4 text-warning flex-shrink-0 mt-0.5" />
+                      <span>"Mobile app still maturing compared to desktop"</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
             </div>
 
-            <div className="text-center mt-8">
-              <Button variant="outlineGold">
-                Load More Reviews
-              </Button>
+            <div className="mt-8 text-center">
+              <p className="text-sm text-muted-foreground mb-4">
+                Source: Trustpilot, ForexBrokers.com, and trading community feedback as of February 2026.
+              </p>
+              <a
+                href="https://www.trustpilot.com/review/tastyfx.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline text-sm inline-flex items-center gap-1"
+              >
+                View all reviews on Trustpilot
+                <ExternalLink className="w-3 h-3" />
+              </a>
             </div>
           </div>
         </div>

@@ -125,6 +125,34 @@ const AvaTradeReview = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="AvaTrade Review 2026"
+        description="Complete AvaTrade review - globally regulated broker with AvaTradeGO app, copy trading, and 250+ instruments. Note: Does not accept US clients."
+        canonical="/review/avatrade"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Review",
+          "itemReviewed": {
+            "@type": "FinancialService",
+            "name": "AvaTrade",
+            "url": broker.siteUrl,
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "US Forex Guide",
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": overallRating,
+            "bestRating": "5",
+            "worstRating": "1",
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Beginner FX Guide",
+          },
+        }}
+      />
       <Header />
       
       <section className="pt-24 pb-12 bg-gradient-hero">

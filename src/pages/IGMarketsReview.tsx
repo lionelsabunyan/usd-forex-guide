@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Star, Check, ExternalLink, Shield, Zap, DollarSign, Award, Clock, CreditCard, Users, TrendingUp, AlertTriangle, MessageCircle } from "lucide-react";
+import { Star, Check, ExternalLink, Shield, Zap, DollarSign, Award, Clock, CreditCard, Users, TrendingUp, AlertTriangle, MessageCircle, ThumbsUp, CheckCircle2, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { brokers } from "@/lib/brokers";
@@ -53,45 +53,6 @@ const IGMarketsReview = () => {
     { name: "ACH Transfer", deposit: "Free", withdrawal: "Free", time: "1-2 business days" },
     { name: "Credit/Debit Card", deposit: "Free", withdrawal: "Free", time: "Instant / 1-3 days" },
     { name: "Check", deposit: "N/A", withdrawal: "Free", time: "5-7 business days" },
-  ];
-
-  const userReviews = [
-    {
-      name: "James W.",
-      location: "California, USA",
-      rating: 4,
-      date: "December 2026",
-      title: "Professional platform",
-      review: "IG Markets has a very professional trading platform. The $250 minimum deposit is reasonable and spreads are tight. Customer support is helpful. Good choice for serious traders.",
-      verified: true,
-    },
-    {
-      name: "Lisa H.",
-      location: "New York, USA",
-      rating: 4,
-      date: "November 2026",
-      title: "Solid CFTC broker",
-      review: "Been trading with IG for over a year. The platform is powerful and execution is fast. Only downside is the leverage limit, but that's standard for US brokers.",
-      verified: true,
-    },
-    {
-      name: "Robert M.",
-      location: "Texas, USA",
-      rating: 3,
-      date: "October 2026",
-      title: "Good but expensive",
-      review: "IG Markets is reliable and well-regulated, but the $250 minimum deposit is higher than some competitors. Platform is good but might be too complex for beginners.",
-      verified: true,
-    },
-    {
-      name: "Amanda T.",
-      location: "Florida, USA",
-      rating: 4,
-      date: "September 2026",
-      title: "Trustworthy broker",
-      review: "IG Markets is a reputable broker with strong regulation. The platform offers many features and educational resources are comprehensive. Recommended for experienced traders.",
-      verified: true,
-    },
   ];
 
   const pros = [
@@ -495,44 +456,167 @@ const IGMarketsReview = () => {
         </div>
       </section>
 
+      {/* Community Feedback */}
       <section className="py-16 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
+              <MessageCircle className="w-12 h-12 text-primary mx-auto mb-4" />
               <h2 className="font-heading text-3xl font-bold text-foreground mb-4">
-                <MessageCircle className="w-8 h-8 inline-block mr-2 text-primary" />
-                User Reviews
+                Community Feedback
               </h2>
+              <p className="text-muted-foreground">
+                What real traders are saying about IG Markets on Trustpilot and forums
+              </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              {userReviews.map((review, i) => (
-                <Card key={i} className="bg-gradient-card border-border">
-                  <CardContent className="p-6">
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <h4 className="font-semibold text-foreground">{review.name}</h4>
-                          {review.verified && (
-                            <span className="text-xs bg-success/20 text-success px-2 py-0.5 rounded-full">Verified</span>
-                          )}
-                        </div>
-                        <p className="text-sm text-muted-foreground">{review.location}</p>
+            {/* Trustpilot Summary */}
+            <Card className="bg-gradient-card border-border mb-8">
+              <CardContent className="p-6">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 bg-[#00b67a] rounded-xl flex items-center justify-center">
+                      <Star className="w-10 h-10 text-white fill-white" />
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-3xl font-bold text-foreground">3.9</span>
+                        <span className="text-muted-foreground">/ 5</span>
                       </div>
-                      <div className="text-right">
-                        <div className="flex">
-                          {[...Array(5)].map((_, j) => (
-                            <Star key={j} className={`w-4 h-4 ${j < review.rating ? 'fill-primary text-primary' : 'text-muted'}`} />
-                          ))}
-                        </div>
-                        <p className="text-xs text-muted-foreground mt-1">{review.date}</p>
+                      <p className="text-sm text-muted-foreground">Based on 8,650+ reviews</p>
+                      <p className="text-xs text-[#00b67a] font-medium">Trustpilot</p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-5 gap-2 text-center">
+                    <div>
+                      <div className="text-lg font-bold text-foreground">56%</div>
+                      <div className="flex justify-center">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-3 h-3 fill-primary text-primary" />
+                        ))}
                       </div>
                     </div>
-                    <h5 className="font-medium text-foreground mb-2">{review.title}</h5>
-                    <p className="text-muted-foreground text-sm">{review.review}</p>
-                  </CardContent>
-                </Card>
-              ))}
+                    <div>
+                      <div className="text-lg font-bold text-foreground">11%</div>
+                      <div className="flex justify-center">
+                        {[...Array(4)].map((_, i) => (
+                          <Star key={i} className="w-3 h-3 fill-primary text-primary" />
+                        ))}
+                        <Star className="w-3 h-3 text-muted" />
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-lg font-bold text-foreground">5%</div>
+                      <div className="flex justify-center">
+                        {[...Array(3)].map((_, i) => (
+                          <Star key={i} className="w-3 h-3 fill-primary text-primary" />
+                        ))}
+                        {[...Array(2)].map((_, i) => (
+                          <Star key={i} className="w-3 h-3 text-muted" />
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-lg font-bold text-foreground">4%</div>
+                      <div className="flex justify-center">
+                        {[...Array(2)].map((_, i) => (
+                          <Star key={i} className="w-3 h-3 fill-primary text-primary" />
+                        ))}
+                        {[...Array(3)].map((_, i) => (
+                          <Star key={i} className="w-3 h-3 text-muted" />
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-lg font-bold text-foreground">24%</div>
+                      <div className="flex justify-center">
+                        <Star className="w-3 h-3 fill-primary text-primary" />
+                        {[...Array(4)].map((_, i) => (
+                          <Star key={i} className="w-3 h-3 text-muted" />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Community Feedback Cards */}
+            <div className="grid md:grid-cols-2 gap-6">
+              <Card className="bg-gradient-card border-border border-l-4 border-l-success">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-3 mb-3">
+                    <ThumbsUp className="w-5 h-5 text-success flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-semibold text-foreground">What Traders Love</h4>
+                      <p className="text-xs text-muted-foreground">Common positive themes from Trustpilot</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
+                      <span>"ProRealTime charting is exceptional for technical analysis"</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
+                      <span>"Fast execution with minimal slippage on major pairs"</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
+                      <span>"Educational content and IG Academy are top-notch"</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
+                      <span>"Multi-asset access - forex, indices, crypto from one account"</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-card border-border border-l-4 border-l-warning">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-3 mb-3">
+                    <AlertTriangle className="w-5 h-5 text-warning flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-semibold text-foreground">Common Concerns</h4>
+                      <p className="text-xs text-muted-foreground">Feedback to consider from reviews</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <XCircle className="w-4 h-4 text-warning flex-shrink-0 mt-0.5" />
+                      <span>"Spreads can widen significantly during news events"</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <XCircle className="w-4 h-4 text-warning flex-shrink-0 mt-0.5" />
+                      <span>"Customer service response times vary"</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <XCircle className="w-4 h-4 text-warning flex-shrink-0 mt-0.5" />
+                      <span>"Inactivity fees apply after 2 years of no trading"</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <XCircle className="w-4 h-4 text-warning flex-shrink-0 mt-0.5" />
+                      <span>"US account has more limited product range than international"</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="mt-8 text-center">
+              <p className="text-sm text-muted-foreground mb-4">
+                Source: Trustpilot reviews as of February 2026. Ratings reflect global user feedback.
+              </p>
+              <a
+                href="https://www.trustpilot.com/review/ig.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline text-sm inline-flex items-center gap-1"
+              >
+                View all reviews on Trustpilot
+                <ExternalLink className="w-3 h-3" />
+              </a>
             </div>
           </div>
         </div>

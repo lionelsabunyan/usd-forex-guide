@@ -55,10 +55,21 @@ export const getAffiliateUrl = (
 export const trackAffiliateClick = (
   brokerId: BrokerId,
   location: string,
-  buttonType?: string
+  buttonType?: string,
+  userRegion?: 'US' | 'INTL'
 ): void => {
   const isIB = isIBBroker(brokerId);
   const brokerName = brokers[brokerId]?.name || brokerId;
+
+  // Detect region from cookie if not provided
+  const region = userRegion || (() => {
+    if (typeof window === 'undefined') return 'US';
+    const cookieRegion = document.cookie
+      .split('; ')
+      .find(row => row.startsWith('user_region='))
+      ?.split('=')[1];
+    return (cookieRegion === 'US' || cookieRegion === 'INTL') ? cookieRegion as 'US' | 'INTL' : 'US';
+  })();
 
   // GA4 Events
   if (typeof window !== "undefined" && (window as any).gtag) {
@@ -69,6 +80,7 @@ export const trackAffiliateClick = (
       click_location: location,
       button_type: buttonType || "default",
       is_ib_partner: isIB,
+      user_region: region,
     });
 
     // 2. Specific event for IB partners (mark as conversion in GA4)
@@ -80,6 +92,7 @@ export const trackAffiliateClick = (
         button_type: buttonType || "default",
         value: 1, // For conversion value tracking
         currency: "USD",
+        user_region: region,
       });
     }
 
@@ -92,6 +105,7 @@ export const trackAffiliateClick = (
         is_ib_partner: isIB,
         value: isIB ? 10 : 1, // Higher value for IB partners
         currency: "USD",
+        user_region: region,
       });
     }
   }
@@ -102,6 +116,7 @@ export const trackAffiliateClick = (
       event_category: isIB ? "ib_conversion" : "affiliate_click",
       event_label: `${brokerId}_${location}`,
       event_value: isIB ? 10 : 1,
+      user_region: region,
     });
 
     // Separate conversion event for IB partners
@@ -111,21 +126,70 @@ export const trackAffiliateClick = (
         event_label: `${brokerId}_open_account`,
         revenue_value: 10,
         currency: "USD",
+        user_region: region,
       });
     }
   }
 
-  // DataLayer push for GTM (if you want more control)
+  // DataLayer push for GTM - send affiliate_click for ALL clicks
   if (typeof window !== "undefined" && (window as any).dataLayer) {
+    // 1. Always send affiliate_click event
     (window as any).dataLayer.push({
-      event: isIB ? "ib_partner_click" : "affiliate_click",
+      event: "affiliate_click",
       broker_id: brokerId,
       broker_name: brokerName,
       click_location: location,
       button_type: buttonType || "default",
       is_ib_partner: isIB,
       conversion_value: isIB ? 10 : 1,
+      user_region: region,
     });
+
+    // 2. Additionally send ib_partner_click for IB partners
+    if (isIB) {
+      (window as any).dataLayer.push({
+        event: "ib_partner_click",
+        broker_id: brokerId,
+        broker_name: brokerName,
+        click_location: location,
+        button_type: buttonType || "default",
+        is_ib_partner: true,
+        conversion_value: 10,
+        user_region: region,
+      });
+    }
+  }
+
+  // Yandex Metrica Goal Tracking
+  if (typeof window !== "undefined" && (window as any).ym) {
+    // General affiliate click goal
+    (window as any).ym(106629069, 'reachGoal', 'affiliate_click', {
+      broker_id: brokerId,
+      broker_name: brokerName,
+      click_location: location,
+      is_ib_partner: isIB,
+      user_region: region,
+    });
+
+    // Specific goal for "Open Account" clicks
+    if (buttonType === "open_account" || location.includes("review")) {
+      (window as any).ym(106629069, 'reachGoal', 'hesap_ac_click', {
+        broker_id: brokerId,
+        broker_name: brokerName,
+        order_price: isIB ? 10 : 1,
+        currency: 'USD',
+        user_region: region,
+      });
+    }
+
+    // IB Partner specific goal
+    if (isIB) {
+      (window as any).ym(106629069, 'reachGoal', 'ib_partner_click', {
+        broker_id: brokerId,
+        broker_name: brokerName,
+        user_region: region,
+      });
+    }
   }
 };
 
@@ -141,6 +205,7 @@ export const UTM_CONFIGS = {
 
   // Comparison table
   COMPARISON_TABLE: { source: "comparison", medium: "table", campaign: "broker_list" },
+  COMPARE_PAGE: { source: "compare", medium: "card", campaign: "broker_compare", content: "open_account" },
 
   // Review pages
   REVIEW_HERO: { source: "review", medium: "cta", campaign: "review_hero", content: "open_account" },
@@ -153,9 +218,6 @@ export const UTM_CONFIGS = {
   // Blog
   BLOG_INLINE: { source: "blog", medium: "inline", campaign: "blog_cta" },
   BLOG_SIDEBAR: { source: "blog", medium: "sidebar", campaign: "blog_sidebar" },
-
-  // Exit Intent
-  EXIT_INTENT: { source: "exit_intent", medium: "popup", campaign: "exit_popup", content: "special_offer" },
 
   // Newsletter
   NEWSLETTER_WELCOME: { source: "newsletter", medium: "email", campaign: "welcome_series" },

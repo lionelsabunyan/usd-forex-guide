@@ -1,0 +1,54 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="400" fill="url(#bgGrad)" />
+
+  <!-- Calculator frame -->
+  <rect x="50" y="30" width="350" height="340" rx="16" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+
+  <!-- Header -->
+  <rect x="50" y="30" width="350" height="50" rx="16" fill="url(#greenGrad)"/>
+  <text x="225" y="62" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="white" text-anchor="middle">🧮 Pip Calculator</text>
+
+  <!-- Form fields -->
+  <g transform="translate(70, 100)">
+    <text font-family="Arial, sans-serif" font-size="12" fill="#64748b">Currency Pair</text>
+    <rect x="0" y="15" width="310" height="35" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+    <text x="15" y="38" font-family="Arial, sans-serif" font-size="14" fill="#1e293b">EUR/USD</text>
+
+    <text y="70" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Position Size (Lots)</text>
+    <rect x="0" y="85" width="310" height="35" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+    <text x="15" y="108" font-family="Arial, sans-serif" font-size="14" fill="#1e293b">1.00</text>
+
+    <text y="140" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Account Currency</text>
+    <rect x="0" y="155" width="310" height="35" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+    <text x="15" y="178" font-family="Arial, sans-serif" font-size="14" fill="#1e293b">USD</text>
+  </g>
+
+  <!-- Calculate button -->
+  <rect x="70" y="310" width="310" height="40" rx="8" fill="url(#greenGrad)"/>
+  <text x="225" y="336" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="white" text-anchor="middle">Calculate Pip Value</text>
+
+  <!-- Result panel -->
+  <rect x="450" y="30" width="300" height="340" rx="16" fill="#059669"/>
+
+  <text x="600" y="80" font-family="Arial, sans-serif" font-size="16" fill="white" opacity="0.8" text-anchor="middle">PIP VALUE</text>
+
+  <text x="600" y="160" font-family="Arial, sans-serif" font-size="64" font-weight="800" fill="white" text-anchor="middle">$10</text>
+  <text x="600" y="200" font-family="Arial, sans-serif" font-size="18" fill="white" opacity="0.9" text-anchor="middle">per pip</text>
+
+  <!-- Info -->
+  <rect x="470" y="240" width="260" height="110" rx="8" fill="white" opacity="0.15"/>
+  <text x="600" y="270" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">If price moves 50 pips:</text>
+  <text x="600" y="310" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="white" text-anchor="middle">$500</text>
+  <text x="600" y="335" font-family="Arial, sans-serif" font-size="11" fill="white" opacity="0.8" text-anchor="middle">potential profit or loss</text>
+</svg>

@@ -8,20 +8,26 @@ import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import TrustSignals from "@/components/TrustSignals";
+import LeadMagnetBanner from "@/components/LeadMagnetBanner";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="US Forex Guide - Top Brokers & Reviews for American Traders"
-        description="Find the best forex brokers for US traders. Unbiased reviews of FXGlory, N1CM, eToro, and more. Compare leverage, spreads, and trading conditions. Expert guides and strategies."
+        title="Best Forex Brokers for US Traders 2026 | Beginner FX Guide"
+        description="Compare the best forex brokers that accept US clients in 2026. Unbiased reviews of OANDA, Forex.com, FXGlory & offshore options. Guides, tools, and tips for American traders."
         canonical="/"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "WebSite",
-          "name": "US Forex Guide",
+          "name": "Beginner FX Guide",
           "url": "https://beginnerfxguide.com",
-          "description": "Independent forex broker reviews and guides for US traders",
+          "description": "Independent forex broker reviews and comparisons for US traders. Compare CFTC-regulated and offshore brokers, learn trading strategies, and use free tools.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Beginner FX Guide",
+            "url": "https://beginnerfxguide.com"
+          },
           "potentialAction": {
             "@type": "SearchAction",
             "target": "https://beginnerfxguide.com/search?q={search_term_string}",
@@ -36,6 +42,9 @@ const Index = () => {
         <FeaturedBroker />
         <BrokerComparison />
         <HowItWorks />
+        <div className="container mx-auto px-4">
+          <LeadMagnetBanner />
+        </div>
         <BlogPreview />
         <FAQ />
       </main>

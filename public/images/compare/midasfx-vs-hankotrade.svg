@@ -1,0 +1,100 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#fbbf24" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e40af" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bgGrad)" />
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="1200" height="6" fill="url(#goldGrad)" />
+
+  <!-- Title -->
+  <text x="600" y="70" font-family="Arial, sans-serif" font-size="18" fill="#94a3b8" text-anchor="middle">BROKER COMPARISON 2026</text>
+
+  <!-- VS badge -->
+  <circle cx="600" cy="200" r="50" fill="url(#goldGrad)"/>
+  <text x="600" y="215" font-family="Arial, sans-serif" font-size="32" font-weight="800" fill="#0f172a" text-anchor="middle">VS</text>
+
+  <!-- Left broker: MidasFX -->
+  <g transform="translate(100, 130)">
+    <rect x="0" y="0" width="350" height="350" rx="20" fill="white" opacity="0.05"/>
+    <rect x="0" y="0" width="350" height="350" rx="20" stroke="white" stroke-width="2" fill="none" opacity="0.2"/>
+
+    <!-- Logo placeholder -->
+    <circle cx="175" cy="80" r="50" fill="#1e40af"/>
+    <text x="175" y="95" font-family="Arial, sans-serif" font-size="28" font-weight="800" fill="white" text-anchor="middle">MFX</text>
+
+    <text x="175" y="160" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="white" text-anchor="middle">MidasFX</text>
+
+    <!-- Rating -->
+    <text x="175" y="200" font-family="Arial, sans-serif" font-size="36" fill="#f59e0b" text-anchor="middle">★★★★★</text>
+    <text x="175" y="230" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="white" text-anchor="middle">4.8 / 5</text>
+
+    <!-- Key stats -->
+    <g transform="translate(30, 260)">
+      <text font-family="Arial, sans-serif" font-size="14" fill="#94a3b8">Min Deposit:</text>
+      <text x="290" font-family="Arial, sans-serif" font-size="14" fill="white" font-weight="600" text-anchor="end">$50</text>
+
+      <text y="30" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8">Leverage:</text>
+      <text x="290" y="30" font-family="Arial, sans-serif" font-size="14" fill="white" font-weight="600" text-anchor="end">1:500</text>
+
+      <text y="60" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8">Spreads:</text>
+      <text x="290" y="60" font-family="Arial, sans-serif" font-size="14" fill="#10b981" font-weight="600" text-anchor="end">0.0 pips</text>
+    </g>
+  </g>
+
+  <!-- Right broker: Hankotrade -->
+  <g transform="translate(750, 130)">
+    <rect x="0" y="0" width="350" height="350" rx="20" fill="white" opacity="0.05"/>
+    <rect x="0" y="0" width="350" height="350" rx="20" stroke="white" stroke-width="2" fill="none" opacity="0.2"/>
+
+    <!-- Logo placeholder -->
+    <circle cx="175" cy="80" r="50" fill="#059669"/>
+    <text x="175" y="95" font-family="Arial, sans-serif" font-size="24" font-weight="800" fill="white" text-anchor="middle">HT</text>
+
+    <text x="175" y="160" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="white" text-anchor="middle">Hankotrade</text>
+
+    <!-- Rating -->
+    <text x="175" y="200" font-family="Arial, sans-serif" font-size="36" fill="#f59e0b" text-anchor="middle">★★★★★</text>
+    <text x="175" y="230" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="white" text-anchor="middle">4.7 / 5</text>
+
+    <!-- Key stats -->
+    <g transform="translate(30, 260)">
+      <text font-family="Arial, sans-serif" font-size="14" fill="#94a3b8">Min Deposit:</text>
+      <text x="290" font-family="Arial, sans-serif" font-size="14" fill="#10b981" font-weight="600" text-anchor="end">$10 ✓</text>
+
+      <text y="30" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8">Leverage:</text>
+      <text x="290" y="30" font-family="Arial, sans-serif" font-size="14" fill="white" font-weight="600" text-anchor="end">1:500</text>
+
+      <text y="60" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8">Spreads:</text>
+      <text x="290" y="60" font-family="Arial, sans-serif" font-size="14" fill="#10b981" font-weight="600" text-anchor="end">0.0 pips</text>
+    </g>
+  </g>
+
+  <!-- Bottom section -->
+  <rect x="200" y="510" width="800" height="60" rx="12" fill="white" opacity="0.1"/>
+  <text x="600" y="548" font-family="Arial, sans-serif" font-size="18" fill="white" text-anchor="middle">Both accept US clients | Crypto deposits | MT4 &amp; MT5</text>
+
+  <!-- Brand footer -->
+  <g transform="translate(50, 570)">
+    <circle cx="20" cy="20" r="18" fill="#1e40af" stroke="#dc2626" stroke-width="2"/>
+    <text x="20" y="26" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">FX</text>
+    <text x="50" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="white">Beginner FX Guide</text>
+  </g>
+
+  <text x="1150" y="590" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="end">beginnerfxguide.com/compare</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="624" width="1200" height="6" fill="url(#goldGrad)" />
+</svg>

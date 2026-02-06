@@ -14,7 +14,7 @@ const SEO = ({
   title,
   description,
   canonical,
-  ogImage = "https://beginnerfxguide.com/og-image.png",
+  ogImage = "https://beginnerfxguide.com/images/og/og-default.png",
   ogType = "website",
   noindex = false,
   jsonLd,

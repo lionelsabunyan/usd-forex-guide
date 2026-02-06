@@ -1,0 +1,7 @@
+name = "beginnerfxguide-seo"
+main = "seo-meta-worker.js"
+compatibility_date = "2024-01-01"
+
+# Bu worker Cloudflare Pages'e entegre edilecek
+# Dashboard > Pages > beginnerfxguide > Settings > Functions > Routes
+# veya Pages Functions olarak kullanılabilir

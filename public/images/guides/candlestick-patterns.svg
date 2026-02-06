@@ -1,0 +1,141 @@
+<svg width="1000" height="600" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="600" fill="url(#bgGrad)" />
+
+  <!-- Title -->
+  <text x="500" y="45" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="white" text-anchor="middle">Essential Candlestick Patterns</text>
+  <text x="500" y="70" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">Beginner FX Guide</text>
+
+  <!-- ===== BULLISH PATTERNS ===== -->
+  <text x="250" y="110" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#10b981" text-anchor="middle">BULLISH (Buy Signals)</text>
+
+  <!-- Hammer -->
+  <g transform="translate(50, 140)">
+    <rect x="0" y="0" width="150" height="180" rx="12" fill="white" opacity="0.05" stroke="#10b981" stroke-width="2"/>
+    <text x="75" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="white" text-anchor="middle">Hammer</text>
+
+    <!-- Candle -->
+    <line x1="75" y1="50" x2="75" y2="70" stroke="#10b981" stroke-width="2"/>
+    <rect x="65" y="70" width="20" height="25" fill="#10b981"/>
+    <line x1="75" y1="95" x2="75" y2="150" stroke="#10b981" stroke-width="2"/>
+
+    <text x="75" y="170" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Long lower shadow</text>
+  </g>
+
+  <!-- Morning Star -->
+  <g transform="translate(220, 140)">
+    <rect x="0" y="0" width="150" height="180" rx="12" fill="white" opacity="0.05" stroke="#10b981" stroke-width="2"/>
+    <text x="75" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="white" text-anchor="middle">Morning Star</text>
+
+    <!-- 3 candles -->
+    <rect x="25" y="60" width="15" height="50" fill="#ef4444"/>
+    <rect x="55" y="120" width="15" height="15" fill="#94a3b8"/>
+    <rect x="85" y="70" width="15" height="50" fill="#10b981"/>
+
+    <text x="75" y="170" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">3-candle reversal</text>
+  </g>
+
+  <!-- Bullish Engulfing -->
+  <g transform="translate(390, 140)">
+    <rect x="0" y="0" width="150" height="180" rx="12" fill="white" opacity="0.05" stroke="#10b981" stroke-width="2"/>
+    <text x="75" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="white" text-anchor="middle">Engulfing</text>
+
+    <!-- 2 candles -->
+    <rect x="45" y="80" width="18" height="40" fill="#ef4444"/>
+    <rect x="70" y="60" width="25" height="80" fill="#10b981"/>
+
+    <text x="75" y="170" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Green engulfs red</text>
+  </g>
+
+  <!-- ===== BEARISH PATTERNS ===== -->
+  <text x="750" y="110" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#ef4444" text-anchor="middle">BEARISH (Sell Signals)</text>
+
+  <!-- Shooting Star -->
+  <g transform="translate(550, 140)">
+    <rect x="0" y="0" width="150" height="180" rx="12" fill="white" opacity="0.05" stroke="#ef4444" stroke-width="2"/>
+    <text x="75" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="white" text-anchor="middle">Shooting Star</text>
+
+    <!-- Candle -->
+    <line x1="75" y1="50" x2="75" y2="110" stroke="#ef4444" stroke-width="2"/>
+    <rect x="65" y="110" width="20" height="25" fill="#ef4444"/>
+    <line x1="75" y1="135" x2="75" y2="150" stroke="#ef4444" stroke-width="2"/>
+
+    <text x="75" y="170" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Long upper shadow</text>
+  </g>
+
+  <!-- Evening Star -->
+  <g transform="translate(720, 140)">
+    <rect x="0" y="0" width="150" height="180" rx="12" fill="white" opacity="0.05" stroke="#ef4444" stroke-width="2"/>
+    <text x="75" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="white" text-anchor="middle">Evening Star</text>
+
+    <!-- 3 candles -->
+    <rect x="25" y="90" width="15" height="50" fill="#10b981"/>
+    <rect x="55" y="60" width="15" height="15" fill="#94a3b8"/>
+    <rect x="85" y="80" width="15" height="50" fill="#ef4444"/>
+
+    <text x="75" y="170" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">3-candle reversal</text>
+  </g>
+
+  <!-- ===== CONTINUATION PATTERNS ===== -->
+  <text x="500" y="360" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#3b82f6" text-anchor="middle">CONTINUATION &amp; INDECISION</text>
+
+  <!-- Doji -->
+  <g transform="translate(150, 390)">
+    <rect x="0" y="0" width="150" height="160" rx="12" fill="white" opacity="0.05" stroke="#3b82f6" stroke-width="2"/>
+    <text x="75" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="white" text-anchor="middle">Doji</text>
+
+    <!-- Candle -->
+    <line x1="75" y1="50" x2="75" y2="100" stroke="#94a3b8" stroke-width="2"/>
+    <rect x="70" y="75" width="10" height="3" fill="#94a3b8"/>
+    <line x1="75" y1="78" x2="75" y2="130" stroke="#94a3b8" stroke-width="2"/>
+
+    <text x="75" y="150" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Indecision signal</text>
+  </g>
+
+  <!-- Marubozu -->
+  <g transform="translate(350, 390)">
+    <rect x="0" y="0" width="150" height="160" rx="12" fill="white" opacity="0.05" stroke="#3b82f6" stroke-width="2"/>
+    <text x="75" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="white" text-anchor="middle">Marubozu</text>
+
+    <!-- Candles -->
+    <rect x="40" y="50" width="20" height="80" fill="#10b981"/>
+    <rect x="90" y="50" width="20" height="80" fill="#ef4444"/>
+
+    <text x="75" y="150" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Strong momentum</text>
+  </g>
+
+  <!-- Spinning Top -->
+  <g transform="translate(550, 390)">
+    <rect x="0" y="0" width="150" height="160" rx="12" fill="white" opacity="0.05" stroke="#3b82f6" stroke-width="2"/>
+    <text x="75" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="white" text-anchor="middle">Spinning Top</text>
+
+    <!-- Candle -->
+    <line x1="75" y1="50" x2="75" y2="80" stroke="#94a3b8" stroke-width="2"/>
+    <rect x="65" y="80" width="20" height="20" fill="#94a3b8"/>
+    <line x1="75" y1="100" x2="75" y2="130" stroke="#94a3b8" stroke-width="2"/>
+
+    <text x="75" y="150" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Small body, long wicks</text>
+  </g>
+
+  <!-- Three White Soldiers -->
+  <g transform="translate(750, 390)">
+    <rect x="0" y="0" width="150" height="160" rx="12" fill="white" opacity="0.05" stroke="#3b82f6" stroke-width="2"/>
+    <text x="75" y="30" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="white" text-anchor="middle">Three White Soldiers</text>
+
+    <!-- 3 candles ascending -->
+    <rect x="30" y="100" width="20" height="30" fill="#10b981"/>
+    <rect x="60" y="80" width="20" height="35" fill="#10b981"/>
+    <rect x="90" y="55" width="20" height="40" fill="#10b981"/>
+
+    <text x="75" y="150" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Strong bullish trend</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="500" y="580" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">beginnerfxguide.com/guides/technical-analysis</text>
+</svg>

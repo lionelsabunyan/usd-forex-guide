@@ -1,0 +1,61 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#dc2626" />
+      <stop offset="100%" stop-color="#ef4444" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bgGrad)" />
+
+  <!-- Decorative -->
+  <circle cx="1000" cy="200" r="200" fill="#1e40af" opacity="0.1" />
+  <circle cx="200" cy="450" r="150" fill="#dc2626" opacity="0.08" />
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="1200" height="6" fill="url(#redGrad)" />
+
+  <!-- Calculator icon -->
+  <g transform="translate(60, 60)">
+    <rect x="0" y="0" width="64" height="64" rx="12" fill="#1e40af"/>
+    <text x="32" y="44" font-family="Arial" font-size="32" fill="white" text-anchor="middle">🧮</text>
+    <text x="80" y="30" font-family="Arial" font-size="20" font-weight="700" fill="white">Trading Tools</text>
+    <text x="80" y="52" font-family="Arial" font-size="14" fill="#94a3b8">Beginner FX Guide</text>
+  </g>
+
+  <!-- Badge -->
+  <rect x="60" y="160" width="120" height="32" rx="6" fill="url(#redGrad)"/>
+  <text x="120" y="182" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="600">FREE TOOLS</text>
+
+  <!-- Main text -->
+  <text x="60" y="260" font-family="Arial" font-size="54" font-weight="800" fill="white">Forex Trading</text>
+  <text x="60" y="330" font-family="Arial" font-size="54" font-weight="800" fill="url(#redGrad)">Calculators</text>
+
+  <!-- Subtitle -->
+  <text x="60" y="400" font-family="Arial" font-size="24" fill="#cbd5e1">Pip Calculator | Position Size | Margin | Profit/Loss</text>
+
+  <!-- Tool icons row -->
+  <g transform="translate(60, 460)">
+    <rect x="0" y="0" width="80" height="80" rx="12" fill="white" opacity="0.1"/>
+    <text x="40" y="52" font-family="Arial" font-size="32" text-anchor="middle">💰</text>
+
+    <rect x="100" y="0" width="80" height="80" rx="12" fill="white" opacity="0.1"/>
+    <text x="140" y="52" font-family="Arial" font-size="32" text-anchor="middle">📊</text>
+
+    <rect x="200" y="0" width="80" height="80" rx="12" fill="white" opacity="0.1"/>
+    <text x="240" y="52" font-family="Arial" font-size="32" text-anchor="middle">📈</text>
+
+    <rect x="300" y="0" width="80" height="80" rx="12" fill="white" opacity="0.1"/>
+    <text x="340" y="52" font-family="Arial" font-size="32" text-anchor="middle">🎯</text>
+  </g>
+
+  <!-- URL -->
+  <text x="60" y="580" font-family="Arial" font-size="18" fill="#64748b">beginnerfxguide.com/tools</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="624" width="1200" height="6" fill="url(#redGrad)" />
+</svg>

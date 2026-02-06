@@ -1,0 +1,8 @@
+# Affiliate Redirects (ad-blocker bypass)
+/go/fxpro https://fxproaffiliate.g2afse.com/click?pid=6446&offer_id=38&l=1706519126 302
+
+# Turkish subdomain redirect
+https://tr.beginnerfxguide.com/* /tr/:splat 200
+
+# SPA fallback
+/*    /index.html   200

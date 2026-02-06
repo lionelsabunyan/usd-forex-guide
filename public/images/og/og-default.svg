@@ -1,0 +1,83 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e3a5f" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#dc2626" />
+      <stop offset="100%" stop-color="#ef4444" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)" />
+
+  <!-- Decorative elements -->
+  <circle cx="1050" cy="150" r="250" fill="#dc2626" opacity="0.08" />
+  <circle cx="150" cy="500" r="180" fill="#dc2626" opacity="0.06" />
+  <circle cx="600" cy="315" r="400" fill="#1e40af" opacity="0.05" />
+
+  <!-- Grid pattern -->
+  <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+    <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" stroke-width="0.3" opacity="0.08"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)" />
+
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1200" height="8" fill="url(#accentGradient)" />
+
+  <!-- Logo and brand -->
+  <g transform="translate(60, 60)">
+    <!-- Logo circle with US theme -->
+    <circle cx="32" cy="32" r="32" fill="#1e40af" stroke="#dc2626" stroke-width="3"/>
+    <text x="32" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">FX</text>
+
+    <!-- Brand name -->
+    <text x="80" y="28" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="white">Beginner FX Guide</text>
+    <text x="80" y="50" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8">Independent Forex Broker Reviews &amp; Guides</text>
+  </g>
+
+  <!-- Main headline -->
+  <text x="60" y="240" font-family="Arial, sans-serif" font-size="58" font-weight="800" fill="white">Find Your Perfect</text>
+  <text x="60" y="310" font-family="Arial, sans-serif" font-size="58" font-weight="800" fill="url(#accentGradient)">Forex Broker</text>
+
+  <!-- Subheadline -->
+  <text x="60" y="380" font-family="Arial, sans-serif" font-size="26" fill="#cbd5e1">Unbiased Reviews | Real Comparisons | US Trader Focused</text>
+
+  <!-- Trust badges -->
+  <g transform="translate(60, 440)">
+    <!-- Badge 1 -->
+    <rect x="0" y="0" width="160" height="50" rx="8" fill="white" opacity="0.1"/>
+    <text x="80" y="32" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="600">25+ Brokers</text>
+
+    <!-- Badge 2 -->
+    <rect x="180" y="0" width="160" height="50" rx="8" fill="white" opacity="0.1"/>
+    <text x="260" y="32" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="600">50+ Guides</text>
+
+    <!-- Badge 3 -->
+    <rect x="360" y="0" width="200" height="50" rx="8" fill="white" opacity="0.1"/>
+    <text x="460" y="32" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="600">100% Independent</text>
+  </g>
+
+  <!-- URL -->
+  <text x="60" y="560" font-family="Arial, sans-serif" font-size="20" fill="#64748b">beginnerfxguide.com</text>
+
+  <!-- US Flag inspired stripes (subtle) -->
+  <g opacity="0.15">
+    <rect x="900" y="400" width="250" height="8" fill="#dc2626" rx="4"/>
+    <rect x="920" y="420" width="230" height="8" fill="white" rx="4"/>
+    <rect x="940" y="440" width="210" height="8" fill="#dc2626" rx="4"/>
+    <rect x="960" y="460" width="190" height="8" fill="white" rx="4"/>
+    <rect x="980" y="480" width="170" height="8" fill="#dc2626" rx="4"/>
+  </g>
+
+  <!-- Bottom accent bar -->
+  <rect x="0" y="622" width="1200" height="8" fill="url(#accentGradient)" />
+</svg>

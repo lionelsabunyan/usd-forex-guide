@@ -8,15 +8,15 @@ import BrokerLogo from "@/components/BrokerLogo";
 const FeaturedBroker = () => {
   const pros = [
     "Accepts US clients",
-    "Low minimum deposit ($1)",
-    "High leverage up to 1:3000",
+    "FSA regulated broker",
+    "0.0 pip raw spreads",
     "24/7 customer support",
-    "Multiple payment methods",
-    "Fast withdrawals",
+    "Fast crypto withdrawals",
+    "MT4 & MT5 platforms",
   ];
 
   const cons = [
-    "Not regulated by major authorities",
+    "Higher minimum deposit ($50)",
     "Limited educational resources",
   ];
 
@@ -42,22 +42,22 @@ const FeaturedBroker = () => {
               {/* Left side - Broker info */}
               <div className="flex-1">
                 <div className="flex items-start gap-4 mb-6">
-                  <BrokerLogo broker={brokers.fxglory} className="w-20 h-20 rounded-xl" imgClassName="p-3" />
+                  <BrokerLogo broker={brokers.midasfx} className="w-20 h-20 rounded-xl" imgClassName="p-3" />
                   <div>
                     <h3 className="font-heading text-2xl font-bold text-foreground mb-1">
-                      FXGlory
+                      MidasFX
                     </h3>
                     <div className="flex items-center gap-2 mb-2">
                       <div className="flex">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                          <Star key={i} className={`w-5 h-5 ${i < 5 ? 'fill-primary text-primary' : 'text-muted'}`} />
                         ))}
                       </div>
                       <span className="text-foreground font-semibold">4.8/5</span>
-                      <span className="text-muted-foreground text-sm">(2,847 reviews)</span>
+                      <span className="text-muted-foreground text-sm">(1,523 reviews)</span>
                     </div>
                     <p className="text-muted-foreground text-sm">
-                      One of the few brokers actively accepting US clients with competitive trading conditions.
+                      FSA regulated broker actively accepting US clients with raw spreads and fast execution.
                     </p>
                   </div>
                 </div>
@@ -66,17 +66,17 @@ const FeaturedBroker = () => {
                   <div className="bg-secondary rounded-xl p-4 text-center">
                     <DollarSign className="w-5 h-5 text-primary mx-auto mb-2" />
                     <p className="text-xs text-muted-foreground mb-1">Min Deposit</p>
-                    <p className="font-bold text-foreground">$1</p>
+                    <p className="font-bold text-foreground">$50</p>
                   </div>
                   <div className="bg-secondary rounded-xl p-4 text-center">
                     <Zap className="w-5 h-5 text-primary mx-auto mb-2" />
                     <p className="text-xs text-muted-foreground mb-1">Max Leverage</p>
-                    <p className="font-bold text-foreground">1:3000</p>
+                    <p className="font-bold text-foreground">1:500</p>
                   </div>
                   <div className="bg-secondary rounded-xl p-4 text-center">
                     <Shield className="w-5 h-5 text-primary mx-auto mb-2" />
                     <p className="text-xs text-muted-foreground mb-1">Spreads From</p>
-                    <p className="font-bold text-foreground">0.1 pips</p>
+                    <p className="font-bold text-foreground">0.0 pips</p>
                   </div>
                   <div className="bg-secondary rounded-xl p-4 text-center">
                     <Award className="w-5 h-5 text-primary mx-auto mb-2" />
@@ -88,19 +88,24 @@ const FeaturedBroker = () => {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button variant="default" className="flex-1" asChild>
                     <a
-                      href={getAffiliateUrl("fxglory", UTM_CONFIGS.FEATURED_BROKER)}
+                      href={getAffiliateUrl("midasfx", UTM_CONFIGS.FEATURED_BROKER)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() => trackAffiliateClick("fxglory", "featured_broker", "open_account")}
+                      onClick={() => trackAffiliateClick("midasfx", "featured_broker", "open_account")}
                     >
                       Open Account
                       <ExternalLink className="w-4 h-4" />
                     </a>
                   </Button>
                   <Button variant="outline" className="flex-1" asChild>
-                    <Link to="/review/fxglory">Read Full Review</Link>
+                    <Link to="/review/midasfx">Read Full Review</Link>
                   </Button>
                 </div>
+
+                {/* Risk Disclaimer */}
+                <p className="text-xs text-muted-foreground mt-4 leading-relaxed">
+                  <span className="font-medium text-yellow-600">Risk Warning:</span> Forex trading involves substantial risk of loss. 74-89% of retail investor accounts lose money.
+                </p>
               </div>
 
               {/* Right side - Pros and Cons */}

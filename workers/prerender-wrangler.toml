@@ -1,0 +1,12 @@
+name = "beginnerfxguide-prerender"
+main = "prerender-worker.js"
+compatibility_date = "2024-01-01"
+
+# Environment variable for Prerender.io token
+[vars]
+PRERENDER_TOKEN = "9QnsbRhcASrvUSJeQecS"
+
+# Routes - this worker will handle all requests to the site
+# Configure in Cloudflare Dashboard > Workers Routes
+# Route: beginnerfxguide.com/*
+# Route: www.beginnerfxguide.com/*

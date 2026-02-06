@@ -25,8 +25,8 @@ const SocialShare = ({ url, title, className = "" }: SocialShareProps) => {
       await navigator.clipboard.writeText(fullUrl);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error("Failed to copy:", err);
+    } catch {
+      // Clipboard copy failed - button state unchanged
     }
   };
 

@@ -1,0 +1,77 @@
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bgGrad)" />
+
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="white" text-anchor="middle">Trading Psychology</text>
+  <text x="400" y="65" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Master your emotions to become a consistent trader</text>
+
+  <!-- Central brain icon -->
+  <circle cx="400" cy="250" r="60" fill="#8b5cf6" opacity="0.2"/>
+  <circle cx="400" cy="250" r="45" fill="#8b5cf6" opacity="0.3"/>
+  <text x="400" y="260" font-family="Arial, sans-serif" font-size="40" text-anchor="middle">🧠</text>
+
+  <!-- Fear section (left top) -->
+  <g transform="translate(60, 100)">
+    <rect x="0" y="0" width="200" height="120" rx="12" fill="#ef4444" opacity="0.15"/>
+    <rect x="0" y="0" width="200" height="120" rx="12" stroke="#ef4444" stroke-width="2" fill="none" opacity="0.5"/>
+    <text x="100" y="30" font-family="Arial, sans-serif" font-size="24" text-anchor="middle">😨</text>
+    <text x="100" y="55" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#ef4444" text-anchor="middle">FEAR</text>
+    <text x="100" y="75" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">• Closing winners too early</text>
+    <text x="100" y="90" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">• Hesitating on entries</text>
+    <text x="100" y="105" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">• Avoiding trades after loss</text>
+    <!-- Connector line -->
+    <line x1="200" y1="60" x2="295" y2="200" stroke="#ef4444" stroke-width="2" opacity="0.5" stroke-dasharray="5,5"/>
+  </g>
+
+  <!-- Greed section (right top) -->
+  <g transform="translate(540, 100)">
+    <rect x="0" y="0" width="200" height="120" rx="12" fill="#f59e0b" opacity="0.15"/>
+    <rect x="0" y="0" width="200" height="120" rx="12" stroke="#f59e0b" stroke-width="2" fill="none" opacity="0.5"/>
+    <text x="100" y="30" font-family="Arial, sans-serif" font-size="24" text-anchor="middle">🤑</text>
+    <text x="100" y="55" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#f59e0b" text-anchor="middle">GREED</text>
+    <text x="100" y="75" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">• Overtrading</text>
+    <text x="100" y="90" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">• Moving take profit further</text>
+    <text x="100" y="105" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">• Risking too much per trade</text>
+    <!-- Connector line -->
+    <line x1="0" y1="60" x2="-95" y2="200" stroke="#f59e0b" stroke-width="2" opacity="0.5" stroke-dasharray="5,5"/>
+  </g>
+
+  <!-- Revenge trading (left bottom) -->
+  <g transform="translate(60, 280)">
+    <rect x="0" y="0" width="200" height="120" rx="12" fill="#dc2626" opacity="0.15"/>
+    <rect x="0" y="0" width="200" height="120" rx="12" stroke="#dc2626" stroke-width="2" fill="none" opacity="0.5"/>
+    <text x="100" y="30" font-family="Arial, sans-serif" font-size="24" text-anchor="middle">😤</text>
+    <text x="100" y="55" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#dc2626" text-anchor="middle">REVENGE</text>
+    <text x="100" y="75" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">• Trading to recover losses</text>
+    <text x="100" y="90" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">• Increasing position sizes</text>
+    <text x="100" y="105" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">• Abandoning the plan</text>
+    <!-- Connector line -->
+    <line x1="200" y1="60" x2="295" y2="10" stroke="#dc2626" stroke-width="2" opacity="0.5" stroke-dasharray="5,5"/>
+  </g>
+
+  <!-- FOMO (right bottom) -->
+  <g transform="translate(540, 280)">
+    <rect x="0" y="0" width="200" height="120" rx="12" fill="#6366f1" opacity="0.15"/>
+    <rect x="0" y="0" width="200" height="120" rx="12" stroke="#6366f1" stroke-width="2" fill="none" opacity="0.5"/>
+    <text x="100" y="30" font-family="Arial, sans-serif" font-size="24" text-anchor="middle">😰</text>
+    <text x="100" y="55" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#6366f1" text-anchor="middle">FOMO</text>
+    <text x="100" y="75" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">• Chasing price moves</text>
+    <text x="100" y="90" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">• Entering without analysis</text>
+    <text x="100" y="105" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">• Missing the setup wait</text>
+    <!-- Connector line -->
+    <line x1="0" y1="60" x2="-95" y2="10" stroke="#6366f1" stroke-width="2" opacity="0.5" stroke-dasharray="5,5"/>
+  </g>
+
+  <!-- Solution box at bottom -->
+  <rect x="150" y="420" width="500" height="65" rx="12" fill="#10b981" opacity="0.2"/>
+  <rect x="150" y="420" width="500" height="65" rx="12" stroke="#10b981" stroke-width="2" fill="none"/>
+  <text x="400" y="445" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#10b981" text-anchor="middle">✅ THE SOLUTION: Trade Your Plan, Not Your Emotions</text>
+  <text x="400" y="470" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Define entries, exits, and position sizes BEFORE the trade • Accept that losses are part of the process</text>
+</svg>
