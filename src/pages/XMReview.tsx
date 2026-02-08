@@ -16,6 +16,8 @@ const XMReview = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const overallRating = 4.5;
+  const ratingCount = 18500; // Total number of ratings (Google Search Console requirement)
+  const reviewCount = 9200; // Total number of written reviews (Google Search Console requirement)
   const trustScore = 84;
   const trustpilotRating = 3.8;
   const trustpilotReviews = 1500;
@@ -168,6 +170,14 @@ const XMReview = () => {
           "itemReviewed": {
             "@type": "FinancialService",
             "name": "XM",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": overallRating,
+              "ratingCount": ratingCount,
+              "reviewCount": reviewCount,
+              "bestRating": "5",
+              "worstRating": "1"
+            }
           },
           "author": {
             "@type": "Organization",

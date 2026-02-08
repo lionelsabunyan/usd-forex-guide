@@ -161,7 +161,7 @@ const Hakkimizda = () => {
             </p>
             <div className="bg-card border border-border rounded-xl p-6">
               <p className="text-muted-foreground mb-2">
-                <strong className="text-foreground">Editör:</strong> Lionel Sabunyan
+                <strong className="text-foreground">Editör:</strong> Barış Demir
               </p>
               <p className="text-muted-foreground">
                 <strong className="text-foreground">E-posta:</strong>{" "}

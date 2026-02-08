@@ -52,8 +52,6 @@ const faqs = [
 ];
 
 const ProfitLossCalculator = () => {
-  const [searchParams] = useSearchParams();
-  const isEmbedMode = searchParams.get("embed") === "true";
   const [pair, setPair] = useState("EUR/USD");
   const [lotSize, setLotSize] = useState("1");
   const [entryPrice, setEntryPrice] = useState("1.0850");
@@ -398,34 +396,20 @@ const ProfitLossCalculator = () => {
               </Link>
             </div>
 
-            {/* Embed Code Box */}
-            {!isEmbedMode && (
-              <div className="mt-12">
-                <EmbedCodeBox
-                  toolName="Profit/Loss Calculator"
-                  toolPath="/tools/profit-loss-calculator"
-                />
-              </div>
-            )}
-
             {/* FAQ Section */}
-            {!isEmbedMode && (
-              <div className="mt-12">
-                <FAQSection faqs={faqs} />
-              </div>
-            )}
+            <div className="mt-12">
+              <FAQSection faqs={faqs} />
+            </div>
 
             {/* Newsletter CTA */}
-            {!isEmbedMode && (
-              <div className="mt-12">
-                <NewsletterCTA variant="card" />
-              </div>
-            )}
+            <div className="mt-12">
+              <NewsletterCTA variant="card" />
+            </div>
           </div>
         </div>
       </section>
 
-      {!isEmbedMode && <Footer />}
+      <Footer />
     </div>
   );
 };

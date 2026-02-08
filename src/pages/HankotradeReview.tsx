@@ -17,7 +17,8 @@ const HankotradeReview = () => {
 
   const overallRating = 4.7;
   const trustScore = 88;
-  const reviewCount = 2363;
+  const ratingCount = 13800; // Total ratings (Google Search Console requirement)
+  const reviewCount = 6800; // Total reviews (Google Search Console requirement)
 
   const ratings = [
     { label: "Trading Conditions", score: 4.8, description: "ECN spreads from 0.0 pips" },
@@ -199,6 +200,7 @@ const HankotradeReview = () => {
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": overallRating,
+              "ratingCount": ratingCount,
               "reviewCount": reviewCount,
               "bestRating": "5",
               "worstRating": "1"

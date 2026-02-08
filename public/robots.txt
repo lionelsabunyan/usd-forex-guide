@@ -1,12 +1,4 @@
-# Allow Yandex bot to access TR pages for ad moderation
-User-agent: YandexBot
-User-agent: YandexWebmaster
-User-agent: YandexAdNet
-User-agent: YandexDirect
-Allow: /tr/
-Allow: /tr
-
-# Disallow other search engines from indexing TR pages
+# All bots allowed
 User-agent: *
 Allow: /
 
@@ -14,10 +6,7 @@ Allow: /
 Disallow: /admin/
 Disallow: /admin/*
 
-# Disallow Turkish (TR) pages from search engines (paid traffic only)
-# Yandex bots are allowed above, others are blocked here
-Disallow: /tr/
-Disallow: /tr
-
-# Sitemap
+# Sitemaps
+Sitemap: https://beginnerfxguide.com/sitemap-index.xml
 Sitemap: https://beginnerfxguide.com/sitemap.xml
+Sitemap: https://beginnerfxguide.com/sitemap-tr.xml

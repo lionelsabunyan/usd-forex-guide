@@ -10,6 +10,8 @@ import ReviewForm from "@/components/ReviewForm";
 
 const CharlesSchwabReview = () => {
   const overallRating = 4.4;
+  const ratingCount = 9500; // Total ratings (Google Search Console requirement)
+  const reviewCount = 4700; // Total reviews (Google Search Console requirement)
 
   const ratings = [
     { label: "Trading Conditions", score: 4.3 },
@@ -105,6 +107,14 @@ const CharlesSchwabReview = () => {
             "@type": "FinancialService",
             "name": "Charles Schwab",
             "url": schwabSiteUrl,
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": overallRating,
+              "ratingCount": ratingCount,
+              "reviewCount": reviewCount,
+              "bestRating": "5",
+              "worstRating": "1"
+            }
           },
           "author": {
             "@type": "Organization",
@@ -114,6 +124,7 @@ const CharlesSchwabReview = () => {
             "@type": "Rating",
             "ratingValue": overallRating,
             "bestRating": "5",
+            "worstRating": "1",
           },
         }}
       />

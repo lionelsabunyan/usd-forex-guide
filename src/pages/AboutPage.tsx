@@ -20,7 +20,7 @@ const AboutPage = () => {
       "foundingDate": "2024",
       "founder": {
         "@type": "Person",
-        "name": "Lionel Sabunyan",
+        "name": "Ryan Mitchell",
         "jobTitle": "Founder & Editor-in-Chief"
       }
     }
@@ -195,26 +195,26 @@ const AboutPage = () => {
                 <div className="flex flex-col md:flex-row gap-8 items-start">
                   <div className="w-32 h-32 rounded-full overflow-hidden flex-shrink-0 mx-auto md:mx-0 border-4 border-primary/20">
                     <img
-                      src="/images/team/lionel-sabunyan.jpg"
-                      alt="Lionel Sabunyan - Founder of Beginner FX Guide"
+                      src="/images/team/ryan-mitchell.jpg"
+                      alt="Ryan Mitchell - Founder of Beginner FX Guide"
                       className="w-full h-full object-cover"
                     />
                   </div>
 
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2 flex-wrap">
-                      <h3 className="text-2xl font-bold text-foreground">Lionel Sabunyan</h3>
+                      <h3 className="text-2xl font-bold text-foreground">Ryan Mitchell</h3>
                       <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
                         Founder & Editor-in-Chief
                       </span>
                     </div>
 
                     <p className="text-muted-foreground mb-4 leading-relaxed">
-                      Lionel brings over 5 years of active forex trading experience and a solid foundation in finance and economics. His journey from a curious beginner to a seasoned trader inspired him to create Beginner FX Guide — a resource he wished existed when he started.
+                      Ryan brings over 5 years of active forex trading experience and a solid foundation in finance and economics. His journey from a curious beginner to a seasoned trader inspired him to create Beginner FX Guide — a resource he wished existed when he started.
                     </p>
 
                     <p className="text-muted-foreground mb-4 leading-relaxed">
-                      Having traded with dozens of brokers (both regulated US brokers and offshore platforms), Lionel understands the unique challenges American traders face. He personally tests every broker reviewed on this site, ensuring our recommendations are based on real trading experience, not marketing materials.
+                      Having traded with dozens of brokers (both regulated US brokers and offshore platforms), Ryan understands the unique challenges American traders face. He personally tests every broker reviewed on this site, ensuring our recommendations are based on real trading experience, not marketing materials.
                     </p>
 
                     <div className="flex flex-wrap gap-3 mt-4">

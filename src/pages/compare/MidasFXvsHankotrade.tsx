@@ -20,7 +20,7 @@ const MidasFXvsHankotrade = () => {
     "dateModified": "2026-02-03",
     "author": {
       "@type": "Person",
-      "name": "Lionel Sabunyan"
+      "name": "Ryan Mitchell"
     },
     "publisher": {
       "@type": "Organization",

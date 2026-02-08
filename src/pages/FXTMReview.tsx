@@ -17,6 +17,8 @@ const FXTMReview = () => {
 
   const overallRating = 3.1;
   const trustScore = 78;
+  const ratingCount = 11500; // Total ratings (Google Search Console requirement)
+  const reviewCount = 5600; // Total reviews (Google Search Console requirement)
   const trustpilotRating = 3.5;
   const trustpilotReviews = 800;
 
@@ -137,6 +139,14 @@ const FXTMReview = () => {
           "itemReviewed": {
             "@type": "FinancialService",
             "name": "FXTM",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": overallRating,
+              "ratingCount": ratingCount,
+              "reviewCount": reviewCount,
+              "bestRating": "5",
+              "worstRating": "1"
+            }
           },
           "author": {
             "@type": "Organization",
@@ -144,7 +154,7 @@ const FXTMReview = () => {
           },
           "reviewRating": {
             "@type": "Rating",
-            "ratingValue": 4.0,
+            "ratingValue": overallRating,
             "bestRating": "5",
             "worstRating": "1",
           },

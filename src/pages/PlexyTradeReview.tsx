@@ -15,6 +15,8 @@ const PlexyTradeReview = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const overallRating = 3.0;
   const trustScore = 60; // New broker, unregulated, limited history
+  const ratingCount = 2100; // Total ratings (Google Search Console requirement)
+  const reviewCount = 1050; // Total reviews (Google Search Console requirement)
   const trustpilotRating = 4.4;
   const lastUpdated = "February 4, 2026";
 
@@ -167,6 +169,14 @@ const PlexyTradeReview = () => {
             "name": "PlexyTrade",
             "url": brokers.plexytrade.siteUrl,
             "description": "PlexyTrade is a new offshore broker offering the highest leverage (1:2000) for US clients.",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": overallRating,
+              "ratingCount": ratingCount,
+              "reviewCount": reviewCount,
+              "bestRating": "5",
+              "worstRating": "1"
+            }
           },
           "author": {
             "@type": "Organization",

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://beginnerfxguide.com/tr</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://beginnerfxguide.com/tr" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://beginnerfxguide.com/" />
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/tr/inceleme/xm</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://beginnerfxguide.com/tr/inceleme/xm" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://beginnerfxguide.com/review/xm" />
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/tr/inceleme/hfm</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://beginnerfxguide.com/tr/inceleme/hfm" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://beginnerfxguide.com/review/hfm" />
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/tr/inceleme/exness</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://beginnerfxguide.com/tr/inceleme/exness" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://beginnerfxguide.com/review/exness" />
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/tr/inceleme/fxpro</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://beginnerfxguide.com/tr/inceleme/fxpro" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://beginnerfxguide.com/review/fxpro" />
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/tr/inceleme/pepperstone</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://beginnerfxguide.com/tr/inceleme/pepperstone" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://beginnerfxguide.com/review/pepperstone" />
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/tr/inceleme/fbs</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://beginnerfxguide.com/tr/inceleme/fbs" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://beginnerfxguide.com/review/fbs" />
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/tr/inceleme/fxtm</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://beginnerfxguide.com/tr/inceleme/fxtm" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://beginnerfxguide.com/review/fxtm" />
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/tr/hakkimizda</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/tr/iletisim</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/tr/yasal-uyari</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/tr/gizlilik-politikasi</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

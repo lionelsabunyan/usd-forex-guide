@@ -1,4 +1,3 @@
-import RiskDisclaimerBannerTR from "./RiskDisclaimerBannerTR";
 import HeaderTR from "./HeaderTR";
 import FooterTR from "./FooterTR";
 import MobileStickyFooterTR from "./MobileStickyFooterTR";
@@ -40,7 +39,7 @@ const TRLayout = ({ children, title, description, keywords, image }: Props) => {
         {/* Meta Tags */}
         <meta name="description" content={description || "2026'nın en iyi forex broker'larını karşılaştırın. FCA, CySEC lisanslı, Türkçe destekli broker incelemeleri."} />
         {keywords && <meta name="keywords" content={keywords} />}
-        <meta name="robots" content="noindex, nofollow" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href={currentUrl} />
 
         {/* Hreflang Tags */}
@@ -105,10 +104,8 @@ const TRLayout = ({ children, title, description, keywords, image }: Props) => {
       </Helmet>
 
       <div className="min-h-screen bg-background flex flex-col">
-        <RiskDisclaimerBannerTR />
         <HeaderTR />
-        {/* Risk banner (36px) + Header (64px) = 100px top padding */}
-        <main className="flex-1 pt-[100px]">
+        <main className="flex-1 pt-16">
           {children}
         </main>
         <FooterTR />

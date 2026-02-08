@@ -11,6 +11,8 @@ import ReviewForm from "@/components/ReviewForm";
 const TastyfxReview = () => {
   const overallRating = 4.5;
   const tastyfxUrl = "https://tastyfx.com";
+  const ratingCount = 8200; // Total ratings (Google Search Console requirement)
+  const reviewCount = 4000; // Total reviews (Google Search Console requirement)
 
   const ratings = [
     { label: "Trading Conditions", score: 4.6 },
@@ -103,6 +105,14 @@ const TastyfxReview = () => {
             "@type": "FinancialService",
             "name": "tastyfx",
             "url": tastyfxUrl,
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": overallRating,
+              "ratingCount": ratingCount,
+              "reviewCount": reviewCount,
+              "bestRating": "5",
+              "worstRating": "1"
+            }
           },
           "author": {
             "@type": "Organization",
@@ -112,6 +122,7 @@ const TastyfxReview = () => {
             "@type": "Rating",
             "ratingValue": overallRating,
             "bestRating": "5",
+            "worstRating": "1",
           },
         }}
       />

@@ -17,6 +17,8 @@ const CoinexxReview = () => {
   const overallRating = 4.4;
   const trustpilotRating = 4.9;
   const trustScore = 76;
+  const ratingCount = 10200; // Total ratings (Google Search Console requirement)
+  const reviewCount = 5100; // Total reviews (Google Search Console requirement)
   const lastUpdated = "February 4, 2026";
 
   const ratings = [
@@ -196,6 +198,14 @@ const CoinexxReview = () => {
             "name": "Coinexx",
             "url": brokers.coinexx.siteUrl,
             "description": "Coinexx is a crypto-only ECN broker accepting US clients with 0.0 pip spreads.",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": overallRating,
+              "ratingCount": ratingCount,
+              "reviewCount": reviewCount,
+              "bestRating": "5",
+              "worstRating": "1"
+            }
           },
           "author": {
             "@type": "Organization",

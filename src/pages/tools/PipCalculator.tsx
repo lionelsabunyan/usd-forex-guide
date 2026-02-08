@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { useSearchParams } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Calculator, Info, DollarSign, TrendingUp, RefreshCw } from "lucide-react";
@@ -9,6 +10,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import FAQSection from "@/components/FAQSection";
 import NewsletterCTA from "@/components/NewsletterCTA";
+import EmbedCodeBox from "@/components/EmbedCodeBox";
+import BrokerCTA from "@/components/BrokerCTA";
 import { Link } from "react-router-dom";
 
 // Common currency pairs with their pip decimal places
@@ -56,6 +59,9 @@ const faqs = [
 ];
 
 const PipCalculator = () => {
+  const [searchParams] = useSearchParams();
+  const isEmbedMode = searchParams.get("embed") === "true";
+
   const [selectedPair, setSelectedPair] = useState(currencyPairs[0]);
   const [accountCurrency, setAccountCurrency] = useState("USD");
   const [positionSize, setPositionSize] = useState("1"); // in lots
@@ -102,62 +108,91 @@ const PipCalculator = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEO
-        title="Free Pip Calculator | Forex Pip Value Calculator 2026"
-        description="Calculate pip value instantly for any forex pair. Free pip calculator for EUR/USD, GBP/USD, USD/JPY and more. Essential tool for risk management and position sizing."
-        canonical="/tools/pip-calculator"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "WebApplication",
-          "name": "Forex Pip Calculator",
-          "description": "Calculate pip value for any forex currency pair",
-          "applicationCategory": "FinanceApplication",
-          "operatingSystem": "Any",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          },
-          "author": {
-            "@type": "Organization",
-            "name": "Beginner FX Guide"
-          }
-        }}
-      />
-      <Header />
+      {!isEmbedMode && (
+        <SEO
+          title="Free Pip Calculator | Forex Pip Value Calculator 2026"
+          description="Calculate pip value instantly for any forex pair. Free pip calculator for EUR/USD, GBP/USD, USD/JPY and more. Essential tool for risk management and position sizing."
+          canonical="/tools/pip-calculator"
+          jsonLd={{
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Forex Pip Calculator",
+            "description": "Calculate pip value for any forex currency pair",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "Any",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "author": {
+              "@type": "Organization",
+              "name": "Beginner FX Guide"
+            }
+          }}
+        />
+      )}
+      {!isEmbedMode && <Header />}
 
       {/* Hero Section */}
-      <section className="pt-24 pb-12 bg-gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent" />
-        <div className="container mx-auto px-4 relative z-10">
-          <Breadcrumb
-            items={[
-              { label: "Tools", href: "/tools" },
-              { label: "Pip Calculator" }
-            ]}
-            className="mb-6"
-          />
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 rounded-xl bg-gradient-gold flex items-center justify-center">
-              <Calculator className="w-8 h-8 text-primary-foreground" />
+      {!isEmbedMode && (
+        <section className="pt-24 pb-12 bg-gradient-hero relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent" />
+          <div className="container mx-auto px-4 relative z-10">
+            <Breadcrumb
+              items={[
+                { label: "Tools", href: "/tools" },
+                { label: "Pip Calculator" }
+              ]}
+              className="mb-6"
+            />
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-16 h-16 rounded-xl bg-gradient-gold flex items-center justify-center">
+                <Calculator className="w-8 h-8 text-primary-foreground" />
+              </div>
+              <div>
+                <span className="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">Free Tool</span>
+              </div>
             </div>
-            <div>
-              <span className="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">Free Tool</span>
-            </div>
+            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">
+              Forex <span className="text-gradient-gold">Pip Calculator</span>
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-3xl mb-4">
+              Calculate pip value instantly for any currency pair. Essential for risk management
+              and position sizing.
+            </p>
           </div>
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">
-            Forex <span className="text-gradient-gold">Pip Calculator</span>
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl mb-4">
-            Calculate pip value instantly for any currency pair. Essential for risk management
-            and position sizing.
-          </p>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Calculator Section */}
-      <section className="py-12">
+      <section className={isEmbedMode ? "py-6" : "py-12"}>
         <div className="container mx-auto px-4">
+          {/* Embed Mode Header */}
+          {isEmbedMode && (
+            <div className="max-w-4xl mx-auto mb-6">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-gradient-gold flex items-center justify-center">
+                    <Calculator className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h1 className="text-2xl font-heading font-bold">Pip Calculator</h1>
+                    <p className="text-sm text-muted-foreground">Calculate pip value for any currency pair</p>
+                  </div>
+                </div>
+                <a
+                  href="https://beginnerfxguide.com/tools/pip-calculator"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-primary hover:underline"
+                >
+                  Open Full Version →
+                </a>
+              </div>
+            </div>
+          )}
+
           <div className="max-w-4xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-8">
               {/* Input Form */}
@@ -306,39 +341,67 @@ const PipCalculator = () => {
                   </div>
                 </div>
 
+                {/* Broker CTA - Only in non-embed mode */}
+                {!isEmbedMode && (
+                  <BrokerCTA
+                    resultText={`Calculated: $${calculation.pipValue}/pip for ${positionSize} lot(s)`}
+                    brokerName="MidasFX"
+                    brokerSlug="midasfx"
+                    minDeposit="$100"
+                    leverage="Up to 1:500"
+                    rating="4.8"
+                    ctaText="Start Trading"
+                  />
+                )}
+
                 {/* Quick Info */}
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
-                  <div className="flex items-start gap-3">
-                    <Info className="w-5 h-5 text-amber-600 mt-0.5" />
-                    <div>
-                      <h4 className="font-semibold text-amber-800 mb-1">Risk Management Tip</h4>
-                      <p className="text-sm text-amber-700">
-                        Never risk more than 1-2% of your account on a single trade. If your account
-                        is $10,000, risk max $100-200 per trade. Use pip value to calculate proper
-                        position size.
-                      </p>
+                {!isEmbedMode && (
+                  <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+                    <div className="flex items-start gap-3">
+                      <Info className="w-5 h-5 text-amber-600 mt-0.5" />
+                      <div>
+                        <h4 className="font-semibold text-amber-800 mb-1">Risk Management Tip</h4>
+                        <p className="text-sm text-amber-700">
+                          Never risk more than 1-2% of your account on a single trade. If your account
+                          is $10,000, risk max $100-200 per trade. Use pip value to calculate proper
+                          position size.
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
 
                 {/* US Trader Notice */}
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
-                  <div className="flex items-start gap-3">
-                    <DollarSign className="w-5 h-5 text-blue-600 mt-0.5" />
-                    <div>
-                      <h4 className="font-semibold text-blue-800 mb-1">US Traders</h4>
-                      <p className="text-sm text-blue-700">
-                        Maximum leverage for US traders is 50:1 for major pairs and 20:1 for minors
-                        (CFTC regulation). This affects your required margin but not pip value calculation.
-                      </p>
+                {!isEmbedMode && (
+                  <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                    <div className="flex items-start gap-3">
+                      <DollarSign className="w-5 h-5 text-blue-600 mt-0.5" />
+                      <div>
+                        <h4 className="font-semibold text-blue-800 mb-1">US Traders</h4>
+                        <p className="text-sm text-blue-700">
+                          Maximum leverage for US traders is 50:1 for major pairs and 20:1 for minors
+                          (CFTC regulation). This affects your required margin but not pip value calculation.
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
 
+            {/* Embed Code Box - Only in non-embed mode */}
+            {!isEmbedMode && (
+              <div className="mt-12">
+                <EmbedCodeBox
+                  toolName="Pip Calculator"
+                  toolPath="/tools/pip-calculator"
+                />
+              </div>
+            )}
+
             {/* How It Works */}
-            <div className="mt-12 bg-card border border-border rounded-2xl p-8">
+            {!isEmbedMode && (
+              <div className="mt-12 bg-card border border-border rounded-2xl p-8">
               <h2 className="text-2xl font-heading font-bold mb-6">How Pip Value Works</h2>
 
               <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -383,9 +446,11 @@ const PipCalculator = () => {
                 </div>
               </div>
             </div>
+            )}
 
             {/* Related Tools CTA */}
-            <div className="mt-8 grid md:grid-cols-2 gap-4">
+            {!isEmbedMode && (
+              <div className="mt-8 grid md:grid-cols-2 gap-4">
               <Link
                 to="/tools/position-size-calculator"
                 className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all group"
@@ -409,21 +474,26 @@ const PipCalculator = () => {
                 </p>
               </Link>
             </div>
+            )}
 
             {/* FAQ Section */}
-            <div className="mt-12">
-              <FAQSection faqs={faqs} />
-            </div>
+            {!isEmbedMode && (
+              <div className="mt-12">
+                <FAQSection faqs={faqs} />
+              </div>
+            )}
 
             {/* Newsletter CTA */}
-            <div className="mt-12">
-              <NewsletterCTA variant="card" />
-            </div>
+            {!isEmbedMode && (
+              <div className="mt-12">
+                <NewsletterCTA variant="card" />
+              </div>
+            )}
           </div>
         </div>
       </section>
 
-      <Footer />
+      {!isEmbedMode && <Footer />}
     </div>
   );
 };

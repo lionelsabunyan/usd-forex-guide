@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { useSearchParams } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Scale, Info, DollarSign, Shield, AlertTriangle, RefreshCw } from "lucide-react";
@@ -9,6 +10,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import FAQSection from "@/components/FAQSection";
 import NewsletterCTA from "@/components/NewsletterCTA";
+import EmbedCodeBox from "@/components/EmbedCodeBox";
+import BrokerCTA from "@/components/BrokerCTA";
 import { Link } from "react-router-dom";
 
 // Common currency pairs with their pip decimal places
@@ -70,6 +73,9 @@ const faqs = [
 ];
 
 const PositionSizeCalculator = () => {
+  const [searchParams] = useSearchParams();
+  const isEmbedMode = searchParams.get("embed") === "true";
+
   const [accountBalance, setAccountBalance] = useState("10000");
   const [riskPercentage, setRiskPercentage] = useState(1);
   const [stopLossPips, setStopLossPips] = useState("50");
@@ -375,8 +381,22 @@ const PositionSizeCalculator = () => {
                   </div>
                 </div>
 
+                {/* Broker CTA */}
+                {!isEmbedMode && (
+                  <BrokerCTA
+                    resultText={`Perfect position: ${calculation.positionSizeLots} lots for ${riskPercentage}% risk`}
+                    brokerName="Hankotrade"
+                    brokerSlug="hankotrade"
+                    minDeposit="$250"
+                    leverage="Up to 1:500"
+                    rating="4.7"
+                    ctaText="Start Trading"
+                  />
+                )}
+
                 {/* Risk Warning */}
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+                {!isEmbedMode && (
+                  <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
                   <div className="flex items-start gap-3">
                     <AlertTriangle className="w-5 h-5 text-amber-600 mt-0.5" />
                     <div>
@@ -388,9 +408,11 @@ const PositionSizeCalculator = () => {
                     </div>
                   </div>
                 </div>
+                )}
 
                 {/* R:R Guidance */}
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                {!isEmbedMode && (
+                  <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
                   <div className="flex items-start gap-3">
                     <Info className="w-5 h-5 text-blue-600 mt-0.5" />
                     <div>
@@ -407,6 +429,7 @@ const PositionSizeCalculator = () => {
                     </div>
                   </div>
                 </div>
+                )}
               </div>
             </div>
 
@@ -552,20 +575,34 @@ const PositionSizeCalculator = () => {
               </Link>
             </div>
 
+            {/* Embed Code Box */}
+            {!isEmbedMode && (
+              <div className="mt-12">
+                <EmbedCodeBox
+                  toolName="Position Size Calculator"
+                  toolPath="/tools/position-size-calculator"
+                />
+              </div>
+            )}
+
             {/* FAQ Section */}
-            <div className="mt-12">
-              <FAQSection faqs={faqs} />
-            </div>
+            {!isEmbedMode && (
+              <div className="mt-12">
+                <FAQSection faqs={faqs} />
+              </div>
+            )}
 
             {/* Newsletter CTA */}
-            <div className="mt-12">
-              <NewsletterCTA variant="card" />
-            </div>
+            {!isEmbedMode && (
+              <div className="mt-12">
+                <NewsletterCTA variant="card" />
+              </div>
+            )}
           </div>
         </div>
       </section>
 
-      <Footer />
+      {!isEmbedMode && <Footer />}
     </div>
   );
 };

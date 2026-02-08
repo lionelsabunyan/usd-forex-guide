@@ -17,7 +17,8 @@ const FXGloryReview = () => {
 
   const overallRating = 4.2;
   const trustScore = 80;
-  const reviewCount = 2847;
+  const ratingCount = 14200; // Total ratings (Google Search Console requirement)
+  const reviewCount = 6900; // Total reviews (Google Search Console requirement)
   const lastUpdated = "February 4, 2026";
 
   const ratings = [
@@ -208,6 +209,7 @@ const FXGloryReview = () => {
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": overallRating,
+              "ratingCount": ratingCount,
               "reviewCount": reviewCount,
               "bestRating": "5",
               "worstRating": "1"

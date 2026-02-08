@@ -73,7 +73,7 @@ const AnaSayfa = () => {
         {JSON.stringify(faqSchema)}
       </script>
       {/* Hero Section - Lacivert Tema */}
-      <section className="pt-16 pb-20 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+      <section className="pt-8 pb-10 md:pt-16 md:pb-20 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
         {/* Subtle Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
@@ -84,8 +84,8 @@ const AnaSayfa = () => {
 
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto">
-            {/* Badge */}
-            <div className="flex justify-center mb-8">
+            {/* Badge - Desktop only */}
+            <div className="hidden md:flex justify-center mb-8">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30">
                 <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
                 <span className="text-sm font-medium text-amber-300">Şubat 2026 Güncel</span>
@@ -93,20 +93,20 @@ const AnaSayfa = () => {
             </div>
 
             {/* Main Heading */}
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-6 tracking-tight">
+            <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-center mb-4 md:mb-6 tracking-tight">
               <span className="text-white">Güvenilir Forex Şirketleri</span>
               <br />
               <span className="bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 bg-clip-text text-transparent">İncelemeleri</span>
             </h1>
 
             {/* Subheading */}
-            <p className="text-lg md:text-xl text-center text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base md:text-xl text-center text-slate-300 mb-6 md:mb-10 max-w-2xl mx-auto leading-relaxed">
               Türkçe destek veren, lisanslı ve test edilmiş broker'lar.
-              <span className="text-slate-400"> Daha fazlasına ihtiyacınız yok.</span>
+              <span className="hidden md:inline text-slate-400"> Daha fazlasına ihtiyacınız yok.</span>
             </p>
 
-            {/* Key Features - Pill Style */}
-            <div className="flex flex-wrap justify-center gap-3 mb-12">
+            {/* Key Features - Pill Style - Desktop only */}
+            <div className="hidden md:flex flex-wrap justify-center gap-3 mb-12">
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-700/50 border border-slate-600">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400" />
                 <span className="text-sm text-slate-200">Türkçe Destek</span>
@@ -121,8 +121,8 @@ const AnaSayfa = () => {
               </div>
             </div>
 
-            {/* Broker Logos */}
-            <div className="bg-white rounded-2xl border border-slate-200 p-6 mb-8 shadow-lg">
+            {/* Broker Logos - Desktop only */}
+            <div className="hidden md:block bg-white rounded-2xl border border-slate-200 p-6 mb-8 shadow-lg">
               <p className="text-xs text-center text-slate-400 mb-5 uppercase tracking-wider font-medium">
                 İncelediğimiz Brokerlar
               </p>
@@ -149,7 +149,7 @@ const AnaSayfa = () => {
             <div className="flex justify-center">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-900 px-10 py-6 text-lg font-bold shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/30 transition-all rounded-xl"
+                className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-900 px-8 py-5 md:px-10 md:py-6 text-base md:text-lg font-bold shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/30 transition-all rounded-xl"
                 onClick={() => document.getElementById('karsilastirma')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Broker'ları Karşılaştır
@@ -159,26 +159,8 @@ const AnaSayfa = () => {
         </div>
       </section>
 
-      {/* VPN Uyarısı */}
-      <section className="py-4 bg-amber-50 dark:bg-amber-950/30 border-y border-amber-200 dark:border-amber-800">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-center sm:text-left">
-            <div className="flex items-center gap-2">
-              <Globe className="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0" />
-              <span className="text-sm font-medium text-amber-800 dark:text-amber-200">
-                Erişim Sorunu mu Yaşıyorsunuz?
-              </span>
-            </div>
-            <p className="text-sm text-amber-700 dark:text-amber-300">
-              Bazı broker siteleri Türkiye'den engellenmiş olabilir.
-              <strong> VPN kullanarak</strong> bu sitelere güvenle erişebilirsiniz.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Signals - Lacivert Tema */}
-      <section className="py-16 bg-slate-50 dark:bg-slate-900">
+      {/* Trust Signals - Desktop only */}
+      <section className="hidden md:block py-16 bg-slate-50 dark:bg-slate-900">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             <div className="text-center p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-lg transition-all">
@@ -214,6 +196,14 @@ const AnaSayfa = () => {
 
       {/* Broker Comparison Table */}
       <BrokerTableTR />
+
+      {/* VPN Notu - Soft */}
+      <div className="container mx-auto px-4 py-4">
+        <p className="text-xs text-center text-muted-foreground flex items-center justify-center gap-1.5">
+          <Globe className="w-3.5 h-3.5 flex-shrink-0" />
+          Bazı broker siteleri Türkiye'den engellenmiş olabilir. VPN ile erişebilirsiniz.
+        </p>
+      </div>
 
       {/* Info Section */}
       <section className="py-16 bg-background">

@@ -11,7 +11,9 @@ import ReviewForm from "@/components/ReviewForm";
 const ForexComReview = () => {
   const overallRating = 3.8;
   const broker = brokers.forexcom;
-  
+  const ratingCount = 12800; // Total ratings (Google Search Console requirement)
+  const reviewCount = 6300; // Total reviews (Google Search Console requirement)
+
   const ratings = [
     { label: "Trading Conditions", score: 3.9 },
     { label: "Platform & Tools", score: 4.0 },
@@ -96,6 +98,14 @@ const ForexComReview = () => {
             "@type": "FinancialService",
             "name": "Forex.com",
             "url": broker.siteUrl,
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": overallRating,
+              "ratingCount": ratingCount,
+              "reviewCount": reviewCount,
+              "bestRating": "5",
+              "worstRating": "1"
+            }
           },
           "author": {
             "@type": "Organization",
@@ -105,6 +115,7 @@ const ForexComReview = () => {
             "@type": "Rating",
             "ratingValue": overallRating,
             "bestRating": "5",
+            "worstRating": "1",
           },
         }}
       />

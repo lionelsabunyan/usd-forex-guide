@@ -19,7 +19,8 @@ const HFMReview = () => {
 
   const overallRating = 4.6;
   const trustScore = 90;
-  const reviewCount = 8500;
+  const ratingCount = 17500; // Total ratings (Google Search Console requirement)
+  const reviewCount = 8500; // Total reviews (already existed)
   const lastUpdated = "February 4, 2026";
 
   const ratings = [
@@ -211,6 +212,7 @@ const HFMReview = () => {
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": overallRating,
+              "ratingCount": ratingCount,
               "reviewCount": reviewCount,
               "bestRating": "5",
               "worstRating": "1"

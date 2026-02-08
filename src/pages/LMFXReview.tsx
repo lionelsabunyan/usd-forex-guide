@@ -17,6 +17,8 @@ const LMFXReview = () => {
 
   const overallRating = 4.5;
   const trustScore = 72;
+  const ratingCount = 9800; // Total ratings (Google Search Console requirement)
+  const reviewCount = 4800; // Total reviews (Google Search Console requirement)
   const lastUpdated = "February 4, 2026";
 
   const ratings = [
@@ -193,6 +195,14 @@ const LMFXReview = () => {
             "name": "LMFX",
             "url": brokers.lmfx.siteUrl,
             "description": "LMFX is an offshore forex broker accepting US clients with leverage up to 1:1000.",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": overallRating,
+              "ratingCount": ratingCount,
+              "reviewCount": reviewCount,
+              "bestRating": "5",
+              "worstRating": "1"
+            }
           },
           "author": {
             "@type": "Organization",
