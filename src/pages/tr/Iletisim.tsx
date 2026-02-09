@@ -6,6 +6,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MessageSquare, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { contactStore } from "@/lib/adminStore";
+import { sendContactNotification } from "@/lib/emailService";
 
 const Iletisim = () => {
   const { toast } = useToast();
@@ -21,16 +23,38 @@ const Iletisim = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      // Local store'a kaydet (admin dashboard için)
+      contactStore.add({
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        language: "tr", // Turkish form identifier
+      });
 
-    toast({
-      title: "Mesajınız gönderildi",
-      description: "En kısa sürede size dönüş yapacağız.",
-    });
+      // EmailJS ile email gönder
+      await sendContactNotification({
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      });
 
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    setIsSubmitting(false);
+      setIsSubmitting(false);
+      toast({
+        title: "Mesajınız gönderildi",
+        description: "En kısa sürede size dönüş yapacağız.",
+      });
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      setIsSubmitting(false);
+      toast({
+        title: "Hata",
+        description: "Mesaj gönderilemedi. Lütfen tekrar deneyin.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleChange = (

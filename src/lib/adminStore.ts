@@ -13,6 +13,7 @@ export interface ContactMessage {
   message: string;
   createdAt: string;
   status: "new" | "read" | "replied" | "archived";
+  language?: "en" | "tr"; // Language identifier for multi-language support
   notes?: string;
 }
 

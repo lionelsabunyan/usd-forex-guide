@@ -176,9 +176,16 @@ const AdminMessages = () => {
                       {getStatusIcon(msg.status)}
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between gap-2">
-                          <p className={`font-medium truncate ${msg.status === "new" ? "text-foreground" : "text-muted-foreground"}`}>
-                            {msg.name}
-                          </p>
+                          <div className="flex items-center gap-2 min-w-0">
+                            <p className={`font-medium truncate ${msg.status === "new" ? "text-foreground" : "text-muted-foreground"}`}>
+                              {msg.name}
+                            </p>
+                            {msg.language && (
+                              <span className="text-[10px] px-1.5 py-0.5 rounded bg-purple-500/10 text-purple-500 uppercase shrink-0">
+                                {msg.language}
+                              </span>
+                            )}
+                          </div>
                           <span className="text-xs text-muted-foreground shrink-0">
                             {formatDate(msg.createdAt)}
                           </span>
@@ -216,15 +223,22 @@ const AdminMessages = () => {
               <div className="space-y-6">
                 {/* Header Info */}
                 <div className="space-y-2">
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between gap-2">
                     <h3 className="text-xl font-semibold text-foreground">{selectedMessage.subject}</h3>
-                    <span className={`px-2 py-1 text-xs rounded-full ${
-                      selectedMessage.status === "new" ? "bg-blue-500/10 text-blue-500" :
-                      selectedMessage.status === "replied" ? "bg-green-500/10 text-green-500" :
-                      "bg-muted text-muted-foreground"
-                    }`}>
-                      {selectedMessage.status}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      {selectedMessage.language && (
+                        <span className="px-2 py-1 text-xs rounded-full bg-purple-500/10 text-purple-500 uppercase">
+                          {selectedMessage.language}
+                        </span>
+                      )}
+                      <span className={`px-2 py-1 text-xs rounded-full ${
+                        selectedMessage.status === "new" ? "bg-blue-500/10 text-blue-500" :
+                        selectedMessage.status === "replied" ? "bg-green-500/10 text-green-500" :
+                        "bg-muted text-muted-foreground"
+                      }`}>
+                        {selectedMessage.status}
+                      </span>
+                    </div>
                   </div>
                   <div className="text-sm text-muted-foreground">
                     <p><strong>From:</strong> {selectedMessage.name} ({selectedMessage.email})</p>

@@ -33,6 +33,7 @@ const ContactPage = () => {
         email: formData.email,
         subject: formData.subject,
         message: formData.message,
+        language: "en", // English form identifier
       });
 
       // Send email notification
