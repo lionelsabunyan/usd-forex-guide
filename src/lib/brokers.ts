@@ -189,7 +189,7 @@ export const brokers: Record<BrokerId, Broker> = {
     reviewUrl: "/review/fxglory",
     siteUrl: env.VITE_FXGLORY_VISIT_URL || "https://fxglory.com/?ib=82027",
     affiliateUrl: env.VITE_FXGLORY_AFFILIATE_URL || "https://app.fxglory.com/auth/register?ib=82027",
-    logoSrc: "/brokers/fxglory.png",
+    logoSrc: "/brokers/fxglory.webp",
   },
   n1cm: {
     id: "n1cm",
@@ -367,7 +367,7 @@ export const brokers: Record<BrokerId, Broker> = {
     ],
     reviewUrl: "/review/charles-schwab",
     siteUrl: "https://www.schwab.com",
-    logoSrc: "/brokers/charlesschwab.png",
+    logoSrc: "/brokers/charlesschwab.webp",
   },
   etoro: {
     id: "etoro",

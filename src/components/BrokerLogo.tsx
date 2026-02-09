@@ -36,6 +36,8 @@ const BrokerLogo = ({ broker, className, imgClassName }: Props) => {
         <img
           src={broker.logoSrc}
           alt={`${broker.name} forex broker logo`}
+          width={48}
+          height={48}
           className={cn(
             "w-full h-full object-contain",
             broker.id === "fxglory" ? "p-2.5" : "p-2",

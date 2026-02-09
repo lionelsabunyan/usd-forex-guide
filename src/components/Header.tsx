@@ -68,7 +68,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-foreground p-2"
+            className="md:hidden text-foreground p-3 min-w-[44px] min-h-[44px] flex items-center justify-center"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -84,7 +84,7 @@ const Header = () => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className="text-foreground/70 hover:text-foreground transition-colors text-sm font-medium py-3"
+                  className="text-foreground/70 hover:text-foreground transition-colors text-sm font-medium py-3.5 min-h-[44px] flex items-center"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
@@ -92,7 +92,7 @@ const Header = () => {
               ))}
               <Link
                 to="/about"
-                className="text-foreground/70 hover:text-foreground transition-colors text-sm font-medium py-3"
+                className="text-foreground/70 hover:text-foreground transition-colors text-sm font-medium py-3.5 min-h-[44px] flex items-center"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About

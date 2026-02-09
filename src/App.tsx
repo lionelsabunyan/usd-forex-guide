@@ -85,6 +85,8 @@ const BlogPostPage = lazy(() => import("./pages/blog/BlogPostPage"));
 
 // Compare Pages - Lazy loaded
 const MidasFXvsHankotrade = lazy(() => import("./pages/compare/MidasFXvsHankotrade"));
+const BestBrokersAustralia = lazy(() => import("./pages/BestBrokersAustralia"));
+const BestBrokersUK = lazy(() => import("./pages/BestBrokersUK"));
 
 // Resources - Lazy loaded
 const USForexChecklist = lazy(() => import("./pages/resources/USForexChecklist"));
@@ -164,6 +166,8 @@ const App = () => (
             {/* Main Pages */}
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/brokers" element={<BrokersPage />} />
+            <Route path="/brokers/australia" element={<BestBrokersAustralia />} />
+            <Route path="/brokers/uk" element={<BestBrokersUK />} />
             <Route path="/compare" element={<ComparePage />} />
             <Route path="/compare/midasfx-vs-hankotrade" element={<MidasFXvsHankotrade />} />
             <Route path="/guides" element={<GuidesPage />} />

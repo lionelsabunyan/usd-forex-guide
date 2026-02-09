@@ -37,7 +37,8 @@ const BrokerCard = ({ broker, rank }: BrokerCardProps) => {
   return (
     <div className={`bg-card border rounded-2xl overflow-hidden hover:shadow-lg transition-all ${broker.featured ? 'border-primary/50 ring-1 ring-primary/20' : 'border-border hover:border-primary/30'}`}>
       {/* Header with rank and rating */}
-      <div className="relative">
+      <Link to={broker.reviewUrl} className="block">
+        <div className="relative">
         {rank && (
           <div className="absolute top-4 left-4 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm z-10">
             {rank}
@@ -122,19 +123,20 @@ const BrokerCard = ({ broker, rank }: BrokerCardProps) => {
         <ScoreBar label="Trust & Reputation" score={broker.scores.trustReputation} />
       </div>
 
-      {/* US Accepted Badge */}
-      <div className="px-6 pb-4">
-        {broker.usAccepted ? (
-          <div className="flex items-center gap-2 text-sm text-green-600 bg-green-50 rounded-lg px-3 py-2">
-            <Check className="w-4 h-4" />
-            <span className="font-medium">US Clients Accepted</span>
-          </div>
-        ) : (
-          <div className="flex items-center gap-2 text-sm text-red-600 bg-red-50 rounded-lg px-3 py-2">
-            <span className="font-medium">US Clients NOT Accepted</span>
-          </div>
-        )}
-      </div>
+        {/* US Accepted Badge */}
+        <div className="px-6 pb-4">
+          {broker.usAccepted ? (
+            <div className="flex items-center gap-2 text-sm text-green-600 bg-green-50 dark:bg-green-950 rounded-lg px-3 py-2">
+              <Check className="w-4 h-4" />
+              <span className="font-medium">US Clients Accepted</span>
+            </div>
+          ) : (
+            <div className="flex items-center gap-2 text-sm text-red-600 bg-red-50 dark:bg-red-950 rounded-lg px-3 py-2">
+              <span className="font-medium">US Clients NOT Accepted</span>
+            </div>
+          )}
+        </div>
+      </Link>
 
       {/* CTA */}
       <div className="p-4 bg-muted/30 border-t border-border">
