@@ -77,8 +77,21 @@ export const trackTRBrokerClick = (
     }
   }
 
-  // 2. GOOGLE ANALYTICS 4 - TR Conversion Event
+  // 2. GOOGLE ANALYTICS 4 - Multiple Events (same as US site)
   if (typeof window !== "undefined" && (window as any).gtag) {
+    // 2a. Standard affiliate_click event (for consistency with US site)
+    (window as any).gtag("event", "affiliate_click", {
+      broker_id: brokerId,
+      broker_name: brokerName,
+      click_location: location,
+      button_type: buttonType || "default",
+      has_bonus: hasBonus,
+      language: "tr",
+      value: hasBonus ? 15 : 10,
+      currency: "USD",
+    });
+
+    // 2b. TR-specific broker click event
     (window as any).gtag("event", "tr_broker_click", {
       broker_id: brokerId,
       broker_name: brokerName,
@@ -90,7 +103,20 @@ export const trackTRBrokerClick = (
       currency: "USD",
     });
 
-    // GA4 Conversion Event (mark as Key Event in GA4)
+    // 2c. Open Account specific event (for conversion tracking)
+    if (buttonType === "hesap_ac" || location.includes("review")) {
+      (window as any).gtag("event", "open_account_click", {
+        broker_id: brokerId,
+        broker_name: brokerName,
+        click_location: location,
+        has_bonus: hasBonus,
+        value: hasBonus ? 15 : 10,
+        currency: "USD",
+        language: "tr",
+      });
+    }
+
+    // 2d. GA4 Conversion Event (mark as Key Event in GA4)
     (window as any).gtag("event", "conversion", {
       send_to: "AW-CONVERSION_ID/CONVERSION_LABEL", // Yandex Direct'ten sonra ekle
       value: hasBonus ? 15 : 10,
@@ -99,8 +125,21 @@ export const trackTRBrokerClick = (
     });
   }
 
-  // 3. DATA LAYER (GTM için)
+  // 3. DATA LAYER (GTM için) - Multiple Events (same as US site)
   if (typeof window !== "undefined" && (window as any).dataLayer) {
+    // 3a. Standard affiliate_click event
+    (window as any).dataLayer.push({
+      event: "affiliate_click",
+      broker_id: brokerId,
+      broker_name: brokerName,
+      click_location: location,
+      button_type: buttonType || "default",
+      has_bonus: hasBonus,
+      conversion_value: hasBonus ? 15 : 10,
+      language: "tr",
+    });
+
+    // 3b. TR-specific conversion event
     (window as any).dataLayer.push({
       event: "tr_conversion",
       broker_id: brokerId,
