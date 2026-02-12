@@ -11,7 +11,7 @@ interface BrokerCardProps {
 }
 
 const ScoreBar = ({ label, score }: { label: string; score: number }) => {
-  const percentage = (score / 10) * 100;
+  const percentage = (score / 5) * 100;
   return (
     <div className="flex items-center justify-between gap-3">
       <span className="text-xs text-muted-foreground w-32 truncate">{label}</span>
@@ -21,14 +21,13 @@ const ScoreBar = ({ label, score }: { label: string; score: number }) => {
           style={{ width: `${percentage}%` }}
         />
       </div>
-      <span className="text-xs font-medium w-6 text-right">{score}</span>
+      <span className="text-xs font-medium w-6 text-right">{score.toFixed(1)}</span>
     </div>
   );
 };
 
 const BrokerCard = ({ broker, rank }: BrokerCardProps) => {
   const avgScore = getAverageScore(broker);
-  const ratingOutOf10 = Math.round(broker.rating * 2 * 10) / 10; // 4.8 -> 9.6
 
   const handleCtaClick = () => {
     trackAffiliateClick(broker.id, "compare_page", "open_account");
@@ -67,10 +66,10 @@ const BrokerCard = ({ broker, rank }: BrokerCardProps) => {
             {/* Rating Badge */}
             <div className="flex flex-col items-center">
               <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center">
-                <span className="text-lg font-bold text-primary-foreground">{ratingOutOf10}</span>
+                <span className="text-lg font-bold text-primary-foreground">{broker.rating.toFixed(1)}</span>
               </div>
               <span className="text-[10px] text-muted-foreground mt-1">
-                {broker.rating.toFixed(1)}/5
+                out of 5
               </span>
             </div>
           </div>
