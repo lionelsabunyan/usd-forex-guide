@@ -15,7 +15,7 @@ import { useState } from "react";
 const LMFXReview = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  const overallRating = 4.5;
+  const overallRating = 4.6;
   const trustScore = 72;
   const ratingCount = 9800; // Total ratings (Google Search Console requirement)
   const reviewCount = 4800; // Total reviews (Google Search Console requirement)

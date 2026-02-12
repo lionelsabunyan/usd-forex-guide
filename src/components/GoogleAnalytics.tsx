@@ -3,9 +3,10 @@ import { useEffect } from "react";
 type GoogleAnalyticsProps = {
   gaId?: string;
   gtmId?: string;
+  uetId?: string; // Bing UET Tag ID
 };
 
-const GoogleAnalytics = ({ gaId, gtmId }: GoogleAnalyticsProps) => {
+const GoogleAnalytics = ({ gaId, gtmId, uetId }: GoogleAnalyticsProps) => {
   useEffect(() => {
     // Google Analytics 4 (GA4)
     if (gaId) {
@@ -43,7 +44,27 @@ const GoogleAnalytics = ({ gaId, gtmId }: GoogleAnalyticsProps) => {
       noscript.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=${gtmId}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
       document.body.insertBefore(noscript, document.body.firstChild);
     }
-  }, [gaId, gtmId]);
+
+    // Bing UET Tag
+    if (uetId) {
+      const script = document.createElement("script");
+      script.innerHTML = `
+        (function(w,d,t,r,u){
+          var f,n,i;
+          w[u]=w[u]||[],f=function(){
+            var o={ti:"${uetId}", enableAutoSpaTracking: true};
+            o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")
+          },
+          n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){
+            var s=this.readyState;
+            s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)
+          },
+          i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)
+        })(window,document,"script","//bat.bing.com/bat.js","uetq");
+      `;
+      document.head.appendChild(script);
+    }
+  }, [gaId, gtmId, uetId]);
 
   return null;
 };

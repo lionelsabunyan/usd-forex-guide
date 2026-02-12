@@ -123,13 +123,14 @@ const queryClient = new QueryClient();
 // Google Analytics IDs
 const GA_ID = import.meta.env.VITE_GA_ID || "G-P860PCCF1T";
 const GTM_ID = import.meta.env.VITE_GTM_ID || "";
+const UET_ID = import.meta.env.VITE_UET_ID || "187233174"; // Bing UET Tag
 
 const App = () => (
   <HelmetProvider>
     <ThemeProvider defaultTheme="system" storageKey="bfxg-theme">
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
-          <GoogleAnalytics gaId={GA_ID} gtmId={GTM_ID} />
+          <GoogleAnalytics gaId={GA_ID} gtmId={GTM_ID} uetId={UET_ID} />
           <Toaster />
           <Sonner />
           <BrowserRouter>

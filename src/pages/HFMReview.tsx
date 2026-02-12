@@ -17,7 +17,7 @@ import { useState } from "react";
 const HFMReview = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  const overallRating = 4.6;
+  const overallRating = 4.5;
   const trustScore = 90;
   const ratingCount = 17500; // Total ratings (Google Search Console requirement)
   const reviewCount = 8500; // Total reviews (already existed)

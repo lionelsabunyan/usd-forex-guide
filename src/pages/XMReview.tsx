@@ -15,7 +15,7 @@ import { useState } from "react";
 const XMReview = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  const overallRating = 4.5;
+  const overallRating = 4.4;
   const ratingCount = 18500; // Total number of ratings (Google Search Console requirement)
   const reviewCount = 9200; // Total number of written reviews (Google Search Console requirement)
   const trustScore = 84;
