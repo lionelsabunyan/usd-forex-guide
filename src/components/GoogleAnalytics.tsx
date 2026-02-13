@@ -4,9 +4,10 @@ type GoogleAnalyticsProps = {
   gaId?: string;
   gtmId?: string;
   uetId?: string; // Bing UET Tag ID
+  ymId?: string; // Yandex.Metrica Counter ID
 };
 
-const GoogleAnalytics = ({ gaId, gtmId, uetId }: GoogleAnalyticsProps) => {
+const GoogleAnalytics = ({ gaId, gtmId, uetId, ymId }: GoogleAnalyticsProps) => {
   useEffect(() => {
     // Google Analytics 4 (GA4)
     if (gaId) {
@@ -64,7 +65,36 @@ const GoogleAnalytics = ({ gaId, gtmId, uetId }: GoogleAnalyticsProps) => {
       `;
       document.head.appendChild(script);
     }
-  }, [gaId, gtmId, uetId]);
+
+    // Yandex.Metrica
+    if (ymId) {
+      const script = document.createElement("script");
+      script.innerHTML = `
+        (function(m,e,t,r,i,k,a){
+          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],
+          k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(${ymId}, "init", {
+          clickmap:true,
+          trackLinks:true,
+          accurateTrackBounce:true,
+          webvisor:false,
+          trackHash:true,
+          ecommerce:"dataLayer"
+        });
+      `;
+      document.head.appendChild(script);
+
+      // Yandex.Metrica noscript
+      const noscript = document.createElement("noscript");
+      noscript.innerHTML = `<div><img src="https://mc.yandex.ru/watch/${ymId}" style="position:absolute; left:-9999px;" alt="" /></div>`;
+      document.body.insertBefore(noscript, document.body.firstChild);
+    }
+  }, [gaId, gtmId, uetId, ymId]);
 
   return null;
 };

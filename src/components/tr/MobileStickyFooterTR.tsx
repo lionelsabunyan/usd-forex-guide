@@ -1,6 +1,7 @@
 import { ExternalLink } from "lucide-react";
 import { useLocation } from "react-router-dom";
 import { Button } from "../ui/button";
+import { trackAffiliateClick } from "@/lib/tracking";
 
 /**
  * Mobile Sticky Footer CTA - Turkish Version
@@ -29,16 +30,7 @@ const MobileStickyFooterTR = () => {
           href="https://www.hf-anatbroker.com/en/?refid=30503439"
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => {
-            // Track click if analytics available
-            if (typeof window !== 'undefined' && (window as any).gtag) {
-              (window as any).gtag('event', 'affiliate_click', {
-                broker: 'hfm',
-                location: 'mobile_sticky_tr',
-                action: 'hesap_ac'
-              });
-            }
-          }}
+          onClick={() => trackAffiliateClick("hfm", "mobile_sticky_tr", "hesap_ac")}
         >
           Hemen Hesap Aç
           <ExternalLink className="w-4 h-4" />

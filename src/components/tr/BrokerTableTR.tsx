@@ -25,7 +25,7 @@ const BrokerTableTR = () => {
     .sort((a, b) => (b.rating || 0) - (a.rating || 0));
 
   const handleVisitClick = (broker: Broker) => {
-    trackAffiliateClick(broker.id, broker.name, "tr_comparison", "hesap_ac");
+    trackAffiliateClick(broker.id, "tr_comparison", "hesap_ac");
   };
 
   const getAffiliateUrl = (broker: Broker): string => {
