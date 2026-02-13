@@ -676,7 +676,7 @@ export const brokers: Record<BrokerId, Broker> = {
     name: "Coinexx",
     type: "offshore",
     region: "BOTH",
-    rating: 4.7,
+    rating: 4.71,
     featured: true,
     minDeposit: 10,
     minDepositDisplay: "$10",

@@ -14,7 +14,7 @@ import { useState } from "react";
 
 const CoinexxReview = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const overallRating = 4.7;
+  const overallRating = 4.71;
   const trustpilotRating = 4.9;
   const trustScore = 76;
   const ratingCount = 10200; // Total ratings (Google Search Console requirement)
