@@ -2,23 +2,15 @@ import { Star, Check, ExternalLink, Award, Shield, Zap, DollarSign } from "lucid
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 import { getAffiliateUrl, trackAffiliateClick, UTM_CONFIGS } from "@/lib/tracking";
-import { brokers } from "@/lib/brokers";
+import { brokers, type BrokerId } from "@/lib/brokers";
 import BrokerLogo from "@/components/BrokerLogo";
 
-const FeaturedBroker = () => {
-  const pros = [
-    "Accepts US clients",
-    "FSA regulated broker",
-    "0.0 pip raw spreads",
-    "24/7 customer support",
-    "Fast crypto withdrawals",
-    "MT4 & MT5 platforms",
-  ];
+interface FeaturedBrokerProps {
+  brokerId?: BrokerId;
+}
 
-  const cons = [
-    "Higher minimum deposit ($50)",
-    "Limited educational resources",
-  ];
+const FeaturedBroker = ({ brokerId = "fxglory" }: FeaturedBrokerProps) => {
+  const broker = brokers[brokerId];
 
   return (
     <section id="reviews" className="py-20 bg-background">
@@ -42,22 +34,21 @@ const FeaturedBroker = () => {
               {/* Left side - Broker info */}
               <div className="flex-1">
                 <div className="flex items-start gap-4 mb-6">
-                  <BrokerLogo broker={brokers.midasfx} className="w-20 h-20 rounded-xl" imgClassName="p-3" />
+                  <BrokerLogo broker={broker} className="w-20 h-20 rounded-xl" imgClassName="p-3" />
                   <div>
                     <h3 className="font-heading text-2xl font-bold text-foreground mb-1">
-                      MidasFX
+                      {broker.name}
                     </h3>
                     <div className="flex items-center gap-2 mb-2">
                       <div className="flex">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} className={`w-5 h-5 ${i < 5 ? 'fill-primary text-primary' : 'text-muted'}`} />
+                          <Star key={i} className={`w-5 h-5 ${i < Math.floor(broker.rating) ? 'fill-primary text-primary' : 'text-muted'}`} />
                         ))}
                       </div>
-                      <span className="text-foreground font-semibold">4.8/5</span>
-                      <span className="text-muted-foreground text-sm">(1,523 reviews)</span>
+                      <span className="text-foreground font-semibold">{broker.rating.toFixed(1)}/5</span>
                     </div>
                     <p className="text-muted-foreground text-sm">
-                      FSA regulated broker actively accepting US clients with raw spreads and fast execution.
+                      {broker.regulation} broker{broker.usAccepted ? " actively accepting US clients" : ""} with {broker.spreads} spreads and fast execution.
                     </p>
                   </div>
                 </div>
@@ -66,17 +57,17 @@ const FeaturedBroker = () => {
                   <div className="bg-secondary rounded-xl p-4 text-center">
                     <DollarSign className="w-5 h-5 text-primary mx-auto mb-2" />
                     <p className="text-xs text-muted-foreground mb-1">Min Deposit</p>
-                    <p className="font-bold text-foreground">$50</p>
+                    <p className="font-bold text-foreground">{broker.minDepositDisplay}</p>
                   </div>
                   <div className="bg-secondary rounded-xl p-4 text-center">
                     <Zap className="w-5 h-5 text-primary mx-auto mb-2" />
                     <p className="text-xs text-muted-foreground mb-1">Max Leverage</p>
-                    <p className="font-bold text-foreground">1:500</p>
+                    <p className="font-bold text-foreground">{broker.leverage}</p>
                   </div>
                   <div className="bg-secondary rounded-xl p-4 text-center">
                     <Shield className="w-5 h-5 text-primary mx-auto mb-2" />
                     <p className="text-xs text-muted-foreground mb-1">Spreads From</p>
-                    <p className="font-bold text-foreground">0.0 pips</p>
+                    <p className="font-bold text-foreground">{broker.spreads}</p>
                   </div>
                   <div className="bg-secondary rounded-xl p-4 text-center">
                     <Award className="w-5 h-5 text-primary mx-auto mb-2" />
@@ -88,17 +79,17 @@ const FeaturedBroker = () => {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button variant="default" className="flex-1" asChild>
                     <a
-                      href={getAffiliateUrl("midasfx", UTM_CONFIGS.FEATURED_BROKER)}
+                      href={getAffiliateUrl(brokerId, UTM_CONFIGS.FEATURED_BROKER)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() => trackAffiliateClick("midasfx", "featured_broker", "open_account")}
+                      onClick={() => trackAffiliateClick(brokerId, "featured_broker", "open_account")}
                     >
                       Open Account
                       <ExternalLink className="w-4 h-4" />
                     </a>
                   </Button>
                   <Button variant="outline" className="flex-1" asChild>
-                    <Link to="/review/midasfx">Read Full Review</Link>
+                    <Link to={broker.reviewUrl}>Read Full Review</Link>
                   </Button>
                 </div>
 
@@ -116,7 +107,7 @@ const FeaturedBroker = () => {
                     Pros
                   </h4>
                   <ul className="space-y-2">
-                    {pros.map((pro, i) => (
+                    {broker.pros.slice(0, 6).map((pro, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                         <Check className="w-4 h-4 text-success shrink-0 mt-0.5" />
                         {pro}
@@ -131,7 +122,7 @@ const FeaturedBroker = () => {
                     Cons
                   </h4>
                   <ul className="space-y-2">
-                    {cons.map((con, i) => (
+                    {broker.cons.slice(0, 3).map((con, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                         <span className="text-destructive shrink-0">✕</span>
                         {con}

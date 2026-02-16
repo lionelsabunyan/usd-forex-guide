@@ -6,6 +6,7 @@ import { Star, ExternalLink, Shield, Award, Scale } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import BrokerLogo from "@/components/BrokerLogo";
 import { reviewedBrokers } from "@/lib/brokers";
+import { getAffiliateUrl, trackAffiliateClick, UTM_CONFIGS } from "@/lib/tracking";
 
 const BrokersPage = () => {
   const allBrokersList = [...reviewedBrokers].sort((a, b) => {
@@ -127,7 +128,12 @@ const BrokersPage = () => {
                   </Button>
                   {broker.affiliateUrl && (
                     <Button variant="outline" size="icon" asChild>
-                      <a href={broker.siteUrl} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={getAffiliateUrl(broker.id, UTM_CONFIGS.COMPARE_PAGE)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => trackAffiliateClick(broker.id, "brokers_page", "visit_site")}
+                      >
                         <ExternalLink className="w-4 h-4" />
                       </a>
                     </Button>

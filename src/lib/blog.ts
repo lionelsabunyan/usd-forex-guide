@@ -1563,10 +1563,46 @@ Finding the right forex broker as a US trader can be challenging. American trade
 
 After extensive testing and analysis, here are our top recommendations:
 
-### 1. MidasFX - Best Overall for US Traders
+### 1. FXGlory - Best Overall for US Traders
+**Rating: 4.9/5**
+
+FXGlory stands out as our #1 pick for US traders in 2026. With the industry's highest leverage at 1:3000, a $1 minimum deposit, and over 14 years of operating history since 2011, FXGlory offers the best combination of accessibility, trading conditions, and reliability.
+
+**Highlights:**
+- **Leverage:** Up to 1:3000
+- **Minimum Deposit:** Just $1
+- **Spreads:** From 0.1 pips
+- **Platforms:** MT4 and MT5
+- **US Clients:** Fully accepted
+- **Crypto Deposits:** Bitcoin, Ethereum, USDT
+
+**Why We Recommend It:**
+FXGlory makes forex accessible to everyone with the lowest minimum deposit in the industry, the highest leverage available, and multiple deposit options including crypto and credit card. Their 24/7 customer support and 14+ year track record set them apart.
+
+[Read Full FXGlory Review](/review/fxglory)
+
+### 2. Coinexx - Best for Crypto Traders
+**Rating: 4.85/5**
+
+Coinexx is a crypto-native forex broker that excels with anonymous trading, Bitcoin-denominated accounts, and zero-commission trading on many pairs.
+
+**Highlights:**
+- **Leverage:** Up to 1:500
+- **Minimum Deposit:** $10
+- **Spreads:** From 0.0 pips
+- **Platforms:** MT4 and MT5
+- **US Clients:** Accepted
+- **100% Crypto:** All deposits and withdrawals in crypto
+
+**Why We Recommend It:**
+For traders who value privacy and prefer crypto-based trading, Coinexx offers the most seamless experience with fast crypto deposits/withdrawals and competitive ECN spreads.
+
+[Read Full Coinexx Review](/review/coinexx)
+
+### 3. MidasFX - Best for Raw Spreads
 **Rating: 4.8/5**
 
-MidasFX stands out as our top pick for US traders seeking a reliable, FSA-regulated broker with excellent trading conditions.
+MidasFX is an excellent choice for traders seeking raw ECN spreads and professional trading conditions with FSA regulation.
 
 **Highlights:**
 - **Leverage:** Up to 1:500
@@ -1577,11 +1613,11 @@ MidasFX stands out as our top pick for US traders seeking a reliable, FSA-regula
 - **Regulation:** FSA regulated
 
 **Why We Recommend It:**
-MidasFX offers the perfect combination of regulation, raw spreads, and professional trading conditions. Their customer support is responsive, and withdrawals are processed quickly via crypto.
+MidasFX offers raw spreads starting from 0.0 pips, fast crypto withdrawals, and responsive customer support. A solid choice for experienced traders.
 
 [Read Full MidasFX Review](/review/midasfx)
 
-### 2. Hankotrade - Best for Zero Spreads
+### 4. Hankotrade - Best for Zero Spreads
 **Rating: 4.7/5**
 
 Hankotrade is ideal for traders who prioritize tight spreads and raw pricing.
@@ -1599,31 +1635,14 @@ For active traders and scalpers, Hankotrade's zero-spread accounts can significa
 
 [Read Full Hankotrade Review](/review/hankotrade)
 
-### 3. FXGlory - Best for Low Deposits
-**Rating: 4.5/5**
-
-FXGlory offers an excellent entry point for traders with limited capital thanks to their $1 minimum deposit.
-
-**Highlights:**
-- **Leverage:** Up to 1:3000
-- **Minimum Deposit:** Just $1
-- **Spreads:** From 0.1 pips
-- **Platforms:** MT4 and MT5
-- **US Clients:** Accepted
-- **Crypto Deposits:** Bitcoin, Ethereum, USDT
-
-**Why We Recommend It:**
-FXGlory makes forex accessible to everyone with the lowest minimum deposit in the industry and high leverage options.
-
-[Read Full FXGlory Review](/review/fxglory)
-
 ## Comparison Table
 
 | Broker | Rating | Min Deposit | Leverage | Spreads | US Accepted |
 |--------|--------|-------------|----------|---------|-------------|
+| FXGlory | 4.9 | $1 | 1:3000 | 0.1 pips | ✅ |
+| Coinexx | 4.85 | $10 | 1:500 | 0.0 pips | ✅ |
 | MidasFX | 4.8 | $50 | 1:500 | 0.0 pips | ✅ |
 | Hankotrade | 4.7 | $10 | 1:500 | 0.0 pips | ✅ |
-| FXGlory | 4.5 | $1 | 1:3000 | 0.1 pips | ✅ |
 | N1CM | 4.3 | $1 | 1:1000 | 0.5 pips | ✅ |
 | tastyfx | 4.2 | $0 | 1:50 | 0.2 pips | ✅ |
 | OANDA | 3.7 | $0 | 1:50 | 1.0 pips | ✅ |
@@ -1660,7 +1679,7 @@ FXGlory makes forex accessible to everyone with the lowest minimum deposit in th
 - Requires more due diligence
 - Varying withdrawal speeds
 
-**Examples:** FXGlory, Hankotrade, MidasFX
+**Examples:** FXGlory, Coinexx, MidasFX, Hankotrade
 
 ## What to Look for in a Forex Broker
 
@@ -1716,14 +1735,14 @@ Due to strict CFTC regulations and compliance costs, many international brokers 
 Not necessarily. Higher leverage amplifies both profits and losses. Beginners should start with lower leverage and increase only as they gain experience and develop proper risk management.
 
 ### Which broker is best for beginners?
-We recommend MidasFX or FXGlory for beginners due to their low minimum deposits, educational resources, and user-friendly platforms.
+We recommend FXGlory for beginners due to their $1 minimum deposit, 24/7 support, and user-friendly platform. Coinexx is also excellent for crypto-savvy traders.
 
 ### How much money do I need to start?
 You can start with as little as $1 at FXGlory or N1CM. However, we recommend starting with at least $100-$500 to properly manage risk.
 
 ## Conclusion
 
-Choosing the right forex broker is crucial for your trading success. Our top picks—FXGlory, Hankotrade, and MidasFX—offer excellent conditions for US traders with varying needs and experience levels.
+Choosing the right forex broker is crucial for your trading success. Our top picks—FXGlory, Coinexx, MidasFX, and Hankotrade—offer excellent conditions for US traders with varying needs and experience levels.
 
 **Ready to start trading?** Visit our [broker comparison page](/brokers) for detailed side-by-side analysis, or check out our individual broker reviews for in-depth information.
 
@@ -1781,10 +1800,10 @@ The key points:
 
 | Broker | Leverage | Min Deposit | Our Rating |
 |--------|----------|-------------|------------|
-| FXGlory | 1:3000 | $1 | 4.8/5 |
+| FXGlory | 1:3000 | $1 | 4.9/5 |
+| Coinexx | 1:500 | $10 | 4.85/5 |
+| MidasFX | 1:500 | $50 | 4.8/5 |
 | Hankotrade | 1:500 | $10 | 4.7/5 |
-| MidasFX | 1:1000 | $10 | 4.6/5 |
-| N1CM | 1:1000 | $1 | 4.3/5 |
 
 **What to verify:**
 - Broker actively accepts US clients
@@ -2196,7 +2215,7 @@ FXGlory and Hankotrade are two of the most popular offshore forex brokers accept
 
 ## Our Verdict
 
-**Overall Winner: FXGlory (4.8/5)**
+**Overall Winner: FXGlory (4.9/5)**
 
 FXGlory edges ahead due to:
 - Higher leverage options
@@ -3131,11 +3150,11 @@ Built-in stop-loss, negative balance protection, and margin alerts.
 
 | Broker | Min Deposit | Leverage | US Clients | Demo | Rating |
 |--------|-------------|----------|------------|------|--------|
-| FXGlory | $1 | 1:3000 | ✅ | ✅ | 4.8/5 |
+| FXGlory | $1 | 1:3000 | ✅ | ✅ | 4.9/5 |
 | OANDA | $0 | 1:50 | ✅ | ✅ | 4.5/5 |
 | Forex.com | $100 | 1:50 | ✅ | ✅ | 4.4/5 |
+| Coinexx | $10 | 1:500 | ✅ | ✅ | 4.85/5 |
 | Hankotrade | $10 | 1:500 | ✅ | ✅ | 4.7/5 |
-| IG Markets | $250 | 1:50 | ✅ | ✅ | 4.3/5 |
 
 ## Common Beginner Mistakes to Avoid
 
@@ -3248,13 +3267,19 @@ Not all brokers accept $100 accounts, and fewer still offer conditions suitable 
 - Spreads: From 0.1 pips
 - Bonus: Often offers deposit bonuses
 
-**Hankotrade** - Best Spreads
+**Coinexx** - Best for Crypto Traders
 - Minimum deposit: $10
 - Micro lots: Yes
 - Spreads: From 0.0 pips
-- Commission: $3.5 per lot
+- 100% crypto deposits
 
-**N1CM** - Good Alternative
+**MidasFX** - Best Raw Spreads
+- Minimum deposit: $50
+- Micro lots: Yes
+- Spreads: From 0.0 pips
+- FSA regulated
+
+**Hankotrade** - Best Zero Spreads
 - Minimum deposit: $1
 - Micro lots: Yes
 - Spreads: From 0.5 pips
@@ -4438,22 +4463,37 @@ Before the list, understand what scalpers need:
 
 ## Best Brokers for Scalping (US Traders)
 
-### 1. Hankotrade - Best Overall for Scalping
+### 1. FXGlory - Best Overall for Scalping
 
 **Why Scalpers Love It:**
-- 0.0 pip raw spreads on ECN accounts
-- No restrictions on scalping
-- Fast execution (under 50ms average)
-- $10 minimum deposit
-- US clients accepted
+- Up to 1:3000 leverage for maximum scalping power
+- $1 minimum deposit
+- No scalping restrictions
+- Commission-free accounts available
+- 24/7 customer support
+
+**Spreads:** From 0.5 pips (commission-free)
+**Execution:** Market maker
+**Min. Deposit:** $1
+
+**Cons:** Wider spreads than pure ECN brokers
+
+### 2. Coinexx - Best for ECN Scalping
+
+**Why Scalpers Love It:**
+- True ECN execution with 0.0 pip spreads
+- Bitcoin-denominated accounts
+- No scalping restrictions
+- Anonymous trading option
+- Fast crypto deposits/withdrawals
 
 **Spreads:** From 0.0 pips + commission
-**Execution:** ECN/STP
+**Execution:** ECN
 **Min. Deposit:** $10
 
-**Cons:** Crypto-only deposits, offshore regulation
+**Cons:** Crypto-only deposits
 
-### 2. MidasFX - Best for Flexible Deposits
+### 3. MidasFX - Best for Raw Spreads
 
 **Why Scalpers Love It:**
 - 0.0 pip spreads available
@@ -4465,23 +4505,23 @@ Before the list, understand what scalpers need:
 **Execution:** STP/ECN
 **Min. Deposit:** $50
 
-**Cons:** Higher minimum than Hankotrade
+**Cons:** Higher minimum deposit
 
-### 3. FXGlory - Best for High Leverage Scalping
+### 4. Hankotrade - Best for Zero Spread Accounts
 
 **Why Scalpers Love It:**
-- Up to 1:3000 leverage
-- $1 minimum deposit
-- No scalping restrictions
-- Commission-free accounts available
+- 0.0 pip raw spreads on ECN accounts
+- Fast execution (under 50ms average)
+- $10 minimum deposit
+- US clients accepted
 
-**Spreads:** From 0.5 pips (commission-free)
-**Execution:** Market maker
-**Min. Deposit:** $1
+**Spreads:** From 0.0 pips + commission
+**Execution:** ECN/STP
+**Min. Deposit:** $10
 
-**Cons:** Wider spreads than pure ECN brokers
+**Cons:** Crypto-only deposits, offshore regulation
 
-### 4. OANDA - Best Regulated Option
+### 5. OANDA - Best Regulated Option
 
 **Why Scalpers Love It:**
 - CFTC regulated (maximum safety)
@@ -4513,9 +4553,10 @@ Before the list, understand what scalpers need:
 
 | Broker | Spreads | Execution | Min. Deposit | Scalping Allowed | US Clients |
 |--------|---------|-----------|--------------|------------------|------------|
-| Hankotrade | 0.0 pips | ECN | $10 | Yes | Yes |
-| MidasFX | 0.0 pips | STP/ECN | $50 | Yes | Yes |
 | FXGlory | 0.5 pips | MM | $1 | Yes | Yes |
+| Coinexx | 0.0 pips | ECN | $10 | Yes | Yes |
+| MidasFX | 0.0 pips | STP/ECN | $50 | Yes | Yes |
+| Hankotrade | 0.0 pips | ECN | $10 | Yes | Yes |
 | OANDA | 1.0 pips | MM | $0 | Yes | Yes |
 | Forex.com | 0.8 pips | STP | $100 | Yes | Yes |
 

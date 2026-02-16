@@ -11,7 +11,7 @@ import { useEffect } from "react";
 
 const ExnessInceleme = () => {
   const broker = brokers.exness;
-  const overallRating = 4.5;
+  const overallRating = 4.4;
 
   // Track page view on mount
   useEffect(() => {
@@ -19,11 +19,11 @@ const ExnessInceleme = () => {
   }, []);
 
   const ratings = [
-    { label: "İşlem Koşulları", score: 4.7 },
+    { label: "İşlem Koşulları", score: 4.4 },
     { label: "Platform ve Araçlar", score: 4.3 },
     { label: "Müşteri Desteği", score: 4.4 },
-    { label: "Para Yatırma/Çekme", score: 4.8 },
-    { label: "Güvenilirlik", score: 4.5 },
+    { label: "Para Yatırma/Çekme", score: 4.6 },
+    { label: "Güvenilirlik", score: 4.3 },
   ];
 
   const accountTypes = [
@@ -133,6 +133,36 @@ const ExnessInceleme = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Commission Banner - Tıklanabilir */}
+      <section className="py-8 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900">
+        <div className="container mx-auto px-4">
+          <a
+            href={broker.siteUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackTRBrokerClick("exness", "tr_review_commission_banner", "click")}
+            className="block max-w-4xl mx-auto text-center hover:opacity-90 transition-opacity cursor-pointer"
+          >
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <img src="/brokers/exness-new.svg" alt="Exness" className="h-10" />
+              <span className="text-white/60 text-sm">SINIRSIZ KALDIRAÇ</span>
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+              <span className="text-yellow-400">ANINDA</span> Para Çekme!
+            </h2>
+            <p className="text-xl text-white mb-4">
+              0.0 Spread + <span className="text-yellow-400">EXD Cashback</span>
+            </p>
+            <div className="inline-flex items-center gap-2 bg-amber-500 text-slate-900 font-bold px-6 py-2 rounded-full hover:bg-amber-400 transition-colors">
+              Exness'i Seçin!
+            </div>
+            <p className="text-xs text-white/50 mt-4">
+              Sermayeniz risk altındadır. *Şartlar ve Koşullar geçerlidir.
+            </p>
+          </a>
         </div>
       </section>
 

@@ -99,6 +99,13 @@ const BrokerCard = ({ broker, rank }: BrokerCardProps) => {
             <span className="text-muted-foreground">Spread:</span>
             <span className="font-medium">{broker.spreads}</span>
           </div>
+          <div className="flex items-center gap-2 text-sm col-span-2">
+            <span className="w-4 h-4 text-muted-foreground text-center">🎁</span>
+            <span className="text-muted-foreground">Bonus:</span>
+            <span className={`font-medium ${broker.bonus ? 'text-primary' : 'text-muted-foreground'}`}>
+              {broker.bonus || '-'}
+            </span>
+          </div>
         </div>
       </div>
 
@@ -142,7 +149,7 @@ const BrokerCard = ({ broker, rank }: BrokerCardProps) => {
         <div className="flex gap-2">
           {broker.affiliateUrl ? (
             <Button
-              variant={broker.featured ? "destructive" : "default"}
+              variant="default"
               className="flex-1"
               asChild
             >
@@ -158,7 +165,7 @@ const BrokerCard = ({ broker, rank }: BrokerCardProps) => {
             </Button>
           ) : (
             <Button
-              variant={broker.featured ? "destructive" : "default"}
+              variant="default"
               className="flex-1"
               asChild
             >

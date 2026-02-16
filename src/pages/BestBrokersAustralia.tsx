@@ -16,12 +16,12 @@ const BestBrokersAustralia = () => {
   // Australia broker ranking: Leverage-first (ASIC alternative positioning)
   // 11 brokers total: 7 affiliate + 4 non-affiliate (authority building)
   const australiaBrokers = [
-    brokers.fxglory,     // 1:3000 - CySEC ✅ Affiliate
+    brokers.fxglory,     // 1:3000 - SVG FSA ✅ Affiliate
+    brokers.coinexx,     // 1:500 - Crypto-native ✅ Affiliate
+    brokers.midasfx,     // 1:500 - FSA ✅ Affiliate
+    brokers.hankotrade,  // 1:500 - VFSC ✅ Affiliate
     brokers.hfm,         // 1:2000 - CySEC/FCA ✅ Affiliate
     brokers.xm,          // 1:1000 - ASIC/CySEC ✅ Affiliate
-    brokers.n1cm,        // 1:1000 - FSC ✅ Affiliate
-    brokers.hankotrade,  // 1:500 - VFSC ✅ Affiliate
-    brokers.midasfx,     // 1:500 - FSA ✅ Affiliate
     brokers.fxpro,       // 1:200 - FCA/CySEC ✅ Affiliate
     brokers.exness,      // 1:2000 - CySEC/FCA ❌ Non-affiliate
     brokers.fxtm,        // 1:1000 - CySEC/FCA ❌ Non-affiliate

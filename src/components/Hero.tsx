@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowRight, Shield, Award, TrendingUp, CheckCircle, RefreshCw, FileText } from "lucide-react";
+import { ArrowRight, Shield } from "lucide-react";
 import { Button } from "./ui/button";
 
 // Country code to name mapping
@@ -241,49 +241,6 @@ const Hero = () => {
             </Button>
           </div>
 
-          {/* Trust signals */}
-          <div className="mt-16 animate-fade-up" style={{ animationDelay: '0.4s' }}>
-            {/* Numbers row */}
-            <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto mb-8">
-              <div className="text-center">
-                <div className="flex items-center justify-center w-12 h-12 mx-auto mb-3 rounded-xl bg-primary/10">
-                  <Award className="w-6 h-6 text-primary" />
-                </div>
-                <p className="text-2xl font-bold text-foreground">25+</p>
-                <p className="text-sm text-muted-foreground">Brokers Reviewed</p>
-              </div>
-              <div className="text-center">
-                <div className="flex items-center justify-center w-12 h-12 mx-auto mb-3 rounded-xl bg-primary/10">
-                  <FileText className="w-6 h-6 text-primary" />
-                </div>
-                <p className="text-2xl font-bold text-foreground">50+</p>
-                <p className="text-sm text-muted-foreground">In-Depth Guides</p>
-              </div>
-              <div className="text-center">
-                <div className="flex items-center justify-center w-12 h-12 mx-auto mb-3 rounded-xl bg-primary/10">
-                  <TrendingUp className="w-6 h-6 text-primary" />
-                </div>
-                <p className="text-2xl font-bold text-foreground">$0</p>
-                <p className="text-sm text-muted-foreground">Min. Deposit Options</p>
-              </div>
-            </div>
-
-            {/* Checkmark trust signals */}
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
-              <span className="flex items-center gap-1.5">
-                <CheckCircle className="w-4 h-4 text-green-500" />
-                Transparent Methodology
-              </span>
-              <span className="flex items-center gap-1.5">
-                <RefreshCw className="w-4 h-4 text-green-500" />
-                Updated Monthly
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Shield className="w-4 h-4 text-green-500" />
-                No Paid Placements
-              </span>
-            </div>
-          </div>
         </div>
       </div>
     </section>

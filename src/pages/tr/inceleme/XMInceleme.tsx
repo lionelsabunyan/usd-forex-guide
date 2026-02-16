@@ -15,7 +15,7 @@ const XMInceleme = () => {
   const broker = brokers.xm;
   const trInfo = trBrokerInfo.xm;
   const affiliateUrl = trInfo?.affiliateUrl || broker.siteUrl;
-  const overallRating = 4.5;
+  const overallRating = 4.6;
 
   // Track page view on mount
   useEffect(() => {
@@ -29,7 +29,7 @@ const XMInceleme = () => {
     "itemReviewed": {
       "@type": "FinancialService",
       "name": "XM",
-      "image": "https://beginnerfxguide.com/brokers/xm.svg",
+      "image": "https://beginnerfxguide.com/brokers/xm-banner.jpg",
       "url": affiliateUrl,
       "priceRange": "$5 minimum depozito",
       "description": "Forex broker, 2009'dan beri 10M+ müşteri"
@@ -49,12 +49,12 @@ const XMInceleme = () => {
   };
 
   const ratings = [
-    { label: "İşlem Koşulları", score: 4.3 },
-    { label: "Platform ve Araçlar", score: 4.4 },
+    { label: "İşlem Koşulları", score: 4.6 },
+    { label: "Platform ve Araçlar", score: 4.5 },
     { label: "Müşteri Desteği", score: 4.8 },
-    { label: "Para Yatırma/Çekme", score: 4.5 },
+    { label: "Para Yatırma/Çekme", score: 4.7 },
     { label: "Eğitim ve Araştırma", score: 4.7 },
-    { label: "Güvenilirlik", score: 4.2 },
+    { label: "Güvenilirlik", score: 4.5 },
   ];
 
   const accountTypes = [
@@ -236,12 +236,18 @@ const XMInceleme = () => {
         </div>
       </section>
 
-      {/* Komisyon YOK Banner */}
+      {/* Komisyon YOK Banner - Tıklanabilir */}
       <section className="py-8 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
+          <a
+            href={affiliateUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackTRBrokerClick("xm", "tr_review_commission_banner", "click")}
+            className="block max-w-4xl mx-auto text-center hover:opacity-90 transition-opacity cursor-pointer"
+          >
             <div className="flex items-center justify-center gap-4 mb-4">
-              <img src="/brokers/xm.svg" alt="XM" className="h-10" />
+              <img src="/brokers/xm-banner.jpg" alt="XM" className="h-10" />
               <span className="text-white/60 text-sm">15 YEARS</span>
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
@@ -250,12 +256,35 @@ const XMInceleme = () => {
             <p className="text-xl text-white mb-4">
               Masraf & Gizli Ücret <span className="text-red-500">YOK!</span>
             </p>
-            <div className="inline-flex items-center gap-2 bg-amber-500 text-slate-900 font-bold px-6 py-2 rounded-full">
+            <div className="inline-flex items-center gap-2 bg-amber-500 text-slate-900 font-bold px-6 py-2 rounded-full hover:bg-amber-400 transition-colors">
               XM'i Seçin!
             </div>
             <p className="text-xs text-white/50 mt-4">
               Sermayeniz risk altındadır. *Şartlar ve Koşullar geçerlidir.
             </p>
+          </a>
+        </div>
+      </section>
+
+      {/* XM Affiliate Banner - 300x250 */}
+      <section className="py-8 bg-slate-50 dark:bg-slate-900">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto flex justify-center">
+            <a
+              href="https://clicks.pipaffiliates.com/c?m=149426&c=1164665"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              onClick={() => trackTRBrokerClick("xm", "tr_review_banner", "affiliate_300x250")}
+              className="hover:opacity-90 transition-opacity"
+            >
+              <img
+                src="https://ads.pipaffiliates.com/i/149426?c=1164665"
+                width="300"
+                height="250"
+                alt="XM Trading"
+                className="rounded-lg shadow-md"
+              />
+            </a>
           </div>
         </div>
       </section>

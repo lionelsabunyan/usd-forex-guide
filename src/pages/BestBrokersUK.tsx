@@ -16,17 +16,17 @@ const BestBrokersUK = () => {
   // UK broker ranking: Regulation credibility first, then leverage
   // 11 brokers total: 7 affiliate + 4 non-affiliate (authority building)
   const ukBrokers = [
+    brokers.fxglory,     // SVG FSA, 1:3000 ✅ Affiliate
+    brokers.coinexx,     // Crypto-native, 1:500 ✅ Affiliate
     brokers.hfm,         // FCA + CySEC, 1:2000 ✅ Affiliate
+    brokers.midasfx,     // FSA, 1:500 ✅ Affiliate
     brokers.fxpro,       // FCA + CySEC, UK HQ, 1:200 ✅ Affiliate
+    brokers.hankotrade,  // VFSC, 1:500 ✅ Affiliate
     brokers.pepperstone, // FCA + CySEC, 1:500 ❌ Non-affiliate
     brokers.exness,      // FCA + CySEC, 1:2000 ❌ Non-affiliate
-    brokers.fxtm,        // FCA + CySEC, 1:1000 ❌ Non-affiliate
     brokers.xm,          // CySEC, 1:1000 ✅ Affiliate
-    brokers.fxglory,     // CySEC, 1:3000 ✅ Affiliate
+    brokers.fxtm,        // FCA + CySEC, 1:1000 ❌ Non-affiliate
     brokers.fbs,         // CySEC, 1:3000 ❌ Non-affiliate
-    brokers.n1cm,        // FSC, 1:1000 ✅ Affiliate
-    brokers.hankotrade,  // VFSC, 1:500 ✅ Affiliate
-    brokers.midasfx,     // FSA, 1:500 ✅ Affiliate
   ];
 
   const faqs = [

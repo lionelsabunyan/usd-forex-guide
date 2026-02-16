@@ -1,19 +1,20 @@
 import TRLayout from "@/components/tr/TRLayout";
 import BrokerTableTR from "@/components/tr/BrokerTableTR";
+import BonusSectionTR from "@/components/tr/BonusSectionTR";
 import { Shield, TrendingUp, Users, Globe, CheckCircle2, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { trackTRPageView } from "@/lib/trackingTR";
 import { useEffect } from "react";
 
-// TR Broker logoları - CSS renkli kutular
+// TR Broker logoları - Güncelleme: Pepperstone (mavi) ve Exness (siyah-sarı) yeni logolar
 const TR_BROKER_LOGOS = [
-  { id: "hfm", name: "HFM", bg: "#D42E31", text: "white" },
-  { id: "xm", name: "XM", bg: "#C8102E", text: "white" },
-  { id: "fxpro", name: "FxPro", bg: "#1a365d", text: "white" },
-  { id: "exness", name: "Exness", bg: "#FFCB05", text: "#1a1a2e" },
-  { id: "pepperstone", name: "Pepperstone", bg: "#E31937", text: "white" },
-  { id: "fbs", name: "FBS", bg: "#00A651", text: "white" },
-  { id: "fxtm", name: "FXTM", bg: "#1C2B50", text: "white" },
+  { id: "hfm", name: "HFM", logo: "/brokers/hfm-banner.jpg" },
+  { id: "xm", name: "XM", logo: "/brokers/xm-banner.jpg" },
+  { id: "fxpro", name: "FxPro", logo: "/brokers/fxpro-logo.png" },
+  { id: "exness", name: "Exness", logo: "/brokers/exness-banner.jpg" },
+  { id: "pepperstone", name: "Pepperstone", logo: "/brokers/pepperstone-banner.jpg" },
+  { id: "fbs", name: "FBS", logo: "/brokers/fbs.svg" },
+  { id: "fxtm", name: "FXTM", logo: "/brokers/fxtm.svg" },
 ];
 
 const AnaSayfa = () => {
@@ -122,24 +123,23 @@ const AnaSayfa = () => {
             </div>
 
             {/* Broker Logos - Desktop only */}
-            <div className="hidden md:block bg-white rounded-2xl border border-slate-200 p-6 mb-8 shadow-lg">
-              <p className="text-xs text-center text-slate-400 mb-5 uppercase tracking-wider font-medium">
+            <div className="hidden md:block bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 mb-8 shadow-lg">
+              <p className="text-xs text-center text-slate-500 dark:text-slate-400 mb-5 uppercase tracking-wider font-medium">
                 İncelediğimiz Brokerlar
               </p>
-              <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4">
+              <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
                 {TR_BROKER_LOGOS.map((broker) => (
                   <a
                     key={broker.id}
-                    href={`#${broker.id}`}
-                    className="hover:scale-105 transition-transform"
-                    title={broker.name}
+                    href={`/tr/inceleme/${broker.id}`}
+                    className="hover:scale-105 transition-transform hover:opacity-80 bg-white dark:bg-slate-900 rounded-lg p-2 shadow-sm"
+                    title={`${broker.name} İncelemesi`}
                   >
-                    <span
-                      style={{ backgroundColor: broker.bg, color: broker.text }}
-                      className="px-3 py-1.5 rounded-md text-sm font-bold inline-block shadow-sm"
-                    >
-                      {broker.name}
-                    </span>
+                    <img
+                      src={broker.logo}
+                      alt={`${broker.name} Logo`}
+                      className="h-10 md:h-12 w-auto object-contain"
+                    />
                   </a>
                 ))}
               </div>
@@ -196,6 +196,9 @@ const AnaSayfa = () => {
 
       {/* Broker Comparison Table */}
       <BrokerTableTR />
+
+      {/* Bonus Section */}
+      <BonusSectionTR />
 
       {/* VPN Notu - Soft */}
       <div className="container mx-auto px-4 py-4">

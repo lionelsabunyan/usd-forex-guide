@@ -1,6 +1,8 @@
-import { TrendingUp, ArrowRight, Star } from "lucide-react";
+import { TrendingUp, ArrowRight, Star, ExternalLink } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
+import { brokers, type BrokerId } from "@/lib/brokers";
+import { getAffiliateUrl, trackAffiliateClick, UTM_CONFIGS } from "@/lib/tracking";
 
 interface BrokerCTAProps {
   resultText: string;
@@ -19,8 +21,12 @@ const BrokerCTA = ({
   minDeposit,
   leverage,
   rating,
-  ctaText = "View Broker"
+  ctaText = "Open Account"
 }: BrokerCTAProps) => {
+  const brokerId = brokerSlug as BrokerId;
+  const broker = brokers[brokerId];
+  const hasAffiliate = broker?.affiliateUrl;
+
   return (
     <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 border-2 border-green-200 dark:border-green-800 rounded-xl p-5 mt-6">
       <div className="flex items-start gap-3 mb-3">
@@ -29,7 +35,7 @@ const BrokerCTA = ({
         </div>
         <div className="flex-1">
           <p className="text-sm font-medium text-green-800 dark:text-green-200 mb-1">
-            ✅ {resultText}
+            {resultText}
           </p>
           <p className="text-lg font-bold text-green-900 dark:text-green-100">
             Recommended Broker for Your Position
@@ -64,16 +70,29 @@ const BrokerCTA = ({
             </div>
           </div>
 
-          <Button
-            asChild
-            size="lg"
-            className="bg-gradient-gold hover:opacity-90 text-primary-foreground shrink-0"
-          >
-            <Link to={`/review/${brokerSlug}`} className="gap-2">
-              {ctaText}
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </Button>
+          <div className="flex flex-col gap-2 shrink-0">
+            <Button
+              asChild
+              size="lg"
+              className="bg-gradient-gold hover:opacity-90 text-primary-foreground"
+            >
+              <a
+                href={getAffiliateUrl(brokerId, UTM_CONFIGS.BLOG_INLINE)}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackAffiliateClick(brokerId, "tool_result", "open_account")}
+                className="gap-2"
+              >
+                {ctaText}
+                {hasAffiliate ? <ExternalLink className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
+              </a>
+            </Button>
+            <Button variant="outline" size="sm" asChild>
+              <Link to={`/review/${brokerSlug}`} className="gap-1 text-xs">
+                Read Full Review
+              </Link>
+            </Button>
+          </div>
         </div>
 
         <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
@@ -84,7 +103,7 @@ const BrokerCTA = ({
       </div>
 
       <p className="text-xs text-green-700 dark:text-green-300 mt-3 text-center">
-        💡 This recommendation is based on your position size and risk profile
+        This recommendation is based on your position size and risk profile
       </p>
     </div>
   );

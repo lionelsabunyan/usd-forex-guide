@@ -1,13 +1,15 @@
-import { Star, ExternalLink, Check, X } from "lucide-react";
+import { Star, ExternalLink, Check, X, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
 import { reviewedBrokers, BrokerId, topBrokers } from "@/lib/brokers";
 import BrokerLogo from "./BrokerLogo";
 import { getAffiliateUrl, trackAffiliateClick } from "@/lib/tracking";
 
+const MAX_BROKERS_SHOWN = 5;
+
 const BrokerComparison = () => {
-  // Show all brokers sorted by rating
-  const comparisonBrokers = [...topBrokers].sort((a, b) => {
+  // Show top 5 brokers sorted by rating
+  const allBrokers = [...topBrokers].sort((a, b) => {
     const ratingA = a.rating || 0;
     const ratingB = b.rating || 0;
     if (ratingB !== ratingA) {
@@ -15,6 +17,8 @@ const BrokerComparison = () => {
     }
     return a.name.localeCompare(b.name); // Alphabetical if same rating
   });
+  const comparisonBrokers = allBrokers.slice(0, MAX_BROKERS_SHOWN);
+  const remainingCount = allBrokers.length - MAX_BROKERS_SHOWN;
 
   return (
     <section id="compare" className="py-20 bg-secondary/50">
@@ -38,6 +42,7 @@ const BrokerComparison = () => {
                 <th className="px-6 py-4 text-center text-sm font-semibold text-foreground">Min Deposit</th>
                 <th className="px-6 py-4 text-center text-sm font-semibold text-foreground">Leverage</th>
                 <th className="px-6 py-4 text-center text-sm font-semibold text-foreground">Spreads</th>
+                <th className="px-6 py-4 text-center text-sm font-semibold text-foreground">Bonus</th>
                 <th className="px-6 py-4 text-center text-sm font-semibold text-foreground">US Accepted</th>
                 <th className="px-6 py-4 text-center text-sm font-semibold text-foreground">Action</th>
               </tr>
@@ -65,9 +70,16 @@ const BrokerComparison = () => {
                       <span className="font-semibold text-foreground">{broker.rating?.toFixed(1)}</span>
                     </div>
                   </td>
-                  <td className="px-6 py-4 text-center text-foreground">{broker.minDeposit}</td>
+                  <td className="px-6 py-4 text-center text-foreground">{broker.minDepositDisplay}</td>
                   <td className="px-6 py-4 text-center text-foreground">{broker.leverage}</td>
                   <td className="px-6 py-4 text-center text-foreground">{broker.spreads}</td>
+                  <td className="px-6 py-4 text-center text-foreground">
+                    {broker.bonus ? (
+                      <span className="text-sm font-medium text-primary">{broker.bonus}</span>
+                    ) : (
+                      <span className="text-sm text-muted-foreground">-</span>
+                    )}
+                  </td>
                   <td className="px-6 py-4 text-center">
                     {broker.usAccepted ? (
                       <Check className="w-5 h-5 text-success mx-auto" />
@@ -102,7 +114,7 @@ const BrokerComparison = () => {
                               : broker.siteUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={() => broker.affiliateUrl && trackAffiliateClick(broker.id as BrokerId, "comparison_table", "open_account", activeRegion)}
+                            onClick={() => broker.affiliateUrl && trackAffiliateClick(broker.id as BrokerId, "comparison_table", "open_account")}
                           >
                             Open Account
                             <ExternalLink className="w-3 h-3" />
@@ -115,6 +127,18 @@ const BrokerComparison = () => {
               ))}
             </tbody>
           </table>
+          {/* View All CTA - Desktop */}
+          {remainingCount > 0 && (
+            <div className="border-t border-border bg-secondary/30 px-6 py-5 text-center">
+              <Link to="/brokers" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-semibold transition-colors group">
+                View All {allBrokers.length} Brokers
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <p className="text-xs text-muted-foreground mt-1">
+                +{remainingCount} more brokers with detailed reviews
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Mobile Cards */}
@@ -145,11 +169,25 @@ const BrokerComparison = () => {
               <div className="grid grid-cols-2 gap-3 mb-4">
                 <div className="bg-secondary rounded-lg p-2 text-center">
                   <p className="text-xs text-muted-foreground">Min Deposit</p>
-                  <p className="font-semibold text-foreground">{broker.minDeposit}</p>
+                  <p className="font-semibold text-foreground">{broker.minDepositDisplay}</p>
                 </div>
                 <div className="bg-secondary rounded-lg p-2 text-center">
                   <p className="text-xs text-muted-foreground">Leverage</p>
                   <p className="font-semibold text-foreground">{broker.leverage}</p>
+                </div>
+                <div className="bg-secondary rounded-lg p-2 text-center">
+                  <p className="text-xs text-muted-foreground">Spreads</p>
+                  <p className="font-semibold text-foreground">{broker.spreads}</p>
+                </div>
+                <div className="bg-secondary rounded-lg p-2 text-center">
+                  <p className="text-xs text-muted-foreground">Bonus</p>
+                  <p className="font-semibold text-foreground">
+                    {broker.bonus ? (
+                      <span className="text-primary">{broker.bonus}</span>
+                    ) : (
+                      <span className="text-muted-foreground">-</span>
+                    )}
+                  </p>
                 </div>
               </div>
 
@@ -179,7 +217,7 @@ const BrokerComparison = () => {
                         : broker.siteUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() => broker.affiliateUrl && trackAffiliateClick(broker.id as BrokerId, "comparison_mobile", "open_account", activeRegion)}
+                      onClick={() => broker.affiliateUrl && trackAffiliateClick(broker.id as BrokerId, "comparison_mobile", "open_account")}
                     >
                       Open Account
                       <ExternalLink className="w-3 h-3" />
@@ -189,6 +227,20 @@ const BrokerComparison = () => {
               </div>
             </div>
           ))}
+          {/* View All CTA - Mobile */}
+          {remainingCount > 0 && (
+            <div className="text-center pt-2">
+              <Button variant="outline" size="lg" className="w-full gap-2 group" asChild>
+                <Link to="/brokers">
+                  View All {allBrokers.length} Brokers
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+              <p className="text-xs text-muted-foreground mt-2">
+                +{remainingCount} more brokers with detailed reviews
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Risk Disclaimer for comparison table */}

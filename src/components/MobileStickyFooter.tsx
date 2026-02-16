@@ -28,10 +28,10 @@ const MobileStickyFooter = () => {
         asChild
       >
         <a
-          href={getAffiliateUrl("midasfx", UTM_CONFIGS.MOBILE_STICKY)}
+          href={getAffiliateUrl("fxglory", UTM_CONFIGS.MOBILE_STICKY)}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => trackAffiliateClick("midasfx", "mobile_sticky", "get_started")}
+          onClick={() => trackAffiliateClick("fxglory", "mobile_sticky", "get_started")}
         >
           Start Trading Now
           <ExternalLink className="w-4 h-4" />
