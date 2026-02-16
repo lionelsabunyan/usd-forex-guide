@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import ReviewForm from "@/components/ReviewForm";
 import BonusSection from "@/components/BonusSection";
+import QuickFacts from "@/components/QuickFacts";
 import { getAffiliateUrl, UTM_CONFIGS } from "@/lib/tracking";
 import type { BrokerReviewData } from "@/lib/brokerReviewData";
 
@@ -69,6 +70,27 @@ const BrokerReviewTemplate = ({ data }: BrokerReviewTemplateProps) => {
       <ReviewWarningBanner text={data.warningBanner.text} />
 
       <ReviewTrustBanner features={data.trustFeatures} />
+
+      {data.quickStats && data.quickStats.length > 0 && (
+        <div className="container mx-auto px-4 py-8">
+          <QuickFacts
+            title="Quick Facts"
+            facts={data.quickStats.map((stat) => ({
+              label: stat.label,
+              value: stat.value,
+              type: stat.label.toLowerCase().includes("us") ||
+                    stat.label.toLowerCase().includes("accepted") ||
+                    stat.value.toLowerCase().includes("yes") ||
+                    stat.label.toLowerCase().includes("trustpilot")
+                ? "positive"
+                : stat.label.toLowerCase().includes("regulation") ||
+                  stat.label.toLowerCase().includes("offshore")
+                ? "warning"
+                : "neutral",
+            }))}
+          />
+        </div>
+      )}
 
       {data.bonusOffers && data.bonusOffers.length > 0 && (
         <BonusSection

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { ChevronDown } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import type { FAQItem } from "@/lib/brokerReviewData";
@@ -10,8 +11,25 @@ interface ReviewFAQProps {
 const ReviewFAQ = ({ faqs }: ReviewFAQProps) => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
+  // Generate FAQ schema for GEO (AI search) optimization
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <section className="py-16 bg-background">
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      </Helmet>
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-heading text-3xl font-bold text-foreground mb-8 text-center">Frequently Asked Questions</h2>
