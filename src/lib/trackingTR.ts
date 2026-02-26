@@ -1,6 +1,9 @@
 import { BrokerId, brokers } from "./brokers";
 import { trBrokerInfo } from "./brokersTR";
 
+/** GA4 Measurement ID — used in send_to to prevent GTM from re-firing events */
+const GA_MEASUREMENT_ID = "G-P860PCCF1T";
+
 /**
  * TR Site için Conversion Tracking
  * Yandex Metrika + Google Analytics 4 + Yandex Direct
@@ -81,6 +84,7 @@ export const trackTRBrokerClick = (
   if (typeof window !== "undefined" && (window as any).gtag) {
     // 2a. Standard affiliate_click event (for consistency with US site)
     (window as any).gtag("event", "affiliate_click", {
+      send_to: GA_MEASUREMENT_ID,
       broker_id: brokerId,
       broker_name: brokerName,
       click_location: location,
@@ -93,6 +97,7 @@ export const trackTRBrokerClick = (
 
     // 2b. TR-specific broker click event
     (window as any).gtag("event", "tr_broker_click", {
+      send_to: GA_MEASUREMENT_ID,
       broker_id: brokerId,
       broker_name: brokerName,
       click_location: location,
@@ -106,6 +111,7 @@ export const trackTRBrokerClick = (
     // 2c. Open Account specific event (for conversion tracking)
     if (buttonType === "hesap_ac" || location.includes("review")) {
       (window as any).gtag("event", "open_account_click", {
+        send_to: GA_MEASUREMENT_ID,
         broker_id: brokerId,
         broker_name: brokerName,
         click_location: location,
@@ -187,6 +193,7 @@ export const trackTRPageView = (
   // GA4 Page View Event
   if (typeof window !== "undefined" && (window as any).gtag) {
     (window as any).gtag("event", "page_view", {
+      send_to: GA_MEASUREMENT_ID,
       page_type: pageType,
       broker_id: brokerId || 'none',
       language: "tr",
@@ -209,6 +216,7 @@ export const trackTRScrollDepth = (depth: 25 | 50 | 75 | 100): void => {
   // GA4 Scroll Event
   if (typeof window !== "undefined" && (window as any).gtag) {
     (window as any).gtag("event", "scroll", {
+      send_to: GA_MEASUREMENT_ID,
       percent_scrolled: depth,
       language: "tr",
     });
@@ -234,5 +242,18 @@ export const trackTRTimeOnSite = (seconds: 30 | 60): void => {
 export const trackTRMultiplePages = (): void => {
   if (typeof window !== "undefined" && (window as any).ym) {
     (window as any).ym(106629069, 'reachGoal', YANDEX_GOALS.MULTIPLE_PAGES);
+  }
+};
+
+/**
+ * TR Homepage View Tracking - brokerId gerektirmeyen ana sayfa versiyonu
+ */
+export const trackTRHomeView = (): void => {
+  if (typeof window !== "undefined" && (window as any).gtag) {
+    (window as any).gtag("event", "page_view", {
+      send_to: GA_MEASUREMENT_ID,
+      page_type: "home",
+      language: "tr",
+    });
   }
 };

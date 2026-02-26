@@ -9,18 +9,19 @@ type GoogleAnalyticsProps = {
 
 const GoogleAnalytics = ({ gaId, gtmId, uetId, ymId }: GoogleAnalyticsProps) => {
   useEffect(() => {
-    // Google Analytics 4 (GA4)
+    // Google Analytics 4 (GA4) — uses separate "gtagLayer" to isolate from GTM's dataLayer
     if (gaId) {
-      // GA4 script
+      // GA4 script with custom dataLayer name to prevent GTM conflict
       const script1 = document.createElement("script");
       script1.async = true;
-      script1.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+      script1.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}&l=gtagLayer`;
       document.head.appendChild(script1);
 
       const script2 = document.createElement("script");
       script2.innerHTML = `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        window.gtagLayer = window.gtagLayer || [];
+        function gtag(){gtagLayer.push(arguments);}
+        window.gtag = gtag;
         gtag('js', new Date());
         gtag('config', '${gaId}');
       `;
@@ -64,6 +65,28 @@ const GoogleAnalytics = ({ gaId, gtmId, uetId, ymId }: GoogleAnalyticsProps) => 
         })(window,document,"script","//bat.bing.com/bat.js","uetq");
       `;
       document.head.appendChild(script);
+
+      // UTM Auto-Inject: Bing msclkid varsa GA4'e Bing paid search olarak kaydet
+      const uetScript2 = document.createElement("script");
+      uetScript2.innerHTML = `
+        (function() {
+          try {
+            var params = new URLSearchParams(window.location.search);
+            var msclkid = params.get('msclkid');
+            if (msclkid) {
+              sessionStorage.setItem('bing_msclkid', msclkid);
+              if (window.gtag) {
+                window.gtag('set', {'campaign': {source:'bing', medium:'cpc'}});
+              }
+            }
+            if ((msclkid || sessionStorage.getItem('bing_msclkid')) && !params.get('utm_source')) {
+              var sep = window.location.href.includes('?') ? '&' : '?';
+              history.replaceState(null, '', window.location.href + sep + 'utm_source=bing&utm_medium=cpc');
+            }
+          } catch(e) {}
+        })();
+      `;
+      document.head.appendChild(uetScript2);
     }
 
     // Yandex.Metrica

@@ -1,5 +1,8 @@
 import { BrokerId, brokers } from "./brokers";
 
+/** GA4 Measurement ID — used in send_to to prevent GTM from re-firing events */
+const GA_MEASUREMENT_ID = "G-P860PCCF1T";
+
 /**
  * UTM Parameters for affiliate link tracking
  */
@@ -75,6 +78,7 @@ export const trackAffiliateClick = (
   if (typeof window !== "undefined" && (window as any).gtag) {
     // 1. General affiliate click event (for all clicks)
     (window as any).gtag("event", "affiliate_click", {
+      send_to: GA_MEASUREMENT_ID,
       broker_id: brokerId,
       broker_name: brokerName,
       click_location: location,
@@ -86,6 +90,7 @@ export const trackAffiliateClick = (
     // 2. Specific event for IB partners (mark as conversion in GA4)
     if (isIB) {
       (window as any).gtag("event", "ib_partner_click", {
+        send_to: GA_MEASUREMENT_ID,
         broker_id: brokerId,
         broker_name: brokerName,
         click_location: location,
@@ -99,6 +104,7 @@ export const trackAffiliateClick = (
     // 3. Open Account specific event (for conversion tracking)
     if (buttonType === "open_account" || location.includes("review")) {
       (window as any).gtag("event", "open_account_click", {
+        send_to: GA_MEASUREMENT_ID,
         broker_id: brokerId,
         broker_name: brokerName,
         click_location: location,
@@ -145,19 +151,8 @@ export const trackAffiliateClick = (
       user_region: region,
     });
 
-    // 2. Additionally send ib_partner_click for IB partners
-    if (isIB) {
-      (window as any).dataLayer.push({
-        event: "ib_partner_click",
-        broker_id: brokerId,
-        broker_name: brokerName,
-        click_location: location,
-        button_type: buttonType || "default",
-        is_ib_partner: true,
-        conversion_value: 10,
-        user_region: region,
-      });
-    }
+    // Note: ib_partner_click is tracked via gtag() directly (line ~88), not via dataLayer
+    // to avoid GTM re-firing the event with potentially stale macro values
   }
 
   // Yandex Metrica Goal Tracking
@@ -210,6 +205,8 @@ export const UTM_CONFIGS = {
   // Review pages
   REVIEW_HERO: { source: "review", medium: "cta", campaign: "review_hero", content: "open_account" },
   REVIEW_BOTTOM: { source: "review", medium: "cta", campaign: "review_bottom", content: "open_account" },
+  REVIEW_PROS_CONS: { source: "review", medium: "cta", campaign: "pros_cons", content: "open_account" },
+  REVIEW_COMPETITOR: { source: "review", medium: "table", campaign: "competitor_table", content: "open_account" },
   REVIEW_ACCOUNT_TYPE: { source: "review", medium: "cta", campaign: "account_types" },
 
   // Mobile

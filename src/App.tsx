@@ -123,15 +123,19 @@ const queryClient = new QueryClient();
 // Analytics IDs
 const GA_ID = import.meta.env.VITE_GA_ID || "G-P860PCCF1T";
 const GTM_ID = import.meta.env.VITE_GTM_ID || "";
-const UET_ID = import.meta.env.VITE_UET_ID || "187233174"; // Bing UET Tag
-const YM_ID = import.meta.env.VITE_YM_ID || "106629069"; // Yandex.Metrica Counter
+// Bing UET and Yandex Metrika are already loaded in index.html — do NOT load again from React
+const UET_ID = "";
+const YM_ID = "";
+
+// Disable analytics during react-snap prerendering to prevent networkidle0 timeout
+const isReactSnap = typeof navigator !== "undefined" && navigator.userAgent === "ReactSnap";
 
 const App = () => (
   <HelmetProvider>
     <ThemeProvider defaultTheme="system" storageKey="bfxg-theme">
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
-          <GoogleAnalytics gaId={GA_ID} gtmId={GTM_ID} uetId={UET_ID} ymId={YM_ID} />
+          {!isReactSnap && <GoogleAnalytics gaId={GA_ID} gtmId={GTM_ID} uetId={UET_ID} ymId={YM_ID} />}
           <Toaster />
           <Sonner />
           <BrowserRouter>
