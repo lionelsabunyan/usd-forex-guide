@@ -255,7 +255,7 @@ const AboutPage = () => {
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
-                <div className="text-4xl font-bold text-foreground mb-2">50+</div>
+                <div className="text-4xl font-bold text-foreground mb-2">22</div>
                 <div className="text-muted-foreground">Brokers Reviewed</div>
               </div>
               <div>

@@ -1,5 +1,26 @@
 # Affiliate Redirects (ad-blocker bypass)
+/go/midasfx https://my.midasfx.com/?ib=1136695 302
+/go/hankotrade https://login.hankotrade.com/register?refLink=OTE0Mzk=&refRm=11 302
+/go/fxglory https://app.fxglory.com/auth/register?ib=82027 302
+/go/n1cm https://register.n1cmpro.com/en?partner_id=250473 302
+/go/hfm https://register.hf-anatbroker.com/int/en/new-live-account?refid=30503439 302
+/go/lmfx https://lmfx.com/en/landing-pages/landing-page-04?refid=136384 302
+/go/coinexx https://my.coinexx.com/register?refLink=NTAxODIw&refRm=11 302
+/go/xm https://affs.click/n3dTY 302
+/go/exness https://one.exnessonelink.com/a/c33epne0sj 302
 /go/fxpro https://fxproaffiliate.g2afse.com/click?pid=6446&offer_id=38&l=1706519126 302
+/go/plexytrade https://www.plexytrade.com 302
+/go/pepperstone https://www.pepperstone.com 302
+/go/fxtm https://www.forextime.com 302
+/go/fbs https://www.fbs.com 302
+/go/avatrade https://www.avatrade.com 302
+/go/etoro https://www.etoro.com 302
+/go/oanda https://www.oanda.com 302
+/go/ig-markets https://www.ig.com 302
+/go/forexcom https://www.forex.com 302
+/go/interactive-brokers https://www.interactivebrokers.com 302
+/go/charles-schwab https://www.schwab.com 302
+/go/tastyfx https://tastyfx.com 302
 
 # Block bot/spam paths
 /cnjs.php /404 410

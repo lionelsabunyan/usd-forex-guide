@@ -135,10 +135,13 @@ const BonusSectionTR = () => {
                       className="flex items-center justify-center gap-2"
                     >
                       <Gift className="w-4 h-4" />
-                      {hasNoDeposit ? "Hemen Al" : "Bonusu Talep Et"}
+                      {hasNoDeposit ? "Hesap Aç + Bonus Al" : "Hesap Aç + Bonusu Al"}
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   </Button>
+                  <p className="text-xs text-center text-muted-foreground mt-2">
+                    Ücretsiz kayıt · 2 dakika · Hemen aktif
+                  </p>
 
                   {/* Requirements */}
                   {mainOffer.requirements && (

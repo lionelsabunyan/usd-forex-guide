@@ -39,7 +39,7 @@ const Index = () => {
       <main>
         <Hero />
         <TrustSignals />
-        <FeaturedBroker />
+        <FeaturedBroker brokerId="hankotrade" />
         <BrokerComparison />
         <HowItWorks />
         <div className="container mx-auto px-4">

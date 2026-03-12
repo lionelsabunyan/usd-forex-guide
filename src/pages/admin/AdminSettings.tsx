@@ -1,7 +1,6 @@
 import { useState } from "react";
 import {
   Settings,
-  Key,
   Bell,
   Shield,
   Database,
@@ -11,8 +10,6 @@ import {
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { useToast } from "@/hooks/use-toast";
 import { contactStore, subscriberStore, reviewStore } from "@/lib/adminStore";
@@ -83,35 +80,6 @@ const AdminSettings = () => {
 
       {/* Settings Grid */}
       <div className="grid lg:grid-cols-2 gap-6">
-        {/* Account Settings */}
-        <Card className="bg-gradient-card border-border">
-          <CardHeader>
-            <div className="flex items-center gap-2">
-              <Key className="w-5 h-5 text-primary" />
-              <CardTitle>Account Settings</CardTitle>
-            </div>
-            <CardDescription>Update your admin credentials</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="current-password">Current Password</Label>
-              <Input id="current-password" type="password" placeholder="Enter current password" />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="new-password">New Password</Label>
-              <Input id="new-password" type="password" placeholder="Enter new password" />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="confirm-password">Confirm Password</Label>
-              <Input id="confirm-password" type="password" placeholder="Confirm new password" />
-            </div>
-            <Button className="w-full">Update Password</Button>
-            <p className="text-xs text-muted-foreground text-center">
-              Note: In this demo, password changes are not persisted
-            </p>
-          </CardContent>
-        </Card>
-
         {/* Notification Settings */}
         <Card className="bg-gradient-card border-border">
           <CardHeader>

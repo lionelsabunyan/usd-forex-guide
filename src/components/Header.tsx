@@ -55,10 +55,10 @@ const Header = () => {
               asChild
             >
               <a
-                href={getAffiliateUrl("midasfx", UTM_CONFIGS.HEADER_CTA)}
+                href={getAffiliateUrl("hankotrade", UTM_CONFIGS.HEADER_CTA)}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackAffiliateClick("midasfx", "header", "start_trading")}
+                onClick={() => trackAffiliateClick("hankotrade", "header", "start_trading")}
               >
                 Start Trading
                 <ArrowRight className="w-4 h-4 ml-1" />
@@ -109,11 +109,11 @@ const Header = () => {
                   asChild
                 >
                   <a
-                    href={getAffiliateUrl("midasfx", UTM_CONFIGS.HEADER_CTA)}
+                    href={getAffiliateUrl("hankotrade", UTM_CONFIGS.HEADER_CTA)}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => {
-                      trackAffiliateClick("midasfx", "header_mobile", "start_trading");
+                      trackAffiliateClick("hankotrade", "header_mobile", "start_trading");
                       setIsMenuOpen(false);
                     }}
                   >

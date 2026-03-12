@@ -121,7 +121,7 @@ const AdminSettings = lazy(() => import("./pages/admin/AdminSettings"));
 const queryClient = new QueryClient();
 
 // Analytics IDs
-const GA_ID = import.meta.env.VITE_GA_ID || "G-P860PCCF1T";
+const GA_ID = import.meta.env.VITE_GA_ID || "";
 const GTM_ID = import.meta.env.VITE_GTM_ID || "";
 // Bing UET and Yandex Metrika are already loaded in index.html — do NOT load again from React
 const UET_ID = "";

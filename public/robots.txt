@@ -8,5 +8,3 @@ Disallow: /admin/*
 
 # Sitemaps
 Sitemap: https://beginnerfxguide.com/sitemap-index.xml
-Sitemap: https://beginnerfxguide.com/sitemap.xml
-Sitemap: https://beginnerfxguide.com/sitemap-tr.xml

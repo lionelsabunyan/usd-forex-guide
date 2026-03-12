@@ -45,7 +45,7 @@ export const n1cmData: BrokerReviewData = {
   ],
 
   quickStats: [
-    { label: "Trustpilot", value: "3.8/5", colorClass: "text-success" },
+    { label: "Trustpilot", value: "3.8/5", colorClass: "text-foreground" },
     { label: "Established", value: "2017", colorClass: "text-foreground" },
     { label: "Headquarters", value: "Vanuatu", colorClass: "text-foreground" },
     { label: "Regulation", value: "VFSC", colorClass: "text-foreground" },

@@ -474,7 +474,7 @@ const HowWeReview = () => {
                 <div className="grid md:grid-cols-2 gap-4">
                   <Link to="/brokers" className="bg-primary text-primary-foreground rounded-xl p-6 hover:bg-primary/90 transition-all text-center">
                     <h3 className="font-semibold mb-2">View All Broker Reviews</h3>
-                    <p className="text-sm opacity-90">Compare 25+ brokers side by side</p>
+                    <p className="text-sm opacity-90">Compare 22 brokers side by side</p>
                   </Link>
                   <Link to="/guides/broker-comparison" className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all text-center">
                     <h3 className="font-semibold mb-2">Broker Comparison Guide</h3>

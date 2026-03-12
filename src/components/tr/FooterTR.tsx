@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Globe } from "lucide-react";
 import Logo from "../Logo";
 
 const FooterTR = () => {
@@ -69,6 +70,13 @@ const FooterTR = () => {
             <div className="bg-muted/50 rounded-lg p-4 mb-6">
               <p className="text-xs text-muted-foreground leading-relaxed">
                 <strong className="text-foreground">Affiliate Açıklaması:</strong> Bu sitede listelenen bazı brokerlardan affiliate komisyonu alabiliriz. Bu durum incelemelerimizin bağımsızlığını etkilemez. Tüm değerlendirmeler tarafsız kriterlere dayanmaktadır.
+              </p>
+            </div>
+
+            <div className="mb-4 flex justify-center">
+              <p className="text-xs text-muted-foreground flex items-center gap-1.5">
+                <Globe className="w-3.5 h-3.5 flex-shrink-0" />
+                Bazı broker siteleri Türkiye'den engellenmiş olabilir. VPN ile erişebilirsiniz.
               </p>
             </div>
 

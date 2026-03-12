@@ -49,8 +49,8 @@ export const trBrokerInfo: Record<string, TRBrokerInfo> = {
   },
   hfm: {
     id: "hfm",
-    affiliateUrl: "https://www.hf-anatbroker.com/en/?refid=30503439",
-    homeUrl: "https://www.hfm-trade.com/sv/en/?refid=30503439",
+    affiliateUrl: "https://register.hf-anatbroker.com/int/en/new-live-account?refid=30503439",
+    homeUrl: "https://register.hf-anatbroker.com/int/en/new-live-account?refid=30503439",
     hasBonus: true,
     bonusDetails: "%50 Hoşgeldin + %100 Supercharged Bonus",
     welcomeBonus: "%50 Hoşgeldin Bonusu (min $50)",
@@ -86,7 +86,7 @@ export const trBrokerInfo: Record<string, TRBrokerInfo> = {
   },
   exness: {
     id: "exness",
-    affiliateUrl: "https://www.exness.com",
+    affiliateUrl: "https://one.exnessonelink.com/a/c33epne0sj",
     hasBonus: false,
     bonusDetails: "Geleneksel bonus yok, EXD Cashback var",
     welcomeBonus: "Yok",

@@ -114,7 +114,7 @@ const BrokerComparison = () => {
                               : broker.siteUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={() => broker.affiliateUrl && trackAffiliateClick(broker.id as BrokerId, "comparison_table", "open_account")}
+                            onClick={() => trackAffiliateClick(broker.id as BrokerId, "comparison_table", "open_account")}
                           >
                             Open Account
                             <ExternalLink className="w-3 h-3" />
@@ -217,7 +217,7 @@ const BrokerComparison = () => {
                         : broker.siteUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() => broker.affiliateUrl && trackAffiliateClick(broker.id as BrokerId, "comparison_mobile", "open_account")}
+                      onClick={() => trackAffiliateClick(broker.id as BrokerId, "comparison_mobile", "open_account")}
                     >
                       Open Account
                       <ExternalLink className="w-3 h-3" />

@@ -263,18 +263,27 @@ export const reviewStore = {
   },
 };
 
-// Simple Admin Authentication (for demo purposes - use proper auth in production)
+// Session duration: 8 hours in milliseconds
+const SESSION_DURATION_MS = 8 * 60 * 60 * 1000;
+
+// Admin Authentication
+// IMPORTANT: This is a client-side auth guard only. It does NOT provide real security.
+// Credentials must be set via environment variables: VITE_ADMIN_USERNAME and VITE_ADMIN_PASSWORD.
+// A proper backend authentication system (JWT, session-based) should replace this in production.
 export const adminAuth = {
-  // Default credentials: admin / admin123
   login: (username: string, password: string): boolean => {
-    // In production, this should be a secure API call
-    const validUsername = "admin";
-    const validPassword = "admin123";
+    const validUsername = import.meta.env.VITE_ADMIN_USERNAME;
+    const validPassword = import.meta.env.VITE_ADMIN_PASSWORD;
+
+    if (!validUsername || !validPassword) {
+      return false;
+    }
 
     if (username === validUsername && password === validPassword) {
       localStorage.setItem(STORAGE_KEYS.ADMIN_AUTH, JSON.stringify({
         authenticated: true,
         loginTime: new Date().toISOString(),
+        expiresAt: new Date(Date.now() + SESSION_DURATION_MS).toISOString(),
       }));
       return true;
     }
@@ -289,8 +298,13 @@ export const adminAuth = {
     try {
       const auth = localStorage.getItem(STORAGE_KEYS.ADMIN_AUTH);
       if (!auth) return false;
-      const { authenticated } = JSON.parse(auth);
-      return authenticated === true;
+      const { authenticated, expiresAt } = JSON.parse(auth);
+      if (authenticated !== true) return false;
+      if (!expiresAt || new Date(expiresAt) < new Date()) {
+        localStorage.removeItem(STORAGE_KEYS.ADMIN_AUTH);
+        return false;
+      }
+      return true;
     } catch {
       return false;
     }

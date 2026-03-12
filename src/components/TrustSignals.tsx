@@ -15,7 +15,7 @@ interface TrustSignalsProps {
 const stats = [
   {
     icon: Award,
-    value: "25+",
+    value: "22",
     label: "Brokers Reviewed",
     color: "text-blue-600",
     bgColor: "bg-blue-100",
@@ -29,15 +29,15 @@ const stats = [
   },
   {
     icon: RefreshCw,
-    value: "Monthly",
-    label: "Updates",
+    value: "2026",
+    label: "Last Updated",
     color: "text-purple-600",
     bgColor: "bg-purple-100",
   },
   {
     icon: TrendingUp,
-    value: "$0",
-    label: "Min. Deposit Options",
+    value: "$1",
+    label: "Min. Deposit",
     color: "text-yellow-600",
     bgColor: "bg-yellow-100",
   },
@@ -47,7 +47,7 @@ const stats = [
 const trustBadges = [
   { icon: CheckCircle, label: "Transparent Methodology" },
   { icon: Scale, label: "Unbiased Comparisons" },
-  { icon: Eye, label: "No Paid Placements" },
+  { icon: Eye, label: "Affiliate Disclosure" },
   { icon: Shield, label: "SSL Secured" },
 ];
 

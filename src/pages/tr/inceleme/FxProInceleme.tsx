@@ -436,6 +436,28 @@ const FxProInceleme = () => {
         </div>
       </section>
 
+      {/* Karar Anı CTA - Pros/Cons sonrası */}
+      <section className="py-6 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="p-6 bg-primary/5 border border-primary/20 rounded-2xl text-center">
+              <p className="text-foreground font-semibold mb-2">
+                FxPro, Tier-1 regülasyon ve 20 yıllık deneyimiyle güvenilir bir seçim
+              </p>
+              <p className="text-sm text-muted-foreground mb-4">
+                $100 minimum depozito · FCA & CySEC lisanslı · MT4, MT5, cTrader
+              </p>
+              <Button size="lg" asChild>
+                <a href={affiliateUrl} target="_blank" rel="noopener noreferrer"
+                   onClick={() => trackTRBrokerClick("fxpro", "tr_review_pros_cons", "hesap_ac")}>
+                  FxPro'da Hesap Aç <ExternalLink className="w-4 h-4 ml-2" />
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Account Types */}
       <section className="py-12 bg-secondary/50">
         <div className="container mx-auto px-4">
@@ -509,9 +531,25 @@ const FxProInceleme = () => {
                 ✅ Tavsiye: Profesyonel işlem koşulları arayan, güvenilirliğe öncelik veren ve orta-yüksek sermayeli yatırımcılar için mükemmel bir seçim.
               </p>
             </div>
-            <div className="mt-6 flex flex-wrap gap-3">
+            {/* Kim İçin Uygun? */}
+            <div className="grid grid-cols-3 gap-3 mt-6 mb-6">
+              <div className="p-3 bg-green-50 dark:bg-green-950/30 rounded-lg border border-green-200 dark:border-green-800">
+                <p className="text-xs font-semibold text-green-700 dark:text-green-400 mb-1">✅ Uygun</p>
+                <p className="text-xs text-green-600 dark:text-green-500">Profesyonel trader'lar<br/>Güvenilirlik öncelikli</p>
+              </div>
+              <div className="p-3 bg-blue-50 dark:bg-blue-950/30 rounded-lg border border-blue-200 dark:border-blue-800">
+                <p className="text-xs font-semibold text-blue-700 dark:text-blue-400 mb-1">⚡ İdeal</p>
+                <p className="text-xs text-blue-600 dark:text-blue-500">Scalper'lar<br/>cTrader kullananlar</p>
+              </div>
+              <div className="p-3 bg-red-50 dark:bg-red-950/30 rounded-lg border border-red-200 dark:border-red-800">
+                <p className="text-xs font-semibold text-red-700 dark:text-red-400 mb-1">❌ Uygun Değil</p>
+                <p className="text-xs text-red-600 dark:text-red-500">Düşük sermayeli<br/>Bonus arayanlar</p>
+              </div>
+            </div>
+
+            <div className="mt-2 flex flex-wrap gap-3">
               <Button size="lg" asChild>
-                <a href={affiliateUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackAffiliateClick("fxpro", "tr_review_bottom", "hesap_ac")}>
+                <a href={affiliateUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackTRBrokerClick("fxpro", "tr_review_bottom", "hesap_ac")}>
                   FxPro'da Hesap Aç <ExternalLink className="w-4 h-4 ml-2" />
                 </a>
               </Button>

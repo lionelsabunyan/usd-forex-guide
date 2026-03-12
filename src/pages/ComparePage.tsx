@@ -4,8 +4,10 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import BrokerCard from "@/components/compare/BrokerCard";
 import CompareFilters, { SortOption, BrokerTypeFilter } from "@/components/compare/CompareFilters";
+import { Button } from "@/components/ui/button";
 import { topBrokers, Broker } from "@/lib/brokers";
-import { Scale, BarChart3, Shield, Award } from "lucide-react";
+import { getAffiliateUrl, trackAffiliateClick, UTM_CONFIGS } from "@/lib/tracking";
+import { Scale, BarChart3, Shield, Award, ArrowRight, Star } from "lucide-react";
 
 const ComparePage = () => {
   // Use all brokers
@@ -189,6 +191,29 @@ const ComparePage = () => {
                 )}
               </div>
 
+              {/* Editor's Pick Banner */}
+              <div className="mb-6 rounded-xl border border-primary/30 bg-primary/5 p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <Star className="w-5 h-5 text-primary fill-primary/50" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Editor's Pick — Hankotrade</p>
+                    <p className="text-xs text-muted-foreground">Best for US traders · Zero spreads · $10 min deposit · Crypto deposits</p>
+                  </div>
+                </div>
+                <Button variant="default" size="sm" className="flex-shrink-0" asChild>
+                  <a
+                    href={getAffiliateUrl("hankotrade", UTM_CONFIGS.REVIEW_HERO)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackAffiliateClick("hankotrade", "compare_featured", "open_account")}
+                  >
+                    Open Account <ArrowRight className="w-4 h-4 ml-1" />
+                  </a>
+                </Button>
+              </div>
+
               {/* Cards Grid */}
               {filteredBrokers.length > 0 ? (
                 <div className="grid md:grid-cols-2 gap-6">
@@ -250,6 +275,26 @@ const ComparePage = () => {
                   Regulatory status, years in business, and user reviews all factor into our trust assessment.
                 </p>
               </div>
+            </div>
+
+            {/* Closing CTA */}
+            <div className="mt-10 rounded-xl border border-primary/20 bg-gradient-to-r from-primary/5 to-transparent p-8 text-center">
+              <p className="text-sm font-medium text-primary uppercase tracking-wide mb-2">Ready to Start?</p>
+              <h3 className="font-heading text-2xl font-bold mb-3">Open an Account with Our Top-Rated Broker</h3>
+              <p className="text-muted-foreground text-sm mb-6 max-w-md mx-auto">
+                Hankotrade ranked #1 for US traders — zero spreads, $10 minimum deposit, and crypto deposits accepted.
+              </p>
+              <Button variant="hero" size="lg" className="group" asChild>
+                <a
+                  href={getAffiliateUrl("hankotrade", UTM_CONFIGS.HERO_PRIMARY)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackAffiliateClick("hankotrade", "compare_bottom_cta", "open_account")}
+                >
+                  Open Hankotrade Account <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </Button>
+              <p className="text-xs text-muted-foreground mt-3">🇺🇸 US Clients Accepted · Takes 2 minutes · No hidden fees</p>
             </div>
           </div>
         </div>

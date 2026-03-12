@@ -1,4 +1,6 @@
-import { Search, FileCheck, UserPlus, TrendingUp } from "lucide-react";
+import { Search, FileCheck, UserPlus, TrendingUp, ArrowRight } from "lucide-react";
+import { Button } from "./ui/button";
+import { getAffiliateUrl, trackAffiliateClick, UTM_CONFIGS } from "@/lib/tracking";
 
 const steps = [
   {
@@ -62,6 +64,21 @@ const HowItWorks = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="text-center mt-12">
+          <Button variant="default" size="lg" asChild>
+            <a
+              href={getAffiliateUrl("hankotrade", UTM_CONFIGS.HERO_PRIMARY)}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackAffiliateClick("hankotrade", "how_it_works", "open_account")}
+            >
+              Open Your Account Now
+              <ArrowRight className="w-5 h-5" />
+            </a>
+          </Button>
+          <p className="text-xs text-muted-foreground mt-2">Takes 2 minutes · Start from $1 · US Clients Accepted</p>
         </div>
       </div>
     </section>

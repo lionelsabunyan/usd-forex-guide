@@ -116,8 +116,9 @@ export const trackAffiliateClick = (
     }
   }
 
-  // Bing UET Event
+  // Bing UET Event — broker-specific events for conversion breakdown
   if (typeof window !== "undefined" && (window as any).uetq) {
+    // 1. General affiliate_click (keeps existing conversion goal working)
     (window as any).uetq.push("event", "affiliate_click", {
       event_category: isIB ? "ib_conversion" : "affiliate_click",
       event_label: `${brokerId}_${location}`,
@@ -125,16 +126,21 @@ export const trackAffiliateClick = (
       user_region: region,
     });
 
-    // Separate conversion event for IB partners
-    if (isIB) {
-      (window as any).uetq.push("event", "ib_partner_conversion", {
-        event_category: "conversion",
-        event_label: `${brokerId}_open_account`,
-        revenue_value: 10,
-        currency: "USD",
-        user_region: region,
-      });
-    }
+    // 2. Broker-specific event (e.g., "click_fxglory", "click_oanda")
+    //    Create separate conversion goals in Bing Ads for each broker
+    (window as any).uetq.push("event", `click_${brokerId}`, {
+      event_category: "broker_click",
+      event_label: location,
+      event_value: isIB ? 10 : 1,
+      user_region: region,
+    });
+
+    // 3. IB vs non-IB aggregate events
+    (window as any).uetq.push("event", isIB ? "ib_click" : "non_ib_click", {
+      event_category: "partner_type",
+      event_label: brokerId,
+      event_value: isIB ? 10 : 1,
+    });
   }
 
   // DataLayer push for GTM - send affiliate_click for ALL clicks

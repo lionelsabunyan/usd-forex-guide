@@ -1,10 +1,12 @@
 import TRLayout from "@/components/tr/TRLayout";
 import BrokerTableTR from "@/components/tr/BrokerTableTR";
 import BonusSectionTR from "@/components/tr/BonusSectionTR";
-import { Shield, TrendingUp, Users, Globe, CheckCircle2, Star } from "lucide-react";
+import { Shield, TrendingUp, Users, CheckCircle2, Star, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { trackTRPageView } from "@/lib/trackingTR";
+import { trackTRHomeView, trackTRBrokerClick } from "@/lib/trackingTR";
 import { useEffect } from "react";
+
+const HFM_AFFILIATE_URL = "https://register.hf-anatbroker.com/int/en/new-live-account?refid=30503439";
 
 // TR Broker logoları - Güncelleme: Pepperstone (mavi) ve Exness (siyah-sarı) yeni logolar
 const TR_BROKER_LOGOS = [
@@ -20,7 +22,7 @@ const TR_BROKER_LOGOS = [
 const AnaSayfa = () => {
   // Track homepage view
   useEffect(() => {
-    trackTRPageView("xm", "home"); // xm parametresi sadece placeholder, home için broker_id optional
+    trackTRHomeView();
   }, []);
 
   // Schema.org FAQPage data
@@ -93,6 +95,19 @@ const AnaSayfa = () => {
               </div>
             </div>
 
+            {/* Mobil Trust Bar */}
+            <div className="md:hidden flex justify-center gap-4 mb-4 text-xs text-slate-400">
+              <span className="flex items-center gap-1">
+                <Shield className="w-3 h-3 text-emerald-400" /> FCA Lisanslı
+              </span>
+              <span className="flex items-center gap-1">
+                <Star className="w-3 h-3 text-amber-400" /> 7/24 TR Destek
+              </span>
+              <span className="flex items-center gap-1">
+                <CheckCircle2 className="w-3 h-3 text-sky-400" /> $5'tan başlıyor
+              </span>
+            </div>
+
             {/* Main Heading */}
             <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-center mb-4 md:mb-6 tracking-tight">
               <span className="text-white">Güvenilir Forex Şirketleri</span>
@@ -145,8 +160,8 @@ const AnaSayfa = () => {
               </div>
             </div>
 
-            {/* CTA Button */}
-            <div className="flex justify-center">
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-900 px-8 py-5 md:px-10 md:py-6 text-base md:text-lg font-bold shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/30 transition-all rounded-xl"
@@ -154,6 +169,21 @@ const AnaSayfa = () => {
               >
                 Broker'ları Karşılaştır
               </Button>
+              <a
+                href={HFM_AFFILIATE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackTRBrokerClick("hfm", "hero_secondary", "hesap_ac")}
+              >
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="w-full sm:w-auto border-slate-400 text-slate-200 hover:bg-slate-700/50 hover:text-white px-8 py-5 md:px-10 md:py-6 text-base md:text-lg font-bold rounded-xl gap-2"
+                >
+                  HFM ile Hesap Aç
+                  <ExternalLink className="w-4 h-4" />
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -199,14 +229,6 @@ const AnaSayfa = () => {
 
       {/* Bonus Section */}
       <BonusSectionTR />
-
-      {/* VPN Notu - Soft */}
-      <div className="container mx-auto px-4 py-4">
-        <p className="text-xs text-center text-muted-foreground flex items-center justify-center gap-1.5">
-          <Globe className="w-3.5 h-3.5 flex-shrink-0" />
-          Bazı broker siteleri Türkiye'den engellenmiş olabilir. VPN ile erişebilirsiniz.
-        </p>
-      </div>
 
       {/* Info Section */}
       <section className="py-16 bg-background">

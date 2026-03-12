@@ -25,7 +25,7 @@ const ReviewAccountSteps = ({ brokerId, brokerName, steps }: ReviewAccountStepsP
             </p>
           </div>
 
-          <div className="grid md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {steps.map((step, index) => (
               <div key={index} className="relative">
                 <Card className="bg-gradient-card border-border h-full hover:border-primary/50 transition-colors">

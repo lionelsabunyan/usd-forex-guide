@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -37,11 +38,9 @@ const FAQSection = ({ faqs, title = "Frequently Asked Questions", className = ""
 
   return (
     <section className={`my-12 ${className}`}>
-      {/* FAQ Schema Script */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      </Helmet>
 
       <h2 className="font-heading text-2xl font-bold text-foreground mb-6">
         {title}

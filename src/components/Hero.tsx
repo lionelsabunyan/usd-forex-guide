@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { ArrowRight, Shield } from "lucide-react";
 import { Button } from "./ui/button";
+import { getAffiliateUrl, trackAffiliateClick, UTM_CONFIGS } from "@/lib/tracking";
 
 // Country code to name mapping
 const countryNames: Record<string, string> = {
@@ -207,7 +208,7 @@ const Hero = () => {
           {/* Trust badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8 animate-fade-up">
             <Shield className="w-4 h-4 text-primary" />
-            <span className="text-sm text-foreground/70 font-medium">Independent Forex Broker Reviews</span>
+            <span className="text-sm text-foreground/70 font-medium">🇺🇸 US Traders Accepted · No CFTC Restrictions</span>
           </div>
 
           {/* Dynamic headline */}
@@ -224,8 +225,13 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up" style={{ animationDelay: '0.3s' }}>
             <Button variant="hero" size="xl" asChild>
-              <a href="/compare">
-                Compare Brokers Now
+              <a
+                href={getAffiliateUrl("hankotrade", UTM_CONFIGS.HERO_PRIMARY)}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackAffiliateClick("hankotrade", "hero", "open_account")}
+              >
+                Open Account – Start from $1
                 <ArrowRight className="w-5 h-5" />
               </a>
             </Button>
@@ -235,10 +241,30 @@ const Hero = () => {
               className="border-primary/30 text-foreground hover:bg-primary/5"
               asChild
             >
-              <a href="/guides/how-we-review">
-                See Our Methodology
+              <a href="/compare">
+                Compare All Brokers
               </a>
             </Button>
+          </div>
+
+          {/* Trust stats bar */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 animate-fade-up" style={{ animationDelay: '0.4s' }}>
+            <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block" />
+              Start from <strong className="text-foreground ml-1">$1 deposit</strong>
+            </span>
+            <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block" />
+              <strong className="text-foreground">US clients</strong> accepted
+            </span>
+            <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block" />
+              <strong className="text-foreground">22 brokers</strong> reviewed
+            </span>
+            <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
+              <span className="w-1.5 h-1.5 rounded-full bg-success inline-block" />
+              Bonus up to <strong className="text-foreground ml-1">$10,000</strong>
+            </span>
           </div>
 
         </div>

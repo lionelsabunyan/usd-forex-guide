@@ -1,3 +1,4 @@
+import DOMPurify from "dompurify";
 import { Star, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -61,15 +62,15 @@ const ReviewHero = ({ data }: ReviewHeroProps) => {
                 <span className="text-muted-foreground">Expert Rating</span>
               </div>
 
-              <p className="text-lg text-muted-foreground mb-6" dangerouslySetInnerHTML={{ __html: data.heroDescription }} />
+              <p className="text-lg text-muted-foreground mb-6" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(data.heroDescription) }} />
 
               {/* Key Highlights Grid */}
-              <div className="grid grid-cols-4 gap-3 mb-6 p-4 bg-secondary/50 rounded-xl">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6 p-4 bg-secondary/50 rounded-xl">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-primary">{data.keyHighlights.minDeposit}</div>
                   <div className="text-xs text-muted-foreground">Min Deposit</div>
                 </div>
-                <div className="text-center border-l border-border">
+                <div className="text-center md:border-l border-border">
                   <div className="text-2xl font-bold text-primary">{data.keyHighlights.maxLeverage}</div>
                   <div className="text-xs text-muted-foreground">Max Leverage</div>
                 </div>
@@ -77,7 +78,7 @@ const ReviewHero = ({ data }: ReviewHeroProps) => {
                   <div className="text-2xl font-bold text-primary">{data.keyHighlights.spreadFrom}</div>
                   <div className="text-xs text-muted-foreground">Spread From</div>
                 </div>
-                <div className="text-center border-l border-border">
+                <div className="text-center md:border-l border-border">
                   <div className={`text-2xl font-bold ${data.keyHighlights.usClients === "YES" ? "text-success" : data.keyHighlights.usClients === "LIMITED" ? "text-warning" : "text-destructive"}`}>
                     {data.keyHighlights.usClients}
                   </div>
@@ -87,8 +88,8 @@ const ReviewHero = ({ data }: ReviewHeroProps) => {
 
               <div className="flex flex-wrap gap-3">
                 <Button variant="hero" size="lg" className="group" asChild>
-                  <a href={getAffiliateUrl(data.brokerId, UTM_CONFIGS.REVIEW_HERO)} target="_blank" rel="noopener noreferrer" onClick={() => trackAffiliateClick(data.brokerId, "review_hero", "visit_site")}>
-                    Visit {data.brokerName} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <a href={getAffiliateUrl(data.brokerId, UTM_CONFIGS.REVIEW_HERO)} target="_blank" rel="noopener noreferrer" onClick={() => trackAffiliateClick(data.brokerId, "review_hero", "open_account")}>
+                    Open {data.brokerName} Account <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </Button>
                 <Button variant="outlineGold" size="lg" asChild>

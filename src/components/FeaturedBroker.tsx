@@ -1,4 +1,4 @@
-import { Star, Check, ExternalLink, Award, Shield, Zap, DollarSign } from "lucide-react";
+import { Star, Check, ExternalLink, Award, Shield, Zap, DollarSign, Gift } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 import { getAffiliateUrl, trackAffiliateClick, UTM_CONFIGS } from "@/lib/tracking";
@@ -47,6 +47,19 @@ const FeaturedBroker = ({ brokerId = "fxglory" }: FeaturedBrokerProps) => {
                       </div>
                       <span className="text-foreground font-semibold">{broker.rating.toFixed(1)}/5</span>
                     </div>
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                      {broker.bonus && (
+                        <span className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-green-500/10 border border-green-500/20 text-green-600 text-xs font-semibold">
+                          <Gift className="w-3 h-3" />
+                          {broker.bonus} Bonus
+                        </span>
+                      )}
+                      {broker.usAccepted && (
+                        <span className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-blue-500/10 border border-blue-500/20 text-blue-600 text-xs font-semibold">
+                          🇺🇸 US Clients Accepted
+                        </span>
+                      )}
+                    </div>
                     <p className="text-muted-foreground text-sm">
                       {broker.regulation} broker{broker.usAccepted ? " actively accepting US clients" : ""} with {broker.spreads} spreads and fast execution.
                     </p>
@@ -54,10 +67,10 @@ const FeaturedBroker = ({ brokerId = "fxglory" }: FeaturedBrokerProps) => {
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                  <div className="bg-secondary rounded-xl p-4 text-center">
+                  <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 text-center">
                     <DollarSign className="w-5 h-5 text-primary mx-auto mb-2" />
-                    <p className="text-xs text-muted-foreground mb-1">Min Deposit</p>
-                    <p className="font-bold text-foreground">{broker.minDepositDisplay}</p>
+                    <p className="text-xs text-muted-foreground mb-1">Start From</p>
+                    <p className="font-bold text-primary text-lg">{broker.minDepositDisplay}</p>
                   </div>
                   <div className="bg-secondary rounded-xl p-4 text-center">
                     <Zap className="w-5 h-5 text-primary mx-auto mb-2" />

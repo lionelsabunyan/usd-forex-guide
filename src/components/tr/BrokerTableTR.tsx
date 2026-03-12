@@ -18,11 +18,10 @@ const TR_BROKERS: BrokerId[] = [
 ];
 
 const BrokerTableTR = () => {
-  // Filter and sort brokers by rating
+  // TR_BROKERS dizisindeki sırayı koru
   const trBrokers = TR_BROKERS
     .map(id => brokers[id])
-    .filter(Boolean)
-    .sort((a, b) => (b.rating || 0) - (a.rating || 0));
+    .filter(Boolean);
 
   const handleVisitClick = (broker: Broker) => {
     trackAffiliateClick(broker.id, "tr_comparison", "hesap_ac");
@@ -77,13 +76,14 @@ const BrokerTableTR = () => {
                     className="border-t border-border transition-colors hover:bg-secondary/50"
                   >
                     <td className="px-4 py-4">
-                      <div className="flex items-center gap-3">
+                      <Link to={`/tr/inceleme/${broker.id}`} className="flex items-center gap-3 group">
                         <BrokerLogo broker={broker} className="w-10 h-10 rounded-lg" />
                         <div>
-                          <p className="font-semibold text-foreground">{broker.name}</p>
+                          <p className="font-semibold text-foreground group-hover:text-primary transition-colors">{broker.name}</p>
                           <span className="text-xs text-muted-foreground">{broker.regulation}</span>
+                          <p className="text-xs text-primary mt-0.5 opacity-0 group-hover:opacity-100 transition-opacity">İncelemeyi oku →</p>
                         </div>
-                      </div>
+                      </Link>
                     </td>
                     <td className="px-4 py-4 text-center">
                       <div className="flex items-center justify-center gap-1">
@@ -112,24 +112,17 @@ const BrokerTableTR = () => {
                       )}
                     </td>
                     <td className="px-4 py-4 text-center">
-                      <div className="flex items-center justify-center gap-2">
-                        <Link to={`/tr/inceleme/${broker.id}`}>
-                          <Button variant="outline" size="default" className="h-11">
-                            İncele
-                          </Button>
-                        </Link>
-                        <a
-                          href={getAffiliateUrl(broker)}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={() => handleVisitClick(broker)}
-                        >
-                          <Button size="default" className="gap-1 bg-primary hover:bg-primary/90 h-11">
-                            Hesap Aç
-                            <ExternalLink className="w-3 h-3" />
-                          </Button>
-                        </a>
-                      </div>
+                      <a
+                        href={getAffiliateUrl(broker)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => handleVisitClick(broker)}
+                      >
+                        <Button size="default" className="gap-1 bg-primary hover:bg-primary/90 h-11 px-6">
+                          Hesap Aç
+                          <ExternalLink className="w-3 h-3" />
+                        </Button>
+                      </a>
                     </td>
                   </tr>
                 );
@@ -190,7 +183,7 @@ const BrokerTableTR = () => {
 
                 <div className="flex gap-2">
                   <Link to={`/tr/inceleme/${broker.id}`} className="flex-1">
-                    <Button variant="outline" className="w-full">
+                    <Button variant="outline" className="w-full text-sm">
                       İncele
                     </Button>
                   </Link>
@@ -199,9 +192,9 @@ const BrokerTableTR = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => handleVisitClick(broker)}
-                    className="flex-1"
+                    className="flex-2"
                   >
-                    <Button className="w-full gap-1 bg-primary hover:bg-primary/90">
+                    <Button className="gap-1 bg-primary hover:bg-primary/90 px-6">
                       Hesap Aç
                       <ExternalLink className="w-4 h-4" />
                     </Button>

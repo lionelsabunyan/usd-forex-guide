@@ -29,7 +29,7 @@ export const exnessData: BrokerReviewData = {
   keyHighlights: {
     minDeposit: "$10",
     maxLeverage: "1:2000",
-    spreadFrom: "0.0 pips",
+    spreadFrom: "0.0",
     usClients: "NO",
   },
 

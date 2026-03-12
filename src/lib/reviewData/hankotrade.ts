@@ -22,7 +22,7 @@ export const hankotradeData: BrokerReviewData = {
 
   heroBadge: {
     icon: Shield,
-    text: "US OK",
+    text: "US ACCEPTED",
     colorClass: "bg-success/10 border border-success/20 text-success",
   },
 

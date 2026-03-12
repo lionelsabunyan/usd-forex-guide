@@ -5,10 +5,13 @@
  * Replaces react-snap for static HTML prerendering.
  * Pure Node.js — no Puppeteer, no headless browser.
  *
- * For each defined page, creates a flat .html file (e.g. dist/brokers.html)
- * instead of directory-based index.html to avoid Cloudflare Pages 308 redirects.
+ * For each defined page, creates a directory-based index.html file
+ * (e.g. dist/brokers/index.html) so that Cloudflare CDN trailing-slash
+ * 308 redirects resolve to a real file on Netlify (200 OK).
  *
- * Cloudflare Pages serves .html files without extension, so /brokers → dist/brokers.html (200).
+ * Previous approach used flat files (dist/brokers.html) but this caused
+ * infinite redirect loops: Cloudflare 308 /brokers → /brokers/ → Netlify 301 → /brokers → loop.
+ * Directory-based fixes this: /brokers/ → dist/brokers/index.html → 200 OK.
  *
  * Each page gets dist/index.html as template with injected:
  *   - <title>
@@ -157,15 +160,122 @@ function injectMeta(template, { title, desc, canonical, ogImage }) {
   // Replace Open Graph tags
   html = html.replace(/<meta property="og:title" content="[^"]*"/, `<meta property="og:title" content="${safeTitle}"`);
   html = html.replace(/<meta property="og:description" content="[^"]*"/, `<meta property="og:description" content="${safeDesc}"`);
-  html = html.replace(/<meta property="og:url" content="[^"]*"/, `<meta property="og:url" content="${safeCanonical}"`);
+
+  // Replace or insert og:url
+  if (html.includes('<meta property="og:url"')) {
+    html = html.replace(/<meta property="og:url" content="[^"]*"/, `<meta property="og:url" content="${safeCanonical}"`);
+  } else {
+    html = html.replace(/<meta property="og:title"/, `<meta property="og:url" content="${safeCanonical}" />\n    <meta property="og:title"`);
+  }
+
   html = html.replace(/<meta property="og:image" content="[^"]*"/, `<meta property="og:image" content="${safeOgImage}"`);
 
-  // Replace Twitter Card tags
-  html = html.replace(/<meta name="twitter:title" content="[^"]*"/, `<meta name="twitter:title" content="${safeTitle}"`);
-  html = html.replace(/<meta name="twitter:description" content="[^"]*"/, `<meta name="twitter:description" content="${safeDesc}"`);
+  // Replace or insert Twitter Card tags
+  if (html.includes('<meta name="twitter:title"')) {
+    html = html.replace(/<meta name="twitter:title" content="[^"]*"/, `<meta name="twitter:title" content="${safeTitle}"`);
+  } else {
+    html = html.replace(/<meta name="twitter:card"/, `<meta name="twitter:title" content="${safeTitle}" />\n    <meta name="twitter:card"`);
+  }
+
+  if (html.includes('<meta name="twitter:description"')) {
+    html = html.replace(/<meta name="twitter:description" content="[^"]*"/, `<meta name="twitter:description" content="${safeDesc}"`);
+  } else {
+    html = html.replace(/<meta name="twitter:image"/, `<meta name="twitter:description" content="${safeDesc}" />\n    <meta name="twitter:image"`);
+  }
+
   html = html.replace(/<meta name="twitter:image" content="[^"]*"/, `<meta name="twitter:image" content="${safeOgImage}"`);
 
   return html;
+}
+
+// ─── Broker ratings for Review schema ─────────────────────────────────────────
+const brokerRatings = {
+  midasfx: { name: 'MidasFX', rating: 4.8 },
+  hankotrade: { name: 'Hankotrade', rating: 4.75 },
+  fxglory: { name: 'FXGlory', rating: 4.9 },
+  n1cm: { name: 'N1CM', rating: 4.3 },
+  hfm: { name: 'HFM (HotForex)', rating: 4.5 },
+  lmfx: { name: 'LMFX', rating: 4.6 },
+  coinexx: { name: 'Coinexx', rating: 3.8 },
+  plexytrade: { name: 'PlexyTrade', rating: 4.0 },
+  exness: { name: 'Exness', rating: 4.7 },
+  pepperstone: { name: 'Pepperstone', rating: 4.6 },
+  xm: { name: 'XM', rating: 4.4 },
+  fxtm: { name: 'FXTM', rating: 4.3 },
+  fbs: { name: 'FBS', rating: 4.1 },
+  etoro: { name: 'eToro', rating: 4.0 },
+  fxpro: { name: 'FxPro', rating: 4.5 },
+  oanda: { name: 'OANDA', rating: 3.7 },
+  'ig-markets': { name: 'IG Markets', rating: 3.6 },
+  'interactive-brokers': { name: 'Interactive Brokers', rating: 4.0 },
+  tastyfx: { name: 'tastyfx', rating: 4.2 },
+  'charles-schwab': { name: 'Charles Schwab', rating: 4.1 },
+  avatrade: { name: 'AvaTrade', rating: 4.2 },
+  forexcom: { name: 'Forex.com', rating: 3.5 },
+};
+
+// ─── Helper: inject Review JSON-LD for broker pages ──────────────────────────
+function injectReviewSchema(html, brokerSlug, pageTitle, pageDesc) {
+  const broker = brokerRatings[brokerSlug];
+  if (!broker) return html;
+
+  const schema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "FinancialService",
+      "name": broker.name,
+      "description": `${broker.name} forex broker review for US traders`
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": broker.rating,
+      "bestRating": 5,
+      "worstRating": 1
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "US Forex Guide"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "US Forex Guide",
+      "url": "https://beginnerfxguide.com/"
+    },
+    "name": pageTitle,
+    "description": pageDesc
+  });
+
+  return html.replace('</head>', `  <script type="application/ld+json">${schema}</script>\n  </head>`);
+}
+
+// ─── Helper: inject BreadcrumbList JSON-LD ───────────────────────────────────
+function injectBreadcrumbSchema(html, pagePath, pageTitle) {
+  const parts = pagePath.split('/').filter(Boolean);
+  if (parts.length === 0) return html;
+
+  const items = [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` }
+  ];
+
+  let currentPath = '';
+  for (let i = 0; i < parts.length; i++) {
+    currentPath += `/${parts[i]}`;
+    items.push({
+      "@type": "ListItem",
+      "position": i + 2,
+      "name": i === parts.length - 1 ? pageTitle.split('|')[0].trim() : parts[i].charAt(0).toUpperCase() + parts[i].slice(1),
+      "item": `${SITE_URL}${currentPath}`
+    });
+  }
+
+  const schema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items
+  });
+
+  return html.replace('</head>', `  <script type="application/ld+json">${schema}</script>\n  </head>`);
 }
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
@@ -180,6 +290,22 @@ function main() {
   const template = fs.readFileSync(templatePath, 'utf8');
   let created = 0;
   let skipped = 0;
+
+  // Clean up stale flat .html files from previous builds (e.g. dist/brokers.html)
+  // These are no longer used — we now create dist/brokers/index.html instead
+  for (const page of staticPages) {
+    if (page.path === '/') continue;
+    const staleFile = path.join(DIST, `${page.path}.html`);
+    if (fs.existsSync(staleFile)) {
+      fs.unlinkSync(staleFile);
+    }
+  }
+  for (const post of blogPages) {
+    const staleFile = path.join(DIST, `/blog/${post.slug}.html`);
+    if (fs.existsSync(staleFile)) {
+      fs.unlinkSync(staleFile);
+    }
+  }
 
   // Process static pages
   for (const page of staticPages) {
@@ -196,20 +322,29 @@ function main() {
       continue;
     }
 
-    // Flat file approach: /brokers → dist/brokers.html
-    // Cloudflare Pages serves .html files without extension (200, no redirect)
-    // This eliminates the 308 trailing-slash redirect that caused redirect loops
-    const filePath = path.join(DIST, `${page.path}.html`);
+    // Directory-based approach: /brokers → dist/brokers/index.html
+    // Cloudflare CDN 308 redirects /brokers → /brokers/
+    // Netlify finds dist/brokers/index.html → serves 200 OK (no redirect loop)
+    const filePath = path.join(DIST, page.path, 'index.html');
     const dirPath = path.dirname(filePath);
     const canonical = `${SITE_URL}${page.path}`;
 
     fs.mkdirSync(dirPath, { recursive: true });
 
-    const html = injectMeta(template, {
+    let html = injectMeta(template, {
       title: page.title,
       desc: page.desc,
       canonical,
     });
+
+    // Inject BreadcrumbList schema for all pages
+    html = injectBreadcrumbSchema(html, page.path, page.title);
+
+    // Inject Review schema for broker review pages
+    if (page.path.startsWith('/review/')) {
+      const brokerSlug = page.path.replace('/review/', '');
+      html = injectReviewSchema(html, brokerSlug, page.title, page.desc);
+    }
 
     fs.writeFileSync(filePath, html, 'utf8');
     created++;
@@ -218,19 +353,22 @@ function main() {
   // Process blog pages
   for (const post of blogPages) {
     const pagePath = `/blog/${post.slug}`;
-    // Flat file: /blog/slug → dist/blog/slug.html (no 308 redirect)
-    const filePath = path.join(DIST, `${pagePath}.html`);
+    // Directory-based: /blog/slug → dist/blog/slug/index.html
+    const filePath = path.join(DIST, pagePath, 'index.html');
     const dirPath = path.dirname(filePath);
     const canonical = `${SITE_URL}${pagePath}`;
 
     fs.mkdirSync(dirPath, { recursive: true });
 
     const title = post.title.includes('US Forex Guide') ? post.title : `${post.title} | US Forex Guide`;
-    const html = injectMeta(template, {
+    let html = injectMeta(template, {
       title,
       desc: post.excerpt,
       canonical,
     });
+
+    // Inject BreadcrumbList for blog posts
+    html = injectBreadcrumbSchema(html, pagePath, title);
 
     fs.writeFileSync(filePath, html, 'utf8');
     created++;

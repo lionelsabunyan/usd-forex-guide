@@ -19,6 +19,13 @@ const HeaderTR = () => {
     { label: "İletişim", href: "/tr/iletisim" },
   ];
 
+  const isActive = (href: string) => {
+    if (href === "/tr") {
+      return location.pathname === "/tr" || location.pathname.startsWith("/tr/inceleme");
+    }
+    return location.pathname === href;
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4">
@@ -35,7 +42,11 @@ const HeaderTR = () => {
               <Link
                 key={item.href}
                 to={item.href}
-                className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+                className={`transition-colors font-medium ${
+                  isActive(item.href)
+                    ? "text-foreground border-b-2 border-primary pb-0.5"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
               >
                 {item.label}
               </Link>
@@ -72,7 +83,11 @@ const HeaderTR = () => {
                 <Link
                   key={item.href}
                   to={item.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors font-medium py-2"
+                  className={`transition-colors font-medium py-2 ${
+                    isActive(item.href)
+                      ? "text-foreground font-semibold"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}

@@ -1,12 +1,17 @@
-import { Check, AlertTriangle } from "lucide-react";
+import { Check, AlertTriangle, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { getAffiliateUrl, trackAffiliateClick, UTM_CONFIGS } from "@/lib/tracking";
+import type { BrokerId } from "@/lib/brokers";
 
 interface ReviewProsAndConsProps {
   pros: string[];
   cons: string[];
+  brokerId?: BrokerId;
+  brokerName?: string;
 }
 
-const ReviewProsAndCons = ({ pros, cons }: ReviewProsAndConsProps) => {
+const ReviewProsAndCons = ({ pros, cons, brokerId, brokerName }: ReviewProsAndConsProps) => {
   return (
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
@@ -34,6 +39,30 @@ const ReviewProsAndCons = ({ pros, cons }: ReviewProsAndConsProps) => {
               </CardContent>
             </Card>
           </div>
+
+          {brokerId && brokerName && (
+            <div className="mt-10">
+              <div className="bg-primary/5 border border-primary/10 rounded-xl p-4 mb-6 text-center">
+                <p className="text-sm text-muted-foreground">
+                  <span className="font-semibold text-foreground">Despite the limitations above,</span> {brokerName} remains a top choice — verified by thousands of real trader reviews and consistent trading conditions.
+                </p>
+              </div>
+              <div className="text-center">
+                <Button variant="hero" size="lg" className="group" asChild>
+                  <a
+                    href={getAffiliateUrl(brokerId, UTM_CONFIGS.REVIEW_PROS_CONS)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackAffiliateClick(brokerId, "pros_cons", "open_account")}
+                  >
+                    Start Trading – Claim Welcome Bonus
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </Button>
+                <p className="text-xs text-muted-foreground mt-2">US Clients Accepted · Takes 2 minutes · No hidden fees</p>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>
