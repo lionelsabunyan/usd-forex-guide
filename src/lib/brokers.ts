@@ -102,7 +102,7 @@ export const brokers: Record<BrokerId, Broker> = {
     reviewUrl: "/review/midasfx",
     siteUrl: "https://www.midasfx.com/?ib=1136695",
     affiliateUrl: "https://my.midasfx.com/?ib=1136695",
-    logoSrc: "/brokers/midasfx.webp",
+    logoSrc: "/images/brokers/midasfx.webp",
     featured: true,
     bonus: "100% up to $10K",
   },
@@ -150,7 +150,7 @@ export const brokers: Record<BrokerId, Broker> = {
     reviewUrl: "/review/hankotrade",
     siteUrl: "https://hankotrade.com",
     affiliateUrl: "https://login.hankotrade.com/register?refLink=OTE0Mzk=&refRm=11",
-    logoSrc: "/brokers/hankotrade.webp",
+    logoSrc: "/images/brokers/hankotrade.webp",
   },
   fxglory: {
     id: "fxglory",
@@ -195,7 +195,7 @@ export const brokers: Record<BrokerId, Broker> = {
     reviewUrl: "/review/fxglory",
     siteUrl: env.VITE_FXGLORY_VISIT_URL || "https://app.fxglory.com/auth/register?ib=82027",
     affiliateUrl: env.VITE_FXGLORY_AFFILIATE_URL || "https://app.fxglory.com/auth/register?ib=82027",
-    logoSrc: "/brokers/fxglory.webp",
+    logoSrc: "/images/brokers/fxglory.webp",
     bonus: "50% up to $2K",
   },
   n1cm: {
@@ -239,7 +239,7 @@ export const brokers: Record<BrokerId, Broker> = {
     reviewUrl: "/review/n1cm",
     siteUrl: "https://www.n1cm.com",
     affiliateUrl: env.VITE_N1CM_AFFILIATE_URL || "https://register.n1cmpro.com/en?partner_id=250473",
-    logoSrc: "/brokers/n1cm.webp",
+    logoSrc: "/images/brokers/n1cm.webp",
     bonus: "35% up to $5K",
   },
   hfm: {
@@ -287,7 +287,7 @@ export const brokers: Record<BrokerId, Broker> = {
     reviewUrl: "/review/hfm",
     siteUrl: "https://register.hf-anatbroker.com/int/en/new-live-account?refid=30503439",
     affiliateUrl: "https://register.hf-anatbroker.com/int/en/new-live-account?refid=30503439",
-    logoSrc: "/brokers/hfm-banner.jpg",
+    logoSrc: "/images/brokers/hfm-banner.jpg",
     bonus: "100% up to $50K",
   },
   tastyfx: {
@@ -332,7 +332,7 @@ export const brokers: Record<BrokerId, Broker> = {
     ],
     reviewUrl: "/review/tastyfx",
     siteUrl: "https://tastyfx.com",
-    logoSrc: "/brokers/tastyfx.webp",
+    logoSrc: "/images/brokers/tastyfx.webp",
   },
   charlesschwab: {
     id: "charlesschwab",
@@ -376,7 +376,7 @@ export const brokers: Record<BrokerId, Broker> = {
     ],
     reviewUrl: "/review/charles-schwab",
     siteUrl: "https://www.schwab.com",
-    logoSrc: "/brokers/charlesschwab.webp",
+    logoSrc: "/images/brokers/charlesschwab.webp",
   },
   etoro: {
     id: "etoro",
@@ -419,7 +419,7 @@ export const brokers: Record<BrokerId, Broker> = {
     ],
     reviewUrl: "/review/etoro",
     siteUrl: "https://www.etoro.com",
-    logoSrc: "/brokers/etoro.svg",
+    logoSrc: "/images/brokers/etoro.svg",
   },
   fxpro: {
     id: "fxpro",
@@ -461,7 +461,7 @@ export const brokers: Record<BrokerId, Broker> = {
     ],
     reviewUrl: "/review/fxpro",
     siteUrl: "https://www.fxpro.com",
-    logoSrc: "/brokers/fxpro-logo.png",
+    logoSrc: "/images/brokers/fxpro-logo.png",
   },
   oanda: {
     id: "oanda",
@@ -504,7 +504,7 @@ export const brokers: Record<BrokerId, Broker> = {
     ],
     reviewUrl: "/review/oanda",
     siteUrl: "https://www.oanda.com",
-    logoSrc: "/brokers/oanda.svg",
+    logoSrc: "/images/brokers/oanda.svg",
   },
   ig: {
     id: "ig",
@@ -546,7 +546,7 @@ export const brokers: Record<BrokerId, Broker> = {
     ],
     reviewUrl: "/review/ig-markets",
     siteUrl: "https://www.ig.com",
-    logoSrc: "/brokers/ig.svg",
+    logoSrc: "/images/brokers/ig.svg",
   },
   forexcom: {
     id: "forexcom",
@@ -589,7 +589,7 @@ export const brokers: Record<BrokerId, Broker> = {
     ],
     reviewUrl: "/review/forexcom",
     siteUrl: "https://www.forex.com",
-    logoSrc: "/brokers/forexcom.svg",
+    logoSrc: "/images/brokers/forexcom.svg",
   },
   interactivebrokers: {
     id: "interactivebrokers",
@@ -632,7 +632,7 @@ export const brokers: Record<BrokerId, Broker> = {
     ],
     reviewUrl: "/review/interactive-brokers",
     siteUrl: "https://www.interactivebrokers.com",
-    logoSrc: "/brokers/interactive-brokers.svg",
+    logoSrc: "/images/brokers/interactive-brokers.svg",
   },
   lmfx: {
     id: "lmfx",
@@ -678,7 +678,7 @@ export const brokers: Record<BrokerId, Broker> = {
     reviewUrl: "/review/lmfx",
     siteUrl: "https://www.lmfx.com",
     affiliateUrl: "https://lmfx.com/en/landing-pages/landing-page-04?refid=136384",
-    logoSrc: "/brokers/lmfx.svg",
+    logoSrc: "/images/brokers/lmfx.svg",
     bonus: "100% up to $30K",
   },
   coinexx: {
@@ -726,7 +726,7 @@ export const brokers: Record<BrokerId, Broker> = {
     reviewUrl: "/review/coinexx",
     siteUrl: "https://www.coinexx.com",
     affiliateUrl: "https://my.coinexx.com/register?refLink=NTAxODIw&refRm=11",
-    logoSrc: "/brokers/coinexx.svg",
+    logoSrc: "/images/brokers/coinexx.svg",
   },
   plexytrade: {
     id: "plexytrade",
@@ -772,7 +772,7 @@ export const brokers: Record<BrokerId, Broker> = {
     reviewUrl: "/review/plexytrade",
     siteUrl: "https://www.plexytrade.com",
     affiliateUrl: "", // Will be added after IB setup
-    logoSrc: "/brokers/plexytrade.svg",
+    logoSrc: "/images/brokers/plexytrade.svg",
   },
   exness: {
     id: "exness",
@@ -819,7 +819,7 @@ export const brokers: Record<BrokerId, Broker> = {
     reviewUrl: "/review/exness",
     siteUrl: "https://one.exnessonelink.com/a/c33epne0sj",
     affiliateUrl: "https://one.exnessonelink.com/a/c33epne0sj",
-    logoSrc: "/brokers/exness-new.svg",
+    logoSrc: "/images/brokers/exness-new.svg",
   },
   pepperstone: {
     id: "pepperstone",
@@ -865,7 +865,7 @@ export const brokers: Record<BrokerId, Broker> = {
     reviewUrl: "/review/pepperstone",
     siteUrl: "https://www.pepperstone.com",
     affiliateUrl: "",
-    logoSrc: "/brokers/pepperstone-logo.png",
+    logoSrc: "/images/brokers/pepperstone-logo.png",
   },
   xm: {
     id: "xm",
@@ -912,7 +912,7 @@ export const brokers: Record<BrokerId, Broker> = {
     reviewUrl: "/review/xm",
     siteUrl: "https://affs.click/j5QmR",
     affiliateUrl: "https://affs.click/n3dTY",
-    logoSrc: "/brokers/xm-banner.jpg",
+    logoSrc: "/images/brokers/xm-banner.jpg",
     bonus: "100% up to $10.5K",
   },
   fxtm: {
@@ -958,7 +958,7 @@ export const brokers: Record<BrokerId, Broker> = {
     reviewUrl: "/review/fxtm",
     siteUrl: "https://www.forextime.com",
     affiliateUrl: "",
-    logoSrc: "/brokers/fxtm.svg",
+    logoSrc: "/images/brokers/fxtm.svg",
     bonus: "$500 Welcome",
   },
   fbs: {
@@ -1005,7 +1005,7 @@ export const brokers: Record<BrokerId, Broker> = {
     reviewUrl: "/review/fbs",
     siteUrl: "https://www.fbs.com",
     affiliateUrl: "",
-    logoSrc: "/brokers/fbs.svg",
+    logoSrc: "/images/brokers/fbs.svg",
   },
   avatrade: {
     id: "avatrade",
@@ -1048,7 +1048,7 @@ export const brokers: Record<BrokerId, Broker> = {
     ],
     reviewUrl: "/review/avatrade",
     siteUrl: "https://www.avatrade.com",
-    logoSrc: "/brokers/avatrade.svg",
+    logoSrc: "/images/brokers/avatrade.svg",
   },
 };
 

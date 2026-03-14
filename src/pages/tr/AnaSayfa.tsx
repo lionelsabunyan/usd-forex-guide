@@ -10,13 +10,13 @@ const HFM_AFFILIATE_URL = "https://register.hf-anatbroker.com/int/en/new-live-ac
 
 // TR Broker logoları - Güncelleme: Pepperstone (mavi) ve Exness (siyah-sarı) yeni logolar
 const TR_BROKER_LOGOS = [
-  { id: "hfm", name: "HFM", logo: "/brokers/hfm-banner.jpg" },
-  { id: "xm", name: "XM", logo: "/brokers/xm-banner.jpg" },
-  { id: "fxpro", name: "FxPro", logo: "/brokers/fxpro-logo.png" },
-  { id: "exness", name: "Exness", logo: "/brokers/exness-banner.jpg" },
-  { id: "pepperstone", name: "Pepperstone", logo: "/brokers/pepperstone-banner.jpg" },
-  { id: "fbs", name: "FBS", logo: "/brokers/fbs.svg" },
-  { id: "fxtm", name: "FXTM", logo: "/brokers/fxtm.svg" },
+  { id: "hfm", name: "HFM", logo: "/images/brokers/hfm-banner.jpg" },
+  { id: "xm", name: "XM", logo: "/images/brokers/xm-banner.jpg" },
+  { id: "fxpro", name: "FxPro", logo: "/images/brokers/fxpro-logo.png" },
+  { id: "exness", name: "Exness", logo: "/images/brokers/exness-banner.jpg" },
+  { id: "pepperstone", name: "Pepperstone", logo: "/images/brokers/pepperstone-banner.jpg" },
+  { id: "fbs", name: "FBS", logo: "/images/brokers/fbs.svg" },
+  { id: "fxtm", name: "FXTM", logo: "/images/brokers/fxtm.svg" },
 ];
 
 const AnaSayfa = () => {

@@ -146,7 +146,7 @@ const PepperstoneInceleme = () => {
             className="block max-w-4xl mx-auto text-center hover:opacity-90 transition-opacity cursor-pointer"
           >
             <div className="flex items-center justify-center gap-4 mb-4">
-              <img src="/brokers/pepperstone-logo.png" alt="Pepperstone" className="h-10" />
+              <img src="/images/brokers/pepperstone-logo.png" alt="Pepperstone" className="h-10" />
               <span className="text-white/60 text-sm">0.0 SPREAD</span>
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
