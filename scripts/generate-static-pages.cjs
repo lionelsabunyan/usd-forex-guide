@@ -398,13 +398,13 @@ function main() {
     const rewriteRules = [];
     for (const page of staticPages) {
       if (page.path === '/') continue;
-      rewriteRules.push(`${page.path} ${page.path}.html 200`);
-      rewriteRules.push(`${page.path}/ ${page.path}.html 200`);
+      rewriteRules.push(`${page.path} ${page.path}.html 200!`);
+      rewriteRules.push(`${page.path}/ ${page.path}.html 200!`);
     }
     for (const post of blogPages) {
       const pagePath = `/blog/${post.slug}`;
-      rewriteRules.push(`${pagePath} ${pagePath}.html 200`);
-      rewriteRules.push(`${pagePath}/ ${pagePath}.html 200`);
+      rewriteRules.push(`${pagePath} ${pagePath}.html 200!`);
+      rewriteRules.push(`${pagePath}/ ${pagePath}.html 200!`);
     }
 
     const rulesBlock = [
