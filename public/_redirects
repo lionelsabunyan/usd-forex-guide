@@ -28,6 +28,14 @@
 /wp-login.php /404 410
 /.env /404 410
 
+# Fix redirect loops: Cloudflare 308 adds trailing slash, Netlify 301 strips it = infinite loop.
+# Force-rewrite (200!) bypasses Netlify directory-handling for these paths.
+/brokers  /index.html  200!
+/brokers/ /index.html  200!
+/compare  /index.html  200!
+/compare/ /index.html  200!
+/review/* /index.html  200!
+
 # Turkish subdomain redirect
 https://tr.beginnerfxguide.com/* /tr/:splat 200
 
