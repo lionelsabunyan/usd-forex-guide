@@ -43,7 +43,9 @@ const BOT_AGENTS = [
   'google-inspectiontool',
 ];
 
-const PRERENDER_TOKEN = '9QnsbRhcASrvUSJeQecS';
+// PRERENDER_TOKEN must be set as a Cloudflare Worker environment variable
+// Configure in: Cloudflare Dashboard → Workers → Settings → Variables
+// DO NOT hardcode API tokens in source code
 
 // File extensions to ignore (not prerender)
 const IGNORED_EXTENSIONS = [
@@ -97,7 +99,7 @@ export default {
         // Fetch from prerender.io
         const prerenderResponse = await fetch(prerenderUrl, {
           headers: {
-            'X-Prerender-Token': env.PRERENDER_TOKEN || PRERENDER_TOKEN,
+            'X-Prerender-Token': env.PRERENDER_TOKEN,
             'X-Prerender-Int-Type': 'cloudflare-worker',
           },
           cf: {

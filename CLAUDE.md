@@ -19,9 +19,9 @@
 
 | Kural | Neden |
 |-------|-------|
-| Build: Flat-file çıktı kullan (`dist/brokers.html`), directory-based (`dist/brokers/index.html`) KULLANMA | Directory-based çıktı Netlify directory-handling 301 tetikler → Cloudflare 308 ile sonsuz redirect loop. Flat file + `_redirects` rewrite kuralları bunu tamamen bypass eder |
+| Build: `dist/brokers/index.html` (directory-based), flat file KULLANMA | Flat file Cloudflare 308 trailing-slash + Netlify 301 = sonsuz redirect loop yaratır |
 | TR subdomaini directory-based KALMALI (`dist/tr/index.html`) | Subdomain splat routing gerektiriyor, flat file çalışmaz |
-| `netlify.toml`'a `[[redirects]]` SPA fallback EKLEME | `_redirects` dosyası (generate-static-pages.cjs tarafından üretilir) tüm routing'i yönetir; toml'daki duplicate flat-file rewrite kurallarıyla çakışır |
+| Redirect loop'un kaynağı Cloudflare'dır — Netlify tarafında düzeltilemez | Cloudflare Dashboard → Rules → Redirect Rules'da trailing slash strip eden kural varsa kaldırılmalı |
 | Vite **6.x** — downgrade etme | 5.4.x Node 25'te deadlock yapıyor |
 | Yeni sayfa eklendiğinde `scripts/generate-static-pages.cjs`'e meta tag girişi de ekle | Yoksa tüm SEO meta'ları (`<title>`, og:*, canonical) eksik kalır |
 

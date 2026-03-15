@@ -5,14 +5,8 @@
  * Replaces react-snap for static HTML prerendering.
  * Pure Node.js — no Puppeteer, no headless browser.
  *
- * For each defined page, creates a flat .html file
- * (e.g. dist/brokers.html) and auto-generates matching rewrite rules
- * in dist/_redirects so both /brokers and /brokers/ serve the file (200 OK).
- *
- * Previous approach used directory-based output (dist/brokers/index.html)
- * but Netlify's directory-handling 301 kicked in BEFORE _redirects rules,
- * causing: Cloudflare 308 /brokers → /brokers/ → Netlify 301 → /brokers → loop.
- * Flat files + explicit rewrite rules bypass Netlify's directory-handling entirely.
+ * Uses directory-based output: /brokers → dist/brokers/index.html
+ * This is the canonical approach per CLAUDE.md.
  *
  * Each page gets dist/index.html as template with injected:
  *   - <title>
@@ -292,22 +286,21 @@ function main() {
   let created = 0;
   let skipped = 0;
 
-  // Clean up stale directory-based index.html from previous builds
-  // (e.g. dist/brokers/index.html) — we now use flat files (dist/brokers.html)
+  // Clean up stale flat files from previous builds
+  // (e.g. dist/brokers.html) — we now use directory-based (dist/brokers/index.html)
   for (const page of staticPages) {
     if (page.path === '/') continue;
-    const staleIndex = path.join(DIST, page.path, 'index.html');
-    if (fs.existsSync(staleIndex)) {
-      fs.unlinkSync(staleIndex);
-      // Remove empty directory
-      try { fs.rmdirSync(path.join(DIST, page.path)); } catch (e) { /* not empty */ }
+    const staleFlat = path.join(DIST, `${page.path}.html`);
+    if (fs.existsSync(staleFlat)) {
+      fs.unlinkSync(staleFlat);
+      console.log(`🧹  Removed stale flat file: ${page.path}.html`);
     }
   }
   for (const post of blogPages) {
-    const staleIndex = path.join(DIST, 'blog', post.slug, 'index.html');
-    if (fs.existsSync(staleIndex)) {
-      fs.unlinkSync(staleIndex);
-      try { fs.rmdirSync(path.join(DIST, 'blog', post.slug)); } catch (e) { /* not empty */ }
+    const staleFlat = path.join(DIST, `blog/${post.slug}.html`);
+    if (fs.existsSync(staleFlat)) {
+      fs.unlinkSync(staleFlat);
+      console.log(`🧹  Removed stale flat file: blog/${post.slug}.html`);
     }
   }
 
@@ -326,11 +319,10 @@ function main() {
       continue;
     }
 
-    // Flat-file approach: /brokers → dist/brokers.html
-    // Rewrite rules in _redirects map /brokers and /brokers/ → /brokers.html (200)
-    // No directory = no Netlify directory-handling 301 = no redirect loop
-    const filePath = path.join(DIST, `${page.path}.html`);
-    const dirPath = path.dirname(filePath);
+    // Directory-based approach: /brokers → dist/brokers/index.html
+    // Netlify serves index.html from directories natively — no rewrite rules needed
+    const dirPath = path.join(DIST, page.path);
+    const filePath = path.join(dirPath, 'index.html');
     const canonical = `${SITE_URL}${page.path}`;
 
     fs.mkdirSync(dirPath, { recursive: true });
@@ -357,9 +349,9 @@ function main() {
   // Process blog pages
   for (const post of blogPages) {
     const pagePath = `/blog/${post.slug}`;
-    // Flat-file: /blog/slug → dist/blog/slug.html
-    const filePath = path.join(DIST, `${pagePath}.html`);
-    const dirPath = path.dirname(filePath);
+    // Directory-based: /blog/slug → dist/blog/slug/index.html
+    const dirPath = path.join(DIST, pagePath);
+    const filePath = path.join(dirPath, 'index.html');
     const canonical = `${SITE_URL}${pagePath}`;
 
     fs.mkdirSync(dirPath, { recursive: true });
@@ -389,47 +381,8 @@ function main() {
   });
   fs.writeFileSync(path.join(DIST, '404.html'), html404, 'utf8');
 
-  // ─── Inject flat-file rewrite rules into dist/_redirects ───────────────────
-  const redirectsPath = path.join(DIST, '_redirects');
-  if (fs.existsSync(redirectsPath)) {
-    let redirectsContent = fs.readFileSync(redirectsPath, 'utf8');
-
-    // Build rewrite rules for all generated flat files
-    const rewriteRules = [];
-    for (const page of staticPages) {
-      if (page.path === '/') continue;
-      rewriteRules.push(`${page.path} ${page.path}.html 200!`);
-      rewriteRules.push(`${page.path}/ ${page.path}.html 200!`);
-    }
-    for (const post of blogPages) {
-      const pagePath = `/blog/${post.slug}`;
-      rewriteRules.push(`${pagePath} ${pagePath}.html 200!`);
-      rewriteRules.push(`${pagePath}/ ${pagePath}.html 200!`);
-    }
-
-    const rulesBlock = [
-      '',
-      '# Flat-file rewrites (auto-generated — do not edit manually)',
-      '# Maps /path and /path/ to /path.html to avoid Netlify directory-handling 301',
-      ...rewriteRules,
-      '',
-    ].join('\n');
-
-    // Insert before SPA fallback line
-    const spaLine = '/*    /index.html   200';
-    if (redirectsContent.includes(spaLine)) {
-      redirectsContent = redirectsContent.replace(
-        `# SPA fallback\n${spaLine}`,
-        `${rulesBlock}\n# SPA fallback\n${spaLine}`
-      );
-    } else {
-      // Append rules + SPA fallback if not found
-      redirectsContent += `${rulesBlock}\n# SPA fallback\n${spaLine}\n`;
-    }
-
-    fs.writeFileSync(redirectsPath, redirectsContent, 'utf8');
-    console.log(`✅  Injected ${rewriteRules.length} rewrite rules into _redirects`);
-  }
+  // No rewrite rules needed — directory-based output (dist/brokers/index.html)
+  // is served natively by Netlify without any _redirects rules.
 
   console.log(`\n✅  Static page generation complete: ${created} pages created`);
   if (skipped > 0) console.log(`⚠️   ${skipped} pages skipped`);
