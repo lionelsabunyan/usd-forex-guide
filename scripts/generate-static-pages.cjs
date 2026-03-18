@@ -132,6 +132,7 @@ const staticPages = [
   { path: '/compare/charles-schwab-vs-interactive-brokers', title: 'Charles Schwab vs Interactive Brokers 2026 | US Forex Guide', desc: 'Charles Schwab vs Interactive Brokers for forex trading. Compare thinkorswim vs TWS, commissions, and market access.' },
   { path: '/compare/xm-vs-fxtm', title: 'XM vs FXTM Comparison 2026 | US Forex Guide', desc: 'XM vs FXTM head-to-head comparison. Compare leverage, spreads, education, and trading conditions for international traders.' },
   { path: '/compare/mt4-vs-mt5', title: 'MT4 vs MT5: Which MetaTrader Platform Is Better? (2026) | US Forex Guide', desc: 'Detailed MetaTrader 4 vs MetaTrader 5 comparison. Compare order types, timeframes, indicators, Expert Advisors, hedging, and find the right platform for your trading.' },
+  { path: '/compare/exness-vs-fxglory', title: 'Exness vs FXGlory 2026: Detailed Comparison for Forex Traders | US Forex Guide', desc: 'Exness vs FXGlory comparison: Which forex broker is better? Compare regulation, spreads, leverage, minimum deposits, and US client acceptance.' },
 
   // Resources
   { path: '/resources/us-forex-checklist', title: 'US Forex Trader Checklist | US Forex Guide', desc: 'Complete checklist for US forex traders before opening an account. Regulations, broker vetting, and risk management checklist.' },

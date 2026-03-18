@@ -109,6 +109,7 @@ const OANDAvsIG = lazy(() => import("./pages/compare/OANDAvsIG"));
 const CharlesSchwabvsInteractiveBrokers = lazy(() => import("./pages/compare/CharlesSchwabvsInteractiveBrokers"));
 const XMvsFXTM = lazy(() => import("./pages/compare/XMvsFXTM"));
 const MT4vsMT5 = lazy(() => import("./pages/compare/MT4vsMT5"));
+const ExnessVsFxglory = lazy(() => import("./pages/compare/ExnessVsFxglory"));
 const BestBrokersAustralia = lazy(() => import("./pages/BestBrokersAustralia"));
 const BestBrokersUK = lazy(() => import("./pages/BestBrokersUK"));
 const BestBrokersCanada = lazy(() => import("./pages/BestBrokersCanada"));
@@ -237,6 +238,7 @@ const App = () => (
             <Route path="/compare/charles-schwab-vs-interactive-brokers" element={<CharlesSchwabvsInteractiveBrokers />} />
             <Route path="/compare/xm-vs-fxtm" element={<XMvsFXTM />} />
             <Route path="/compare/mt4-vs-mt5" element={<MT4vsMT5 />} />
+            <Route path="/compare/exness-vs-fxglory" element={<ExnessVsFxglory />} />
             <Route path="/guides" element={<GuidesPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/about" element={<AboutPage />} />

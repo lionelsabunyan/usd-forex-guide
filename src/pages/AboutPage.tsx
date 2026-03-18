@@ -12,16 +12,19 @@ const AboutPage = () => {
     "@type": "AboutPage",
     "name": "About Beginner FX Guide",
     "description": "Learn about Beginner FX Guide's mission to help US traders navigate the forex market.",
-    "url": "https://beginnerfxguide.com/about",
+    "url": "https://beginnerfxguide.com/about/",
     "mainEntity": {
       "@type": "Organization",
       "name": "Beginner FX Guide",
       "url": "https://beginnerfxguide.com",
       "foundingDate": "2024",
+      "description": "Independent forex broker review and education platform for US traders. We test brokers with real accounts and provide honest, unbiased reviews.",
       "founder": {
         "@type": "Person",
         "name": "Ryan Mitchell",
-        "jobTitle": "Founder & Editor-in-Chief"
+        "jobTitle": "Founder & Editor-in-Chief",
+        "description": "Forex trader with 5+ years of experience, having tested 50+ brokers. Finance background with specialization in US forex regulations.",
+        "knowsAbout": ["Forex Trading", "Broker Reviews", "US Forex Regulations", "Risk Management"]
       }
     }
   };
@@ -31,7 +34,7 @@ const AboutPage = () => {
       <SEO
         title="About Us - Meet the Team Behind Beginner FX Guide"
         description="Learn about Beginner FX Guide's mission to help US traders navigate the forex market. Meet our team of experienced traders and financial analysts."
-        canonical="/about"
+        canonical="/about/"
         jsonLd={jsonLd}
       />
 

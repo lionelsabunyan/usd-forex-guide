@@ -118,8 +118,8 @@ export const igData: BrokerReviewData = {
 
   faqs: [
     {
-      question: "Can US residents trade with IG Markets?",
-      answer: "US residents can trade forex with IG Markets through their US entity, which is CFTC/NFA regulated. However, the product range is more limited compared to the international offering -- primarily forex and some CFDs.",
+      question: "Does IG Markets accept US clients?",
+      answer: "Yes, IG Markets accepts US clients through their US entity, which is fully CFTC/NFA regulated. US residents can trade forex and some CFDs, though the product range is more limited compared to the international offering. IG has been operating since 1974 and provides strong regulatory protection for US traders.",
     },
     {
       question: "What is the minimum deposit for IG Markets?",

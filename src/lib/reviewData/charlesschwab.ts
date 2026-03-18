@@ -132,6 +132,11 @@ export const charlesschwabData: BrokerReviewData = {
 
   faqs: [
     {
+      question: "Does Charles Schwab accept US clients for forex trading?",
+      answer:
+        "Yes, Charles Schwab is one of the most trusted US-based brokers for forex trading. As a CFTC/NFA-regulated firm, it fully accepts US clients and offers complete regulatory protection, including SIPC coverage. US traders can access 70+ currency pairs through the thinkorswim platform.",
+    },
+    {
       question: "Can I trade forex with Charles Schwab?",
       answer: "Yes, Charles Schwab offers forex trading through the thinkorswim platform, which was acquired from TD Ameritrade. You can trade 70+ currency pairs with competitive spreads.",
     },

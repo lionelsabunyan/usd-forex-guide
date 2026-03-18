@@ -28,6 +28,78 @@
 /wp-login.php /404 410
 /.env /404 410
 
+# Trailing slash 301 redirects — duplicate URL sorunu cozumu
+# Main Pages
+/about /about/ 301
+/brokers /brokers/ 301
+/compare /compare/ 301
+/guides /guides/ 301
+/tools /tools/ 301
+/blog /blog/ 301
+/faq /faq/ 301
+/glossary /glossary/ 301
+/contact /contact/ 301
+
+# Broker Reviews
+/review/fxglory /review/fxglory/ 301
+/review/hankotrade /review/hankotrade/ 301
+/review/midasfx /review/midasfx/ 301
+/review/n1cm /review/n1cm/ 301
+/review/etoro /review/etoro/ 301
+/review/fxpro /review/fxpro/ 301
+/review/oanda /review/oanda/ 301
+/review/ig-markets /review/ig-markets/ 301
+/review/forexcom /review/forexcom/ 301
+/review/interactive-brokers /review/interactive-brokers/ 301
+/review/avatrade /review/avatrade/ 301
+/review/charles-schwab /review/charles-schwab/ 301
+/review/tastyfx /review/tastyfx/ 301
+/review/hfm /review/hfm/ 301
+/review/lmfx /review/lmfx/ 301
+/review/coinexx /review/coinexx/ 301
+/review/plexytrade /review/plexytrade/ 301
+/review/exness /review/exness/ 301
+/review/pepperstone /review/pepperstone/ 301
+/review/xm /review/xm/ 301
+/review/fxtm /review/fxtm/ 301
+/review/fbs /review/fbs/ 301
+
+# Guides
+/guides/beginners-guide /guides/beginners-guide/ 301
+/guides/us-forex-regulations /guides/us-forex-regulations/ 301
+/guides/broker-comparison /guides/broker-comparison/ 301
+/guides/risk-management /guides/risk-management/ 301
+/guides/technical-analysis /guides/technical-analysis/ 301
+/guides/fundamental-analysis /guides/fundamental-analysis/ 301
+/guides/how-we-review /guides/how-we-review/ 301
+/guides/forex-trading-usa /guides/forex-trading-usa/ 301
+
+# Tools
+/tools/pip-calculator /tools/pip-calculator/ 301
+/tools/position-size-calculator /tools/position-size-calculator/ 301
+/tools/forex-tax-calculator /tools/forex-tax-calculator/ 301
+/tools/margin-calculator /tools/margin-calculator/ 301
+/tools/profit-loss-calculator /tools/profit-loss-calculator/ 301
+/tools/economic-calendar /tools/economic-calendar/ 301
+
+# Compare
+/compare/midasfx-vs-hankotrade /compare/midasfx-vs-hankotrade/ 301
+/compare/exness-vs-fxglory /compare/exness-vs-fxglory/ 301
+
+# Resources
+/resources/us-forex-checklist /resources/us-forex-checklist/ 301
+/resources/infographics /resources/infographics/ 301
+
+# Legal
+/legal/privacy /legal/privacy/ 301
+/legal/terms /legal/terms/ 301
+/legal/disclaimer /legal/disclaimer/ 301
+/legal/affiliate-disclosure /legal/affiliate-disclosure/ 301
+
+# Regional Broker Pages
+/brokers/australia /brokers/australia/ 301
+/brokers/uk /brokers/uk/ 301
+
 # Turkish subdomain redirect
 https://tr.beginnerfxguide.com/* /tr/:splat 200
 

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -99,6 +100,25 @@ const BrokerReviewTemplate = ({ data }: BrokerReviewTemplateProps) => {
           ],
         }}
       />
+      {/* FAQ Schema for Google rich snippets */}
+      {data.faqs && data.faqs.length > 0 && (
+        <Helmet>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": data.faqs.map((faq) => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": faq.answer,
+                },
+              })),
+            })}
+          </script>
+        </Helmet>
+      )}
       <Header />
 
       <ReviewHero data={data} />

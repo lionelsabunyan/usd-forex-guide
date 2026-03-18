@@ -132,6 +132,11 @@ export const tastyfxData: BrokerReviewData = {
 
   faqs: [
     {
+      question: "Does tastyfx accept US clients?",
+      answer:
+        "Yes, tastyfx is one of the few forex brokers that fully accepts US clients with complete regulatory backing. It is registered with the CFTC and is a member of the NFA (Member #0509630), making it legally authorized to offer forex trading to US residents with full client fund protection.",
+    },
+    {
       question: "Is tastyfx regulated in the US?",
       answer: "Yes, tastyfx is fully regulated by the CFTC (Commodity Futures Trading Commission) and is a member of the NFA (National Futures Association, Member #0509630). It is one of the few brokers legally authorized to offer forex trading to US residents.",
     },

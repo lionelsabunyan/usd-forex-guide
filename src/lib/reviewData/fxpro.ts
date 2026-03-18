@@ -139,8 +139,8 @@ export const fxproData: BrokerReviewData = {
 
   faqs: [
     {
-      question: "Is FxPro available to US traders?",
-      answer: "No, FxPro does not accept clients from the United States. US traders should consider CFTC-regulated alternatives like OANDA, Forex.com, or tastyfx.",
+      question: "Does FxPro accept US clients?",
+      answer: "No, FxPro does not accept clients from the United States due to regulatory restrictions. US traders looking for similar multi-platform experiences should consider CFTC-regulated alternatives like OANDA, Forex.com, or tastyfx for domestic options, or offshore brokers like MidasFX and Hankotrade if they prefer higher leverage.",
     },
     {
       question: "What is the minimum deposit for FxPro?",

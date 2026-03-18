@@ -124,6 +124,11 @@ export const interactivebrokersData: BrokerReviewData = {
 
   faqs: [
     {
+      question: "Does Interactive Brokers accept US clients?",
+      answer:
+        "Yes, Interactive Brokers is fully available to US clients and is one of the most regulated brokers in the world. It is registered with the CFTC, SEC, and is publicly traded on NASDAQ (IBKR). US traders get access to forex, stocks, options, futures, and more from a single account with full regulatory protection.",
+    },
+    {
       question: "Is Interactive Brokers good for forex trading?",
       answer: "Interactive Brokers offers competitive forex spreads from 0.5 pips with direct market access. However, it is primarily known for stocks and options trading. If you are a forex-only trader, a dedicated forex broker like OANDA or tastyfx may be a better fit.",
     },
