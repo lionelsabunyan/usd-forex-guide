@@ -12,18 +12,20 @@
 - React 18 + TypeScript + **Vite 6.x** — SPA, lazy-loaded sayfalar
 - Tailwind CSS + shadcn/ui (Radix UI)
 - React Router v6 | React Query v5 | React Helmet (SEO meta)
-- Netlify deploy (NODE=18) + Cloudflare edge cache
+- **Cloudflare Pages** deploy (wrangler CLI) + Cloudflare edge cache + prerender.io worker
 - Tracking: GA4 (`VITE_GA_ID`), EmailJS, n8n → Supabase otomasyonu
 
 ## ⚠️ Kritik Kararlar — Bunlara Dokunma
 
 | Kural | Neden |
 |-------|-------|
-| Build: `dist/brokers/index.html` (directory-based), flat file KULLANMA | Flat file Cloudflare 308 trailing-slash + Netlify 301 = sonsuz redirect loop yaratır |
+| Build: `dist/brokers/index.html` (directory-based), flat file KULLANMA | Flat file Cloudflare 308 trailing-slash redirect loop yaratır |
 | TR subdomaini directory-based KALMALI (`dist/tr/index.html`) | Subdomain splat routing gerektiriyor, flat file çalışmaz |
-| Redirect loop'un kaynağı Cloudflare'dır — Netlify tarafında düzeltilemez | Cloudflare Dashboard → Rules → Redirect Rules'da trailing slash strip eden kural varsa kaldırılmalı |
+| Canonical URL'ler trailing slash ile bitmeli (`/brokers/`) | Sitemap, CF Pages serve ve canonical tutarlı olmalı — yoksa Google indekslemez |
 | Vite **6.x** — downgrade etme | 5.4.x Node 25'te deadlock yapıyor |
+| Lokal build için `node_modules/.vite` cache'i temizle | `rm -rf node_modules/.vite` — yoksa Radix UI export hatası alırsın |
 | Yeni sayfa eklendiğinde `scripts/generate-static-pages.cjs`'e meta tag girişi de ekle | Yoksa tüm SEO meta'ları (`<title>`, og:*, canonical) eksik kalır |
+| CF Pages Git entegrasyonu kopuksa `wrangler pages deploy dist/` kullan | Manuel deploy gerektiğinde lokal build + wrangler deploy |
 
 ## 📁 Anahtar Dosyalar
 
@@ -41,11 +43,18 @@ src/pages/admin/                    → Admin dashboard (8 dosya, şifre korumal
 ## 🚀 Build & Deploy
 
 ```bash
-npm run build
-# = vite build → generate-static-pages.cjs → fix-tr-title.cjs → fix-spa-fallback.cjs
+# Lokal build (Node 22 gerekli, node_modules/.vite cache temizle)
+rm -rf node_modules/.vite && fnm exec --using=22 npx vite build
+fnm exec --using=22 node scripts/generate-static-pages.cjs
+fnm exec --using=22 node scripts/fix-tr-title.cjs
+fnm exec --using=22 node scripts/fix-spa-fallback.cjs
+
+# Deploy (CF Pages Git entegrasyonu kopuksa)
+wrangler pages deploy dist/ --project-name=beginnerfxguide --branch=main --commit-dirty=true
 ```
 
-- Netlify otomatik deploy (GitHub `main` push tetikler)
+- **Cloudflare Pages** deploy — Git entegrasyonu varsa otomatik, yoksa `wrangler pages deploy` ile manuel
+- `beginnerfxguide-prerender` worker: bot isteklerini prerender.io'ya yönlendirir (SEO)
 - Zorunlu env var: `VITE_GA_ID` | Opsiyonel: `VITE_GTM_ID`, broker affiliate URL'leri
 
 ---
