@@ -260,7 +260,7 @@ function injectBreadcrumbSchema(html, pagePath, pageTitle) {
       "@type": "ListItem",
       "position": i + 2,
       "name": i === parts.length - 1 ? pageTitle.split('|')[0].trim() : parts[i].charAt(0).toUpperCase() + parts[i].slice(1),
-      "item": `${SITE_URL}${currentPath}/`
+      "item": `${SITE_URL}${currentPath}`
     });
   }
 
@@ -323,7 +323,7 @@ function main() {
     // Netlify serves index.html from directories natively — no rewrite rules needed
     const dirPath = path.join(DIST, page.path);
     const filePath = path.join(dirPath, 'index.html');
-    const canonical = `${SITE_URL}${page.path}/`;
+    const canonical = `${SITE_URL}${page.path}`;
 
     fs.mkdirSync(dirPath, { recursive: true });
 
@@ -352,7 +352,7 @@ function main() {
     // Directory-based: /blog/slug → dist/blog/slug/index.html
     const dirPath = path.join(DIST, pagePath);
     const filePath = path.join(dirPath, 'index.html');
-    const canonical = `${SITE_URL}${pagePath}/`;
+    const canonical = `${SITE_URL}${pagePath}`;
 
     fs.mkdirSync(dirPath, { recursive: true });
 
