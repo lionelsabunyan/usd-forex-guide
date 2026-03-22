@@ -27,3 +27,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local Netlify folder
+.netlify
+
+# Paperclip AI orchestration (data lives in ~/.paperclip/)
+paperclip/

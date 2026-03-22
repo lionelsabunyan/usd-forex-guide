@@ -59,6 +59,48 @@ wrangler pages deploy dist/ --project-name=beginnerfxguide --branch=main --commi
 
 ---
 
+## 🤖 Paperclip AI Orkestrasyon
+
+- **Platform**: [paperclip.ing](https://paperclip.ing) — açık kaynak AI ajan orkestrasyonu
+- **UI**: https://paperclip.beginnerfxguide.com (authenticated mode, Let's Encrypt SSL)
+- **VPS**: Hetzner `89.167.17.240` — systemd servisi, 7/24 çalışır, crash'te auto-restart
+- **SSH**: `ssh -i ~/.ssh/verimio_vps_new root@89.167.17.240`
+- **Paperclip user**: `paperclip` (non-root) — config: `/home/paperclip/.paperclip/instances/default/`
+- **DB**: Embedded PostgreSQL (port 54329), saatlik backup, 30 gün retention
+- **Claude CLI**: VPS'te login'li (Max subscription), `su - paperclip` ile kullan
+- **Lokal**: Mac'te de kurulu (`npm run paperclip`), geliştirme/test için
+
+### VPS Komutları
+```bash
+# Servis yönetimi (root olarak)
+ssh -i ~/.ssh/verimio_vps_new root@89.167.17.240
+systemctl status paperclip     # Durum kontrol
+systemctl restart paperclip    # Yeniden başlat
+journalctl -u paperclip -n 50  # Son loglar
+
+# Claude CLI test (paperclip user olarak)
+su - paperclip
+echo "test" | claude --print
+```
+
+### Ajanlar (UI'dan oluşturulacak)
+| Ajan | Adapter | Schedule | Sarar |
+|------|---------|----------|-------|
+| SEO Agent | Claude Code | Günlük 07:00 UTC | `scripts/seo-*.py`, `scripts/gsc-*.py` |
+| Content Agent | Claude Code | Haftalık Çarşamba | `src/lib/reviewData/*.ts` okuma + güncelleme |
+| Analytics Agent | Claude Code | 6 saatte bir | `scripts/telegram_report.py` mantığı |
+| Reporter Agent | Claude Code | Günlük 06:00 UTC | `scripts/telegram_report.py` |
+
+### Kurallar
+- Paperclip verileri VPS'te `~/.paperclip/` altında — repo'ya dahil değil
+- Content Agent insan onayı gerektirir (governance)
+- Mevcut GitHub Actions (`daily-report.yml`, `weekly-report.yml`) Reporter Agent stabilize olana kadar silinmez
+- API key kullanılmaz — tüm LLM işlemleri Claude Max aboneliği üzerinden
+- Caddy reverse proxy config: `/data/coolify/proxy/caddy/dynamic/paperclip.caddy`
+- VPS'teki mevcut servislere (n8n, Coolify) dokunma
+
+---
+
 ## 🔍 Audit Modu
 
 Komutu çalıştırarak audit başlatırsın:
