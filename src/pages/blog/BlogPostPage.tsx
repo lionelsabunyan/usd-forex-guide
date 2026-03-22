@@ -7,6 +7,7 @@ import { getBlogPost, blogCategories } from "@/lib/blog";
 import NotFound from "../NotFound";
 import BlogCover from "@/components/BlogCover";
 import SEO from "@/components/SEO";
+import Breadcrumb from "@/components/Breadcrumb";
 import TableOfContents from "@/components/TableOfContents";
 import ReadingProgressBar from "@/components/ReadingProgressBar";
 import SocialShare from "@/components/SocialShare";
@@ -215,6 +216,13 @@ const BlogPostPage = () => {
       <section className="pt-24 pb-12 bg-gradient-hero">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
+            <Breadcrumb
+              items={[
+                { label: "Blog", href: "/blog" },
+                { label: post.title }
+              ]}
+              className="mb-6"
+            />
             <Button variant="ghost" asChild className="mb-6">
               <Link to="/blog">
                 <ArrowLeft className="w-4 h-4 mr-2" />

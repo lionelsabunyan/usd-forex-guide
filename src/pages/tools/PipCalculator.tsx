@@ -115,20 +115,65 @@ const PipCalculator = () => {
           canonical="/tools/pip-calculator"
           jsonLd={{
             "@context": "https://schema.org",
-            "@type": "WebApplication",
-            "name": "Forex Pip Calculator",
-            "description": "Calculate pip value for any forex currency pair",
-            "applicationCategory": "FinanceApplication",
-            "operatingSystem": "Any",
-            "offers": {
-              "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "USD"
-            },
-            "author": {
-              "@type": "Organization",
-              "name": "Beginner FX Guide"
-            }
+            "@graph": [
+              {
+                "@type": "WebApplication",
+                "name": "Forex Pip Calculator",
+                "description": "Calculate pip value for any forex currency pair",
+                "applicationCategory": "FinanceApplication",
+                "operatingSystem": "Any",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "0",
+                  "priceCurrency": "USD"
+                },
+                "author": {
+                  "@type": "Organization",
+                  "name": "Beginner FX Guide"
+                }
+              },
+              {
+                "@type": "HowTo",
+                "name": "How to Calculate Pip Value in Forex",
+                "description": "Use our free pip calculator to find the value of a pip for any forex currency pair and position size.",
+                "step": [
+                  {
+                    "@type": "HowToStep",
+                    "position": 1,
+                    "name": "Select Currency Pair",
+                    "text": "Choose the forex currency pair you want to calculate pip value for (e.g., EUR/USD, GBP/USD, USD/JPY)."
+                  },
+                  {
+                    "@type": "HowToStep",
+                    "position": 2,
+                    "name": "Choose Account Currency",
+                    "text": "Select your trading account's base currency (USD, EUR, GBP, etc.)."
+                  },
+                  {
+                    "@type": "HowToStep",
+                    "position": 3,
+                    "name": "Enter Position Size",
+                    "text": "Enter your position size in lots. 1 standard lot = 100,000 units, 0.1 = mini lot, 0.01 = micro lot."
+                  },
+                  {
+                    "@type": "HowToStep",
+                    "position": 4,
+                    "name": "Enter Exchange Rate",
+                    "text": "Input the current exchange rate for the selected currency pair."
+                  },
+                  {
+                    "@type": "HowToStep",
+                    "position": 5,
+                    "name": "View Results",
+                    "text": "The calculator displays pip value per pip, total pip value for your specified number of pips, and profit/loss in your account currency."
+                  }
+                ],
+                "tool": {
+                  "@type": "HowToTool",
+                  "name": "Forex Pip Calculator"
+                }
+              }
+            ]
           }}
         />
       )}

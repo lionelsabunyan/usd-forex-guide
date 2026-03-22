@@ -102,16 +102,61 @@ const ProfitLossCalculator = () => {
         canonical="/tools/profit-loss-calculator"
         jsonLd={{
           "@context": "https://schema.org",
-          "@type": "WebApplication",
-          "name": "Forex Profit/Loss Calculator",
-          "description": "Calculate potential profit or loss for your forex trades",
-          "applicationCategory": "FinanceApplication",
-          "operatingSystem": "Any",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          }
+          "@graph": [
+            {
+              "@type": "WebApplication",
+              "name": "Forex Profit/Loss Calculator",
+              "description": "Calculate potential profit or loss for your forex trades",
+              "applicationCategory": "FinanceApplication",
+              "operatingSystem": "Any",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              }
+            },
+            {
+              "@type": "HowTo",
+              "name": "How to Calculate Forex Profit and Loss",
+              "description": "Calculate potential profit or loss for any forex trade before you enter it.",
+              "step": [
+                {
+                  "@type": "HowToStep",
+                  "position": 1,
+                  "name": "Select Currency Pair",
+                  "text": "Choose the forex pair you are trading or plan to trade."
+                },
+                {
+                  "@type": "HowToStep",
+                  "position": 2,
+                  "name": "Enter Position Size",
+                  "text": "Input your trade size in lots (1 standard lot = 100,000 units)."
+                },
+                {
+                  "@type": "HowToStep",
+                  "position": 3,
+                  "name": "Enter Entry and Exit Prices",
+                  "text": "Input the price at which you entered (or plan to enter) the trade and your target exit price."
+                },
+                {
+                  "@type": "HowToStep",
+                  "position": 4,
+                  "name": "Select Trade Direction",
+                  "text": "Choose whether you are going long (buy) or short (sell) on the currency pair."
+                },
+                {
+                  "@type": "HowToStep",
+                  "position": 5,
+                  "name": "Review Profit/Loss",
+                  "text": "The calculator shows your potential profit or loss in pips and in your account currency, including pip value per lot."
+                }
+              ],
+              "tool": {
+                "@type": "HowToTool",
+                "name": "Forex Profit/Loss Calculator"
+              }
+            }
+          ]
         }}
       />
       <Header />

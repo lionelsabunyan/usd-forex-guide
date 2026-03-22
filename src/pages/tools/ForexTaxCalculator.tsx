@@ -160,12 +160,51 @@ const ForexTaxCalculator = () => {
         canonical="/tools/forex-tax-calculator"
         jsonLd={{
           "@context": "https://schema.org",
-          "@type": "WebApplication",
-          "name": "Forex Tax Calculator",
-          "description": "Calculate and compare forex trading taxes under Section 988 and Section 1256",
-          "applicationCategory": "FinanceApplication",
-          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-          "operatingSystem": "Any"
+          "@graph": [
+            {
+              "@type": "WebApplication",
+              "name": "Forex Tax Calculator",
+              "description": "Calculate and compare forex trading taxes under Section 988 and Section 1256",
+              "applicationCategory": "FinanceApplication",
+              "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+              "operatingSystem": "Any"
+            },
+            {
+              "@type": "HowTo",
+              "name": "How to Calculate Forex Trading Taxes in the US",
+              "description": "Compare Section 988 vs Section 1256 tax treatment and estimate your forex trading tax liability.",
+              "step": [
+                {
+                  "@type": "HowToStep",
+                  "position": 1,
+                  "name": "Enter Trading Income",
+                  "text": "Input your total forex trading profit or loss for the tax year."
+                },
+                {
+                  "@type": "HowToStep",
+                  "position": 2,
+                  "name": "Enter Regular Income",
+                  "text": "Input your non-trading income to determine your tax bracket."
+                },
+                {
+                  "@type": "HowToStep",
+                  "position": 3,
+                  "name": "Select Filing Status",
+                  "text": "Choose your tax filing status (Single, Married Filing Jointly, etc.)."
+                },
+                {
+                  "@type": "HowToStep",
+                  "position": 4,
+                  "name": "Compare Tax Treatments",
+                  "text": "Review the side-by-side comparison of Section 988 (ordinary income) vs Section 1256 (60/40 split) tax calculations to determine which saves you more."
+                }
+              ],
+              "tool": {
+                "@type": "HowToTool",
+                "name": "Forex Tax Calculator"
+              }
+            }
+          ]
         }}
       />
       <Header />

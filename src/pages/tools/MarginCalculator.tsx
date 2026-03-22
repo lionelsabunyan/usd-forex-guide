@@ -114,16 +114,55 @@ const MarginCalculator = () => {
         canonical="/tools/margin-calculator"
         jsonLd={{
           "@context": "https://schema.org",
-          "@type": "WebApplication",
-          "name": "Forex Margin Calculator",
-          "description": "Calculate the margin required for your forex trades",
-          "applicationCategory": "FinanceApplication",
-          "operatingSystem": "Any",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          }
+          "@graph": [
+            {
+              "@type": "WebApplication",
+              "name": "Forex Margin Calculator",
+              "description": "Calculate the margin required for your forex trades",
+              "applicationCategory": "FinanceApplication",
+              "operatingSystem": "Any",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              }
+            },
+            {
+              "@type": "HowTo",
+              "name": "How to Calculate Forex Margin Requirements",
+              "description": "Calculate the exact margin required for any forex trade based on lot size, leverage, and currency pair.",
+              "step": [
+                {
+                  "@type": "HowToStep",
+                  "position": 1,
+                  "name": "Select Currency Pair",
+                  "text": "Choose the forex pair you want to trade (e.g., EUR/USD, GBP/USD)."
+                },
+                {
+                  "@type": "HowToStep",
+                  "position": 2,
+                  "name": "Enter Position Size",
+                  "text": "Input the number of lots you plan to trade. 1 lot = 100,000 units."
+                },
+                {
+                  "@type": "HowToStep",
+                  "position": 3,
+                  "name": "Select Leverage",
+                  "text": "Choose your broker's leverage ratio. US-regulated brokers offer up to 1:50 for major pairs."
+                },
+                {
+                  "@type": "HowToStep",
+                  "position": 4,
+                  "name": "Review Margin Requirements",
+                  "text": "The calculator displays required margin, margin as percentage of position, and total position value in your account currency."
+                }
+              ],
+              "tool": {
+                "@type": "HowToTool",
+                "name": "Forex Margin Calculator"
+              }
+            }
+          ]
         }}
       />
       <Header />

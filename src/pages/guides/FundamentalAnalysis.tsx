@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { Newspaper, ArrowLeft, Clock, Calendar, TrendingUp, TrendingDown, AlertCircle, DollarSign, Users, BarChart3, Globe, Building2 } from "lucide-react";
 import SEO from "@/components/SEO";
+import Breadcrumb from "@/components/Breadcrumb";
 import ReadingProgressBar from "@/components/ReadingProgressBar";
 import TableOfContents from "@/components/TableOfContents";
 import QuotableFact from "@/components/QuotableFact";
@@ -73,6 +74,13 @@ const FundamentalAnalysis = () => {
       <section className="pt-24 pb-12 bg-gradient-hero relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent" />
         <div className="container mx-auto px-4 relative z-10">
+          <Breadcrumb
+            items={[
+              { label: "Guides", href: "/guides" },
+              { label: "Fundamental Analysis" }
+            ]}
+            className="mb-6"
+          />
           <Link to="/guides" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" />
             Back to Guides

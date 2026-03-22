@@ -147,20 +147,65 @@ const PositionSizeCalculator = () => {
         canonical="/tools/position-size-calculator"
         jsonLd={{
           "@context": "https://schema.org",
-          "@type": "WebApplication",
-          "name": "Forex Position Size Calculator",
-          "description": "Calculate optimal position size based on risk tolerance and stop-loss",
-          "applicationCategory": "FinanceApplication",
-          "operatingSystem": "Any",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          },
-          "author": {
-            "@type": "Organization",
-            "name": "Beginner FX Guide"
-          }
+          "@graph": [
+            {
+              "@type": "WebApplication",
+              "name": "Forex Position Size Calculator",
+              "description": "Calculate optimal position size based on risk tolerance and stop-loss",
+              "applicationCategory": "FinanceApplication",
+              "operatingSystem": "Any",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "author": {
+                "@type": "Organization",
+                "name": "Beginner FX Guide"
+              }
+            },
+            {
+              "@type": "HowTo",
+              "name": "How to Calculate Position Size in Forex",
+              "description": "Determine the correct lot size for any trade based on your account balance, risk percentage, and stop-loss distance.",
+              "step": [
+                {
+                  "@type": "HowToStep",
+                  "position": 1,
+                  "name": "Enter Account Balance",
+                  "text": "Input your total trading account balance in USD."
+                },
+                {
+                  "@type": "HowToStep",
+                  "position": 2,
+                  "name": "Set Risk Percentage",
+                  "text": "Choose the percentage of your account you are willing to risk on this trade (recommended: 1-2%)."
+                },
+                {
+                  "@type": "HowToStep",
+                  "position": 3,
+                  "name": "Enter Stop-Loss Distance",
+                  "text": "Input your stop-loss distance in pips from your entry price."
+                },
+                {
+                  "@type": "HowToStep",
+                  "position": 4,
+                  "name": "Select Currency Pair",
+                  "text": "Choose the forex pair you plan to trade and enter the current exchange rate."
+                },
+                {
+                  "@type": "HowToStep",
+                  "position": 5,
+                  "name": "Review Position Size",
+                  "text": "The calculator shows your optimal position size in lots and units, pip value per lot, and potential profit based on your take-profit target."
+                }
+              ],
+              "tool": {
+                "@type": "HowToTool",
+                "name": "Forex Position Size Calculator"
+              }
+            }
+          ]
         }}
       />
       <Header />
