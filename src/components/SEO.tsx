@@ -21,7 +21,9 @@ const SEO = ({
 }: SEOProps) => {
   const fullTitle = title.includes("US Forex Guide") ? title : `${title} | US Forex Guide`;
   const siteUrl = "https://beginnerfxguide.com";
-  const fullCanonical = canonical ? `${siteUrl}${canonical}` : siteUrl;
+  // Enforce trailing slash on all canonical URLs (per CLAUDE.md rule)
+  const normalizedCanonical = canonical && canonical !== "/" && !canonical.endsWith("/") ? `${canonical}/` : canonical;
+  const fullCanonical = normalizedCanonical ? `${siteUrl}${normalizedCanonical}` : `${siteUrl}/`;
 
   return (
     <Helmet>

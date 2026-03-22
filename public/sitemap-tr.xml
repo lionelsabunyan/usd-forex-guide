@@ -89,4 +89,36 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://beginnerfxguide.com/tr/inceleme/oanda/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://beginnerfxguide.com/tr/inceleme/oanda/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://beginnerfxguide.com/review/oanda/" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/tr/inceleme/ig/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://beginnerfxguide.com/tr/inceleme/ig/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://beginnerfxguide.com/review/ig-markets/" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/tr/inceleme/etoro/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://beginnerfxguide.com/tr/inceleme/etoro/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://beginnerfxguide.com/review/etoro/" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/tr/inceleme/forexcom/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://beginnerfxguide.com/tr/inceleme/forexcom/" />
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://beginnerfxguide.com/review/forexcom/" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

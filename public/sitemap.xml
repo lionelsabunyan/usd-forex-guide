@@ -18,6 +18,18 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://beginnerfxguide.com/brokers/australia/</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/brokers/uk/</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://beginnerfxguide.com/compare/</loc>
     <lastmod>2026-03-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -97,18 +109,24 @@
   </url>
   <url>
     <loc>https://beginnerfxguide.com/review/oanda/</loc>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://beginnerfxguide.com/review/oanda/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://beginnerfxguide.com/tr/inceleme/oanda/" />
     <lastmod>2026-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://beginnerfxguide.com/review/forexcom/</loc>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://beginnerfxguide.com/review/forexcom/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://beginnerfxguide.com/tr/inceleme/forexcom/" />
     <lastmod>2026-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://beginnerfxguide.com/review/ig-markets/</loc>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://beginnerfxguide.com/review/ig-markets/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://beginnerfxguide.com/tr/inceleme/ig/" />
     <lastmod>2026-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -133,6 +151,8 @@
   </url>
   <url>
     <loc>https://beginnerfxguide.com/review/etoro/</loc>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://beginnerfxguide.com/review/etoro/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://beginnerfxguide.com/tr/inceleme/etoro/" />
     <lastmod>2026-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -222,6 +242,24 @@
   <url>
     <loc>https://beginnerfxguide.com/compare/midasfx-vs-hankotrade/</loc>
     <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/compare/oanda-vs-forexcom/</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/compare/etoro-vs-xm/</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/compare/pepperstone-vs-exness/</loc>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -318,6 +356,12 @@
   <url>
     <loc>https://beginnerfxguide.com/resources/us-forex-checklist/</loc>
     <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/resources/infographics/</loc>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

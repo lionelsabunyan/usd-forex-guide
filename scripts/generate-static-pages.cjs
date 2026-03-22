@@ -29,6 +29,8 @@ const staticPages = [
   // Main pages
   { path: '/', title: 'Best Forex Brokers for US Traders 2026 | US Forex Guide', desc: 'Compare the best forex brokers for US traders. Expert reviews, regulatory info, and honest ratings to help American beginners start trading safely.' },
   { path: '/brokers', title: 'Best Forex Brokers for US Traders | US Forex Guide', desc: 'Find the best forex brokers accepting US traders. Compare spreads, leverage, regulation, and account types side by side.' },
+  { path: '/brokers/australia', title: 'Best Forex Brokers in Australia 2026 | US Forex Guide', desc: 'Compare the best forex brokers in Australia. ASIC-regulated brokers with competitive spreads, platforms, and account types for Australian traders.' },
+  { path: '/brokers/uk', title: 'Best Forex Brokers in the UK 2026 | US Forex Guide', desc: 'Compare the best forex brokers in the UK. FCA-regulated brokers with tight spreads, reliable platforms, and strong trader protections.' },
   { path: '/compare', title: 'Compare Forex Brokers | US Forex Guide', desc: 'Compare forex brokers side-by-side. Evaluate spreads, fees, leverage, regulation and more to find the right broker.' },
   { path: '/guides', title: 'Forex Trading Guides for Beginners | US Forex Guide', desc: 'Comprehensive forex trading guides for American beginners. Learn regulations, strategies, and how to choose the right broker.' },
   { path: '/tools', title: 'Forex Trading Tools & Calculators | US Forex Guide', desc: 'Free forex calculators: pip calculator, position size, margin, profit/loss and more. Essential tools for US forex traders.' },
@@ -82,15 +84,37 @@ const staticPages = [
 
   // Compare
   { path: '/compare/midasfx-vs-hankotrade', title: 'MidasFX vs Hankotrade Comparison 2026 | US Forex Guide', desc: 'Head-to-head comparison of MidasFX and Hankotrade for US traders. Compare spreads, leverage, deposits, and overall value.' },
+  { path: '/compare/oanda-vs-forexcom', title: 'OANDA vs Forex.com Comparison 2026 | US Forex Guide', desc: 'OANDA vs Forex.com head-to-head comparison for US traders. Compare spreads, fees, platforms, and regulation side-by-side.' },
+  { path: '/compare/etoro-vs-xm', title: 'eToro vs XM Comparison 2026 | US Forex Guide', desc: 'eToro vs XM head-to-head comparison. Compare social trading, spreads, leverage, bonuses, and platforms for forex traders.' },
+  { path: '/compare/pepperstone-vs-exness', title: 'Pepperstone vs Exness Comparison 2026 | US Forex Guide', desc: 'Pepperstone vs Exness head-to-head comparison. Compare spreads, leverage, platforms, and withdrawal speed for forex traders.' },
 
   // Resources
   { path: '/resources/us-forex-checklist', title: 'US Forex Trader Checklist | US Forex Guide', desc: 'Complete checklist for US forex traders before opening an account. Regulations, broker vetting, and risk management checklist.' },
+  { path: '/resources/infographics', title: 'Forex Trading Infographics | US Forex Guide', desc: 'Visual guides and infographics about forex trading, broker comparisons, and trading strategies for US traders.' },
 
   // Legal
   { path: '/legal/privacy', title: 'Privacy Policy | US Forex Guide', desc: 'Privacy policy for US Forex Guide. Learn how we collect, use, and protect your personal information.' },
   { path: '/legal/terms', title: 'Terms of Service | US Forex Guide', desc: 'Terms of service for US Forex Guide. Rules and conditions for using our website and content.' },
   { path: '/legal/disclaimer', title: 'Disclaimer | US Forex Guide', desc: 'Important disclaimer for US Forex Guide. Trading involves risk. Read before using our content for investment decisions.' },
   { path: '/legal/affiliate-disclosure', title: 'Affiliate Disclosure | US Forex Guide', desc: 'Affiliate disclosure for US Forex Guide. We earn commissions from brokers — here\'s how it affects our reviews.' },
+
+  // Turkish (TR) pages
+  { path: '/tr', title: "Türkiye'den Erişilebilen Forex Brokerları 2026 | Beginner FX Guide TR", desc: "Türkiye'den açılabilen en iyi forex broker incelemeleri. Güvenilir, lisanslı brokerları karşılaştırın. Bağımsız ve tarafsız analizler." },
+  { path: '/tr/hakkimizda', title: 'Hakkımızda | Beginner FX Guide TR', desc: "Beginner FX Guide TR hakkında bilgi edinin. Forex broker inceleme metodolojimiz ve tarafsız değerlendirme sürecimiz." },
+  { path: '/tr/iletisim', title: 'İletişim | Beginner FX Guide TR', desc: 'Beginner FX Guide TR ekibiyle iletişime geçin. Soru, öneri ve geri bildirimlerinizi bekliyoruz.' },
+  { path: '/tr/gizlilik-politikasi', title: 'Gizlilik Politikası | Beginner FX Guide TR', desc: 'Beginner FX Guide TR gizlilik politikası. Kişisel verilerinizi nasıl topladığımızı ve koruduğumuzu öğrenin.' },
+  { path: '/tr/yasal-uyari', title: 'Yasal Uyarı | Beginner FX Guide TR', desc: 'Beginner FX Guide TR yasal uyarı sayfası. Forex ticareti risk içerir. İçeriklerimizi yatırım kararlarında kullanmadan önce okuyun.' },
+  { path: '/tr/inceleme/fxpro', title: 'FxPro İnceleme 2026 | Beginner FX Guide TR', desc: 'FxPro forex broker incelemesi. Spread, platform, düzenleme ve Türkiye erişilebilirliği hakkında detaylı analiz.' },
+  { path: '/tr/inceleme/hfm', title: 'HFM İnceleme 2026 | Beginner FX Guide TR', desc: 'HFM (HotForex) forex broker incelemesi. Düşük spread, çoklu platform desteği ve Türkiye erişimi hakkında bilgi.' },
+  { path: '/tr/inceleme/xm', title: 'XM İnceleme 2026 | Beginner FX Guide TR', desc: 'XM forex broker incelemesi. 1000+ enstrüman, düşük spread ve Türkiye kullanıcıları için hesap seçenekleri.' },
+  { path: '/tr/inceleme/exness', title: 'Exness İnceleme 2026 | Beginner FX Guide TR', desc: 'Exness forex broker incelemesi. Ultra düşük spread, hızlı para çekme ve Türkiye erişimi hakkında detaylı analiz.' },
+  { path: '/tr/inceleme/fbs', title: 'FBS İnceleme 2026 | Beginner FX Guide TR', desc: 'FBS forex broker incelemesi. Düşük minimum depozito, bonus fırsatları ve Türkiye erişimi hakkında bilgi.' },
+  { path: '/tr/inceleme/pepperstone', title: 'Pepperstone İnceleme 2026 | Beginner FX Guide TR', desc: 'Pepperstone forex broker incelemesi. RAW spread, hızlı işlem ve Türkiye kullanıcıları için erişilebilirlik analizi.' },
+  { path: '/tr/inceleme/fxtm', title: 'FXTM İnceleme 2026 | Beginner FX Guide TR', desc: 'FXTM (ForexTime) forex broker incelemesi. Çoklu hesap türü, düşük spread ve Türkiye erişimi hakkında detaylı bilgi.' },
+  { path: '/tr/inceleme/oanda', title: 'OANDA İnceleme 2026 | Beginner FX Guide TR', desc: 'OANDA forex broker incelemesi. CFTC/NFA regülasyonlu, $0 minimum depozito, 1996\'dan beri güvenilir broker.' },
+  { path: '/tr/inceleme/ig', title: 'IG Markets İnceleme 2026 | Beginner FX Guide TR', desc: 'IG Markets forex broker incelemesi. 50+ yıllık deneyim, CFTC/NFA ve FCA regülasyonlu, gelişmiş araştırma araçları.' },
+  { path: '/tr/inceleme/etoro', title: 'eToro İnceleme 2026 | Beginner FX Guide TR', desc: 'eToro forex broker incelemesi. Sosyal/copy trading, FCA ve CySEC regülasyonlu, kripto ve hisse tek platformda.' },
+  { path: '/tr/inceleme/forexcom', title: 'Forex.com İnceleme 2026 | Beginner FX Guide TR', desc: 'Forex.com forex broker incelemesi. CFTC/NFA regülasyonlu, 3 hesap türü, MT4/MT5 desteği ve rekabetçi spread\'ler.' },
 ];
 
 // ─── Blog posts ───────────────────────────────────────────────────────────────

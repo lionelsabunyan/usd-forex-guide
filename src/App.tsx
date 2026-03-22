@@ -85,6 +85,9 @@ const BlogPostPage = lazy(() => import("./pages/blog/BlogPostPage"));
 
 // Compare Pages - Lazy loaded
 const MidasFXvsHankotrade = lazy(() => import("./pages/compare/MidasFXvsHankotrade"));
+const OANDAvsForexcom = lazy(() => import("./pages/compare/OANDAvsForexcom"));
+const ETorovsXM = lazy(() => import("./pages/compare/ETorovsXM"));
+const PepperstonevsExness = lazy(() => import("./pages/compare/PepperstonevsExness"));
 const BestBrokersAustralia = lazy(() => import("./pages/BestBrokersAustralia"));
 const BestBrokersUK = lazy(() => import("./pages/BestBrokersUK"));
 
@@ -107,6 +110,10 @@ const ExnessInceleme = lazy(() => import("./pages/tr/inceleme/ExnessInceleme"));
 const FBSInceleme = lazy(() => import("./pages/tr/inceleme/FBSInceleme"));
 const PepperstoneInceleme = lazy(() => import("./pages/tr/inceleme/PepperstoneInceleme"));
 const FXTMInceleme = lazy(() => import("./pages/tr/inceleme/FXTMInceleme"));
+const OANDAInceleme = lazy(() => import("./pages/tr/inceleme/OANDAInceleme"));
+const IGInceleme = lazy(() => import("./pages/tr/inceleme/IGInceleme"));
+const EToroInceleme = lazy(() => import("./pages/tr/inceleme/EToroInceleme"));
+const ForexcomInceleme = lazy(() => import("./pages/tr/inceleme/ForexcomInceleme"));
 
 // Admin Pages - Lazy loaded
 const AdminLayout = lazy(() => import("./pages/admin/AdminLayout"));
@@ -176,6 +183,9 @@ const App = () => (
             <Route path="/brokers/uk" element={<BestBrokersUK />} />
             <Route path="/compare" element={<ComparePage />} />
             <Route path="/compare/midasfx-vs-hankotrade" element={<MidasFXvsHankotrade />} />
+            <Route path="/compare/oanda-vs-forexcom" element={<OANDAvsForexcom />} />
+            <Route path="/compare/etoro-vs-xm" element={<ETorovsXM />} />
+            <Route path="/compare/pepperstone-vs-exness" element={<PepperstonevsExness />} />
             <Route path="/guides" element={<GuidesPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/about" element={<AboutPage />} />
@@ -229,6 +239,10 @@ const App = () => (
             <Route path="/tr/inceleme/fbs" element={<FBSInceleme />} />
             <Route path="/tr/inceleme/pepperstone" element={<PepperstoneInceleme />} />
             <Route path="/tr/inceleme/fxtm" element={<FXTMInceleme />} />
+            <Route path="/tr/inceleme/oanda" element={<OANDAInceleme />} />
+            <Route path="/tr/inceleme/ig" element={<IGInceleme />} />
+            <Route path="/tr/inceleme/etoro" element={<EToroInceleme />} />
+            <Route path="/tr/inceleme/forexcom" element={<ForexcomInceleme />} />
 
             {/* Admin Routes */}
             <Route path="/admin/login" element={<AdminLogin />} />

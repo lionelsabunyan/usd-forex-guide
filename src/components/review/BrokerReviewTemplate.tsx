@@ -41,33 +41,61 @@ const BrokerReviewTemplate = ({ data }: BrokerReviewTemplateProps) => {
         canonical={data.canonical}
         jsonLd={{
           "@context": "https://schema.org",
-          "@type": "Review",
-          "itemReviewed": {
-            "@type": "FinancialService",
-            "name": data.brokerName,
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": data.overallRating,
-              "ratingCount": data.ratingCount,
-              "reviewCount": data.reviewCount,
-              "bestRating": "5",
-              "worstRating": "1"
-            }
-          },
-          "author": {
-            "@type": "Organization",
-            "name": "Beginner FX Guide",
-          },
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": data.overallRating,
-            "bestRating": "5",
-            "worstRating": "1",
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Beginner FX Guide",
-          },
+          "@graph": [
+            {
+              "@type": "Review",
+              "itemReviewed": {
+                "@type": "FinancialService",
+                "name": data.brokerName,
+                ...(broker?.siteUrl ? { "url": broker.siteUrl } : {}),
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": data.overallRating,
+                  "ratingCount": data.ratingCount,
+                  "reviewCount": data.reviewCount,
+                  "bestRating": "5",
+                  "worstRating": "1",
+                },
+              },
+              "author": {
+                "@type": "Organization",
+                "name": "Beginner FX Guide",
+                "url": "https://beginnerfxguide.com",
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": data.overallRating,
+                "bestRating": "5",
+                "worstRating": "1",
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Beginner FX Guide",
+                "url": "https://beginnerfxguide.com",
+              },
+              ...(data.lastUpdated ? { "datePublished": data.lastUpdated, "dateModified": data.lastUpdated } : {}),
+            },
+            {
+              "@type": "Organization",
+              "name": data.brokerName,
+              ...(broker?.siteUrl ? { "url": broker.siteUrl } : {}),
+              ...(broker?.foundedYear ? { "foundingDate": String(broker.foundedYear) } : {}),
+              ...(broker?.headquarters ? { "address": { "@type": "PostalAddress", "addressLocality": broker.headquarters } } : {}),
+            },
+            ...(data.faqs && data.faqs.length > 0
+              ? [{
+                  "@type": "FAQPage",
+                  "mainEntity": data.faqs.map((faq) => ({
+                    "@type": "Question",
+                    "name": faq.question,
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": faq.answer,
+                    },
+                  })),
+                }]
+              : []),
+          ],
         }}
       />
       <Header />
