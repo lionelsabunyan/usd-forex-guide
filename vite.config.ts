@@ -29,6 +29,10 @@ export default defineConfig(({ mode }) => ({
           if (id.includes('node_modules/@radix-ui/')) {
             return 'vendor-ui';
           }
+          // Supabase client (heavy — keep in its own cached chunk)
+          if (id.includes('node_modules/@supabase/')) {
+            return 'vendor-supabase';
+          }
           // Form libraries
           if (id.includes('node_modules/react-hook-form/') ||
               id.includes('node_modules/@hookform/') ||
@@ -40,6 +44,10 @@ export default defineConfig(({ mode }) => ({
               id.includes('node_modules/tailwind-merge/') ||
               id.includes('node_modules/class-variance-authority/')) {
             return 'vendor-utils';
+          }
+          // Blog content data (large — separate for caching)
+          if (id.includes('src/lib/blog.ts') || id.includes('src/lib/blog.js')) {
+            return 'data-blog';
           }
         },
       },

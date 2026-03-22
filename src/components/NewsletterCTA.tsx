@@ -1,7 +1,6 @@
 import { Mail, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { subscribeNewsletter } from "@/lib/newsletterService";
 
 interface NewsletterCTAProps {
   variant?: "inline" | "card";
@@ -18,6 +17,7 @@ const NewsletterCTA = ({ variant = "card", className = "" }: NewsletterCTAProps)
     if (!email || status === "loading") return;
 
     setStatus("loading");
+    const { subscribeNewsletter } = await import("@/lib/newsletterService");
     const result = await subscribeNewsletter(email, variant === "inline" ? "inline_cta" : "card_cta");
 
     if (result.success) {

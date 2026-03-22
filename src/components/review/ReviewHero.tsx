@@ -142,7 +142,7 @@ const ReviewHero = ({ data }: ReviewHeroProps) => {
                 >
                   <picture>
                     <source srcSet={data.promoBanner.imageWebp} type="image/webp" />
-                    <img src={data.promoBanner.imagePng} alt={data.promoBanner.alt} className="w-full h-auto" />
+                    <img src={data.promoBanner.imagePng} alt={data.promoBanner.alt} className="w-full h-auto" width={728} height={90} loading="lazy" />
                   </picture>
                 </a>
               )}

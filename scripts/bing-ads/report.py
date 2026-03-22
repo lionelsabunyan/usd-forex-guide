@@ -122,12 +122,11 @@ def get_campaign_performance(auth_data, days=1):
     report_request.Format = "Csv"
     report_request.ReportName = "DailyPerformance"
     report_request.ReturnOnlyCompleteData = False
-
-    # Aggregation
     report_request.Aggregation = "Summary"
 
-    # Time
+    # Time — use CustomDateRange
     report_time = reporting_service.factory.create("ReportTime")
+    report_time.PredefinedTime = None
     custom_start = reporting_service.factory.create("Date")
     custom_start.Day = start_date.day
     custom_start.Month = start_date.month
@@ -138,6 +137,7 @@ def get_campaign_performance(auth_data, days=1):
     custom_end.Year = end_date.year
     report_time.CustomDateRangeStart = custom_start
     report_time.CustomDateRangeEnd = custom_end
+    report_time.ReportTimeZone = None
     report_request.Time = report_time
 
     # Columns
@@ -233,21 +233,34 @@ def get_campaign_performance(auth_data, days=1):
         csv_content = "\n".join(lines[csv_start:])
         reader = csv.DictReader(io.StringIO(csv_content))
 
+        def safe_float(val, default=0.0):
+            try:
+                return float(val) if val else default
+            except (ValueError, TypeError):
+                return default
+
+        def safe_int(val, default=0):
+            try:
+                return int(float(val)) if val else default
+            except (ValueError, TypeError):
+                return default
+
         for row in reader:
             # Skip summary/footer rows
-            if not row.get("CampaignName") or row["CampaignName"].startswith("©"):
+            campaign_name = row.get("CampaignName", "").strip()
+            if not campaign_name or campaign_name.startswith("©") or campaign_name == "":
                 continue
             results.append({
-                "name": row.get("CampaignName", ""),
+                "name": campaign_name,
                 "status": row.get("CampaignStatus", ""),
-                "impressions": int(float(row.get("Impressions", 0))),
-                "clicks": int(float(row.get("Clicks", 0))),
-                "ctr": row.get("Ctr", "0%"),
-                "spend": float(row.get("Spend", 0)),
-                "avg_cpc": float(row.get("AverageCpc", 0)),
-                "conversions": float(row.get("Conversions", 0)),
-                "revenue": float(row.get("Revenue", 0)),
-                "cost_per_conversion": float(row.get("CostPerConversion", 0)),
+                "impressions": safe_int(row.get("Impressions")),
+                "clicks": safe_int(row.get("Clicks")),
+                "ctr": row.get("Ctr", "0.00%").strip() or "0.00%",
+                "spend": safe_float(row.get("Spend")),
+                "avg_cpc": safe_float(row.get("AverageCpc")),
+                "conversions": safe_float(row.get("Conversions")),
+                "revenue": safe_float(row.get("Revenue")),
+                "cost_per_conversion": safe_float(row.get("CostPerConversion")),
             })
     except Exception as e:
         print(f"CSV parse hatasi: {e}")

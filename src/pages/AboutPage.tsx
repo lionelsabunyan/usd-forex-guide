@@ -198,6 +198,9 @@ const AboutPage = () => {
                       src="/images/team/ryan-mitchell.jpg"
                       alt="Ryan Mitchell - Founder of Beginner FX Guide"
                       className="w-full h-full object-cover"
+                      width={128}
+                      height={128}
+                      loading="lazy"
                     />
                   </div>
 

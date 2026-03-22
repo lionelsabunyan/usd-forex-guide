@@ -162,6 +162,8 @@ const InfographicsPage = () => {
                     src={infographic.imageSrc}
                     alt={infographic.title}
                     className="w-full h-auto rounded-lg shadow-lg"
+                    width={800}
+                    height={1200}
                     loading="lazy"
                   />
                 </div>

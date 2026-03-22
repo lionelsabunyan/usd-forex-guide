@@ -18,6 +18,8 @@ const BlogCover = ({ post, variant = "style1", className }: Props) => {
               src={post.coverImage}
               alt={`Cover image for forex article: ${post.title}`}
               className="w-full h-full object-cover"
+              width={640}
+              height={360}
               loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
@@ -48,6 +50,8 @@ const BlogCover = ({ post, variant = "style1", className }: Props) => {
               src={post.coverImage}
               alt={`Cover image for forex article: ${post.title}`}
               className="w-full h-full object-cover"
+              width={640}
+              height={360}
               loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-br from-primary/60 via-accent/40 to-primary/60" />
@@ -73,6 +77,8 @@ const BlogCover = ({ post, variant = "style1", className }: Props) => {
                 src={post.coverImage}
                 alt={`Cover image for forex article: ${post.title}`}
                 className="w-full h-full object-cover"
+                width={427}
+                height={360}
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent" />

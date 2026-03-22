@@ -1,15 +1,17 @@
+import { lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import FeaturedBroker from "@/components/FeaturedBroker";
 import BrokerComparison from "@/components/BrokerComparison";
 import HowItWorks from "@/components/HowItWorks";
-import BlogPreview from "@/components/BlogPreview";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import TrustSignals from "@/components/TrustSignals";
 import PopularReviews from "@/components/PopularReviews";
 import LeadMagnetBanner from "@/components/LeadMagnetBanner";
+
+const BlogPreview = lazy(() => import("@/components/BlogPreview"));
 
 const Index = () => {
   return (
@@ -47,7 +49,9 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <LeadMagnetBanner />
         </div>
-        <BlogPreview />
+        <Suspense fallback={<div className="py-20" />}>
+          <BlogPreview />
+        </Suspense>
         <FAQ />
       </main>
       <Footer />
