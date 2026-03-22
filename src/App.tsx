@@ -72,6 +72,7 @@ const ForexTaxCalculator = lazy(() => import("./pages/tools/ForexTaxCalculator")
 const MarginCalculator = lazy(() => import("./pages/tools/MarginCalculator"));
 const ProfitLossCalculator = lazy(() => import("./pages/tools/ProfitLossCalculator"));
 const EconomicCalendar = lazy(() => import("./pages/tools/EconomicCalendar"));
+const TradingSessionsClock = lazy(() => import("./pages/tools/TradingSessionsClock"));
 
 // Legal Pages - Lazy loaded
 const PrivacyPolicy = lazy(() => import("./pages/legal/PrivacyPolicy"));
@@ -227,6 +228,7 @@ const App = () => (
             <Route path="/tools/margin-calculator" element={<MarginCalculator />} />
             <Route path="/tools/profit-loss-calculator" element={<ProfitLossCalculator />} />
             <Route path="/tools/economic-calendar" element={<EconomicCalendar />} />
+            <Route path="/tools/trading-sessions" element={<TradingSessionsClock />} />
 
             {/* Legal */}
             <Route path="/legal/privacy" element={<PrivacyPolicy />} />

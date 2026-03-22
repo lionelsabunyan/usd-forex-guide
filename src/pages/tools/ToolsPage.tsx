@@ -65,7 +65,7 @@ const tools = [
     description: "See which forex markets are open right now with live session times.",
     icon: Clock,
     url: "/tools/trading-sessions",
-    status: "coming-soon",
+    status: "live",
     color: "bg-cyan-100 text-cyan-600",
   },
 ];

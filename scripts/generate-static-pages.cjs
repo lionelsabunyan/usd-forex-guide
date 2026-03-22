@@ -81,6 +81,7 @@ const staticPages = [
   { path: '/tools/profit-loss-calculator', title: 'Forex Profit & Loss Calculator | US Forex Guide', desc: 'Calculate potential profit or loss on forex trades. Enter entry, exit, and lot size to see your P&L instantly.' },
   { path: '/tools/forex-tax-calculator', title: 'Forex Tax Calculator for US Traders | US Forex Guide', desc: 'Estimate forex trading taxes for US traders. Section 1256 vs 988 treatment, 60/40 rule, and tax liability calculator.' },
   { path: '/tools/economic-calendar', title: 'Forex Economic Calendar | US Forex Guide', desc: 'Live economic calendar for forex traders. Track upcoming news events, central bank meetings, and market-moving releases.' },
+  { path: '/tools/trading-sessions', title: 'Forex Trading Sessions Clock | US Forex Guide', desc: 'Live forex market hours clock. See which sessions are open now — Tokyo, London, New York, Sydney — with overlap times and timezone support.' },
 
   // Compare
   { path: '/compare/midasfx-vs-hankotrade', title: 'MidasFX vs Hankotrade Comparison 2026 | US Forex Guide', desc: 'Head-to-head comparison of MidasFX and Hankotrade for US traders. Compare spreads, leverage, deposits, and overall value.' },
@@ -444,4 +445,10 @@ function main() {
   if (skipped > 0) console.log(`⚠️   ${skipped} pages skipped`);
 }
 
-main();
+// Export page data for use by other build scripts (e.g., generate-sitemap.cjs)
+module.exports = { staticPages, blogPages, SITE_URL };
+
+// Run only when executed directly
+if (require.main === module) {
+  main();
+}
