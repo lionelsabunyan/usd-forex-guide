@@ -91,7 +91,7 @@ const Footer = () => {
 
             {/* Brokers Column */}
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Brokers</h4>
+              <h4 className="font-semibold text-foreground mb-4">Broker Reviews</h4>
               <ul className="space-y-3">
                 <li>
                   <Link to="/brokers" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
@@ -100,27 +100,47 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link to="/compare" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
-                    Compare
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/review/midasfx" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
-                    MidasFX
+                    Compare Brokers
                   </Link>
                 </li>
                 <li>
                   <Link to="/review/hankotrade" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
-                    Hankotrade
+                    Hankotrade Review
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/review/midasfx" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                    MidasFX Review
                   </Link>
                 </li>
                 <li>
                   <Link to="/review/oanda" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
-                    OANDA
+                    OANDA Review
                   </Link>
                 </li>
                 <li>
                   <Link to="/review/forexcom" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
-                    Forex.com
+                    Forex.com Review
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/review/etoro" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                    eToro Review
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/review/ig-markets" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                    IG Markets Review
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/review/interactive-brokers" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                    Interactive Brokers Review
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/review/pepperstone" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                    Pepperstone Review
                   </Link>
                 </li>
               </ul>

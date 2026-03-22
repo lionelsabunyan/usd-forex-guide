@@ -22,6 +22,7 @@ import ReviewCompetitorTable from "./ReviewCompetitorTable";
 import ReviewCommunityFeedback from "./ReviewCommunityFeedback";
 import ReviewFAQ from "./ReviewFAQ";
 import ReviewFinalCTA from "./ReviewFinalCTA";
+import ReviewRelatedBrokers from "./ReviewRelatedBrokers";
 import ReviewStickyMobileCTA from "./ReviewStickyMobileCTA";
 
 interface BrokerReviewTemplateProps {
@@ -250,6 +251,8 @@ const BrokerReviewTemplate = ({ data }: BrokerReviewTemplateProps) => {
         riskWarning={data.warningBanner.text}
         usAccepted={usAccepted}
       />
+
+      <ReviewRelatedBrokers currentBrokerId={data.brokerId} />
 
       <ReviewStickyMobileCTA
         brokerId={data.brokerId}

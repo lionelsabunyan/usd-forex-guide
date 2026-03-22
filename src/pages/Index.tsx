@@ -8,6 +8,7 @@ import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import TrustSignals from "@/components/TrustSignals";
+import PopularReviews from "@/components/PopularReviews";
 import LeadMagnetBanner from "@/components/LeadMagnetBanner";
 
 const Index = () => {
@@ -41,6 +42,7 @@ const Index = () => {
         <TrustSignals />
         <FeaturedBroker brokerId="hankotrade" />
         <BrokerComparison />
+        <PopularReviews />
         <HowItWorks />
         <div className="container mx-auto px-4">
           <LeadMagnetBanner />
