@@ -195,7 +195,7 @@ const BrokerComparison = () => {
                 {broker.reviewUrl && (
                   <Button
                     variant="outline"
-                    className="flex-1"
+                    className="flex-1 min-h-[44px]"
                     size="sm"
                     asChild
                   >
@@ -207,7 +207,7 @@ const BrokerComparison = () => {
                 {(broker.affiliateUrl || broker.siteUrl) && (
                   <Button
                     variant={broker.featured ? "default" : "outline"}
-                    className="flex-1 gap-1"
+                    className="flex-1 gap-1 min-h-[44px]"
                     size="sm"
                     asChild
                   >

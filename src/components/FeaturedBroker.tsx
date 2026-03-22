@@ -66,7 +66,7 @@ const FeaturedBroker = ({ brokerId = "fxglory" }: FeaturedBrokerProps) => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-6">
                   <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 text-center">
                     <DollarSign className="w-5 h-5 text-primary mx-auto mb-2" />
                     <p className="text-xs text-muted-foreground mb-1">Start From</p>

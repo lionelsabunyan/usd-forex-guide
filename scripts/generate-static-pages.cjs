@@ -87,6 +87,14 @@ const staticPages = [
   { path: '/compare/oanda-vs-forexcom', title: 'OANDA vs Forex.com Comparison 2026 | US Forex Guide', desc: 'OANDA vs Forex.com head-to-head comparison for US traders. Compare spreads, fees, platforms, and regulation side-by-side.' },
   { path: '/compare/etoro-vs-xm', title: 'eToro vs XM Comparison 2026 | US Forex Guide', desc: 'eToro vs XM head-to-head comparison. Compare social trading, spreads, leverage, bonuses, and platforms for forex traders.' },
   { path: '/compare/pepperstone-vs-exness', title: 'Pepperstone vs Exness Comparison 2026 | US Forex Guide', desc: 'Pepperstone vs Exness head-to-head comparison. Compare spreads, leverage, platforms, and withdrawal speed for forex traders.' },
+  { path: '/compare/ig-vs-interactive-brokers', title: 'IG Markets vs Interactive Brokers 2026 | US Forex Guide', desc: 'IG Markets vs Interactive Brokers comparison for US traders. Compare spreads, platforms, regulation, and fees side-by-side.' },
+  { path: '/compare/etoro-vs-oanda', title: 'eToro vs OANDA Comparison 2026 | US Forex Guide', desc: 'eToro vs OANDA head-to-head comparison. Compare social trading, spreads, regulation, and minimum deposits for forex traders.' },
+  { path: '/compare/pepperstone-vs-xm', title: 'Pepperstone vs XM Comparison 2026 | US Forex Guide', desc: 'Pepperstone vs XM head-to-head comparison. Compare raw spreads, leverage, platforms, and trading conditions.' },
+  { path: '/compare/tastyfx-vs-forexcom', title: 'tastyfx vs Forex.com Comparison 2026 | US Forex Guide', desc: 'tastyfx vs Forex.com comparison for US traders. Compare CFTC-regulated brokers on spreads, platforms, and minimum deposits.' },
+  { path: '/compare/avatrade-vs-etoro', title: 'AvaTrade vs eToro Comparison 2026 | US Forex Guide', desc: 'AvaTrade vs eToro head-to-head comparison. Compare social trading, leverage, platforms, and regulation.' },
+  { path: '/compare/oanda-vs-ig-markets', title: 'OANDA vs IG Markets Comparison 2026 | US Forex Guide', desc: 'OANDA vs IG Markets comparison for US traders. Two veteran CFTC-regulated brokers compared on spreads, deposits, and platforms.' },
+  { path: '/compare/charles-schwab-vs-interactive-brokers', title: 'Charles Schwab vs Interactive Brokers 2026 | US Forex Guide', desc: 'Charles Schwab vs Interactive Brokers for forex trading. Compare thinkorswim vs TWS, commissions, and market access.' },
+  { path: '/compare/xm-vs-fxtm', title: 'XM vs FXTM Comparison 2026 | US Forex Guide', desc: 'XM vs FXTM head-to-head comparison. Compare leverage, spreads, education, and trading conditions for international traders.' },
 
   // Resources
   { path: '/resources/us-forex-checklist', title: 'US Forex Trader Checklist | US Forex Guide', desc: 'Complete checklist for US forex traders before opening an account. Regulations, broker vetting, and risk management checklist.' },
@@ -162,9 +170,13 @@ function injectMeta(template, { title, desc, canonical, ogImage }) {
   // Replace <title>
   html = html.replace(/<title>[^<]*<\/title>/, `<title>${safeTitle}</title>`);
 
-  // Replace or insert meta description
-  if (html.includes('<meta name="description"')) {
-    html = html.replace(/<meta name="description" content="[^"]*"/, `<meta name="description" content="${safeDesc}"`);
+  // Replace or insert meta description (handles multi-line <meta\n  name="description"...> format)
+  const metaDescMultiline = /<meta\s+name="description"\s+content="[^"]*"\s*\/?>/s;
+  const metaDescSingleline = /<meta name="description" content="[^"]*"\s*\/?>/;
+  if (metaDescSingleline.test(html)) {
+    html = html.replace(metaDescSingleline, `<meta name="description" content="${safeDesc}" />`);
+  } else if (metaDescMultiline.test(html)) {
+    html = html.replace(metaDescMultiline, `<meta name="description" content="${safeDesc}" />`);
   } else {
     html = html.replace('</title>', `</title>\n  <meta name="description" content="${safeDesc}" />`);
   }
@@ -335,7 +347,7 @@ function main() {
       const updatedRoot = injectMeta(template, {
         title: page.title,
         desc: page.desc,
-        canonical: SITE_URL,
+        canonical: `${SITE_URL}/`,
       });
       fs.writeFileSync(templatePath, updatedRoot, 'utf8');
       console.log('✅  Updated /index.html (root)');

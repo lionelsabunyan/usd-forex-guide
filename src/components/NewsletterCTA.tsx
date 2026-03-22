@@ -1,6 +1,7 @@
 import { Mail, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { subscribeNewsletter } from "@/lib/newsletterService";
 
 interface NewsletterCTAProps {
   variant?: "inline" | "card";
@@ -9,15 +10,33 @@ interface NewsletterCTAProps {
 
 const NewsletterCTA = ({ variant = "card", className = "" }: NewsletterCTAProps) => {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [message, setMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Integrate with email service
-    if (email) {
+    if (!email || status === "loading") return;
+
+    setStatus("loading");
+    const result = await subscribeNewsletter(email, variant === "inline" ? "inline_cta" : "card_cta");
+
+    if (result.success) {
       setStatus("success");
+      setMessage(result.message);
       setEmail("");
-      setTimeout(() => setStatus("idle"), 3000);
+
+      // Track GA4 event
+      if (typeof window !== "undefined" && (window as any).gtag) {
+        (window as any).gtag("event", "newsletter_signup", {
+          email_domain: email.split("@")[1],
+          source: variant,
+          is_new: !result.alreadySubscribed,
+        });
+      }
+    } else {
+      setStatus("error");
+      setMessage(result.message);
+      setTimeout(() => setStatus("idle"), 4000);
     }
   };
 
@@ -37,22 +56,25 @@ const NewsletterCTA = ({ variant = "card", className = "" }: NewsletterCTAProps)
             </p>
             {status === "success" ? (
               <p className="text-green-500 text-sm font-medium">
-                Thanks! Check your inbox for confirmation.
+                {message}
               </p>
             ) : (
-              <form onSubmit={handleSubmit} className="flex gap-2">
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
                 <input
                   type="email"
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 px-4 py-2 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary text-sm"
+                  className="flex-1 px-4 py-2.5 min-h-[44px] rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary text-sm"
                   required
                 />
-                <Button type="submit" size="sm">
-                  Subscribe
+                <Button type="submit" size="sm" disabled={status === "loading"} className="min-h-[44px]">
+                  {status === "loading" ? "..." : "Subscribe"}
                 </Button>
               </form>
+            )}
+            {status === "error" && (
+              <p className="text-red-500 text-sm mt-2">{message}</p>
             )}
           </div>
         </div>
@@ -75,24 +97,33 @@ const NewsletterCTA = ({ variant = "card", className = "" }: NewsletterCTAProps)
         {status === "success" ? (
           <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-4">
             <p className="text-green-500 font-medium">
-              You're subscribed! Check your inbox for confirmation.
+              {message}
             </p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-              required
-            />
-            <Button type="submit" className="whitespace-nowrap">
-              Subscribe Free
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-          </form>
+          <>
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 px-4 py-3 min-h-[44px] rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                required
+              />
+              <Button type="submit" className="whitespace-nowrap" disabled={status === "loading"}>
+                {status === "loading" ? "Subscribing..." : (
+                  <>
+                    Subscribe Free
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </>
+                )}
+              </Button>
+            </form>
+            {status === "error" && (
+              <p className="text-red-500 text-sm mt-3">{message}</p>
+            )}
+          </>
         )}
         <p className="text-xs text-muted-foreground mt-4">
           No spam. Unsubscribe anytime. We respect your privacy.

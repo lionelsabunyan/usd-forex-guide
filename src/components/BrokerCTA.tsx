@@ -44,7 +44,7 @@ const BrokerCTA = ({
       </div>
 
       <div className="bg-white dark:bg-gray-900 rounded-lg p-4 border border-green-200 dark:border-green-800">
-        <div className="flex items-start justify-between gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-2">
               <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100">
@@ -70,11 +70,11 @@ const BrokerCTA = ({
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 shrink-0">
+          <div className="flex flex-col gap-2 shrink-0 w-full sm:w-auto">
             <Button
               asChild
               size="lg"
-              className="bg-gradient-gold hover:opacity-90 text-primary-foreground"
+              className="bg-gradient-gold hover:opacity-90 text-primary-foreground w-full sm:w-auto"
             >
               <a
                 href={getAffiliateUrl(brokerId, UTM_CONFIGS.BLOG_INLINE)}
@@ -87,7 +87,7 @@ const BrokerCTA = ({
                 {hasAffiliate ? <ExternalLink className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
               </a>
             </Button>
-            <Button variant="outline" size="sm" asChild>
+            <Button variant="outline" size="sm" asChild className="min-h-[44px] sm:min-h-0">
               <Link to={`/review/${brokerSlug}`} className="gap-1 text-xs">
                 Read Full Review
               </Link>

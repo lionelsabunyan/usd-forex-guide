@@ -12,7 +12,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-background">
+    <footer className="bg-background pb-20 lg:pb-0">
       {/* Newsletter CTA Section */}
       <div className="bg-primary text-primary-foreground py-16">
         <div className="container mx-auto px-4 text-center">
@@ -20,18 +20,18 @@ const Footer = () => {
             Get the best sent to your inbox, every month
           </h2>
           <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-8">
-            <div className="flex gap-2">
+            <div className="flex flex-col sm:flex-row gap-2">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-white/30"
+                className="flex-1 px-4 py-3 min-h-[44px] rounded-lg bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-white/30"
                 required
               />
               <button
                 type="submit"
-                className="px-6 py-3 bg-accent/90 hover:bg-accent text-white rounded-lg font-medium transition-colors"
+                className="px-6 py-3 min-h-[44px] bg-accent/90 hover:bg-accent text-white rounded-lg font-medium transition-colors"
               >
                 Subscribe
               </button>
@@ -182,7 +182,7 @@ const Footer = () => {
           {/* Risk Disclaimer */}
           <div className="mt-12 pt-8 border-t border-border">
             <div className="bg-muted/50 rounded-lg p-4 mb-6">
-              <p className="text-xs text-muted-foreground leading-relaxed">
+              <p className="text-[13px] sm:text-xs text-muted-foreground leading-relaxed">
                 <strong className="text-foreground">Risk Disclaimer:</strong> Trading foreign exchange on margin carries a high level of risk and may not be suitable for all investors.
                 Past performance is not indicative of future results. Before deciding to invest in foreign exchange, you should carefully consider your investment objectives, level of experience, and risk appetite.
               </p>

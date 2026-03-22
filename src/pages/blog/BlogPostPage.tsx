@@ -36,8 +36,8 @@ const BlogPostPage = () => {
       "@type": "Organization",
       "name": "US Forex Guide"
     },
-    "datePublished": "2026-01-15",
-    "dateModified": "2026-01-15",
+    "datePublished": new Date(post.date).toISOString().split('T')[0],
+    "dateModified": new Date(post.date).toISOString().split('T')[0],
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": `https://beginnerfxguide.com/blog/${slug}`
