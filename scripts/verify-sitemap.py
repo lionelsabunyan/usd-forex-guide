@@ -9,7 +9,7 @@ from googleapiclient.discovery import build
 
 SITE_URL = 'https://beginnerfxguide.com/'
 SITEMAP_URL = 'https://beginnerfxguide.com/sitemap.xml'
-CREDENTIALS_PATH = '/Users/sedo/Downloads/Skill/.claude/skills/sedo-assistant/scripts/google-credentials.json'
+CREDENTIALS_PATH = '/home/paperclip/google-credentials.json'
 
 def main():
     wait_minutes = int(sys.argv[1]) if len(sys.argv) > 1 else 10

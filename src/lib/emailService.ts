@@ -1,18 +1,20 @@
 import emailjs from '@emailjs/browser';
 
-// EmailJS Configuration
-const EMAILJS_SERVICE_ID = 'service_h7k8rlu';
-const EMAILJS_PUBLIC_KEY = '6_XN-2IB_gK754TNe';
+// EmailJS Configuration — values from environment variables
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || '';
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '';
 
 // Template IDs
 const TEMPLATES = {
-  CONTACT: 'template_spjf2wq',
-  REVIEW: 'template_v7s9u2c',
-  LEAD_MAGNET: 'template_leadmagnet', // TODO: Create this template in EmailJS dashboard
+  CONTACT: import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT || 'template_spjf2wq',
+  REVIEW: import.meta.env.VITE_EMAILJS_TEMPLATE_REVIEW || 'template_v7s9u2c',
+  LEAD_MAGNET: import.meta.env.VITE_EMAILJS_TEMPLATE_LEADMAGNET || '',
 };
 
 // Initialize EmailJS
-emailjs.init(EMAILJS_PUBLIC_KEY);
+if (EMAILJS_PUBLIC_KEY) {
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+}
 
 /**
  * Send contact form email notification

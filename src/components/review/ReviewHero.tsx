@@ -4,9 +4,18 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { brokers } from "@/lib/brokers";
 import { getAffiliateUrl, trackAffiliateClick, UTM_CONFIGS } from "@/lib/tracking";
+import { useExperiment } from "@/hooks/useExperiment";
+import { EXP_CTA_COLOR, EXP_CTA_COPY } from "@/lib/abtest";
 import BrokerLogo from "@/components/BrokerLogo";
 import { Link } from "react-router-dom";
 import type { BrokerReviewData } from "@/lib/brokerReviewData";
+
+/** Maps CTA color experiment variants to Tailwind class overrides */
+const CTA_COLOR_CLASSES: Record<string, string> = {
+  control: "", // uses default hero variant
+  green: "!from-emerald-500 !to-green-600 hover:!from-emerald-600 hover:!to-green-700",
+  blue: "!from-blue-500 !to-indigo-600 hover:!from-blue-600 hover:!to-indigo-700",
+};
 
 interface ReviewHeroProps {
   data: BrokerReviewData;
@@ -15,6 +24,18 @@ interface ReviewHeroProps {
 const ReviewHero = ({ data }: ReviewHeroProps) => {
   const broker = brokers[data.brokerId];
   const BadgeIcon = data.heroBadge.icon;
+
+  // A/B experiments
+  const colorExp = useExperiment(EXP_CTA_COLOR);
+  const copyExp = useExperiment(EXP_CTA_COPY);
+
+  const ctaColorClass = CTA_COLOR_CLASSES[colorExp.variant] || "";
+  const ctaCopyText =
+    copyExp.variant === "urgency"
+      ? "Start Trading Now – 2 Min Setup"
+      : copyExp.variant === "benefit"
+        ? `Get ${data.brokerName}'s Best Spreads Today`
+        : `Open ${data.brokerName} Account`;
 
   return (
     <section className="pt-24 pb-12 bg-gradient-hero">
@@ -87,9 +108,9 @@ const ReviewHero = ({ data }: ReviewHeroProps) => {
               </div>
 
               <div className="flex flex-wrap gap-3">
-                <Button variant="hero" size="lg" className="group" asChild>
+                <Button variant="hero" size="lg" className={`group ${ctaColorClass}`} asChild>
                   <a href={getAffiliateUrl(data.brokerId, UTM_CONFIGS.REVIEW_HERO)} target="_blank" rel="noopener noreferrer" onClick={() => trackAffiliateClick(data.brokerId, "review_hero", "open_account")}>
-                    Open {data.brokerName} Account <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    {ctaCopyText} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </Button>
                 <Button variant="outlineGold" size="lg" asChild>

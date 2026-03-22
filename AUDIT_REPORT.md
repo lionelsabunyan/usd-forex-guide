@@ -198,3 +198,37 @@
 |-------|---------|-----------|--------|
 | 2026-03-12 | 17 | 13 | İlk audit — Claude Code tarafından yapıldı |
 | 2026-03-12 | — | +3 temizlik | Tüm kritik ve yüksek sorunlar giderildi; orta/düşük kısmen |
+| 2026-03-22 | 18 | 5 | İkinci audit — Paperclip Founding Engineer. Yeni kritikler: hardcoded IndexNow key, EmailJS credentials, Google credentials path. Tümü düzeltildi. script.innerHTML → textContent geçişi yapıldı. |
+
+---
+
+## 2026-03-22 Audit — Ek Bulgular ve Düzeltmeler
+
+### 🔴 Kritik — Düzeltildi
+
+**scripts/indexnow-submit.py:14 — Hardcoded IndexNow API Key**
+- `INDEXNOW_KEY = "b8f3e2a1c4d5e6f7a8b9c0d1e2f3a4b5"` → `os.environ.get('INDEXNOW_KEY', '')`
+- Eksik key için guard eklendi
+
+**scripts/gsc-request-indexing.py:15 — Hardcoded Google Credentials Path**
+- `/home/paperclip/google-credentials.json` → `os.environ.get('GOOGLE_APPLICATION_CREDENTIALS', ...)`
+
+**scripts/quick-index-check.py:11 — Hardcoded Google Credentials Path**
+- Aynı düzeltme uygulandı
+
+**src/lib/emailService.ts:4-5 — Hardcoded EmailJS Credentials**
+- `service_h7k8rlu` ve `6_XN-2IB_gK754TNe` → `import.meta.env.VITE_EMAILJS_*` env var'larına taşındı
+- `.env.example` güncellendi
+
+### 🟠 Yüksek — Düzeltildi
+
+**src/components/GoogleAnalytics.tsx — script.innerHTML**
+- Tüm `script.innerHTML` kullanımları `script.textContent` ile değiştirildi
+- `noscript.innerHTML` korundu (HTML render gerektiği için)
+
+### 🟡 Orta — Raporlandı (Düzeltme Gerekmez)
+
+- Console.log'lar zaten `import.meta.env.DEV` ile korumalı ✓ (trackingTR.ts, YandexDirectPixel.tsx)
+- Client-side admin auth — mimari değişiklik gerektirir, raporlandı
+- localStorage sensitive data — Supabase migration önerildi
+- Caret dependencies — pinleme önerildi

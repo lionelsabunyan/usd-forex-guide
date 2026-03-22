@@ -5,9 +5,10 @@ type GoogleAnalyticsProps = {
   gtmId?: string;
   uetId?: string; // Bing UET Tag ID
   ymId?: string; // Yandex.Metrica Counter ID
+  clarityId?: string; // Microsoft Clarity Project ID
 };
 
-const GoogleAnalytics = ({ gaId, gtmId, uetId, ymId }: GoogleAnalyticsProps) => {
+const GoogleAnalytics = ({ gaId, gtmId, uetId, ymId, clarityId }: GoogleAnalyticsProps) => {
   useEffect(() => {
     // Google Analytics 4 (GA4) — uses separate "gtagLayer" to isolate from GTM's dataLayer
     if (gaId) {
@@ -18,7 +19,7 @@ const GoogleAnalytics = ({ gaId, gtmId, uetId, ymId }: GoogleAnalyticsProps) => 
       document.head.appendChild(script1);
 
       const script2 = document.createElement("script");
-      script2.innerHTML = `
+      script2.textContent = `
         window.gtagLayer = window.gtagLayer || [];
         function gtag(){gtagLayer.push(arguments);}
         window.gtag = gtag;
@@ -32,7 +33,7 @@ const GoogleAnalytics = ({ gaId, gtmId, uetId, ymId }: GoogleAnalyticsProps) => 
     if (gtmId) {
       // GTM script
       const script1 = document.createElement("script");
-      script1.innerHTML = `
+      script1.textContent = `
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -50,7 +51,7 @@ const GoogleAnalytics = ({ gaId, gtmId, uetId, ymId }: GoogleAnalyticsProps) => 
     // Bing UET Tag
     if (uetId) {
       const script = document.createElement("script");
-      script.innerHTML = `
+      script.textContent = `
         (function(w,d,t,r,u){
           var f,n,i;
           w[u]=w[u]||[],f=function(){
@@ -68,7 +69,7 @@ const GoogleAnalytics = ({ gaId, gtmId, uetId, ymId }: GoogleAnalyticsProps) => 
 
       // UTM Auto-Inject: Bing msclkid varsa GA4'e Bing paid search olarak kaydet
       const uetScript2 = document.createElement("script");
-      uetScript2.innerHTML = `
+      uetScript2.textContent = `
         (function() {
           try {
             var params = new URLSearchParams(window.location.search);
@@ -92,7 +93,7 @@ const GoogleAnalytics = ({ gaId, gtmId, uetId, ymId }: GoogleAnalyticsProps) => 
     // Yandex.Metrica
     if (ymId) {
       const script = document.createElement("script");
-      script.innerHTML = `
+      script.textContent = `
         (function(m,e,t,r,i,k,a){
           m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
           m[i].l=1*new Date();
@@ -117,7 +118,19 @@ const GoogleAnalytics = ({ gaId, gtmId, uetId, ymId }: GoogleAnalyticsProps) => 
       noscript.innerHTML = `<div><img src="https://mc.yandex.ru/watch/${ymId}" style="position:absolute; left:-9999px;" alt="" /></div>`;
       document.body.insertBefore(noscript, document.body.firstChild);
     }
-  }, [gaId, gtmId, uetId, ymId]);
+    // Microsoft Clarity — heatmaps, session replay, rage click detection
+    if (clarityId) {
+      const script = document.createElement("script");
+      script.textContent = `
+        (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "${clarityId}");
+      `;
+      document.head.appendChild(script);
+    }
+  }, [gaId, gtmId, uetId, ymId, clarityId]);
 
   return null;
 };

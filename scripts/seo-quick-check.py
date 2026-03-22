@@ -3,26 +3,26 @@
 
 import os
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
 SITE_URL = 'https://beginnerfxguide.com/'
-CREDENTIALS_PATH = '/Users/sedo/Downloads/Skill/.claude/skills/sedo-assistant/scripts/google-credentials.json'
+CREDENTIALS_PATH = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS', '/home/paperclip/google-credentials.json')
 
 # Priority URLs to check
 PRIORITY_URLS = [
     'https://beginnerfxguide.com/',
-    'https://beginnerfxguide.com/brokers',
-    'https://beginnerfxguide.com/compare',
-    'https://beginnerfxguide.com/guides',
-    'https://beginnerfxguide.com/tools',
-    'https://beginnerfxguide.com/review/fxglory',
-    'https://beginnerfxguide.com/review/hankotrade',
-    'https://beginnerfxguide.com/review/midasfx',
-    'https://beginnerfxguide.com/blog/best-forex-brokers-us-traders-2026',
-    'https://beginnerfxguide.com/glossary',
+    'https://beginnerfxguide.com/brokers/',
+    'https://beginnerfxguide.com/compare/',
+    'https://beginnerfxguide.com/guides/',
+    'https://beginnerfxguide.com/tools/',
+    'https://beginnerfxguide.com/review/fxglory/',
+    'https://beginnerfxguide.com/review/hankotrade/',
+    'https://beginnerfxguide.com/review/midasfx/',
+    'https://beginnerfxguide.com/blog/best-forex-brokers-us-traders-2026/',
+    'https://beginnerfxguide.com/glossary/',
 ]
 
 def main():
@@ -113,8 +113,8 @@ def main():
         perf = service.searchanalytics().query(
             siteUrl=SITE_URL,
             body={
-                'startDate': '2026-01-08',
-                'endDate': '2026-02-05',
+                'startDate': (datetime.now() - timedelta(days=28)).strftime('%Y-%m-%d'),
+                'endDate': (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d'),
                 'dimensions': ['query'],
                 'rowLimit': 10
             }

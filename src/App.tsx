@@ -133,6 +133,7 @@ const GTM_ID = import.meta.env.VITE_GTM_ID || "";
 // Bing UET and Yandex Metrika are already loaded in index.html — do NOT load again from React
 const UET_ID = "";
 const YM_ID = "";
+const CLARITY_ID = import.meta.env.VITE_CLARITY_ID || "";
 
 // Disable analytics during react-snap prerendering to prevent networkidle0 timeout
 const isReactSnap = typeof navigator !== "undefined" && navigator.userAgent === "ReactSnap";
@@ -142,7 +143,7 @@ const App = () => (
     <ThemeProvider defaultTheme="system" storageKey="bfxg-theme">
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
-          {!isReactSnap && <GoogleAnalytics gaId={GA_ID} gtmId={GTM_ID} uetId={UET_ID} ymId={YM_ID} />}
+          {!isReactSnap && <GoogleAnalytics gaId={GA_ID} gtmId={GTM_ID} uetId={UET_ID} ymId={YM_ID} clarityId={CLARITY_ID} />}
           <Toaster />
           <Sonner />
           <BrowserRouter>

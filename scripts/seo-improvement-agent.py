@@ -28,9 +28,9 @@ from googleapiclient.errors import HttpError
 
 # Configuration
 SITE_URL = 'https://beginnerfxguide.com/'
-CREDENTIALS_PATH = '/Users/sedo/Downloads/Skill/.claude/skills/sedo-assistant/scripts/google-credentials.json'
-PROJECT_DIR = '/Users/sedo/Desktop/usd-forex-guide'
-REPORT_PATH = '/Users/sedo/Downloads/Skill/data/seo-agent-report.md'
+CREDENTIALS_PATH = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS', '/home/paperclip/google-credentials.json')
+PROJECT_DIR = '/home/paperclip/usd-forex-guide'
+REPORT_PATH = os.path.join(PROJECT_DIR, 'seo-agent-report.md')
 SITEMAP_PATH = os.path.join(PROJECT_DIR, 'public/sitemap.xml')
 
 class SEOAgent:

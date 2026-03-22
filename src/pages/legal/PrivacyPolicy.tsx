@@ -17,6 +17,15 @@ const PrivacyPolicy = () => {
           analytics tools).
         </li>
         <li>
+          <strong>Session replay & heatmap data</strong>: we use Microsoft
+          Clarity to record anonymized session replays and generate heatmaps.
+          This helps us understand how visitors interact with the site. Clarity
+          does not collect passwords or payment details. You can learn more at{" "}
+          <a href="https://clarity.microsoft.com/terms" target="_blank" rel="noopener noreferrer">
+            Microsoft Clarity Terms
+          </a>.
+        </li>
+        <li>
           <strong>Contact data</strong>: if you email us, we receive your email
           address and the content of your message.
         </li>

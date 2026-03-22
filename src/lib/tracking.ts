@@ -1,7 +1,19 @@
 import { BrokerId, brokers } from "./brokers";
+import { getVariant, EXP_CTA_COLOR, EXP_CTA_COPY } from "./abtest";
 
 /** GA4 Measurement ID — used in send_to to prevent GTM from re-firing events */
 const GA_MEASUREMENT_ID = "G-P860PCCF1T";
+
+/**
+ * Returns the current experiment variants for the user (from cookies).
+ * Used to attach variant info to affiliate click events for conversion attribution.
+ */
+function getActiveExperiments(): Record<string, string> {
+  return {
+    exp_cta_color: getVariant(EXP_CTA_COLOR).variant,
+    exp_cta_copy: getVariant(EXP_CTA_COPY).variant,
+  };
+}
 
 /**
  * UTM Parameters for affiliate link tracking
@@ -74,6 +86,9 @@ export const trackAffiliateClick = (
     return (cookieRegion === 'US' || cookieRegion === 'INTL') ? cookieRegion as 'US' | 'INTL' : 'US';
   })();
 
+  // Active A/B test variants — attached to every click for conversion attribution
+  const experiments = getActiveExperiments();
+
   // GA4 Events
   if (typeof window !== "undefined" && (window as any).gtag) {
     // 1. General affiliate click event (for all clicks)
@@ -85,6 +100,7 @@ export const trackAffiliateClick = (
       button_type: buttonType || "default",
       is_ib_partner: isIB,
       user_region: region,
+      ...experiments,
     });
 
     // 2. Specific event for IB partners (mark as conversion in GA4)
@@ -155,6 +171,7 @@ export const trackAffiliateClick = (
       is_ib_partner: isIB,
       conversion_value: isIB ? 10 : 1,
       user_region: region,
+      ...experiments,
     });
 
     // Note: ib_partner_click is tracked via gtag() directly (line ~88), not via dataLayer

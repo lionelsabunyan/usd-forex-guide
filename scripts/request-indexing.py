@@ -6,7 +6,7 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
-CREDENTIALS_PATH = '/Users/sedo/Downloads/Skill/.claude/skills/sedo-assistant/scripts/google-credentials.json'
+CREDENTIALS_PATH = '/home/paperclip/google-credentials.json'
 
 # Priority URLs to request indexing for
 PRIORITY_URLS = [

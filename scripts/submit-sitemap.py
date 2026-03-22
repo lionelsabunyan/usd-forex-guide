@@ -8,7 +8,7 @@ from googleapiclient.errors import HttpError
 
 SITE_URL = 'https://beginnerfxguide.com/'
 SITEMAP_URL = 'https://beginnerfxguide.com/sitemap.xml'
-CREDENTIALS_PATH = '/Users/sedo/Downloads/Skill/.claude/skills/sedo-assistant/scripts/google-credentials.json'
+CREDENTIALS_PATH = '/home/paperclip/google-credentials.json'
 
 def main():
     print("\n" + "="*60)
