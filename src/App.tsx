@@ -88,6 +88,14 @@ const MidasFXvsHankotrade = lazy(() => import("./pages/compare/MidasFXvsHankotra
 const OANDAvsForexcom = lazy(() => import("./pages/compare/OANDAvsForexcom"));
 const ETorovsXM = lazy(() => import("./pages/compare/ETorovsXM"));
 const PepperstonevsExness = lazy(() => import("./pages/compare/PepperstonevsExness"));
+const IGvsInteractiveBrokers = lazy(() => import("./pages/compare/IGvsInteractiveBrokers"));
+const ETorovsOANDA = lazy(() => import("./pages/compare/ETorovsOANDA"));
+const PepperstonevsXM = lazy(() => import("./pages/compare/PepperstonevsXM"));
+const TastyfxvsForexcom = lazy(() => import("./pages/compare/TastyfxvsForexcom"));
+const AvaTradevsEToro = lazy(() => import("./pages/compare/AvaTradevsEToro"));
+const OANDAvsIG = lazy(() => import("./pages/compare/OANDAvsIG"));
+const CharlesSchwabvsInteractiveBrokers = lazy(() => import("./pages/compare/CharlesSchwabvsInteractiveBrokers"));
+const XMvsFXTM = lazy(() => import("./pages/compare/XMvsFXTM"));
 const BestBrokersAustralia = lazy(() => import("./pages/BestBrokersAustralia"));
 const BestBrokersUK = lazy(() => import("./pages/BestBrokersUK"));
 
@@ -124,6 +132,7 @@ const AdminSubscribers = lazy(() => import("./pages/admin/AdminSubscribers"));
 const AdminReviews = lazy(() => import("./pages/admin/AdminReviews"));
 const AdminAnalytics = lazy(() => import("./pages/admin/AdminAnalytics"));
 const AdminSettings = lazy(() => import("./pages/admin/AdminSettings"));
+const AdminABTests = lazy(() => import("./pages/admin/AdminABTests"));
 
 const queryClient = new QueryClient();
 
@@ -187,6 +196,14 @@ const App = () => (
             <Route path="/compare/oanda-vs-forexcom" element={<OANDAvsForexcom />} />
             <Route path="/compare/etoro-vs-xm" element={<ETorovsXM />} />
             <Route path="/compare/pepperstone-vs-exness" element={<PepperstonevsExness />} />
+            <Route path="/compare/ig-vs-interactive-brokers" element={<IGvsInteractiveBrokers />} />
+            <Route path="/compare/etoro-vs-oanda" element={<ETorovsOANDA />} />
+            <Route path="/compare/pepperstone-vs-xm" element={<PepperstonevsXM />} />
+            <Route path="/compare/tastyfx-vs-forexcom" element={<TastyfxvsForexcom />} />
+            <Route path="/compare/avatrade-vs-etoro" element={<AvaTradevsEToro />} />
+            <Route path="/compare/oanda-vs-ig-markets" element={<OANDAvsIG />} />
+            <Route path="/compare/charles-schwab-vs-interactive-brokers" element={<CharlesSchwabvsInteractiveBrokers />} />
+            <Route path="/compare/xm-vs-fxtm" element={<XMvsFXTM />} />
             <Route path="/guides" element={<GuidesPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/about" element={<AboutPage />} />
@@ -253,6 +270,7 @@ const App = () => (
               <Route path="subscribers" element={<AdminSubscribers />} />
               <Route path="reviews" element={<AdminReviews />} />
               <Route path="analytics" element={<AdminAnalytics />} />
+              <Route path="ab-tests" element={<AdminABTests />} />
               <Route path="settings" element={<AdminSettings />} />
             </Route>
 

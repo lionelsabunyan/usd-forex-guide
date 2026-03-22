@@ -1,10 +1,10 @@
-name: Daily Telegram Report
+name: Daily Telegram Report (DISABLED — replaced by local crontab + paperclip_telegram_report.py)
 
 on:
-  schedule:
-    # Her gün saat 09:00 Türkiye saati (UTC+3 = 06:00 UTC)
-    - cron: '0 6 * * *'
-  workflow_dispatch:  # Manuel tetikleme
+  # DISABLED: consolidated into local crontab (BEG-11)
+  # schedule:
+  #   - cron: '0 6 * * *'
+  workflow_dispatch:  # Manuel tetikleme (kept for emergency use)
 
 jobs:
   send-report:

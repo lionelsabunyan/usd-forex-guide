@@ -87,7 +87,7 @@ const ExitIntentPopup = () => {
         {/* Close button */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 z-10 p-2 rounded-full hover:bg-muted transition-colors"
+          className="absolute top-3 right-3 z-10 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full hover:bg-muted transition-colors"
           aria-label="Close popup"
         >
           <X className="w-5 h-5" />
@@ -202,7 +202,7 @@ const ExitIntentPopup = () => {
           </p>
           <button
             onClick={handleClose}
-            className="mt-3 text-sm text-muted-foreground hover:text-foreground underline"
+            className="mt-3 text-sm text-muted-foreground hover:text-foreground underline min-h-[44px] px-4 inline-flex items-center"
           >
             No thanks, I'll browse more
           </button>

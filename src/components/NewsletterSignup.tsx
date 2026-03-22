@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Mail, CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-import { subscriberStore } from "@/lib/adminStore";
+import { subscribeNewsletter } from "@/lib/newsletterService";
 
 interface NewsletterSignupProps {
   variant?: "inline" | "card";
@@ -23,23 +23,20 @@ const NewsletterSignup = ({ variant = "card", className = "" }: NewsletterSignup
     setStatus("loading");
 
     try {
-      // Save to local store
-      const result = subscriberStore.add(email, variant === "card" ? "footer" : "inline");
+      const result = await subscribeNewsletter(email, variant === "card" ? "footer" : "inline");
 
       // Track signup event
       if (typeof window !== "undefined" && (window as any).gtag) {
         (window as any).gtag("event", "newsletter_signup", {
           email_domain: email.split("@")[1],
           source: variant,
-          is_new: result !== null,
+          is_new: !result.alreadySubscribed,
         });
       }
 
-      // Small delay for UX
-      await new Promise((resolve) => setTimeout(resolve, 500));
-      setStatus("success");
-      setEmail("");
-    } catch (error) {
+      setStatus(result.success ? "success" : "error");
+      if (result.success) setEmail("");
+    } catch {
       setStatus("error");
     }
   };

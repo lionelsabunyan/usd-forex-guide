@@ -101,6 +101,7 @@ const ComparePage = () => {
                   ratingValue: broker.rating,
                   bestRating: 5,
                   worstRating: 1,
+                  ratingCount: 1,
                 },
               },
             })),

@@ -199,6 +199,7 @@
 | 2026-03-12 | 17 | 13 | İlk audit — Claude Code tarafından yapıldı |
 | 2026-03-12 | — | +3 temizlik | Tüm kritik ve yüksek sorunlar giderildi; orta/düşük kısmen |
 | 2026-03-22 | 18 | 5 | İkinci audit — Paperclip Founding Engineer. Yeni kritikler: hardcoded IndexNow key, EmailJS credentials, Google credentials path. Tümü düzeltildi. script.innerHTML → textContent geçişi yapıldı. |
+| 2026-03-22 | 10 | 0 | Üçüncü audit (OWASP top 10 odaklı) — npm audit 22 vuln, EconomicCalendar dead code, noscript.innerHTML, demo creds UI'da görünür. Detaylar aşağıda. |
 
 ---
 
@@ -232,3 +233,80 @@
 - Client-side admin auth — mimari değişiklik gerektirir, raporlandı
 - localStorage sensitive data — Supabase migration önerildi
 - Caret dependencies — pinleme önerildi
+
+---
+
+## 2026-03-22 OWASP Top 10 Odaklı Audit — Üçüncü Pass
+
+### Tarama Kapsamı
+- OWASP Top 10 kontrolleri: dangerouslySetInnerHTML, eval(), hardcoded secrets, .env gitignore, npm audit, client-side auth, localStorage, CORS, raw SQL, HTTP URLs
+- Dosya sayısı: 50+ (src/, scripts/, root config)
+
+### Özet: 10 sorun (Kritik: 1 | Yüksek: 4 | Orta: 3 | Düşük: 2)
+
+### 🔴 Kritik
+
+**1. Client-Side Auth — Backend Doğrulaması Hâlâ Yok**
+- `src/lib/adminStore.ts:270-312` — Önceki auditlerde raporlandı, mimari değişiklik bekliyor.
+- localStorage `authenticated: true` değeri ile bypass edilebilir.
+- Session expiry eklendi (8 saat) ama temel sorun devam ediyor.
+
+### 🟠 Yüksek
+
+**2. Demo Credentials UI'da Görünür**
+- `src/pages/admin/AdminLogin.tsx:95` — `admin` / `admin123` production'da hardcoded gösteriliyor.
+- Öneri: `import.meta.env.DEV` kontrolü arkasına al veya kaldır.
+
+**3. npm Dependency Vulnerabilities — 22 Açık**
+- `npm audit` sonucu: 3 critical, 15 high, 1 moderate, 3 low
+- Kritik paketler: `minimist` (Prototype Pollution), `body-parser` (DoS), `node-fetch` (header leak), `html-minifier` (ReDoS), `flatted` (DoS + Prototype Pollution)
+- Çoğu `react-snap` bağımlılığı kaynaklı.
+- Öneri: `npm audit fix` çalıştır. `react-snap` alternatifini değerlendir (generate-static-pages.cjs zaten SSR-like meta injection yapıyor).
+
+**4. noscript.innerHTML — GoogleAnalytics**
+- `src/components/GoogleAnalytics.tsx:47,118` — noscript içinde innerHTML ile GTM/Yandex ID inject ediliyor.
+- `script.innerHTML` düzeltildi (textContent'e geçildi) ama noscript HTML gerektirdiği için innerHTML kaldı.
+- Öneri: ID'leri regex validate et (`/^[A-Z0-9-]+$/i`).
+
+**5. EconomicCalendar — Dead innerHTML Code**
+- `src/pages/tools/EconomicCalendar.tsx:15` — `script.innerHTML = JSON.stringify({...})` etkisiz kod.
+- Script src zaten ayrı set ediliyor, bu satır çalışmıyor.
+- Öneri: Satır 15'i kaldır.
+
+### 🟡 Orta
+
+**6. localStorage Admin Session**
+- `src/lib/adminStore.ts:283-286` — Auth state localStorage'da, XSS ile okunabilir.
+- Öneri: httpOnly cookie veya sessionStorage.
+
+**7. VITE_ Prefix Admin Credentials**
+- `VITE_ADMIN_USERNAME`, `VITE_ADMIN_PASSWORD` client bundle'a dahil ediliyor.
+- Öneri: Bu değişkenleri VITE_ prefix'inden çıkar, backend'e taşı.
+
+**8. CSP Header Eksik**
+- Cloudflare Pages'te Content-Security-Policy header tanımlı değil.
+- Öneri: `_headers` dosyasına veya CF Worker'a ekle.
+
+### 🟢 Öneri
+
+**9. react-snap Deprecated**
+- Maintain edilmiyor, 22 npm vuln'un ana kaynağı.
+- `generate-static-pages.cjs` zaten meta injection yapıyor — react-snap'in gerekliliğini değerlendir.
+
+**10. Eksik Subresource Integrity (SRI)**
+- Harici script'lerde (GA, GTM, Yandex) integrity attribute yok.
+- Öneri: Mümkün olan yerlerde SRI ekle.
+
+### ✅ Güvenli Bulunan (Bu Auditte Doğrulanan)
+
+| Alan | Durum |
+|------|-------|
+| `dangerouslySetInnerHTML` — ReviewHero.tsx | ✅ DOMPurify ile sanitize |
+| `dangerouslySetInnerHTML` — chart.tsx | ✅ Config-only CSS vars, user input yok |
+| `eval()` kullanımı | ✅ Yok |
+| `.env` / `.env.local` git tracking | ✅ `.gitignore` `*.local` pattern ile exclude |
+| Kaynak kodda hardcoded API key/secret | ✅ Tümü env variable (önceki auditte düzeltildi) |
+| Raw SQL/NoSQL sorgusu | ✅ Yok — Supabase client SDK |
+| HTTP URL (HTTPS olmalı) | ✅ Tüm external URL'ler HTTPS |
+| CORS wildcard `*` | ✅ Bulunamadı |
+| Form input sanitization | ✅ Controlled input pattern |

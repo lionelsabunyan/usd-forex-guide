@@ -147,6 +147,19 @@ const blogPages = [
   { slug: 'forex-demo-account-guide', title: 'Forex Demo Account Guide: How to Practice Before Going Live', excerpt: 'How to use a forex demo account effectively. Tips to practice real trading without risking money.' },
   { slug: 'forex-risk-management-guide', title: 'Forex Risk Management Guide: Protect Your Trading Capital', excerpt: 'Essential risk management rules for forex traders. Stop-loss placement, position sizing, and more.' },
   { slug: 'forex-trading-hours-best-times', title: 'Forex Trading Hours: Best Times to Trade for US Traders', excerpt: 'Learn the best trading hours for US forex traders. Market sessions, overlaps, and when volatility peaks.' },
+  { slug: 'best-forex-brokers-beginners-2026', title: 'Best Forex Brokers for Beginners 2026: Top 5 Beginner-Friendly Picks', excerpt: 'Our top picks for the best forex brokers for beginners in 2026. Easy platforms, low deposits, and great education.' },
+  { slug: 'how-to-start-forex-trading-100-dollars', title: 'How to Start Forex Trading with $100 in 2026', excerpt: 'Can you start forex trading with just $100? Yes. Here is exactly how to do it as a US trader.' },
+  { slug: 'forexcom-vs-oanda-2026', title: 'Forex.com vs OANDA 2026: Which US Broker is Better?', excerpt: 'Forex.com vs OANDA detailed comparison for US traders. Spreads, platforms, and regulation compared.' },
+  { slug: 'is-forex-trading-legal-usa', title: 'Is Forex Trading Legal in the USA? Rules You Need to Know', excerpt: 'Is forex trading legal in the US? Yes, but with strict rules. Learn about CFTC regulations and legal requirements.' },
+  { slug: 'best-time-trade-forex-usa', title: 'Best Time to Trade Forex in the USA: Complete Session Guide', excerpt: 'Find the best trading times for US forex traders. Session overlaps, volatility windows, and timezone tips.' },
+  { slug: 'midasfx-vs-hankotrade-comparison', title: 'MidasFX vs Hankotrade 2026: Which Offshore Broker is Better?', excerpt: 'MidasFX vs Hankotrade comparison for US traders. Spreads, leverage, deposits, and overall verdict.' },
+  { slug: 'oanda-vs-forexcom-comparison', title: 'OANDA vs Forex.com Comparison 2026: Best US Forex Broker', excerpt: 'OANDA vs Forex.com in-depth comparison. Which CFTC-regulated broker is the best choice for US traders?' },
+  { slug: 'best-forex-brokers-scalping-2026', title: 'Best Forex Brokers for Scalping 2026: Fast Execution & Low Spreads', excerpt: 'Top forex brokers for scalping in 2026. ECN execution, raw spreads, and no restrictions.' },
+  { slug: 'weekly-market-wrap-feb-3-2026', title: 'Weekly Market Wrap: Dollar Strength Continues, Eyes on Fed Minutes', excerpt: 'Our weekly recap of forex market movements, key events, and what US traders should watch in the week ahead.' },
+  { slug: 'best-forex-brokers-low-spreads-2026', title: 'Best Forex Brokers for Low Spreads 2026: Cheapest Trading Costs', excerpt: 'Find the best forex brokers with the lowest spreads in 2026. Compare ECN and raw spread accounts.' },
+  { slug: 'forex-vs-stocks-which-to-trade-2026', title: 'Forex vs Stocks: Which Should You Trade in 2026?', excerpt: 'Forex vs stock trading comparison. Hours, leverage, costs, and which market suits your trading style.' },
+  { slug: 'how-to-read-forex-charts-beginners', title: 'How to Read Forex Charts: A Beginner\'s Visual Guide', excerpt: 'Learn to read forex charts from scratch. Candlesticks, timeframes, support/resistance, and common patterns.' },
+  { slug: 'best-forex-trading-apps-mobile-2026', title: 'Best Forex Trading Apps for Mobile Traders 2026', excerpt: 'Top mobile forex trading apps for 2026. MT4, MT5, eToro, OANDA, and thinkorswim compared.' },
 ];
 
 // ─── Helper: escape for HTML attributes ──────────────────────────────────────
@@ -256,7 +269,14 @@ function injectReviewSchema(html, brokerSlug, pageTitle, pageDesc) {
     "itemReviewed": {
       "@type": "FinancialService",
       "name": broker.name,
-      "description": `${broker.name} forex broker review for US traders`
+      "description": `${broker.name} forex broker review for US traders`,
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": broker.rating,
+        "bestRating": 5,
+        "worstRating": 1,
+        "ratingCount": 1
+      }
     },
     "reviewRating": {
       "@type": "Rating",

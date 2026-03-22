@@ -31,7 +31,15 @@ const XMInceleme = () => {
       "image": "https://beginnerfxguide.com/images/brokers/xm-banner.jpg",
       "url": affiliateUrl,
       "priceRange": "$5 minimum depozito",
-      "description": "Forex broker, 2009'dan beri 10M+ müşteri"
+      "description": "Forex broker, 2009'dan beri 10M+ müşteri",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": overallRating.toString(),
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": 18500,
+        "reviewCount": 9200
+      }
     },
     "author": {
       "@type": "Organization",

@@ -6,6 +6,7 @@ import {
   Users,
   MessageSquare,
   BarChart3,
+  FlaskConical,
   Settings,
   LogOut,
   Menu,
@@ -22,6 +23,7 @@ const menuItems = [
   { icon: Users, label: "Subscribers", path: "/admin/subscribers" },
   { icon: MessageSquare, label: "Reviews", path: "/admin/reviews" },
   { icon: BarChart3, label: "Analytics", path: "/admin/analytics" },
+  { icon: FlaskConical, label: "A/B Tests", path: "/admin/ab-tests" },
   { icon: Settings, label: "Settings", path: "/admin/settings" },
 ];
 
