@@ -36,7 +36,7 @@ const staticPages = [
   { path: '/tools', title: 'Forex Trading Tools & Calculators | US Forex Guide', desc: 'Free forex calculators: pip calculator, position size, margin, profit/loss and more. Essential tools for US forex traders.' },
   { path: '/blog', title: 'Forex Trading Blog for US Traders | US Forex Guide', desc: 'Latest forex trading articles, broker news, and educational content for US traders. Stay informed with expert analysis.' },
   { path: '/faq', title: 'Forex Trading FAQ for US Traders | US Forex Guide', desc: 'Answers to the most common questions about forex trading in the USA. Regulations, brokers, taxes, and how to get started.' },
-  { path: '/glossary', title: 'Forex Trading Glossary | US Forex Guide', desc: 'Complete A-Z forex trading glossary. Definitions of 65+ trading terms for US beginners.' },
+  { path: '/glossary', title: 'Forex Glossary: 100+ Trading Terms Explained for Beginners', desc: 'Learn essential forex trading terminology. Our comprehensive A-Z glossary covers pips, spreads, leverage, margin, and 100+ terms every forex trader needs to know.' },
   { path: '/about', title: 'About Us | US Forex Guide', desc: 'Learn about US Forex Guide — our mission, methodology, and how we review and rate forex brokers for American traders.' },
   { path: '/contact', title: 'Contact Us | US Forex Guide', desc: 'Get in touch with the US Forex Guide team. Questions, feedback, or partnership inquiries welcome.' },
 
@@ -82,6 +82,7 @@ const staticPages = [
   { path: '/tools/forex-tax-calculator', title: 'Forex Tax Calculator for US Traders | US Forex Guide', desc: 'Estimate forex trading taxes for US traders. Section 1256 vs 988 treatment, 60/40 rule, and tax liability calculator.' },
   { path: '/tools/economic-calendar', title: 'Forex Economic Calendar | US Forex Guide', desc: 'Live economic calendar for forex traders. Track upcoming news events, central bank meetings, and market-moving releases.' },
   { path: '/tools/trading-sessions', title: 'Forex Trading Sessions Clock | US Forex Guide', desc: 'Live forex market hours clock. See which sessions are open now — Tokyo, London, New York, Sydney — with overlap times and timezone support.' },
+  { path: '/tools/broker-quiz', title: 'Broker Finder Quiz — Find Your Perfect Forex Broker | US Forex Guide', desc: 'Answer 7 quick questions to find the best forex broker for your trading style, experience level, and budget. Free interactive quiz with personalized results.' },
 
   // Compare
   { path: '/compare/midasfx-vs-hankotrade', title: 'MidasFX vs Hankotrade Comparison 2026 | US Forex Guide', desc: 'Head-to-head comparison of MidasFX and Hankotrade for US traders. Compare spreads, leverage, deposits, and overall value.' },

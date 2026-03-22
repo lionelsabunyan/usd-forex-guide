@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { Calculator, Target, DollarSign, TrendingUp, Clock, Percent, Calendar } from "lucide-react";
+import { Calculator, Target, DollarSign, TrendingUp, Clock, Percent, Calendar, Search } from "lucide-react";
 import SEO from "@/components/SEO";
 
 const tools = [
@@ -67,6 +67,15 @@ const tools = [
     url: "/tools/trading-sessions",
     status: "live",
     color: "bg-cyan-100 text-cyan-600",
+  },
+  {
+    id: "broker-finder-quiz",
+    name: "Broker Finder Quiz",
+    description: "Answer 7 questions to find the best forex broker for your trading style and budget.",
+    icon: Search,
+    url: "/tools/broker-quiz",
+    status: "live",
+    color: "bg-yellow-100 text-yellow-600",
   },
 ];
 
