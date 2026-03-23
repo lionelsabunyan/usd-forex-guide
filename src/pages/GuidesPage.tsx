@@ -165,6 +165,15 @@ const guides = [
     readTime: "20 min read",
     difficulty: "Intermediate",
     topics: ["Regulation", "Trust & Safety", "Investor Protection", "Segregated Accounts"]
+  },
+  {
+    id: "best-forex-charting-software",
+    title: "Best Forex Charting Software & Websites",
+    description: "Compare the top charting platforms for forex traders. TradingView, MetaTrader, cTrader, NinjaTrader — indicators, drawing tools, alerts, mobile apps, and broker integrations compared.",
+    icon: Monitor,
+    readTime: "18 min read",
+    difficulty: "Intermediate",
+    topics: ["Charting Software", "TradingView", "MetaTrader", "Platform Comparison"]
   }
 ];
 
