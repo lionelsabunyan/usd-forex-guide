@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   BarChart3,
   TrendingUp,
@@ -6,77 +7,142 @@ import {
   MousePointer,
   Clock,
   ArrowUpRight,
+  ArrowDownRight,
   ExternalLink,
+  Mail,
+  RefreshCw,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { getDripCampaignStats, type DripCampaignStats } from "@/lib/dripCampaignService";
+import { DRIP_TOTAL_DAYS } from "@/lib/dripCampaign";
+import {
+  getLatestAnalytics,
+  getAnalyticsRange,
+  getTopPages,
+  getTrafficSources,
+  getAffiliateClicks,
+  type DailyAnalytics,
+  type TopPage,
+  type TrafficSource,
+  type AffiliateClick,
+} from "@/lib/analyticsService";
+
+function formatDuration(seconds: number): string {
+  const m = Math.floor(seconds / 60);
+  const s = Math.round(seconds % 60);
+  return m > 0 ? `${m}m ${s}s` : `${s}s`;
+}
+
+function calcChange(current: number, previous: number): string {
+  if (!previous) return "—";
+  const pct = ((current - previous) / previous) * 100;
+  return `${pct >= 0 ? "+" : ""}${pct.toFixed(1)}%`;
+}
 
 const AdminAnalytics = () => {
-  // Simulated analytics data - In production, fetch from GA4 API
-  const overviewStats = [
-    {
-      title: "Page Views",
-      value: "12,543",
-      change: "+12.5%",
-      trend: "up",
-      icon: Eye,
-      color: "text-blue-500",
-      bgColor: "bg-blue-500/10",
-    },
-    {
-      title: "Unique Visitors",
-      value: "4,821",
-      change: "+8.2%",
-      trend: "up",
-      icon: Users,
-      color: "text-green-500",
-      bgColor: "bg-green-500/10",
-    },
-    {
-      title: "Affiliate Clicks",
-      value: "342",
-      change: "+23.1%",
-      trend: "up",
-      icon: MousePointer,
-      color: "text-purple-500",
-      bgColor: "bg-purple-500/10",
-    },
-    {
-      title: "Avg. Session",
-      value: "3m 24s",
-      change: "+15s",
-      trend: "up",
-      icon: Clock,
-      color: "text-orange-500",
-      bgColor: "bg-orange-500/10",
-    },
-  ];
+  const [dripStats, setDripStats] = useState<DripCampaignStats | null>(null);
+  const [latest, setLatest] = useState<DailyAnalytics | null>(null);
+  const [previous, setPrevious] = useState<DailyAnalytics | null>(null);
+  const [topPagesData, setTopPagesData] = useState<TopPage[]>([]);
+  const [trafficData, setTrafficData] = useState<TrafficSource[]>([]);
+  const [affiliateData, setAffiliateData] = useState<AffiliateClick[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [dataSource, setDataSource] = useState<"live" | "mock">("mock");
 
-  const topPages = [
-    { path: "/", views: 3245, change: "+5.2%" },
-    { path: "/review/fxglory", views: 1823, change: "+12.3%" },
-    { path: "/review/n1cm", views: 1456, change: "+8.7%" },
-    { path: "/guides/beginners-guide", views: 987, change: "+15.4%" },
-    { path: "/brokers", views: 754, change: "+3.2%" },
-    { path: "/guides/risk-management", views: 623, change: "+21.5%" },
-    { path: "/faq", views: 512, change: "-2.1%" },
-    { path: "/blog", views: 423, change: "+6.8%" },
-  ];
+  useEffect(() => {
+    getDripCampaignStats().then(setDripStats);
+    loadAnalytics();
+  }, []);
 
-  const affiliatePerformance = [
-    { broker: "FXGlory", clicks: 187, conversions: 23, revenue: "$1,610", ctr: "4.2%" },
-    { broker: "N1CM", clicks: 98, conversions: 8, revenue: "$560", ctr: "3.1%" },
-    { broker: "eToro", clicks: 45, conversions: 2, revenue: "$140", ctr: "1.8%" },
-    { broker: "OANDA", clicks: 12, conversions: 0, revenue: "$0", ctr: "0.9%" },
-  ];
+  async function loadAnalytics() {
+    setLoading(true);
+    try {
+      const range = await getAnalyticsRange(14);
+      if (range.length > 0) {
+        setLatest(range[0]);
+        if (range.length > 1) setPrevious(range[1]);
+        setDataSource("live");
 
-  const trafficSources = [
-    { source: "Organic Search", sessions: 2845, percentage: 59 },
-    { source: "Direct", sessions: 1023, percentage: 21 },
-    { source: "Bing Ads", sessions: 512, percentage: 11 },
-    { source: "Social Media", sessions: 287, percentage: 6 },
-    { source: "Referral", sessions: 154, percentage: 3 },
-  ];
+        const [pages, sources, clicks] = await Promise.all([
+          getTopPages(range[0].date),
+          getTrafficSources(range[0].date),
+          getAffiliateClicks(30),
+        ]);
+        setTopPagesData(pages);
+        setTrafficData(sources);
+        setAffiliateData(clicks);
+      }
+    } catch (e) {
+      console.warn("Analytics fetch failed, using mock data", e);
+    }
+    setLoading(false);
+  }
+
+  // Build overview stats from live or mock data
+  const totalAffClicks = affiliateData.reduce((sum, a) => sum + a.clicks, 0);
+
+  const overviewStats = latest
+    ? [
+        {
+          title: "Page Views",
+          value: latest.pageviews.toLocaleString(),
+          change: previous ? calcChange(latest.pageviews, previous.pageviews) : "—",
+          icon: Eye,
+          color: "text-blue-500",
+          bgColor: "bg-blue-500/10",
+        },
+        {
+          title: "Unique Visitors",
+          value: latest.users.toLocaleString(),
+          change: previous ? calcChange(latest.users, previous.users) : "—",
+          icon: Users,
+          color: "text-green-500",
+          bgColor: "bg-green-500/10",
+        },
+        {
+          title: "Affiliate Clicks",
+          value: totalAffClicks.toLocaleString(),
+          change: "—",
+          icon: MousePointer,
+          color: "text-purple-500",
+          bgColor: "bg-purple-500/10",
+        },
+        {
+          title: "Avg. Session",
+          value: formatDuration(latest.avg_session_duration),
+          change: previous ? calcChange(latest.avg_session_duration, previous.avg_session_duration) : "—",
+          icon: Clock,
+          color: "text-orange-500",
+          bgColor: "bg-orange-500/10",
+        },
+      ]
+    : [
+        { title: "Page Views", value: "—", change: "—", icon: Eye, color: "text-blue-500", bgColor: "bg-blue-500/10" },
+        { title: "Unique Visitors", value: "—", change: "—", icon: Users, color: "text-green-500", bgColor: "bg-green-500/10" },
+        { title: "Affiliate Clicks", value: "—", change: "—", icon: MousePointer, color: "text-purple-500", bgColor: "bg-purple-500/10" },
+        { title: "Avg. Session", value: "—", change: "—", icon: Clock, color: "text-orange-500", bgColor: "bg-orange-500/10" },
+      ];
+
+  const topPages = topPagesData.length > 0
+    ? topPagesData.map((p) => ({ path: p.page_path, views: p.pageviews }))
+    : [
+        { path: "/", views: 0 },
+        { path: "/brokers", views: 0 },
+      ];
+
+  const affiliatePerformance = affiliateData.length > 0
+    ? affiliateData.map((a) => ({ broker: a.broker, clicks: a.clicks }))
+    : [];
+
+  const totalSessions = trafficData.reduce((sum, s) => sum + s.sessions, 0);
+  const trafficSources = trafficData.length > 0
+    ? trafficData.map((s) => ({
+        source: `${s.source} / ${s.medium}`,
+        sessions: s.sessions,
+        percentage: totalSessions > 0 ? Math.round((s.sessions / totalSessions) * 100) : 0,
+      }))
+    : [];
 
   return (
     <div className="space-y-6">
@@ -84,9 +150,16 @@ const AdminAnalytics = () => {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h1 className="text-3xl font-heading font-bold text-foreground">Analytics</h1>
-          <p className="text-muted-foreground">Track your site's performance</p>
+          <p className="text-muted-foreground">
+            {loading ? "Loading..." : dataSource === "live"
+              ? `Live data — ${latest?.date || ""}`
+              : "No data yet — run ga4_analytics.py collect"}
+          </p>
         </div>
         <div className="flex gap-2">
+          <Button variant="outline" size="icon" onClick={loadAnalytics} disabled={loading}>
+            <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} />
+          </Button>
           <Button variant="outline" asChild>
             <a href="https://analytics.google.com" target="_blank" rel="noopener noreferrer">
               <BarChart3 className="w-4 h-4 mr-2" />
@@ -113,8 +186,10 @@ const AdminAnalytics = () => {
                 <div className={`w-12 h-12 rounded-xl ${stat.bgColor} flex items-center justify-center`}>
                   <stat.icon className={`w-6 h-6 ${stat.color}`} />
                 </div>
-                <div className="flex items-center gap-1 text-sm text-green-500">
-                  <ArrowUpRight className="w-4 h-4" />
+                <div className={`flex items-center gap-1 text-sm ${stat.change.startsWith("-") ? "text-red-500" : "text-green-500"}`}>
+                  {stat.change.startsWith("-")
+                    ? <ArrowDownRight className="w-4 h-4" />
+                    : <ArrowUpRight className="w-4 h-4" />}
                   {stat.change}
                 </div>
               </div>
@@ -142,12 +217,7 @@ const AdminAnalytics = () => {
                     </span>
                     <span className="text-sm text-foreground truncate max-w-[200px]">{page.path}</span>
                   </div>
-                  <div className="flex items-center gap-4">
-                    <span className="text-sm font-medium text-foreground">{page.views.toLocaleString()}</span>
-                    <span className={`text-xs ${page.change.startsWith("+") ? "text-green-500" : "text-red-500"}`}>
-                      {page.change}
-                    </span>
-                  </div>
+                  <span className="text-sm font-medium text-foreground">{page.views.toLocaleString()}</span>
                 </div>
               ))}
             </div>
@@ -186,52 +256,96 @@ const AdminAnalytics = () => {
       <Card className="bg-gradient-card border-border">
         <CardHeader>
           <div className="flex items-center justify-between">
-            <CardTitle>Affiliate Performance</CardTitle>
+            <CardTitle>Affiliate Clicks</CardTitle>
             <span className="text-sm text-muted-foreground">Last 30 days</span>
           </div>
         </CardHeader>
         <CardContent>
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-border">
-                  <th className="px-4 py-3 text-left text-sm font-medium text-muted-foreground">Broker</th>
-                  <th className="px-4 py-3 text-right text-sm font-medium text-muted-foreground">Clicks</th>
-                  <th className="px-4 py-3 text-right text-sm font-medium text-muted-foreground">Conversions</th>
-                  <th className="px-4 py-3 text-right text-sm font-medium text-muted-foreground">CTR</th>
-                  <th className="px-4 py-3 text-right text-sm font-medium text-muted-foreground">Revenue</th>
-                </tr>
-              </thead>
-              <tbody>
-                {affiliatePerformance.map((broker, i) => (
-                  <tr key={i} className="border-b border-border last:border-0">
-                    <td className="px-4 py-3">
-                      <span className="font-medium text-foreground">{broker.broker}</span>
-                    </td>
-                    <td className="px-4 py-3 text-right text-foreground">{broker.clicks}</td>
-                    <td className="px-4 py-3 text-right text-foreground">{broker.conversions}</td>
-                    <td className="px-4 py-3 text-right text-muted-foreground">{broker.ctr}</td>
-                    <td className="px-4 py-3 text-right">
-                      <span className="font-medium text-green-500">{broker.revenue}</span>
+          {affiliatePerformance.length > 0 ? (
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="px-4 py-3 text-left text-sm font-medium text-muted-foreground">Broker</th>
+                    <th className="px-4 py-3 text-right text-sm font-medium text-muted-foreground">Clicks</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {affiliatePerformance.map((broker, i) => (
+                    <tr key={i} className="border-b border-border last:border-0">
+                      <td className="px-4 py-3">
+                        <span className="font-medium text-foreground">{broker.broker}</span>
+                      </td>
+                      <td className="px-4 py-3 text-right text-foreground">{broker.clicks}</td>
+                    </tr>
+                  ))}
+                </tbody>
+                <tfoot>
+                  <tr className="bg-secondary/50">
+                    <td className="px-4 py-3 font-medium text-foreground">Total</td>
+                    <td className="px-4 py-3 text-right font-bold text-foreground">
+                      {totalAffClicks.toLocaleString()}
                     </td>
                   </tr>
-                ))}
-              </tbody>
-              <tfoot>
-                <tr className="bg-secondary/50">
-                  <td className="px-4 py-3 font-medium text-foreground">Total</td>
-                  <td className="px-4 py-3 text-right font-medium text-foreground">342</td>
-                  <td className="px-4 py-3 text-right font-medium text-foreground">33</td>
-                  <td className="px-4 py-3 text-right text-muted-foreground">3.2%</td>
-                  <td className="px-4 py-3 text-right">
-                    <span className="font-bold text-green-500">$2,310</span>
-                  </td>
-                </tr>
-              </tfoot>
-            </table>
-          </div>
+                </tfoot>
+              </table>
+            </div>
+          ) : (
+            <p className="text-sm text-muted-foreground text-center py-4">No affiliate click data available</p>
+          )}
         </CardContent>
       </Card>
+
+      {/* Drip Campaign Stats */}
+      {dripStats && dripStats.total_enrolled > 0 && (
+        <Card className="bg-gradient-card border-border">
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <CardTitle className="flex items-center gap-2">
+                <Mail className="w-5 h-5 text-primary" />
+                7-Day Drip Campaign
+              </CardTitle>
+              <span className="text-sm text-muted-foreground">
+                {dripStats.total_enrolled} enrolled
+              </span>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-3 gap-4 mb-6">
+              <div className="text-center p-3 rounded-lg bg-green-500/10">
+                <p className="text-2xl font-bold text-green-500">{dripStats.active}</p>
+                <p className="text-xs text-muted-foreground">Active</p>
+              </div>
+              <div className="text-center p-3 rounded-lg bg-blue-500/10">
+                <p className="text-2xl font-bold text-blue-500">{dripStats.completed}</p>
+                <p className="text-xs text-muted-foreground">Completed</p>
+              </div>
+              <div className="text-center p-3 rounded-lg bg-red-500/10">
+                <p className="text-2xl font-bold text-red-500">{dripStats.unsubscribed}</p>
+                <p className="text-xs text-muted-foreground">Unsubscribed</p>
+              </div>
+            </div>
+            <div>
+              <p className="text-sm font-medium text-foreground mb-3">Active Subscribers by Day</p>
+              <div className="flex gap-2">
+                {Array.from({ length: DRIP_TOTAL_DAYS }, (_, i) => i + 1).map(day => (
+                  <div key={day} className="flex-1 text-center">
+                    <div
+                      className="bg-primary/20 rounded-t-sm mx-auto"
+                      style={{
+                        width: '100%',
+                        height: `${Math.max(4, ((dripStats.by_day[day] || 0) / Math.max(dripStats.active, 1)) * 60)}px`,
+                      }}
+                    />
+                    <p className="text-xs font-medium mt-1">{dripStats.by_day[day] || 0}</p>
+                    <p className="text-[10px] text-muted-foreground">Day {day}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      )}
 
       {/* Quick Links */}
       <Card className="bg-gradient-card border-border">

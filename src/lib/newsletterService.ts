@@ -1,5 +1,6 @@
 import { supabase } from './supabase';
 import { subscriberStore } from './adminStore';
+import { enrollInDripCampaign } from './dripCampaignService';
 
 export interface SubscribeResult {
   success: boolean;
@@ -49,6 +50,8 @@ export async function subscribeNewsletter(
     } else {
       // Also save to localStorage for admin panel visibility
       subscriberStore.add(trimmed, source);
+      // Auto-enroll in 7-day drip campaign
+      enrollInDripCampaign(trimmed).catch(() => {});
       return {
         success: true,
         message: 'Thanks for subscribing! Check your inbox for confirmation.',

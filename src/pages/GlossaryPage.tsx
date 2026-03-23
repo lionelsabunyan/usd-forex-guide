@@ -349,6 +349,239 @@ const glossaryTerms: GlossaryTerm[] = [
     term: "Gap",
     definition: "A price area on a chart where no trading occurred, appearing as a jump between closing and opening prices. Gaps often occur over weekends or after major news events.",
     relatedTerms: ["Volatility", "Candlestick", "Slippage"]
+  },
+  {
+    term: "Appreciation",
+    definition: "An increase in the value of a currency relative to another currency. When EUR/USD rises, the Euro is appreciating against the US Dollar.",
+    relatedTerms: ["Depreciation", "Exchange Rate", "Bullish"]
+  },
+  {
+    term: "Balance",
+    definition: "The total amount of money in your trading account after all closed trades are accounted for. Unlike equity, the balance does not reflect unrealized profits or losses from open positions.",
+    relatedTerms: ["Equity", "Free Margin"]
+  },
+  {
+    term: "Bollinger Bands",
+    definition: "A technical indicator consisting of a middle band (usually a 20-period SMA) and two outer bands set at standard deviations above and below. Used to measure volatility and identify overbought/oversold conditions.",
+    relatedTerms: ["Indicator", "Volatility", "Moving Average"]
+  },
+  {
+    term: "Carry Trade",
+    definition: "A strategy where a trader borrows in a low-interest-rate currency and invests in a high-interest-rate currency to profit from the interest rate differential. Popular in stable market conditions.",
+    relatedTerms: ["Swap", "Interest Rate"]
+  },
+  {
+    term: "Central Bank",
+    definition: "A national institution that manages a country's currency, money supply, and interest rates. Central bank decisions — such as those by the Federal Reserve or ECB — are major drivers of forex price movements.",
+    relatedTerms: ["Interest Rate", "Fundamental Analysis", "Hawkish"]
+  },
+  {
+    term: "Chart Patterns",
+    definition: "Recognizable shapes formed by price movements on a chart, such as head and shoulders, double tops, triangles, and flags. Traders use these patterns to predict future price direction.",
+    relatedTerms: ["Technical Analysis", "Candlestick", "Breakout"]
+  },
+  {
+    term: "Commission",
+    definition: "A fee charged by a broker for executing trades. ECN brokers typically charge commissions per lot instead of widening spreads. Commission-based pricing is often preferred by active traders.",
+    relatedTerms: ["ECN", "Spread", "Broker"]
+  },
+  {
+    term: "Copy Trading",
+    definition: "A method where traders automatically replicate the trades of experienced investors. Popular platforms include ZuluTrade and eToro's CopyTrader, allowing beginners to follow proven strategies.",
+    relatedTerms: ["Signal Provider", "Demo Account"]
+  },
+  {
+    term: "Cross Currency Pair",
+    definition: "A currency pair that does not include the US Dollar, such as EUR/GBP or GBP/JPY. Also called cross rates or minor pairs, these typically have wider spreads than major pairs.",
+    relatedTerms: ["Major Pairs", "Exotic Pairs", "Currency Pair"]
+  },
+  {
+    term: "Depreciation",
+    definition: "A decrease in the value of a currency relative to another currency. When USD/JPY falls, the US Dollar is depreciating against the Japanese Yen.",
+    relatedTerms: ["Appreciation", "Exchange Rate", "Bearish"]
+  },
+  {
+    term: "Divergence",
+    definition: "When price moves in one direction while an indicator moves in the opposite direction. Bullish divergence occurs when price makes lower lows but an indicator makes higher lows, suggesting a potential reversal.",
+    relatedTerms: ["RSI", "MACD", "Indicator"]
+  },
+  {
+    term: "Dovish",
+    definition: "Describes a central bank stance favoring lower interest rates and loose monetary policy to stimulate economic growth. Dovish signals typically weaken a currency.",
+    relatedTerms: ["Hawkish", "Central Bank", "Interest Rate"]
+  },
+  {
+    term: "Economic Calendar",
+    definition: "A schedule of important economic events and data releases that can affect currency markets. Key events include NFP, GDP, CPI, and central bank interest rate decisions.",
+    relatedTerms: ["Fundamental Analysis", "Non-Farm Payrolls", "Volatility"]
+  },
+  {
+    term: "Exchange Rate",
+    definition: "The price of one currency expressed in terms of another. Exchange rates fluctuate based on supply and demand, interest rates, economic performance, and geopolitical factors.",
+    relatedTerms: ["Currency Pair", "Appreciation", "Depreciation"]
+  },
+  {
+    term: "FIFO (First In, First Out)",
+    definition: "A rule required by US forex regulators (CFTC/NFA) that mandates traders close the oldest open position first when they have multiple positions in the same pair. FIFO prevents hedging in the same account.",
+    relatedTerms: ["CFTC", "NFA", "Regulation"]
+  },
+  {
+    term: "Floating Exchange Rate",
+    definition: "An exchange rate that is determined by supply and demand in the open market, rather than being fixed by a government. Most major currencies operate under a floating exchange rate system.",
+    relatedTerms: ["Exchange Rate", "Central Bank"]
+  },
+  {
+    term: "Forex (Foreign Exchange)",
+    definition: "The global decentralized market for trading currencies. With over $7.5 trillion in daily volume, forex is the largest and most liquid financial market in the world, operating 24 hours a day, 5 days a week.",
+    relatedTerms: ["Currency Pair", "Liquidity"],
+    relatedLink: "/guides/beginners-guide"
+  },
+  {
+    term: "Hawkish",
+    definition: "Describes a central bank stance favoring higher interest rates and tight monetary policy to control inflation. Hawkish signals typically strengthen a currency.",
+    relatedTerms: ["Dovish", "Central Bank", "Interest Rate"]
+  },
+  {
+    term: "Interest Rate",
+    definition: "The rate at which a central bank lends money to commercial banks. Interest rate differentials between countries are a primary driver of forex prices, as higher rates attract foreign capital.",
+    relatedTerms: ["Central Bank", "Carry Trade", "Swap"]
+  },
+  {
+    term: "Limit Order",
+    definition: "An order to buy or sell a currency pair at a specified price or better. A buy limit is placed below current price; a sell limit is placed above. Limit orders guarantee price but not execution.",
+    relatedTerms: ["Market Order", "Order Types", "Stop Loss"]
+  },
+  {
+    term: "Liquidity Provider",
+    definition: "Large financial institutions — typically banks and hedge funds — that quote bid and ask prices in the forex market. They supply the liquidity that allows trades to execute quickly at stable prices.",
+    relatedTerms: ["ECN", "Liquidity", "Market Maker"]
+  },
+  {
+    term: "Market Order",
+    definition: "An order to buy or sell a currency pair immediately at the best available price. Market orders guarantee execution but not a specific price, especially during volatile conditions.",
+    relatedTerms: ["Limit Order", "Order Types", "Slippage"]
+  },
+  {
+    term: "Micro Lot",
+    definition: "A trading unit equal to 1,000 units of the base currency. Micro lots allow traders with smaller accounts to participate in the forex market with reduced risk per pip.",
+    relatedTerms: ["Lot", "Mini Lot", "Position Size"]
+  },
+  {
+    term: "Mini Lot",
+    definition: "A trading unit equal to 10,000 units of the base currency. Mini lots are ten times larger than micro lots and one-tenth the size of a standard lot.",
+    relatedTerms: ["Lot", "Micro Lot", "Position Size"]
+  },
+  {
+    term: "Minor Pairs",
+    definition: "Currency pairs that do not include the US Dollar but involve other major currencies, such as EUR/GBP, EUR/JPY, or GBP/CHF. Also called cross pairs, they generally have slightly wider spreads than major pairs.",
+    relatedTerms: ["Major Pairs", "Cross Currency Pair", "Exotic Pairs"]
+  },
+  {
+    term: "Momentum",
+    definition: "The rate of change in a currency's price. Strong momentum indicates the price is moving quickly in one direction. Momentum indicators like RSI and MACD help traders gauge the strength of a move.",
+    relatedTerms: ["RSI", "MACD", "Indicator"]
+  },
+  {
+    term: "Money Management",
+    definition: "A set of rules and techniques for controlling financial risk. Includes determining position sizes, setting risk per trade (commonly 1-2% of account), and maintaining consistent risk exposure.",
+    relatedTerms: ["Risk Management", "Position Size", "Drawdown"]
+  },
+  {
+    term: "Non-Farm Payrolls (NFP)",
+    definition: "A monthly US economic report showing the number of jobs added or lost in non-farm sectors. NFP is one of the most market-moving events for forex, typically released the first Friday of each month.",
+    relatedTerms: ["Economic Calendar", "Fundamental Analysis", "Volatility"]
+  },
+  {
+    term: "Pending Order",
+    definition: "An instruction to open a trade when the price reaches a specific level. Types include buy limit, sell limit, buy stop, and sell stop. Pending orders let traders plan entries without watching the screen.",
+    relatedTerms: ["Limit Order", "Order Types", "Market Order"]
+  },
+  {
+    term: "Pivot Point",
+    definition: "A technical indicator calculated from the previous period's high, low, and close prices. Pivot points and their support/resistance levels help day traders identify potential reversal and breakout zones.",
+    relatedTerms: ["Support and Resistance", "Technical Analysis", "Day Trading"]
+  },
+  {
+    term: "Position Trading",
+    definition: "A long-term trading strategy where positions are held for weeks, months, or even years. Position traders rely primarily on fundamental analysis and long-term trends, ignoring short-term fluctuations.",
+    relatedTerms: ["Swing Trading", "Day Trading", "Fundamental Analysis"]
+  },
+  {
+    term: "Price Action",
+    definition: "A trading approach that analyzes raw price movements without relying on indicators. Price action traders read candlestick patterns, support/resistance levels, and market structure to make decisions.",
+    relatedTerms: ["Candlestick", "Support and Resistance", "Technical Analysis"]
+  },
+  {
+    term: "Pullback",
+    definition: "A brief price reversal within an ongoing trend. Traders often use pullbacks to enter positions in the direction of the main trend at a more favorable price.",
+    relatedTerms: ["Retracement", "Trend", "Support and Resistance"]
+  },
+  {
+    term: "Range Trading",
+    definition: "A strategy that involves buying at support and selling at resistance when the market moves sideways within a defined range. Range traders profit from the repeated bouncing between these levels.",
+    relatedTerms: ["Support and Resistance", "Consolidation", "Breakout"]
+  },
+  {
+    term: "Regulation",
+    definition: "Oversight of forex brokers by government agencies to protect traders. In the US, the CFTC and NFA regulate forex brokers. Regulated brokers must meet capital requirements, segregate client funds, and follow strict rules.",
+    relatedTerms: ["CFTC", "NFA", "Broker"],
+    relatedLink: "/guides/us-forex-regulations"
+  },
+  {
+    term: "Requote",
+    definition: "When a broker is unable to execute an order at the requested price and offers a new price instead. Requotes are more common during high volatility and with market maker brokers.",
+    relatedTerms: ["Slippage", "Market Maker", "ECN"]
+  },
+  {
+    term: "Rollover",
+    definition: "The process of extending the settlement date of an open position to the next trading day. Rollover involves either paying or receiving a swap fee based on the interest rate differential.",
+    relatedTerms: ["Swap", "Interest Rate", "Carry Trade"]
+  },
+  {
+    term: "Safe Haven Currency",
+    definition: "A currency expected to retain or increase its value during market turmoil. The US Dollar (USD), Japanese Yen (JPY), and Swiss Franc (CHF) are traditional safe haven currencies.",
+    relatedTerms: ["Volatility", "Risk Management", "Currency Pair"]
+  },
+  {
+    term: "Sentiment Analysis",
+    definition: "Gauging the overall attitude of market participants toward a currency pair. Sentiment can be measured through positioning data (like the COT report), surveys, and market flow indicators.",
+    relatedTerms: ["Fundamental Analysis", "Technical Analysis"]
+  },
+  {
+    term: "Signal Provider",
+    definition: "A service or trader that generates trade recommendations (buy/sell signals) for subscribers. Signals may be delivered via email, SMS, app notifications, or integrated directly into trading platforms.",
+    relatedTerms: ["Copy Trading", "Technical Analysis"]
+  },
+  {
+    term: "Stop Out Level",
+    definition: "The margin level at which a broker begins automatically closing your positions to prevent further losses. Typically set at 50% margin level for US brokers, this is the last line of defense before account depletion.",
+    relatedTerms: ["Margin Call", "Margin", "Free Margin"]
+  },
+  {
+    term: "Trailing Stop",
+    definition: "A dynamic stop loss that moves with the market price. As the trade moves in your favor, the trailing stop follows by a set distance. It only moves in the profitable direction and locks in gains.",
+    relatedTerms: ["Stop Loss", "Risk Management", "Order Types"]
+  },
+  {
+    term: "Trading Plan",
+    definition: "A comprehensive written document outlining a trader's strategy, risk rules, entry/exit criteria, and goals. A solid trading plan removes emotional decision-making and promotes consistency.",
+    relatedTerms: ["Risk Management", "Money Management"]
+  },
+  {
+    term: "Trading Session",
+    definition: "A period when a major financial center's markets are open. The three main forex sessions are: Asian (Tokyo), European (London), and North American (New York). Overlap periods see the highest volatility.",
+    relatedTerms: ["Liquidity", "Volatility"],
+    relatedLink: "/tools"
+  },
+  {
+    term: "Whipsaw",
+    definition: "A rapid price movement in one direction followed by a sharp reversal. Whipsaws often trigger stop losses before the market moves in the originally expected direction, causing frustrating losses.",
+    relatedTerms: ["Stop Loss", "Volatility", "Slippage"]
+  },
+  {
+    term: "Yield",
+    definition: "The income return on an investment, usually expressed as a percentage. In forex, yield differentials between countries influence capital flows and exchange rates. Higher yields attract foreign investment.",
+    relatedTerms: ["Interest Rate", "Carry Trade", "Central Bank"]
   }
 ];
 
@@ -405,8 +638,8 @@ const GlossaryPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Forex Glossary: 60+ Trading Terms Explained for Beginners"
-        description="Learn essential forex trading terminology. Our comprehensive glossary covers pips, spreads, leverage, margin, and all the terms you need to know as a forex trader."
+        title="Forex Glossary: 100+ Trading Terms Explained for Beginners"
+        description="Learn essential forex trading terminology. Our comprehensive A-Z glossary covers pips, spreads, leverage, margin, and 100+ terms every forex trader needs to know."
         canonical="/glossary"
         jsonLd={jsonLd}
       />
@@ -428,7 +661,7 @@ const GlossaryPage = () => {
               <BookOpen className="w-8 h-8 text-primary-foreground" />
             </div>
             <div>
-              <span className="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">60+ Terms</span>
+              <span className="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">100+ Terms</span>
             </div>
           </div>
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">

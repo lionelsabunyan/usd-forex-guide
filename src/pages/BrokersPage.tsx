@@ -163,6 +163,35 @@ const BrokersPage = () => {
         </div>
       </section>
 
+      {/* Regional Guides */}
+      <section className="py-12 border-t border-border">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-8">
+            <h2 className="text-2xl font-heading font-bold mb-2">
+              Best Brokers by <span className="text-gradient-gold">Region</span>
+            </h2>
+            <p className="text-muted-foreground text-sm">
+              Looking for brokers tailored to your region? Check out our regional guides.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <Link to="/brokers/australia" className="bg-secondary/30 border border-border rounded-xl p-6 hover:border-primary/50 transition-all group text-center">
+              <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">Best Brokers for Australia</h3>
+              <p className="text-sm text-muted-foreground">Top forex brokers for Australian traders with ASIC regulation.</p>
+            </Link>
+            <Link to="/brokers/uk" className="bg-secondary/30 border border-border rounded-xl p-6 hover:border-primary/50 transition-all group text-center">
+              <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">Best Brokers for the UK</h3>
+              <p className="text-sm text-muted-foreground">Top forex brokers for UK traders with FCA regulation.</p>
+            </Link>
+          </div>
+          <div className="text-center mt-8">
+            <Link to="/guides/how-we-review" className="text-primary text-sm font-medium hover:underline">
+              Learn how we review brokers →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Disclaimer */}
       <section className="pb-16">
         <div className="container mx-auto px-4">

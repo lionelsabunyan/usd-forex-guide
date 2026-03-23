@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Star, Check, ExternalLink, Shield, Zap, AlertTriangle, TrendingUp, Award, Users, ChevronDown } from "lucide-react";
+import { Check, ExternalLink, Shield, Zap, AlertTriangle, TrendingUp, Award, Users, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { brokers } from "@/lib/brokers";
@@ -10,70 +10,70 @@ import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const BestBrokersAustralia = () => {
+const BestBrokersSingapore = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  // Australia broker ranking: Leverage-first (ASIC alternative positioning)
+  // Singapore broker ranking: MAS alternative positioning
   // 11 brokers total: 7 affiliate + 4 non-affiliate (authority building)
-  const australiaBrokers = [
+  const singaporeBrokers = [
     brokers.fxglory,     // 1:3000 - SVG FSA ✅ Affiliate
     brokers.coinexx,     // 1:500 - Crypto-native ✅ Affiliate
+    brokers.hfm,         // 1:2000 - CySEC/FCA ✅ Affiliate
     brokers.midasfx,     // 1:500 - FSA ✅ Affiliate
     brokers.hankotrade,  // 1:500 - VFSC ✅ Affiliate
-    brokers.hfm,         // 1:2000 - CySEC/FCA ✅ Affiliate
-    brokers.xm,          // 1:1000 - ASIC/CySEC ✅ Affiliate
+    brokers.xm,          // 1:1000 - CySEC ✅ Affiliate
     brokers.fxpro,       // 1:200 - FCA/CySEC ✅ Affiliate
     brokers.exness,      // 1:2000 - CySEC/FCA ❌ Non-affiliate
+    brokers.pepperstone, // 1:500 - ASIC/FCA ❌ Non-affiliate
     brokers.fxtm,        // 1:1000 - CySEC/FCA ❌ Non-affiliate
-    brokers.pepperstone, // 1:500 - ASIC/FCA ❌ Non-affiliate (ASIC regulated!)
     brokers.fbs,         // 1:3000 - CySEC/FSCA ❌ Non-affiliate
   ];
 
   const faqs = [
     {
-      question: "Are offshore forex brokers safe for Australian traders?",
-      answer: "Yes, reputable offshore brokers with proper regulation (CySEC, FCA, DFSA) can be safe alternatives for Australian traders. While they operate outside ASIC's jurisdiction, top-tier offshore brokers maintain strict compliance standards and segregate client funds. However, you lose ASIC's investor protection scheme, so it's crucial to choose well-established brokers with strong regulatory oversight."
+      question: "Can Singaporean traders legally use offshore forex brokers?",
+      answer: "Yes, Singapore residents can legally trade with offshore forex brokers. While MAS (Monetary Authority of Singapore) regulates domestic brokers, it does not prohibit Singaporeans from using international brokers licensed in other jurisdictions. However, you lose the protections provided by MAS-regulated entities. Always choose well-regulated offshore brokers with CySEC, FCA, or ASIC licenses for adequate investor protection."
     },
     {
-      question: "Why do Australian traders use offshore brokers?",
-      answer: "The main reason is leverage. ASIC limits retail traders to 1:30 leverage, while offshore brokers offer 1:500 to 1:3000. Experienced traders prefer higher leverage for capital efficiency and strategy flexibility. Additionally, offshore brokers often provide more diverse trading instruments, better bonuses, and cryptocurrency deposit options that ASIC-regulated brokers cannot offer."
+      question: "Why do Singapore traders choose offshore brokers over MAS-regulated ones?",
+      answer: "The main reasons are leverage and costs. MAS-regulated brokers limit retail leverage to 1:50 for major pairs (1:20 for non-major) and often charge higher fees. Offshore brokers offer 1:500 to 1:3000 leverage, lower minimum deposits, and tighter spreads. Additionally, offshore brokers provide welcome bonuses, more exotic trading instruments, and cryptocurrency deposits — features less common with MAS-licensed brokers."
     },
     {
-      question: "What's the difference between ASIC and offshore regulation?",
-      answer: "ASIC (Australian Securities and Investments Commission) provides the highest level of investor protection, including negative balance protection and compensation schemes. Offshore regulators like CySEC (Cyprus), FCA (UK), and DFSA (Dubai) also offer strong oversight but with different leverage limits and protections. ASIC-regulated brokers cap leverage at 1:30, while offshore entities can offer much higher leverage for experienced traders."
+      question: "What is MAS and how does it regulate forex trading?",
+      answer: "MAS (Monetary Authority of Singapore) is Singapore's central bank and financial regulatory authority. It regulates all capital markets activities, including forex trading, under the Securities and Futures Act (SFA). MAS enforces leverage limits (1:50 for specified currency pairs), requires brokers to hold a Capital Markets Services (CMS) license, and mandates client fund segregation. These regulations provide robust protection but limit trading flexibility."
     },
     {
-      question: "Can I legally use high leverage as an Australian trader?",
-      answer: "Yes, it's legal for Australian residents to trade with offshore brokers offering high leverage. ASIC's 1:30 limit only applies to brokers operating under Australian licenses. You can legally access international brokers, but you won't have ASIC's investor protection. Always declare trading profits to the ATO (Australian Taxation Office) as capital gains or business income."
+      question: "Are forex trading profits taxable in Singapore?",
+      answer: "Singapore has no capital gains tax, making it one of the most tax-friendly jurisdictions for forex traders. Personal trading profits are generally tax-free. However, if the IRAS (Inland Revenue Authority of Singapore) considers your trading a business activity (frequent trading, it's your primary income source), profits may be taxed as income. Consult a Singapore tax professional to determine your specific tax obligations."
     },
     {
-      question: "How do I fund an offshore forex broker account from Australia?",
-      answer: "Most offshore brokers accept multiple payment methods: credit/debit cards (Visa, Mastercard), bank wire transfers, e-wallets (Skrill, Neteller), and cryptocurrencies (Bitcoin, USDT). Many process AUD deposits, though some may require conversion to USD or EUR. Deposit times range from instant (cards, crypto) to 1-3 days (wire transfer). Always check for deposit fees before funding."
+      question: "What payment methods can Singaporean traders use?",
+      answer: "Most offshore brokers accept Singapore-friendly payment methods: credit/debit cards (Visa, Mastercard), bank transfers (DBS, OCBC, UOB), e-wallets (Skrill, Neteller), and cryptocurrencies (Bitcoin, USDT). SGD deposits are accepted by some brokers, though many require conversion to USD. Card and e-wallet deposits are typically instant; bank transfers take 1-3 business days."
     },
     {
-      question: "What are the tax implications for Australian forex traders?",
-      answer: "Forex trading profits are taxable in Australia. If you're a casual trader, profits are treated as capital gains (50% discount if held >12 months). Active traders may be considered running a business, with profits taxed as ordinary income. You can deduct trading-related expenses (software, data feeds, education). Losses can offset gains. Consult a tax professional familiar with forex taxation for your specific situation."
+      question: "What leverage limits does MAS impose?",
+      answer: "MAS limits retail traders to 1:50 leverage for specified currency pairs (major pairs like EUR/USD, GBP/USD) and 1:20 for non-specified pairs. These limits apply only to MAS-licensed brokers. Accredited investors (net personal assets exceeding S$2 million, or income exceeding S$300,000 in the preceding 12 months) can access higher leverage. Most retail traders who want higher leverage opt for offshore brokers instead."
     },
     {
-      question: "Which broker is best for beginners in Australia?",
-      answer: "XM is ideal for Australian beginners due to its ASIC regulation (Australian entity available), low $5 minimum deposit, excellent educational resources (webinars, tutorials), and 24/5 multilingual support. The platform offers 1:1000 leverage on offshore accounts, giving you flexibility as you gain experience. HFM is another great choice with comprehensive copy trading features for learning from experienced traders."
+      question: "Is it safe to trade with offshore brokers from Singapore?",
+      answer: "Trading with reputable offshore brokers is generally safe when you choose well-regulated entities. Look for brokers licensed by CySEC (Cyprus), FCA (UK), or ASIC (Australia) — these regulators enforce client fund segregation, negative balance protection, and capital adequacy requirements. Avoid unregulated brokers. While you lose MAS protections, top-tier offshore brokers maintain standards comparable to MAS-regulated firms."
     },
     {
-      question: "How long do withdrawals take from offshore brokers?",
-      answer: "Withdrawal processing times vary by broker and method: E-wallets (Skrill, Neteller) - 24 hours; Cryptocurrency - 24-48 hours; Credit/debit cards - 2-5 business days; Bank wire transfer - 3-7 business days. Top brokers like XM, HFM, and FXGlory typically process requests within 24 hours. First-time withdrawals may take longer due to verification requirements. Most brokers don't charge withdrawal fees, but your bank or payment provider might."
+      question: "Which broker is best for beginners in Singapore?",
+      answer: "XM is ideal for Singaporean beginners with its $5 minimum deposit, comprehensive educational resources (daily webinars, video tutorials), and 24/5 multilingual support including Mandarin and Malay. HFM is another excellent choice with its copy trading platform, allowing newcomers to follow experienced traders while learning. Both offer demo accounts and user-friendly MT4/MT5 platforms."
     }
   ];
 
   const handleCtaClick = (brokerId: string, position: number) => {
-    trackAffiliateClick(brokerId, "best_brokers_australia", `position_${position}`);
+    trackAffiliateClick(brokerId, "best_brokers_singapore", `position_${position}`);
   };
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title="11 Best Forex Brokers Australia 2026 | High Leverage ASIC Alternatives"
-        description="Compare 11 top high leverage forex brokers for Australian traders. Break free from ASIC's 1:30 limit. Affiliate & independent reviews. Updated February 2026."
-        keywords="forex brokers australia, high leverage forex, asic alternative, offshore forex brokers, best forex brokers australia, forex trading australia"
+        title="11 Best Forex Brokers Singapore 2026 | High Leverage MAS Alternatives"
+        description="Compare 11 top forex brokers for Singapore traders. Access higher leverage beyond MAS limits. Regulated brokers with competitive spreads. Updated March 2026."
+        keywords="forex brokers singapore, best forex brokers singapore, high leverage forex singapore, mas alternative, forex trading singapore, singapore forex brokers"
         ogType="article"
       />
       <Header />
@@ -85,15 +85,15 @@ const BestBrokersAustralia = () => {
             <div className="text-center max-w-4xl mx-auto">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
                 <Award className="w-4 h-4" />
-                Expert Reviewed | Updated February 2026
+                Expert Reviewed | Updated March 2026
               </div>
 
               <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
-                Best High Leverage Forex Brokers in Australia (2026)
+                Best High Leverage Forex Brokers in Singapore (2026)
               </h1>
 
               <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-                Break free from ASIC's 1:30 leverage limit. Compare 11 top-rated brokers offering leverage up to 1:3000 for experienced Australian traders.
+                Go beyond MAS's leverage restrictions. Compare 11 top-rated international brokers offering leverage up to 1:3000 for experienced Singapore traders.
               </p>
 
               <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
@@ -120,31 +120,31 @@ const BestBrokersAustralia = () => {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-3">Detailed Broker Reviews</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                In-depth analysis of each broker's strengths, weaknesses, and suitability for Australian traders seeking ASIC alternatives
+                In-depth analysis of each broker's strengths, weaknesses, and suitability for Singapore traders seeking MAS alternatives
               </p>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2">
-              {australiaBrokers.map((broker, index) => (
+              {singaporeBrokers.map((broker, index) => (
                 <BrokerCard key={broker.id} broker={broker} rank={index + 1} />
               ))}
             </div>
           </div>
         </section>
 
-        {/* Why Australian Traders Choose These Brokers */}
+        {/* Why Singapore Traders Choose These Brokers */}
         <section className="py-12 md:py-16">
           <div className="container max-w-4xl mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-8 text-center">Why Australian Traders Choose Offshore Brokers</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">Why Singapore Traders Choose Offshore Brokers</h2>
 
             <div className="prose prose-slate dark:prose-invert max-w-none">
               <p className="text-lg leading-relaxed text-muted-foreground">
-                In 2021, ASIC (Australian Securities and Investments Commission) introduced strict leverage restrictions, capping retail traders at 1:30 for major forex pairs. While these regulations aim to protect inexperienced traders, they significantly limit the strategies available to seasoned professionals.
+                Singapore is one of Asia's largest forex trading hubs, with the MAS (Monetary Authority of Singapore) providing world-class financial regulation. However, MAS's retail leverage limits of 1:50 for major pairs push experienced traders toward offshore alternatives that offer greater trading flexibility.
               </p>
 
-              <h3 className="text-2xl font-semibold mt-8 mb-4">The ASIC Leverage Dilemma</h3>
+              <h3 className="text-2xl font-semibold mt-8 mb-4">The MAS Leverage Limitation</h3>
               <p className="leading-relaxed text-muted-foreground">
-                ASIC's 1:30 leverage cap means Australian traders need $3,333 in capital to control a standard 1-lot position (100,000 units). Compare this to offshore brokers offering 1:500 leverage, where the same position requires just $200. For experienced traders with proven risk management systems, this restriction dramatically reduces capital efficiency.
+                MAS restricts retail forex leverage to 1:50 for specified currency pairs and 1:20 for non-specified pairs. This means a standard 1-lot position (100,000 units) requires $2,000 margin at 1:50 leverage. Compare this to offshore brokers offering 1:500, where the same position needs just $200. While Singapore's accredited investor scheme allows higher leverage, the qualification bar (S$2 million in net personal assets) excludes most retail traders.
               </p>
 
               <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 my-6">
@@ -153,37 +153,37 @@ const BestBrokersAustralia = () => {
                   Important Disclosure
                 </h4>
                 <p className="text-sm text-muted-foreground mb-0">
-                  High leverage magnifies both profits and losses. A 1% adverse move with 1:100 leverage can wipe out your entire position. Only experienced traders with strict risk management should consider leverage above 1:50. Never risk more than 1-2% of your trading capital per trade.
+                  High leverage magnifies both profits and losses. A 1% adverse move with 1:100 leverage can wipe out your entire position. Only experienced traders with strict risk management should consider leverage above 1:50. Never risk more than 1-2% of your trading capital per trade. MAS's leverage limits are designed to protect retail investors.
                 </p>
               </div>
 
-              <h3 className="text-2xl font-semibold mt-8 mb-4">Benefits of Offshore Brokers for Australian Traders</h3>
+              <h3 className="text-2xl font-semibold mt-8 mb-4">Benefits of Offshore Brokers for Singapore Traders</h3>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Higher Leverage:</strong> Access 1:500 to 1:3000 leverage for advanced trading strategies like scalping and hedging</span>
+                  <span><strong>Higher Leverage:</strong> Access 1:500 to 1:3000 leverage without needing accredited investor status</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>More Trading Instruments:</strong> Trade cryptocurrencies, exotic pairs, and CFDs on stocks not available with ASIC brokers</span>
+                  <span><strong>No Capital Gains Tax:</strong> Singapore's tax-free environment for personal trading gains makes offshore forex trading even more attractive</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Welcome Bonuses:</strong> Many offshore brokers offer deposit bonuses (banned under ASIC regulations)</span>
+                  <span><strong>More Trading Instruments:</strong> Access cryptocurrencies, exotic pairs, and global CFDs beyond MAS-permitted products</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Crypto Deposits:</strong> Fund accounts with Bitcoin, USDT, and other cryptocurrencies for faster, anonymous transactions</span>
+                  <span><strong>Welcome Bonuses:</strong> Offshore brokers offer deposit bonuses and promotions not available with MAS-licensed entities</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Competitive Spreads:</strong> Offshore ECN brokers often offer tighter spreads (from 0.0 pips) than ASIC-regulated competitors</span>
+                  <span><strong>Competitive Spreads:</strong> ECN offshore brokers frequently offer tighter spreads (from 0.0 pips) than MAS-regulated competitors</span>
                 </li>
               </ul>
 
               <h3 className="text-2xl font-semibold mt-8 mb-4">Trade-offs: What You Give Up</h3>
               <p className="leading-relaxed text-muted-foreground">
-                Offshore brokers don't provide ASIC's investor compensation scheme or the Australian Financial Complaints Authority (AFCA) dispute resolution. However, top-tier offshore brokers with CySEC, FCA, or DFSA licenses maintain stringent capital requirements, segregate client funds, and offer negative balance protection—mitigating most risks for informed traders.
+                Offshore brokers operate outside MAS jurisdiction, meaning you lose access to Singapore's dispute resolution mechanisms and investor protection schemes. However, reputable offshore brokers with CySEC, FCA, or ASIC licenses maintain stringent capital requirements, segregated client accounts, and negative balance protection. For experienced traders, these protections often provide adequate safety.
               </p>
             </div>
           </div>
@@ -208,10 +208,10 @@ const BestBrokersAustralia = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="text-sm text-muted-foreground space-y-2">
-                    <p>• Spreads (majors, minors, exotics)</p>
+                    <p>• USD/SGD and major pair spreads</p>
                     <p>• Commission structure</p>
                     <p>• Available leverage</p>
-                    <p>• Execution speed & slippage</p>
+                    <p>• Execution speed (Singapore servers)</p>
                     <p>• Minimum deposit requirements</p>
                   </CardContent>
                 </Card>
@@ -240,10 +240,10 @@ const BestBrokersAustralia = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="text-sm text-muted-foreground space-y-2">
-                    <p>• 24/5 or 24/7 availability</p>
+                    <p>• Asian timezone coverage</p>
                     <p>• Live chat response times</p>
+                    <p>• Multilingual support (English, Mandarin)</p>
                     <p>• Email support quality</p>
-                    <p>• Phone support (Australian hours)</p>
                     <p>• Educational resources</p>
                   </CardContent>
                 </Card>
@@ -256,7 +256,7 @@ const BestBrokersAustralia = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="text-sm text-muted-foreground space-y-2">
-                    <p>• Regulatory licenses (CySEC, FCA)</p>
+                    <p>• Regulatory licenses verified</p>
                     <p>• Client fund segregation</p>
                     <p>• Negative balance protection</p>
                     <p>• Company history & reputation</p>
@@ -268,7 +268,7 @@ const BestBrokersAustralia = () => {
               <div className="bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 rounded-lg p-6 mt-8">
                 <h4 className="font-semibold text-lg mb-3">Affiliate Disclosure</h4>
                 <p className="text-sm text-muted-foreground mb-0">
-                  BeginnerFXGuide.com may receive compensation when you open an account through our links. This does not influence our rankings—we only recommend brokers we've thoroughly tested and would use ourselves. Our priority is providing honest, accurate information to help Australian traders make informed decisions.
+                  BeginnerFXGuide.com may receive compensation when you open an account through our links. This does not influence our rankings — we only recommend brokers we've thoroughly tested and would use ourselves. Our priority is providing honest, accurate information to help Singapore traders make informed decisions.
                 </p>
               </div>
             </div>
@@ -333,18 +333,18 @@ const BestBrokersAustralia = () => {
           <div className="container max-w-4xl mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Trade with Higher Leverage?</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join thousands of Australian traders who've moved beyond ASIC's leverage limits. Start with our #1 recommended broker:
+              Join thousands of Singapore traders accessing international leverage. Start with our #1 recommended broker:
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" asChild>
                 <a
-                  href={getAffiliateUrl(australiaBrokers[0].id, { ...UTM_CONFIGS.HERO_PRIMARY, campaign: "australia_best" })}
+                  href={getAffiliateUrl(singaporeBrokers[0].id, { ...UTM_CONFIGS.HERO_PRIMARY, campaign: "singapore_best" })}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => handleCtaClick(australiaBrokers[0].id, 1)}
+                  onClick={() => handleCtaClick(singaporeBrokers[0].id, 1)}
                 >
-                  Open Account with {australiaBrokers[0].name}
+                  Open Account with {singaporeBrokers[0].name}
                   <ExternalLink className="w-4 h-4" />
                 </a>
               </Button>
@@ -369,15 +369,15 @@ const BestBrokersAustralia = () => {
           asChild
         >
           <a
-            href={getAffiliateUrl(australiaBrokers[0].id, {
+            href={getAffiliateUrl(singaporeBrokers[0].id, {
               ...UTM_CONFIGS.MOBILE_STICKY,
-              campaign: "australia_best"
+              campaign: "singapore_best"
             })}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => handleCtaClick(australiaBrokers[0].id, 1)}
+            onClick={() => handleCtaClick(singaporeBrokers[0].id, 1)}
           >
-            Start Trading with {australiaBrokers[0].name}
+            Start Trading with {singaporeBrokers[0].name}
             <ExternalLink className="w-4 h-4" />
           </a>
         </Button>
@@ -388,4 +388,4 @@ const BestBrokersAustralia = () => {
   );
 };
 
-export default BestBrokersAustralia;
+export default BestBrokersSingapore;

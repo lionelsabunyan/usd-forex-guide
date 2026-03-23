@@ -8,6 +8,7 @@ import { HelmetProvider } from "react-helmet-async";
 import ScrollToTop from "./components/ScrollToTop";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 import MobileStickyFooter from "./components/MobileStickyFooter";
+import ExitIntentPopup from "./components/ExitIntentPopup";
 import { ThemeProvider } from "./components/ThemeProvider";
 
 // Loading component for Suspense fallback
@@ -100,6 +101,9 @@ const CharlesSchwabvsInteractiveBrokers = lazy(() => import("./pages/compare/Cha
 const XMvsFXTM = lazy(() => import("./pages/compare/XMvsFXTM"));
 const BestBrokersAustralia = lazy(() => import("./pages/BestBrokersAustralia"));
 const BestBrokersUK = lazy(() => import("./pages/BestBrokersUK"));
+const BestBrokersCanada = lazy(() => import("./pages/BestBrokersCanada"));
+const BestBrokersSingapore = lazy(() => import("./pages/BestBrokersSingapore"));
+const BestBrokersEU = lazy(() => import("./pages/BestBrokersEU"));
 
 // Resources - Lazy loaded
 const USForexChecklist = lazy(() => import("./pages/resources/USForexChecklist"));
@@ -111,6 +115,10 @@ const Hakkimizda = lazy(() => import("./pages/tr/Hakkimizda"));
 const Iletisim = lazy(() => import("./pages/tr/Iletisim"));
 const GizlilikPolitikasi = lazy(() => import("./pages/tr/GizlilikPolitikasi"));
 const YasalUyari = lazy(() => import("./pages/tr/YasalUyari"));
+
+// Turkish (TR) Blog Pages - Lazy loaded
+const BlogSayfasi = lazy(() => import("./pages/tr/blog/BlogSayfasi"));
+const BlogYaziSayfasi = lazy(() => import("./pages/tr/blog/BlogYaziSayfasi"));
 
 // Turkish (TR) Review Pages - Lazy loaded
 const FxProInceleme = lazy(() => import("./pages/tr/inceleme/FxProInceleme"));
@@ -160,6 +168,7 @@ const App = () => (
           <BrowserRouter>
             <ScrollToTop />
             <MobileStickyFooter />
+            {!isReactSnap && <ExitIntentPopup />}
             <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Index />} />
@@ -193,6 +202,9 @@ const App = () => (
             <Route path="/brokers" element={<BrokersPage />} />
             <Route path="/brokers/australia" element={<BestBrokersAustralia />} />
             <Route path="/brokers/uk" element={<BestBrokersUK />} />
+            <Route path="/brokers/canada" element={<BestBrokersCanada />} />
+            <Route path="/brokers/singapore" element={<BestBrokersSingapore />} />
+            <Route path="/brokers/eu" element={<BestBrokersEU />} />
             <Route path="/compare" element={<ComparePage />} />
             <Route path="/compare/midasfx-vs-hankotrade" element={<MidasFXvsHankotrade />} />
             <Route path="/compare/oanda-vs-forexcom" element={<OANDAvsForexcom />} />
@@ -252,6 +264,10 @@ const App = () => (
             <Route path="/tr/iletisim" element={<Iletisim />} />
             <Route path="/tr/gizlilik-politikasi" element={<GizlilikPolitikasi />} />
             <Route path="/tr/yasal-uyari" element={<YasalUyari />} />
+
+            {/* Turkish (TR) Blog Routes */}
+            <Route path="/tr/blog" element={<BlogSayfasi />} />
+            <Route path="/tr/blog/:slug" element={<BlogYaziSayfasi />} />
 
             {/* Turkish (TR) Review Routes */}
             <Route path="/tr/inceleme/fxpro" element={<FxProInceleme />} />

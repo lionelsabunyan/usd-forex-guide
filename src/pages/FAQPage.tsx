@@ -1,7 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Link } from "react-router-dom";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { HelpCircle, Shield, Users, CreditCard, BarChart3, Banknote } from "lucide-react";
+import { HelpCircle, Shield, Users, CreditCard, BarChart3, Banknote, ArrowRight } from "lucide-react";
 import SEO from "@/components/SEO";
 
 const faqCategories = [
@@ -227,22 +228,58 @@ const FAQPage = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Related Resources */}
       <section className="py-16 bg-gradient-card border-t border-border">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-3xl font-heading font-bold mb-4">
+              Explore <span className="text-gradient-gold">More Resources</span>
+            </h2>
+            <p className="text-muted-foreground">
+              Dive deeper into forex trading with our guides, tools, and glossary.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <Link to="/guides/beginners-guide" className="bg-secondary/30 border border-border rounded-xl p-6 text-center hover:border-primary/50 transition-all group">
+              <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">Beginner's Guide</h3>
+              <p className="text-sm text-muted-foreground mb-3">Start your forex trading journey with the fundamentals.</p>
+              <span className="text-primary text-sm font-medium inline-flex items-center gap-1">Read Guide <ArrowRight className="w-3 h-3" /></span>
+            </Link>
+            <Link to="/glossary" className="bg-secondary/30 border border-border rounded-xl p-6 text-center hover:border-primary/50 transition-all group">
+              <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">Forex Glossary</h3>
+              <p className="text-sm text-muted-foreground mb-3">Look up forex terms like pip, spread, leverage, and more.</p>
+              <span className="text-primary text-sm font-medium inline-flex items-center gap-1">Browse Terms <ArrowRight className="w-3 h-3" /></span>
+            </Link>
+            <Link to="/tools" className="bg-secondary/30 border border-border rounded-xl p-6 text-center hover:border-primary/50 transition-all group">
+              <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">Trading Tools</h3>
+              <p className="text-sm text-muted-foreground mb-3">Free calculators for pip value, position sizing, and taxes.</p>
+              <span className="text-primary text-sm font-medium inline-flex items-center gap-1">Use Tools <ArrowRight className="w-3 h-3" /></span>
+            </Link>
+            <Link to="/brokers" className="bg-secondary/30 border border-border rounded-xl p-6 text-center hover:border-primary/50 transition-all group">
+              <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">Broker Reviews</h3>
+              <p className="text-sm text-muted-foreground mb-3">In-depth reviews of 22 forex brokers for US traders.</p>
+              <span className="text-primary text-sm font-medium inline-flex items-center gap-1">View Brokers <ArrowRight className="w-3 h-3" /></span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 border-t border-border">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-heading font-bold mb-4">
             Still Have <span className="text-gradient-gold">Questions?</span>
           </h2>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-            Can't find the answer you're looking for? Our team is here to help 
+            Can't find the answer you're looking for? Our team is here to help
             you navigate the world of Forex trading.
           </p>
-          <a 
-            href="mailto:support@forexscout.com" 
+          <Link
+            to="/contact"
             className="inline-flex items-center justify-center px-8 py-3 bg-gradient-gold text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-opacity glow-gold"
           >
             Contact Us
-          </a>
+          </Link>
         </div>
       </section>
 

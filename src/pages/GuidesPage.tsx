@@ -196,38 +196,49 @@ const GuidesPage = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <Link 
-              to="/" 
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <Link
+              to="/tools"
               className="bg-secondary/30 border border-border rounded-xl p-6 text-center hover:border-primary/50 transition-all"
             >
               <div className="w-12 h-12 mx-auto mb-4 rounded-lg bg-primary/10 flex items-center justify-center">
-                <Scale className="w-6 h-6 text-primary" />
+                <LineChart className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="font-semibold mb-2">Compare Brokers</h3>
-              <p className="text-sm text-muted-foreground">Side-by-side broker comparison</p>
+              <h3 className="font-semibold mb-2">Trading Tools</h3>
+              <p className="text-sm text-muted-foreground">Free calculators for pip, margin & more</p>
             </Link>
-            
-            <Link 
-              to="/faq" 
+
+            <Link
+              to="/glossary"
               className="bg-secondary/30 border border-border rounded-xl p-6 text-center hover:border-primary/50 transition-all"
             >
               <div className="w-12 h-12 mx-auto mb-4 rounded-lg bg-primary/10 flex items-center justify-center">
                 <BookOpen className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="font-semibold mb-2">FAQ</h3>
-              <p className="text-sm text-muted-foreground">Answers to common questions</p>
+              <h3 className="font-semibold mb-2">Forex Glossary</h3>
+              <p className="text-sm text-muted-foreground">Key trading terms explained</p>
             </Link>
-            
-            <Link 
-              to="/review/fxglory" 
+
+            <Link
+              to="/brokers"
               className="bg-secondary/30 border border-border rounded-xl p-6 text-center hover:border-primary/50 transition-all"
             >
               <div className="w-12 h-12 mx-auto mb-4 rounded-lg bg-primary/10 flex items-center justify-center">
                 <Shield className="w-6 h-6 text-primary" />
               </div>
               <h3 className="font-semibold mb-2">Broker Reviews</h3>
-              <p className="text-sm text-muted-foreground">In-depth broker analysis</p>
+              <p className="text-sm text-muted-foreground">In-depth analysis of 22 brokers</p>
+            </Link>
+
+            <Link
+              to="/resources/us-forex-checklist"
+              className="bg-secondary/30 border border-border rounded-xl p-6 text-center hover:border-primary/50 transition-all"
+            >
+              <div className="w-12 h-12 mx-auto mb-4 rounded-lg bg-primary/10 flex items-center justify-center">
+                <Scale className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="font-semibold mb-2">US Forex Checklist</h3>
+              <p className="text-sm text-muted-foreground">Free downloadable checklist for US traders</p>
             </Link>
           </div>
         </div>

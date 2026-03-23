@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Star, Check, ExternalLink, Shield, Zap, AlertTriangle, TrendingUp, Award, Users, ChevronDown } from "lucide-react";
+import { Check, ExternalLink, Shield, Zap, AlertTriangle, TrendingUp, Award, Users, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { brokers } from "@/lib/brokers";
@@ -10,70 +10,70 @@ import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const BestBrokersAustralia = () => {
+const BestBrokersCanada = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  // Australia broker ranking: Leverage-first (ASIC alternative positioning)
+  // Canada broker ranking: IIROC alternative positioning, CAD accounts
   // 11 brokers total: 7 affiliate + 4 non-affiliate (authority building)
-  const australiaBrokers = [
+  const canadaBrokers = [
     brokers.fxglory,     // 1:3000 - SVG FSA ✅ Affiliate
     brokers.coinexx,     // 1:500 - Crypto-native ✅ Affiliate
     brokers.midasfx,     // 1:500 - FSA ✅ Affiliate
     brokers.hankotrade,  // 1:500 - VFSC ✅ Affiliate
     brokers.hfm,         // 1:2000 - CySEC/FCA ✅ Affiliate
-    brokers.xm,          // 1:1000 - ASIC/CySEC ✅ Affiliate
+    brokers.xm,          // 1:1000 - CySEC ✅ Affiliate
     brokers.fxpro,       // 1:200 - FCA/CySEC ✅ Affiliate
     brokers.exness,      // 1:2000 - CySEC/FCA ❌ Non-affiliate
     brokers.fxtm,        // 1:1000 - CySEC/FCA ❌ Non-affiliate
-    brokers.pepperstone, // 1:500 - ASIC/FCA ❌ Non-affiliate (ASIC regulated!)
+    brokers.pepperstone, // 1:500 - ASIC/FCA ❌ Non-affiliate
     brokers.fbs,         // 1:3000 - CySEC/FSCA ❌ Non-affiliate
   ];
 
   const faqs = [
     {
-      question: "Are offshore forex brokers safe for Australian traders?",
-      answer: "Yes, reputable offshore brokers with proper regulation (CySEC, FCA, DFSA) can be safe alternatives for Australian traders. While they operate outside ASIC's jurisdiction, top-tier offshore brokers maintain strict compliance standards and segregate client funds. However, you lose ASIC's investor protection scheme, so it's crucial to choose well-established brokers with strong regulatory oversight."
+      question: "Can Canadian traders legally use offshore forex brokers?",
+      answer: "Yes, Canadian residents can legally trade with offshore brokers. While IIROC (Investment Industry Regulatory Organization of Canada) regulates domestic brokers, it does not prohibit Canadians from using international brokers licensed in other jurisdictions (CySEC, FCA, ASIC). However, you won't have access to CIPF (Canadian Investor Protection Fund) coverage. Choose well-regulated offshore brokers with strong reputations to mitigate risk."
     },
     {
-      question: "Why do Australian traders use offshore brokers?",
-      answer: "The main reason is leverage. ASIC limits retail traders to 1:30 leverage, while offshore brokers offer 1:500 to 1:3000. Experienced traders prefer higher leverage for capital efficiency and strategy flexibility. Additionally, offshore brokers often provide more diverse trading instruments, better bonuses, and cryptocurrency deposit options that ASIC-regulated brokers cannot offer."
+      question: "Why do Canadian traders choose offshore brokers over IIROC-regulated ones?",
+      answer: "The main reasons are leverage and product diversity. IIROC-regulated brokers typically cap leverage at 1:50 for major pairs and have strict margin requirements. Offshore brokers offer 1:500 to 1:3000 leverage, giving experienced traders more capital efficiency. Additionally, offshore brokers provide access to more trading instruments, welcome bonuses, and cryptocurrency deposits — features restricted under IIROC rules."
     },
     {
-      question: "What's the difference between ASIC and offshore regulation?",
-      answer: "ASIC (Australian Securities and Investments Commission) provides the highest level of investor protection, including negative balance protection and compensation schemes. Offshore regulators like CySEC (Cyprus), FCA (UK), and DFSA (Dubai) also offer strong oversight but with different leverage limits and protections. ASIC-regulated brokers cap leverage at 1:30, while offshore entities can offer much higher leverage for experienced traders."
+      question: "What is IIROC and how does it affect forex trading in Canada?",
+      answer: "IIROC (Investment Industry Regulatory Organization of Canada) is the national self-regulatory body that oversees investment dealers and trading activity in Canadian debt and equity marketplaces. IIROC sets leverage limits (typically 1:50 for major pairs), enforces strict margin requirements, and requires brokers to maintain client fund segregation. While these rules protect retail traders, they limit the strategies available to experienced professionals."
     },
     {
-      question: "Can I legally use high leverage as an Australian trader?",
-      answer: "Yes, it's legal for Australian residents to trade with offshore brokers offering high leverage. ASIC's 1:30 limit only applies to brokers operating under Australian licenses. You can legally access international brokers, but you won't have ASIC's investor protection. Always declare trading profits to the ATO (Australian Taxation Office) as capital gains or business income."
+      question: "Do I need to pay taxes on forex trading profits in Canada?",
+      answer: "Yes, forex trading profits are taxable in Canada. The CRA (Canada Revenue Agency) treats forex income as either capital gains or business income depending on your trading frequency and intent. Capital gains are 50% taxable (you only pay tax on half the gain). Active traders may be considered running a business, with profits fully taxable as business income. Keep detailed records of all trades and consult a Canadian tax professional for your specific situation."
     },
     {
-      question: "How do I fund an offshore forex broker account from Australia?",
-      answer: "Most offshore brokers accept multiple payment methods: credit/debit cards (Visa, Mastercard), bank wire transfers, e-wallets (Skrill, Neteller), and cryptocurrencies (Bitcoin, USDT). Many process AUD deposits, though some may require conversion to USD or EUR. Deposit times range from instant (cards, crypto) to 1-3 days (wire transfer). Always check for deposit fees before funding."
+      question: "Can I deposit in CAD with offshore brokers?",
+      answer: "Some offshore brokers accept CAD deposits, but most require conversion to USD or EUR. Wire transfers and credit cards process CAD directly, though conversion fees may apply. E-wallets like Skrill and Neteller support CAD accounts. Cryptocurrency deposits (Bitcoin, USDT) bypass currency conversion entirely. Check each broker's deposit options and fees before opening an account to minimize conversion costs."
     },
     {
-      question: "What are the tax implications for Australian forex traders?",
-      answer: "Forex trading profits are taxable in Australia. If you're a casual trader, profits are treated as capital gains (50% discount if held >12 months). Active traders may be considered running a business, with profits taxed as ordinary income. You can deduct trading-related expenses (software, data feeds, education). Losses can offset gains. Consult a tax professional familiar with forex taxation for your specific situation."
+      question: "Which provinces regulate forex trading differently?",
+      answer: "Forex regulation in Canada operates at both federal and provincial levels. While IIROC provides national oversight, provincial securities commissions (OSC in Ontario, AMF in Quebec, BCSC in British Columbia) may have additional requirements. Quebec's AMF, for example, has its own registration requirements for dealers. However, trading with offshore brokers is not prohibited by any province — the regulations primarily affect brokers operating within Canada."
     },
     {
-      question: "Which broker is best for beginners in Australia?",
-      answer: "XM is ideal for Australian beginners due to its ASIC regulation (Australian entity available), low $5 minimum deposit, excellent educational resources (webinars, tutorials), and 24/5 multilingual support. The platform offers 1:1000 leverage on offshore accounts, giving you flexibility as you gain experience. HFM is another great choice with comprehensive copy trading features for learning from experienced traders."
+      question: "What's the minimum deposit to start forex trading from Canada?",
+      answer: "Minimum deposits vary by broker. Among our recommended brokers, you can start with as little as $1 (MidasFX), $5 (XM), or $0 (HFM). Most offshore brokers accept small initial deposits, making forex trading accessible to Canadian beginners. However, for serious trading with proper risk management, a starting capital of $500-$1,000 CAD is recommended to allow for adequate position sizing."
     },
     {
-      question: "How long do withdrawals take from offshore brokers?",
-      answer: "Withdrawal processing times vary by broker and method: E-wallets (Skrill, Neteller) - 24 hours; Cryptocurrency - 24-48 hours; Credit/debit cards - 2-5 business days; Bank wire transfer - 3-7 business days. Top brokers like XM, HFM, and FXGlory typically process requests within 24 hours. First-time withdrawals may take longer due to verification requirements. Most brokers don't charge withdrawal fees, but your bank or payment provider might."
+      question: "Which broker is best for Canadian beginners?",
+      answer: "XM is an excellent choice for Canadian beginners with its $5 minimum deposit, extensive educational resources (daily webinars, tutorials), and user-friendly MT4/MT5 platforms. HFM is another strong option with its copy trading feature, allowing newcomers to learn from experienced traders. Both brokers offer demo accounts for risk-free practice and 24/5 multilingual customer support."
     }
   ];
 
   const handleCtaClick = (brokerId: string, position: number) => {
-    trackAffiliateClick(brokerId, "best_brokers_australia", `position_${position}`);
+    trackAffiliateClick(brokerId, "best_brokers_canada", `position_${position}`);
   };
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title="11 Best Forex Brokers Australia 2026 | High Leverage ASIC Alternatives"
-        description="Compare 11 top high leverage forex brokers for Australian traders. Break free from ASIC's 1:30 limit. Affiliate & independent reviews. Updated February 2026."
-        keywords="forex brokers australia, high leverage forex, asic alternative, offshore forex brokers, best forex brokers australia, forex trading australia"
+        title="11 Best Forex Brokers Canada 2026 | High Leverage IIROC Alternatives"
+        description="Compare 11 top forex brokers for Canadian traders. Access higher leverage beyond IIROC limits. CAD accounts, regulated brokers. Updated March 2026."
+        keywords="forex brokers canada, best forex brokers canada, high leverage forex canada, iiroc alternative, forex trading canada, canadian forex brokers"
         ogType="article"
       />
       <Header />
@@ -85,15 +85,15 @@ const BestBrokersAustralia = () => {
             <div className="text-center max-w-4xl mx-auto">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
                 <Award className="w-4 h-4" />
-                Expert Reviewed | Updated February 2026
+                Expert Reviewed | Updated March 2026
               </div>
 
               <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
-                Best High Leverage Forex Brokers in Australia (2026)
+                Best High Leverage Forex Brokers in Canada (2026)
               </h1>
 
               <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-                Break free from ASIC's 1:30 leverage limit. Compare 11 top-rated brokers offering leverage up to 1:3000 for experienced Australian traders.
+                Go beyond IIROC's leverage restrictions. Compare 11 top-rated international brokers offering leverage up to 1:3000 for experienced Canadian traders.
               </p>
 
               <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
@@ -120,31 +120,31 @@ const BestBrokersAustralia = () => {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-3">Detailed Broker Reviews</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                In-depth analysis of each broker's strengths, weaknesses, and suitability for Australian traders seeking ASIC alternatives
+                In-depth analysis of each broker's strengths, weaknesses, and suitability for Canadian traders seeking IIROC alternatives
               </p>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2">
-              {australiaBrokers.map((broker, index) => (
+              {canadaBrokers.map((broker, index) => (
                 <BrokerCard key={broker.id} broker={broker} rank={index + 1} />
               ))}
             </div>
           </div>
         </section>
 
-        {/* Why Australian Traders Choose These Brokers */}
+        {/* Why Canadian Traders Choose These Brokers */}
         <section className="py-12 md:py-16">
           <div className="container max-w-4xl mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-8 text-center">Why Australian Traders Choose Offshore Brokers</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">Why Canadian Traders Choose Offshore Brokers</h2>
 
             <div className="prose prose-slate dark:prose-invert max-w-none">
               <p className="text-lg leading-relaxed text-muted-foreground">
-                In 2021, ASIC (Australian Securities and Investments Commission) introduced strict leverage restrictions, capping retail traders at 1:30 for major forex pairs. While these regulations aim to protect inexperienced traders, they significantly limit the strategies available to seasoned professionals.
+                Canada's forex market is regulated by IIROC (Investment Industry Regulatory Organization of Canada) at the national level and by provincial securities commissions. While these regulations provide strong investor protection, they impose leverage limits that many experienced traders find restrictive.
               </p>
 
-              <h3 className="text-2xl font-semibold mt-8 mb-4">The ASIC Leverage Dilemma</h3>
+              <h3 className="text-2xl font-semibold mt-8 mb-4">The IIROC Leverage Limitation</h3>
               <p className="leading-relaxed text-muted-foreground">
-                ASIC's 1:30 leverage cap means Australian traders need $3,333 in capital to control a standard 1-lot position (100,000 units). Compare this to offshore brokers offering 1:500 leverage, where the same position requires just $200. For experienced traders with proven risk management systems, this restriction dramatically reduces capital efficiency.
+                IIROC-regulated brokers typically cap retail leverage at 1:50 for major currency pairs — significantly lower than the 1:500 to 1:3000 offered by offshore brokers. This means Canadian traders need $2,000 CAD to control a standard 1-lot position (100,000 units) at 1:50, compared to just $200 at 1:500 with an offshore broker. For experienced traders with proven risk management, this restriction reduces capital efficiency considerably.
               </p>
 
               <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 my-6">
@@ -153,11 +153,11 @@ const BestBrokersAustralia = () => {
                   Important Disclosure
                 </h4>
                 <p className="text-sm text-muted-foreground mb-0">
-                  High leverage magnifies both profits and losses. A 1% adverse move with 1:100 leverage can wipe out your entire position. Only experienced traders with strict risk management should consider leverage above 1:50. Never risk more than 1-2% of your trading capital per trade.
+                  High leverage amplifies both profits and losses. A 1% adverse price movement with 1:100 leverage can wipe out your entire position. Only experienced traders with strict risk management should consider leverage above 1:50. Never risk more than 1-2% of your trading capital per trade. Canadian traders should be aware that offshore brokers do not provide CIPF coverage.
                 </p>
               </div>
 
-              <h3 className="text-2xl font-semibold mt-8 mb-4">Benefits of Offshore Brokers for Australian Traders</h3>
+              <h3 className="text-2xl font-semibold mt-8 mb-4">Benefits of Offshore Brokers for Canadian Traders</h3>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
@@ -165,25 +165,25 @@ const BestBrokersAustralia = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>More Trading Instruments:</strong> Trade cryptocurrencies, exotic pairs, and CFDs on stocks not available with ASIC brokers</span>
+                  <span><strong>More Trading Instruments:</strong> Trade cryptocurrencies, exotic pairs, and CFDs on global stocks not available through IIROC brokers</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Welcome Bonuses:</strong> Many offshore brokers offer deposit bonuses (banned under ASIC regulations)</span>
+                  <span><strong>Welcome Bonuses:</strong> Many offshore brokers offer generous deposit bonuses not permitted under IIROC regulations</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Crypto Deposits:</strong> Fund accounts with Bitcoin, USDT, and other cryptocurrencies for faster, anonymous transactions</span>
+                  <span><strong>Crypto Deposits:</strong> Fund accounts with Bitcoin, USDT, and other cryptocurrencies for fast, low-fee transactions</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Competitive Spreads:</strong> Offshore ECN brokers often offer tighter spreads (from 0.0 pips) than ASIC-regulated competitors</span>
+                  <span><strong>Competitive Spreads:</strong> Offshore ECN brokers often offer tighter spreads (from 0.0 pips) than domestic Canadian brokers</span>
                 </li>
               </ul>
 
               <h3 className="text-2xl font-semibold mt-8 mb-4">Trade-offs: What You Give Up</h3>
               <p className="leading-relaxed text-muted-foreground">
-                Offshore brokers don't provide ASIC's investor compensation scheme or the Australian Financial Complaints Authority (AFCA) dispute resolution. However, top-tier offshore brokers with CySEC, FCA, or DFSA licenses maintain stringent capital requirements, segregate client funds, and offer negative balance protection—mitigating most risks for informed traders.
+                Offshore brokers don't provide CIPF (Canadian Investor Protection Fund) coverage, which protects up to $1 million if an IIROC member firm becomes insolvent. However, top-tier offshore brokers with CySEC, FCA, or ASIC licenses maintain stringent capital requirements, segregate client funds, and offer negative balance protection — mitigating most risks for informed traders.
               </p>
             </div>
           </div>
@@ -208,11 +208,11 @@ const BestBrokersAustralia = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="text-sm text-muted-foreground space-y-2">
-                    <p>• Spreads (majors, minors, exotics)</p>
+                    <p>• USD/CAD and major pair spreads</p>
                     <p>• Commission structure</p>
                     <p>• Available leverage</p>
                     <p>• Execution speed & slippage</p>
-                    <p>• Minimum deposit requirements</p>
+                    <p>• Minimum deposit (CAD-friendly)</p>
                   </CardContent>
                 </Card>
 
@@ -243,7 +243,7 @@ const BestBrokersAustralia = () => {
                     <p>• 24/5 or 24/7 availability</p>
                     <p>• Live chat response times</p>
                     <p>• Email support quality</p>
-                    <p>• Phone support (Australian hours)</p>
+                    <p>• Phone support (Canadian hours)</p>
                     <p>• Educational resources</p>
                   </CardContent>
                 </Card>
@@ -256,7 +256,7 @@ const BestBrokersAustralia = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="text-sm text-muted-foreground space-y-2">
-                    <p>• Regulatory licenses (CySEC, FCA)</p>
+                    <p>• Regulatory licenses verified</p>
                     <p>• Client fund segregation</p>
                     <p>• Negative balance protection</p>
                     <p>• Company history & reputation</p>
@@ -268,7 +268,7 @@ const BestBrokersAustralia = () => {
               <div className="bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 rounded-lg p-6 mt-8">
                 <h4 className="font-semibold text-lg mb-3">Affiliate Disclosure</h4>
                 <p className="text-sm text-muted-foreground mb-0">
-                  BeginnerFXGuide.com may receive compensation when you open an account through our links. This does not influence our rankings—we only recommend brokers we've thoroughly tested and would use ourselves. Our priority is providing honest, accurate information to help Australian traders make informed decisions.
+                  BeginnerFXGuide.com may receive compensation when you open an account through our links. This does not influence our rankings — we only recommend brokers we've thoroughly tested and would use ourselves. Our priority is providing honest, accurate information to help Canadian traders make informed decisions.
                 </p>
               </div>
             </div>
@@ -333,18 +333,18 @@ const BestBrokersAustralia = () => {
           <div className="container max-w-4xl mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Trade with Higher Leverage?</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join thousands of Australian traders who've moved beyond ASIC's leverage limits. Start with our #1 recommended broker:
+              Join thousands of Canadian traders who've moved beyond IIROC's leverage limits. Start with our #1 recommended broker:
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" asChild>
                 <a
-                  href={getAffiliateUrl(australiaBrokers[0].id, { ...UTM_CONFIGS.HERO_PRIMARY, campaign: "australia_best" })}
+                  href={getAffiliateUrl(canadaBrokers[0].id, { ...UTM_CONFIGS.HERO_PRIMARY, campaign: "canada_best" })}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => handleCtaClick(australiaBrokers[0].id, 1)}
+                  onClick={() => handleCtaClick(canadaBrokers[0].id, 1)}
                 >
-                  Open Account with {australiaBrokers[0].name}
+                  Open Account with {canadaBrokers[0].name}
                   <ExternalLink className="w-4 h-4" />
                 </a>
               </Button>
@@ -369,15 +369,15 @@ const BestBrokersAustralia = () => {
           asChild
         >
           <a
-            href={getAffiliateUrl(australiaBrokers[0].id, {
+            href={getAffiliateUrl(canadaBrokers[0].id, {
               ...UTM_CONFIGS.MOBILE_STICKY,
-              campaign: "australia_best"
+              campaign: "canada_best"
             })}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => handleCtaClick(australiaBrokers[0].id, 1)}
+            onClick={() => handleCtaClick(canadaBrokers[0].id, 1)}
           >
-            Start Trading with {australiaBrokers[0].name}
+            Start Trading with {canadaBrokers[0].name}
             <ExternalLink className="w-4 h-4" />
           </a>
         </Button>
@@ -388,4 +388,4 @@ const BestBrokersAustralia = () => {
   );
 };
 
-export default BestBrokersAustralia;
+export default BestBrokersCanada;

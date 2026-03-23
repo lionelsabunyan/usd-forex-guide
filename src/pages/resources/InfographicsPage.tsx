@@ -5,6 +5,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Download, Share2, Code, ExternalLink, Check, Copy } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const infographics = [
   {
@@ -239,15 +240,31 @@ const InfographicsPage = () => {
           </div>
         </div>
 
+        {/* Related Resources */}
+        <div className="mt-12 grid sm:grid-cols-3 gap-4">
+          <Link to="/guides/us-forex-regulations" className="bg-card border border-border rounded-xl p-5 hover:border-primary/50 transition-all group">
+            <h3 className="font-semibold text-sm mb-1 group-hover:text-primary transition-colors">US Forex Regulations Guide</h3>
+            <p className="text-xs text-muted-foreground">Deep dive into CFTC/NFA rules and what they mean for traders.</p>
+          </Link>
+          <Link to="/glossary" className="bg-card border border-border rounded-xl p-5 hover:border-primary/50 transition-all group">
+            <h3 className="font-semibold text-sm mb-1 group-hover:text-primary transition-colors">Forex Glossary</h3>
+            <p className="text-xs text-muted-foreground">Look up key terms used in our infographics.</p>
+          </Link>
+          <Link to="/resources/us-forex-checklist" className="bg-card border border-border rounded-xl p-5 hover:border-primary/50 transition-all group">
+            <h3 className="font-semibold text-sm mb-1 group-hover:text-primary transition-colors">US Forex Checklist</h3>
+            <p className="text-xs text-muted-foreground">Free downloadable checklist for US forex traders.</p>
+          </Link>
+        </div>
+
         {/* Request CTA */}
         <div className="mt-12 text-center">
           <p className="text-muted-foreground mb-4">
             Have an idea for a new infographic? We'd love to hear it!
           </p>
           <Button asChild>
-            <a href="/contact">
+            <Link to="/contact">
               Suggest an Infographic Topic
-            </a>
+            </Link>
           </Button>
         </div>
       </main>

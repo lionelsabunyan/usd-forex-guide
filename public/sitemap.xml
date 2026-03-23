@@ -29,6 +29,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://beginnerfxguide.com/brokers/canada/</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/brokers/singapore/</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beginnerfxguide.com/brokers/eu/</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://beginnerfxguide.com/compare/</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -60,7 +78,7 @@
   </url>
   <url>
     <loc>https://beginnerfxguide.com/glossary/</loc>
-    <lastmod>2026-02-06</lastmod>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

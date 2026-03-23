@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { topBrokers, Broker } from "@/lib/brokers";
 import { getAffiliateUrl, trackAffiliateClick, UTM_CONFIGS } from "@/lib/tracking";
 import { Scale, BarChart3, Shield, Award, ArrowRight, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ComparePage = () => {
   // Use all brokers
@@ -240,6 +241,45 @@ const ComparePage = () => {
                 </div>
               )}
             </main>
+          </div>
+        </div>
+      </section>
+
+      {/* Popular Comparisons */}
+      <section className="py-12 border-t border-border">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-heading font-bold mb-6 text-center">
+              Popular Broker <span className="text-gradient-gold">Comparisons</span>
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { url: "/compare/oanda-vs-forexcom", title: "OANDA vs Forex.com", desc: "Top US-regulated brokers" },
+                { url: "/compare/etoro-vs-xm", title: "eToro vs XM", desc: "Social trading vs classic ECN" },
+                { url: "/compare/pepperstone-vs-exness", title: "Pepperstone vs Exness", desc: "Low-spread leaders" },
+                { url: "/compare/ig-vs-interactive-brokers", title: "IG vs Interactive Brokers", desc: "Premium broker showdown" },
+                { url: "/compare/etoro-vs-oanda", title: "eToro vs OANDA", desc: "Beginner-friendly options" },
+                { url: "/compare/pepperstone-vs-xm", title: "Pepperstone vs XM", desc: "Global broker comparison" },
+                { url: "/compare/tastyfx-vs-forexcom", title: "tastyfx vs Forex.com", desc: "US market specialists" },
+                { url: "/compare/avatrade-vs-etoro", title: "AvaTrade vs eToro", desc: "Multi-asset platforms" },
+                { url: "/compare/oanda-vs-ig-markets", title: "OANDA vs IG Markets", desc: "Established industry giants" },
+                { url: "/compare/charles-schwab-vs-interactive-brokers", title: "Schwab vs IBKR", desc: "Full-service vs low-cost" },
+                { url: "/compare/xm-vs-fxtm", title: "XM vs FXTM", desc: "Global ECN brokers" },
+                { url: "/compare/midasfx-vs-hankotrade", title: "MidasFX vs Hankotrade", desc: "Offshore options for US traders" },
+              ].map((comp) => (
+                <Link
+                  key={comp.url}
+                  to={comp.url}
+                  className="flex items-center justify-between bg-card border border-border rounded-lg p-4 hover:border-primary/50 transition-all group"
+                >
+                  <div>
+                    <p className="font-medium text-sm group-hover:text-primary transition-colors">{comp.title}</p>
+                    <p className="text-xs text-muted-foreground">{comp.desc}</p>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>

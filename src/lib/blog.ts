@@ -55,6 +55,8 @@ export type BlogPost = {
   coverImage?: string;
   category: BlogCategory;
   tags?: string[];
+  /** Broker IDs to show in a comparison widget after the content */
+  relatedBrokers?: import("./brokers").BrokerId[];
 };
 
 export const blogPosts: BlogPost[] = [
@@ -1554,6 +1556,7 @@ Timing matters in forex trading:
     category: "broker-reviews",
     tags: ["brokers", "usa", "2026", "comparison", "top-picks"],
     coverImage: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80",
+    relatedBrokers: ["midasfx", "hankotrade", "fxglory", "n1cm", "coinexx"],
     content: `
 # Best Forex Brokers for US Traders in 2026: Complete Guide
 
@@ -2963,6 +2966,7 @@ Understanding currency pairs is essential for forex success. Start with major pa
     category: "broker-reviews",
     tags: ["beginners", "brokers", "comparison", "2026", "best-of"],
     coverImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    relatedBrokers: ["exness", "xm", "etoro", "avatrade", "pepperstone"],
     content: `
 # Best Forex Brokers for Beginners 2026: We Tested 15+ Options
 

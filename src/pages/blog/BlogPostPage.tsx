@@ -14,6 +14,7 @@ import SocialShare from "@/components/SocialShare";
 import RelatedPosts from "@/components/RelatedPosts";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import LeadMagnetBanner from "@/components/LeadMagnetBanner";
+import BrokerComparisonWidget from "@/components/BrokerComparisonWidget";
 
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -263,6 +264,15 @@ const BlogPostPage = () => {
             {/* Main Content */}
             <article className="flex-1 max-w-4xl">
               {renderContent(post.content)}
+
+              {/* Broker Comparison Widget (when post has relatedBrokers) */}
+              {post.relatedBrokers && post.relatedBrokers.length > 0 && (
+                <BrokerComparisonWidget
+                  brokerSlugs={post.relatedBrokers}
+                  title="Compare Brokers Mentioned in This Article"
+                  trackingContext={`blog_${slug}`}
+                />
+              )}
 
               {/* Bottom Social Share */}
               <div className="mt-8 pt-8 border-t border-border">

@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Star, Check, ExternalLink, Shield, Zap, AlertTriangle, TrendingUp, Award, Users, ChevronDown } from "lucide-react";
+import { Check, ExternalLink, Shield, Zap, AlertTriangle, TrendingUp, Award, Users, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { brokers } from "@/lib/brokers";
@@ -10,70 +10,70 @@ import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const BestBrokersUK = () => {
+const BestBrokersEU = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  // UK broker ranking: Regulation credibility first, then leverage
+  // EU broker ranking: ESMA alternative positioning, CySEC/FCA/BaFin regulation
   // 11 brokers total: 7 affiliate + 4 non-affiliate (authority building)
-  const ukBrokers = [
-    brokers.fxglory,     // SVG FSA, 1:3000 ✅ Affiliate
-    brokers.coinexx,     // Crypto-native, 1:500 ✅ Affiliate
-    brokers.hfm,         // FCA + CySEC, 1:2000 ✅ Affiliate
-    brokers.midasfx,     // FSA, 1:500 ✅ Affiliate
-    brokers.fxpro,       // FCA + CySEC, UK HQ, 1:200 ✅ Affiliate
-    brokers.hankotrade,  // VFSC, 1:500 ✅ Affiliate
-    brokers.pepperstone, // FCA + CySEC, 1:500 ❌ Non-affiliate
-    brokers.exness,      // FCA + CySEC, 1:2000 ❌ Non-affiliate
-    brokers.xm,          // CySEC, 1:1000 ✅ Affiliate
-    brokers.fxtm,        // FCA + CySEC, 1:1000 ❌ Non-affiliate
-    brokers.fbs,         // CySEC, 1:3000 ❌ Non-affiliate
+  const euBrokers = [
+    brokers.fxglory,     // 1:3000 - SVG FSA ✅ Affiliate
+    brokers.hfm,         // 1:2000 - CySEC/FCA ✅ Affiliate
+    brokers.coinexx,     // 1:500 - Crypto-native ✅ Affiliate
+    brokers.midasfx,     // 1:500 - FSA ✅ Affiliate
+    brokers.xm,          // 1:1000 - CySEC ✅ Affiliate
+    brokers.fxpro,       // 1:200 - FCA/CySEC ✅ Affiliate
+    brokers.hankotrade,  // 1:500 - VFSC ✅ Affiliate
+    brokers.exness,      // 1:2000 - CySEC/FCA ❌ Non-affiliate
+    brokers.pepperstone, // 1:500 - ASIC/FCA ❌ Non-affiliate
+    brokers.fxtm,        // 1:1000 - CySEC/FCA ❌ Non-affiliate
+    brokers.fbs,         // 1:3000 - CySEC/FSCA ❌ Non-affiliate
   ];
 
   const faqs = [
     {
-      question: "Can UK traders legally use offshore forex brokers?",
-      answer: "Yes, it's perfectly legal for UK residents to trade with offshore brokers. While the FCA regulates UK-based brokers, it doesn't prohibit British traders from using international brokers licensed elsewhere (CySEC, DFSA, FSC). However, you lose FCA's Financial Services Compensation Scheme (FSCS) protection, which covers up to £85,000 if an FCA broker fails. Choose reputable offshore brokers with strong regulation to mitigate risks."
+      question: "Can EU traders legally use offshore forex brokers?",
+      answer: "Yes, EU residents can legally trade with offshore brokers. While ESMA regulations apply to brokers operating within the EU, they do not prohibit European traders from opening accounts with international brokers licensed outside the EU. However, you lose EU investor protection schemes (ICF coverage up to €20,000) and ESMA's retail protections. Choose offshore brokers with strong regulation (FCA, ASIC, or CySEC offshore entities) for adequate safety."
     },
     {
-      question: "Why do UK traders choose offshore brokers over FCA-regulated ones?",
-      answer: "The primary reason is leverage. FCA and ESMA regulations cap retail traders at 1:30 for major forex pairs (1:20 for minors, 1:10 for exotics). Offshore brokers offer 1:500 to 1:2000+ leverage, giving experienced traders more flexibility for strategies like scalping, hedging, and position management. Additionally, offshore brokers often provide welcome bonuses, cryptocurrency deposits, and more diverse trading instruments—all restricted under FCA rules."
+      question: "Why do EU traders choose offshore brokers over ESMA-regulated ones?",
+      answer: "The primary driver is ESMA's strict leverage limits: 1:30 for major pairs, 1:20 for non-major pairs, 1:10 for commodities, 1:5 for individual equities, and 1:2 for cryptocurrencies. These restrictions, introduced in 2018, significantly limit capital efficiency for experienced traders. Offshore brokers offer 1:500 to 1:3000 leverage, along with welcome bonuses, broader instrument selection, and cryptocurrency deposits — all restricted under ESMA rules."
     },
     {
-      question: "What's the difference between FCA and CySEC regulation?",
-      answer: "FCA (Financial Conduct Authority) is the UK's financial regulator, considered one of the strictest globally. It enforces 1:30 leverage limits, mandatory negative balance protection, and £85,000 FSCS compensation. CySEC (Cyprus Securities and Exchange Commission) regulates EU brokers with similar investor protections but allows offshore entities to offer higher leverage. CySEC brokers must segregate client funds and maintain capital reserves, providing solid protection despite more lenient leverage rules."
+      question: "What are ESMA's leverage restrictions?",
+      answer: "ESMA (European Securities and Markets Authority) imposed leverage limits on retail CFD/forex trading in August 2018: 1:30 for major currency pairs (EUR/USD, GBP/USD, USD/JPY, etc.), 1:20 for non-major pairs, gold, and major indices, 1:10 for commodities (excl. gold) and minor indices, 1:5 for individual equities, and 1:2 for cryptocurrencies. These limits apply to all brokers operating under EU jurisdiction (CySEC, BaFin, AMF, CONSOB, etc.)."
     },
     {
-      question: "How does ESMA's leverage restriction affect UK traders post-Brexit?",
-      answer: "After Brexit, the UK retained ESMA's 2018 leverage restrictions (1:30 for majors). While the UK is no longer bound by EU regulations, the FCA chose to maintain these limits for retail trader protection. This means UK traders face the same leverage caps as EU traders. To access higher leverage, British traders must use offshore brokers operating under non-UK/EU jurisdictions (Cyprus offshore entities, Seychelles, Vanuatu, etc.)."
+      question: "What's the difference between CySEC, BaFin, and other EU regulators?",
+      answer: "All EU financial regulators enforce ESMA's harmonized rules, but each has its own characteristics. CySEC (Cyprus) is the most popular for forex brokers due to favorable licensing conditions while maintaining full EU standards. BaFin (Germany) is one of Europe's strictest regulators with additional national requirements. AMF (France), CONSOB (Italy), and CNMV (Spain) are national regulators that enforce ESMA rules plus local requirements. All provide ICF coverage up to €20,000."
     },
     {
-      question: "Are there professional trader exemptions to FCA leverage limits?",
-      answer: "Yes, the FCA allows professional traders (also called 'elective professional clients') to access higher leverage. To qualify, you must meet 2 of 3 criteria: (1) Conducted 10+ significant trades per quarter for the past year, (2) Portfolio of financial instruments exceeding £500,000, (3) Worked in finance requiring knowledge of trading for at least one year. Professional status removes retail protections, including negative balance protection and FSCS coverage. Most traders don't qualify, making offshore brokers the practical solution."
+      question: "Can I become a professional trader to bypass ESMA limits?",
+      answer: "Yes, EU brokers can reclassify you as a professional client, exempting you from ESMA leverage limits. You must meet 2 of 3 criteria: (1) Executed 10+ significant trades per quarter in the last 4 quarters, (2) Financial instrument portfolio exceeding €500,000, (3) Worked in finance requiring knowledge of CFD trading for at least one year. Professional status means losing negative balance protection, ICF coverage, and best execution obligations. For most traders, offshore brokers are a simpler alternative."
     },
     {
-      question: "How do I fund an offshore broker account from the UK?",
-      answer: "Offshore brokers accept UK-friendly payment methods: debit cards (Visa, Mastercard), bank transfers (Faster Payments, BACS, SWIFT), e-wallets (Skrill, Neteller—both UK-based), and cryptocurrencies (Bitcoin, Ethereum, USDT). Most process GBP deposits, though some convert to USD or EUR. Card deposits are instant; bank transfers take 1-3 days; crypto is usually processed within 24 hours. Check each broker's fee schedule—many offer free deposits but may charge for certain withdrawal methods."
+      question: "How do taxes on forex trading work across the EU?",
+      answer: "Tax treatment varies by country. Germany: 25% flat tax on capital gains (Abgeltungsteuer) plus solidarity surcharge. France: 30% flat tax (PFU) on trading profits. Italy: 26% capital gains tax on forex profits. Netherlands: wealth tax on assets (Box 3) rather than realized gains. Spain: 19-26% progressive capital gains tax. Each country has its own reporting requirements. Consult a tax advisor in your specific EU country for personalized guidance."
     },
     {
-      question: "What are the tax implications for UK forex traders?",
-      answer: "HMRC (Her Majesty's Revenue and Customs) treats forex trading as either spread betting (tax-free if it's not your primary income) or CFD trading (subject to Capital Gains Tax). Spread betting profits are tax-free but losses can't be offset. CFD profits are taxable under CGT with an annual allowance (£3,000 in 2024/25). Trading as a business means profits are subject to Income Tax. Keep detailed records and consult a UK tax advisor specializing in trading to optimize your tax position legally."
+      question: "Are my funds safe with offshore brokers?",
+      answer: "Reputable offshore brokers with CySEC (offshore entity), FCA, or ASIC licenses maintain high safety standards: segregated client accounts (your funds kept separate from broker operating capital), negative balance protection (you can't lose more than your deposit), and minimum capital requirements. While you lose the EU's ICF coverage (€20,000), top offshore brokers have operated for 10+ years without fund safety issues."
     },
     {
-      question: "Which broker is best for UK beginners?",
-      answer: "HFM (HotForex) is ideal for UK beginners thanks to its FCA + CySEC dual regulation, comprehensive educational resources (webinars, video tutorials), low $0 minimum deposit, and excellent copy trading platform (HFcopy). You can learn from successful traders while the broker's strong regulatory background provides peace of mind. XM is another strong choice with a $5 minimum, extensive free educational content, and user-friendly MT4/MT5 platforms. Both offer demo accounts to practice risk-free."
+      question: "Which broker is best for EU beginners?",
+      answer: "XM is excellent for EU beginners, offering a $5 minimum deposit, CySEC regulation (EU entity available), multilingual support in 30+ languages covering all major EU countries, and comprehensive educational resources. HFM is another top choice with CySEC/FCA dual regulation, €0 minimum deposit, and a robust copy trading platform. Both offer demo accounts and MT4/MT5 platforms familiar to European traders."
     }
   ];
 
   const handleCtaClick = (brokerId: string, position: number) => {
-    trackAffiliateClick(brokerId, "best_brokers_uk", `position_${position}`);
+    trackAffiliateClick(brokerId, "best_brokers_eu", `position_${position}`);
   };
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title="11 Best Forex Brokers UK 2026 | High Leverage FCA Alternatives"
-        description="Top 11 international forex brokers for UK traders seeking higher leverage. FCA-regulated and offshore options. Independent reviews February 2026."
-        keywords="forex brokers uk, high leverage forex, fca alternative, best forex brokers uk, forex trading uk, offshore forex brokers"
+        title="11 Best Forex Brokers EU 2026 | High Leverage ESMA Alternatives"
+        description="Compare 11 top forex brokers for European traders. Access higher leverage beyond ESMA's 1:30 limit. CySEC, FCA & offshore options. Updated March 2026."
+        keywords="forex brokers eu, best forex brokers europe, high leverage forex eu, esma alternative, forex trading europe, european forex brokers, cysec brokers"
         ogType="article"
       />
       <Header />
@@ -85,15 +85,15 @@ const BestBrokersUK = () => {
             <div className="text-center max-w-4xl mx-auto">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
                 <Award className="w-4 h-4" />
-                Expert Reviewed | Updated February 2026
+                Expert Reviewed | Updated March 2026
               </div>
 
               <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
-                Best High Leverage Forex Brokers in the UK (2026)
+                Best High Leverage Forex Brokers in the EU (2026)
               </h1>
 
               <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-                Access leverage beyond FCA's 1:30 retail limit. Compare 11 international brokers with FCA-level regulation and offshore leverage flexibility.
+                Trade beyond ESMA's 1:30 leverage cap. Compare 11 international brokers with EU-grade regulation and offshore leverage flexibility for European traders.
               </p>
 
               <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
@@ -103,11 +103,11 @@ const BestBrokersUK = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <Shield className="w-5 h-5 text-green-500" />
-                  <span>FCA & CySEC Options</span>
+                  <span>CySEC & FCA Options</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <TrendingUp className="w-5 h-5 text-green-500" />
-                  <span>Up to 1:2000 Leverage</span>
+                  <span>Up to 1:3000 Leverage</span>
                 </div>
               </div>
             </div>
@@ -120,75 +120,70 @@ const BestBrokersUK = () => {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-3">Detailed Broker Reviews</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Comprehensive analysis of regulation, leverage, spreads, and platform quality for UK traders seeking FCA alternatives
+                Comprehensive analysis of regulation, leverage, spreads, and platform quality for European traders seeking ESMA alternatives
               </p>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2">
-              {ukBrokers.map((broker, index) => (
+              {euBrokers.map((broker, index) => (
                 <BrokerCard key={broker.id} broker={broker} rank={index + 1} />
               ))}
             </div>
           </div>
         </section>
 
-        {/* Why UK Traders Choose International Brokers */}
+        {/* Why EU Traders Choose International Brokers */}
         <section className="py-12 md:py-16">
           <div className="container max-w-4xl mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-8 text-center">Why UK Traders Choose International Brokers</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">Why European Traders Choose Offshore Brokers</h2>
 
             <div className="prose prose-slate dark:prose-invert max-w-none">
               <p className="text-lg leading-relaxed text-muted-foreground">
-                In August 2018, ESMA (European Securities and Markets Authority) introduced sweeping leverage restrictions to protect retail traders from excessive losses. The UK, initially bound by EU regulations, maintained these limits post-Brexit through the FCA. While well-intentioned, these restrictions have pushed experienced British traders toward international brokers.
+                In August 2018, ESMA introduced sweeping product intervention measures that permanently restricted leverage for retail CFD and forex trading across the European Economic Area. While these regulations protect inexperienced traders, they severely limit the capital efficiency and strategy options available to seasoned professionals across all 27 EU member states.
               </p>
 
-              <h3 className="text-2xl font-semibold mt-8 mb-4">The FCA Leverage Landscape</h3>
+              <h3 className="text-2xl font-semibold mt-8 mb-4">The ESMA Leverage Framework</h3>
               <p className="leading-relaxed text-muted-foreground">
-                FCA-regulated brokers cap retail traders at 1:30 for major currency pairs (EUR/USD, GBP/USD, etc.), 1:20 for non-major pairs, and 1:10 for exotic pairs. This means a standard 1-lot position (£100,000) requires £3,333 margin at 1:30 leverage. Compare this to offshore brokers offering 1:500, where the same position needs just £200. For professional traders with proven risk management, this difference is substantial.
+                ESMA's tiered leverage limits affect all asset classes: 1:30 for major forex pairs, 1:20 for non-major pairs and gold, 1:10 for commodities, 1:5 for equities, and 1:2 for cryptocurrencies. A standard 1-lot forex position (€100,000) requires €3,333 margin at 1:30. With an offshore broker at 1:500, the same position needs just €200 — freeing up capital for diversification and risk management.
               </p>
 
               <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 my-6">
                 <h4 className="font-semibold text-lg mb-3 flex items-center gap-2">
                   <AlertTriangle className="w-5 h-5 text-primary" />
-                  Risk Warning for UK Traders
+                  Risk Warning for EU Traders
                 </h4>
                 <p className="text-sm text-muted-foreground mb-0">
-                  High leverage increases both potential profits and losses. A 2% adverse price movement with 1:50 leverage can wipe out your entire trading capital. The FCA's leverage limits exist to protect retail traders from catastrophic losses. Only experienced traders with robust risk management strategies should consider leverage above 1:50. Never risk more than 1-2% per trade.
+                  High leverage increases both potential profits and losses exponentially. ESMA's leverage restrictions exist to protect retail traders from devastating losses. A 2% adverse move with 1:50 leverage can eliminate your entire trading capital. Only experienced traders with proven risk management systems should consider higher leverage. Never risk more than 1-2% of your capital per trade.
                 </p>
               </div>
 
-              <h3 className="text-2xl font-semibold mt-8 mb-4">Advantages of International Brokers for UK Traders</h3>
+              <h3 className="text-2xl font-semibold mt-8 mb-4">Advantages of Offshore Brokers for EU Traders</h3>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Flexible Leverage:</strong> Access 1:500 to 1:2000 leverage for advanced strategies like scalping, hedging, and carry trades</span>
+                  <span><strong>Flexible Leverage:</strong> Access 1:500 to 1:3000 leverage across forex, commodities, and indices without professional client requirements</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Dual Regulation Options:</strong> Brokers like HFM and FxPro hold both FCA and CySEC licenses, offering regulatory credibility with offshore flexibility</span>
+                  <span><strong>Dual Regulation Options:</strong> Brokers like HFM and FxPro hold CySEC licenses (EU entity) alongside offshore entities — same company, different leverage tiers</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Welcome Bonuses:</strong> Offshore entities can offer deposit bonuses and promotions banned under FCA rules</span>
+                  <span><strong>Welcome Bonuses:</strong> Offshore entities can offer deposit bonuses and cashback — banned under ESMA's retail client rules</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Crypto Trading & Deposits:</strong> Trade Bitcoin, Ethereum, and other cryptocurrencies; fund accounts with crypto for instant deposits</span>
+                  <span><strong>Crypto CFDs with High Leverage:</strong> ESMA limits crypto CFD leverage to 1:2; offshore brokers offer significantly more</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Tighter Spreads:</strong> Offshore ECN brokers offer spreads from 0.0 pips on major pairs, often beating FCA brokers</span>
+                  <span><strong>Tighter Spreads:</strong> Offshore ECN brokers often provide raw spreads from 0.0 pips, undercutting EU-regulated competitors</span>
                 </li>
               </ul>
 
               <h3 className="text-2xl font-semibold mt-8 mb-4">What You Trade for Higher Leverage</h3>
               <p className="leading-relaxed text-muted-foreground">
-                Using offshore brokers means forfeiting FCA's Financial Services Compensation Scheme (FSCS), which protects up to £85,000 if a broker becomes insolvent. However, reputable international brokers with CySEC, DFSA, or FCA (offshore entities) licenses maintain segregated client accounts, negative balance protection, and strict capital adequacy requirements. For experienced traders, the benefits of higher leverage often outweigh the loss of FSCS protection—especially when choosing established brokers with 10+ years of operation.
-              </p>
-
-              <h3 className="text-2xl font-semibold mt-8 mb-4">Professional Trader Status: Is It Worth Pursuing?</h3>
-              <p className="leading-relaxed text-muted-foreground">
-                The FCA allows traders to apply for professional status to access higher leverage with FCA brokers. Requirements include executing 10+ significant trades quarterly for a year, maintaining a £500,000+ portfolio, or having one year of professional trading experience. However, professional traders lose retail protections (negative balance protection, FSCS coverage) and must sign extensive risk disclaimers. For most traders, offshore brokers provide an easier path to higher leverage without sacrificing essential protections.
+                Moving to an offshore broker means forfeiting ESMA's retail client protections: ICF coverage (up to €20,000 compensation per CySEC), mandatory negative balance protection, and standardized risk warnings. However, top-tier offshore brokers voluntarily maintain these protections — segregated accounts, negative balance protection, and transparent fee structures. Choose established brokers with 10+ years of operation and multiple regulatory licenses for the best balance of leverage and safety.
               </p>
             </div>
           </div>
@@ -201,7 +196,7 @@ const BestBrokersUK = () => {
 
             <div className="prose prose-slate dark:prose-invert max-w-none">
               <p className="text-lg leading-relaxed text-muted-foreground mb-6">
-                We test every broker with real money in live trading conditions. Our UK-based testing team evaluates 50+ criteria, from regulatory compliance to execution quality, ensuring you get accurate, actionable recommendations.
+                We test every broker with real money under live trading conditions. Our evaluation covers 50+ criteria tailored to the needs of European traders, from multilingual support to EUR deposit options and SEPA transfer compatibility.
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 not-prose">
@@ -213,11 +208,11 @@ const BestBrokersUK = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="text-sm text-muted-foreground space-y-2">
-                    <p>• GBP/USD spreads (our benchmark pair)</p>
+                    <p>• EUR/USD spreads (our benchmark pair)</p>
                     <p>• Commission structure & hidden fees</p>
                     <p>• Available leverage (retail vs pro)</p>
                     <p>• Execution speed & slippage testing</p>
-                    <p>• Minimum deposit (GBP-friendly)</p>
+                    <p>• EUR deposit support & SEPA transfers</p>
                   </CardContent>
                 </Card>
 
@@ -245,11 +240,11 @@ const BestBrokersUK = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="text-sm text-muted-foreground space-y-2">
-                    <p>• UK business hours coverage</p>
+                    <p>• European timezone coverage</p>
+                    <p>• Multilingual support (DE, FR, ES, IT)</p>
                     <p>• Live chat response times (tested)</p>
                     <p>• Email support quality</p>
-                    <p>• Phone support (UK toll-free numbers)</p>
-                    <p>• Educational resources (webinars, guides)</p>
+                    <p>• Educational resources & webinars</p>
                   </CardContent>
                 </Card>
 
@@ -261,11 +256,11 @@ const BestBrokersUK = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="text-sm text-muted-foreground space-y-2">
-                    <p>• FCA, CySEC, DFSA licenses verified</p>
+                    <p>• CySEC, FCA, BaFin licenses verified</p>
                     <p>• Segregated client fund accounts</p>
                     <p>• Negative balance protection</p>
                     <p>• Company history & financial stability</p>
-                    <p>• Withdrawal process (tested with GBP)</p>
+                    <p>• Withdrawal process (tested with EUR)</p>
                   </CardContent>
                 </Card>
               </div>
@@ -273,7 +268,7 @@ const BestBrokersUK = () => {
               <div className="bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 rounded-lg p-6 mt-8">
                 <h4 className="font-semibold text-lg mb-3">Affiliate Disclosure</h4>
                 <p className="text-sm text-muted-foreground mb-0">
-                  BeginnerFXGuide.com may earn commissions when you open an account via our links. This compensation never influences our rankings or reviews. We only recommend brokers our team has personally tested and would trade with ourselves. Our goal is to provide UK traders with honest, unbiased information to make informed decisions about international brokers.
+                  BeginnerFXGuide.com may earn commissions when you open an account via our links. This compensation never influences our rankings or reviews. We only recommend brokers our team has personally tested and would trade with ourselves. Our goal is to provide European traders with honest, unbiased information to make informed decisions about international brokers.
                 </p>
               </div>
             </div>
@@ -321,9 +316,9 @@ const BestBrokersUK = () => {
                 <h3 className="font-semibold text-sm mb-1 group-hover:text-primary transition-colors">How to Compare Brokers</h3>
                 <p className="text-xs text-muted-foreground">Learn what factors matter most when choosing a forex broker.</p>
               </Link>
-              <Link to="/guides/us-forex-regulations" className="bg-card border border-border rounded-xl p-5 hover:border-primary/50 transition-all group">
-                <h3 className="font-semibold text-sm mb-1 group-hover:text-primary transition-colors">US Forex Regulations</h3>
-                <p className="text-xs text-muted-foreground">Understand how US and UK regulations differ for forex trading.</p>
+              <Link to="/guides/risk-management" className="bg-card border border-border rounded-xl p-5 hover:border-primary/50 transition-all group">
+                <h3 className="font-semibold text-sm mb-1 group-hover:text-primary transition-colors">Risk Management Guide</h3>
+                <p className="text-xs text-muted-foreground">Essential strategies for protecting your capital with high leverage.</p>
               </Link>
               <Link to="/tools/margin-calculator" className="bg-card border border-border rounded-xl p-5 hover:border-primary/50 transition-all group">
                 <h3 className="font-semibold text-sm mb-1 group-hover:text-primary transition-colors">Margin Calculator</h3>
@@ -336,20 +331,20 @@ const BestBrokersUK = () => {
         {/* Final CTA */}
         <section className="py-12 md:py-16 bg-gradient-to-br from-primary/10 via-background to-background">
           <div className="container max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-4">Ready to Break Free from FCA Leverage Limits?</h2>
+            <h2 className="text-3xl font-bold mb-4">Ready to Break Free from ESMA Leverage Limits?</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join thousands of British traders accessing international leverage. Start with our #1 recommended broker for UK traders:
+              Join thousands of European traders accessing international leverage. Start with our #1 recommended broker:
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" asChild>
                 <a
-                  href={getAffiliateUrl(ukBrokers[0].id, { ...UTM_CONFIGS.HERO_PRIMARY, campaign: "uk_best" })}
+                  href={getAffiliateUrl(euBrokers[0].id, { ...UTM_CONFIGS.HERO_PRIMARY, campaign: "eu_best" })}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => handleCtaClick(ukBrokers[0].id, 1)}
+                  onClick={() => handleCtaClick(euBrokers[0].id, 1)}
                 >
-                  Open Account with {ukBrokers[0].name}
+                  Open Account with {euBrokers[0].name}
                   <ExternalLink className="w-4 h-4" />
                 </a>
               </Button>
@@ -374,15 +369,15 @@ const BestBrokersUK = () => {
           asChild
         >
           <a
-            href={getAffiliateUrl(ukBrokers[0].id, {
+            href={getAffiliateUrl(euBrokers[0].id, {
               ...UTM_CONFIGS.MOBILE_STICKY,
-              campaign: "uk_best"
+              campaign: "eu_best"
             })}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => handleCtaClick(ukBrokers[0].id, 1)}
+            onClick={() => handleCtaClick(euBrokers[0].id, 1)}
           >
-            Start Trading with {ukBrokers[0].name}
+            Start Trading with {euBrokers[0].name}
             <ExternalLink className="w-4 h-4" />
           </a>
         </Button>
@@ -393,4 +388,4 @@ const BestBrokersUK = () => {
   );
 };
 
-export default BestBrokersUK;
+export default BestBrokersEU;

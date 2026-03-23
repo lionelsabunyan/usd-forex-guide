@@ -31,6 +31,9 @@ const staticPages = [
   { path: '/brokers', title: 'Best Forex Brokers for US Traders | US Forex Guide', desc: 'Find the best forex brokers accepting US traders. Compare spreads, leverage, regulation, and account types side by side.' },
   { path: '/brokers/australia', title: 'Best Forex Brokers in Australia 2026 | US Forex Guide', desc: 'Compare the best forex brokers in Australia. ASIC-regulated brokers with competitive spreads, platforms, and account types for Australian traders.' },
   { path: '/brokers/uk', title: 'Best Forex Brokers in the UK 2026 | US Forex Guide', desc: 'Compare the best forex brokers in the UK. FCA-regulated brokers with tight spreads, reliable platforms, and strong trader protections.' },
+  { path: '/brokers/canada', title: 'Best Forex Brokers in Canada 2026 | US Forex Guide', desc: 'Compare the best forex brokers in Canada. IIROC alternatives with high leverage, CAD accounts, and competitive spreads for Canadian traders.' },
+  { path: '/brokers/singapore', title: 'Best Forex Brokers in Singapore 2026 | US Forex Guide', desc: 'Compare the best forex brokers in Singapore. MAS alternatives with high leverage, competitive spreads, and reliable platforms for Singapore traders.' },
+  { path: '/brokers/eu', title: 'Best Forex Brokers in the EU 2026 | US Forex Guide', desc: 'Compare the best forex brokers in the EU. ESMA alternatives with high leverage, CySEC/FCA regulation, and competitive spreads for European traders.' },
   { path: '/compare', title: 'Compare Forex Brokers | US Forex Guide', desc: 'Compare forex brokers side-by-side. Evaluate spreads, fees, leverage, regulation and more to find the right broker.' },
   { path: '/guides', title: 'Forex Trading Guides for Beginners | US Forex Guide', desc: 'Comprehensive forex trading guides for American beginners. Learn regulations, strategies, and how to choose the right broker.' },
   { path: '/tools', title: 'Forex Trading Tools & Calculators | US Forex Guide', desc: 'Free forex calculators: pip calculator, position size, margin, profit/loss and more. Essential tools for US forex traders.' },
@@ -114,6 +117,15 @@ const staticPages = [
   { path: '/tr/iletisim', title: 'İletişim | Beginner FX Guide TR', desc: 'Beginner FX Guide TR ekibiyle iletişime geçin. Soru, öneri ve geri bildirimlerinizi bekliyoruz.' },
   { path: '/tr/gizlilik-politikasi', title: 'Gizlilik Politikası | Beginner FX Guide TR', desc: 'Beginner FX Guide TR gizlilik politikası. Kişisel verilerinizi nasıl topladığımızı ve koruduğumuzu öğrenin.' },
   { path: '/tr/yasal-uyari', title: 'Yasal Uyarı | Beginner FX Guide TR', desc: 'Beginner FX Guide TR yasal uyarı sayfası. Forex ticareti risk içerir. İçeriklerimizi yatırım kararlarında kullanmadan önce okuyun.' },
+
+  // Turkish Blog Pages
+  { path: '/tr/blog', title: 'Forex Blog — Eğitim Yazıları ve Strateji Rehberleri | Beginner FX Guide TR', desc: 'Forex eğitim yazıları, strateji rehberleri ve Türkiye\'ye özel mevzuat bilgileri. Türk trader\'lar için güncel forex içerikleri.' },
+  { path: '/tr/blog/forex-baslangic-rehberi-turkiye', title: 'Forex\'e Nasıl Başlanır? Türkiye\'den Adım Adım Rehber (2026)', desc: 'Türkiye\'den forex piyasasına giriş yapmak isteyenler için kapsamlı başlangıç rehberi. Broker seçimi, hesap açma, demo işlem ve ilk gerçek trade\'inize kadar her adım.' },
+  { path: '/tr/blog/pip-lot-spread-nedir', title: 'Pip, Lot ve Spread Nedir? Forex Terimlerini Türkçe Öğrenin', desc: 'Forex\'in temel taşları olan pip, lot, spread, kaldıraç ve margin kavramlarını Türkçe olarak basit ve anlaşılır örneklerle açıklıyoruz.' },
+  { path: '/tr/blog/en-iyi-forex-stratejileri-yeni-baslayanlar', title: 'Yeni Başlayanlar İçin En İyi 5 Forex Stratejisi (2026)', desc: 'Forex\'te ilk adımlarınızı atarken kullanabileceğiniz kanıtlanmış 5 strateji. Her strateji için giriş/çıkış kuralları, risk yönetimi ve pratik örnekler.' },
+  { path: '/tr/blog/turkiye-forex-vergilendirme-rehberi', title: 'Türkiye\'de Forex Vergilendirmesi: Bilmeniz Gereken Her Şey (2026)', desc: 'Forex kazançları Türkiye\'de nasıl vergilendirilir? Gelir vergisi, beyanname, stopaj ve yurt dışı broker kullanımının vergisel yükümlülükleri.' },
+  { path: '/tr/blog/forex-risk-yonetimi-rehberi', title: 'Forex Risk Yönetimi: Sermayenizi Korumanın 7 Altın Kuralı', desc: 'Forex\'te uzun vadeli başarının sırrı risk yönetimidir. Position sizing, stop loss stratejileri, günlük kayıp limiti ve psikolojik kontrol teknikleri.' },
+
   { path: '/tr/inceleme/fxpro', title: 'FxPro İnceleme 2026 | Beginner FX Guide TR', desc: 'FxPro forex broker incelemesi. Spread, platform, düzenleme ve Türkiye erişilebilirliği hakkında detaylı analiz.' },
   { path: '/tr/inceleme/hfm', title: 'HFM İnceleme 2026 | Beginner FX Guide TR', desc: 'HFM (HotForex) forex broker incelemesi. Düşük spread, çoklu platform desteği ve Türkiye erişimi hakkında bilgi.' },
   { path: '/tr/inceleme/xm', title: 'XM İnceleme 2026 | Beginner FX Guide TR', desc: 'XM forex broker incelemesi. 1000+ enstrüman, düşük spread ve Türkiye kullanıcıları için hesap seçenekleri.' },

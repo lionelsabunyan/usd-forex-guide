@@ -1,0 +1,68 @@
+name: GA4 Analytics Collection
+
+on:
+  schedule:
+    - cron: '30 6 * * *'   # Daily at 06:30 UTC (collect yesterday)
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Date to collect (YYYY-MM-DD, default: yesterday)'
+        required: false
+      command:
+        description: 'Command: collect, report-daily, report-weekly, export'
+        required: false
+        default: 'collect'
+
+jobs:
+  analytics:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests google-api-python-client google-auth
+
+      - name: Run analytics
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          CMD="${{ github.event.inputs.command || 'collect' }}"
+          DATE_ARG="${{ github.event.inputs.date }}"
+
+          case "$CMD" in
+            collect)
+              python scripts/ga4_analytics.py collect $DATE_ARG
+              ;;
+            report-daily)
+              python scripts/ga4_analytics.py report daily
+              ;;
+            report-weekly)
+              python scripts/ga4_analytics.py report weekly
+              ;;
+            export)
+              python scripts/ga4_analytics.py export 30
+              ;;
+          esac
+
+      - name: Upload reports artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: analytics-reports
+          path: reports/
+          retention-days: 30
+          if-no-files-found: ignore

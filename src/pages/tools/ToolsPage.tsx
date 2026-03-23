@@ -200,6 +200,27 @@ const ToolsPage = () => {
               </div>
             </div>
           </div>
+
+          {/* Related Resources */}
+          <div className="max-w-4xl mx-auto mt-16">
+            <h2 className="text-2xl font-heading font-bold mb-8 text-center">
+              Related <span className="text-gradient-gold">Resources</span>
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <Link to="/guides/risk-management" className="bg-secondary/30 border border-border rounded-xl p-6 hover:border-primary/50 transition-all group">
+                <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">Risk Management Guide</h3>
+                <p className="text-sm text-muted-foreground">Learn how to use these tools as part of a solid risk management strategy.</p>
+              </Link>
+              <Link to="/guides/beginners-guide" className="bg-secondary/30 border border-border rounded-xl p-6 hover:border-primary/50 transition-all group">
+                <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">Beginner's Guide</h3>
+                <p className="text-sm text-muted-foreground">New to forex? Start with the fundamentals before using our calculators.</p>
+              </Link>
+              <Link to="/glossary" className="bg-secondary/30 border border-border rounded-xl p-6 hover:border-primary/50 transition-all group">
+                <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">Forex Glossary</h3>
+                <p className="text-sm text-muted-foreground">Look up trading terms like pip, lot size, margin, and leverage.</p>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
