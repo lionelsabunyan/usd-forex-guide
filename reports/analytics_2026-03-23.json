@@ -1,0 +1,216 @@
+{
+  "date": "2026-03-23",
+  "overview": {
+    "sessions": 45,
+    "users": 44,
+    "pageviews": 103,
+    "bounce_rate": 77.78,
+    "avg_session_duration": 222.0
+  },
+  "gsc": {
+    "clicks": 0,
+    "impressions": 0,
+    "ctr": 0,
+    "position": 0
+  },
+  "top_pages": [
+    {
+      "page_path": "/",
+      "pageviews": 53,
+      "sessions": 36,
+      "avg_time_on_page": 116.14
+    },
+    {
+      "page_path": "/tr/",
+      "pageviews": 13,
+      "sessions": 7,
+      "avg_time_on_page": 27.06
+    },
+    {
+      "page_path": "/tr",
+      "pageviews": 8,
+      "sessions": 1,
+      "avg_time_on_page": 221.0
+    },
+    {
+      "page_path": "/tr/inceleme/exness/",
+      "pageviews": 6,
+      "sessions": 1,
+      "avg_time_on_page": 1650.17
+    },
+    {
+      "page_path": "/tr/inceleme/xm/",
+      "pageviews": 4,
+      "sessions": 1,
+      "avg_time_on_page": 1002.87
+    },
+    {
+      "page_path": "/blog",
+      "pageviews": 3,
+      "sessions": 1,
+      "avg_time_on_page": 30.47
+    },
+    {
+      "page_path": "/compare/",
+      "pageviews": 2,
+      "sessions": 2,
+      "avg_time_on_page": 0.0
+    },
+    {
+      "page_path": "/tools",
+      "pageviews": 2,
+      "sessions": 1,
+      "avg_time_on_page": 1211.28
+    },
+    {
+      "page_path": "/blog/eurusd-forecast-march-2026-key-levels",
+      "pageviews": 1,
+      "sessions": 1,
+      "avg_time_on_page": 635.23
+    },
+    {
+      "page_path": "/blog/eurusd-forecast-march-2026-key-levels/",
+      "pageviews": 1,
+      "sessions": 1,
+      "avg_time_on_page": 238.89
+    },
+    {
+      "page_path": "/blog/how-to-choose-forex-broker-2026-checklist/",
+      "pageviews": 1,
+      "sessions": 1,
+      "avg_time_on_page": 227.79
+    },
+    {
+      "page_path": "/blog/nfa-vs-offshore-brokers-us-traders",
+      "pageviews": 1,
+      "sessions": 1,
+      "avg_time_on_page": 0.0
+    },
+    {
+      "page_path": "/brokers",
+      "pageviews": 1,
+      "sessions": 1,
+      "avg_time_on_page": 0.0
+    },
+    {
+      "page_path": "/compare",
+      "pageviews": 1,
+      "sessions": 1,
+      "avg_time_on_page": 100.92
+    },
+    {
+      "page_path": "/compare/midasfx-vs-hankotrade",
+      "pageviews": 1,
+      "sessions": 1,
+      "avg_time_on_page": 14.68
+    },
+    {
+      "page_path": "/review/fxglory",
+      "pageviews": 1,
+      "sessions": 2,
+      "avg_time_on_page": 35.37
+    },
+    {
+      "page_path": "/review/hfm",
+      "pageviews": 1,
+      "sessions": 1,
+      "avg_time_on_page": 211.03
+    },
+    {
+      "page_path": "/review/interactive-brokers/",
+      "pageviews": 1,
+      "sessions": 1,
+      "avg_time_on_page": 4.53
+    },
+    {
+      "page_path": "/review/n1cm",
+      "pageviews": 1,
+      "sessions": 1,
+      "avg_time_on_page": 0.0
+    },
+    {
+      "page_path": "/tools/broker-quiz",
+      "pageviews": 1,
+      "sessions": 1,
+      "avg_time_on_page": 0.0
+    }
+  ],
+  "traffic_sources": [
+    {
+      "source": "(not set)",
+      "medium": "(not set)",
+      "sessions": 23,
+      "users": 23
+    },
+    {
+      "source": "finance.consumeradvanced.com",
+      "medium": "referral",
+      "sessions": 23,
+      "users": 22
+    },
+    {
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 5,
+      "users": 5
+    },
+    {
+      "source": "tr.search.yahoo.com",
+      "medium": "referral",
+      "sessions": 5,
+      "users": 5
+    },
+    {
+      "source": "healthsearchtool.com",
+      "medium": "referral",
+      "sessions": 4,
+      "users": 4
+    },
+    {
+      "source": "relevantsearchtool.com",
+      "medium": "referral",
+      "sessions": 2,
+      "users": 2
+    },
+    {
+      "source": "allrebates.online",
+      "medium": "referral",
+      "sessions": 1,
+      "users": 1
+    },
+    {
+      "source": "resultleap.com",
+      "medium": "referral",
+      "sessions": 1,
+      "users": 1
+    },
+    {
+      "source": "yahoo",
+      "medium": "organic",
+      "sessions": 1,
+      "users": 1
+    }
+  ],
+  "affiliate_clicks": [
+    {
+      "broker": "hankotrade",
+      "clicks": 8
+    },
+    {
+      "broker": "exness",
+      "clicks": 3
+    },
+    {
+      "broker": "xm",
+      "clicks": 3
+    },
+    {
+      "broker": "fxglory",
+      "clicks": 1
+    },
+    {
+      "broker": "midasfx",
+      "clicks": 1
+    }
+  ]
+}
