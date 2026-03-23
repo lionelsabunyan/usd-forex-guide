@@ -182,7 +182,7 @@ const CharlesSchwabvsInteractiveBrokers = () => {
                         </a>
                       </Button>
                       <Button variant="outline" className="w-full" asChild>
-                        <Link to="/review/charlesschwab/">
+                        <Link to="/review/charles-schwab/">
                           Read Full Review
                           <ArrowRight className="w-4 h-4 ml-2" />
                         </Link>
@@ -246,7 +246,7 @@ const CharlesSchwabvsInteractiveBrokers = () => {
                         </a>
                       </Button>
                       <Button variant="outline" className="w-full" asChild>
-                        <Link to="/review/interactivebrokers/">
+                        <Link to="/review/interactive-brokers/">
                           Read Full Review
                           <ArrowRight className="w-4 h-4 ml-2" />
                         </Link>

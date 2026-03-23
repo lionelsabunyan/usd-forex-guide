@@ -182,7 +182,7 @@ const IGvsInteractiveBrokers = () => {
                         </a>
                       </Button>
                       <Button variant="outline" className="w-full" asChild>
-                        <Link to="/review/ig/">
+                        <Link to="/review/ig-markets/">
                           Read Full Review
                           <ArrowRight className="w-4 h-4 ml-2" />
                         </Link>

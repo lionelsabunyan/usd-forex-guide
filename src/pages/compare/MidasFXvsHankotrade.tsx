@@ -484,7 +484,7 @@ const MidasFXvsHankotrade = () => {
                   Compare All Brokers
                 </Link>
                 <Link
-                  to="/blog/offshore-vs-regulated-forex-brokers"
+                  to="/blog/cfdc-vs-offshore-forex-trading"
                   className="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-gray-700 transition-colors"
                 >
                   Offshore vs Regulated Brokers

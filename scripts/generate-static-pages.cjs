@@ -226,6 +226,8 @@ function injectMeta(template, { title, desc, canonical, ogImage }) {
   const safeDesc = escapeHtml(desc);
   const safeCanonical = escapeHtml(canonical);
   const safeOgImage = escapeHtml(ogImage || `${SITE_URL}/images/og/og-default.png`);
+  const OG_WIDTH = '1200';
+  const OG_HEIGHT = '630';
 
   let html = template;
 
@@ -262,6 +264,16 @@ function injectMeta(template, { title, desc, canonical, ogImage }) {
   }
 
   html = html.replace(/<meta property="og:image" content="[^"]*"/, `<meta property="og:image" content="${safeOgImage}"`);
+
+  // Replace or insert og:image:width and og:image:height
+  if (html.includes('og:image:width')) {
+    html = html.replace(/<meta property="og:image:width" content="[^"]*"/, `<meta property="og:image:width" content="${OG_WIDTH}"`);
+    html = html.replace(/<meta property="og:image:height" content="[^"]*"/, `<meta property="og:image:height" content="${OG_HEIGHT}"`);
+  } else {
+    html = html.replace(/<meta property="og:image" content="[^"]*"\s*\/?>/, (match) =>
+      `${match}\n    <meta property="og:image:width" content="${OG_WIDTH}" />\n    <meta property="og:image:height" content="${OG_HEIGHT}" />`
+    );
+  }
 
   // Replace or insert Twitter Card tags
   if (html.includes('<meta name="twitter:title"')) {
@@ -378,6 +390,27 @@ function injectBreadcrumbSchema(html, pagePath, pageTitle) {
   return html.replace('</head>', `  <script type="application/ld+json">${schema}</script>\n  </head>`);
 }
 
+// ─── OG Image mapping by page category ────────────────────────────────────────
+function getOgImageForPath(pagePath) {
+  if (pagePath.startsWith('/review/') || pagePath.startsWith('/brokers') || pagePath.startsWith('/compare')) {
+    return `${SITE_URL}/images/og/og-brokers.png`;
+  }
+  if (pagePath.startsWith('/guides')) {
+    return `${SITE_URL}/images/og/og-guides.png`;
+  }
+  if (pagePath.startsWith('/blog') || pagePath.startsWith('/tr/blog')) {
+    return `${SITE_URL}/images/og/og-blog.png`;
+  }
+  if (pagePath.startsWith('/tools')) {
+    return `${SITE_URL}/images/og/og-tools.png`;
+  }
+  // TR reviews use brokers image
+  if (pagePath.startsWith('/tr/inceleme')) {
+    return `${SITE_URL}/images/og/og-brokers.png`;
+  }
+  return `${SITE_URL}/images/og/og-default.png`;
+}
+
 // ─── Main ─────────────────────────────────────────────────────────────────────
 function main() {
   const templatePath = path.join(DIST, 'index.html');
@@ -436,6 +469,7 @@ function main() {
       title: page.title,
       desc: page.desc,
       canonical,
+      ogImage: page.ogImage || getOgImageForPath(page.path),
     });
 
     // Inject BreadcrumbList schema for all pages
@@ -466,6 +500,7 @@ function main() {
       title,
       desc: post.excerpt,
       canonical,
+      ogImage: `${SITE_URL}/images/og/og-blog.png`,
     });
 
     // Inject BreadcrumbList for blog posts

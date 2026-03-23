@@ -38,6 +38,8 @@ const SEO = ({
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={fullCanonical} />
       <meta property="og:image" content={ogImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:site_name" content="US Forex Guide" />
 
       {/* Twitter Card */}
