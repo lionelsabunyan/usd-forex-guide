@@ -34,14 +34,14 @@ export const interactivebrokersData: BrokerReviewData = {
   },
 
   warningBanner: {
-    text: "Regulated by NFA/CFTC. Lower leverage (1:50 max) but full regulatory protection.",
+    text: "Regulated by CFTC/SEC/FINRA. S&P 500 company. Lower leverage (1:50 max) but full regulatory protection.",
   },
 
   trustFeatures: [
-    { icon: Shield, text: "CFTC Regulated" },
+    { icon: Shield, text: "CFTC/SEC Regulated" },
     { icon: Globe, text: "$0 Min Deposit" },
     { icon: Zap, text: "Multi-Asset" },
-    { icon: Award, text: "Since 1978" },
+    { icon: Award, text: "S&P 500 Company" },
   ],
 
   quickStats: [
@@ -66,7 +66,7 @@ export const interactivebrokersData: BrokerReviewData = {
       name: "Individual Account",
       minDeposit: "$0",
       leverage: "1:50",
-      spread: "From 0.5 pips",
+      spread: "From 0.2 pips",
       commission: "Variable",
       popular: true,
     },
@@ -74,7 +74,7 @@ export const interactivebrokersData: BrokerReviewData = {
       name: "IRA Account",
       minDeposit: "$0",
       leverage: "1:50",
-      spread: "From 0.5 pips",
+      spread: "From 0.2 pips",
       commission: "Variable",
     },
   ],
@@ -100,10 +100,10 @@ export const interactivebrokersData: BrokerReviewData = {
   competitorComparison: [
     { feature: "Min Deposit", broker: "$0", competitor1: "$0", competitor2: "$0" },
     { feature: "Max Leverage", broker: "1:50", competitor1: "1:50", competitor2: "1:50" },
-    { feature: "Spreads From", broker: "0.5 pips", competitor1: "Variable", competitor2: "1.0 pips" },
+    { feature: "Spreads From", broker: "0.2 pips", competitor1: "Variable", competitor2: "1.0 pips" },
     { feature: "Platforms", broker: "TWS, Client Portal", competitor1: "thinkorswim", competitor2: "OANDA, MT4" },
     { feature: "US Clients", broker: "Yes", competitor1: "Yes", competitor2: "Yes" },
-    { feature: "Regulation", broker: "CFTC, SEC", competitor1: "CFTC, NFA, SEC, FINRA", competitor2: "CFTC, NFA" },
+    { feature: "Regulation", broker: "CFTC, SEC, FINRA", competitor1: "CFTC, NFA, SEC, FINRA", competitor2: "CFTC, NFA" },
     { feature: "Asset Classes", broker: "Multi-Asset", competitor1: "Multi-Asset", competitor2: "Forex Focus" },
   ],
 
@@ -130,7 +130,7 @@ export const interactivebrokersData: BrokerReviewData = {
     },
     {
       question: "Is Interactive Brokers good for forex trading?",
-      answer: "Interactive Brokers offers competitive forex spreads from 0.5 pips with direct market access. However, it is primarily known for stocks and options trading. If you are a forex-only trader, a dedicated forex broker like OANDA or tastyfx may be a better fit.",
+      answer: "Interactive Brokers offers competitive forex raw spreads from 0.2 pips on EUR/USD with direct market access across 100+ currency pairs. However, it is primarily known for stocks and options trading. If you are a forex-only trader, a dedicated forex broker like OANDA or tastyfx may be a better fit.",
     },
     {
       question: "What is the minimum deposit for Interactive Brokers?",
@@ -138,7 +138,7 @@ export const interactivebrokersData: BrokerReviewData = {
     },
     {
       question: "Is Interactive Brokers regulated in the US?",
-      answer: "Yes, Interactive Brokers is regulated by the CFTC and SEC in the United States. It is also publicly traded on NASDAQ (ticker: IBKR), providing additional transparency.",
+      answer: "Yes, Interactive Brokers is regulated by the CFTC, SEC, and FINRA in the United States. It is publicly traded on NASDAQ (ticker: IBKR) and joined the S&P 500 index in August 2025, providing additional transparency and financial strength.",
     },
     {
       question: "What platforms does Interactive Brokers offer?",
@@ -159,9 +159,9 @@ export const interactivebrokersData: BrokerReviewData = {
     "No minimum deposit requirement",
     "Multi-asset trading platform",
     "Advanced TWS platform",
-    "Low forex spreads",
+    "Low forex spreads from 0.2 pips",
     "Direct market access",
-    "Strong reputation since 1978",
+    "S&P 500 company since August 2025",
     "Negative balance protection",
     "Segregated client accounts",
     "IRA account options",
@@ -175,5 +175,5 @@ export const interactivebrokersData: BrokerReviewData = {
     "Customer support response times vary",
   ],
 
-  lastUpdated: "2026-02-14",
+  lastUpdated: "2026-03-23",
 };
