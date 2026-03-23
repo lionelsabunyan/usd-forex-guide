@@ -6,19 +6,19 @@ export const interactivebrokersData: BrokerReviewData = {
   brokerName: "Interactive Brokers",
   subtitle: "Professional Trading Platform for US Traders",
   heroDescription:
-    "Interactive Brokers (IB) is a leading US-regulated broker founded in 1978, offering advanced trading platforms and <strong>multi-asset access</strong>. While primarily known for stocks and options, IB also provides forex trading with competitive spreads and professional-grade tools.",
+    "Interactive Brokers (IB) is a leading US-regulated broker founded in 1978 and an <strong>S&P 500 company</strong> since August 2025, offering advanced trading platforms and <strong>multi-asset access</strong> across 150+ global markets. IB provides forex trading on 100+ currency pairs with competitive raw spreads from 0.2 pips and professional-grade tools.",
 
   seoTitle: "Interactive Brokers Review 2026",
   seoDescription:
-    "Complete Interactive Brokers review for US traders. CFTC-regulated broker with $0 minimum deposit, 1:50 leverage, and professional trading platform. Ideal for serious traders.",
+    "Complete Interactive Brokers review for US traders. CFTC/SEC-regulated S&P 500 broker with $0 minimum deposit, 0.2 pip spreads, 1:50 leverage, and professional TWS platform. Ideal for serious traders.",
   canonical: "/review/interactive-brokers",
 
   overallRating: 3.7,
   ratingCount: 10500,
   reviewCount: 5200,
   trustScore: 90,
-  trustpilotRating: 3.2,
-  trustpilotReviews: 5069,
+  trustpilotRating: 3.6,
+  trustpilotReviews: 5153,
 
   heroBadge: {
     icon: Award,
@@ -29,7 +29,7 @@ export const interactivebrokersData: BrokerReviewData = {
   keyHighlights: {
     minDeposit: "$0",
     maxLeverage: "1:50",
-    spreadFrom: "0.5 pips",
+    spreadFrom: "0.2 pips",
     usClients: "YES",
   },
 
@@ -47,14 +47,14 @@ export const interactivebrokersData: BrokerReviewData = {
   quickStats: [
     { label: "Founded", value: "1978" },
     { label: "Headquarters", value: "Connecticut, USA" },
-    { label: "Regulation", value: "CFTC, SEC" },
+    { label: "Regulation", value: "CFTC, SEC, FINRA" },
     { label: "Min Deposit", value: "$0", colorClass: "text-primary" },
     { label: "Max Leverage", value: "1:50", colorClass: "text-primary" },
     { label: "US Clients", value: "Accepted", colorClass: "text-success" },
   ],
 
   ratings: [
-    { label: "Trading Conditions", score: 3.8, description: "Low spreads from 0.5 pips with direct market access" },
+    { label: "Trading Conditions", score: 3.8, description: "Raw spreads from 0.2 pips on EUR/USD with direct market access and commission-based pricing" },
     { label: "Platform & Tools", score: 4.2, description: "Extremely powerful TWS platform for advanced traders" },
     { label: "Customer Support", score: 3.5, description: "Support available but can be slow during peak hours" },
     { label: "Deposit & Withdrawal", score: 3.6, description: "Free ACH and wire transfers with standard processing" },

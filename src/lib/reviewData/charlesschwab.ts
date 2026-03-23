@@ -138,7 +138,7 @@ export const charlesschwabData: BrokerReviewData = {
     },
     {
       question: "Can I trade forex with Charles Schwab?",
-      answer: "Yes, Charles Schwab offers forex trading through the thinkorswim platform, which was acquired from TD Ameritrade. You can trade 70+ currency pairs with competitive spreads.",
+      answer: "Yes, Charles Schwab offers forex trading through the thinkorswim platform, which was acquired from TD Ameritrade. You can trade 65+ currency pairs with competitive spreads.",
     },
     {
       question: "What is the minimum deposit for Charles Schwab?",
@@ -183,5 +183,5 @@ export const charlesschwabData: BrokerReviewData = {
     "FIFO rule limits hedging strategies",
   ],
 
-  lastUpdated: "2026-02-14",
+  lastUpdated: "2026-03-23",
 };

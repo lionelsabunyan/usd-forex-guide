@@ -85,13 +85,13 @@ const lowSpreadBrokers = [
     eurUsd: "0.0–0.2",
     gbpUsd: "0.2–0.6",
     usdJpy: "0.0–0.3",
-    platforms: "MT4, MT5",
+    platforms: "MT4, MT5, TradeLocker",
     regulation: "Unregulated (St. Lucia)",
-    usAccepted: true,
-    rating: 4.1,
-    highlight: "Raw Spreads + US Accepted",
+    usAccepted: false,
+    rating: 3.5,
+    highlight: "Raw Spreads + High Leverage",
     reviewUrl: "/review/plexytrade",
-    features: ["0.0 pip raw spreads", "US clients accepted", "Up to 1:2000 leverage", "Crypto deposits", "MT4 & MT5"],
+    features: ["0.0 pip raw spreads", "US clients NOT accepted", "Up to 1:2000 leverage", "Crypto deposits", "MT4, MT5 & TradeLocker"],
   },
   {
     name: "Hankotrade",
@@ -210,7 +210,7 @@ const BestLowSpreadBrokers = () => {
     },
     {
       question: "Can US traders get zero spread accounts?",
-      answer: "US-regulated brokers (CFTC/NFA) don't typically offer zero spread accounts — tastyfx at 0.2 pips is the tightest available. However, US traders can access offshore brokers like MidasFX, PlexyTrade, and Hankotrade that offer 0.0 pip raw spreads. Note that offshore brokers lack US regulatory protections.",
+      answer: "US-regulated brokers (CFTC/NFA) don't typically offer zero spread accounts — tastyfx at 0.2 pips is the tightest available. However, US traders can access offshore brokers like MidasFX, Hankotrade, and LMFX that offer 0.0 pip raw spreads. Note that offshore brokers lack US regulatory protections.",
     },
     {
       question: "What is the difference between ECN and STP spreads?",

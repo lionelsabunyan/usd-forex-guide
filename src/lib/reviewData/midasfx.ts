@@ -194,5 +194,5 @@ export const midasfxData: BrokerReviewData = {
     },
   ],
 
-  lastUpdated: "February 4, 2026",
+  lastUpdated: "March 23, 2026",
 };

@@ -6,14 +6,14 @@ export const plexytradeData: BrokerReviewData = {
   brokerName: "PlexyTrade",
   subtitle: "New Broker with LQDFX Infrastructure - 2024",
   heroDescription:
-    "PlexyTrade is a new offshore broker launched in 2024 that offers the highest leverage in the market at 1:2000. Built on the proven LQDFX infrastructure, it accepts US clients and provides zero spread ECN accounts with crypto-only funding.",
+    "PlexyTrade is an offshore broker launched in 2024 that offers the highest leverage in the market at 1:2000. Built on LQDFX infrastructure, it provides zero spread ECN accounts with crypto-only funding. Note: PlexyTrade no longer accepts US clients.",
 
-  seoTitle: "PlexyTrade Review 2026 - Highest Leverage Broker for US Traders",
+  seoTitle: "PlexyTrade Review 2026 - High Leverage Offshore Broker",
   seoDescription:
-    "Complete PlexyTrade review for US traders. Highest leverage at 1:2000, zero spread ECN accounts, built on LQDFX infrastructure. New broker analysis.",
+    "Complete PlexyTrade review. Highest leverage at 1:2000, zero spread ECN accounts, TradeLocker platform. Note: US clients not accepted.",
   canonical: "/review/plexytrade",
 
-  overallRating: 3.0,
+  overallRating: 2.5,
   ratingCount: 2100,
   reviewCount: 1050,
   trustScore: 60,
@@ -30,18 +30,18 @@ export const plexytradeData: BrokerReviewData = {
     minDeposit: "$50",
     maxLeverage: "1:2000",
     spreadFrom: "0.0",
-    usClients: "YES",
+    usClients: "NO",
   },
 
   warningBanner: {
-    text: "PlexyTrade launched in 2024 and has limited operating history. While it's built on LQDFX infrastructure and has good initial reviews, exercise caution with newer unregulated brokers. Only trade with funds you can afford to lose.",
+    text: "⚠️ PlexyTrade NO LONGER ACCEPTS US CLIENTS. This review is provided for informational purposes. PlexyTrade launched in 2024 and is unregulated. Exercise caution with offshore brokers. Only trade with funds you can afford to lose.",
   },
 
   trustFeatures: [
     { icon: Rocket, text: "1:2000 Leverage" },
     { icon: Zap, text: "0.0 ECN Spreads" },
     { icon: Bitcoin, text: "Crypto Deposits" },
-    { icon: Check, text: "US Accepted" },
+    { icon: Check, text: "TradeLocker Platform" },
   ],
 
   quickStats: [
@@ -51,42 +51,50 @@ export const plexytradeData: BrokerReviewData = {
     { label: "Min Deposit", value: "$50", colorClass: "text-primary" },
     { label: "Max Leverage", value: "1:2000", colorClass: "text-primary" },
     { label: "ECN Spreads", value: "From 0.0 pips", colorClass: "text-primary" },
-    { label: "US Clients", value: "Accepted", colorClass: "text-success" },
+    { label: "US Clients", value: "Not Accepted", colorClass: "text-destructive" },
   ],
 
   ratings: [
     { label: "Trading Conditions", score: 4.3, description: "1:2000 leverage, 0.0 ECN spreads" },
-    { label: "Platform & Tools", score: 3.8, description: "MT4 & MT5 available" },
+    { label: "Platform & Tools", score: 3.8, description: "MT4, MT5 & TradeLocker available" },
     { label: "Customer Support", score: 3.5, description: "Email & live chat support" },
     { label: "Deposit & Withdrawal", score: 4.0, description: "Crypto-only, fast processing" },
-    { label: "Trust & Reputation", score: 3.0, description: "New broker, unregulated" },
+    { label: "Trust & Reputation", score: 2.5, description: "New broker, unregulated, no longer accepts US clients" },
   ],
 
   accountTypes: [
     {
-      name: "Standard Account",
+      name: "Micro Account",
       minDeposit: "$50",
+      leverage: "1:2000",
+      spread: "From 1.5 pips",
+      commission: "No",
+      features: ["MT4/MT5/TradeLocker", "No commission", "All instruments", "Hedging allowed", "EA supported"],
+    },
+    {
+      name: "Silver Account",
+      minDeposit: "$100",
       leverage: "1:2000",
       spread: "From 1.0 pips",
       commission: "No",
-      features: ["MT4/MT5 Platform", "No commission", "All instruments", "Hedging allowed", "EA supported"],
-    },
-    {
-      name: "ECN Account",
-      minDeposit: "$100",
-      leverage: "1:2000",
-      spread: "From 0.0 pips",
-      commission: "$3 per lot",
-      features: ["MT4/MT5 Platform", "Raw ECN spreads", "Best for scalpers", "DMA execution", "Fast fills"],
+      features: ["MT4/MT5/TradeLocker", "Tighter spreads", "All instruments", "Swap-free (7 days)", "Free VPS"],
       popular: true,
     },
     {
-      name: "VIP Account",
+      name: "Gold Raw Account",
+      minDeposit: "$500",
+      leverage: "1:2000",
+      spread: "From 0.0 pips",
+      commission: "$3 per lot",
+      features: ["MT4/MT5/TradeLocker", "Raw ECN spreads", "Best for scalpers", "DMA execution", "PAMM available"],
+    },
+    {
+      name: "Platinum Account",
       minDeposit: "$10,000",
       leverage: "1:2000",
       spread: "From 0.0 pips",
       commission: "$2 per lot",
-      features: ["MT4/MT5 Platform", "Lowest commission", "Priority support", "Personal manager", "Premium conditions"],
+      features: ["MT4/MT5/TradeLocker", "Lowest commission", "Priority support", "Personal manager", "Premium conditions"],
     },
   ],
 
@@ -113,11 +121,11 @@ export const plexytradeData: BrokerReviewData = {
   ],
 
   competitorComparison: [
-    { feature: "US Clients Accepted", broker: "Yes", competitor1: "Yes", competitor2: "Yes" },
+    { feature: "US Clients Accepted", broker: "No", competitor1: "Yes", competitor2: "Yes" },
     { feature: "Minimum Deposit", broker: "$50", competitor1: "$10", competitor2: "$10" },
     { feature: "Maximum Leverage", broker: "1:2000", competitor1: "1:500", competitor2: "1:1000" },
     { feature: "Spreads From", broker: "0.0 pips", competitor1: "0.0 pips", competitor2: "0.0 pips" },
-    { feature: "Trading Platforms", broker: "MT4, MT5", competitor1: "MT4, MT5", competitor2: "MT4, MT5" },
+    { feature: "Trading Platforms", broker: "MT4, MT5, TradeLocker", competitor1: "MT4, MT5", competitor2: "MT4, MT5" },
     { feature: "Crypto Deposits", broker: "Crypto Only", competitor1: "Yes", competitor2: "Yes (Only)" },
     { feature: "Established", broker: "2024", competitor1: "2020", competitor2: "2019" },
     { feature: "Trustpilot Rating", broker: "4.4/5", competitor1: "5.0/5", competitor2: "4.2/5" },
@@ -148,7 +156,7 @@ export const plexytradeData: BrokerReviewData = {
     {
       question: "Does PlexyTrade accept US clients?",
       answer:
-        "Yes, PlexyTrade accepts US clients. As an offshore broker based in St. Lucia, they are not restricted by US regulations and can offer services to American traders.",
+        "No, PlexyTrade no longer accepts US clients. As of 2026, they have restricted access for American traders. US-based traders should consider alternatives like Hankotrade, LMFX, or other offshore brokers that still accept US clients.",
     },
     {
       question: "What is the maximum leverage at PlexyTrade?",
@@ -163,7 +171,7 @@ export const plexytradeData: BrokerReviewData = {
     {
       question: "What platforms does PlexyTrade offer?",
       answer:
-        "PlexyTrade offers both MetaTrader 4 (MT4) and MetaTrader 5 (MT5) platforms. Both platforms support Expert Advisors (EAs), allowing for automated trading strategies.",
+        "PlexyTrade offers MetaTrader 4 (MT4), MetaTrader 5 (MT5), and TradeLocker platforms. All platforms support Expert Advisors (EAs), allowing for automated trading strategies.",
     },
     {
       question: "What is the minimum deposit at PlexyTrade?",
@@ -173,19 +181,20 @@ export const plexytradeData: BrokerReviewData = {
   ],
 
   pros: [
-    "Accepts US clients",
     "Highest leverage available (1:2000)",
     "Zero spread ECN accounts",
-    "Good Trustpilot rating (4.4/5)",
-    "Built on proven LQDFX infrastructure",
-    "Both MT4 and MT5 platforms",
+    "TradeLocker platform available",
+    "Swap-free trading (7 days)",
+    "Free VPS service",
+    "PAMM accounts available",
+    "MT4, MT5 and TradeLocker platforms",
     "Fast execution speeds",
     "No deposit or withdrawal fees",
     "Scalping and hedging allowed",
-    "Expert Advisors supported",
   ],
 
   cons: [
+    "Does NOT accept US clients",
     "Very new broker (launched 2024)",
     "Unregulated (St. Lucia)",
     "Crypto-only deposits",
@@ -193,5 +202,5 @@ export const plexytradeData: BrokerReviewData = {
     "No traditional payment methods",
   ],
 
-  lastUpdated: "February 4, 2026",
+  lastUpdated: "March 23, 2026",
 };

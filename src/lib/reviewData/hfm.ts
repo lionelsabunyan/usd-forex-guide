@@ -6,7 +6,7 @@ export const hfmData: BrokerReviewData = {
   brokerName: "HFM",
   subtitle: "Formerly HotForex - Multi-Regulated Since 2010",
   heroDescription:
-    'HFM is a multi-regulated forex and CFD broker serving 3.5+ million clients since 2010. Regulated by CySEC, FCA, DFSA, and FSCA, it offers 1200+ instruments, zero spread accounts, and HFcopy social trading. <strong class="text-amber-500">Note: US clients not currently accepted.</strong>',
+    'HFM is a multi-regulated forex and CFD broker serving 3.5+ million clients since 2010. Regulated by CySEC, FCA, DFSA, FSCA, CMA, and FSA, it offers 1200+ instruments, zero spread accounts, and HFcopy social trading. <strong class="text-amber-500">Note: US clients not currently accepted.</strong>',
 
   seoTitle: "HFM Review 2026 - Award-Winning Multi-Regulated Broker",
   seoDescription:
@@ -17,8 +17,8 @@ export const hfmData: BrokerReviewData = {
   ratingCount: 17500,
   reviewCount: 8500,
   trustScore: 90,
-  trustpilotRating: 4.2,
-  trustpilotReviews: 8500,
+  trustpilotRating: 4.5,
+  trustpilotReviews: 9200,
 
   heroBadge: {
     icon: Award,
@@ -38,17 +38,17 @@ export const hfmData: BrokerReviewData = {
   },
 
   trustFeatures: [
-    { icon: Shield, text: "CySEC & FCA Regulated" },
+    { icon: Shield, text: "6x Multi-Regulated (CySEC, FCA, DFSA, FSCA, CMA, FSA)" },
     { icon: Award, text: "60+ Industry Awards" },
     { icon: Users, text: "3.5M+ Clients" },
     { icon: Copy, text: "HFcopy Trading" },
   ],
 
   quickStats: [
-    { label: "Trustpilot", value: "4.2/5", colorClass: "text-success" },
+    { label: "Trustpilot", value: "4.5/5", colorClass: "text-success" },
     { label: "Established", value: "2010", colorClass: "text-foreground" },
     { label: "Headquarters", value: "Cyprus", colorClass: "text-foreground" },
-    { label: "Regulation", value: "CySEC, FCA+", colorClass: "text-foreground" },
+    { label: "Regulation", value: "CySEC, FCA + 4 more", colorClass: "text-foreground" },
     { label: "Min Deposit", value: "$0", colorClass: "text-success" },
     { label: "Max Leverage", value: "1:2000", colorClass: "text-primary" },
     { label: "Instruments", value: "1200+", colorClass: "text-foreground" },
@@ -60,17 +60,17 @@ export const hfmData: BrokerReviewData = {
     { label: "Platform & Tools", score: 4.6, description: "MT4, MT5, HFM App" },
     { label: "Customer Support", score: 4.4, description: "24/5 multilingual support" },
     { label: "Deposit & Withdrawal", score: 4.5, description: "Multiple free options" },
-    { label: "Trust & Reputation", score: 4.8, description: "Multi-regulated, 60+ awards" },
+    { label: "Trust & Reputation", score: 4.8, description: "6x regulated, 60+ awards" },
   ],
 
   accountTypes: [
     {
-      name: "Micro Account",
+      name: "Cent Account",
       minDeposit: "$0",
       leverage: "1:2000",
       spread: "From 1.0 pips",
       commission: "No",
-      features: ["MT4/MT5 Platform", "No commission", "Cent accounts", "Beginners friendly", "Swap-free available"],
+      features: ["MT4/MT5 Platform", "No commission", "Cent lots", "Beginners friendly", "Swap-free available"],
     },
     {
       name: "Premium Account",
@@ -80,6 +80,14 @@ export const hfmData: BrokerReviewData = {
       commission: "No",
       features: ["MT4/MT5 Platform", "Standard lots", "All instruments", "Expert Advisors", "Hedging allowed"],
       popular: true,
+    },
+    {
+      name: "Pro Account",
+      minDeposit: "$0",
+      leverage: "1:2000",
+      spread: "From 0.5 pips",
+      commission: "No",
+      features: ["MT4/MT5 Platform", "Tighter spreads", "All instruments", "No commission", "Advanced traders"],
     },
     {
       name: "Zero Spread",
@@ -131,7 +139,7 @@ export const hfmData: BrokerReviewData = {
     { feature: "Trading Platforms", broker: "MT4, MT5", competitor1: "MT5", competitor2: "MT4, MT5" },
     { feature: "Copy Trading", broker: "Yes (HFcopy)", competitor1: "No", competitor2: "No" },
     { feature: "Crypto Deposits", broker: "Yes", competitor1: "Yes", competitor2: "Yes" },
-    { feature: "Regulation", broker: "CySEC, FCA", competitor1: "FSA (SVG)", competitor2: "FSA (SVG)" },
+    { feature: "Regulation", broker: "CySEC, FCA + 4 more", competitor1: "FSA (SVG)", competitor2: "FSA (SVG)" },
   ],
 
   communityFeedback: {
@@ -168,7 +176,7 @@ export const hfmData: BrokerReviewData = {
     {
       question: "Is HFM regulated and safe?",
       answer:
-        "Yes, HFM is multi-regulated by CySEC (Cyprus), FCA (UK), DFSA (Dubai), FSCA (South Africa), and FSA (SVG). They've won 60+ industry awards and serve over 3.5 million clients worldwide since 2010.",
+        "Yes, HFM is multi-regulated by CySEC (Cyprus), FCA (UK), DFSA (Dubai), FSCA (South Africa), CMA (Kenya), and FSA (Seychelles). They've won 60+ industry awards and serve over 3.5 million clients worldwide since 2010.",
     },
     {
       question: "How fast are HFM withdrawals?",
@@ -183,7 +191,7 @@ export const hfmData: BrokerReviewData = {
   ],
 
   pros: [
-    "Multi-regulated broker (CySEC, FCA, DFSA, FSCA, FSA)",
+    "Multi-regulated broker (CySEC, FCA, DFSA, FSCA, CMA, FSA)",
     "Award-winning broker since 2010 (60+ awards)",
     "Zero spread accounts available",
     "High leverage up to 1:2000",
@@ -265,5 +273,5 @@ export const hfmData: BrokerReviewData = {
     },
   ],
 
-  lastUpdated: "February 4, 2026",
+  lastUpdated: "March 23, 2026",
 };
