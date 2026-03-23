@@ -622,18 +622,44 @@ const GlossaryPage = () => {
     return new Set(glossaryTerms.map(t => t.term[0].toUpperCase()));
   }, []);
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "DefinedTermSet",
-    "name": "Forex Trading Glossary",
-    "description": "Comprehensive glossary of forex trading terms for beginners and experienced traders.",
-    "url": "https://beginnerfxguide.com/glossary",
-    "hasDefinedTerm": glossaryTerms.map(t => ({
-      "@type": "DefinedTerm",
-      "name": t.term,
-      "description": t.definition
-    }))
-  };
+  // Top terms targeted for Google featured snippets (definition + FAQ format)
+  const snippetTargetTerms = [
+    "Pip", "Spread", "Leverage", "Margin", "Margin Call", "Lot",
+    "Currency Pair", "Stop Loss", "Take Profit", "Major Pairs",
+    "ECN (Electronic Communication Network)", "Swap", "Slippage",
+    "Risk-Reward Ratio", "Candlestick"
+  ];
+
+  const faqSnippetItems = glossaryTerms
+    .filter(t => snippetTargetTerms.includes(t.term))
+    .map(t => ({
+      "@type": "Question",
+      "name": `What is ${t.term.replace(/\s*\(.*?\)\s*/g, "")} in forex trading?`,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": `${t.term.replace(/\s*\(.*?\)\s*/g, "")} is ${t.definition.charAt(0).toLowerCase()}${t.definition.slice(1)}`
+      }
+    }));
+
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": "Forex Trading Glossary",
+      "description": "Comprehensive glossary of forex trading terms for beginners and experienced traders.",
+      "url": "https://beginnerfxguide.com/glossary",
+      "hasDefinedTerm": glossaryTerms.map(t => ({
+        "@type": "DefinedTerm",
+        "name": t.term,
+        "description": t.definition
+      }))
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqSnippetItems
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -743,7 +769,10 @@ const GlossaryPage = () => {
                     {letter}
                   </h2>
                   <div className="space-y-4">
-                    {terms.map((term, idx) => (
+                    {terms.map((term, idx) => {
+                      const isSnippetTarget = snippetTargetTerms.includes(term.term);
+                      const cleanName = term.term.replace(/\s*\(.*?\)\s*/g, "");
+                      return (
                       <Card
                         key={idx}
                         id={term.term.toLowerCase().replace(/\s+/g, "-")}
@@ -751,8 +780,11 @@ const GlossaryPage = () => {
                       >
                         <CardContent className="p-6">
                           <h3 className="text-xl font-semibold text-foreground mb-2">
-                            {term.term}
+                            {isSnippetTarget ? `What is ${cleanName} in Forex?` : term.term}
                           </h3>
+                          {isSnippetTarget && (
+                            <p className="text-sm font-medium text-primary mb-1">{term.term}</p>
+                          )}
                           <p className="text-muted-foreground leading-relaxed mb-3">
                             {term.definition}
                           </p>
@@ -785,7 +817,8 @@ const GlossaryPage = () => {
                           </div>
                         </CardContent>
                       </Card>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               ))

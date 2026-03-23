@@ -64,6 +64,10 @@ const TechnicalAnalysis = lazy(() => import("./pages/guides/TechnicalAnalysis"))
 const FundamentalAnalysis = lazy(() => import("./pages/guides/FundamentalAnalysis"));
 const HowWeReview = lazy(() => import("./pages/guides/HowWeReview"));
 const USForexTradingGuide = lazy(() => import("./pages/guides/USForexTradingGuide"));
+const BestCopyTradingPlatforms = lazy(() => import("./pages/guides/BestCopyTradingPlatforms"));
+const BestForexTradingApps = lazy(() => import("./pages/guides/BestForexTradingApps"));
+const BestForexDemoAccounts = lazy(() => import("./pages/guides/BestForexDemoAccounts"));
+const BestScalpingBrokers = lazy(() => import("./pages/guides/BestScalpingBrokers"));
 
 // Tools - Lazy loaded
 const ToolsPage = lazy(() => import("./pages/tools/ToolsPage"));
@@ -99,6 +103,7 @@ const AvaTradevsEToro = lazy(() => import("./pages/compare/AvaTradevsEToro"));
 const OANDAvsIG = lazy(() => import("./pages/compare/OANDAvsIG"));
 const CharlesSchwabvsInteractiveBrokers = lazy(() => import("./pages/compare/CharlesSchwabvsInteractiveBrokers"));
 const XMvsFXTM = lazy(() => import("./pages/compare/XMvsFXTM"));
+const MT4vsMT5 = lazy(() => import("./pages/compare/MT4vsMT5"));
 const BestBrokersAustralia = lazy(() => import("./pages/BestBrokersAustralia"));
 const BestBrokersUK = lazy(() => import("./pages/BestBrokersUK"));
 const BestBrokersCanada = lazy(() => import("./pages/BestBrokersCanada"));
@@ -226,6 +231,7 @@ const App = () => (
             <Route path="/compare/oanda-vs-ig-markets" element={<OANDAvsIG />} />
             <Route path="/compare/charles-schwab-vs-interactive-brokers" element={<CharlesSchwabvsInteractiveBrokers />} />
             <Route path="/compare/xm-vs-fxtm" element={<XMvsFXTM />} />
+            <Route path="/compare/mt4-vs-mt5" element={<MT4vsMT5 />} />
             <Route path="/guides" element={<GuidesPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/about" element={<AboutPage />} />
@@ -240,6 +246,10 @@ const App = () => (
             <Route path="/guides/fundamental-analysis" element={<FundamentalAnalysis />} />
             <Route path="/guides/how-we-review" element={<HowWeReview />} />
             <Route path="/guides/forex-trading-usa" element={<USForexTradingGuide />} />
+            <Route path="/guides/best-copy-trading-platforms" element={<BestCopyTradingPlatforms />} />
+            <Route path="/guides/best-forex-trading-apps" element={<BestForexTradingApps />} />
+            <Route path="/guides/best-forex-demo-accounts" element={<BestForexDemoAccounts />} />
+            <Route path="/guides/best-scalping-brokers" element={<BestScalpingBrokers />} />
 
             {/* Tools */}
             <Route path="/tools" element={<ToolsPage />} />

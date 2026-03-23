@@ -12,7 +12,9 @@ import {
   Clock,
   ArrowRight,
   Flag,
-  Star
+  Star,
+  Monitor,
+  Zap
 } from "lucide-react";
 
 const guides = [
@@ -79,6 +81,42 @@ const guides = [
     readTime: "15 min read",
     difficulty: "Advanced",
     topics: ["Economic Indicators", "Central Bank Policy", "News Trading", "Economic Calendar"]
+  },
+  {
+    id: "best-copy-trading-platforms",
+    title: "Best Copy Trading Platforms",
+    description: "Discover the top platforms that let you replicate professional traders' strategies. Compare copy trading brokers, features, and costs.",
+    icon: Star,
+    readTime: "14 min read",
+    difficulty: "Beginner",
+    topics: ["Copy Trading", "eToro", "AvaTrade", "Social Trading"]
+  },
+  {
+    id: "best-forex-trading-apps",
+    title: "Best Forex Trading Apps",
+    description: "Compare the top mobile forex trading apps for iOS and Android. We review charting, alerts, biometric security, and execution across 10 broker apps.",
+    icon: BookOpen,
+    readTime: "16 min read",
+    difficulty: "Beginner",
+    topics: ["Mobile Trading", "iOS & Android", "Charting", "US Brokers"]
+  },
+  {
+    id: "best-forex-demo-accounts",
+    title: "Best Forex Demo Accounts",
+    description: "Practice trading risk-free with virtual money. Compare demo accounts from top brokers — balances, time limits, platforms, and how to transition to live.",
+    icon: Monitor,
+    readTime: "15 min read",
+    difficulty: "Beginner",
+    topics: ["Demo Accounts", "Paper Trading", "Practice", "Risk-Free"]
+  },
+  {
+    id: "best-scalping-brokers",
+    title: "Best Forex Scalping Brokers",
+    description: "Find the best brokers for scalping with raw spreads from 0.0 pips, fast execution, and ECN accounts. Includes US-regulated options for active traders.",
+    icon: Zap,
+    readTime: "16 min read",
+    difficulty: "Intermediate",
+    topics: ["Scalping", "ECN Brokers", "Low Spreads", "Fast Execution"]
   }
 ];
 

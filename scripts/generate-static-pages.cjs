@@ -98,6 +98,10 @@ const staticPages = [
   { path: '/guides/technical-analysis', title: 'Forex Technical Analysis for Beginners | US Forex Guide', desc: 'Introduction to technical analysis for forex traders. Charts, indicators, patterns, and how to use them in your trading strategy.' },
   { path: '/guides/fundamental-analysis', title: 'Forex Fundamental Analysis Guide | US Forex Guide', desc: 'Learn fundamental analysis for forex trading. Economic indicators, central bank decisions, and how they move currency pairs.' },
   { path: '/guides/how-we-review', title: 'How We Review Forex Brokers | US Forex Guide', desc: 'Our transparent methodology for reviewing and rating forex brokers. Learn how we test spreads, support, regulation, and more.' },
+  { path: '/guides/best-copy-trading-platforms', title: 'Best Copy Trading Platforms for Forex 2026 | US Forex Guide', desc: 'Compare the best copy trading platforms for forex. eToro, AvaTrade, FXTM, HFM reviewed. Learn how copy trading works, fees, risks, and how to get started.' },
+  { path: '/guides/best-forex-trading-apps', title: 'Best Forex Trading Apps 2026 — Top Mobile Platforms Compared | US Forex Guide', desc: 'Compare the best forex trading apps for mobile. eToro, OANDA, Forex.com, IG, thinkorswim & more reviewed. iOS & Android apps ranked for US and international traders.' },
+  { path: '/guides/best-forex-demo-accounts', title: 'Best Forex Demo Accounts 2026 — Practice Trading Risk-Free | US Forex Guide', desc: 'Compare the best forex demo accounts for 2026. eToro, OANDA, Forex.com, IG, Interactive Brokers reviewed. Learn how demo accounts work, what to look for, and when to switch to live trading.' },
+  { path: '/guides/best-scalping-brokers', title: 'Best Forex Scalping Brokers 2026 — Low Spread ECN Brokers | US Forex Guide', desc: 'Compare the best forex brokers for scalping. Pepperstone, Exness, FXTM, and US options reviewed. Raw spreads from 0.0 pips, fast execution, and ECN accounts compared.' },
 
   // Tools
   { path: '/tools/pip-calculator', title: 'Forex Pip Calculator | US Forex Guide', desc: 'Free pip value calculator for forex traders. Calculate pip values in USD for any currency pair and account size.' },
@@ -122,6 +126,7 @@ const staticPages = [
   { path: '/compare/oanda-vs-ig-markets', title: 'OANDA vs IG Markets Comparison 2026 | US Forex Guide', desc: 'OANDA vs IG Markets comparison for US traders. Two veteran CFTC-regulated brokers compared on spreads, deposits, and platforms.' },
   { path: '/compare/charles-schwab-vs-interactive-brokers', title: 'Charles Schwab vs Interactive Brokers 2026 | US Forex Guide', desc: 'Charles Schwab vs Interactive Brokers for forex trading. Compare thinkorswim vs TWS, commissions, and market access.' },
   { path: '/compare/xm-vs-fxtm', title: 'XM vs FXTM Comparison 2026 | US Forex Guide', desc: 'XM vs FXTM head-to-head comparison. Compare leverage, spreads, education, and trading conditions for international traders.' },
+  { path: '/compare/mt4-vs-mt5', title: 'MT4 vs MT5: Which MetaTrader Platform Is Better? (2026) | US Forex Guide', desc: 'Detailed MetaTrader 4 vs MetaTrader 5 comparison. Compare order types, timeframes, indicators, Expert Advisors, hedging, and find the right platform for your trading.' },
 
   // Resources
   { path: '/resources/us-forex-checklist', title: 'US Forex Trader Checklist | US Forex Guide', desc: 'Complete checklist for US forex traders before opening an account. Regulations, broker vetting, and risk management checklist.' },

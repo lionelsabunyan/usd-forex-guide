@@ -13,11 +13,11 @@ const faqCategories = [
     faqs: [
       {
         question: "What is Forex trading?",
-        answer: "Forex (Foreign Exchange) trading is the buying and selling of currencies on the global market. It's the largest financial market in the world with a daily trading volume exceeding $6 trillion. Traders profit from the fluctuations in exchange rates between currency pairs."
+        answer: "Forex (Foreign Exchange) trading is the buying and selling of currencies on the global foreign exchange market — the largest financial market in the world with a daily trading volume exceeding $6 trillion. Traders profit by speculating on the fluctuations in exchange rates between currency pairs like EUR/USD, GBP/USD, and USD/JPY."
       },
       {
         question: "How does Forex trading work?",
-        answer: "Forex trading involves buying one currency while simultaneously selling another. Currencies are traded in pairs (e.g., EUR/USD). When you believe the base currency will strengthen against the quote currency, you buy. When you think it will weaken, you sell."
+        answer: "Forex trading works by buying one currency while simultaneously selling another, always in pairs (e.g., EUR/USD). You buy a pair when you believe the base currency will strengthen against the quote currency, and sell when you think it will weaken. Trades are executed through online brokers who provide trading platforms with real-time pricing, charts, and order execution."
       },
       {
         question: "What are currency pairs?",
@@ -25,7 +25,7 @@ const faqCategories = [
       },
       {
         question: "What is a pip in Forex?",
-        answer: "A pip (Percentage in Point) is the smallest price movement in a currency pair. For most pairs, it's the fourth decimal place (0.0001). For pairs involving the Japanese Yen, it's the second decimal place (0.01)."
+        answer: "A pip (Percentage in Point) is the smallest standard price movement in a forex currency pair, equal to 0.0001 for most pairs (the fourth decimal place). For pairs involving the Japanese Yen, a pip equals 0.01 (the second decimal place). Pip value determines your profit or loss per price movement and varies based on lot size and currency pair."
       }
     ]
   },
@@ -48,7 +48,7 @@ const faqCategories = [
       },
       {
         question: "What is the maximum leverage for US traders?",
-        answer: "US regulations limit leverage to 50:1 for major currency pairs and 20:1 for minor pairs. This is lower than many offshore brokers offer, but it's designed to protect retail traders from excessive risk."
+        answer: "The maximum leverage for US forex traders is 50:1 for major currency pairs and 20:1 for minor pairs, as set by CFTC regulations. This means with $1,000, you can control up to $50,000 in major pairs. While lower than offshore brokers, these limits protect retail traders from the amplified losses that come with excessive leverage."
       }
     ]
   },
@@ -59,11 +59,11 @@ const faqCategories = [
     faqs: [
       {
         question: "How do I choose a reliable Forex broker?",
-        answer: "Look for: 1) Proper regulation (CFTC/NFA for US), 2) Competitive spreads and fees, 3) User-friendly trading platform, 4) Quality customer support, 5) Educational resources, 6) Positive reviews and reputation. Our broker comparison tool can help you evaluate these factors."
+        answer: "To choose a reliable forex broker, verify these six factors: 1) Proper regulation — CFTC and NFA registration for US traders, 2) Competitive spreads and transparent fees, 3) A user-friendly trading platform like MetaTrader 4/5, 4) Responsive customer support, 5) Educational resources for your skill level, and 6) Positive reviews and established reputation. US traders should only use CFTC/NFA-regulated brokers for legal protection."
       },
       {
         question: "What's the difference between ECN and Market Maker brokers?",
-        answer: "ECN (Electronic Communication Network) brokers connect traders directly to liquidity providers, offering tighter spreads but charging commissions. Market Makers set their own prices and may trade against you. Each has pros and cons depending on your trading style."
+        answer: "ECN (Electronic Communication Network) brokers connect traders directly to liquidity providers, offering tighter spreads but charging commissions per trade. Market Maker brokers set their own bid/ask prices and profit from the spread rather than commissions. ECN brokers are better for high-volume traders who want raw pricing, while Market Makers suit beginners who prefer fixed spreads and guaranteed execution."
       },
       {
         question: "Are demo accounts important?",

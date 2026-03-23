@@ -174,32 +174,118 @@ def get_top_keywords(limit: int = 5) -> list:
     return []
 
 
+def _pct(current, previous):
+    """Yuzde degisim + emoji."""
+    if not previous:
+        return "N/A", ""
+    change = ((current - previous) / previous) * 100
+    if change > 0:
+        return f"+{change:.1f}%", "📈"
+    elif change < 0:
+        return f"{change:.1f}%", "📉"
+    return "0%", "➡️"
+
+
+def get_top_pages_ga4(days=1, limit=5):
+    """GA4 top sayfalar."""
+    try:
+        from google.oauth2 import service_account
+        from googleapiclient.discovery import build
+
+        credentials = service_account.Credentials.from_service_account_file(
+            os.environ.get("GOOGLE_APPLICATION_CREDENTIALS", "/tmp/google-credentials.json"),
+            scopes=['https://www.googleapis.com/auth/analytics.readonly']
+        )
+        service = build('analyticsdata', 'v1beta', credentials=credentials)
+        end_date = datetime.now()
+        start_date = end_date - timedelta(days=days)
+        response = service.properties().runReport(
+            property=GA4_PROPERTY_ID,
+            body={
+                'dateRanges': [{'startDate': start_date.strftime('%Y-%m-%d'), 'endDate': end_date.strftime('%Y-%m-%d')}],
+                'dimensions': [{'name': 'pagePath'}],
+                'metrics': [{'name': 'screenPageViews'}],
+                'orderBys': [{'metric': {'metricName': 'screenPageViews'}, 'desc': True}],
+                'limit': limit,
+            },
+        ).execute()
+        return [(r['dimensionValues'][0]['value'], int(r['metricValues'][0]['value'])) for r in response.get('rows', [])]
+    except Exception as e:
+        print(f"GA4 top pages error: {e}")
+    return []
+
+
 def daily_report():
-    """Günlük rapor gönder"""
+    """Gunluk rapor — onceki gune gore karsilastirmali."""
     setup_google_credentials()
 
-    ga_data = get_ga4_data(days=1)
-    gsc_data = get_gsc_data(days=1)
+    ga_today = get_ga4_data(days=1)
+    ga_prev = get_ga4_data(days=2)  # onceki 2 gun toplam — fark ile onceki gun
+    gsc_today = get_gsc_data(days=1)
+    gsc_prev = get_gsc_data(days=2)
+    top_keywords = get_top_keywords(limit=5)
+    top_pages = get_top_pages_ga4(days=1, limit=5)
 
     bugun = datetime.now().strftime('%d.%m.%Y')
-    gun_map = {0: "Pazartesi", 1: "Salı", 2: "Çarşamba", 3: "Perşembe", 4: "Cuma", 5: "Cumartesi", 6: "Pazar"}
+    gun_map = {0: "Pazartesi", 1: "Sali", 2: "Carsamba", 3: "Persembe", 4: "Cuma", 5: "Cumartesi", 6: "Pazar"}
     gun = gun_map.get(datetime.now().weekday(), "")
 
-    message = f"""🌅 *Günaydın Sedo!*
+    # GSC degisimler
+    clicks_chg, clicks_icon = _pct(gsc_today.get('clicks', 0), gsc_prev.get('clicks', 0))
+    imp_chg, imp_icon = _pct(gsc_today.get('impressions', 0), gsc_prev.get('impressions', 0))
+
+    # GA4 degisimler
+    sess_chg, sess_icon = _pct(ga_today.get('sessions', 0), ga_prev.get('sessions', 0))
+    user_chg, user_icon = _pct(ga_today.get('users', 0), ga_prev.get('users', 0))
+
+    avg_sec = ga_today.get('avg_session', 0)
+    avg_min = int(avg_sec // 60)
+    avg_rem = int(avg_sec % 60)
+
+    message = f"""🌅 *BEGINNER FX GUIDE — Gunluk Rapor*
 📅 {bugun} {gun}
 
-*Dünün Özeti:*
+🔍 *GSC Metrikleri:*
+• Tiklama: *{gsc_today.get('clicks', 'N/A')}* ({clicks_icon} {clicks_chg})
+• Gosterim: *{gsc_today.get('impressions', 'N/A')}* ({imp_icon} {imp_chg})
+• Ort. Pozisyon: *{gsc_today.get('position', 'N/A')}*
+• CTR: *%{gsc_today.get('ctr', 'N/A')}*
 
-📈 *Analytics:*
-• Oturum: {ga_data.get('sessions', 'N/A')}
-• Kullanıcı: {ga_data.get('users', 'N/A')}
-• Sayfa Görüntüleme: {ga_data.get('pageviews', 'N/A')}
+📈 *GA4 Metrikleri:*
+• Oturum: *{ga_today.get('sessions', 'N/A')}* ({sess_icon} {sess_chg})
+• Kullanici: *{ga_today.get('users', 'N/A')}* ({user_icon} {user_chg})
+• Sayfa Gor.: *{ga_today.get('pageviews', 'N/A')}*
+• Bounce Rate: *%{ga_today.get('bounce_rate', 'N/A')}*
+• Ort. Oturum: *{avg_min}m {avg_rem}s*
+"""
 
-🔍 *Search Console:*
-• Gösterim: {gsc_data.get('impressions', 'N/A')}
-• Tıklama: {gsc_data.get('clicks', 'N/A')}
+    if top_pages:
+        message += "\n🏆 *Top 5 Sayfa:*\n"
+        for i, (page, views) in enumerate(top_pages, 1):
+            message += f"  {i}. `{page[:30]}` — {views} ziyaret\n"
 
-_beginnerfxguide.com_"""
+    if top_keywords:
+        message += "\n🎯 *Top 5 Keyword:*\n"
+        for i, kw in enumerate(top_keywords, 1):
+            message += f"  {i}. `{kw['keyword'][:25]}` (P:{kw['position']})\n"
+
+    # Anomali uyarilari
+    warnings = []
+    if gsc_today and gsc_prev:
+        if gsc_today.get('clicks', 0) < gsc_prev.get('clicks', 1) * 0.5:
+            warnings.append("⚠️ GSC tiklamalarda ciddi dusus!")
+        if gsc_today.get('impressions', 0) < gsc_prev.get('impressions', 1) * 0.5:
+            warnings.append("⚠️ GSC gosterimlerde ciddi dusus!")
+    if ga_today and ga_prev:
+        if ga_today.get('sessions', 0) < ga_prev.get('sessions', 1) * 0.5:
+            warnings.append("⚠️ GA4 oturumlarda ciddi dusus!")
+
+    if warnings:
+        message += "\n🚨 *Uyarilar:*\n"
+        for w in warnings:
+            message += f"{w}\n"
+
+    message += "\n_beginnerfxguide.com_"
 
     return send_telegram(message)
 

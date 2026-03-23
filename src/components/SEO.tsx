@@ -7,7 +7,7 @@ type SEOProps = {
   ogImage?: string;
   ogType?: string;
   noindex?: boolean;
-  jsonLd?: Record<string, any>;
+  jsonLd?: Record<string, any> | Record<string, any>[];
 };
 
 const SEO = ({
