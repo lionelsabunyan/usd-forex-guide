@@ -4,21 +4,21 @@ import type { BrokerReviewData } from "@/lib/brokerReviewData";
 export const hankotradeData: BrokerReviewData = {
   brokerId: "hankotrade",
   brokerName: "Hankotrade",
-  subtitle: "5.0 Trustpilot Rating - US Clients Welcome",
+  subtitle: "4.8 Trustpilot Rating - US Clients Welcome",
   heroDescription:
-    'Hankotrade is an offshore forex broker with an exceptional <strong class="text-success">5.0/5 Trustpilot rating</strong> based on 2,300+ reviews. <strong class="text-success">Accepts US clients</strong> and offers ECN spreads from 0.0 pips with same-day crypto withdrawals.',
+    'Hankotrade is an offshore forex broker with an excellent <strong class="text-success">4.8/5 Trustpilot rating</strong> based on 2,400+ reviews. <strong class="text-success">Accepts US clients</strong> and offers ECN spreads from 0.0 pips with same-day crypto withdrawals.',
 
-  seoTitle: "Hankotrade Review 2026 - 5.0 Trustpilot Rated Broker for US Traders",
+  seoTitle: "Hankotrade Review 2026 - 4.8 Trustpilot Rated Broker for US Traders",
   seoDescription:
-    "Complete Hankotrade review for 2026. Perfect 5.0/5 Trustpilot rating, accepts US clients, ECN spreads from 0.0 pips, same-day crypto withdrawals. Trusted offshore broker.",
+    "Complete Hankotrade review for 2026. Excellent 4.8/5 Trustpilot rating, accepts US clients, ECN spreads from 0.0 pips, same-day crypto withdrawals. Trusted offshore broker.",
   canonical: "/review/hankotrade",
 
   overallRating: 4.7,
   ratingCount: 13800,
   reviewCount: 6800,
   trustScore: 88,
-  trustpilotRating: 5.0,
-  trustpilotReviews: 2363,
+  trustpilotRating: 4.8,
+  trustpilotReviews: 2439,
 
   heroBadge: {
     icon: Shield,
@@ -34,19 +34,19 @@ export const hankotradeData: BrokerReviewData = {
   },
 
   warningBanner: {
-    text: "Hankotrade is an offshore broker registered in Seychelles. While they have an exceptional Trustpilot rating and accept US clients, trading with offshore brokers carries additional risks. Only trade with funds you can afford to lose and consider your risk tolerance.",
+    text: "Hankotrade is an offshore broker registered in Seychelles. While they have an excellent Trustpilot rating and accept US clients, trading with offshore brokers carries additional risks. Only trade with funds you can afford to lose and consider your risk tolerance.",
   },
 
   trustFeatures: [
-    { icon: Star, text: "5.0/5 Trustpilot" },
+    { icon: Star, text: "4.8/5 Trustpilot" },
     { icon: Check, text: "US Clients Accepted" },
     { icon: Zap, text: "ECN Spreads 0.0" },
     { icon: Award, text: "Same-Day Withdrawals" },
   ],
 
   quickStats: [
-    { label: "Trustpilot", value: "5.0/5", colorClass: "text-success" },
-    { label: "Reviews", value: "2,363+", colorClass: "text-foreground" },
+    { label: "Trustpilot", value: "4.8/5", colorClass: "text-success" },
+    { label: "Reviews", value: "2,439+", colorClass: "text-foreground" },
     { label: "Headquarters", value: "Seychelles", colorClass: "text-foreground" },
     { label: "Regulation", value: "FSA (Seychelles)", colorClass: "text-foreground" },
     { label: "Min Deposit", value: "$10", colorClass: "text-success" },
@@ -60,7 +60,7 @@ export const hankotradeData: BrokerReviewData = {
     { label: "Platform & Tools", score: 4.5, description: "MT4 & MT5 available" },
     { label: "Customer Support", score: 4.3, description: "24/5 responsive support" },
     { label: "Deposit & Withdrawal", score: 4.5, description: "Same-day crypto withdrawals" },
-    { label: "Trust & Reputation", score: 4.3, description: "5.0/5 Trustpilot, Seychelles FSA" },
+    { label: "Trust & Reputation", score: 4.3, description: "4.8/5 Trustpilot, Seychelles FSA" },
   ],
 
   accountTypes: [
@@ -98,14 +98,14 @@ export const hankotradeData: BrokerReviewData = {
     { feature: "Maximum Leverage", broker: "1:500", competitor1: "1:1000", competitor2: "1:1000" },
     { feature: "Spreads From", broker: "0.0 pips", competitor1: "0.0 pips", competitor2: "0.0 pips" },
     { feature: "Trading Platforms", broker: "MT4, MT5", competitor1: "MT5", competitor2: "MT4" },
-    { feature: "Trustpilot Rating", broker: "5.0/5", competitor1: "4.2/5", competitor2: "N/A" },
+    { feature: "Trustpilot Rating", broker: "4.8/5", competitor1: "4.2/5", competitor2: "N/A" },
     { feature: "Crypto Deposits", broker: "Yes", competitor1: "Yes", competitor2: "Yes" },
     { feature: "Same-Day Withdrawals", broker: "Yes", competitor1: "Yes", competitor2: "No" },
   ],
 
   communityFeedback: {
     positiveThemes: [
-      "Exceptional 5.0/5 Trustpilot rating",
+      "Excellent 4.8/5 Trustpilot rating",
       "Fast same-day crypto withdrawals",
       "True ECN spreads from 0.0 pips",
       "Responsive and helpful support team",
@@ -132,7 +132,7 @@ export const hankotradeData: BrokerReviewData = {
     {
       question: "Is Hankotrade regulated and safe?",
       answer:
-        "Hankotrade is registered in Seychelles (FSA). While not regulated by major authorities like FCA or CySEC, they have an exceptional 5.0/5 Trustpilot rating with 2,300+ reviews. They offer segregated accounts and negative balance protection. Trade only with funds you can afford to lose.",
+        "Hankotrade is registered in Seychelles (FSA). While not regulated by major authorities like FCA or CySEC, they have an excellent 4.8/5 Trustpilot rating with 2,400+ reviews. They offer segregated accounts and negative balance protection. Trade only with funds you can afford to lose.",
     },
     {
       question: "How fast are Hankotrade withdrawals?",
@@ -147,12 +147,12 @@ export const hankotradeData: BrokerReviewData = {
     {
       question: "What makes Hankotrade's Trustpilot rating so high?",
       answer:
-        "Hankotrade has maintained a perfect 5.0/5 Trustpilot rating based on 2,300+ reviews. Traders consistently praise their fast withdrawals, responsive support, and competitive ECN spreads. The high rating reflects genuine customer satisfaction.",
+        "Hankotrade has maintained an excellent 4.8/5 Trustpilot rating based on 2,400+ reviews. Traders consistently praise their fast withdrawals, responsive support, and competitive ECN spreads. The high rating reflects genuine customer satisfaction.",
     },
   ],
 
   pros: [
-    "Perfect 5.0/5 Trustpilot rating (2,300+ reviews)",
+    "Excellent 4.8/5 Trustpilot rating (2,400+ reviews)",
     "US clients fully accepted",
     "Same-day crypto withdrawals",
     "True ECN spreads from 0.0 pips",
@@ -174,5 +174,5 @@ export const hankotradeData: BrokerReviewData = {
     "Not regulated by FCA/CySEC/ASIC",
   ],
 
-  lastUpdated: "February 4, 2026",
+  lastUpdated: "March 23, 2026",
 };
