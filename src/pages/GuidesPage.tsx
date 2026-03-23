@@ -15,7 +15,9 @@ import {
   Star,
   Monitor,
   Zap,
-  TrendingUp
+  TrendingUp,
+  Radio,
+  BarChart3
 } from "lucide-react";
 
 const guides = [
@@ -136,6 +138,33 @@ const guides = [
     readTime: "20 min read",
     difficulty: "Intermediate",
     topics: ["Day Trading", "Intraday Strategies", "Risk Management", "Best Hours"]
+  },
+  {
+    id: "best-forex-signal-providers",
+    title: "Best Forex Signal Providers",
+    description: "Find trusted, verified forex signal providers. Compare copy trading platforms, algorithmic signals, and manual providers — with clear scam warnings to protect your capital.",
+    icon: Radio,
+    readTime: "16 min read",
+    difficulty: "Beginner",
+    topics: ["Forex Signals", "Copy Trading", "Scam Warnings", "Signal Reviews"]
+  },
+  {
+    id: "best-low-spread-brokers",
+    title: "Best Low Spread & Zero Spread Brokers",
+    description: "Compare the lowest spread forex brokers. EUR/USD, GBP/USD, USD/JPY spreads compared. ECN vs market maker, zero spread accounts, and real vs advertised spreads explained.",
+    icon: BarChart3,
+    readTime: "18 min read",
+    difficulty: "Intermediate",
+    topics: ["Low Spreads", "Zero Spread", "ECN Brokers", "Spread Comparison"]
+  },
+  {
+    id: "most-trusted-forex-brokers",
+    title: "Most Trusted & Regulated Forex Brokers",
+    description: "Find the safest forex brokers ranked by regulation quality, investor protection, and trust. Tier 1 vs Tier 3 regulation, segregated accounts, and red flags explained.",
+    icon: Shield,
+    readTime: "20 min read",
+    difficulty: "Intermediate",
+    topics: ["Regulation", "Trust & Safety", "Investor Protection", "Segregated Accounts"]
   }
 ];
 

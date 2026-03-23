@@ -70,6 +70,9 @@ const BestForexDemoAccounts = lazy(() => import("./pages/guides/BestForexDemoAcc
 const BestScalpingBrokers = lazy(() => import("./pages/guides/BestScalpingBrokers"));
 const BestHighLeverageBrokers = lazy(() => import("./pages/guides/BestHighLeverageBrokers"));
 const ForexDayTrading = lazy(() => import("./pages/guides/ForexDayTrading"));
+const BestForexSignalProviders = lazy(() => import("./pages/guides/BestForexSignalProviders"));
+const BestLowSpreadBrokers = lazy(() => import("./pages/guides/BestLowSpreadBrokers"));
+const MostTrustedForexBrokers = lazy(() => import("./pages/guides/MostTrustedForexBrokers"));
 
 // Tools - Lazy loaded
 const ToolsPage = lazy(() => import("./pages/tools/ToolsPage"));
@@ -254,6 +257,9 @@ const App = () => (
             <Route path="/guides/best-scalping-brokers" element={<BestScalpingBrokers />} />
             <Route path="/guides/best-high-leverage-brokers" element={<BestHighLeverageBrokers />} />
             <Route path="/guides/forex-day-trading" element={<ForexDayTrading />} />
+            <Route path="/guides/best-forex-signal-providers" element={<BestForexSignalProviders />} />
+            <Route path="/guides/best-low-spread-brokers" element={<BestLowSpreadBrokers />} />
+            <Route path="/guides/most-trusted-forex-brokers" element={<MostTrustedForexBrokers />} />
 
             {/* Tools */}
             <Route path="/tools" element={<ToolsPage />} />
