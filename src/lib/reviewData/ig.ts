@@ -164,5 +164,5 @@ export const igData: BrokerReviewData = {
     "No cryptocurrency deposit options",
   ],
 
-  lastUpdated: "2026-02-14",
+  lastUpdated: "2026-03-23",
 };

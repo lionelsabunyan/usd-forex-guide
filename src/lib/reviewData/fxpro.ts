@@ -6,17 +6,17 @@ export const fxproData: BrokerReviewData = {
   brokerName: "FxPro",
   subtitle: "Professional Trading for Serious Traders",
   heroDescription:
-    "FxPro is a well-established, multi-regulated forex and CFD broker founded in 2006. With over <strong>2,100 trading instruments</strong> and multiple platform options, it caters to both beginner and professional traders seeking a reliable trading environment.",
+    "FxPro is a well-established, multi-regulated forex and CFD broker founded in 2006. With over <strong>2,200 trading instruments</strong> across 7 asset classes and multiple platform options, it caters to both beginner and professional traders seeking a reliable trading environment.",
 
   seoTitle: "FxPro Review 2026",
   seoDescription:
-    "Complete FxPro review for US traders. Multi-regulated broker with 2,100+ instruments, 1:200 leverage, and professional trading platforms. Learn about FxPro's features and trading conditions.",
+    "Complete FxPro review for US traders. Multi-regulated broker with 2,200+ instruments, 1:200 leverage, and professional trading platforms. Learn about FxPro's features and trading conditions.",
   canonical: "/review/fxpro",
 
   overallRating: 4.3,
   ratingCount: 16500,
   reviewCount: 8200,
-  trustScore: 85,
+  trustScore: 93,
 
   heroBadge: {
     icon: Award,
@@ -37,18 +37,18 @@ export const fxproData: BrokerReviewData = {
 
   trustFeatures: [
     { icon: Shield, text: "Multi-Regulated" },
-    { icon: Globe, text: "2,100+ Instruments" },
+    { icon: Globe, text: "2,200+ Instruments" },
     { icon: Zap, text: "4 Platforms" },
-    { icon: Award, text: "70+ Awards" },
+    { icon: Award, text: "85+ Awards" },
   ],
 
   quickStats: [
     { label: "Founded", value: "2006" },
     { label: "Headquarters", value: "Cyprus/UK" },
-    { label: "Regulation", value: "FCA, CySEC, FSCA" },
+    { label: "Regulation", value: "FCA, CySEC, FSCA, SCB" },
     { label: "Min Deposit", value: "$100", colorClass: "text-primary" },
     { label: "Max Leverage", value: "1:200", colorClass: "text-primary" },
-    { label: "Instruments", value: "2,100+", colorClass: "text-success" },
+    { label: "Instruments", value: "2,200+", colorClass: "text-success" },
   ],
 
   ratings: [
@@ -61,14 +61,7 @@ export const fxproData: BrokerReviewData = {
 
   accountTypes: [
     {
-      name: "MT4 Standard",
-      minDeposit: "$100",
-      leverage: "1:200",
-      spread: "From 1.2 pips",
-      commission: "No",
-    },
-    {
-      name: "MT5 Standard",
+      name: "Standard",
       minDeposit: "$100",
       leverage: "1:200",
       spread: "From 1.2 pips",
@@ -76,18 +69,25 @@ export const fxproData: BrokerReviewData = {
       popular: true,
     },
     {
-      name: "cTrader",
-      minDeposit: "$100",
-      leverage: "1:200",
-      spread: "From 0.3 pips",
-      commission: "$35 per million",
-    },
-    {
-      name: "FxPro Edge",
+      name: "Raw+",
       minDeposit: "$100",
       leverage: "1:200",
       spread: "From 0.0 pips",
-      commission: "Variable",
+      commission: "$3.5 per side/lot",
+    },
+    {
+      name: "Elite",
+      minDeposit: "$30,000",
+      leverage: "1:200",
+      spread: "From 0.0 pips",
+      commission: "$3.5 per side/lot + rebates",
+    },
+    {
+      name: "cTrader",
+      minDeposit: "$100",
+      leverage: "1:200",
+      spread: "From 0.0 pips",
+      commission: "$3.5 per side/lot",
     },
   ],
 
@@ -119,15 +119,15 @@ export const fxproData: BrokerReviewData = {
     { feature: "Platforms", broker: "MT4, MT5, cTrader, Edge", competitor1: "OANDA, MT4", competitor2: "IG, MT4" },
     { feature: "US Clients", broker: "No", competitor1: "Yes", competitor2: "Limited" },
     { feature: "Regulation", broker: "FCA, CySEC, FSCA", competitor1: "CFTC, NFA", competitor2: "CFTC, NFA" },
-    { feature: "Instruments", broker: "2,100+", competitor1: "70+", competitor2: "80+" },
+    { feature: "Instruments", broker: "2,200+", competitor1: "70+", competitor2: "80+" },
   ],
 
   communityFeedback: {
     positiveThemes: [
       "Multiple tier-1 regulatory licenses provide strong trust",
       "cTrader platform praised for exceptional charting and execution speed",
-      "Wide range of trading instruments including stocks CFDs",
-      "Consistently wins industry awards (70+ to date)",
+      "Wide range of trading instruments (2,200+) including stocks CFDs",
+      "Consistently wins industry awards (85+ to date)",
     ],
     negativeThemes: [
       "Spreads can widen during high volatility news events",
@@ -144,7 +144,7 @@ export const fxproData: BrokerReviewData = {
     },
     {
       question: "What is the minimum deposit for FxPro?",
-      answer: "The minimum deposit for all FxPro account types is $100, which applies across MT4, MT5, cTrader, and FxPro Edge platforms.",
+      answer: "The minimum deposit for most FxPro account types is $100, which applies to Standard, Raw+, and cTrader accounts. The Elite account requires a minimum deposit of $30,000.",
     },
     {
       question: "Which trading platforms does FxPro offer?",
@@ -152,7 +152,7 @@ export const fxproData: BrokerReviewData = {
     },
     {
       question: "Is FxPro regulated?",
-      answer: "Yes, FxPro is regulated by multiple tier-1 authorities including the FCA (UK), CySEC (Cyprus), FSCA (South Africa), and SCB (Bahamas).",
+      answer: "Yes, FxPro is regulated by multiple authorities including the FCA (UK), CySEC (Cyprus), FSCA (South Africa), SCB (Bahamas), and FSC (Mauritius).",
     },
     {
       question: "Does FxPro charge withdrawal fees?",
@@ -165,16 +165,16 @@ export const fxproData: BrokerReviewData = {
   ],
 
   pros: [
-    "Multiple tier-1 regulations (FCA, CySEC, FSCA)",
+    "Multiple tier-1 regulations (FCA, CySEC, FSCA, SCB)",
     "Choice of 4 trading platforms (MT4, MT5, cTrader, FxPro Edge)",
-    "2,100+ trading instruments including stocks CFDs",
+    "2,200+ trading instruments including stocks CFDs",
     "No dealing desk execution",
     "Strong reputation since 2006",
     "Free VPS hosting for qualifying clients",
     "Excellent educational resources",
     "Negative balance protection",
     "Multiple account currencies supported",
-    "Award-winning broker (70+ awards)",
+    "Award-winning broker (85+ awards)",
   ],
 
   cons: [
@@ -185,5 +185,5 @@ export const fxproData: BrokerReviewData = {
     "Inactivity fee after 6 months",
   ],
 
-  lastUpdated: "2026-02-14",
+  lastUpdated: "2026-03-23",
 };

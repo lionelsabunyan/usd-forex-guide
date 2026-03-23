@@ -6,11 +6,11 @@ export const fbsData: BrokerReviewData = {
   brokerName: "FBS",
   subtitle: "Multi-Regulated Since 2009",
   heroDescription:
-    "FBS is a global forex broker known for extremely high leverage (up to 1:3000), very low minimum deposits, and generous bonus programs. With multiple regulations including CySEC and ASIC, it serves Turkish traders with local language support.",
+    "FBS is a global forex broker known for extremely high leverage (up to 1:3000), very low minimum deposits ($5), and generous bonus programs. Regulated by CySEC and ASIC, it serves Turkish traders with local language support.",
 
-  seoTitle: "FBS Review 2026 - High Leverage Broker with $1 Minimum Deposit",
+  seoTitle: "FBS Review 2026 - High Leverage Broker with $5 Minimum Deposit",
   seoDescription:
-    "Complete FBS review. Multi-regulated broker with 1:3000 leverage, $1 minimum deposit, and generous bonuses. Good for beginners.",
+    "Complete FBS review. CySEC & ASIC regulated broker with 1:3000 leverage, $5 minimum deposit, and generous bonuses. Good for beginners.",
   canonical: "/review/fbs",
 
   overallRating: 3.0,
@@ -27,19 +27,19 @@ export const fbsData: BrokerReviewData = {
   },
 
   keyHighlights: {
-    minDeposit: "$1",
+    minDeposit: "$5",
     maxLeverage: "1:3000",
-    spreadFrom: "0.5 pips",
+    spreadFrom: "0.7 pips",
     usClients: "NO",
   },
 
   warningBanner: {
-    text: "Warning: 1:3000 leverage is extremely high risk. 80%+ of retail traders lose money with high leverage. FBS does not accept US clients.",
+    text: "Warning: 1:3000 leverage is extremely high risk. 68.53% of retail investor accounts lose money when trading CFDs with FBS. FBS does not accept US clients.",
   },
 
   trustFeatures: [
     { icon: Shield, text: "CySEC & ASIC" },
-    { icon: CreditCard, text: "$1 Min Deposit" },
+    { icon: CreditCard, text: "$5 Min Deposit" },
     { icon: Globe, text: "Turkish Support" },
     { icon: Gift, text: "Welcome Bonus" },
   ],
@@ -48,7 +48,7 @@ export const fbsData: BrokerReviewData = {
     { label: "Trustpilot", value: "4.0/5", colorClass: "text-success" },
     { label: "Established", value: "2009" },
     { label: "Regulation", value: "CySEC, ASIC" },
-    { label: "Min Deposit", value: "$1", colorClass: "text-success" },
+    { label: "Min Deposit", value: "$5", colorClass: "text-success" },
     { label: "Max Leverage", value: "1:3000", colorClass: "text-primary" },
     { label: "US Clients", value: "Not Accepted", colorClass: "text-destructive" },
   ],
@@ -62,8 +62,8 @@ export const fbsData: BrokerReviewData = {
   ],
 
   accountTypes: [
-    { name: "Cent", minDeposit: "$1", leverage: "1:1000", spread: "From 1.0 pips", commission: "No" },
-    { name: "Standard", minDeposit: "$100", leverage: "1:3000", spread: "From 0.5 pips", commission: "No", popular: true },
+    { name: "Cent", minDeposit: "$5", leverage: "1:1000", spread: "From 1.0 pips", commission: "No" },
+    { name: "Standard", minDeposit: "$100", leverage: "1:3000", spread: "From 0.7 pips", commission: "No", popular: true },
     { name: "Zero Spread", minDeposit: "$500", leverage: "1:3000", spread: "0.0 pips", commission: "$20/lot" },
     { name: "ECN", minDeposit: "$1000", leverage: "1:500", spread: "From -1 pip", commission: "$6/lot" },
   ],
@@ -72,7 +72,7 @@ export const fbsData: BrokerReviewData = {
     { step: 1, title: "Visit FBS Website", description: "Go to the official FBS website", icon: Globe, time: "30 seconds" },
     { step: 2, title: "Register Account", description: "Fill in your details and choose account type", icon: UserPlus, time: "2 minutes" },
     { step: 3, title: "Complete KYC Verification", description: "Upload ID and proof of address", icon: FileText, time: "5-10 minutes" },
-    { step: 4, title: "Fund Your Account", description: "Deposit minimum $1 via card, e-wallet, or crypto", icon: Wallet, time: "Instant - 1 day" },
+    { step: 4, title: "Fund Your Account", description: "Deposit minimum $5 via card, e-wallet, or crypto", icon: Wallet, time: "Instant - 1 day" },
     { step: 5, title: "Claim Bonus & Trade", description: "Activate your welcome bonus and start trading", icon: PlayCircle, time: "5 minutes" },
   ],
 
@@ -91,9 +91,9 @@ export const fbsData: BrokerReviewData = {
   ],
 
   competitorComparison: [
-    { feature: "Minimum Deposit", broker: "$1", competitor1: "$10", competitor2: "$5" },
+    { feature: "Minimum Deposit", broker: "$5", competitor1: "$10", competitor2: "$5" },
     { feature: "Maximum Leverage", broker: "1:3000", competitor1: "1:2000", competitor2: "1:2000" },
-    { feature: "Spreads From", broker: "0.5 pips", competitor1: "1.5 pips", competitor2: "1.2 pips" },
+    { feature: "Spreads From", broker: "0.7 pips", competitor1: "1.5 pips", competitor2: "1.2 pips" },
     { feature: "Regulation", broker: "CySEC, ASIC", competitor1: "FCA, CySEC", competitor2: "CySEC, FCA" },
     { feature: "Key Feature", broker: "Highest Leverage", competitor1: "FXTM Invest Copy", competitor2: "HFcopy" },
     { feature: "Account Types", broker: "4 types", competitor1: "3 types", competitor2: "5 types" },
@@ -119,7 +119,7 @@ export const fbsData: BrokerReviewData = {
   faqs: [
     {
       question: "Is FBS regulated and safe?",
-      answer: "Yes, FBS is regulated by CySEC (Cyprus), ASIC (Australia), FSCA (South Africa), and FSC (Belize). CySEC and ASIC are top-tier regulators. FBS has been operating since 2009 and offers segregated client funds and negative balance protection.",
+      answer: "Yes, FBS is regulated by CySEC (Cyprus) under license 331/17 and ASIC (Australia). These are top-tier regulators. FBS has been operating since 2009 and offers segregated client funds and negative balance protection.",
     },
     {
       question: "Does FBS accept US clients?",
@@ -127,11 +127,11 @@ export const fbsData: BrokerReviewData = {
     },
     {
       question: "Is 1:3000 leverage safe to use?",
-      answer: "1:3000 leverage is extremely high and carries significant risk. While it allows you to open large positions with small capital, losses are also magnified. Most retail traders (80%+) lose money with high leverage. Beginners should use much lower leverage (1:10 to 1:50) until they have experience.",
+      answer: "1:3000 leverage is extremely high and carries significant risk. While it allows you to open large positions with small capital, losses are also magnified. According to FBS's own disclosure, 68.53% of retail investor accounts lose money trading CFDs. Beginners should use much lower leverage (1:10 to 1:50) until they have experience.",
     },
     {
       question: "What is the minimum deposit at FBS?",
-      answer: "FBS offers one of the lowest minimum deposits in the industry. The Cent account requires just $1, while the Standard account needs $100. This makes FBS very accessible for beginners who want to start with small amounts.",
+      answer: "FBS offers one of the lowest minimum deposits in the industry. The Cent account requires just $5, while the Standard account needs $100. This makes FBS very accessible for beginners who want to start with small amounts.",
     },
     {
       question: "How do FBS bonuses work?",
@@ -144,9 +144,9 @@ export const fbsData: BrokerReviewData = {
   ],
 
   pros: [
-    "Multi-regulated (CySEC, ASIC, FSC, FSCA)",
+    "Multi-regulated (CySEC, ASIC)",
     "Extremely high leverage up to 1:3000",
-    "Very low minimum deposit ($1)",
+    "Very low minimum deposit ($5)",
     "Generous bonuses and promotions",
     "Turkish language support",
     "Good mobile trading app",
@@ -164,5 +164,5 @@ export const fbsData: BrokerReviewData = {
     "Bonus terms can be restrictive",
   ],
 
-  lastUpdated: "2026-02-14",
+  lastUpdated: "2026-03-23",
 };

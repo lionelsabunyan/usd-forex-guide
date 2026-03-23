@@ -17,8 +17,8 @@ export const oandaData: BrokerReviewData = {
   ratingCount: 13200,
   reviewCount: 6500,
   trustScore: 92,
-  trustpilotRating: 4.1,
-  trustpilotReviews: 1185,
+  trustpilotRating: 3.8,
+  trustpilotReviews: 1205,
 
   heroBadge: {
     icon: Shield,
@@ -29,7 +29,7 @@ export const oandaData: BrokerReviewData = {
   keyHighlights: {
     minDeposit: "$0",
     maxLeverage: "1:50",
-    spreadFrom: "1.0 pips",
+    spreadFrom: "0.7 pips",
     usClients: "YES",
   },
 
@@ -66,7 +66,7 @@ export const oandaData: BrokerReviewData = {
       name: "Standard Account",
       minDeposit: "$0",
       leverage: "1:50",
-      spread: "From 1.0 pips",
+      spread: "From 0.7 pips",
       commission: "No",
       popular: true,
     },
@@ -94,7 +94,7 @@ export const oandaData: BrokerReviewData = {
   competitorComparison: [
     { feature: "Min Deposit", broker: "$0", competitor1: "$100", competitor2: "$0" },
     { feature: "Max Leverage", broker: "1:50", competitor1: "1:50", competitor2: "1:50" },
-    { feature: "Spreads From", broker: "1.0 pips", competitor1: "0.8 pips", competitor2: "0.8 pips" },
+    { feature: "Spreads From", broker: "0.7 pips", competitor1: "0.8 pips", competitor2: "0.8 pips" },
     { feature: "Platforms", broker: "OANDA, MT4", competitor1: "MT4/MT5, Proprietary", competitor2: "Proprietary" },
     { feature: "US Clients", broker: "Yes", competitor1: "Yes", competitor2: "Yes" },
     { feature: "Regulation", broker: "CFTC, NFA", competitor1: "CFTC, NFA", competitor2: "CFTC, NFA" },
@@ -164,5 +164,5 @@ export const oandaData: BrokerReviewData = {
     "No high leverage options",
   ],
 
-  lastUpdated: "2026-02-14",
+  lastUpdated: "2026-03-23",
 };
