@@ -108,6 +108,7 @@ const staticPages = [
   { path: '/guides/best-low-spread-brokers', title: 'Best Low Spread & Zero Spread Forex Brokers 2026 | US Forex Guide', desc: 'Compare the best low spread and zero spread forex brokers. EUR/USD, GBP/USD, USD/JPY spreads compared across 10 brokers. ECN vs market maker, real vs advertised spreads explained.' },
   { path: '/guides/most-trusted-forex-brokers', title: 'Most Trusted & Regulated Forex Brokers 2026 — Safety Rankings | US Forex Guide', desc: 'Find the most trusted, regulated forex brokers ranked by safety. Tier 1 regulation (CFTC, FCA, ASIC), investor protection schemes, segregated accounts, and red flags explained for US and international traders.' },
   { path: '/guides/best-forex-charting-software', title: 'Best Forex Charting Software & Websites 2026 | US Forex Guide', desc: 'Compare the best forex charting software and websites. TradingView, MetaTrader, cTrader, NinjaTrader compared — indicators, drawing tools, alerts, mobile apps, and API features.' },
+  { path: '/guides/best-hedging-brokers', title: 'Best Forex Hedging Brokers 2026 — Brokers That Allow Hedging | US Forex Guide', desc: 'Compare the best forex brokers that allow hedging. US hedging restrictions (FIFO rule) explained, direct vs indirect strategies, and 8 brokers with full hedging support reviewed.' },
 
   // Tools
   { path: '/tools/pip-calculator', title: 'Forex Pip Calculator | US Forex Guide', desc: 'Free pip value calculator for forex traders. Calculate pip values in USD for any currency pair and account size.' },

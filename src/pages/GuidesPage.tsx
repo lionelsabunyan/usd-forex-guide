@@ -17,7 +17,8 @@ import {
   Zap,
   TrendingUp,
   Radio,
-  BarChart3
+  BarChart3,
+  ArrowLeftRight
 } from "lucide-react";
 
 const guides = [
@@ -174,6 +175,15 @@ const guides = [
     readTime: "18 min read",
     difficulty: "Intermediate",
     topics: ["Charting Software", "TradingView", "MetaTrader", "Platform Comparison"]
+  },
+  {
+    id: "best-hedging-brokers",
+    title: "Best Forex Hedging Brokers",
+    description: "Compare brokers that allow hedging strategies. US hedging restrictions (FIFO rule) explained, direct vs indirect hedging, and 8 brokers with full hedging support reviewed.",
+    icon: ArrowLeftRight,
+    readTime: "15 min read",
+    difficulty: "Intermediate",
+    topics: ["Hedging", "FIFO Rule", "Risk Management", "US Regulations"]
   }
 ];
 
