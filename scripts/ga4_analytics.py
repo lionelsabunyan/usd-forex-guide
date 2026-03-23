@@ -45,9 +45,12 @@ REPORTS_DIR = Path(__file__).parent.parent / "reports"
 # ---------------------------------------------------------------------------
 
 def setup_google_credentials():
-    """Write Google credentials JSON to temp file and return path."""
+    """Set up Google credentials from JSON string or existing file path."""
+    existing_path = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
+    if existing_path and os.path.isfile(existing_path):
+        return existing_path
     if not GOOGLE_CREDENTIALS:
-        raise RuntimeError("GOOGLE_CREDENTIALS env var not set")
+        raise RuntimeError("Neither GOOGLE_APPLICATION_CREDENTIALS file nor GOOGLE_CREDENTIALS env var is set")
     creds_path = "/tmp/google-credentials.json"
     with open(creds_path, "w") as f:
         f.write(GOOGLE_CREDENTIALS)

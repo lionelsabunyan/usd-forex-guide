@@ -75,6 +75,7 @@ const BestLowSpreadBrokers = lazy(() => import("./pages/guides/BestLowSpreadBrok
 const MostTrustedForexBrokers = lazy(() => import("./pages/guides/MostTrustedForexBrokers"));
 const BestForexChartingSoftware = lazy(() => import("./pages/guides/BestForexChartingSoftware"));
 const BestHedgingBrokers = lazy(() => import("./pages/guides/BestHedgingBrokers"));
+const BestAPITradingBrokers = lazy(() => import("./pages/guides/BestAPITradingBrokers"));
 
 // Tools - Lazy loaded
 const ToolsPage = lazy(() => import("./pages/tools/ToolsPage"));
@@ -266,6 +267,7 @@ const App = () => (
             <Route path="/guides/most-trusted-forex-brokers" element={<MostTrustedForexBrokers />} />
             <Route path="/guides/best-forex-charting-software" element={<BestForexChartingSoftware />} />
             <Route path="/guides/best-hedging-brokers" element={<BestHedgingBrokers />} />
+            <Route path="/guides/best-api-trading-brokers" element={<BestAPITradingBrokers />} />
 
             {/* Tools */}
             <Route path="/tools" element={<ToolsPage />} />

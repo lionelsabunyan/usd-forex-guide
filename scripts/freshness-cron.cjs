@@ -35,6 +35,33 @@ if (!SUPABASE_URL || !SUPABASE_KEY) {
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // ---------------------------------------------------------------------------
+// Telegram notification (optional)
+// ---------------------------------------------------------------------------
+
+async function sendTelegram(text) {
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.TELEGRAM_CHAT_ID;
+  if (!token || !chatId) return;
+
+  try {
+    await fetch(
+      `https://api.telegram.org/bot${token}/sendMessage`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text,
+          parse_mode: "Markdown",
+        }),
+      }
+    );
+  } catch (err) {
+    console.error("Telegram error:", err.message);
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Paperclip integration (optional)
 // ---------------------------------------------------------------------------
 
@@ -129,7 +156,24 @@ async function run() {
 
   if (overdue.length === 0) {
     console.log("\n✅ No overdue pages. Nothing to do.");
-  } else {
+  }
+
+  // 1b. Send Telegram summary for overdue pages
+  if (overdue.length > 0) {
+    const lines = overdue.slice(0, 15).map((p) => {
+      const d = Math.floor(
+        (new Date(today) - new Date(p.next_review)) / 86400000
+      );
+      return `• \`${p.page_path}\` — ${d}d overdue`;
+    });
+    const extra = overdue.length > 15 ? `\n_...ve ${overdue.length - 15} sayfa daha_` : "";
+    await sendTelegram(
+      `🔴 *İçerik Tazelik Raporu* — ${today}\n\n` +
+      `${overdue.length} sayfa güncellenmeli:\n${lines.join("\n")}${extra}`
+    );
+  }
+
+  if (overdue.length > 0) {
     console.log(`\n🔴 ${overdue.length} overdue page(s):`);
 
     // Check for existing Paperclip tasks to avoid duplicates
