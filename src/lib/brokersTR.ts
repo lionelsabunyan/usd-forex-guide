@@ -140,7 +140,7 @@ export const trBrokerInfo: Record<string, TRBrokerInfo> = {
   },
   fxtm: {
     id: "fxtm",
-    affiliateUrl: "https://www.forextime.com",
+    affiliateUrl: "https://www.fxtm.com",
     hasBonus: true,
     bonusDetails: "$500 Hoşgeldin + %30 Yatırım Bonusu",
     welcomeBonus: "$500 Hoşgeldin Bonusu (kod: HELLOFXTM)",
