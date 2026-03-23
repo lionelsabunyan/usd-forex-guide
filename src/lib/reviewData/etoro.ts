@@ -4,13 +4,13 @@ import type { BrokerReviewData } from "@/lib/brokerReviewData";
 export const etoroData: BrokerReviewData = {
   brokerId: "etoro",
   brokerName: "eToro",
-  subtitle: "Social Trading Pioneer - 30M+ Users",
+  subtitle: "Social Trading Pioneer - 40M+ Users",
   heroDescription:
-    "eToro is a globally recognized social trading platform that has revolutionized how people invest. With its innovative copy trading feature, beginners can automatically replicate the trades of successful investors while learning the markets.",
+    "eToro is a globally recognized social trading platform that has revolutionized how people invest. With over 40 million registered users and its innovative copy trading feature, beginners can automatically replicate the trades of successful investors while learning the markets.",
 
   seoTitle: "eToro Review 2026 - Social Trading Platform with Copy Trading",
   seoDescription:
-    "Complete eToro review for US traders. Social trading platform with copy trading, $50 minimum deposit, and 30M+ users. Learn about eToro's features, fees, and trading conditions.",
+    "Complete eToro review for US traders. Social trading platform with copy trading, $50 minimum deposit, and 40M+ users. Learn about eToro's features, fees, and trading conditions.",
   canonical: "/review/etoro",
 
   overallRating: 4.3,
@@ -40,7 +40,7 @@ export const etoroData: BrokerReviewData = {
   trustFeatures: [
     { icon: Shield, text: "FCA, CySEC, ASIC" },
     { icon: Users, text: "Copy Trading" },
-    { icon: Globe, text: "30M+ Users" },
+    { icon: Globe, text: "40M+ Users" },
     { icon: CreditCard, text: "$50 Min Deposit" },
   ],
 
@@ -131,7 +131,7 @@ export const etoroData: BrokerReviewData = {
     },
     {
       question: "Is eToro regulated and safe?",
-      answer: "Yes, eToro is regulated by the FCA (UK), CySEC (Cyprus), and ASIC (Australia). They have been operating since 2007 and serve over 30 million users worldwide.",
+      answer: "Yes, eToro is regulated by the FCA (UK), CySEC (Cyprus), and ASIC (Australia). They have been operating since 2007 and serve over 40 million users worldwide.",
     },
     {
       question: "Does eToro charge withdrawal fees?",
@@ -150,7 +150,7 @@ export const etoroData: BrokerReviewData = {
     "Strong regulatory framework (FCA, CySEC, ASIC)",
     "Free $100,000 virtual portfolio",
     "Active social trading community",
-    "Commission-free stock trading",
+    "Low-cost stock trading ($1-$2 per trade)",
     "Fractional shares available",
     "Excellent educational resources",
     "Mobile app highly rated",
@@ -160,10 +160,10 @@ export const etoroData: BrokerReviewData = {
     "Limited availability for US crypto trading",
     "Spreads higher than some competitors",
     "$5 withdrawal fee",
-    "Inactivity fee after 12 months",
+    "$10/month inactivity fee after 12 months",
     "No MT4/MT5 support",
     "Limited forex pairs compared to specialists",
   ],
 
-  lastUpdated: "2026-02-14",
+  lastUpdated: "2026-03-23",
 };

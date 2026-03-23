@@ -208,7 +208,7 @@ export const trBrokerInfo: Record<string, TRBrokerInfo> = {
     withdrawalTime: "1-2 iş günü",
     turkishSupport: true,
     turkishWebsite: true,
-    trNotes: "CopyTrader sosyal trading, çoklu varlık (forex + kripto + hisse), 20M+ kullanıcı",
+    trNotes: "CopyTrader sosyal trading, çoklu varlık (forex + kripto + hisse), 40M+ kullanıcı",
   },
   forexcom: {
     id: "forexcom",
