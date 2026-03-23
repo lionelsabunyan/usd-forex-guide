@@ -17,8 +17,8 @@ export const avatradeData: BrokerReviewData = {
   ratingCount: 8800,
   reviewCount: 4300,
   trustScore: 82,
-  trustpilotRating: 4.5,
-  trustpilotReviews: 8500,
+  trustpilotRating: 4.8,
+  trustpilotReviews: 12155,
 
   heroBadge: {
     icon: Shield,
@@ -38,16 +38,16 @@ export const avatradeData: BrokerReviewData = {
   },
 
   trustFeatures: [
-    { icon: Shield, text: "CBI, ASIC, FCA" },
+    { icon: Shield, text: "ASIC, CIRO, JFSA, EU MiFID" },
     { icon: CreditCard, text: "$100 Min Deposit" },
-    { icon: Globe, text: "250+ Instruments" },
+    { icon: Globe, text: "1,260+ Instruments" },
     { icon: Zap, text: "Copy Trading" },
   ],
 
   quickStats: [
-    { label: "Trustpilot", value: "4.5/5", colorClass: "text-success" },
+    { label: "Trustpilot", value: "4.8/5", colorClass: "text-success" },
     { label: "Established", value: "2006" },
-    { label: "Regulation", value: "CBI, ASIC, FCA" },
+    { label: "Regulation", value: "ASIC, CIRO, JFSA, MiFID" },
     { label: "Min Deposit", value: "$100", colorClass: "text-primary" },
     { label: "Max Leverage", value: "1:400", colorClass: "text-primary" },
     { label: "US Clients", value: "Not Accepted", colorClass: "text-destructive" },
@@ -55,15 +55,15 @@ export const avatradeData: BrokerReviewData = {
 
   ratings: [
     { label: "Trading Conditions", score: 3.7, description: "Variable spreads from 0.9 pips" },
-    { label: "Platform & Tools", score: 3.8, description: "MT4/MT5, AvaTradeGO" },
+    { label: "Platform & Tools", score: 3.8, description: "MT4/MT5, AvaTradeGO, TradingView" },
     { label: "Customer Support", score: 3.5, description: "Multilingual support" },
     { label: "Deposit & Withdrawal", score: 3.6, description: "Free deposits/withdrawals" },
     { label: "Trust & Reputation", score: 3.9, description: "Multi-regulated since 2006" },
   ],
 
   accountTypes: [
-    { name: "Standard Account", minDeposit: "$100", leverage: "1:400", spread: "From 0.9 pips", commission: "No", features: ["MT4/MT5", "AvaTradeGO", "All instruments", "Copy Trading"], popular: true },
-    { name: "Professional Account", minDeposit: "$1,000", leverage: "1:400", spread: "From 0.7 pips", commission: "No", features: ["Lower spreads", "Priority support", "All platforms", "Copy Trading"] },
+    { name: "Standard Account", minDeposit: "$100", leverage: "1:400", spread: "From 0.9 pips", commission: "No", features: ["MT4/MT5", "AvaTradeGO", "TradingView", "Copy Trading"], popular: true },
+    { name: "Professional Account", minDeposit: "$1,000", leverage: "1:400", spread: "From 0.6 pips", commission: "No", features: ["Lower spreads", "Priority support", "All platforms", "Copy Trading"] },
   ],
 
   accountOpeningSteps: [
@@ -90,10 +90,10 @@ export const avatradeData: BrokerReviewData = {
     { feature: "Minimum Deposit", broker: "$100", competitor1: "$50", competitor2: "$200" },
     { feature: "Maximum Leverage", broker: "1:400", competitor1: "1:30 (Retail)", competitor2: "1:500" },
     { feature: "Spreads From", broker: "0.9 pips", competitor1: "1.0 pips", competitor2: "0.0 pips" },
-    { feature: "Regulation", broker: "CBI, ASIC, FCA", competitor1: "FCA, CySEC, ASIC", competitor2: "FCA, ASIC, CySEC" },
+    { feature: "Regulation", broker: "ASIC, CIRO, JFSA, MiFID", competitor1: "FCA, CySEC, ASIC", competitor2: "FCA, ASIC, CySEC" },
     { feature: "Copy Trading", broker: "Yes", competitor1: "Yes (Signature)", competitor2: "No" },
     { feature: "Mobile App", broker: "AvaTradeGO", competitor1: "eToro App", competitor2: "Standard MT4/MT5" },
-    { feature: "Trading Instruments", broker: "250+", competitor1: "3,000+", competitor2: "1,200+" },
+    { feature: "Trading Instruments", broker: "1,260+", competitor1: "3,000+", competitor2: "1,200+" },
     { feature: "US Clients", broker: "No", competitor1: "Limited", competitor2: "No" },
   ],
 
@@ -119,7 +119,7 @@ export const avatradeData: BrokerReviewData = {
     },
     {
       question: "Is AvaTrade regulated and safe?",
-      answer: "Yes, AvaTrade is regulated by multiple authorities including the Central Bank of Ireland (CBI), ASIC (Australia), FCA (UK), FSCA (South Africa), and others. They have been operating since 2006 and offer negative balance protection.",
+      answer: "Yes, AvaTrade is regulated by multiple tier-1 authorities including ASIC (Australia), CIRO (Canada), JFSA (Japan), and EU MiFID, along with several tier-2 and tier-3 regulators. They have been operating since 2006 and offer negative balance protection.",
     },
     {
       question: "What is AvaTradeGO?",
@@ -135,17 +135,17 @@ export const avatradeData: BrokerReviewData = {
     },
     {
       question: "What platforms does AvaTrade support?",
-      answer: "AvaTrade supports MetaTrader 4 (MT4), MetaTrader 5 (MT5), AvaTradeGO (proprietary mobile app), and AvaOptions for options trading. This gives traders flexibility in choosing their preferred trading environment.",
+      answer: "AvaTrade supports MetaTrader 4 (MT4), MetaTrader 5 (MT5), AvaTradeGO (proprietary mobile app), AvaOptions for options trading, AvaFutures, WebTrader, DupliTrade, and TradingView integration. This gives traders extensive flexibility in choosing their preferred trading environment.",
     },
   ],
 
   pros: [
-    "Multiple tier-1 regulations (ASIC, FCA, CBI)",
+    "Multiple tier-1 regulations (ASIC, CIRO, JFSA, EU MiFID)",
     "Excellent educational resources",
     "User-friendly AvaTradeGO mobile app",
     "Copy trading feature available",
     "Multiple platform options (MT4/MT5/AvaTradeGO)",
-    "250+ trading instruments",
+    "1,260+ trading instruments",
     "Negative balance protection",
     "Islamic swap-free accounts",
     "Good customer support",
@@ -160,5 +160,5 @@ export const avatradeData: BrokerReviewData = {
     "No cryptocurrency deposits",
   ],
 
-  lastUpdated: "2026-02-14",
+  lastUpdated: "2026-03-23",
 };
