@@ -105,6 +105,11 @@ const BestBrokersCanada = lazy(() => import("./pages/BestBrokersCanada"));
 const BestBrokersSingapore = lazy(() => import("./pages/BestBrokersSingapore"));
 const BestBrokersEU = lazy(() => import("./pages/BestBrokersEU"));
 
+// Broker Info - Programmatic SEO pages
+const BrokerMinDeposit = lazy(() => import("./pages/broker-info/BrokerMinDeposit"));
+const BrokerSpreads = lazy(() => import("./pages/broker-info/BrokerSpreads"));
+const BrokerFees = lazy(() => import("./pages/broker-info/BrokerFees"));
+
 // Resources - Lazy loaded
 const USForexChecklist = lazy(() => import("./pages/resources/USForexChecklist"));
 const InfographicsPage = lazy(() => import("./pages/resources/InfographicsPage"));
@@ -205,6 +210,9 @@ const App = () => (
             <Route path="/brokers/canada" element={<BestBrokersCanada />} />
             <Route path="/brokers/singapore" element={<BestBrokersSingapore />} />
             <Route path="/brokers/eu" element={<BestBrokersEU />} />
+            <Route path="/brokers/:brokerId/minimum-deposit" element={<BrokerMinDeposit />} />
+            <Route path="/brokers/:brokerId/spreads" element={<BrokerSpreads />} />
+            <Route path="/brokers/:brokerId/fees" element={<BrokerFees />} />
             <Route path="/compare" element={<ComparePage />} />
             <Route path="/compare/midasfx-vs-hankotrade" element={<MidasFXvsHankotrade />} />
             <Route path="/compare/oanda-vs-forexcom" element={<OANDAvsForexcom />} />

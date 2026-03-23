@@ -34,6 +34,28 @@ const staticPages = [
   { path: '/brokers/canada', title: 'Best Forex Brokers in Canada 2026 | US Forex Guide', desc: 'Compare the best forex brokers in Canada. IIROC alternatives with high leverage, CAD accounts, and competitive spreads for Canadian traders.' },
   { path: '/brokers/singapore', title: 'Best Forex Brokers in Singapore 2026 | US Forex Guide', desc: 'Compare the best forex brokers in Singapore. MAS alternatives with high leverage, competitive spreads, and reliable platforms for Singapore traders.' },
   { path: '/brokers/eu', title: 'Best Forex Brokers in the EU 2026 | US Forex Guide', desc: 'Compare the best forex brokers in the EU. ESMA alternatives with high leverage, CySEC/FCA regulation, and competitive spreads for European traders.' },
+
+  // Programmatic SEO — Broker Info Pages (auto-generated)
+  ...(() => {
+    const brokerSlugs = {
+      fxglory: 'FXGlory', hankotrade: 'Hankotrade', midasfx: 'MidasFX', n1cm: 'N1CM',
+      hfm: 'HFM', lmfx: 'LMFX', coinexx: 'Coinexx', plexytrade: 'PlexyTrade',
+      exness: 'Exness', pepperstone: 'Pepperstone', xm: 'XM', fxtm: 'FXTM',
+      fbs: 'FBS', etoro: 'eToro', fxpro: 'FxPro', oanda: 'OANDA',
+      ig: 'IG', 'forex-com': 'Forex.com', 'interactive-brokers': 'Interactive Brokers',
+      avatrade: 'AvaTrade', 'charles-schwab': 'Charles Schwab', tastyfx: 'tastyfx',
+    };
+    const pages = [];
+    for (const [slug, name] of Object.entries(brokerSlugs)) {
+      pages.push(
+        { path: `/brokers/${slug}/minimum-deposit`, title: `${name} Minimum Deposit 2026 | US Forex Guide`, desc: `${name} minimum deposit, account requirements, and deposit methods. Compare ${name}'s minimum deposit with other forex brokers.` },
+        { path: `/brokers/${slug}/spreads`, title: `${name} Spreads 2026 | US Forex Guide`, desc: `${name} spreads and trading costs. Compare ${name}'s spreads with competitors and find the best rates.` },
+        { path: `/brokers/${slug}/fees`, title: `${name} Fees 2026 | US Forex Guide`, desc: `Complete ${name} fee breakdown: spreads, commissions, withdrawal fees, and hidden costs. Compare fees with other brokers.` },
+      );
+    }
+    return pages;
+  })(),
+
   { path: '/compare', title: 'Compare Forex Brokers | US Forex Guide', desc: 'Compare forex brokers side-by-side. Evaluate spreads, fees, leverage, regulation and more to find the right broker.' },
   { path: '/guides', title: 'Forex Trading Guides for Beginners | US Forex Guide', desc: 'Comprehensive forex trading guides for American beginners. Learn regulations, strategies, and how to choose the right broker.' },
   { path: '/tools', title: 'Forex Trading Tools & Calculators | US Forex Guide', desc: 'Free forex calculators: pip calculator, position size, margin, profit/loss and more. Essential tools for US forex traders.' },
