@@ -32,7 +32,7 @@ export const lmfxData: BrokerReviewData = {
   },
 
   warningBanner: {
-    text: "LMFX is an offshore broker registered in St. Vincent and the Grenadines. While they've operated since 2015 and accept US clients, trading with offshore brokers carries additional risks. Only trade with funds you can afford to lose and consider your risk tolerance before opening an account.",
+    text: "LMFX is an offshore broker with trading operations based in North Macedonia and payment services registered in St. Vincent and the Grenadines. While they've operated since 2015 and accept US clients, trading with offshore brokers carries additional risks. Only trade with funds you can afford to lose and consider your risk tolerance before opening an account.",
   },
 
   trustFeatures: [
@@ -44,7 +44,7 @@ export const lmfxData: BrokerReviewData = {
 
   quickStats: [
     { label: "Established", value: "2015", colorClass: "text-foreground" },
-    { label: "Headquarters", value: "St. Vincent", colorClass: "text-foreground" },
+    { label: "Headquarters", value: "North Macedonia", colorClass: "text-foreground" },
     { label: "Min Deposit", value: "$50", colorClass: "text-primary" },
     { label: "Max Leverage", value: "1:1000", colorClass: "text-primary" },
     { label: "Spreads", value: "From 0.0 pips", colorClass: "text-primary" },
@@ -63,7 +63,7 @@ export const lmfxData: BrokerReviewData = {
   accountTypes: [
     { name: "Premium Account", minDeposit: "$50", leverage: "1:1000", spread: "From 1.0 pips", commission: "No" },
     { name: "Fixed Account", minDeposit: "$250", leverage: "1:400", spread: "Fixed 2.0 pips", commission: "No", popular: true },
-    { name: "Zero Account", minDeposit: "$100", leverage: "1:1000", spread: "From 0.0 pips", commission: "$4 per lot" },
+    { name: "Zero Account", minDeposit: "$100", leverage: "1:250", spread: "From 0.0 pips", commission: "$4 per lot" },
   ],
 
   accountOpeningSteps: [
@@ -109,7 +109,7 @@ export const lmfxData: BrokerReviewData = {
       "Responsive customer support",
     ],
     negativeThemes: [
-      "Offshore broker (not tier-1 regulated)",
+      "Offshore broker (not tier-1 regulated, North Macedonia / St. Vincent)",
       "MT4 only - no MT5 available",
       "Wire withdrawal fee ($25)",
     ],
@@ -129,7 +129,7 @@ export const lmfxData: BrokerReviewData = {
     {
       question: "Is LMFX regulated?",
       answer:
-        "LMFX is registered in St. Vincent and the Grenadines. While not regulated by major authorities like FCA or CySEC, they've been operating since 2015 with a solid track record. Trade only with funds you can afford to lose.",
+        "LMFX's trading operations are based in North Macedonia (Global Trade Partners Ltd.) with payment services registered in St. Vincent and the Grenadines. While not regulated by major authorities like FCA or CySEC, they've been operating since 2015 with a solid track record. Trade only with funds you can afford to lose.",
     },
     {
       question: "How can I deposit and withdraw at LMFX?",
@@ -163,7 +163,7 @@ export const lmfxData: BrokerReviewData = {
   ],
 
   cons: [
-    "Offshore broker (St. Vincent registered)",
+    "Offshore broker (North Macedonia / St. Vincent registered)",
     "MT4 only - no MT5 platform",
     "Wire withdrawal fee ($25)",
     "Higher minimum for Fixed account ($250)",
@@ -229,5 +229,5 @@ export const lmfxData: BrokerReviewData = {
     },
   ],
 
-  lastUpdated: "February 4, 2026",
+  lastUpdated: "March 23, 2026",
 };

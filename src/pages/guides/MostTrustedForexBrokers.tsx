@@ -173,9 +173,9 @@ const offshoreBrokers = [
   { name: "FXGlory", regulation: "SVG FSA", trustScore: 4.5, usAccepted: true, reviewUrl: "/review/fxglory" },
   { name: "HFM (HotForex)", regulation: "CySEC, FCA, DFSA, FSCA, FSA", trustScore: 4.2, usAccepted: false, reviewUrl: "/review/hfm" },
   { name: "XM", regulation: "CySEC, ASIC, DFSA, FSC", trustScore: 4.2, usAccepted: false, reviewUrl: "/review/xm" },
-  { name: "LMFX", regulation: "Unregulated (St. Vincent)", trustScore: 3.2, usAccepted: true, reviewUrl: "/review/lmfx" },
+  { name: "LMFX", regulation: "Unregulated (North Macedonia)", trustScore: 3.3, usAccepted: true, reviewUrl: "/review/lmfx" },
   { name: "Coinexx", regulation: "Unregulated (St. Vincent)", trustScore: 3.5, usAccepted: true, reviewUrl: "/review/coinexx" },
-  { name: "PlexyTrade", regulation: "Unregulated (St. Lucia)", trustScore: 3.0, usAccepted: true, reviewUrl: "/review/plexytrade" },
+  { name: "PlexyTrade", regulation: "Unregulated (St. Lucia)", trustScore: 2.5, usAccepted: false, reviewUrl: "/review/plexytrade" },
 ];
 
 const MostTrustedForexBrokers = () => {
@@ -603,9 +603,9 @@ const MostTrustedForexBrokers = () => {
                         ["MidasFX", "FSA (SVG)", "Tier 3", "4.5/5", "Varies", "None"],
                         ["Hankotrade", "Seychelles FSA", "Tier 3", "4.2/5", "Varies", "None"],
                         ["FXGlory", "SVG FSA", "Tier 3", "4.5/5", "Varies", "None"],
-                        ["LMFX", "Unregulated", "Tier 3", "3.2/5", "No", "None"],
+                        ["LMFX", "Unregulated", "Tier 3", "3.3/5", "No", "None"],
                         ["Coinexx", "Unregulated", "Tier 3", "3.5/5", "No", "None"],
-                        ["PlexyTrade", "Unregulated", "Tier 3", "3.0/5", "No", "None"],
+                        ["PlexyTrade", "Unregulated", "Tier 3", "2.5/5", "No", "None"],
                       ].map((row, i) => (
                         <tr key={i} className={i % 2 === 0 ? "bg-background" : "bg-muted/20"}>
                           {row.map((cell, j) => (
