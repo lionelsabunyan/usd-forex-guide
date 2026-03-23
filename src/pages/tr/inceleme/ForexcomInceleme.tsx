@@ -26,18 +26,18 @@ const ForexcomInceleme = () => {
   ];
 
   const accountTypes = [
-    { name: "Standard", minDeposit: "$100", leverage: "1:50", spread: "0.8 pip'ten", commission: "Yok", popular: true },
-    { name: "Commission", minDeposit: "$100", leverage: "1:50", spread: "0.2 pip'ten", commission: "$5/lot" },
+    { name: "Standard", minDeposit: "$100", leverage: "1:50", spread: "1.0 pip'ten", commission: "Yok", popular: true },
+    { name: "RAW Spread", minDeposit: "$100", leverage: "1:50", spread: "0.2 pip'ten", commission: "$7/lot" },
     { name: "DMA", minDeposit: "$25,000", leverage: "1:50", spread: "Piyasa spread'i", commission: "Değişken" },
   ];
 
   const pros = [
     "CFTC/NFA regülasyonlu — tam güvenlik",
-    "Çoklu hesap türü (Standard, Commission, DMA)",
-    "MT4 ve MT5 desteği",
+    "Çoklu hesap türü (Standard, RAW Spread, DMA)",
+    "MT4, MT5 ve TradingView desteği",
     "Güçlü araştırma ve eğitim içerikleri",
-    "Rekabetçi spread'ler (0.8 pip'ten)",
-    "Kendi geliştirdiği platform da mevcut",
+    "Rekabetçi spread'ler (0.2 pip'ten RAW hesapta)",
+    "TradingView entegrasyonu ve kendi platformu",
     "ABD müşterilerine tam hizmet",
     "Negatif bakiye koruması",
   ];
@@ -87,7 +87,7 @@ const ForexcomInceleme = () => {
                 <p className="text-muted-foreground mb-6">
                   Forex.com, 2001 yılında kurulan ve CFTC/NFA tarafından düzenlenen ABD merkezli bir
                   forex brokeridir. StoneX Group'un bir parçası olarak finansal güç ve güvenilirlik sunar.
-                  3 farklı hesap türü ile hem yeni başlayanlara hem profesyonel yatırımcılara hitap eder.
+                  3 farklı hesap türü ve TradingView entegrasyonu ile hem yeni başlayanlara hem profesyonel yatırımcılara hitap eder.
                 </p>
 
                 <div className="flex flex-wrap gap-3">
@@ -124,7 +124,7 @@ const ForexcomInceleme = () => {
                     </div>
                     <div className="flex justify-between items-center py-2">
                       <span className="text-muted-foreground text-sm">Platformlar</span>
-                      <span className="font-semibold text-foreground">MT4, MT5, Own</span>
+                      <span className="font-semibold text-foreground">MT4, MT5, TV</span>
                     </div>
                   </CardContent>
                 </Card>
@@ -152,7 +152,7 @@ const ForexcomInceleme = () => {
               <span className="text-yellow-400">3</span> Farklı Hesap Türü
             </h2>
             <p className="text-xl text-white mb-4">
-              0.8 pip Spread + <span className="text-yellow-400">DMA Erişimi</span>
+              0.2 pip RAW Spread + <span className="text-yellow-400">DMA Erişimi</span>
             </p>
             <div className="inline-flex items-center gap-2 bg-amber-500 text-slate-900 font-bold px-6 py-2 rounded-full hover:bg-amber-400 transition-colors">
               Forex.com'u Keşfedin!
@@ -299,13 +299,13 @@ const ForexcomInceleme = () => {
             <h2 className="font-heading text-2xl font-bold text-foreground mb-4">Sonuç</h2>
             <div className="prose prose-slate dark:prose-invert max-w-none">
               <p>
-                Forex.com, özellikle aktif yatırımcılar için güçlü bir seçenektir. Commission hesabı
+                Forex.com, özellikle aktif yatırımcılar için güçlü bir seçenektir. RAW Spread hesabı
                 düşük spread arayan yatırımcılara, DMA hesabı ise profesyonel seviyede işlem yapanlara
                 hitap eder.
               </p>
               <p>
                 CFTC/NFA regülasyonu ve StoneX Group'un bir parçası olması güvenilirliğini artırır.
-                MT4 ve MT5 desteği ile platform çeşitliliği de avantajdır. Ancak $100 minimum depozito
+                MT4, MT5 ve TradingView desteği ile platform çeşitliliği de avantajdır. Ancak $100 minimum depozito
                 ve sınırlı kaldıraç bazı yatırımcılar için dezavantaj olabilir.
               </p>
               <p className="font-semibold">

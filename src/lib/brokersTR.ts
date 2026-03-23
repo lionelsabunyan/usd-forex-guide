@@ -226,7 +226,7 @@ export const trBrokerInfo: Record<string, TRBrokerInfo> = {
     withdrawalTime: "1-3 iş günü",
     turkishSupport: false,
     turkishWebsite: false,
-    trNotes: "CFTC/NFA regülasyonlu, 3 hesap türü (Standard, Commission, DMA), MT4/MT5",
+    trNotes: "CFTC/NFA regülasyonlu, 3 hesap türü (Standard, RAW Spread, DMA), MT4/MT5/TradingView",
   },
 };
 

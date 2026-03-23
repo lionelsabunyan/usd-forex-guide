@@ -6,11 +6,11 @@ export const forexcomData: BrokerReviewData = {
   brokerName: "Forex.com",
   subtitle: "CFTC-Regulated Broker for US Traders",
   heroDescription:
-    "Forex.com is a well-established, CFTC-regulated forex broker founded in 2001. As one of the largest US-regulated forex brokers, it offers a <strong>safe and secure trading environment</strong> for American traders with excellent educational resources and MT4/MT5 platform support.",
+    "Forex.com is a well-established, CFTC-regulated forex broker founded in 2001. As one of the largest US-regulated forex brokers, it offers a <strong>safe and secure trading environment</strong> for American traders with RAW spreads from 0.2 pips, TradingView integration, and MT4/MT5 platform support.",
 
   seoTitle: "Forex.com Review 2026",
   seoDescription:
-    "Complete Forex.com review for US traders. CFTC-regulated broker with $100 minimum deposit, 1:50 leverage, and excellent educational resources. Perfect for US traders seeking regulation.",
+    "Complete Forex.com review for US traders. CFTC-regulated broker with $100 minimum deposit, RAW spreads from 0.2 pips, TradingView integration, and MT4/MT5 support.",
   canonical: "/review/forexcom",
 
   overallRating: 3.8,
@@ -29,7 +29,7 @@ export const forexcomData: BrokerReviewData = {
   keyHighlights: {
     minDeposit: "$100",
     maxLeverage: "1:50",
-    spreadFrom: "0.8 pips",
+    spreadFrom: "0.2 pips",
     usClients: "YES",
   },
 
@@ -40,7 +40,7 @@ export const forexcomData: BrokerReviewData = {
   trustFeatures: [
     { icon: Shield, text: "CFTC Regulated" },
     { icon: Globe, text: "$100 Min Deposit" },
-    { icon: Zap, text: "0.8 Pips Spread" },
+    { icon: Zap, text: "0.2 Pips Spread" },
     { icon: Award, text: "Since 2001" },
   ],
 
@@ -54,8 +54,8 @@ export const forexcomData: BrokerReviewData = {
   ],
 
   ratings: [
-    { label: "Trading Conditions", score: 3.9, description: "Competitive spreads from 0.8 pips with market execution" },
-    { label: "Platform & Tools", score: 4.0, description: "MT4/MT5 and proprietary platform options" },
+    { label: "Trading Conditions", score: 3.9, description: "Competitive spreads from 0.2 pips on RAW Spread account" },
+    { label: "Platform & Tools", score: 4.1, description: "MT4/MT5, TradingView, NinjaTrader, and proprietary platform" },
     { label: "Customer Support", score: 3.7, description: "USA-based support with friendly and thorough representatives" },
     { label: "Deposit & Withdrawal", score: 3.8, description: "Free deposits with standard processing via ACH, wire, and card" },
     { label: "Educational Resources", score: 4.1, description: "Excellent educational content and research tools" },
@@ -71,11 +71,11 @@ export const forexcomData: BrokerReviewData = {
       popular: true,
     },
     {
-      name: "Commission Account",
+      name: "RAW Spread Account",
       minDeposit: "$100",
       leverage: "1:50",
-      spread: "From 0.8 pips",
-      commission: "$5 per lot",
+      spread: "From 0.2 pips",
+      commission: "$7 per lot",
     },
   ],
 
@@ -83,7 +83,7 @@ export const forexcomData: BrokerReviewData = {
     { step: 1, title: "Register Online", description: "Complete the online registration form with your personal and financial details", icon: UserPlus, time: "5 min" },
     { step: 2, title: "Verify Identity", description: "Upload your government-issued ID and proof of address for KYC compliance", icon: FileText, time: "1-2 days" },
     { step: 3, title: "Fund Account", description: "Deposit a minimum of $100 via ACH, bank wire, or credit/debit card", icon: CreditCard, time: "1-3 days" },
-    { step: 4, title: "Start Trading", description: "Choose MT4, MT5, or the Forex.com proprietary platform and start trading", icon: PlayCircle, time: "Immediate" },
+    { step: 4, title: "Start Trading", description: "Choose MT4, MT5, TradingView, or the Forex.com proprietary platform and start trading", icon: PlayCircle, time: "Immediate" },
   ],
 
   paymentMethods: [
@@ -101,8 +101,8 @@ export const forexcomData: BrokerReviewData = {
   competitorComparison: [
     { feature: "Min Deposit", broker: "$100", competitor1: "$0", competitor2: "$0" },
     { feature: "Max Leverage", broker: "1:50", competitor1: "1:50", competitor2: "1:50" },
-    { feature: "Spreads From", broker: "0.8 pips", competitor1: "1.0 pips", competitor2: "0.2 pips" },
-    { feature: "Platforms", broker: "MT4/MT5, Proprietary", competitor1: "OANDA, MT4", competitor2: "Proprietary" },
+    { feature: "Spreads From", broker: "0.2 pips", competitor1: "1.0 pips", competitor2: "0.2 pips" },
+    { feature: "Platforms", broker: "MT4/MT5, TradingView, Proprietary", competitor1: "OANDA, MT4", competitor2: "Proprietary" },
     { feature: "US Clients", broker: "Yes", competitor1: "Yes", competitor2: "Yes" },
     { feature: "Regulation", broker: "CFTC, NFA", competitor1: "CFTC, NFA", competitor2: "CFTC, NFA" },
     { feature: "Founded", broker: "2001", competitor1: "1996", competitor2: "2019" },
@@ -138,7 +138,7 @@ export const forexcomData: BrokerReviewData = {
     },
     {
       question: "What platforms does Forex.com offer?",
-      answer: "Forex.com offers MetaTrader 4 (MT4), MetaTrader 5 (MT5), and its own proprietary trading platform. All platforms are available on desktop, web, and mobile.",
+      answer: "Forex.com offers MetaTrader 4 (MT4), MetaTrader 5 (MT5), TradingView, NinjaTrader, and its own proprietary trading platform. All platforms are available on desktop, web, and mobile.",
     },
     {
       question: "What is the maximum leverage at Forex.com?",
@@ -155,12 +155,12 @@ export const forexcomData: BrokerReviewData = {
     "Accepts US clients without restrictions",
     "Strong reputation since 2001",
     "Excellent educational resources",
-    "User-friendly platforms (MT4/MT5)",
+    "User-friendly platforms (MT4/MT5, TradingView)",
     "Fast withdrawal processing",
     "Negative balance protection",
     "Segregated client accounts",
     "Good customer support",
-    "No minimum deposit on some accounts",
+    "TradingView and NinjaTrader integration",
   ],
 
   cons: [
@@ -171,5 +171,5 @@ export const forexcomData: BrokerReviewData = {
     "No high leverage options",
   ],
 
-  lastUpdated: "2026-02-14",
+  lastUpdated: "2026-03-23",
 };
