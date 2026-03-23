@@ -6,11 +6,11 @@ export const fxgloryData: BrokerReviewData = {
   brokerName: "FXGlory",
   subtitle: "Highest Leverage Broker for US Traders",
   heroDescription:
-    "FXGlory is an offshore forex broker established in 2011 that actively accepts US clients. With the highest leverage in the industry at 1:3000, a $1 minimum deposit, and multiple crypto payment options, it's a popular choice for American traders seeking alternatives to CFTC-regulated brokers.",
+    "FXGlory is an offshore forex broker established in 2011, now headquartered in Georgia, that actively accepts US clients. With the highest leverage in the industry at 1:3000, a $1 minimum deposit, swap-free accounts, and multiple crypto payment options, it's a popular choice for American traders seeking alternatives to CFTC-regulated brokers.",
 
   seoTitle: "FXGlory Review 2026 - Highest Leverage Broker for US Traders",
   seoDescription:
-    "Complete FXGlory review for 2026. Offshore broker accepting US clients with 1:3000 leverage, $1 minimum deposit, crypto deposits, and 24/7 support. Operating since 2011.",
+    "Complete FXGlory review for 2026. Offshore broker accepting US clients with 1:3000 leverage, $1 minimum deposit, swap-free accounts, crypto deposits, and 24/7 support. Operating since 2011.",
   canonical: "/review/fxglory",
 
   overallRating: 4.9,
@@ -34,7 +34,7 @@ export const fxgloryData: BrokerReviewData = {
   },
 
   warningBanner: {
-    text: "FXGlory is registered in St. Vincent and the Grenadines, not regulated by CFTC/NFA. While legal for US residents to use, you don't have access to US regulatory protections. The extremely high leverage (1:3000) significantly increases both profit potential and risk. Only trade with funds you can afford to lose.",
+    text: "FXGlory is headquartered in Georgia and registered in St. Vincent and the Grenadines, not regulated by CFTC/NFA. While legal for US residents to use, you don't have access to US regulatory protections. The extremely high leverage (1:3000) significantly increases both profit potential and risk. Only trade with funds you can afford to lose.",
   },
 
   trustFeatures: [
@@ -47,7 +47,7 @@ export const fxgloryData: BrokerReviewData = {
   quickStats: [
     { label: "Trustpilot", value: "4.0/5", colorClass: "text-success" },
     { label: "Established", value: "2011", colorClass: "text-foreground" },
-    { label: "Headquarters", value: "St. Vincent", colorClass: "text-foreground" },
+    { label: "Headquarters", value: "Georgia", colorClass: "text-foreground" },
     { label: "Regulation", value: "SVG FSA", colorClass: "text-foreground" },
     { label: "Min Deposit", value: "$1", colorClass: "text-success" },
     { label: "Max Leverage", value: "1:3000", colorClass: "text-primary" },
@@ -56,8 +56,8 @@ export const fxgloryData: BrokerReviewData = {
   ],
 
   ratings: [
-    { label: "Trading Conditions", score: 4.8, description: "1:3000 leverage, low spreads" },
-    { label: "Platform & Tools", score: 4.5, description: "MT4, MT5 platforms" },
+    { label: "Trading Conditions", score: 4.8, description: "1:3000 leverage, fixed spreads" },
+    { label: "Platform & Tools", score: 4.6, description: "MT4, MT5, GloryTrader platforms" },
     { label: "Customer Support", score: 4.8, description: "24/7 multilingual support" },
     { label: "Deposit & Withdrawal", score: 4.8, description: "Multiple options, fast crypto" },
     { label: "Trust & Reputation", score: 4.5, description: "Since 2011, offshore" },
@@ -65,37 +65,37 @@ export const fxgloryData: BrokerReviewData = {
 
   accountTypes: [
     {
-      name: "Micro Account",
+      name: "Standard Account",
       minDeposit: "$1",
       leverage: "1:3000",
-      spread: "From 2 pips",
+      spread: "From 2 pips (fixed)",
       commission: "No",
-      features: ["MT4/MT5 Platform", "All instruments", "Hedging allowed", "Expert Advisors", "Beginners friendly"],
+      features: ["MT4/MT5/GloryTrader", "All instruments", "Swap-free", "Expert Advisors", "Beginners friendly"],
     },
     {
-      name: "Standard Account",
-      minDeposit: "$100",
-      leverage: "1:3000",
-      spread: "From 1.5 pips",
+      name: "Premium Account",
+      minDeposit: "$1,000",
+      leverage: "1:2000",
+      spread: "From 1.5 pips (fixed)",
       commission: "No",
-      features: ["MT4/MT5 Platform", "All instruments", "Priority support", "Expert Advisors", "Hedging allowed"],
+      features: ["MT4/MT5/GloryTrader", "All instruments", "Free VPS", "Expert Advisors", "Hedging allowed"],
       popular: true,
     },
     {
       name: "VIP Account",
       minDeposit: "$5,000",
-      leverage: "1:3000",
-      spread: "From 0.5 pips",
+      leverage: "1:400",
+      spread: "From 0.7 pips (fixed)",
       commission: "No",
-      features: ["MT4/MT5 Platform", "All instruments", "Dedicated manager", "Lower spreads", "VIP support"],
+      features: ["MT4/MT5/GloryTrader", "All instruments", "Dedicated manager", "Free VPS", "VIP support"],
     },
     {
-      name: "ECN Account",
-      minDeposit: "$500",
-      leverage: "1:500",
-      spread: "From 0.1 pips",
-      commission: "$3 per lot",
-      features: ["MT4/MT5 Platform", "Raw ECN spreads", "Institutional liquidity", "DMA access", "Best for scalpers"],
+      name: "CIP Account",
+      minDeposit: "$50,000",
+      leverage: "1:10",
+      spread: "From 0.1 pips (fixed)",
+      commission: "No",
+      features: ["MT4/MT5/GloryTrader", "All instruments", "Tightest spreads", "Institutional grade", "Best for large volume"],
     },
   ],
 
@@ -104,7 +104,7 @@ export const fxgloryData: BrokerReviewData = {
     { step: 2, title: "Fill Registration Form", description: "Enter your email, create a password, and provide basic personal information.", icon: FileText, time: "2 minutes" },
     { step: 3, title: "Verify Your Identity", description: "Upload ID document and proof of address. Verification usually completed within 24 hours.", icon: UserPlus, time: "5 minutes" },
     { step: 4, title: "Fund Your Account", description: "Choose from multiple payment methods including crypto. Deposits are instant.", icon: Wallet, time: "Instant" },
-    { step: 5, title: "Start Trading", description: "Download MT4 or MT5 and access 50+ forex pairs with up to 1:3000 leverage.", icon: PlayCircle, time: "Ready!" },
+    { step: 5, title: "Start Trading", description: "Download MT4, MT5, or GloryTrader and access 50+ forex pairs with up to 1:3000 leverage.", icon: PlayCircle, time: "Ready!" },
   ],
 
   paymentMethods: [
@@ -128,7 +128,7 @@ export const fxgloryData: BrokerReviewData = {
     { feature: "Minimum Deposit", broker: "$1", competitor1: "$50", competitor2: "$10" },
     { feature: "Maximum Leverage", broker: "1:3000", competitor1: "1:500", competitor2: "1:500" },
     { feature: "Spreads From", broker: "0.1 pips", competitor1: "0.0 pips", competitor2: "0.0 pips" },
-    { feature: "Trading Platforms", broker: "MT4, MT5", competitor1: "MT4, MT5", competitor2: "MT4, MT5" },
+    { feature: "Trading Platforms", broker: "MT4, MT5, GloryTrader", competitor1: "MT4, MT5", competitor2: "MT4, MT5" },
     { feature: "24/7 Support", broker: "Yes", competitor1: "No", competitor2: "No" },
     { feature: "Crypto Deposits", broker: "Yes", competitor1: "Yes", competitor2: "Yes" },
     { feature: "Established", broker: "2011", competitor1: "2019", competitor2: "2020" },
@@ -140,7 +140,7 @@ export const fxgloryData: BrokerReviewData = {
       "Very low minimum deposit ($1)",
       "24/7 customer support",
       "Fast crypto withdrawals",
-      "Both MT4 and MT5 supported",
+      "MT4, MT5, and GloryTrader supported",
     ],
     negativeThemes: [
       "Not regulated by major authorities",
@@ -158,7 +158,7 @@ export const fxgloryData: BrokerReviewData = {
     {
       question: "What is the minimum deposit at FXGlory?",
       answer:
-        "FXGlory has an extremely low minimum deposit of just $1 for the Micro Account. This makes it one of the most accessible forex brokers for beginners. Standard accounts require $100, and VIP accounts require $5,000.",
+        "FXGlory has an extremely low minimum deposit of just $1 for the Standard Account. This makes it one of the most accessible forex brokers for beginners. Premium accounts require $1,000, and VIP accounts require $5,000.",
     },
     {
       question: "What leverage does FXGlory offer?",
@@ -168,7 +168,7 @@ export const fxgloryData: BrokerReviewData = {
     {
       question: "Is FXGlory regulated and safe?",
       answer:
-        "FXGlory is registered with the SVG FSA (St. Vincent and the Grenadines Financial Services Authority). While not regulated by major authorities like CFTC, FCA, or ASIC, they have been operating since 2011 with a generally positive track record.",
+        "FXGlory is headquartered in Tbilisi, Georgia and registered with the SVG FSA (St. Vincent and the Grenadines Financial Services Authority). While not regulated by major authorities like CFTC, FCA, or ASIC, they have been operating since 2011 with a generally positive track record.",
     },
     {
       question: "How fast are FXGlory withdrawals?",
@@ -178,7 +178,7 @@ export const fxgloryData: BrokerReviewData = {
     {
       question: "Can I use Expert Advisors (EAs) on FXGlory?",
       answer:
-        "Yes, FXGlory fully supports Expert Advisors (automated trading robots) on both MT4 and MT5 platforms. Scalping and hedging strategies are also allowed without restrictions.",
+        "Yes, FXGlory fully supports Expert Advisors (automated trading robots) on MT4 and MT5 platforms. They also offer their proprietary GloryTrader platform. Scalping and hedging strategies are allowed without restrictions. All accounts are swap-free.",
     },
   ],
 
@@ -189,10 +189,12 @@ export const fxgloryData: BrokerReviewData = {
     "Multiple cryptocurrency payment options",
     "24/7 customer support availability",
     "Fast withdrawal processing (24-48 hours)",
-    "Both MT4 and MT5 platforms available",
+    "MT4, MT5, and GloryTrader platforms available",
     "No deposit fees on most methods",
     "Scalping and hedging allowed",
     "Expert Advisors (EA) fully supported",
+    "All accounts swap-free",
+    "Proprietary GloryTrader platform",
     "Operating since 2011",
   ],
 
@@ -237,5 +239,5 @@ export const fxgloryData: BrokerReviewData = {
     },
   ],
 
-  lastUpdated: "February 4, 2026",
+  lastUpdated: "March 23, 2026",
 };
