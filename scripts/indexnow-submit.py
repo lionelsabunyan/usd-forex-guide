@@ -1,165 +1,245 @@
 #!/usr/bin/env python3
 """
-IndexNow API - Hızlı Bing/Yandex Indexing
-https://www.indexnow.org/
+IndexNow API — Automatic Bing/Yandex Fast Indexing
 
-Tüm sitemap URL'lerini IndexNow ile bildirir.
-Trailing slash ZORUNLU (Cloudflare Pages + canonical tutarlılığı).
+Two modes:
+  1. --changed  (default): git diff ile son commit'teki değişen sayfaları bulur,
+                           sitemap.xml'den eşleşen URL'leri IndexNow'a gönderir.
+  2. --all:                Sitemap.xml'deki TÜM URL'leri gönderir.
+
+Usage:
+  python3 scripts/indexnow-submit.py              # sadece değişen sayfalar
+  python3 scripts/indexnow-submit.py --all         # tüm sitemap URL'leri
+  python3 scripts/indexnow-submit.py --dry-run     # submit etmeden göster
 """
 
-import requests
-import json
-import sys
+import argparse
 import os
+import re
+import subprocess
+import sys
+import xml.etree.ElementTree as ET
+from pathlib import Path
 
-INDEXNOW_KEY = os.environ.get('INDEXNOW_KEY', '')
+import requests
+
+# ── Config ──────────────────────────────────────────────────────────────────
+INDEXNOW_KEY = os.environ.get("INDEXNOW_KEY", "")
 HOST = "beginnerfxguide.com"
+SITE_URL = f"https://{HOST}"
+INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow"
 
-# Tüm sitemap URL'leri — trailing slash ile
-URLS = [
-    # Main Pages
-    "https://beginnerfxguide.com/",
-    "https://beginnerfxguide.com/brokers/",
-    "https://beginnerfxguide.com/brokers/australia/",
-    "https://beginnerfxguide.com/brokers/uk/",
-    "https://beginnerfxguide.com/compare/",
-    "https://beginnerfxguide.com/guides/",
-    "https://beginnerfxguide.com/tools/",
-    "https://beginnerfxguide.com/blog/",
-    "https://beginnerfxguide.com/faq/",
-    "https://beginnerfxguide.com/glossary/",
-    "https://beginnerfxguide.com/about/",
-    "https://beginnerfxguide.com/contact/",
+REPO_ROOT = Path(__file__).resolve().parent.parent
+SITEMAP_FILES = ["public/sitemap.xml", "public/sitemap-tr.xml"]
 
-    # Broker Reviews (17 — kritik öncelikli)
-    "https://beginnerfxguide.com/review/oanda/",
-    "https://beginnerfxguide.com/review/forexcom/",
-    "https://beginnerfxguide.com/review/ig-markets/",
-    "https://beginnerfxguide.com/review/interactive-brokers/",
-    "https://beginnerfxguide.com/review/tastyfx/",
-    "https://beginnerfxguide.com/review/charles-schwab/",
-    "https://beginnerfxguide.com/review/etoro/",
-    "https://beginnerfxguide.com/review/fxpro/",
-    "https://beginnerfxguide.com/review/avatrade/",
-    "https://beginnerfxguide.com/review/coinexx/",
-    "https://beginnerfxguide.com/review/plexytrade/",
-    "https://beginnerfxguide.com/review/pepperstone/",
-    "https://beginnerfxguide.com/review/fxtm/",
-    "https://beginnerfxguide.com/review/fbs/",
-    "https://beginnerfxguide.com/review/fxglory/",
-    "https://beginnerfxguide.com/review/hankotrade/",
-    "https://beginnerfxguide.com/review/n1cm/",
-    "https://beginnerfxguide.com/review/midasfx/",
-    "https://beginnerfxguide.com/review/hfm/",
-    "https://beginnerfxguide.com/review/lmfx/",
-    "https://beginnerfxguide.com/review/exness/",
-    "https://beginnerfxguide.com/review/xm/",
-
-    # Compare Pages
-    "https://beginnerfxguide.com/compare/midasfx-vs-hankotrade/",
-    "https://beginnerfxguide.com/compare/oanda-vs-forexcom/",
-    "https://beginnerfxguide.com/compare/etoro-vs-xm/",
-    "https://beginnerfxguide.com/compare/pepperstone-vs-exness/",
-
-    # Guides
-    "https://beginnerfxguide.com/guides/forex-trading-usa/",
-    "https://beginnerfxguide.com/guides/beginners-guide/",
-    "https://beginnerfxguide.com/guides/us-forex-regulations/",
-    "https://beginnerfxguide.com/guides/broker-comparison/",
-    "https://beginnerfxguide.com/guides/risk-management/",
-    "https://beginnerfxguide.com/guides/technical-analysis/",
-    "https://beginnerfxguide.com/guides/fundamental-analysis/",
-    "https://beginnerfxguide.com/guides/how-we-review/",
-
-    # Tools
-    "https://beginnerfxguide.com/tools/pip-calculator/",
-    "https://beginnerfxguide.com/tools/position-size-calculator/",
-    "https://beginnerfxguide.com/tools/margin-calculator/",
-    "https://beginnerfxguide.com/tools/profit-loss-calculator/",
-    "https://beginnerfxguide.com/tools/forex-tax-calculator/",
-    "https://beginnerfxguide.com/tools/economic-calendar/",
-
-    # Resources
-    "https://beginnerfxguide.com/resources/us-forex-checklist/",
-    "https://beginnerfxguide.com/resources/infographics/",
-
-    # Blog Posts
-    "https://beginnerfxguide.com/blog/how-to-start-forex-trading-usa-2026/",
-    "https://beginnerfxguide.com/blog/best-forex-brokers-us-traders-2026/",
-    "https://beginnerfxguide.com/blog/how-to-open-offshore-forex-account-usa/",
-    "https://beginnerfxguide.com/blog/why-us-traders-choose-offshore-brokers/",
-    "https://beginnerfxguide.com/blog/cfdc-vs-offshore-forex-trading/",
-    "https://beginnerfxguide.com/blog/crypto-deposits-forex-trading/",
-    "https://beginnerfxguide.com/blog/forex-trading-taxes-usa/",
-    "https://beginnerfxguide.com/blog/fxglory-vs-hankotrade-comparison/",
-    "https://beginnerfxguide.com/blog/forex-trading-psychology-emotions/",
-    "https://beginnerfxguide.com/blog/currency-pairs-explained-beginners/",
-    "https://beginnerfxguide.com/blog/best-forex-strategies-beginners/",
-    "https://beginnerfxguide.com/blog/forex-scams-avoid/",
-    "https://beginnerfxguide.com/blog/mt4-vs-mt5-which-platform/",
-    "https://beginnerfxguide.com/blog/forex-leverage-explained/",
-    "https://beginnerfxguide.com/blog/forex-spreads-explained/",
-    "https://beginnerfxguide.com/blog/forex-demo-account-guide/",
-    "https://beginnerfxguide.com/blog/forex-risk-management-guide/",
-    "https://beginnerfxguide.com/blog/forex-trading-hours-best-times/",
-
-    # Legal
-    "https://beginnerfxguide.com/legal/privacy/",
-    "https://beginnerfxguide.com/legal/terms/",
-    "https://beginnerfxguide.com/legal/disclaimer/",
-    "https://beginnerfxguide.com/legal/affiliate-disclosure/",
+# Source paths that map to site pages
+PAGE_SOURCE_PATTERNS = [
+    r"^src/pages/",
+    r"^src/components/tr/",
+    r"^public/sitemap.*\.xml$",
 ]
 
-def submit_to_indexnow(urls=None):
+
+def parse_sitemap(sitemap_path: Path) -> list[str]:
+    """Parse a sitemap.xml and return all <loc> URLs."""
+    if not sitemap_path.exists():
+        return []
+    tree = ET.parse(sitemap_path)
+    root = tree.getroot()
+    ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    return [loc.text.strip() for loc in root.findall(".//s:loc", ns) if loc.text]
+
+
+def get_all_sitemap_urls() -> list[str]:
+    """Collect URLs from all sitemap files."""
+    urls = []
+    for rel_path in SITEMAP_FILES:
+        full_path = REPO_ROOT / rel_path
+        urls.extend(parse_sitemap(full_path))
+    return sorted(set(urls))
+
+
+def get_changed_files(compare_ref: str = "HEAD~1") -> list[str]:
+    """Get list of changed files from git diff against compare_ref."""
+    try:
+        result = subprocess.run(
+            ["git", "diff", "--name-only", compare_ref, "HEAD"],
+            capture_output=True,
+            text=True,
+            cwd=REPO_ROOT,
+        )
+        if result.returncode != 0:
+            # Fallback: diff staged + unstaged against HEAD
+            result = subprocess.run(
+                ["git", "diff", "--name-only", "HEAD"],
+                capture_output=True,
+                text=True,
+                cwd=REPO_ROOT,
+            )
+        return [f.strip() for f in result.stdout.strip().split("\n") if f.strip()]
+    except Exception as e:
+        print(f"⚠️  git diff failed: {e}")
+        return []
+
+
+def file_to_url_paths(filepath: str) -> list[str]:
+    """
+    Convert a source file path to possible URL paths on the site.
+    e.g. src/pages/FAQPage.tsx → /faq/
+         src/pages/brokers/AustraliaPage.tsx → /brokers/australia/
+         src/pages/guides/BestForexTradingApps.tsx → /guides/best-forex-trading-apps/
+    """
+    paths = []
+
+    # Direct page mapping from src/pages/
+    if filepath.startswith("src/pages/"):
+        rel = filepath.replace("src/pages/", "").replace(".tsx", "").replace(".ts", "")
+
+        # Handle nested paths like compare/MT4vsMT5
+        parts = rel.split("/")
+
+        # Convert CamelCase to kebab-case and strip "Page" suffix
+        def to_slug(name: str) -> str:
+            name = re.sub(r"Page$", "", name)
+            # CamelCase → kebab-case
+            slug = re.sub(r"(?<=[a-z])(?=[A-Z])", "-", name)
+            slug = re.sub(r"(?<=[A-Z])(?=[A-Z][a-z])", "-", slug)
+            return slug.lower()
+
+        slugs = [to_slug(p) for p in parts]
+        url_path = "/" + "/".join(slugs) + "/"
+        paths.append(url_path)
+
+    # TR components
+    elif filepath.startswith("src/components/tr/"):
+        paths.append("/tr/")
+
+    # Broker data changes affect review pages
+    elif filepath.startswith("src/lib/reviewData/"):
+        broker_file = filepath.split("/")[-1].replace(".ts", "")
+        paths.append(f"/review/{broker_file}/")
+    elif filepath == "src/lib/brokers.ts":
+        paths.append("/brokers/")
+    elif filepath == "src/lib/brokersTR.ts":
+        paths.append("/tr/")
+
+    return paths
+
+
+def match_changed_urls(changed_files: list[str], all_urls: list[str]) -> list[str]:
+    """Match changed source files to sitemap URLs."""
+    # Check if any files are page-relevant
+    relevant_files = []
+    for f in changed_files:
+        for pattern in PAGE_SOURCE_PATTERNS:
+            if re.match(pattern, f):
+                relevant_files.append(f)
+                break
+        # Also check lib files that affect pages
+        if f.startswith("src/lib/"):
+            relevant_files.append(f)
+
+    if not relevant_files:
+        return []
+
+    # Convert file paths to URL paths
+    candidate_paths = set()
+    for f in relevant_files:
+        candidate_paths.update(file_to_url_paths(f))
+
+    # If sitemap itself changed, submit everything
+    if any("sitemap" in f for f in changed_files):
+        return all_urls
+
+    # Match candidates against sitemap URLs
+    matched = []
+    for url in all_urls:
+        url_path = url.replace(SITE_URL, "")
+        if url_path in candidate_paths:
+            matched.append(url)
+
+    return sorted(set(matched))
+
+
+def submit_to_indexnow(urls: list[str], dry_run: bool = False) -> int | None:
+    """Submit URLs to IndexNow API."""
+    if not urls:
+        print("ℹ️  No URLs to submit.")
+        return None
+
     if not INDEXNOW_KEY:
         print("❌ INDEXNOW_KEY environment variable is not set")
         sys.exit(1)
-    target_urls = urls or URLS
-    print("\n" + "="*60)
-    print("INDEXNOW SUBMISSION - Bing & Yandex Fast Indexing")
-    print("="*60 + "\n")
 
-    # IndexNow batch limit is 10000
-    endpoint = "https://api.indexnow.org/indexnow"
+    print("\n" + "=" * 60)
+    print("INDEXNOW SUBMISSION — Bing & Yandex Fast Indexing")
+    print("=" * 60)
+    print(f"\n📊 URLs to submit: {len(urls)}")
+    print(f"🔑 Key: {INDEXNOW_KEY[:8]}...")
+    print(f"🌐 Host: {HOST}\n")
+
+    for url in urls:
+        print(f"  • {url}")
+
+    if dry_run:
+        print("\n🔍 DRY RUN — no submission made")
+        return None
 
     payload = {
         "host": HOST,
         "key": INDEXNOW_KEY,
         "keyLocation": f"https://{HOST}/{INDEXNOW_KEY}.txt",
-        "urlList": target_urls
+        "urlList": urls,
     }
 
-    headers = {
-        "Content-Type": "application/json; charset=utf-8"
-    }
-
-    print(f"Submitting {len(target_urls)} URLs to IndexNow...")
-    print(f"Key: {INDEXNOW_KEY}")
-    print(f"Host: {HOST}")
-    print()
+    headers = {"Content-Type": "application/json; charset=utf-8"}
 
     try:
-        response = requests.post(endpoint, json=payload, headers=headers)
+        response = requests.post(INDEXNOW_ENDPOINT, json=payload, headers=headers)
 
-        if response.status_code == 200:
-            print("✅ SUCCESS! All URLs submitted to IndexNow")
-            print("   Bing and Yandex will be notified immediately")
-        elif response.status_code == 202:
-            print("✅ ACCEPTED! URLs queued for processing")
+        if response.status_code in (200, 202):
+            print(f"\n✅ SUCCESS ({response.status_code})! URLs submitted to IndexNow")
+            print("   Bing and Yandex will be notified.")
         else:
-            print(f"⚠️ Response: {response.status_code}")
+            print(f"\n⚠️  Response: {response.status_code}")
             print(f"   Body: {response.text}")
 
+        return response.status_code
     except Exception as e:
-        print(f"❌ Error: {e}")
+        print(f"\n❌ Error: {e}")
+        return None
 
-    print("\n" + "="*60)
-    print("URLs Submitted:")
-    for url in target_urls:
-        print(f"  • {url}")
-    print("="*60 + "\n")
 
-    return response.status_code if 'response' in dir() else None
+def main():
+    parser = argparse.ArgumentParser(description="IndexNow URL submission for beginnerfxguide.com")
+    parser.add_argument("--all", action="store_true", help="Submit all sitemap URLs")
+    parser.add_argument("--dry-run", action="store_true", help="Show URLs without submitting")
+    parser.add_argument("--ref", default="HEAD~1", help="Git ref to diff against (default: HEAD~1)")
+    args = parser.parse_args()
+
+    all_urls = get_all_sitemap_urls()
+    print(f"📋 Total sitemap URLs: {len(all_urls)}")
+
+    if args.all:
+        print("📤 Mode: ALL sitemap URLs")
+        submit_to_indexnow(all_urls, dry_run=args.dry_run)
+    else:
+        print(f"📤 Mode: CHANGED pages only (diff against {args.ref})")
+        changed = get_changed_files(args.ref)
+        if changed:
+            print(f"📝 Changed files: {len(changed)}")
+            for f in changed:
+                print(f"   • {f}")
+        else:
+            print("ℹ️  No changed files detected.")
+            return
+
+        urls = match_changed_urls(changed, all_urls)
+        if urls:
+            submit_to_indexnow(urls, dry_run=args.dry_run)
+        else:
+            print("ℹ️  Changed files don't map to any sitemap URLs — nothing to submit.")
+
 
 if __name__ == "__main__":
-    submit_to_indexnow()
+    main()

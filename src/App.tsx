@@ -68,6 +68,8 @@ const BestCopyTradingPlatforms = lazy(() => import("./pages/guides/BestCopyTradi
 const BestForexTradingApps = lazy(() => import("./pages/guides/BestForexTradingApps"));
 const BestForexDemoAccounts = lazy(() => import("./pages/guides/BestForexDemoAccounts"));
 const BestScalpingBrokers = lazy(() => import("./pages/guides/BestScalpingBrokers"));
+const BestHighLeverageBrokers = lazy(() => import("./pages/guides/BestHighLeverageBrokers"));
+const ForexDayTrading = lazy(() => import("./pages/guides/ForexDayTrading"));
 
 // Tools - Lazy loaded
 const ToolsPage = lazy(() => import("./pages/tools/ToolsPage"));
@@ -250,6 +252,8 @@ const App = () => (
             <Route path="/guides/best-forex-trading-apps" element={<BestForexTradingApps />} />
             <Route path="/guides/best-forex-demo-accounts" element={<BestForexDemoAccounts />} />
             <Route path="/guides/best-scalping-brokers" element={<BestScalpingBrokers />} />
+            <Route path="/guides/best-high-leverage-brokers" element={<BestHighLeverageBrokers />} />
+            <Route path="/guides/forex-day-trading" element={<ForexDayTrading />} />
 
             {/* Tools */}
             <Route path="/tools" element={<ToolsPage />} />

@@ -14,7 +14,8 @@ import {
   Flag,
   Star,
   Monitor,
-  Zap
+  Zap,
+  TrendingUp
 } from "lucide-react";
 
 const guides = [
@@ -117,6 +118,24 @@ const guides = [
     readTime: "16 min read",
     difficulty: "Intermediate",
     topics: ["Scalping", "ECN Brokers", "Low Spreads", "Fast Execution"]
+  },
+  {
+    id: "best-high-leverage-brokers",
+    title: "Best High Leverage Forex Brokers",
+    description: "Compare brokers offering leverage from 1:500 to 1:3000. US vs international leverage rules, margin call risks, and regulated vs offshore options explained.",
+    icon: Scale,
+    readTime: "18 min read",
+    difficulty: "Intermediate",
+    topics: ["High Leverage", "Margin Trading", "US Regulations", "Offshore Brokers"]
+  },
+  {
+    id: "forex-day-trading",
+    title: "Forex Day Trading Guide",
+    description: "Master day trading strategies for forex. Learn breakout, pullback, and range setups, the best trading hours, risk management rules, and which brokers offer fast execution.",
+    icon: TrendingUp,
+    readTime: "20 min read",
+    difficulty: "Intermediate",
+    topics: ["Day Trading", "Intraday Strategies", "Risk Management", "Best Hours"]
   }
 ];
 
