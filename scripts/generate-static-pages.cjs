@@ -109,6 +109,7 @@ const staticPages = [
   { path: '/guides/most-trusted-forex-brokers', title: 'Most Trusted & Regulated Forex Brokers 2026 — Safety Rankings | US Forex Guide', desc: 'Find the most trusted, regulated forex brokers ranked by safety. Tier 1 regulation (CFTC, FCA, ASIC), investor protection schemes, segregated accounts, and red flags explained for US and international traders.' },
   { path: '/guides/best-forex-charting-software', title: 'Best Forex Charting Software & Websites 2026 | US Forex Guide', desc: 'Compare the best forex charting software and websites. TradingView, MetaTrader, cTrader, NinjaTrader compared — indicators, drawing tools, alerts, mobile apps, and API features.' },
   { path: '/guides/best-hedging-brokers', title: 'Best Forex Hedging Brokers 2026 — Brokers That Allow Hedging | US Forex Guide', desc: 'Compare the best forex brokers that allow hedging. US hedging restrictions (FIFO rule) explained, direct vs indirect strategies, and 8 brokers with full hedging support reviewed.' },
+  { path: '/guides/best-api-trading-brokers', title: 'Best API Trading Brokers 2026 — REST, FIX & WebSocket Compared | US Forex Guide', desc: 'Compare the best forex brokers with trading APIs. REST API, FIX protocol, WebSocket support — 8 brokers reviewed for algo trading, Python SDKs, and API documentation quality.' },
 
   // Tools
   { path: '/tools/pip-calculator', title: 'Forex Pip Calculator | US Forex Guide', desc: 'Free pip value calculator for forex traders. Calculate pip values in USD for any currency pair and account size.' },
@@ -209,6 +210,10 @@ const blogPages = [
   { slug: 'forex-vs-stocks-which-to-trade-2026', title: 'Forex vs Stocks: Which Should You Trade in 2026?', excerpt: 'Forex vs stock trading comparison. Hours, leverage, costs, and which market suits your trading style.' },
   { slug: 'how-to-read-forex-charts-beginners', title: 'How to Read Forex Charts: A Beginner\'s Visual Guide', excerpt: 'Learn to read forex charts from scratch. Candlesticks, timeframes, support/resistance, and common patterns.' },
   { slug: 'best-forex-trading-apps-mobile-2026', title: 'Best Forex Trading Apps for Mobile Traders 2026', excerpt: 'Top mobile forex trading apps for 2026. MT4, MT5, eToro, OANDA, and thinkorswim compared.' },
+  { slug: 'how-to-choose-forex-broker-2026-checklist', title: 'How to Choose a Forex Broker in 2026: Complete Checklist', excerpt: 'Use this step-by-step checklist to evaluate and compare forex brokers before opening an account.' },
+  { slug: 'eurusd-forecast-march-2026-key-levels', title: 'EUR/USD Forecast March 2026: Key Levels and Analysis', excerpt: 'Our March 2026 EUR/USD technical and fundamental analysis. Key support/resistance levels and trading scenarios.' },
+  { slug: 'forex-trading-mistakes-beginners-money', title: 'Forex Trading Mistakes That Cost Beginners Money', excerpt: 'Avoid the most expensive forex trading mistakes that beginners make. Learn from real examples.' },
+  { slug: 'nfa-vs-offshore-brokers-us-traders', title: 'NFA vs Offshore Brokers: What US Traders Need to Know', excerpt: 'Understand the real differences between NFA-regulated and offshore forex brokers for US traders.' },
 ];
 
 // ─── Helper: escape for HTML attributes ──────────────────────────────────────
