@@ -6,23 +6,23 @@ export const coinexxData: BrokerReviewData = {
   brokerName: "Coinexx",
   subtitle: "Crypto-Only ECN Broker Since 2017",
   heroDescription:
-    'Coinexx is a crypto-only ECN broker that accepts US clients. With an excellent <strong class="text-success">4.9/5 Trustpilot rating</strong>, true 0.0 pip spreads, and anonymous trading options, it\'s a top choice for scalpers and traders who prefer cryptocurrency transactions.',
+    'Coinexx is a crypto-only ECN broker that accepts US clients. With an excellent <strong class="text-success">4.8/5 Trustpilot rating</strong>, true 0.0 pip spreads, and anonymous trading options, it\'s a top choice for scalpers and traders who prefer cryptocurrency transactions.',
 
   seoTitle: "Coinexx Review 2026 - Crypto-Only ECN Broker for US Traders",
   seoDescription:
-    "Complete Coinexx review for US traders. 4.9 Trustpilot rating, true ECN with 0.0 spreads, crypto-only deposits. Best for scalpers seeking anonymous trading.",
+    "Complete Coinexx review for US traders. 4.8 Trustpilot rating, true ECN with 0.0 spreads, crypto-only deposits. Best for scalpers seeking anonymous trading.",
   canonical: "/review/coinexx",
 
-  overallRating: 4.85,
+  overallRating: 4.8,
   ratingCount: 10200,
   reviewCount: 5100,
   trustScore: 76,
-  trustpilotRating: 4.9,
-  trustpilotReviews: 500,
+  trustpilotRating: 4.8,
+  trustpilotReviews: 2110,
 
   heroBadge: {
     icon: Star,
-    text: "4.9/5 TRUSTPILOT",
+    text: "4.8/5 TRUSTPILOT",
     colorClass: "bg-success/10 border border-success/20 text-success",
   },
 
@@ -38,14 +38,14 @@ export const coinexxData: BrokerReviewData = {
   },
 
   trustFeatures: [
-    { icon: Star, text: "4.9/5 Trustpilot" },
+    { icon: Star, text: "4.8/5 Trustpilot" },
     { icon: Bitcoin, text: "Crypto-Only" },
     { icon: Zap, text: "0.0 ECN Spreads" },
     { icon: Clock, text: "Same-Day Withdrawals" },
   ],
 
   quickStats: [
-    { label: "Trustpilot", value: "4.9/5", colorClass: "text-success" },
+    { label: "Trustpilot", value: "4.8/5", colorClass: "text-success" },
     { label: "Established", value: "2017", colorClass: "text-foreground" },
     { label: "Headquarters", value: "St. Vincent", colorClass: "text-foreground" },
     { label: "Min Deposit", value: "$10", colorClass: "text-primary" },
@@ -68,7 +68,7 @@ export const coinexxData: BrokerReviewData = {
       minDeposit: "$10",
       leverage: "1:500",
       spread: "From 0.0 pips",
-      commission: "$3.50 per lot",
+      commission: "$2.50 per lot",
       features: ["MT4/MT5 Platform", "True ECN execution", "Crypto deposits only", "Anonymous trading", "Fast withdrawals"],
       popular: true,
     },
@@ -89,6 +89,7 @@ export const coinexxData: BrokerReviewData = {
     { method: "USDT (Tether ERC20)", deposit: "10-30 min", withdrawal: "10-30 min", fee: "Free" },
     { method: "Litecoin (LTC)", deposit: "5-30 min", withdrawal: "5-30 min", fee: "Free" },
     { method: "Bitcoin Cash (BCH)", deposit: "10-60 min", withdrawal: "10-60 min", fee: "Free" },
+    { method: "USDC", deposit: "5-30 min", withdrawal: "5-30 min", fee: "Free" },
   ],
 
   competitors: [
@@ -101,8 +102,8 @@ export const coinexxData: BrokerReviewData = {
     { feature: "Minimum Deposit", broker: "$10", competitor1: "$50", competitor2: "$10" },
     { feature: "Max Leverage", broker: "1:500", competitor1: "1:1000", competitor2: "1:500" },
     { feature: "Raw Spreads", broker: "0.0 pips", competitor1: "0.0 pips", competitor2: "0.0 pips" },
-    { feature: "Commission", broker: "$3.50/lot", competitor1: "$4/lot", competitor2: "$6/lot" },
-    { feature: "Trustpilot Rating", broker: "4.9/5", competitor1: "4.4/5", competitor2: "4.6/5" },
+    { feature: "Commission", broker: "$2.50/lot", competitor1: "$4/lot", competitor2: "$6/lot" },
+    { feature: "Trustpilot Rating", broker: "4.8/5", competitor1: "4.4/5", competitor2: "4.6/5" },
     { feature: "Platforms", broker: "MT4, MT5", competitor1: "MT4, MT5", competitor2: "MT4, MT5" },
     { feature: "Crypto Deposits", broker: "Crypto Only", competitor1: "Available", competitor2: "Available" },
     { feature: "Anonymous Trading", broker: "Yes", competitor1: "Limited", competitor2: "No" },
@@ -111,7 +112,7 @@ export const coinexxData: BrokerReviewData = {
 
   communityFeedback: {
     positiveThemes: [
-      "Excellent Trustpilot rating (4.9/5)",
+      "Excellent Trustpilot rating (4.8/5)",
       "True ECN execution with 0.0 spreads",
       "Fast crypto withdrawals",
       "Anonymous trading possible",
@@ -140,12 +141,12 @@ export const coinexxData: BrokerReviewData = {
     {
       question: "Is Coinexx safe and trustworthy?",
       answer:
-        "Coinexx has an excellent 4.9/5 rating on Trustpilot from 500+ reviews, which is one of the highest in the industry. While they are not regulated by major authorities (they're registered in St. Vincent), their reputation in the trading community is strong. They've been operating since 2017 with consistent positive feedback.",
+        "Coinexx has an excellent 4.8/5 rating on Trustpilot from 2,100+ reviews, which is one of the highest in the industry. While they are not regulated by major authorities (they're registered in St. Vincent), their reputation in the trading community is strong. They've been operating since 2017 with consistent positive feedback.",
     },
     {
       question: "What are Coinexx's spreads and commissions?",
       answer:
-        "Coinexx offers true ECN trading with raw spreads starting from 0.0 pips. The commission is $3.50 per lot round turn, which is competitive for a true ECN broker. There are no deposit or withdrawal fees, and the minimum lot size is 0.01.",
+        "Coinexx offers true ECN trading with raw spreads starting from 0.0 pips. The commission is $2.50 per lot round turn, which is competitive for a true ECN broker. There are no deposit or withdrawal fees, and the minimum lot size is 0.01.",
     },
     {
       question: "Can I trade anonymously with Coinexx?",
@@ -180,5 +181,5 @@ export const coinexxData: BrokerReviewData = {
     "Newer broker (2017)",
   ],
 
-  lastUpdated: "February 4, 2026",
+  lastUpdated: "March 23, 2026",
 };
