@@ -181,7 +181,7 @@ def fetch_ga4_affiliate_clicks(service, date_str: str) -> list:
         property=GA4_PROPERTY_ID,
         body={
             "dateRanges": [{"startDate": date_str, "endDate": date_str}],
-            "dimensions": [{"name": "customEvent:broker"}],
+            "dimensions": [{"name": "customEvent:broker_id"}],
             "metrics": [{"name": "eventCount"}],
             "dimensionFilter": {
                 "filter": {
