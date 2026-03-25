@@ -306,7 +306,7 @@ export const brokers: Record<BrokerId, Broker> = {
     headquarters: "USA",
     foundedYear: 2023,
     usAccepted: true,
-    platforms: ["tastyfx Platform"],
+    platforms: ["tastyfx Platform", "MT4", "TradingView", "ProRealTime"],
     accountTypes: ["Standard"],
     paymentMethods: ["Wire Transfer", "ACH"],
     cryptoDeposits: false,

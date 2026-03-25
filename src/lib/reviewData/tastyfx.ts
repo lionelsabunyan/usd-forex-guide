@@ -34,7 +34,7 @@ export const tastyfxData: BrokerReviewData = {
   },
 
   warningBanner: {
-    text: "Regulated by NFA/CFTC. Lower leverage (1:50 max) but full regulatory protection.",
+    text: "Regulated by NFA/CFTC. Lower leverage (1:50 max) but full regulatory protection. Note: Not available to Ohio residents due to state regulations.",
   },
 
   trustFeatures: [
@@ -95,7 +95,7 @@ export const tastyfxData: BrokerReviewData = {
   ],
 
   paymentMethods: [
-    { method: "Bank Wire Transfer", deposit: "Free", withdrawal: "Free", fee: "No fee" },
+    { method: "Bank Wire Transfer", deposit: "Free", withdrawal: "$15", fee: "$15 withdrawal fee" },
     { method: "ACH Transfer", deposit: "Free", withdrawal: "Free", fee: "No fee", recommended: true },
     { method: "Debit Card", deposit: "Free", withdrawal: "Free", fee: "No fee" },
   ],
@@ -125,7 +125,6 @@ export const tastyfxData: BrokerReviewData = {
     negativeThemes: [
       "Newer brand -- less established track record than competitors",
       "Limited currency pairs compared to IG or OANDA",
-      "No MetaTrader 4/5 support -- proprietary platform only",
       "Mobile app still maturing compared to desktop",
     ],
   },
@@ -150,7 +149,7 @@ export const tastyfxData: BrokerReviewData = {
     },
     {
       question: "Does tastyfx support MetaTrader?",
-      answer: "No, tastyfx does not offer MetaTrader 4 or MetaTrader 5. It uses its own proprietary trading platform, which has been designed specifically for forex trading with professional-grade charting and analysis tools.",
+      answer: "Yes, tastyfx supports MetaTrader 4 (MT4) for algorithmic trading and integration with third-party tools. In addition to its proprietary trading platform, tastyfx also offers TradingView and ProRealTime integrations for advanced charting and analysis.",
     },
     {
       question: "What spreads does tastyfx offer?",
@@ -178,10 +177,9 @@ export const tastyfxData: BrokerReviewData = {
   cons: [
     "Maximum leverage limited to 1:50 (US regulation)",
     "No cryptocurrency trading available",
-    "No MT4/MT5 platform support",
     "Higher spreads compared to offshore brokers",
     "FIFO rule applies (no hedging)",
   ],
 
-  lastUpdated: "2026-02-14",
+  lastUpdated: "2026-03-25",
 };
