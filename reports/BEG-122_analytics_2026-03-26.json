@@ -1,0 +1,331 @@
+{
+  "generated_at": "2026-03-26",
+  "analysis_window_7d": "2026-03-19..2026-03-25",
+  "affiliate": {
+    "total_clicks": 43,
+    "site_session_to_affiliate_click_rate_pct": 36.44,
+    "by_broker": [
+      {
+        "broker": "hankotrade",
+        "clicks": 33,
+        "click_share_pct": 76.74
+      },
+      {
+        "broker": "exness",
+        "clicks": 3,
+        "click_share_pct": 6.98
+      },
+      {
+        "broker": "fxglory",
+        "clicks": 3,
+        "click_share_pct": 6.98
+      },
+      {
+        "broker": "xm",
+        "clicks": 3,
+        "click_share_pct": 6.98
+      },
+      {
+        "broker": "midasfx",
+        "clicks": 1,
+        "click_share_pct": 2.33
+      }
+    ],
+    "top_pages_by_affiliate_clicks": [
+      {
+        "page_path": "/",
+        "affiliate_clicks": 33
+      },
+      {
+        "page_path": "/tr/inceleme/exness/",
+        "affiliate_clicks": 3
+      },
+      {
+        "page_path": "/tr/inceleme/xm/",
+        "affiliate_clicks": 3
+      },
+      {
+        "page_path": "/compare/",
+        "affiliate_clicks": 2
+      },
+      {
+        "page_path": "/review/fxglory",
+        "affiliate_clicks": 2
+      }
+    ]
+  },
+  "top20_pages": [
+    {
+      "page_path": "/",
+      "sessions": 82,
+      "pageviews": 88,
+      "conversions": 55.0,
+      "bounce_rate_pct": 39.02
+    },
+    {
+      "page_path": "/tr/",
+      "sessions": 30,
+      "pageviews": 58,
+      "conversions": 0.0,
+      "bounce_rate_pct": 10.0
+    },
+    {
+      "page_path": "/compare/",
+      "sessions": 4,
+      "pageviews": 3,
+      "conversions": 2.0,
+      "bounce_rate_pct": 25.0
+    },
+    {
+      "page_path": "/blog",
+      "sessions": 3,
+      "pageviews": 6,
+      "conversions": 0.0,
+      "bounce_rate_pct": 0.0
+    },
+    {
+      "page_path": "/review/fxglory",
+      "sessions": 3,
+      "pageviews": 1,
+      "conversions": 4.0,
+      "bounce_rate_pct": 0.0
+    },
+    {
+      "page_path": "/guides",
+      "sessions": 2,
+      "pageviews": 2,
+      "conversions": 0.0,
+      "bounce_rate_pct": 0.0
+    },
+    {
+      "page_path": "/blog/eurusd-forecast-march-2026-key-levels",
+      "sessions": 1,
+      "pageviews": 1,
+      "conversions": 0.0,
+      "bounce_rate_pct": 0.0
+    },
+    {
+      "page_path": "/blog/eurusd-forecast-march-2026-key-levels/",
+      "sessions": 1,
+      "pageviews": 1,
+      "conversions": 0.0,
+      "bounce_rate_pct": 0.0
+    },
+    {
+      "page_path": "/blog/how-to-choose-forex-broker-2026-checklist/",
+      "sessions": 1,
+      "pageviews": 1,
+      "conversions": 0.0,
+      "bounce_rate_pct": 0.0
+    },
+    {
+      "page_path": "/blog/nfa-vs-offshore-brokers-us-traders",
+      "sessions": 1,
+      "pageviews": 1,
+      "conversions": 0.0,
+      "bounce_rate_pct": 0.0
+    },
+    {
+      "page_path": "/brokers",
+      "sessions": 1,
+      "pageviews": 1,
+      "conversions": 0.0,
+      "bounce_rate_pct": 0.0
+    },
+    {
+      "page_path": "/compare",
+      "sessions": 1,
+      "pageviews": 1,
+      "conversions": 0.0,
+      "bounce_rate_pct": 0.0
+    },
+    {
+      "page_path": "/compare/midasfx-vs-hankotrade",
+      "sessions": 1,
+      "pageviews": 1,
+      "conversions": 0.0,
+      "bounce_rate_pct": 0.0
+    },
+    {
+      "page_path": "/guides/best-scalping-brokers/",
+      "sessions": 1,
+      "pageviews": 1,
+      "conversions": 0.0,
+      "bounce_rate_pct": 100.0
+    },
+    {
+      "page_path": "/review/hfm",
+      "sessions": 1,
+      "pageviews": 1,
+      "conversions": 0.0,
+      "bounce_rate_pct": 0.0
+    },
+    {
+      "page_path": "/review/interactive-brokers/",
+      "sessions": 1,
+      "pageviews": 1,
+      "conversions": 0.0,
+      "bounce_rate_pct": 100.0
+    },
+    {
+      "page_path": "/review/n1cm",
+      "sessions": 1,
+      "pageviews": 1,
+      "conversions": 0.0,
+      "bounce_rate_pct": 0.0
+    },
+    {
+      "page_path": "/tools",
+      "sessions": 1,
+      "pageviews": 2,
+      "conversions": 0.0,
+      "bounce_rate_pct": 0.0
+    },
+    {
+      "page_path": "/tools/broker-quiz",
+      "sessions": 1,
+      "pageviews": 1,
+      "conversions": 0.0,
+      "bounce_rate_pct": 0.0
+    },
+    {
+      "page_path": "/tr",
+      "sessions": 1,
+      "pageviews": 8,
+      "conversions": 0.0,
+      "bounce_rate_pct": 0.0
+    }
+  ],
+  "funnel_7d": {
+    "sessions": 118,
+    "pageviews": 190,
+    "conversions": 74.0,
+    "session_to_conversion_rate_pct": 62.71,
+    "session_to_affiliate_click_rate_pct": 36.44
+  },
+  "sessions_trend_7d": [
+    {
+      "date": "20260319",
+      "sessions": 2,
+      "pageviews": 0
+    },
+    {
+      "date": "20260320",
+      "sessions": 4,
+      "pageviews": 0
+    },
+    {
+      "date": "20260321",
+      "sessions": 7,
+      "pageviews": 2
+    },
+    {
+      "date": "20260322",
+      "sessions": 9,
+      "pageviews": 6
+    },
+    {
+      "date": "20260323",
+      "sessions": 48,
+      "pageviews": 113
+    },
+    {
+      "date": "20260324",
+      "sessions": 21,
+      "pageviews": 32
+    },
+    {
+      "date": "20260325",
+      "sessions": 27,
+      "pageviews": 37
+    }
+  ],
+  "anomaly_check": {
+    "latest_date": "20260325",
+    "latest_sessions": 27,
+    "prev_avg_sessions": 15.17,
+    "change_pct": 78.02,
+    "is_drop_over_20pct": false
+  },
+  "baseline_march_2026": {
+    "gsc_28d": {
+      "window": "2026-02-24..2026-03-23",
+      "organic_clicks": 1,
+      "organic_impressions": 571,
+      "organic_ctr_pct": 0.18,
+      "avg_position": 16.91
+    },
+    "top_queries": [
+      {
+        "query": "midas fx reviews",
+        "clicks": 1,
+        "impressions": 1,
+        "ctr_pct": 100.0,
+        "position": 45.0
+      },
+      {
+        "query": "best forex broker for beginners",
+        "clicks": 0,
+        "impressions": 9,
+        "ctr_pct": 0.0,
+        "position": 90.56
+      },
+      {
+        "query": "best forex calculator",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr_pct": 0.0,
+        "position": 70.2
+      },
+      {
+        "query": "compare forex broker",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr_pct": 0.0,
+        "position": 69.0
+      },
+      {
+        "query": "compare forex brokers",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr_pct": 0.0,
+        "position": 74.0
+      },
+      {
+        "query": "does midasfx accept us clients",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr_pct": 0.0,
+        "position": 9.0
+      },
+      {
+        "query": "exness vs fxglory comparison",
+        "clicks": 0,
+        "impressions": 37,
+        "ctr_pct": 0.0,
+        "position": 7.22
+      },
+      {
+        "query": "exness vs fxglory review",
+        "clicks": 0,
+        "impressions": 44,
+        "ctr_pct": 0.0,
+        "position": 3.91
+      },
+      {
+        "query": "exness 与 fxglory 对比",
+        "clicks": 0,
+        "impressions": 25,
+        "ctr_pct": 0.0,
+        "position": 9.6
+      },
+      {
+        "query": "exness 对比 fxglory 评测",
+        "clicks": 0,
+        "impressions": 46,
+        "ctr_pct": 0.0,
+        "position": 8.87
+      }
+    ]
+  }
+}

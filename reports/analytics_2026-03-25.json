@@ -1,0 +1,104 @@
+{
+  "date": "2026-03-25",
+  "overview": {
+    "sessions": 27,
+    "users": 27,
+    "pageviews": 37,
+    "bounce_rate": 40.74,
+    "avg_session_duration": 48.28
+  },
+  "gsc": {
+    "clicks": 0,
+    "impressions": 0,
+    "ctr": 0,
+    "position": 0
+  },
+  "top_pages": [
+    {
+      "page_path": "/",
+      "pageviews": 19,
+      "sessions": 18,
+      "avg_time_on_page": 63.29
+    },
+    {
+      "page_path": "/tr/",
+      "pageviews": 16,
+      "sessions": 9,
+      "avg_time_on_page": 11.9
+    },
+    {
+      "page_path": "/blog",
+      "pageviews": 1,
+      "sessions": 1,
+      "avg_time_on_page": 32.94
+    },
+    {
+      "page_path": "/guides",
+      "pageviews": 1,
+      "sessions": 1,
+      "avg_time_on_page": 24.22
+    }
+  ],
+  "traffic_sources": [
+    {
+      "source": "tr.search.yahoo.com",
+      "medium": "referral",
+      "sessions": 7,
+      "users": 7
+    },
+    {
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 6,
+      "users": 6
+    },
+    {
+      "source": "finance.consumeradvanced.com",
+      "medium": "referral",
+      "sessions": 5,
+      "users": 5
+    },
+    {
+      "source": "seekly.zone",
+      "medium": "referral",
+      "sessions": 3,
+      "users": 3
+    },
+    {
+      "source": "yahoo",
+      "medium": "organic",
+      "sessions": 2,
+      "users": 2
+    },
+    {
+      "source": "bing",
+      "medium": "organic",
+      "sessions": 1,
+      "users": 1
+    },
+    {
+      "source": "direct.yandex.com",
+      "medium": "referral",
+      "sessions": 1,
+      "users": 1
+    },
+    {
+      "source": "search.pch.com",
+      "medium": "referral",
+      "sessions": 1,
+      "users": 1
+    },
+    {
+      "source": "similarsearch.net",
+      "medium": "referral",
+      "sessions": 1,
+      "users": 1
+    }
+  ],
+  "affiliate_clicks": [
+    {
+      "broker": "hankotrade",
+      "clicks": 3
+    }
+  ]
+}
