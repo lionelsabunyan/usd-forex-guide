@@ -47,7 +47,7 @@ export const pepperstoneData: BrokerReviewData = {
   quickStats: [
     { label: "Trustpilot", value: "4.4/5", colorClass: "text-success" },
     { label: "Established", value: "2010" },
-    { label: "Regulation", value: "FCA, ASIC, CySEC" },
+    { label: "Regulation", value: "FCA, ASIC, CySEC, DFSA" },
     { label: "Min Deposit", value: "$200", colorClass: "text-primary" },
     { label: "Max Leverage", value: "1:500", colorClass: "text-primary" },
     { label: "US Clients", value: "Not Accepted", colorClass: "text-destructive" },
