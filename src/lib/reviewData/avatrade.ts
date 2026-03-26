@@ -160,5 +160,5 @@ export const avatradeData: BrokerReviewData = {
     "No cryptocurrency deposits",
   ],
 
-  lastUpdated: "2026-03-23",
+  lastUpdated: "2026-03-26",
 };

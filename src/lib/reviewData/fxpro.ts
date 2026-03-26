@@ -185,5 +185,5 @@ export const fxproData: BrokerReviewData = {
     "Inactivity fee after 6 months",
   ],
 
-  lastUpdated: "2026-03-23",
+  lastUpdated: "2026-03-26",
 };
