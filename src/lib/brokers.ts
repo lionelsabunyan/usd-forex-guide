@@ -780,7 +780,7 @@ export const brokers: Record<BrokerId, Broker> = {
     name: "Exness",
     type: "regulated",
     region: "INTL",
-    rating: 4.7,
+    rating: 4.8,
     minDeposit: 10,
     minDepositDisplay: "$10",
     leverage: "1:2000",

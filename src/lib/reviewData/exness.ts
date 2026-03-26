@@ -83,6 +83,7 @@ export const exnessData: BrokerReviewData = {
     { method: "Skrill", deposit: "Free", withdrawal: "Free", fee: "Free", recommended: true },
     { method: "Neteller", deposit: "Free", withdrawal: "Free", fee: "Free" },
     { method: "Perfect Money", deposit: "Free", withdrawal: "Free", fee: "Free" },
+    { method: "Papara", deposit: "Free", withdrawal: "Free", fee: "Free" },
     { method: "Crypto (BTC, USDT)", deposit: "Free", withdrawal: "Free", fee: "Free" },
   ],
 
@@ -163,5 +164,5 @@ export const exnessData: BrokerReviewData = {
     "No cTrader platform",
   ],
 
-  lastUpdated: "2026-02-14",
+  lastUpdated: "2026-03-26",
 };
