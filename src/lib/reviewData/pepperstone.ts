@@ -159,5 +159,5 @@ export const pepperstoneData: BrokerReviewData = {
     "Limited cryptocurrency selection",
   ],
 
-  lastUpdated: "2026-03-25",
+  lastUpdated: "2026-03-26",
 };
