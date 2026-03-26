@@ -4,25 +4,18 @@ import type { BonusOffer } from "@/components/BonusCard";
 
 const bonusOffers: BonusOffer[] = [
   {
-    title: "Webinar Bonus",
-    amount: "$50",
-    type: "no-deposit",
-    description: "Receive $50 webinar bonus by attending XM educational webinars. February 2026 campaign for new clients.",
-    requirements: ["Attend scheduled webinar", "New accounts only", "Valid February 2026"],
-  },
-  {
     title: "Deposit Bonus",
     amount: "100% up to $500 + 20% up to $10K",
     type: "deposit",
-    description: "Get 100% bonus on your first $500 deposit, then 20% on deposits up to $10,000. Maximum total bonus: $10,500.",
+    description: "Get 100% bonus on your first $500 deposit, then 20% on deposits up to $10,000. Maximum total bonus: $10,500. Terms apply.",
     requirements: ["100% on first $500", "20% on next $9,500", "Max bonus: $10,500"],
   },
   {
-    title: "Weekly Bonus",
-    amount: "Up to $8,750/week",
-    type: "cashback",
-    description: "Limited-time weekly bonus campaign running February-March 2026. Earn up to $8,750 per week based on trading volume.",
-    requirements: ["Feb-Mar 2026 only", "Based on trading volume", "Up to $8,750/week"],
+    title: "Limited-Time Promotions",
+    amount: "Varies",
+    type: "other",
+    description: "XM regularly offers seasonal and promotional bonuses. Check the XM website for current Q2 2026 campaign details.",
+    requirements: ["Check website for current offers", "Terms & conditions apply", "New and existing clients"],
   },
 ];
 
@@ -72,7 +65,7 @@ export const xmData: BrokerReviewData = {
   quickStats: [
     { label: "Trustpilot", value: "3.8/5", colorClass: "text-foreground" },
     { label: "Established", value: "2009" },
-    { label: "Regulation", value: "CySEC, ASIC" },
+    { label: "Regulation", value: "CySEC, ASIC, DFSA" },
     { label: "Min Deposit", value: "$5", colorClass: "text-success" },
     { label: "Max Leverage", value: "1:1000", colorClass: "text-primary" },
     { label: "Bonuses", value: "Available", colorClass: "text-success" },
@@ -191,5 +184,5 @@ export const xmData: BrokerReviewData = {
   ],
 
   bonusOffers,
-  lastUpdated: "2026-02-14",
+  lastUpdated: "2026-03-26",
 };
