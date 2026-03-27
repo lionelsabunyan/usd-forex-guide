@@ -202,5 +202,5 @@ export const plexytradeData: BrokerReviewData = {
     "No traditional payment methods",
   ],
 
-  lastUpdated: "March 23, 2026",
+  lastUpdated: "2026-03-23",
 };
