@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-03-26T05:23:40.779987",
+  "timestamp": "2026-03-27T05:24:07.441916",
   "mode": "priority",
-  "total_checked": 180,
-  "indexed_count": 122,
-  "not_indexed_count": 58,
+  "total_checked": 184,
+  "indexed_count": 133,
+  "not_indexed_count": 51,
   "error_count": 0,
   "results": {
     "indexed": [
@@ -11,7 +11,7 @@
         "url": "https://beginnerfxguide.com/",
         "coverage": "Submitted and indexed",
         "verdict": "PASS",
-        "last_crawl": "2026-03-24T16:46:21Z",
+        "last_crawl": "2026-03-27T00:22:33Z",
         "crawled_as": "MOBILE",
         "robots_txt": "ALLOWED",
         "indexing": "INDEXING_ALLOWED",
@@ -30,7 +30,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/blog/best-forex-strategies-beginners/",
+        "url": "https://beginnerfxguide.com/blog/best-forex-brokers-beginners-2026/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -41,7 +41,18 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/blog/best-time-trade-forex-usa/",
+        "url": "https://beginnerfxguide.com/blog/best-forex-brokers-low-spreads-2026/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
+        "url": "https://beginnerfxguide.com/blog/eurusd-forecast-march-2026-key-levels/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -63,7 +74,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/blog/forex-risk-management-guide/",
+        "url": "https://beginnerfxguide.com/blog/forex-leverage-explained/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -85,18 +96,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/blog/forex-trading-hours-best-times/",
-        "coverage": "Discovered - currently not indexed",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
-        "url": "https://beginnerfxguide.com/blog/forex-trading-psychology-emotions/",
+        "url": "https://beginnerfxguide.com/blog/forex-trading-mistakes-beginners-money/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -141,6 +141,17 @@
       },
       {
         "url": "https://beginnerfxguide.com/blog/fxglory-vs-hankotrade-comparison/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
+        "url": "https://beginnerfxguide.com/blog/how-to-choose-forex-broker-2026-checklist/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -217,6 +228,17 @@
         "rich_results": "N/A"
       },
       {
+        "url": "https://beginnerfxguide.com/blog/nfa-vs-offshore-brokers-us-traders/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
         "url": "https://beginnerfxguide.com/blog/oanda-vs-forexcom-comparison/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
@@ -239,17 +261,6 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/blog/why-us-traders-choose-offshore-brokers/",
-        "coverage": "Discovered - currently not indexed",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
         "url": "https://beginnerfxguide.com/brokers/",
         "coverage": "Submitted and indexed",
         "verdict": "PASS",
@@ -261,7 +272,29 @@
         "rich_results": "PASS"
       },
       {
+        "url": "https://beginnerfxguide.com/brokers/australia/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
         "url": "https://beginnerfxguide.com/brokers/avatrade/fees/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
+        "url": "https://beginnerfxguide.com/brokers/avatrade/minimum-deposit/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -305,6 +338,17 @@
         "rich_results": "N/A"
       },
       {
+        "url": "https://beginnerfxguide.com/brokers/charles-schwab/minimum-deposit/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
         "url": "https://beginnerfxguide.com/brokers/charles-schwab/spreads/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
@@ -316,7 +360,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/brokers/eu/",
+        "url": "https://beginnerfxguide.com/brokers/coinexx/spreads/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -327,7 +371,40 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/brokers/exness/fees/",
+        "url": "https://beginnerfxguide.com/brokers/etoro/fees/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
+        "url": "https://beginnerfxguide.com/brokers/etoro/minimum-deposit/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
+        "url": "https://beginnerfxguide.com/brokers/etoro/spreads/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
+        "url": "https://beginnerfxguide.com/brokers/eu/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -371,6 +448,17 @@
         "rich_results": "N/A"
       },
       {
+        "url": "https://beginnerfxguide.com/brokers/fbs/spreads/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
         "url": "https://beginnerfxguide.com/brokers/forex-com/fees/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
@@ -382,7 +470,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/brokers/forex-com/spreads/",
+        "url": "https://beginnerfxguide.com/brokers/forex-com/minimum-deposit/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -394,36 +482,14 @@
       },
       {
         "url": "https://beginnerfxguide.com/brokers/fxglory/fees/",
-        "coverage": "Discovered - currently not indexed",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "coverage": "Submitted and indexed",
+        "verdict": "PASS",
+        "last_crawl": "2026-03-27T00:50:10Z",
+        "crawled_as": "MOBILE",
+        "robots_txt": "ALLOWED",
+        "indexing": "INDEXING_ALLOWED",
         "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
-        "url": "https://beginnerfxguide.com/brokers/fxglory/minimum-deposit/",
-        "coverage": "Discovered - currently not indexed",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
-        "url": "https://beginnerfxguide.com/brokers/fxglory/spreads/",
-        "coverage": "Discovered - currently not indexed",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
+        "rich_results": "PASS"
       },
       {
         "url": "https://beginnerfxguide.com/brokers/fxpro/fees/",
@@ -437,7 +503,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/brokers/fxpro/minimum-deposit/",
+        "url": "https://beginnerfxguide.com/brokers/fxtm/fees/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -448,7 +514,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/brokers/fxtm/fees/",
+        "url": "https://beginnerfxguide.com/brokers/fxtm/minimum-deposit/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -481,7 +547,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/brokers/hankotrade/spreads/",
+        "url": "https://beginnerfxguide.com/brokers/hankotrade/minimum-deposit/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -503,7 +569,18 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/brokers/ig/fees/",
+        "url": "https://beginnerfxguide.com/brokers/ig/minimum-deposit/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
+        "url": "https://beginnerfxguide.com/brokers/interactive-brokers/fees/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -580,7 +657,7 @@
         "rich_results": "PASS"
       },
       {
-        "url": "https://beginnerfxguide.com/brokers/midasfx/spreads/",
+        "url": "https://beginnerfxguide.com/brokers/midasfx/minimum-deposit/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -646,7 +723,29 @@
         "rich_results": "N/A"
       },
       {
+        "url": "https://beginnerfxguide.com/brokers/pepperstone/fees/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
         "url": "https://beginnerfxguide.com/brokers/pepperstone/minimum-deposit/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
+        "url": "https://beginnerfxguide.com/brokers/pepperstone/spreads/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -668,6 +767,28 @@
         "rich_results": "PASS"
       },
       {
+        "url": "https://beginnerfxguide.com/brokers/plexytrade/minimum-deposit/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
+        "url": "https://beginnerfxguide.com/brokers/plexytrade/spreads/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
         "url": "https://beginnerfxguide.com/brokers/singapore/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
@@ -680,17 +801,6 @@
       },
       {
         "url": "https://beginnerfxguide.com/brokers/tastyfx/minimum-deposit/",
-        "coverage": "Discovered - currently not indexed",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
-        "url": "https://beginnerfxguide.com/brokers/tastyfx/spreads/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -756,18 +866,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/compare/charles-schwab-vs-interactive-brokers/",
-        "coverage": "Discovered - currently not indexed",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
-        "url": "https://beginnerfxguide.com/compare/etoro-vs-xm/",
+        "url": "https://beginnerfxguide.com/compare/etoro-vs-oanda/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -811,7 +910,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/compare/mt4-vs-mt5/",
+        "url": "https://beginnerfxguide.com/compare/oanda-vs-forexcom/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -823,6 +922,17 @@
       },
       {
         "url": "https://beginnerfxguide.com/compare/oanda-vs-ig-markets/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
+        "url": "https://beginnerfxguide.com/compare/pepperstone-vs-exness/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -877,6 +987,17 @@
         "rich_results": "N/A"
       },
       {
+        "url": "https://beginnerfxguide.com/guides/beginners-guide/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
         "url": "https://beginnerfxguide.com/guides/best-api-trading-brokers/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
@@ -889,17 +1010,6 @@
       },
       {
         "url": "https://beginnerfxguide.com/guides/best-copy-trading-platforms/",
-        "coverage": "Discovered - currently not indexed",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
-        "url": "https://beginnerfxguide.com/guides/best-forex-charting-software/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -954,29 +1064,18 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/guides/best-low-spread-brokers/",
-        "coverage": "Discovered - currently not indexed",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
-        "url": "https://beginnerfxguide.com/guides/best-scalping-brokers/",
-        "coverage": "Discovered - currently not indexed",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
         "url": "https://beginnerfxguide.com/guides/broker-comparison/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
+        "url": "https://beginnerfxguide.com/guides/forex-day-trading/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -998,7 +1097,7 @@
         "rich_results": "PASS"
       },
       {
-        "url": "https://beginnerfxguide.com/guides/fundamental-analysis/",
+        "url": "https://beginnerfxguide.com/guides/how-we-review/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1009,7 +1108,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/guides/how-we-review/",
+        "url": "https://beginnerfxguide.com/guides/most-trusted-forex-brokers/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1053,29 +1152,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/review/avatrade/",
-        "coverage": "Discovered - currently not indexed",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
         "url": "https://beginnerfxguide.com/review/charles-schwab/",
-        "coverage": "Discovered - currently not indexed",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
-        "url": "https://beginnerfxguide.com/review/coinexx/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1141,15 +1218,48 @@
         "rich_results": "N/A"
       },
       {
+        "url": "https://beginnerfxguide.com/review/fxpro/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
+        "url": "https://beginnerfxguide.com/review/fxtm/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
+        "url": "https://beginnerfxguide.com/review/hankotrade/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
         "url": "https://beginnerfxguide.com/review/hfm/",
         "coverage": "Submitted and indexed",
         "verdict": "PASS",
-        "last_crawl": "2026-03-19T01:08:09Z",
+        "last_crawl": "2026-03-27T04:07:33Z",
         "crawled_as": "MOBILE",
         "robots_txt": "ALLOWED",
         "indexing": "INDEXING_ALLOWED",
         "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "PASS"
+        "rich_results": "FAIL"
       },
       {
         "url": "https://beginnerfxguide.com/review/ig-markets/",
@@ -1196,7 +1306,51 @@
         "rich_results": "FAIL"
       },
       {
+        "url": "https://beginnerfxguide.com/review/n1cm/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
+        "url": "https://beginnerfxguide.com/review/oanda/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
         "url": "https://beginnerfxguide.com/review/pepperstone/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
+        "url": "https://beginnerfxguide.com/review/plexytrade/",
+        "coverage": "Discovered - currently not indexed",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
+        "url": "https://beginnerfxguide.com/review/tastyfx/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1210,7 +1364,7 @@
         "url": "https://beginnerfxguide.com/review/xm/",
         "coverage": "Submitted and indexed",
         "verdict": "PASS",
-        "last_crawl": "2026-03-24T14:16:21Z",
+        "last_crawl": "2026-03-26T21:52:34Z",
         "crawled_as": "MOBILE",
         "robots_txt": "ALLOWED",
         "indexing": "INDEXING_ALLOWED",
@@ -1227,17 +1381,6 @@
         "indexing": "INDEXING_ALLOWED",
         "mobile": "VERDICT_UNSPECIFIED",
         "rich_results": "PASS"
-      },
-      {
-        "url": "https://beginnerfxguide.com/tools/broker-quiz/",
-        "coverage": "Discovered - currently not indexed",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
       },
       {
         "url": "https://beginnerfxguide.com/tools/economic-calendar/",
@@ -1284,18 +1427,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/tools/profit-loss-calculator/",
-        "coverage": "Discovered - currently not indexed",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
-        "url": "https://beginnerfxguide.com/tools/trading-sessions/",
+        "url": "https://beginnerfxguide.com/tools/position-size-calculator/",
         "coverage": "Discovered - currently not indexed",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1337,42 +1469,9 @@
         "indexing": "INDEXING_STATE_UNSPECIFIED",
         "mobile": "VERDICT_UNSPECIFIED",
         "rich_results": "N/A"
-      },
-      {
-        "url": "https://beginnerfxguide.com/tr/blog/turkiye-forex-vergilendirme-rehberi/",
-        "coverage": "Discovered - currently not indexed",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
       }
     ],
     "not_indexed": [
-      {
-        "url": "https://beginnerfxguide.com/blog/best-forex-brokers-beginners-2026/",
-        "coverage": "URL is unknown to Google",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "UNKNOWN",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
-        "url": "https://beginnerfxguide.com/blog/best-forex-brokers-low-spreads-2026/",
-        "coverage": "URL is unknown to Google",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "UNKNOWN",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
       {
         "url": "https://beginnerfxguide.com/blog/best-forex-brokers-scalping-2026/",
         "coverage": "URL is unknown to Google",
@@ -1396,7 +1495,29 @@
         "rich_results": "N/A"
       },
       {
+        "url": "https://beginnerfxguide.com/blog/best-forex-strategies-beginners/",
+        "coverage": "URL is unknown to Google",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "UNKNOWN",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
         "url": "https://beginnerfxguide.com/blog/best-forex-trading-apps-mobile-2026/",
+        "coverage": "URL is unknown to Google",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "UNKNOWN",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
+        "url": "https://beginnerfxguide.com/blog/best-time-trade-forex-usa/",
         "coverage": "URL is unknown to Google",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1440,7 +1561,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/blog/forex-leverage-explained/",
+        "url": "https://beginnerfxguide.com/blog/forex-risk-management-guide/",
         "coverage": "URL is unknown to Google",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1462,6 +1583,28 @@
         "rich_results": "N/A"
       },
       {
+        "url": "https://beginnerfxguide.com/blog/forex-trading-hours-best-times/",
+        "coverage": "URL is unknown to Google",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "UNKNOWN",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
+        "url": "https://beginnerfxguide.com/blog/forex-trading-psychology-emotions/",
+        "coverage": "URL is unknown to Google",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "UNKNOWN",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
         "url": "https://beginnerfxguide.com/blog/how-to-start-forex-trading-usa-2026/",
         "coverage": "URL is unknown to Google",
         "verdict": "NEUTRAL",
@@ -1473,29 +1616,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/brokers/australia/",
-        "coverage": "URL is unknown to Google",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "UNKNOWN",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
-        "url": "https://beginnerfxguide.com/brokers/avatrade/minimum-deposit/",
-        "coverage": "URL is unknown to Google",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "UNKNOWN",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
-        "url": "https://beginnerfxguide.com/brokers/charles-schwab/minimum-deposit/",
+        "url": "https://beginnerfxguide.com/blog/why-us-traders-choose-offshore-brokers/",
         "coverage": "URL is unknown to Google",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1528,40 +1649,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/brokers/coinexx/spreads/",
-        "coverage": "URL is unknown to Google",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "UNKNOWN",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
-        "url": "https://beginnerfxguide.com/brokers/etoro/fees/",
-        "coverage": "URL is unknown to Google",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "UNKNOWN",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
-        "url": "https://beginnerfxguide.com/brokers/etoro/minimum-deposit/",
-        "coverage": "URL is unknown to Google",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "UNKNOWN",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
-        "url": "https://beginnerfxguide.com/brokers/etoro/spreads/",
+        "url": "https://beginnerfxguide.com/brokers/exness/fees/",
         "coverage": "URL is unknown to Google",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1583,7 +1671,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/brokers/fbs/spreads/",
+        "url": "https://beginnerfxguide.com/brokers/forex-com/spreads/",
         "coverage": "URL is unknown to Google",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1594,7 +1682,29 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/brokers/forex-com/minimum-deposit/",
+        "url": "https://beginnerfxguide.com/brokers/fxglory/minimum-deposit/",
+        "coverage": "URL is unknown to Google",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "UNKNOWN",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
+        "url": "https://beginnerfxguide.com/brokers/fxglory/spreads/",
+        "coverage": "URL is unknown to Google",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "UNKNOWN",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
+        "url": "https://beginnerfxguide.com/brokers/fxpro/minimum-deposit/",
         "coverage": "URL is unknown to Google",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1616,18 +1726,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/brokers/fxtm/minimum-deposit/",
-        "coverage": "URL is unknown to Google",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "UNKNOWN",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
-        "url": "https://beginnerfxguide.com/brokers/hankotrade/minimum-deposit/",
+        "url": "https://beginnerfxguide.com/brokers/hankotrade/spreads/",
         "coverage": "URL is unknown to Google",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1660,7 +1759,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/brokers/ig/minimum-deposit/",
+        "url": "https://beginnerfxguide.com/brokers/ig/fees/",
         "coverage": "URL is unknown to Google",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1682,18 +1781,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/brokers/interactive-brokers/fees/",
-        "coverage": "URL is unknown to Google",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "UNKNOWN",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
-        "url": "https://beginnerfxguide.com/brokers/midasfx/minimum-deposit/",
+        "url": "https://beginnerfxguide.com/brokers/midasfx/spreads/",
         "coverage": "URL is unknown to Google",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1715,51 +1803,18 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/brokers/pepperstone/fees/",
-        "coverage": "URL is unknown to Google",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "UNKNOWN",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
-        "url": "https://beginnerfxguide.com/brokers/pepperstone/spreads/",
-        "coverage": "URL is unknown to Google",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "UNKNOWN",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
-        "url": "https://beginnerfxguide.com/brokers/plexytrade/minimum-deposit/",
-        "coverage": "URL is unknown to Google",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "UNKNOWN",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
-        "url": "https://beginnerfxguide.com/brokers/plexytrade/spreads/",
-        "coverage": "URL is unknown to Google",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "UNKNOWN",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
         "url": "https://beginnerfxguide.com/brokers/tastyfx/fees/",
+        "coverage": "URL is unknown to Google",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "UNKNOWN",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
+        "url": "https://beginnerfxguide.com/brokers/tastyfx/spreads/",
         "coverage": "URL is unknown to Google",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1781,7 +1836,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/compare/etoro-vs-oanda/",
+        "url": "https://beginnerfxguide.com/compare/charles-schwab-vs-interactive-brokers/",
         "coverage": "URL is unknown to Google",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1792,7 +1847,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/compare/oanda-vs-forexcom/",
+        "url": "https://beginnerfxguide.com/compare/etoro-vs-xm/",
         "coverage": "URL is unknown to Google",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1803,7 +1858,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/compare/pepperstone-vs-exness/",
+        "url": "https://beginnerfxguide.com/compare/mt4-vs-mt5/",
         "coverage": "URL is unknown to Google",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1836,7 +1891,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/guides/beginners-guide/",
+        "url": "https://beginnerfxguide.com/guides/best-forex-charting-software/",
         "coverage": "URL is unknown to Google",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1858,7 +1913,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/guides/forex-day-trading/",
+        "url": "https://beginnerfxguide.com/guides/best-low-spread-brokers/",
         "coverage": "URL is unknown to Google",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1869,7 +1924,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/guides/most-trusted-forex-brokers/",
+        "url": "https://beginnerfxguide.com/guides/best-scalping-brokers/",
         "coverage": "URL is unknown to Google",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1880,7 +1935,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/review/fxpro/",
+        "url": "https://beginnerfxguide.com/guides/fundamental-analysis/",
         "coverage": "URL is unknown to Google",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1891,7 +1946,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/review/fxtm/",
+        "url": "https://beginnerfxguide.com/review/avatrade/",
         "coverage": "URL is unknown to Google",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1902,7 +1957,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/review/hankotrade/",
+        "url": "https://beginnerfxguide.com/review/coinexx/",
         "coverage": "URL is unknown to Google",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1913,7 +1968,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/review/n1cm/",
+        "url": "https://beginnerfxguide.com/tools/broker-quiz/",
         "coverage": "URL is unknown to Google",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1924,7 +1979,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/review/oanda/",
+        "url": "https://beginnerfxguide.com/tools/profit-loss-calculator/",
         "coverage": "URL is unknown to Google",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1935,29 +1990,7 @@
         "rich_results": "N/A"
       },
       {
-        "url": "https://beginnerfxguide.com/review/plexytrade/",
-        "coverage": "URL is unknown to Google",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "UNKNOWN",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
-        "url": "https://beginnerfxguide.com/review/tastyfx/",
-        "coverage": "URL is unknown to Google",
-        "verdict": "NEUTRAL",
-        "last_crawl": "Never",
-        "crawled_as": "UNKNOWN",
-        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
-        "indexing": "INDEXING_STATE_UNSPECIFIED",
-        "mobile": "VERDICT_UNSPECIFIED",
-        "rich_results": "N/A"
-      },
-      {
-        "url": "https://beginnerfxguide.com/tools/position-size-calculator/",
+        "url": "https://beginnerfxguide.com/tools/trading-sessions/",
         "coverage": "URL is unknown to Google",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
@@ -1980,6 +2013,17 @@
       },
       {
         "url": "https://beginnerfxguide.com/tr/blog/forex-risk-yonetimi-rehberi/",
+        "coverage": "URL is unknown to Google",
+        "verdict": "NEUTRAL",
+        "last_crawl": "Never",
+        "crawled_as": "UNKNOWN",
+        "robots_txt": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "mobile": "VERDICT_UNSPECIFIED",
+        "rich_results": "N/A"
+      },
+      {
+        "url": "https://beginnerfxguide.com/tr/blog/turkiye-forex-vergilendirme-rehberi/",
         "coverage": "URL is unknown to Google",
         "verdict": "NEUTRAL",
         "last_crawl": "Never",
