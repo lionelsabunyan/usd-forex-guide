@@ -25,6 +25,7 @@ import ReviewFAQ from "./ReviewFAQ";
 import ReviewFinalCTA from "./ReviewFinalCTA";
 import ReviewRelatedBrokers from "./ReviewRelatedBrokers";
 import ReviewStickyMobileCTA from "./ReviewStickyMobileCTA";
+import ReviewStickyDesktopCTA from "./ReviewStickyDesktopCTA";
 
 interface BrokerReviewTemplateProps {
   data: BrokerReviewData;
@@ -187,6 +188,33 @@ const BrokerReviewTemplate = ({ data }: BrokerReviewTemplateProps) => {
 
       <ReviewProsAndCons pros={data.pros} cons={data.cons} brokerId={data.brokerId} brokerName={data.brokerName} />
 
+      {/* Mid-content CTA strip — all brokers */}
+      <div className={`border-y py-5 ${isIB ? 'bg-primary/8 border-primary/15' : 'bg-secondary/30 border-border'}`}>
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 max-w-5xl mx-auto">
+            <div className="text-center sm:text-left">
+              <p className="text-sm font-semibold text-foreground">
+                Ready to trade with {data.brokerName}?
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                {data.keyHighlights.minDeposit} min deposit · {data.keyHighlights.maxLeverage} leverage
+                {usAccepted ? " · 🇺🇸 US Clients Accepted" : ""}
+              </p>
+            </div>
+            <Button variant={isIB ? "hero" : "default"} size="sm" className="flex-shrink-0 group" asChild>
+              <a
+                href={getAffiliateUrl(data.brokerId, UTM_CONFIGS.REVIEW_MID_CONTENT)}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackAffiliateClick(data.brokerId, "review_mid_content", "open_account")}
+              >
+                Open Account <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-0.5 transition-transform" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </div>
+
       <ReviewAccountTypes accountTypes={data.accountTypes} />
 
       <ReviewDetailedRatings ratings={data.ratings} />
@@ -275,6 +303,11 @@ const BrokerReviewTemplate = ({ data }: BrokerReviewTemplateProps) => {
       <ReviewRelatedBrokers currentBrokerId={data.brokerId} />
 
       <ReviewStickyMobileCTA
+        brokerId={data.brokerId}
+        brokerName={data.brokerName}
+      />
+
+      <ReviewStickyDesktopCTA
         brokerId={data.brokerId}
         brokerName={data.brokerName}
       />

@@ -149,8 +149,8 @@ const BrokerCard = ({ broker, rank }: BrokerCardProps) => {
         <div className="flex gap-2">
           {broker.affiliateUrl ? (
             <Button
-              variant="default"
-              className="flex-1"
+              variant="hero"
+              className="flex-1 group"
               asChild
             >
               <a
@@ -160,7 +160,7 @@ const BrokerCard = ({ broker, rank }: BrokerCardProps) => {
                 onClick={handleCtaClick}
               >
                 Open Account
-                <ExternalLink className="w-4 h-4" />
+                <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
             </Button>
           ) : (

@@ -235,6 +235,12 @@ export const UTM_CONFIGS = {
   // Mobile
   MOBILE_STICKY: { source: "mobile", medium: "sticky", campaign: "mobile_cta" },
 
+  // Desktop sticky sidebar
+  REVIEW_DESKTOP_STICKY: { source: "review", medium: "sticky", campaign: "desktop_sidebar", content: "open_account" },
+
+  // Mid-content inline strip
+  REVIEW_MID_CONTENT: { source: "review", medium: "inline", campaign: "mid_content", content: "open_account" },
+
   // Blog
   BLOG_INLINE: { source: "blog", medium: "inline", campaign: "blog_cta" },
   BLOG_SIDEBAR: { source: "blog", medium: "sidebar", campaign: "blog_sidebar" },
