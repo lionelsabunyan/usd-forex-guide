@@ -64,15 +64,15 @@ function getAllPages() {
 
   // Map slug → lastUpdated from review data files
   const lastUpdatedMap = {
-    fxglory: "2026-02-04", hankotrade: "2026-02-04", midasfx: "2026-02-04",
-    n1cm: "2026-02-04", hfm: "2026-02-04", lmfx: "2026-02-04",
-    coinexx: "2026-02-04", plexytrade: "2026-02-04",
-    exness: "2026-02-14", pepperstone: "2026-02-14", xm: "2026-02-14",
-    fxtm: "2026-02-14", fbs: "2026-02-14", etoro: "2026-02-14",
-    fxpro: "2026-02-14", oanda: "2026-02-14", ig: "2026-02-14",
-    forexcom: "2026-02-14", "interactive-brokers": "2026-02-14",
-    avatrade: "2026-02-14", "charles-schwab": "2026-02-14",
-    tastyfx: "2026-02-14",
+    fxglory: "2026-03-23", hankotrade: "2026-03-23", midasfx: "2026-03-23",
+    n1cm: "2026-03-23", hfm: "2026-03-23", lmfx: "2026-03-23",
+    coinexx: "2026-03-23", plexytrade: "2026-03-23",
+    exness: "2026-03-26", pepperstone: "2026-03-26", xm: "2026-03-26",
+    fxtm: "2026-03-23", fbs: "2026-03-23", etoro: "2026-03-26",
+    fxpro: "2026-03-26", oanda: "2026-03-26", ig: "2026-03-26",
+    forexcom: "2026-03-26", "interactive-brokers": "2026-03-26",
+    avatrade: "2026-03-26", "charles-schwab": "2026-03-26",
+    tastyfx: "2026-03-25",
   };
 
   for (const slug of brokers) {
