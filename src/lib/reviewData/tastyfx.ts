@@ -181,5 +181,5 @@ export const tastyfxData: BrokerReviewData = {
     "FIFO rule applies (no hedging)",
   ],
 
-  lastUpdated: "2026-04-07",
+  lastUpdated: "2026-03-31",
 };

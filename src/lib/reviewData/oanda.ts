@@ -164,5 +164,5 @@ export const oandaData: BrokerReviewData = {
     "No high leverage options",
   ],
 
-  lastUpdated: "2026-04-07",  // Updated: Min deposit $0→$1
+  lastUpdated: "2026-03-31",  // Updated: Min deposit $0→$1
 };

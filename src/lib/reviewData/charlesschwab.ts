@@ -183,5 +183,5 @@ export const charlesschwabData: BrokerReviewData = {
     "FIFO rule limits hedging strategies",
   ],
 
-  lastUpdated: "2026-04-07",
+  lastUpdated: "2026-03-31",
 };

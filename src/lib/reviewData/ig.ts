@@ -164,5 +164,5 @@ export const igData: BrokerReviewData = {
     "No cryptocurrency deposit options",
   ],
 
-  lastUpdated: "2026-04-07",  // Updated: Min deposit $250→$1, leverage 1:50→1:30
+  lastUpdated: "2026-03-31",  // Updated: Min deposit $250→$1, leverage 1:50→1:30
 };
