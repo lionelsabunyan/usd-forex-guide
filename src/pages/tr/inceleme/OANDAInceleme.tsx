@@ -26,8 +26,7 @@ const OANDAInceleme = () => {
   ];
 
   const accountTypes = [
-    { name: "Standard", minDeposit: "$0", leverage: "1:50", spread: "1.0 pip'ten", commission: "Yok", popular: true },
-    { name: "Premium", minDeposit: "$20,000", leverage: "1:50", spread: "0.8 pip'ten", commission: "Yok" },
+    { name: "Standard Account", minDeposit: "$0", leverage: "1:50", spread: "0.7 pip'ten", commission: "Yok", popular: true },
   ];
 
   const pros = [

@@ -26,8 +26,7 @@ const IGInceleme = () => {
   ];
 
   const accountTypes = [
-    { name: "Standard", minDeposit: "$250", leverage: "1:50", spread: "0.6 pip'ten", commission: "Yok", popular: true },
-    { name: "Premium", minDeposit: "$25,000", leverage: "1:50", spread: "0.4 pip'ten", commission: "İndirimli" },
+    { name: "Standard Account", minDeposit: "$250", leverage: "1:50", spread: "0.6 pip'ten", commission: "Yok", popular: true },
   ];
 
   const pros = [

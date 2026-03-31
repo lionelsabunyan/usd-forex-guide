@@ -28,6 +28,8 @@ const EToroInceleme = () => {
   const accountTypes = [
     { name: "Bireysel", minDeposit: "$50", leverage: "1:30", spread: "1.0 pip'ten", commission: "Yok", popular: true },
     { name: "Profesyonel", minDeposit: "$50", leverage: "1:400", spread: "1.0 pip'ten", commission: "Yok" },
+    { name: "Kurumsal", minDeposit: "$10,000", leverage: "1:400", spread: "0.8 pip'ten", commission: "Yok" },
+    { name: "İslami", minDeposit: "$1,000", leverage: "1:30", spread: "1.0 pip'ten", commission: "Yok" },
   ];
 
   const pros = [

@@ -28,26 +28,27 @@ const ForexcomInceleme = () => {
   const accountTypes = [
     { name: "Standard", minDeposit: "$100", leverage: "1:50", spread: "1.0 pip'ten", commission: "Yok", popular: true },
     { name: "RAW Spread", minDeposit: "$100", leverage: "1:50", spread: "0.2 pip'ten", commission: "$7/lot" },
-    { name: "DMA", minDeposit: "$25,000", leverage: "1:50", spread: "Piyasa spread'i", commission: "Değişken" },
   ];
 
   const pros = [
     "CFTC/NFA regülasyonlu — tam güvenlik",
-    "Çoklu hesap türü (Standard, RAW Spread, DMA)",
-    "MT4, MT5 ve TradingView desteği",
+    "ABD müşterilerine tam hizmet (kısıtlama yok)",
+    "2001 yılından beri güçlü itibar",
     "Güçlü araştırma ve eğitim içerikleri",
-    "Rekabetçi spread'ler (0.2 pip'ten RAW hesapta)",
-    "TradingView entegrasyonu ve kendi platformu",
-    "ABD müşterilerine tam hizmet",
+    "MT4/MT5 ve TradingView entegrasyonu",
+    "Hızlı para çekme işlemi",
     "Negatif bakiye koruması",
+    "Ayrılmış müşteri hesapları",
+    "İyi müşteri desteği",
+    "TradingView ve NinjaTrader entegrasyonu",
   ];
 
   const cons = [
     "Kaldıraç sınırlı (maks 1:50, CFTC kuralı)",
-    "$100 minimum depozito gerekli",
-    "Kripto para ile yatırım yok",
-    "Mobil uygulama iyileştirilebilir",
-    "Türkçe destek yok",
+    "FIFO kuralı gerekli (kolay hedge edilemiyor)",
+    "Spread'ler offshore brokerlerden yüksek",
+    "Kripto para ile yatırım seçenekleri sınırlı",
+    "Yüksek kaldıraç seçenekleri yok",
   ];
 
   return (
@@ -149,10 +150,10 @@ const ForexcomInceleme = () => {
               <span className="text-white/60 text-sm">ABD REGÜLASYONLU</span>
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-              <span className="text-yellow-400">3</span> Farklı Hesap Türü
+              <span className="text-yellow-400">2</span> Farklı Hesap Türü
             </h2>
             <p className="text-xl text-white mb-4">
-              0.2 pip RAW Spread + <span className="text-yellow-400">DMA Erişimi</span>
+              Standard ve <span className="text-yellow-400">RAW Spread</span> Hesapları
             </p>
             <div className="inline-flex items-center gap-2 bg-amber-500 text-slate-900 font-bold px-6 py-2 rounded-full hover:bg-amber-400 transition-colors">
               Forex.com'u Keşfedin!
@@ -286,7 +287,7 @@ const ForexcomInceleme = () => {
               </table>
             </div>
             <p className="text-xs text-muted-foreground mt-4">
-              * DMA hesabı profesyonel yatırımcılar için tasarlanmıştır, $25,000 minimum bakiye gerektirir.
+              * RAW Spread hesabında commission olarak $7 per lot uygulanır.
             </p>
           </div>
         </div>

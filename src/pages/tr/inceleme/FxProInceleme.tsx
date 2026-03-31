@@ -33,10 +33,10 @@ const FxProInceleme = () => {
   ];
 
   const accountTypes = [
-    { name: "Standard", minDeposit: "$100", leverage: "1:200", spread: "1.2 pip'ten", commission: "Yok", platform: "MT4, MT5" },
-    { name: "Raw+", minDeposit: "$1,000", leverage: "1:200", spread: "0.0 pip'ten", commission: "$3.50/lot", platform: "MT4, MT5", popular: true },
-    { name: "Elite", minDeposit: "$30,000", leverage: "1:200", spread: "0.0 pip'ten", commission: "$3.00/lot", platform: "MT4, MT5" },
-    { name: "cTrader", minDeposit: "$100", leverage: "1:200", spread: "0.3 pip'ten", commission: "$3.50/lot", platform: "cTrader" },
+    { name: "Standard", minDeposit: "$100", leverage: "1:200", spread: "1.2 pip'ten", commission: "Yok", platform: "MT4, MT5", popular: true },
+    { name: "Raw+", minDeposit: "$100", leverage: "1:200", spread: "0.0 pip'ten", commission: "$3.50/lot", platform: "MT4, MT5" },
+    { name: "Elite", minDeposit: "$30,000", leverage: "1:200", spread: "0.0 pip'ten", commission: "$3.50/lot + indirim", platform: "MT4, MT5" },
+    { name: "cTrader", minDeposit: "$100", leverage: "1:200", spread: "0.0 pip'ten", commission: "$3.50/lot", platform: "cTrader" },
   ];
 
   const pros = [

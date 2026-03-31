@@ -29,8 +29,8 @@ const PepperstoneInceleme = () => {
   ];
 
   const accountTypes = [
-    { name: "Standard", minDeposit: "$0", leverage: "1:500", spread: "1.0 pip'ten", commission: "Yok", popular: true },
-    { name: "Razor", minDeposit: "$0", leverage: "1:500", spread: "0.0 pip'ten", commission: "$3.50/lot" },
+    { name: "Standard", minDeposit: "$200", leverage: "1:500", spread: "1.0 pip'ten", commission: "Yok" },
+    { name: "Razor", minDeposit: "$200", leverage: "1:500", spread: "0.0 pip'ten", commission: "$3.50/lot", popular: true },
   ];
 
   const pros = [
