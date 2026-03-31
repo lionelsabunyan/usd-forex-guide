@@ -32,10 +32,11 @@ const HFMInceleme = () => {
   ];
 
   const accountTypes = [
-    { name: "Cent", minDeposit: "$0", leverage: "1:1000", spread: "1.2 pip'ten", commission: "Yok" },
-    { name: "Premium", minDeposit: "$0", leverage: "1:500", spread: "1.2 pip'ten", commission: "Yok", popular: true },
-    { name: "Pro", minDeposit: "$100", leverage: "1:500", spread: "0.5 pip'ten", commission: "Yok" },
-    { name: "Zero", minDeposit: "$200", leverage: "1:500", spread: "0.0 pip'ten", commission: "$3/lot" },
+    { name: "Cent", minDeposit: "$0", leverage: "1:2000", spread: "1.0 pip'ten", commission: "Yok" },
+    { name: "Premium", minDeposit: "$0", leverage: "1:2000", spread: "1.0 pip'ten", commission: "Yok", popular: true },
+    { name: "Pro", minDeposit: "$0", leverage: "1:2000", spread: "0.5 pip'ten", commission: "Yok" },
+    { name: "Zero", minDeposit: "$0", leverage: "1:2000", spread: "0.0 pip'ten", commission: "$3/lot" },
+    { name: "HFcopy", minDeposit: "$100", leverage: "1:400", spread: "1.0 pip'ten", commission: "Performans ücreti" },
   ];
 
   const pros = [

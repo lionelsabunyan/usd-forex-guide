@@ -28,9 +28,9 @@ const FXTMInceleme = () => {
   ];
 
   const accountTypes = [
-    { name: "Micro", minDeposit: "$10", leverage: "1:2000", spread: "1.5 pip'ten", commission: "Yok" },
-    { name: "Advantage", minDeposit: "$500", leverage: "1:2000", spread: "0.0 pip'ten", commission: "$0.4-$2/lot", popular: true },
-    { name: "Advantage Plus", minDeposit: "$500", leverage: "1:2000", spread: "0.5 pip'ten", commission: "Yok" },
+    { name: "Edge", minDeposit: "$50", leverage: "1:500", spread: "1.2 pip'ten", commission: "Yok" },
+    { name: "Advantage", minDeposit: "$200", leverage: "1:3000", spread: "0.0 pip'ten", commission: "$3.5/lot", popular: true },
+    { name: "Advantage Plus", minDeposit: "$200", leverage: "1:3000", spread: "1.5 pip'ten", commission: "Yok" },
   ];
 
   const pros = [

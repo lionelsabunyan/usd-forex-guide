@@ -27,11 +27,9 @@ const ExnessInceleme = () => {
   ];
 
   const accountTypes = [
-    { name: "Standard", minDeposit: "$1", leverage: "Sınırsız", spread: "0.3 pip'ten", commission: "Yok", popular: true },
-    { name: "Standard Cent", minDeposit: "$1", leverage: "Sınırsız", spread: "0.3 pip'ten", commission: "Yok" },
-    { name: "Raw Spread", minDeposit: "$200", leverage: "Sınırsız", spread: "0.0 pip'ten", commission: "$3.50/lot" },
-    { name: "Zero", minDeposit: "$200", leverage: "Sınırsız", spread: "0.0 pip'ten", commission: "$0.2/lot'tan" },
-    { name: "Pro", minDeposit: "$200", leverage: "Sınırsız", spread: "0.1 pip'ten", commission: "Yok" },
+    { name: "Standard", minDeposit: "$10", leverage: "1:2000", spread: "0.3 pip'ten", commission: "Yok", popular: true },
+    { name: "Standard Cent", minDeposit: "$10", leverage: "1:2000", spread: "0.3 pip'ten", commission: "Yok" },
+    { name: "Pro", minDeposit: "$200", leverage: "1:2000", spread: "0.1 pip'ten", commission: "Yok" },
   ];
 
   const pros = [

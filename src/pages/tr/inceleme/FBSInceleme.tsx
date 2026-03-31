@@ -28,10 +28,10 @@ const FBSInceleme = () => {
   ];
 
   const accountTypes = [
-    { name: "Cent", minDeposit: "$1", leverage: "1:1000", spread: "1.0 pip'ten", commission: "Yok" },
-    { name: "Standard", minDeposit: "$100", leverage: "1:3000", spread: "0.5 pip'ten", commission: "Yok", popular: true },
+    { name: "Cent", minDeposit: "$5", leverage: "1:1000", spread: "1.0 pip'ten", commission: "Yok" },
+    { name: "Standard", minDeposit: "$100", leverage: "1:3000", spread: "0.7 pip'ten", commission: "Yok", popular: true },
     { name: "Zero Spread", minDeposit: "$500", leverage: "1:3000", spread: "0.0 pip", commission: "$20/lot" },
-    { name: "ECN", minDeposit: "$1,000", leverage: "1:500", spread: "0.1 pip'ten", commission: "$6/lot" },
+    { name: "ECN", minDeposit: "$1,000", leverage: "1:500", spread: "-1 pip'ten", commission: "$6/lot" },
   ];
 
   const pros = [
