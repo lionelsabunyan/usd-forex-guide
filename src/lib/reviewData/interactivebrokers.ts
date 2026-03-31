@@ -27,14 +27,14 @@ export const interactivebrokersData: BrokerReviewData = {
   },
 
   keyHighlights: {
-    minDeposit: "$0",
-    maxLeverage: "1:50",
+    minDeposit: "$100",
+    maxLeverage: "1:30",
     spreadFrom: "0.2 pips",
     usClients: "YES",
   },
 
   warningBanner: {
-    text: "Regulated by CFTC/SEC/FINRA. S&P 500 company. Lower leverage (1:50 max) but full regulatory protection.",
+    text: "Regulated by CFTC/SEC/FINRA. S&P 500 company. CFTC leverage limits (1:30 retail) with full regulatory protection.",
   },
 
   trustFeatures: [
@@ -48,8 +48,8 @@ export const interactivebrokersData: BrokerReviewData = {
     { label: "Founded", value: "1978" },
     { label: "Headquarters", value: "Connecticut, USA" },
     { label: "Regulation", value: "CFTC, SEC, FINRA" },
-    { label: "Min Deposit", value: "$0", colorClass: "text-primary" },
-    { label: "Max Leverage", value: "1:50", colorClass: "text-primary" },
+    { label: "Min Deposit", value: "$100", colorClass: "text-primary" },
+    { label: "Max Leverage", value: "1:30", colorClass: "text-primary" },
     { label: "US Clients", value: "Accepted", colorClass: "text-success" },
   ],
 
@@ -64,16 +64,16 @@ export const interactivebrokersData: BrokerReviewData = {
   accountTypes: [
     {
       name: "Individual Account",
-      minDeposit: "$0",
-      leverage: "1:50",
+      minDeposit: "$100",
+      leverage: "1:30",
       spread: "From 0.2 pips",
       commission: "Variable",
       popular: true,
     },
     {
       name: "IRA Account",
-      minDeposit: "$0",
-      leverage: "1:50",
+      minDeposit: "$100",
+      leverage: "1:30",
       spread: "From 0.2 pips",
       commission: "Variable",
     },
@@ -99,7 +99,7 @@ export const interactivebrokersData: BrokerReviewData = {
 
   competitorComparison: [
     { feature: "Min Deposit", broker: "$0", competitor1: "$0", competitor2: "$0" },
-    { feature: "Max Leverage", broker: "1:50", competitor1: "1:50", competitor2: "1:50" },
+    { feature: "Max Leverage", broker: "1:30", competitor1: "1:50", competitor2: "1:50" },
     { feature: "Spreads From", broker: "0.2 pips", competitor1: "Variable", competitor2: "1.0 pips" },
     { feature: "Platforms", broker: "TWS, Client Portal", competitor1: "thinkorswim", competitor2: "OANDA, MT4" },
     { feature: "US Clients", broker: "Yes", competitor1: "Yes", competitor2: "Yes" },
@@ -169,11 +169,11 @@ export const interactivebrokersData: BrokerReviewData = {
 
   cons: [
     "Complex platform - steep learning curve",
-    "Limited leverage (1:50 CFTC limit)",
+    "Limited leverage (1:30 CFTC retail limit)",
     "Commission structure can be confusing",
     "Not ideal for forex-only traders",
     "Customer support response times vary",
   ],
 
-  lastUpdated: "2026-03-26",
+  lastUpdated: "2026-04-07",  // Updated: Min deposit $0→$100, leverage 1:50→1:30
 };

@@ -27,14 +27,14 @@ export const igData: BrokerReviewData = {
   },
 
   keyHighlights: {
-    minDeposit: "$250",
-    maxLeverage: "1:50",
+    minDeposit: "$1",
+    maxLeverage: "1:30",
     spreadFrom: "0.6 pips",
     usClients: "LIMITED",
   },
 
   warningBanner: {
-    text: "Regulated by NFA/CFTC. Lower leverage (1:50 max) but full regulatory protection.",
+    text: "Regulated by NFA/CFTC (1:30 leverage for retail). Full regulatory protection with tight spreads.",
   },
 
   trustFeatures: [
@@ -48,8 +48,8 @@ export const igData: BrokerReviewData = {
     { label: "Founded", value: "1974" },
     { label: "Headquarters", value: "London, UK" },
     { label: "Regulation", value: "CFTC, NFA" },
-    { label: "Min Deposit", value: "$250", colorClass: "text-primary" },
-    { label: "Max Leverage", value: "1:50", colorClass: "text-primary" },
+    { label: "Min Deposit", value: "$1", colorClass: "text-primary" },
+    { label: "Max Leverage", value: "1:30", colorClass: "text-primary" },
     { label: "US Clients", value: "Forex Only", colorClass: "text-success" },
   ],
 
@@ -64,8 +64,8 @@ export const igData: BrokerReviewData = {
   accountTypes: [
     {
       name: "Standard Account",
-      minDeposit: "$250",
-      leverage: "1:50",
+      minDeposit: "$1",
+      leverage: "1:30",
       spread: "From 0.6 pips",
       commission: "No",
       popular: true,
@@ -93,7 +93,7 @@ export const igData: BrokerReviewData = {
 
   competitorComparison: [
     { feature: "Min Deposit", broker: "$250", competitor1: "$0", competitor2: "$100" },
-    { feature: "Max Leverage", broker: "1:50", competitor1: "1:50", competitor2: "1:50" },
+    { feature: "Max Leverage", broker: "1:30", competitor1: "1:50", competitor2: "1:50" },
     { feature: "Spreads From", broker: "0.6 pips", competitor1: "1.0 pips", competitor2: "0.8 pips" },
     { feature: "Platforms", broker: "IG, MT4", competitor1: "OANDA, MT4", competitor2: "MT4/MT5, Proprietary" },
     { feature: "US Clients", broker: "Forex Only", competitor1: "Yes", competitor2: "Yes" },
@@ -158,11 +158,11 @@ export const igData: BrokerReviewData = {
 
   cons: [
     "Higher minimum deposit ($250)",
-    "Limited leverage (1:50 maximum due to CFTC)",
+    "Limited leverage (1:30 maximum due to CFTC retail regulations)",
     "FIFO rule required (can't hedge easily)",
     "Platform may be complex for beginners",
     "No cryptocurrency deposit options",
   ],
 
-  lastUpdated: "2026-03-26",
+  lastUpdated: "2026-04-07",  // Updated: Min deposit $250→$1, leverage 1:50→1:30
 };

@@ -27,7 +27,7 @@ export const oandaData: BrokerReviewData = {
   },
 
   keyHighlights: {
-    minDeposit: "$0",
+    minDeposit: "$1",
     maxLeverage: "1:50",
     spreadFrom: "0.7 pips",
     usClients: "YES",
@@ -39,7 +39,7 @@ export const oandaData: BrokerReviewData = {
 
   trustFeatures: [
     { icon: Shield, text: "CFTC Regulated" },
-    { icon: Globe, text: "$0 Min Deposit" },
+    { icon: Globe, text: "$1 Min Deposit" },
     { icon: Zap, text: "1:50 Leverage" },
     { icon: Award, text: "Since 1996" },
   ],
@@ -48,7 +48,7 @@ export const oandaData: BrokerReviewData = {
     { label: "Founded", value: "1996" },
     { label: "Headquarters", value: "New York, USA" },
     { label: "Regulation", value: "CFTC, NFA" },
-    { label: "Min Deposit", value: "$0", colorClass: "text-primary" },
+    { label: "Min Deposit", value: "$1", colorClass: "text-primary" },
     { label: "Max Leverage", value: "1:50", colorClass: "text-primary" },
     { label: "US Clients", value: "Accepted", colorClass: "text-success" },
   ],
@@ -64,7 +64,7 @@ export const oandaData: BrokerReviewData = {
   accountTypes: [
     {
       name: "Standard Account",
-      minDeposit: "$0",
+      minDeposit: "$1",
       leverage: "1:50",
       spread: "From 0.7 pips",
       commission: "No",
@@ -164,5 +164,5 @@ export const oandaData: BrokerReviewData = {
     "No high leverage options",
   ],
 
-  lastUpdated: "2026-03-26",
+  lastUpdated: "2026-04-07",  // Updated: Min deposit $0→$1
 };

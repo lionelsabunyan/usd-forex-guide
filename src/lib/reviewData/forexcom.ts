@@ -171,5 +171,5 @@ export const forexcomData: BrokerReviewData = {
     "No high leverage options",
   ],
 
-  lastUpdated: "2026-03-26",
+  lastUpdated: "2026-04-07",
 };
