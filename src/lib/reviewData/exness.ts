@@ -160,8 +160,6 @@ export const exnessData: BrokerReviewData = {
   cons: [
     "US clients NOT accepted",
     "Very high leverage = very high risk",
-    "Limited educational content",
-    "No cTrader platform",
   ],
 
   lastUpdated: "2026-03-31",

@@ -154,9 +154,7 @@ export const pepperstoneData: BrokerReviewData = {
 
   cons: [
     "US clients NOT accepted",
-    "Higher minimum deposit ($200)",
     "Inactivity fee after 12 months",
-    "Limited cryptocurrency selection",
   ],
 
   lastUpdated: "2026-03-31",

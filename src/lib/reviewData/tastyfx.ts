@@ -176,8 +176,6 @@ export const tastyfxData: BrokerReviewData = {
 
   cons: [
     "Maximum leverage limited to 1:50 (US regulation)",
-    "No cryptocurrency trading available",
-    "Higher spreads compared to offshore brokers",
     "FIFO rule applies (no hedging)",
   ],
 
