@@ -35,7 +35,7 @@ export const fxtmData: BrokerReviewData = {
 
   seoTitle: "FXTM Review 2026 - Copy Trading Broker with High Leverage",
   seoDescription:
-    "Complete FXTM (ForexTime) review. Offshore broker with copy trading, up to 1:3000 leverage, $50 minimum deposit. Regulated by FSC Mauritius and FSCA.",
+    "Complete FXTM (ForexTime) review. Offshore broker with copy trading, up to 1:3000 leverage, $200 minimum deposit. Regulated by FSC Mauritius and FSCA.",
   canonical: "/review/fxtm",
 
   overallRating: 3.1,
@@ -52,7 +52,7 @@ export const fxtmData: BrokerReviewData = {
   },
 
   keyHighlights: {
-    minDeposit: "$50",
+    minDeposit: "$200",
     maxLeverage: "1:3000",
     spreadFrom: "0.0 pips",
     usClients: "NO",
@@ -73,7 +73,7 @@ export const fxtmData: BrokerReviewData = {
     { label: "Trustpilot", value: "3.5/5", colorClass: "text-foreground" },
     { label: "Established", value: "2011" },
     { label: "Regulation", value: "FSC, FSCA", colorClass: "text-destructive" },
-    { label: "Min Deposit", value: "$50", colorClass: "text-primary" },
+    { label: "Min Deposit", value: "$200", colorClass: "text-primary" },
     { label: "Max Leverage", value: "1:3000", colorClass: "text-primary" },
     { label: "US Clients", value: "Not Accepted", colorClass: "text-destructive" },
   ],
@@ -87,7 +87,7 @@ export const fxtmData: BrokerReviewData = {
   ],
 
   accountTypes: [
-    { name: "Edge", minDeposit: "$50", leverage: "1:500", spread: "From 1.2 pips", commission: "No" },
+    { name: "Edge", minDeposit: "$200", leverage: "1:500", spread: "From 1.2 pips", commission: "No" },
     { name: "Advantage", minDeposit: "$200", leverage: "1:3000", spread: "From 0.0 pips", commission: "$3.5/lot", popular: true },
     { name: "Advantage Plus", minDeposit: "$200", leverage: "1:3000", spread: "From 1.5 pips", commission: "No" },
   ],
@@ -96,7 +96,7 @@ export const fxtmData: BrokerReviewData = {
     { step: 1, title: "Visit FXTM Website", description: "Go to the official FXTM website", icon: Globe, time: "30 seconds" },
     { step: 2, title: "Register Account", description: "Fill in your personal details and verify email", icon: UserPlus, time: "2 minutes" },
     { step: 3, title: "Complete KYC Verification", description: "Upload ID and proof of address", icon: FileText, time: "5-10 minutes" },
-    { step: 4, title: "Fund Your Account", description: "Deposit minimum $50 via card, bank, or e-wallet", icon: Wallet, time: "Instant - 1 day" },
+    { step: 4, title: "Fund Your Account", description: "Deposit minimum $200 via card, bank, or e-wallet", icon: Wallet, time: "Instant - 1 day" },
     { step: 5, title: "Start Trading or Copy Trading", description: "Trade manually or use FXTM Invest to copy traders", icon: PlayCircle, time: "5 minutes" },
   ],
 
@@ -114,7 +114,7 @@ export const fxtmData: BrokerReviewData = {
   ],
 
   competitorComparison: [
-    { feature: "Minimum Deposit", broker: "$50", competitor1: "$10", competitor2: "$5" },
+    { feature: "Minimum Deposit", broker: "$200", competitor1: "$10", competitor2: "$5" },
     { feature: "Maximum Leverage", broker: "1:3000", competitor1: "1:2000", competitor2: "1:2000" },
     { feature: "Spreads From", broker: "1.2 pips", competitor1: "0.3 pips", competitor2: "1.2 pips" },
     { feature: "Regulation", broker: "FSC, FSCA", competitor1: "FCA, CySEC", competitor2: "CySEC, FCA" },
@@ -154,7 +154,7 @@ export const fxtmData: BrokerReviewData = {
     },
     {
       question: "What is the minimum deposit at FXTM?",
-      answer: "The minimum deposit for the FXTM Edge account (formerly Micro) is $50. The Advantage and Advantage Plus accounts require $200 minimum deposit and offer better trading conditions with raw spreads from 0.0 pips.",
+      answer: "The minimum deposit for all FXTM accounts is $200 USD. This includes the Edge account (1:500 leverage) and Advantage accounts (1:3000 leverage) which offer better trading conditions with raw spreads from 0.0 pips.",
     },
     {
       question: "How long do FXTM withdrawals take?",
@@ -174,7 +174,6 @@ export const fxtmData: BrokerReviewData = {
     "Free educational resources",
     "Negative balance protection",
     "Local payment methods supported",
-    "Lower minimum deposit on Advantage ($200)",
   ],
 
   cons: [
@@ -184,9 +183,9 @@ export const fxtmData: BrokerReviewData = {
     "Withdrawal fees on some methods",
     "Spreads not the tightest",
     "Limited cryptocurrency options",
-    "Higher minimum deposit on Edge account ($50 vs former $10)",
+    "Higher minimum deposit requirement ($200 for all accounts)",
   ],
 
   bonusOffers,
-  lastUpdated: "2026-03-31",
+  lastUpdated: "2026-03-31",  // Updated: Minimum deposit corrected from $50 to $200
 };

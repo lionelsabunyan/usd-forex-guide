@@ -184,5 +184,5 @@ export const xmData: BrokerReviewData = {
   ],
 
   bonusOffers,
-  lastUpdated: "2026-03-26",
+  lastUpdated: "2026-03-31",
 };

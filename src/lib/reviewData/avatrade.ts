@@ -28,7 +28,7 @@ export const avatradeData: BrokerReviewData = {
 
   keyHighlights: {
     minDeposit: "$100",
-    maxLeverage: "1:400",
+    maxLeverage: "1:30 (Retail) / 1:500 (Professional)",
     spreadFrom: "0.9 pips",
     usClients: "NO",
   },
@@ -49,12 +49,12 @@ export const avatradeData: BrokerReviewData = {
     { label: "Established", value: "2006" },
     { label: "Regulation", value: "ASIC, CIRO, JFSA, MiFID" },
     { label: "Min Deposit", value: "$100", colorClass: "text-primary" },
-    { label: "Max Leverage", value: "1:400", colorClass: "text-primary" },
+    { label: "Max Leverage", value: "1:30 / 1:500", colorClass: "text-primary" },
     { label: "US Clients", value: "Not Accepted", colorClass: "text-destructive" },
   ],
 
   ratings: [
-    { label: "Trading Conditions", score: 3.7, description: "Variable spreads from 0.9 pips" },
+    { label: "Trading Conditions", score: 3.7, description: "Leverage up to 1:500 (professional), spreads from 0.9 pips" },
     { label: "Platform & Tools", score: 3.8, description: "MT4/MT5, AvaTradeGO, TradingView" },
     { label: "Customer Support", score: 3.5, description: "Multilingual support" },
     { label: "Deposit & Withdrawal", score: 3.6, description: "Free deposits/withdrawals" },
@@ -62,8 +62,8 @@ export const avatradeData: BrokerReviewData = {
   ],
 
   accountTypes: [
-    { name: "Standard Account", minDeposit: "$100", leverage: "1:400", spread: "From 0.9 pips", commission: "No", features: ["MT4/MT5", "AvaTradeGO", "TradingView", "Copy Trading"], popular: true },
-    { name: "Professional Account", minDeposit: "$1,000", leverage: "1:400", spread: "From 0.6 pips", commission: "No", features: ["Lower spreads", "Priority support", "All platforms", "Copy Trading"] },
+    { name: "Standard Account", minDeposit: "$100", leverage: "1:30", spread: "From 0.9 pips", commission: "No", features: ["MT4/MT5", "AvaTradeGO", "TradingView", "Copy Trading"], popular: true },
+    { name: "Professional Account", minDeposit: "$1,000", leverage: "1:500", spread: "From 0.6 pips", commission: "No", features: ["Lower spreads", "Priority support", "All platforms", "Copy Trading"] },
   ],
 
   accountOpeningSteps: [
@@ -88,7 +88,7 @@ export const avatradeData: BrokerReviewData = {
 
   competitorComparison: [
     { feature: "Minimum Deposit", broker: "$100", competitor1: "$50", competitor2: "$200" },
-    { feature: "Maximum Leverage", broker: "1:400", competitor1: "1:30 (Retail)", competitor2: "1:500" },
+    { feature: "Maximum Leverage", broker: "1:30 (Retail) / 1:500 (Pro)", competitor1: "1:30 (Retail)", competitor2: "1:500" },
     { feature: "Spreads From", broker: "0.9 pips", competitor1: "1.0 pips", competitor2: "0.0 pips" },
     { feature: "Regulation", broker: "ASIC, CIRO, JFSA, MiFID", competitor1: "FCA, CySEC, ASIC", competitor2: "FCA, ASIC, CySEC" },
     { feature: "Copy Trading", broker: "Yes", competitor1: "Yes (Signature)", competitor2: "No" },
@@ -155,10 +155,10 @@ export const avatradeData: BrokerReviewData = {
   cons: [
     "Does not accept US clients",
     "Higher minimum deposit than some competitors",
-    "Limited leverage for some regions",
+    "Retail leverage capped at 1:30 in many regions",
     "Withdrawal processing can be slow",
     "No cryptocurrency deposits",
   ],
 
-  lastUpdated: "2026-03-26",
+  lastUpdated: "2026-03-31",  // Updated: Leverage corrected to 1:30 (retail) / 1:500 (professional)
 };

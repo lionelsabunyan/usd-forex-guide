@@ -165,5 +165,5 @@ export const etoroData: BrokerReviewData = {
     "Limited forex pairs compared to specialists",
   ],
 
-  lastUpdated: "2026-03-26",
+  lastUpdated: "2026-03-31",
 };
