@@ -28,13 +28,13 @@ export const hankotradeData: BrokerReviewData = {
 
   keyHighlights: {
     minDeposit: "$10",
-    maxLeverage: "1:500",
+    maxLeverage: "1:30",
     spreadFrom: "0.0",
     usClients: "YES",
   },
 
   warningBanner: {
-    text: "Hankotrade is an offshore broker registered in Seychelles. While they have an excellent Trustpilot rating and accept US clients, trading with offshore brokers carries additional risks. Only trade with funds you can afford to lose and consider your risk tolerance.",
+    text: "Hankotrade is an offshore broker registered in Seychelles (FSA). Accepts US clients but operates outside CFTC jurisdiction. US traders are limited to 1:30 leverage for forex. Trade only with funds you can afford to lose.",
   },
 
   trustFeatures: [

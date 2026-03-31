@@ -28,13 +28,13 @@ export const coinexxData: BrokerReviewData = {
 
   keyHighlights: {
     minDeposit: "$10",
-    maxLeverage: "1:500",
+    maxLeverage: "1:30",
     spreadFrom: "0.0",
     usClients: "YES",
   },
 
   warningBanner: {
-    text: "Coinexx only accepts cryptocurrency deposits and withdrawals. You must have access to crypto (Bitcoin, Ethereum, USDT, etc.) to use this broker. They are unregulated but have an excellent community reputation.",
+    text: "Coinexx only accepts cryptocurrency deposits and withdrawals. You must have access to crypto (Bitcoin, Ethereum, USDT, etc.) to use this broker. Unregulated platform — CFTC leverage limit (1:30) applies to US traders for forex.",
   },
 
   trustFeatures: [

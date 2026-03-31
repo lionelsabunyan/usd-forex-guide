@@ -28,13 +28,13 @@ export const tastyfxData: BrokerReviewData = {
 
   keyHighlights: {
     minDeposit: "$0",
-    maxLeverage: "1:50",
+    maxLeverage: "1:30",
     spreadFrom: "0.2 pips",
     usClients: "YES",
   },
 
   warningBanner: {
-    text: "Regulated by NFA/CFTC. Lower leverage (1:50 max) but full regulatory protection. Note: Not available to Ohio residents due to state regulations.",
+    text: "Regulated by NFA/CFTC. Lower leverage (1:30 max for retail US) with full regulatory protection. Note: Not available to Ohio residents due to state regulations.",
   },
 
   trustFeatures: [

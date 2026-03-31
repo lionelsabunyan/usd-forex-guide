@@ -28,13 +28,13 @@ export const forexcomData: BrokerReviewData = {
 
   keyHighlights: {
     minDeposit: "$100",
-    maxLeverage: "1:50",
+    maxLeverage: "1:30",
     spreadFrom: "0.2 pips",
     usClients: "YES",
   },
 
   warningBanner: {
-    text: "Regulated by NFA/CFTC. Lower leverage (1:50 max) but full regulatory protection.",
+    text: "Regulated by NFA/CFTC. Lower leverage (1:30 max for retail US) with full regulatory protection.",
   },
 
   trustFeatures: [

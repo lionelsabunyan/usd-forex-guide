@@ -28,19 +28,19 @@ export const oandaData: BrokerReviewData = {
 
   keyHighlights: {
     minDeposit: "$1",
-    maxLeverage: "1:50",
+    maxLeverage: "1:30",
     spreadFrom: "0.7 pips",
     usClients: "YES",
   },
 
   warningBanner: {
-    text: "Regulated by NFA/CFTC. Lower leverage (1:50 max) but full regulatory protection.",
+    text: "Regulated by NFA/CFTC. Lower leverage (1:30 max for retail US) with full regulatory protection.",
   },
 
   trustFeatures: [
     { icon: Shield, text: "CFTC Regulated" },
     { icon: Globe, text: "$1 Min Deposit" },
-    { icon: Zap, text: "1:50 Leverage" },
+    { icon: Zap, text: "1:30 Leverage" },
     { icon: Award, text: "Since 1996" },
   ],
 
