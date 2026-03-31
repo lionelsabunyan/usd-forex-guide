@@ -92,7 +92,7 @@ export const oandaData: BrokerReviewData = {
   ],
 
   competitorComparison: [
-    { feature: "Min Deposit", broker: "$0", competitor1: "$100", competitor2: "$0" },
+    { feature: "Min Deposit", broker: "$1", competitor1: "$100", competitor2: "$0" },
     { feature: "Max Leverage", broker: "1:50", competitor1: "1:50", competitor2: "1:50" },
     { feature: "Spreads From", broker: "0.7 pips", competitor1: "0.8 pips", competitor2: "0.8 pips" },
     { feature: "Platforms", broker: "OANDA, MT4", competitor1: "MT4/MT5, Proprietary", competitor2: "Proprietary" },
