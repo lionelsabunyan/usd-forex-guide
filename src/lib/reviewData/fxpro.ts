@@ -10,7 +10,7 @@ export const fxproData: BrokerReviewData = {
 
   seoTitle: "FxPro Review 2026",
   seoDescription:
-    "Complete FxPro review for US traders. Multi-regulated broker with 2,200+ instruments, 1:200 leverage, and professional trading platforms. Learn about FxPro's features and trading conditions.",
+    "FxPro review for traders. Multi-regulated (FCA, FSCA) broker with 2,200+ instruments, 7 asset classes, 1:200 leverage, and professional platforms.",
   canonical: "/review/fxpro",
 
   overallRating: 4.3,

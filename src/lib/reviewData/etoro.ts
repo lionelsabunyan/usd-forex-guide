@@ -10,7 +10,7 @@ export const etoroData: BrokerReviewData = {
 
   seoTitle: "eToro Review 2026 - Social Trading Platform with Copy Trading",
   seoDescription:
-    "Complete eToro review for US traders. Social trading platform with copy trading, $50 minimum deposit, and 40M+ users. Learn about eToro's features, fees, and trading conditions.",
+    "eToro review for US traders. Leading social trading platform with copy trading, $50 minimum deposit, 40M+ users, and award-winning mobile app.",
   canonical: "/review/etoro",
 
   overallRating: 4.3,

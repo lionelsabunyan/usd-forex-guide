@@ -10,7 +10,7 @@ export const forexcomData: BrokerReviewData = {
 
   seoTitle: "Forex.com Review 2026",
   seoDescription:
-    "Complete Forex.com review for US traders. CFTC-regulated broker with $100 minimum deposit, RAW spreads from 0.2 pips, TradingView integration, and MT4/MT5 support.",
+    "Forex.com review for US traders. CFTC-regulated, $100 minimum, RAW spreads 0.2 pips, TradingView, professional platforms, and tight conditions.",
   canonical: "/review/forexcom",
 
   overallRating: 3.8,

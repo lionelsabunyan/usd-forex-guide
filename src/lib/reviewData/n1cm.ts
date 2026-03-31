@@ -10,7 +10,7 @@ export const n1cmData: BrokerReviewData = {
 
   seoTitle: "N1CM Review 2026 - High Leverage Offshore Broker",
   seoDescription:
-    "Complete N1CM review for 2026. Offshore broker with 1:1000 leverage, $10 minimum deposit, crypto deposits, and PAMM accounts. Established 2017. No longer accepts US clients.",
+    "N1CM review. High-leverage offshore broker with 1:1000 leverage, $10 minimum, crypto deposits, PAMM accounts, and fast execution.",
   canonical: "/review/n1cm",
 
   overallRating: 3.8,

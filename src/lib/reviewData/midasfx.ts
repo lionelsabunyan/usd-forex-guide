@@ -170,9 +170,6 @@ export const midasfxData: BrokerReviewData = {
   cons: [
     "Offshore (no major regulation)",
     "Crypto deposits only",
-    "No card/bank wire options",
-    "Limited customer protection",
-    "Not suitable for risk-averse traders",
   ],
 
   bonusOffers: [

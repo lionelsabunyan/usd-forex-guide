@@ -10,7 +10,7 @@ export const fxgloryData: BrokerReviewData = {
 
   seoTitle: "FXGlory Review 2026 - Highest Leverage Broker for US Traders",
   seoDescription:
-    "Complete FXGlory review for 2026. Offshore broker accepting US clients with 1:3000 leverage, $1 minimum deposit, swap-free accounts, crypto deposits, and 24/7 support. Operating since 2011.",
+    "FXGlory review for US traders. Offshore broker with 1:3000 leverage, $1 minimum deposit, swap-free accounts, crypto deposits, and 24/7 support.",
   canonical: "/review/fxglory",
 
   overallRating: 4.9,
@@ -200,9 +200,6 @@ export const fxgloryData: BrokerReviewData = {
 
   cons: [
     "Not regulated by major financial authorities (SEC, FCA, ASIC)",
-    "Limited educational resources and webinars",
-    "No US-based phone support",
-    "Spreads higher than some ECN brokers",
     "No guaranteed negative balance protection",
   ],
 

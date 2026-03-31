@@ -10,7 +10,7 @@ export const exnessData: BrokerReviewData = {
 
   seoTitle: "Exness Review 2026 - Multi-Regulated Broker with Instant Withdrawals",
   seoDescription:
-    "Complete Exness review. 4.8/5 Trustpilot rating, instant withdrawals, leverage up to 1:2000. Regulated by FCA & CySEC. One of the largest forex brokers by volume.",
+    "Exness review. FCA & CySEC regulated, 4.8/5 Trustpilot, instant withdrawals, 1:2000 leverage, ultra-tight spreads, and 24/7 support.",
   canonical: "/review/exness",
 
   overallRating: 4.8,

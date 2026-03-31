@@ -10,7 +10,7 @@ export const charlesschwabData: BrokerReviewData = {
 
   seoTitle: "Charles Schwab Forex Review 2026 | thinkorswim Trading Platform",
   seoDescription:
-    "Complete Charles Schwab forex review for US traders. Explore thinkorswim platform features, trading conditions, and why Schwab earned #1 Overall Broker 2026. CFTC/NFA regulated with 36.5M clients.",
+    "Charles Schwab forex review for US traders. thinkorswim platform, CFTC/NFA regulated, $0 minimum deposit, award-winning research tools, and 36.5M+ clients.",
   canonical: "/review/charles-schwab",
 
   overallRating: 4.4,

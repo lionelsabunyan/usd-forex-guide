@@ -10,7 +10,7 @@ export const interactivebrokersData: BrokerReviewData = {
 
   seoTitle: "Interactive Brokers Review 2026",
   seoDescription:
-    "Complete Interactive Brokers review for US traders. CFTC/SEC-regulated S&P 500 broker with $0 minimum deposit, 0.2 pip spreads, 1:50 leverage, and professional TWS platform. Ideal for serious traders.",
+    "Interactive Brokers review for US traders. CFTC/SEC-regulated S&P 500 broker with $0 minimum, competitive spreads, and advanced trading platform.",
   canonical: "/review/interactive-brokers",
 
   overallRating: 3.7,

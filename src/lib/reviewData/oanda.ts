@@ -10,7 +10,7 @@ export const oandaData: BrokerReviewData = {
 
   seoTitle: "OANDA Review 2026",
   seoDescription:
-    "Complete OANDA review for US traders. CFTC-regulated broker with $0 minimum deposit, 1:50 leverage, and excellent trading platform. Perfect for beginners and experienced traders.",
+    "OANDA review for US traders. CFTC-regulated broker with $0 minimum deposit, competitive spreads, 1:50 leverage, and innovative trading platform.",
   canonical: "/review/oanda",
 
   overallRating: 4.0,

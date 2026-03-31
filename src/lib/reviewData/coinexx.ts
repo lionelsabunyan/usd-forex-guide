@@ -176,9 +176,6 @@ export const coinexxData: BrokerReviewData = {
   cons: [
     "Cryptocurrency-only funding",
     "Unregulated (St. Vincent)",
-    "No traditional payment methods",
-    "Limited customer support",
-    "Newer broker (2017)",
   ],
 
   lastUpdated: "2026-03-31",

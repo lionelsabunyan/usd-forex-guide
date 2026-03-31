@@ -10,7 +10,7 @@ export const tastyfxData: BrokerReviewData = {
 
   seoTitle: "tastyfx Review 2026 - Best US Forex Broker | CFTC Regulated",
   seoDescription:
-    "Complete tastyfx review for US traders. CFTC/NFA regulated forex broker with award-winning platform, 80+ pairs, $0 minimum deposit. ForexBrokers.com #1 US Broker 2026.",
+    "tastyfx review for US traders. CFTC/NFA regulated, award-winning platform, 80+ pairs, $0 minimum, and ranked #1 US Broker 2026.",
   canonical: "/review/tastyfx",
 
   overallRating: 4.5,

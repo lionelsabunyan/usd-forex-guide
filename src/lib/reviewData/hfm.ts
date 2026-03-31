@@ -10,7 +10,7 @@ export const hfmData: BrokerReviewData = {
 
   seoTitle: "HFM Review 2026 - Award-Winning Multi-Regulated Broker",
   seoDescription:
-    "Complete HFM (formerly HotForex) review for 2026. Multi-regulated broker with 1200+ instruments, zero spread accounts, HFcopy trading, and 1:2000 leverage. Trusted since 2010.",
+    "HFM (formerly HotForex) review. Multi-regulated with 1200+ instruments, zero-spread accounts, HFcopy social trading, and 1:2000 leverage.",
   canonical: "/review/hfm",
 
   overallRating: 4.5,
@@ -207,10 +207,7 @@ export const hfmData: BrokerReviewData = {
 
   cons: [
     "US clients NOT currently accepted",
-    "Offshore entity used for high leverage",
     "Inactivity fees ($5/month after 6 months)",
-    "Limited crypto selection vs dedicated exchanges",
-    "Withdrawal processing can take 2-5 days",
   ],
 
   bonusOffers: [

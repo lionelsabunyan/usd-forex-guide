@@ -10,7 +10,7 @@ export const hankotradeData: BrokerReviewData = {
 
   seoTitle: "Hankotrade Review 2026 - 4.8 Trustpilot Rated Broker for US Traders",
   seoDescription:
-    "Complete Hankotrade review for 2026. Excellent 4.8/5 Trustpilot rating, accepts US clients, ECN spreads from 0.0 pips, same-day crypto withdrawals. Trusted offshore broker.",
+    "Hankotrade review. 4.8/5 Trustpilot, accepts US clients, ECN spreads 0.0 pips, same-day crypto withdrawals, and high leverage.",
   canonical: "/review/hankotrade",
 
   overallRating: 4.7,
@@ -168,10 +168,7 @@ export const hankotradeData: BrokerReviewData = {
 
   cons: [
     "Offshore broker (Seychelles FSA)",
-    "Lower leverage than some competitors",
     "Limited educational resources",
-    "No proprietary trading platform",
-    "Not regulated by FCA/CySEC/ASIC",
   ],
 
   lastUpdated: "2026-03-31",

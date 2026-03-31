@@ -165,9 +165,6 @@ export const lmfxData: BrokerReviewData = {
   cons: [
     "Offshore broker (North Macedonia / St. Vincent registered)",
     "MT4 only - no MT5 platform",
-    "Wire withdrawal fee ($25)",
-    "Higher minimum for Fixed account ($250)",
-    "Limited instrument selection",
   ],
 
   bonusOffers: [
