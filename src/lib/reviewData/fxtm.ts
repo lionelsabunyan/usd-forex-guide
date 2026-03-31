@@ -188,5 +188,5 @@ export const fxtmData: BrokerReviewData = {
   ],
 
   bonusOffers,
-  lastUpdated: "2026-03-23",
+  lastUpdated: "2026-03-31",
 };

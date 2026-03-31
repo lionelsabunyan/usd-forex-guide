@@ -1,0 +1,467 @@
+{
+  "done": [
+    {
+      "identifier": "BEG-110",
+      "title": "RAPOR PROBLEMİ"
+    },
+    {
+      "identifier": "BEG-111",
+      "title": "Search Console Kullanma"
+    },
+    {
+      "identifier": "BEG-81",
+      "title": "Yeni sayfaların kalite auditi — doğruluk, link, SEO kontrol"
+    },
+    {
+      "identifier": "BEG-77",
+      "title": "Deploy: Signal Providers + Low Spread + Trusted Brokers rehber sayfaları"
+    },
+    {
+      "identifier": "BEG-73",
+      "title": "Deploy: High Leverage Brokers + Forex Day Trading + IndexNow güncellemesi"
+    },
+    {
+      "identifier": "BEG-69",
+      "title": "Deploy: 5 yeni rehber sayfası + MT4vsMT5 + weekly report + SEO güncellemeleri"
+    },
+    {
+      "identifier": "BEG-56",
+      "title": "Deploy: glossary, drip campaign, internal link audit, blog ve diğer değişiklikler"
+    },
+    {
+      "identifier": "BEG-51",
+      "title": "Yeni değişiklikleri commit ve deploy et — Trading Session Clock, sitemap, kod temizliği"
+    },
+    {
+      "identifier": "BEG-46",
+      "title": "Uncommitted performance iyileştirmelerini commit ve deploy et"
+    },
+    {
+      "identifier": "BEG-38",
+      "title": "Uptime monitoring kurulumu — health check ve Telegram alert"
+    },
+    {
+      "identifier": "BEG-35",
+      "title": "Guvenlik auditi — OWASP top 10, dependency ve secret tarama"
+    },
+    {
+      "identifier": "BEG-24",
+      "title": "A/B test sonuç dashboard oluştur"
+    },
+    {
+      "identifier": "BEG-23",
+      "title": "Newsletter entegrasyonunu tamamla"
+    },
+    {
+      "identifier": "BEG-22",
+      "title": "Uncommitted değişiklikleri commit et ve deploy et"
+    },
+    {
+      "identifier": "BEG-12",
+      "title": "Indeks Problemleri"
+    },
+    {
+      "identifier": "BEG-15",
+      "title": "IndexNow toplu bildirim + GSC indeks takibi"
+    },
+    {
+      "identifier": "BEG-13",
+      "title": "GSC İndeks Analizi — indeks almayan sayfaları tespit et ve düzelt"
+    },
+    {
+      "identifier": "BEG-88",
+      "title": "İçerik güncelle: Fxglory Review"
+    },
+    {
+      "identifier": "BEG-89",
+      "title": "İçerik güncelle: Hankotrade Review"
+    },
+    {
+      "identifier": "BEG-91",
+      "title": "İçerik güncelle: N1cm Review"
+    },
+    {
+      "identifier": "BEG-92",
+      "title": "İçerik güncelle: Hfm Review"
+    },
+    {
+      "identifier": "BEG-93",
+      "title": "İçerik güncelle: Lmfx Review"
+    },
+    {
+      "identifier": "BEG-95",
+      "title": "İçerik güncelle: Plexytrade Review"
+    },
+    {
+      "identifier": "BEG-94",
+      "title": "İçerik güncelle: Coinexx Review"
+    },
+    {
+      "identifier": "BEG-87",
+      "title": "Mart 2026 blog yazıları — 4 yeni SEO odaklı makale"
+    },
+    {
+      "identifier": "BEG-45",
+      "title": "GA4 Data API entegrasyonu — otomatik trafik ve dönüşüm raporu"
+    },
+    {
+      "identifier": "BEG-85",
+      "title": "Content freshness tablosunu seed et ve cron job kur"
+    },
+    {
+      "identifier": "BEG-83",
+      "title": "İçerik tazeliği takip sistemi — review ve rehber güncelleme takvimi"
+    },
+    {
+      "identifier": "BEG-82",
+      "title": "Social sharing optimizasyonu — OG images, Twitter cards, meta tags"
+    },
+    {
+      "identifier": "BEG-84",
+      "title": "Affiliate dönüşüm funnel analizi — hangi sayfa/CTA en çok tıklanıyor"
+    },
+    {
+      "identifier": "BEG-80",
+      "title": "Otomatik deploy pipeline — her commit sonrası auto build & deploy"
+    },
+    {
+      "identifier": "BEG-78",
+      "title": "Best Forex Charting Software & Websites rehber sayfası oluştur"
+    },
+    {
+      "identifier": "BEG-76",
+      "title": "Most Trusted & Regulated Forex Brokers rehber sayfası oluştur"
+    },
+    {
+      "identifier": "BEG-75",
+      "title": "Best Low Spread / Zero Spread Forex Brokers rehber sayfası oluştur"
+    },
+    {
+      "identifier": "BEG-74",
+      "title": "Best Forex Signal Providers rehber sayfası oluştur"
+    },
+    {
+      "identifier": "BEG-71",
+      "title": "Forex Day Trading kapsamlı rehber sayfası oluştur"
+    },
+    {
+      "identifier": "BEG-70",
+      "title": "Best High Leverage Forex Brokers rehber sayfası oluştur"
+    },
+    {
+      "identifier": "BEG-72",
+      "title": "IndexNow otomatik submit — yeni sayfa eklendikçe hızlı indeksleme"
+    },
+    {
+      "identifier": "BEG-32",
+      "title": "Backlink strateji planı oluştur ve uygulamaya başla"
+    },
+    {
+      "identifier": "BEG-68",
+      "title": "Best Forex Scalping Brokers rehber sayfası oluştur"
+    },
+    {
+      "identifier": "BEG-67",
+      "title": "MT4 vs MT5 karşılaştırma sayfası oluştur"
+    },
+    {
+      "identifier": "BEG-66",
+      "title": "Best Forex Demo Accounts rehber sayfası oluştur"
+    },
+    {
+      "identifier": "BEG-65",
+      "title": "Best Forex Trading Apps rehber sayfası oluştur"
+    },
+    {
+      "identifier": "BEG-64",
+      "title": "Best Copy Trading Platforms rehber sayfası oluştur"
+    },
+    {
+      "identifier": "BEG-10",
+      "title": "Günlük Telegram Performans Raporu"
+    },
+    {
+      "identifier": "BEG-61",
+      "title": "Featured snippet optimizasyonu — FAQ ve definition formatında içerik"
+    },
+    {
+      "identifier": "BEG-62",
+      "title": "Haftalık performans raporu otomasyonu — board a sunulacak format"
+    },
+    {
+      "identifier": "BEG-60",
+      "title": "Deploy: broker-info sayfaları, sitemap ve App.tsx güncellemeleri"
+    },
+    {
+      "identifier": "BEG-33",
+      "title": "Programmatic SEO sayfalari olustur — broker long-tail keyword sayfalari"
+    },
+    {
+      "identifier": "BEG-41",
+      "title": "Broker veri düzeltmeleri — tastyfx MT4, eToro fee, veri tutarsızlıkları"
+    },
+    {
+      "identifier": "BEG-59",
+      "title": "Dinamik broker karşılaştırma tablosu widget — blog ve rehber sayfalarına ekle"
+    },
+    {
+      "identifier": "BEG-57",
+      "title": "Best Brokers by Country sayfaları genişlet — Canada, Singapore, EU"
+    },
+    {
+      "identifier": "BEG-52",
+      "title": "Forex glossary sayfası oluştur — 100+ terim, SEO long-tail trafik"
+    },
+    {
+      "identifier": "BEG-42",
+      "title": "TR blog yazıları oluştur — Türk trader ilgisini çekecek SEO içerik"
+    },
+    {
+      "identifier": "BEG-55",
+      "title": "Internal link yapısı audit ve optimizasyon — orphan sayfaları bağla"
+    },
+    {
+      "identifier": "BEG-53",
+      "title": "Broker Finder Quiz — interaktif broker seçim aracı"
+    },
+    {
+      "identifier": "BEG-50",
+      "title": "Blog yazılarına Related Posts bölümü ekle — internal linking güçlendir"
+    },
+    {
+      "identifier": "BEG-49",
+      "title": "Trading Session Clock aracını implement et"
+    },
+    {
+      "identifier": "BEG-43",
+      "title": "Core Web Vitals optimizasyonu — LCP, CLS, INP iyileştirme"
+    },
+    {
+      "identifier": "BEG-18",
+      "title": "Affiliate CTA A/B test planı ve implementasyonu"
+    },
+    {
+      "identifier": "BEG-17",
+      "title": "Microsoft Clarity entegrasyonu"
+    },
+    {
+      "identifier": "BEG-36",
+      "title": "22 broker review spread/leverage/regulation guncelligini kontrol et"
+    },
+    {
+      "identifier": "BEG-30",
+      "title": "A/B test sonuçlarını değerlendir ve kazanan varyantları uygula"
+    },
+    {
+      "identifier": "BEG-26",
+      "title": "SEO canonical URL ve indexing audit yap"
+    },
+    {
+      "identifier": "BEG-31",
+      "title": "Blog yazılarını SEO optimize et — meta, schema, internal link"
+    },
+    {
+      "identifier": "BEG-28",
+      "title": "Bing Ads API araştır ve Ads Manager Agent işe al"
+    },
+    {
+      "identifier": "BEG-37",
+      "title": "Mobil UX audit ve responsive tasarim iyilestirmeleri"
+    },
+    {
+      "identifier": "BEG-34",
+      "title": "Clarity isi haritasi analizi ve UX iyilestirmeleri yap"
+    },
+    {
+      "identifier": "BEG-27",
+      "title": "Broker karşılaştırma (vs) sayfalarını genişlet"
+    },
+    {
+      "identifier": "BEG-25",
+      "title": "SEO blog içerik stratejisi ve ilk yazıları oluştur"
+    },
+    {
+      "identifier": "BEG-20",
+      "title": "Eksik Bilgi Toparlanması"
+    },
+    {
+      "identifier": "BEG-7",
+      "title": "Günlük SEO & İndeksleme Kontrolü"
+    },
+    {
+      "identifier": "BEG-16",
+      "title": "Prerender worker kontrolu + internal linking iyilestirmesi"
+    },
+    {
+      "identifier": "BEG-3",
+      "title": "Translate 5 broker reviews to Turkish (OANDA, IG, Pepperstone, eToro, Forex.com)"
+    },
+    {
+      "identifier": "BEG-4",
+      "title": "Create 3 new broker comparison pages (high-traffic pairs)"
+    },
+    {
+      "identifier": "BEG-115",
+      "title": "ALL GOOD"
+    },
+    {
+      "identifier": "BEG-21",
+      "title": "Yapılacaklar Listesi"
+    },
+    {
+      "identifier": "BEG-39",
+      "title": "GSC Snippet"
+    },
+    {
+      "identifier": "BEG-114",
+      "title": "GSC Model A helper template/reminder"
+    },
+    {
+      "identifier": "BEG-113",
+      "title": "GSC manuel dogrulama runbooku ve kanit sablonu"
+    },
+    {
+      "identifier": "BEG-112",
+      "title": "Dönüşümlerin Ölçülmesi"
+    },
+    {
+      "identifier": "BEG-99",
+      "title": "İçerik güncelle: Fxtm Review"
+    },
+    {
+      "identifier": "BEG-100",
+      "title": "İçerik güncelle: Fbs Review"
+    },
+    {
+      "identifier": "BEG-101",
+      "title": "İçerik güncelle: Etoro Review"
+    },
+    {
+      "identifier": "BEG-102",
+      "title": "İçerik güncelle: Fxpro Review"
+    },
+    {
+      "identifier": "BEG-103",
+      "title": "İçerik güncelle: Oanda Review"
+    },
+    {
+      "identifier": "BEG-104",
+      "title": "İçerik güncelle: Ig Review"
+    },
+    {
+      "identifier": "BEG-105",
+      "title": "İçerik güncelle: Forexcom Review"
+    },
+    {
+      "identifier": "BEG-106",
+      "title": "İçerik güncelle: Interactive Brokers Review"
+    },
+    {
+      "identifier": "BEG-107",
+      "title": "İçerik güncelle: Avatrade Review"
+    },
+    {
+      "identifier": "BEG-108",
+      "title": "İçerik güncelle: Charles Schwab Review"
+    },
+    {
+      "identifier": "BEG-86",
+      "title": "Best API Trading Brokers rehber sayfası oluştur"
+    },
+    {
+      "identifier": "BEG-79",
+      "title": "Best Forex Hedging Brokers rehber sayfası oluştur"
+    },
+    {
+      "identifier": "BEG-63",
+      "title": "Rakip içerik gap analizi — eksik keyword ve konu tespiti"
+    },
+    {
+      "identifier": "BEG-58",
+      "title": "Exit intent popup — sayfayı terk ederken broker CTA göster"
+    },
+    {
+      "identifier": "BEG-54",
+      "title": "Email drip kampanyası tasarla — 7 günlük forex başlangıç serisi"
+    },
+    {
+      "identifier": "BEG-47",
+      "title": "Console.log temizliği ve kod kalitesi iyileştirmeleri"
+    },
+    {
+      "identifier": "BEG-48",
+      "title": "Otomatik sitemap.xml üretimi — blog ve route senkronizasyonu"
+    },
+    {
+      "identifier": "BEG-44",
+      "title": "Schema markup genişlet — FAQ, HowTo, BreadcrumbList yapılandırılmış veri"
+    },
+    {
+      "identifier": "BEG-29",
+      "title": "Affiliate Tıklamaları Analizi"
+    },
+    {
+      "identifier": "BEG-8",
+      "title": "Haftalık Broker Review Güncelliği Kontrolü"
+    },
+    {
+      "identifier": "BEG-40",
+      "title": "Bing Ads gunluk performans raporu ve kampanya optimizasyonu"
+    },
+    {
+      "identifier": "BEG-11",
+      "title": "Günlük Raporlama"
+    },
+    {
+      "identifier": "BEG-19",
+      "title": "Periyodik güvenlik audit ve kod temizliği"
+    },
+    {
+      "identifier": "BEG-14",
+      "title": "Goals"
+    },
+    {
+      "identifier": "BEG-5",
+      "title": "Add JSON-LD schema markup to broker review pages"
+    },
+    {
+      "identifier": "BEG-1",
+      "title": "Create your CEO HEARTBEAT.md"
+    }
+  ],
+  "in_progress": [
+    {
+      "identifier": "BEG-9",
+      "title": "GA4 & GSC Performans Analizi"
+    }
+  ],
+  "todo": [
+    {
+      "identifier": "BEG-98",
+      "title": "İçerik güncelle: Xm Review"
+    },
+    {
+      "identifier": "BEG-109",
+      "title": "İçerik güncelle: Tastyfx Review"
+    },
+    {
+      "identifier": "BEG-96",
+      "title": "İçerik güncelle: Exness Review"
+    },
+    {
+      "identifier": "BEG-97",
+      "title": "İçerik güncelle: Pepperstone Review"
+    }
+  ],
+  "blocked": [],
+  "in_review": [
+    {
+      "identifier": "BEG-90",
+      "title": "İçerik güncelle: Midasfx Review"
+    },
+    {
+      "identifier": "BEG-116",
+      "title": "Plan Dosyası 2. Faz"
+    }
+  ]
+}
