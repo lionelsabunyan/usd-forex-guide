@@ -48,6 +48,7 @@ export const plexytradeData: BrokerReviewData = {
     { label: "Trustpilot", value: "4.4/5", colorClass: "text-success" },
     { label: "Established", value: "2024", colorClass: "text-foreground" },
     { label: "Headquarters", value: "St. Lucia", colorClass: "text-foreground" },
+    { label: "Regulation", value: "Unregulated", colorClass: "text-muted-foreground" },
     { label: "Min Deposit", value: "$50", colorClass: "text-primary" },
     { label: "Max Leverage", value: "1:2000", colorClass: "text-primary" },
     { label: "ECN Spreads", value: "From 0.0 pips", colorClass: "text-primary" },

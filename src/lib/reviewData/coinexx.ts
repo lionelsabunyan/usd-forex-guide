@@ -48,6 +48,7 @@ export const coinexxData: BrokerReviewData = {
     { label: "Trustpilot", value: "4.8/5", colorClass: "text-success" },
     { label: "Established", value: "2017", colorClass: "text-foreground" },
     { label: "Headquarters", value: "St. Vincent", colorClass: "text-foreground" },
+    { label: "Regulation", value: "Unregulated", colorClass: "text-muted-foreground" },
     { label: "Min Deposit", value: "$10", colorClass: "text-primary" },
     { label: "Max Leverage", value: "1:500", colorClass: "text-primary" },
     { label: "ECN Spreads", value: "From 0.0 pips", colorClass: "text-primary" },

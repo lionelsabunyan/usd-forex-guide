@@ -45,6 +45,7 @@ export const lmfxData: BrokerReviewData = {
   quickStats: [
     { label: "Established", value: "2015", colorClass: "text-foreground" },
     { label: "Headquarters", value: "North Macedonia", colorClass: "text-foreground" },
+    { label: "Regulation", value: "Unregulated", colorClass: "text-muted-foreground" },
     { label: "Min Deposit", value: "$50", colorClass: "text-primary" },
     { label: "Max Leverage", value: "1:1000", colorClass: "text-primary" },
     { label: "Spreads", value: "From 0.0 pips", colorClass: "text-primary" },

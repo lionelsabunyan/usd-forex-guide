@@ -47,7 +47,7 @@ export const midasfxData: BrokerReviewData = {
   quickStats: [
     { label: "Trustpilot", value: "4.2/5", colorClass: "text-foreground" },
     { label: "Track Record", value: "13+ Years", colorClass: "text-foreground" },
-    { label: "Regulation", value: "Offshore", colorClass: "text-muted-foreground" },
+    { label: "Regulation", value: "Unregulated (Offshore)", colorClass: "text-muted-foreground" },
     { label: "Min Deposit", value: "$10", colorClass: "text-primary" },
     { label: "Max Leverage", value: "1:1000", colorClass: "text-primary" },
     { label: "US Clients", value: "Accepted", colorClass: "text-success" },
