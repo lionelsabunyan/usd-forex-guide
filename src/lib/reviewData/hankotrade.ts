@@ -174,5 +174,5 @@ export const hankotradeData: BrokerReviewData = {
     "Not regulated by FCA/CySEC/ASIC",
   ],
 
-  lastUpdated: "March 23, 2026",
+  lastUpdated: "2026-03-23",
 };

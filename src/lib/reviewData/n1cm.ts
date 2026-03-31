@@ -194,5 +194,5 @@ export const n1cmData: BrokerReviewData = {
     },
   ],
 
-  lastUpdated: "March 23, 2026",
+  lastUpdated: "2026-03-23",
 };

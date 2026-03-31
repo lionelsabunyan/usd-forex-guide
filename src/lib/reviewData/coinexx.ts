@@ -181,5 +181,5 @@ export const coinexxData: BrokerReviewData = {
     "Newer broker (2017)",
   ],
 
-  lastUpdated: "March 23, 2026",
+  lastUpdated: "2026-03-23",
 };
