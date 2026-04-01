@@ -50,7 +50,7 @@ export const coinexxData: BrokerReviewData = {
     { label: "Headquarters", value: "St. Vincent", colorClass: "text-foreground" },
     { label: "Regulation", value: "Unregulated", colorClass: "text-muted-foreground" },
     { label: "Min Deposit", value: "$10", colorClass: "text-primary" },
-    { label: "Max Leverage", value: "1:500", colorClass: "text-primary" },
+    { label: "Max Leverage", value: "1:30", colorClass: "text-primary" },
     { label: "ECN Spreads", value: "From 0.0 pips", colorClass: "text-primary" },
     { label: "US Clients", value: "Accepted", colorClass: "text-success" },
   ],
@@ -101,7 +101,7 @@ export const coinexxData: BrokerReviewData = {
   competitorComparison: [
     { feature: "US Clients Accepted", broker: "Yes", competitor1: "Yes", competitor2: "Yes" },
     { feature: "Minimum Deposit", broker: "$10", competitor1: "$50", competitor2: "$10" },
-    { feature: "Max Leverage", broker: "1:500", competitor1: "1:1000", competitor2: "1:500" },
+    { feature: "Max Leverage", broker: "1:30", competitor1: "1:50", competitor2: "1:500" },
     { feature: "Raw Spreads", broker: "0.0 pips", competitor1: "0.0 pips", competitor2: "0.0 pips" },
     { feature: "Commission", broker: "$2.50/lot", competitor1: "$4/lot", competitor2: "$6/lot" },
     { feature: "Trustpilot Rating", broker: "4.8/5", competitor1: "4.4/5", competitor2: "4.6/5" },

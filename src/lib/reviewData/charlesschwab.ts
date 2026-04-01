@@ -49,7 +49,7 @@ export const charlesschwabData: BrokerReviewData = {
     { label: "Headquarters", value: "San Francisco, USA" },
     { label: "Regulation", value: "CFTC/NFA, SEC, FINRA", colorClass: "text-success" },
     { label: "Min Deposit", value: "$0", colorClass: "text-primary" },
-    { label: "Max Leverage", value: "1:50" },
+    { label: "Max Leverage", value: "1:30" },
     { label: "US Clients", value: "Regulated & Accepted", colorClass: "text-success" },
   ],
 
@@ -107,7 +107,7 @@ export const charlesschwabData: BrokerReviewData = {
 
   competitorComparison: [
     { feature: "Min Deposit", broker: "$0", competitor1: "$0", competitor2: "$0" },
-    { feature: "Max Leverage", broker: "1:50", competitor1: "1:50", competitor2: "1:50" },
+    { feature: "Max Leverage", broker: "1:30", competitor1: "1:30", competitor2: "1:30" },
     { feature: "Spreads", broker: "Variable", competitor1: "From 0.5 pips", competitor2: "From 0.8 pips" },
     { feature: "Platform", broker: "thinkorswim", competitor1: "TWS", competitor2: "Proprietary" },
     { feature: "US Clients", broker: "Yes", competitor1: "Yes", competitor2: "Yes" },

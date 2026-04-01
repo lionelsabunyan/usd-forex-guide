@@ -49,7 +49,7 @@ export const forexcomData: BrokerReviewData = {
     { label: "Headquarters", value: "New Jersey, USA" },
     { label: "Regulation", value: "CFTC, NFA" },
     { label: "Min Deposit", value: "$100", colorClass: "text-primary" },
-    { label: "Max Leverage", value: "1:50", colorClass: "text-primary" },
+    { label: "Max Leverage", value: "1:30", colorClass: "text-primary" },
     { label: "US Clients", value: "Accepted", colorClass: "text-success" },
   ],
 
@@ -100,7 +100,7 @@ export const forexcomData: BrokerReviewData = {
 
   competitorComparison: [
     { feature: "Min Deposit", broker: "$100", competitor1: "$0", competitor2: "$0" },
-    { feature: "Max Leverage", broker: "1:50", competitor1: "1:50", competitor2: "1:50" },
+    { feature: "Max Leverage", broker: "1:30", competitor1: "1:30", competitor2: "1:30" },
     { feature: "Spreads From", broker: "0.2 pips", competitor1: "1.0 pips", competitor2: "0.2 pips" },
     { feature: "Platforms", broker: "MT4/MT5, TradingView, Proprietary", competitor1: "OANDA, MT4", competitor2: "Proprietary" },
     { feature: "US Clients", broker: "Yes", competitor1: "Yes", competitor2: "Yes" },

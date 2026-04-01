@@ -50,7 +50,7 @@ export const hankotradeData: BrokerReviewData = {
     { label: "Headquarters", value: "Seychelles", colorClass: "text-foreground" },
     { label: "Regulation", value: "FSA (Seychelles)", colorClass: "text-foreground" },
     { label: "Min Deposit", value: "$10", colorClass: "text-success" },
-    { label: "Max Leverage", value: "1:500", colorClass: "text-primary" },
+    { label: "Max Leverage", value: "1:30", colorClass: "text-primary" },
     { label: "Platforms", value: "MT4, MT5", colorClass: "text-foreground" },
     { label: "US Clients", value: "Accepted", colorClass: "text-success" },
   ],

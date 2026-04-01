@@ -49,7 +49,7 @@ export const tastyfxData: BrokerReviewData = {
     { label: "Headquarters", value: "Chicago, USA" },
     { label: "Regulation", value: "CFTC/NFA", colorClass: "text-success" },
     { label: "Min Deposit", value: "$0", colorClass: "text-primary" },
-    { label: "Max Leverage", value: "1:50" },
+    { label: "Max Leverage", value: "1:30" },
     { label: "Parent Company", value: "IG Group" },
     { label: "US Clients", value: "Regulated", colorClass: "text-success" },
   ],
@@ -107,7 +107,7 @@ export const tastyfxData: BrokerReviewData = {
 
   competitorComparison: [
     { feature: "Min Deposit", broker: "$0", competitor1: "$0", competitor2: "$100" },
-    { feature: "Max Leverage", broker: "1:50", competitor1: "1:50", competitor2: "1:50" },
+    { feature: "Max Leverage", broker: "1:30", competitor1: "1:30", competitor2: "1:30" },
     { feature: "Spreads From", broker: "0.2 pips", competitor1: "1.0 pips", competitor2: "0.8 pips" },
     { feature: "Platform", broker: "Proprietary", competitor1: "OANDA, MT4", competitor2: "MT4/MT5, Proprietary" },
     { feature: "US Clients", broker: "Yes", competitor1: "Yes", competitor2: "Yes" },
