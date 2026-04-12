@@ -53,7 +53,7 @@ const BlogPage = () => {
               >
                 All Articles
               </Button>
-              {(Object.entries(blogCategories) as [BlogCategory, typeof blogCategories[BlogCategory]][]).map(([key, cat]) => (
+              {(Object.keys(blogCategories) as BlogCategory[]).map((key) => (
                 <Button
                   key={key}
                   variant={selectedCategory === key ? "default" : "outline"}
@@ -61,7 +61,7 @@ const BlogPage = () => {
                   onClick={() => setSelectedCategory(key)}
                   className="rounded-full"
                 >
-                  {cat.label}
+                  {blogCategories[key].label}
                 </Button>
               ))}
             </div>

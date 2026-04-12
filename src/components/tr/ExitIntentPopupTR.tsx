@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { trBrokerInfo } from "@/lib/brokersTR";
-import { brokers } from "@/lib/brokers";
+import { brokers, BrokerId } from "@/lib/brokers";
 import { trackTRBrokerClick } from "@/lib/trackingTR";
+
+const isValidBrokerId = (id: string): id is BrokerId => id in brokers;
 import BrokerLogo from "@/components/BrokerLogo";
 import { cn } from "@/lib/utils";
 
@@ -15,8 +17,8 @@ const ExitIntentPopupTR = () => {
 
   // Top brokers for TR: FXPro, XM, Exness
   const topBrokerIds = ["fxpro", "xm", "exness"];
-  const topBrokers = topBrokerIds.map(id => ({
-    ...brokers[id as keyof typeof brokers],
+  const topBrokers = topBrokerIds.filter(isValidBrokerId).map(id => ({
+    ...brokers[id],
     trInfo: trBrokerInfo[id]
   }));
 
@@ -67,8 +69,8 @@ const ExitIntentPopupTR = () => {
     setIsVisible(false);
   };
 
-  const handleBrokerClick = (brokerId: string) => {
-    trackTRBrokerClick(brokerId as any, "exit_intent_popup", "open_account");
+  const handleBrokerClick = (brokerId: BrokerId) => {
+    trackTRBrokerClick(brokerId, "exit_intent_popup", "open_account");
     handleClose();
   };
 

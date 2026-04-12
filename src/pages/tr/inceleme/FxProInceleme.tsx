@@ -14,7 +14,7 @@ import { useEffect } from "react";
 const FxProInceleme = () => {
   const broker = brokers.fxpro;
   const trInfo = trBrokerInfo.fxpro;
-  const affiliateUrl = trInfo?.affiliateUrl || broker.siteUrl;
+  const affiliateUrl = trInfo?.affiliateUrl || "/go/fxpro";
   const overallRating = 4.5;
 
   // Track page view on mount

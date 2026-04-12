@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import { cn } from "@/lib/utils";
 
 interface TocItem {
@@ -15,9 +15,9 @@ interface TableOfContentsProps {
 const TableOfContents = ({ content, className }: TableOfContentsProps) => {
   const [headings, setHeadings] = useState<TocItem[]>([]);
   const [activeId, setActiveId] = useState<string>("");
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    // Parse headings from markdown content
     const lines = content.split("\n");
     const tocItems: TocItem[] = [];
 
@@ -39,23 +39,32 @@ const TableOfContents = ({ content, className }: TableOfContentsProps) => {
     setHeadings(tocItems);
   }, [content]);
 
+  const handleIntersect = useCallback((entries: IntersectionObserverEntry[]) => {
+    const visible = entries
+      .filter(entry => entry.isIntersecting)
+      .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+    if (visible.length > 0) {
+      setActiveId(visible[0].target.id);
+    }
+  }, []);
+
   useEffect(() => {
-    const handleScroll = () => {
-      const headingElements = headings.map(({ id }) => document.getElementById(id));
-      const scrollPosition = window.scrollY + 150;
+    observerRef.current?.disconnect();
 
-      for (let i = headingElements.length - 1; i >= 0; i--) {
-        const element = headingElements[i];
-        if (element && element.offsetTop <= scrollPosition) {
-          setActiveId(headings[i].id);
-          break;
-        }
-      }
-    };
+    if (headings.length === 0) return;
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [headings]);
+    observerRef.current = new IntersectionObserver(handleIntersect, {
+      rootMargin: "-80px 0px -60% 0px",
+      threshold: 0,
+    });
+
+    headings.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) observerRef.current?.observe(el);
+    });
+
+    return () => observerRef.current?.disconnect();
+  }, [headings, handleIntersect]);
 
   if (headings.length < 2) return null;
 

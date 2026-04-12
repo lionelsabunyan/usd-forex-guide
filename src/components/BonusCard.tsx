@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { trackAffiliateClick } from "@/lib/tracking";
+import { BrokerId } from "@/lib/brokers";
 
 export interface BonusOffer {
   title: string;
@@ -26,10 +27,9 @@ interface BonusCardProps {
 
 const BonusCard = ({ offer, brokerName, affiliateUrl, className }: BonusCardProps) => {
   const handleClaimBonus = () => {
-    // Track bonus click with detailed information
-    const brokerId = brokerName.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const brokerId = brokerName.toLowerCase().replace(/[^a-z0-9]/g, '') as BrokerId;
     trackAffiliateClick(
-      brokerId as any,
+      brokerId,
       "bonus_card",
       "claim_bonus",
       undefined

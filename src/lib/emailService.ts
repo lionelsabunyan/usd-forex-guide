@@ -4,10 +4,10 @@ import emailjs from '@emailjs/browser';
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || '';
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '';
 
-// Template IDs
+// Template IDs — must be set via environment variables
 const TEMPLATES = {
-  CONTACT: import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT || 'template_spjf2wq',
-  REVIEW: import.meta.env.VITE_EMAILJS_TEMPLATE_REVIEW || 'template_v7s9u2c',
+  CONTACT: import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT || '',
+  REVIEW: import.meta.env.VITE_EMAILJS_TEMPLATE_REVIEW || '',
   LEAD_MAGNET: import.meta.env.VITE_EMAILJS_TEMPLATE_LEADMAGNET || '',
 };
 

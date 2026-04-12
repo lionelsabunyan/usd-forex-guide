@@ -18,6 +18,8 @@ import { contactStore, subscriberStore, reviewStore } from "@/lib/adminStore";
 
 const AdminSettings = () => {
   const { toast } = useToast();
+  // UI-only toggles — not yet connected to backend logic
+  // TODO: Connect to server-side settings when backend auth is implemented (see K1/K2)
   const [emailNotifications, setEmailNotifications] = useState(true);
   const [autoApproveReviews, setAutoApproveReviews] = useState(false);
   const [maintenanceMode, setMaintenanceMode] = useState(false);

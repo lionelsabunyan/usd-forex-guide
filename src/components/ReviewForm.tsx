@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { reviewStore } from "@/lib/adminStore";
 import { sendReviewNotification } from "@/lib/emailService";
+import DOMPurify from "dompurify";
 
 type ReviewFormProps = {
   brokerName: string;
@@ -42,15 +43,36 @@ const ReviewForm = ({ brokerName, brokerId }: ReviewFormProps) => {
     setIsSubmitting(true);
 
     try {
+      // Sanitize user inputs
+      const sanitized = {
+        name: DOMPurify.sanitize(formData.name.trim()).slice(0, 100),
+        email: formData.email.trim().slice(0, 254),
+        title: DOMPurify.sanitize(formData.title.trim()).slice(0, 200),
+        review: DOMPurify.sanitize(formData.review.trim()).slice(0, 5000),
+        location: DOMPurify.sanitize(formData.location.trim()).slice(0, 100),
+      };
+
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(sanitized.email)) {
+        toast({
+          title: "Invalid Email",
+          description: "Please enter a valid email address.",
+          variant: "destructive",
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
       // Save to local store
       reviewStore.add({
         brokerId,
         brokerName,
-        authorName: formData.name,
-        authorEmail: formData.email,
+        authorName: sanitized.name,
+        authorEmail: sanitized.email,
         rating: formData.rating,
-        title: formData.title,
-        review: formData.review,
+        title: sanitized.title,
+        review: sanitized.review,
         pros: "",
         cons: "",
       });
@@ -58,11 +80,11 @@ const ReviewForm = ({ brokerName, brokerId }: ReviewFormProps) => {
       // Send email notification
       await sendReviewNotification({
         brokerName,
-        authorName: formData.name,
-        authorEmail: formData.email,
+        authorName: sanitized.name,
+        authorEmail: sanitized.email,
         rating: formData.rating,
-        title: formData.title,
-        review: formData.review,
+        title: sanitized.title,
+        review: sanitized.review,
       });
 
       setIsSubmitting(false);

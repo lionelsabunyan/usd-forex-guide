@@ -2,9 +2,11 @@ import { Gift, TrendingUp, ExternalLink, Sparkles } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { brokers } from "@/lib/brokers";
+import { brokers, BrokerId } from "@/lib/brokers";
 import { trBrokerInfo, getBonusOffers } from "@/lib/brokersTR";
 import { trackTRBrokerClick } from "@/lib/trackingTR";
+
+const isValidBrokerId = (id: string): id is BrokerId => id in brokers;
 import BrokerLogo from "../BrokerLogo";
 import { cn } from "@/lib/utils";
 
@@ -12,14 +14,15 @@ import { cn } from "@/lib/utils";
 const BONUS_BROKERS = ["xm", "fxpro"];
 
 const BonusSectionTR = () => {
-  const handleClaimBonus = (brokerId: string) => {
-    trackTRBrokerClick(brokerId as any, "bonus_section", "claim_bonus");
+  const handleClaimBonus = (brokerId: BrokerId) => {
+    trackTRBrokerClick(brokerId, "bonus_section", "claim_bonus");
   };
 
-  // Get brokers with bonuses
+  // Get brokers with bonuses — validate IDs at runtime
   const bonusBrokers = BONUS_BROKERS
+    .filter(isValidBrokerId)
     .map(id => ({
-      ...brokers[id as keyof typeof brokers],
+      ...brokers[id],
       trInfo: trBrokerInfo[id],
       offers: getBonusOffers(id)
     }))
