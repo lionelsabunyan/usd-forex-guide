@@ -18,6 +18,7 @@ const TableOfContents = ({ content, className }: TableOfContentsProps) => {
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
+    if (!content) return;
     const lines = content.split("\n");
     const tocItems: TocItem[] = [];
 
