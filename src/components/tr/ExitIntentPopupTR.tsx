@@ -13,8 +13,8 @@ const ExitIntentPopupTR = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hasShown, setHasShown] = useState(false);
 
-  // Top 3 brokers for TR: HFM, FXPro, XM
-  const topBrokerIds = ["hfm", "fxpro", "xm"];
+  // Top brokers for TR: FXPro, XM, Exness
+  const topBrokerIds = ["fxpro", "xm", "exness"];
   const topBrokers = topBrokerIds.map(id => ({
     ...brokers[id as keyof typeof brokers],
     trInfo: trBrokerInfo[id]

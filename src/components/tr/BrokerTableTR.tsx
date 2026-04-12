@@ -9,7 +9,6 @@ import { trackAffiliateClick } from "@/lib/tracking";
 // Türkiye'den hesap açılabilen 7 broker
 const TR_BROKERS: BrokerId[] = [
   "fxpro",
-  "hfm",
   "xm",
   "exness",
   "fbs",

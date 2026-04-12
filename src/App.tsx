@@ -141,7 +141,6 @@ const BlogYaziSayfasi = lazy(() => import("./pages/tr/blog/BlogYaziSayfasi"));
 
 // Turkish (TR) Review Pages - Lazy loaded
 const FxProInceleme = lazy(() => import("./pages/tr/inceleme/FxProInceleme"));
-const HFMInceleme = lazy(() => import("./pages/tr/inceleme/HFMInceleme"));
 const XMInceleme = lazy(() => import("./pages/tr/inceleme/XMInceleme"));
 const ExnessInceleme = lazy(() => import("./pages/tr/inceleme/ExnessInceleme"));
 const FBSInceleme = lazy(() => import("./pages/tr/inceleme/FBSInceleme"));
@@ -307,7 +306,6 @@ const App = () => (
 
             {/* Turkish (TR) Review Routes */}
             <Route path="/tr/inceleme/fxpro" element={<FxProInceleme />} />
-            <Route path="/tr/inceleme/hfm" element={<HFMInceleme />} />
             <Route path="/tr/inceleme/xm" element={<XMInceleme />} />
             <Route path="/tr/inceleme/exness" element={<ExnessInceleme />} />
             <Route path="/tr/inceleme/fbs" element={<FBSInceleme />} />

@@ -525,7 +525,7 @@ const FxProInceleme = () => {
               </p>
               <p>
                 Ancak minimum depozito bazı hesaplarda yüksek ($1,000 - $30,000) ve bonus kampanyası bulunmuyor.
-                Bu nedenle düşük sermayeli veya bonus arayan yatırımcılar için XM veya HFM daha uygun olabilir.
+                Bu nedenle düşük sermayeli veya bonus arayan yatırımcılar için XM veya Exness daha uygun olabilir.
               </p>
               <p className="font-semibold text-blue-700 dark:text-blue-400">
                 ✅ Tavsiye: Profesyonel işlem koşulları arayan, güvenilirliğe öncelik veren ve orta-yüksek sermayeli yatırımcılar için mükemmel bir seçim.

@@ -1,16 +1,13 @@
 import TRLayout from "@/components/tr/TRLayout";
 import BrokerTableTR from "@/components/tr/BrokerTableTR";
 import BonusSectionTR from "@/components/tr/BonusSectionTR";
-import { Shield, TrendingUp, Users, CheckCircle2, Star, ExternalLink } from "lucide-react";
+import { Shield, TrendingUp, Users, CheckCircle2, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { trackTRHomeView, trackTRBrokerClick } from "@/lib/trackingTR";
+import { trackTRHomeView } from "@/lib/trackingTR";
 import { useEffect } from "react";
-
-const HFM_AFFILIATE_URL = "https://register.hf-anatbroker.com/int/en/new-live-account?refid=30503439";
 
 // TR Broker logoları - Güncelleme: Pepperstone (mavi) ve Exness (siyah-sarı) yeni logolar
 const TR_BROKER_LOGOS = [
-  { id: "hfm", name: "HFM", logo: "/images/brokers/hfm-banner.jpg" },
   { id: "xm", name: "XM", logo: "/images/brokers/xm-banner.jpg" },
   { id: "fxpro", name: "FxPro", logo: "/images/brokers/fxpro-logo.png" },
   { id: "exness", name: "Exness", logo: "/images/brokers/exness-banner.jpg" },
@@ -51,7 +48,7 @@ const AnaSayfa = () => {
         "name": "En düşük minimum depozito ne kadar?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "XM, HFM ve Exness gibi brokerlar $5 minimum depozito ile hesap açmanıza izin verir. Bu, yeni başlayanlar için düşük riskli bir başlangıç sağlar."
+          "text": "XM ve Exness gibi brokerlar $5 minimum depozito ile hesap açmanıza izin verir. Bu, yeni başlayanlar için düşük riskli bir başlangıç sağlar."
         }
       },
       {
@@ -59,7 +56,7 @@ const AnaSayfa = () => {
         "name": "Hangi broker'lar Türkçe destek veriyor?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "XM, HFM, FxPro, Exness, Pepperstone, FBS ve FXTM 7/24 Türkçe müşteri desteği sunmaktadır. Hem canlı sohbet hem de telefon desteği mevcuttur."
+          "text": "XM, FxPro, Exness, Pepperstone, FBS ve FXTM 7/24 Türkçe müşteri desteği sunmaktadır. Hem canlı sohbet hem de telefon desteği mevcuttur."
         }
       }
     ]
@@ -169,21 +166,6 @@ const AnaSayfa = () => {
               >
                 Broker'ları Karşılaştır
               </Button>
-              <a
-                href={HFM_AFFILIATE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackTRBrokerClick("hfm", "hero_secondary", "hesap_ac")}
-              >
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="w-full sm:w-auto border-slate-400 text-slate-200 hover:bg-slate-700/50 hover:text-white px-8 py-5 md:px-10 md:py-6 text-base md:text-lg font-bold rounded-xl gap-2"
-                >
-                  HFM ile Hesap Aç
-                  <ExternalLink className="w-4 h-4" />
-                </Button>
-              </a>
             </div>
           </div>
         </div>

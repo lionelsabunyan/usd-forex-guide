@@ -9,7 +9,7 @@ import BrokerLogo from "../BrokerLogo";
 import { cn } from "@/lib/utils";
 
 // Featured brokers with bonuses
-const BONUS_BROKERS = ["xm", "hfm", "fxpro"];
+const BONUS_BROKERS = ["xm", "fxpro"];
 
 const BonusSectionTR = () => {
   const handleClaimBonus = (brokerId: string) => {

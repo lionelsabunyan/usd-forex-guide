@@ -163,7 +163,6 @@ const staticPages = [
   { path: '/tr/blog/forex-risk-yonetimi-rehberi', title: 'Forex Risk Yönetimi: Sermayenizi Korumanın 7 Altın Kuralı', desc: 'Forex\'te uzun vadeli başarının sırrı risk yönetimidir. Position sizing, stop loss stratejileri, günlük kayıp limiti ve psikolojik kontrol teknikleri.' },
 
   { path: '/tr/inceleme/fxpro', title: 'FxPro İnceleme 2026 | Beginner FX Guide TR', desc: 'FxPro forex broker incelemesi. Spread, platform, düzenleme ve Türkiye erişilebilirliği hakkında detaylı analiz.' },
-  { path: '/tr/inceleme/hfm', title: 'HFM İnceleme 2026 | Beginner FX Guide TR', desc: 'HFM (HotForex) forex broker incelemesi. Düşük spread, çoklu platform desteği ve Türkiye erişimi hakkında bilgi.' },
   { path: '/tr/inceleme/xm', title: 'XM İnceleme 2026 | Beginner FX Guide TR', desc: 'XM forex broker incelemesi. 1000+ enstrüman, düşük spread ve Türkiye kullanıcıları için hesap seçenekleri.' },
   { path: '/tr/inceleme/exness', title: 'Exness İnceleme 2026 | Beginner FX Guide TR', desc: 'Exness forex broker incelemesi. Ultra düşük spread, hızlı para çekme ve Türkiye erişimi hakkında detaylı analiz.' },
   { path: '/tr/inceleme/fbs', title: 'FBS İnceleme 2026 | Beginner FX Guide TR', desc: 'FBS forex broker incelemesi. Düşük minimum depozito, bonus fırsatları ve Türkiye erişimi hakkında bilgi.' },

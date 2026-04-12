@@ -5,13 +5,13 @@ import { trackTRBrokerClick } from "@/lib/trackingTR";
 import { trBrokerInfo } from "@/lib/brokersTR";
 import { BrokerId } from "@/lib/brokers";
 
-const DEFAULT_BROKER: BrokerId = "hfm";
-const DEFAULT_AFFILIATE_URL = "https://register.hf-anatbroker.com/int/en/new-live-account?refid=30503439";
+const DEFAULT_BROKER: BrokerId = "fxpro";
+const DEFAULT_AFFILIATE_URL = "/go/fxpro";
 
 /**
  * Mobile Sticky Footer CTA - Turkish Version
  * Shows affiliate CTA on homepage and all review pages
- * On review pages, shows that page's broker; on homepage shows HFM
+ * On review pages, shows that page's broker; on homepage shows FXPro
  */
 const MobileStickyFooterTR = () => {
   const location = useLocation();
@@ -25,7 +25,7 @@ const MobileStickyFooterTR = () => {
   const brokerId = reviewMatch ? (reviewMatch[1] as BrokerId) : DEFAULT_BROKER;
   const trInfo = trBrokerInfo[brokerId];
   const affiliateUrl = trInfo?.affiliateUrl || DEFAULT_AFFILIATE_URL;
-  const brokerLabel = trInfo ? brokerId.toUpperCase() : "HFM";
+  const brokerLabel = trInfo ? brokerId.toUpperCase() : "FXPRO";
 
   return (
     <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 p-3 bg-background/95 backdrop-blur-md border-t border-border safe-area-pb">
