@@ -74,7 +74,7 @@ const AdminAnalytics = () => {
         setAffiliateData(clicks);
       }
     } catch (e) {
-      console.warn("Analytics fetch failed, using mock data", e);
+      // Analytics fetch failed, using mock data
     }
     setLoading(false);
   }

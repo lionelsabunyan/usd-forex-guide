@@ -102,8 +102,8 @@
 # Turkish review pages — removed brokers
 /tr/inceleme/hfm /tr/ 301
 
-# Turkish subdomain redirect
-https://tr.beginnerfxguide.com/* /tr/:splat 200
+# Turkish subdomain redirect — 301 for SEO canonicalization
+https://tr.beginnerfxguide.com/* /tr/:splat 301
 
 # SPA fallback
 /*    /index.html   200

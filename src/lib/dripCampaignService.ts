@@ -52,7 +52,6 @@ export async function enrollInDripCampaign(email: string): Promise<boolean> {
   if (error) {
     // 23505 = unique constraint violation (already enrolled)
     if (error.code === '23505') return false;
-    console.error('Drip campaign enrollment error:', error.message);
     return false;
   }
 

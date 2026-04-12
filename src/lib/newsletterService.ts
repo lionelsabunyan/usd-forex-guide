@@ -46,7 +46,6 @@ export async function subscribeNewsletter(
         };
       }
       // Fall through to localStorage on other errors
-      console.error('Supabase newsletter error:', error.message);
     } else {
       // Also save to localStorage for admin panel visibility
       subscriberStore.add(trimmed, source);

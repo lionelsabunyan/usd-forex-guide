@@ -409,13 +409,6 @@ export const trBrokerInfo: Record<string, TRBrokerInfo> = {
   },
 };
 
-// Bonus durumuna göre etiket rengi
-export const getBonusBadgeClass = (hasBonus: boolean): string => {
-  return hasBonus
-    ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
-    : "bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400";
-};
-
 // Bonus özet metni
 export const getBonusSummary = (info: TRBrokerInfo): string => {
   if (!info.hasBonus) return "Yok";

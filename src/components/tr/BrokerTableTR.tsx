@@ -191,7 +191,7 @@ const BrokerTableTR = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => handleVisitClick(broker)}
-                    className="flex-2"
+                    className="flex-1"
                   >
                     <Button className="gap-1 bg-primary hover:bg-primary/90 px-6">
                       Hesap Aç

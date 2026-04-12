@@ -145,7 +145,7 @@ const FxProInceleme = () => {
                 <div className="flex items-center gap-4 mb-6">
                   <div className="flex">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className={`w-5 h-5 ${i < Math.floor(overallRating) ? 'fill-primary text-primary' : 'text-muted'}`} />
+                      <Star key={i} className={`w-5 h-5 ${i < Math.round(overallRating) ? 'fill-primary text-primary' : 'text-muted'}`} />
                     ))}
                   </div>
                   <span className="text-xl font-bold text-foreground">{overallRating}/5</span>

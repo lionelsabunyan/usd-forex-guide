@@ -42,7 +42,7 @@ export function useRegion(): UserRegion {
       })
       .catch((error) => {
         // If all detection fails, stay with default 'US'
-        console.warn('Region detection failed, defaulting to US:', error);
+        // Region detection failed, defaulting to US
       });
   }, []);
 
