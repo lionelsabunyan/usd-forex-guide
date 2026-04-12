@@ -90,11 +90,6 @@ const AdminLogin = () => {
             </Button>
           </form>
 
-          <div className="mt-6 p-4 rounded-lg bg-secondary/50 text-center">
-            <p className="text-xs text-muted-foreground">
-              Demo Credentials: <code className="text-foreground">admin</code> / <code className="text-foreground">admin123</code>
-            </p>
-          </div>
         </CardContent>
       </Card>
     </div>
