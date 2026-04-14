@@ -1,6 +1,0 @@
-- id: telegram-bot
-  type: reference
-  context: BFGPaperclip_Bot — credentials stored in /home/paperclip/.env
-  source: BEG-11
-  created: "2026-03-22"
-  status: active
