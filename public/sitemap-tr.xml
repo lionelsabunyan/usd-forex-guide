@@ -87,14 +87,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://beginnerfxguide.com/tr/inceleme/hfm/</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://beginnerfxguide.com/tr/inceleme/hfm/" />
-    <xhtml:link rel="alternate" hreflang="en-us" href="https://beginnerfxguide.com/review/hfm/" />
-    <lastmod>2026-03-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
   <url>
     <loc>https://beginnerfxguide.com/tr/inceleme/xm/</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://beginnerfxguide.com/tr/inceleme/xm/" />

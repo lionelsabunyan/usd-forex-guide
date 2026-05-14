@@ -592,7 +592,6 @@
   <url>
     <loc>https://beginnerfxguide.com/review/hfm/</loc>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://beginnerfxguide.com/review/hfm/" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://beginnerfxguide.com/tr/inceleme/hfm/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://beginnerfxguide.com/review/hfm/" />
     <lastmod>2026-02-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -1224,15 +1223,6 @@
     <xhtml:link rel="alternate" hreflang="en-us" href="https://beginnerfxguide.com/review/fxpro/" />
     <xhtml:link rel="alternate" hreflang="tr" href="https://beginnerfxguide.com/tr/inceleme/fxpro/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://beginnerfxguide.com/review/fxpro/" />
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://beginnerfxguide.com/tr/inceleme/hfm/</loc>
-    <xhtml:link rel="alternate" hreflang="en-us" href="https://beginnerfxguide.com/review/hfm/" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://beginnerfxguide.com/tr/inceleme/hfm/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://beginnerfxguide.com/review/hfm/" />
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

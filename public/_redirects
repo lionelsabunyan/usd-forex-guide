@@ -99,8 +99,6 @@
 /brokers/australia /brokers/australia/ 301
 /brokers/uk /brokers/uk/ 301
 
-# Turkish review pages — removed brokers
-/tr/inceleme/hfm /tr/ 301
 
 # Turkish subdomain redirect — 301 for SEO canonicalization
 https://tr.beginnerfxguide.com/* /tr/:splat 301
