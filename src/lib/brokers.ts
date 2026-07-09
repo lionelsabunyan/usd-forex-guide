@@ -149,7 +149,7 @@ export const brokers: Record<BrokerId, Broker> = {
     ],
     reviewUrl: "/review/hankotrade",
     siteUrl: "https://hankotrade.com",
-    affiliateUrl: "https://login.hankotrade.com/register?refLink=OTE0Mzk=&refRm=11",
+    affiliateUrl: env.VITE_HANKOTRADE_AFFILIATE_URL || "https://login.hankotrade.com/register?refLink=OTE0Mzk=&refRm=11",
     logoSrc: "/images/brokers/hankotrade.webp",
   },
   fxglory: {
@@ -677,7 +677,7 @@ export const brokers: Record<BrokerId, Broker> = {
     ],
     reviewUrl: "/review/lmfx",
     siteUrl: "https://www.lmfx.com",
-    affiliateUrl: "https://lmfx.com/en/landing-pages/landing-page-04?refid=136384",
+    affiliateUrl: env.VITE_LMFX_AFFILIATE_URL || "https://lmfx.com/en/landing-pages/landing-page-04?refid=136384",
     logoSrc: "/images/brokers/lmfx.svg",
     bonus: "100% up to $30K",
   },
@@ -725,7 +725,7 @@ export const brokers: Record<BrokerId, Broker> = {
     ],
     reviewUrl: "/review/coinexx",
     siteUrl: "https://www.coinexx.com",
-    affiliateUrl: "https://my.coinexx.com/register?refLink=NTAxODIw&refRm=11",
+    affiliateUrl: env.VITE_COINEXX_AFFILIATE_URL || "https://my.coinexx.com/register?refLink=NTAxODIw&refRm=11",
     logoSrc: "/images/brokers/coinexx.svg",
   },
   plexytrade: {

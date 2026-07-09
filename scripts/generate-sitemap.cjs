@@ -93,6 +93,7 @@ function getSourceFiles(urlPath) {
   if (clean === 'brokers') return ['src/pages/BrokersPage.tsx'];
   if (clean === 'brokers/australia') return ['src/pages/BrokersAustraliaPage.tsx'];
   if (clean === 'brokers/uk') return ['src/pages/BrokersUKPage.tsx'];
+  if (clean === 'brokers/usa') return ['src/pages/BestBrokersUSA.tsx'];
   if (clean === 'compare') return ['src/pages/ComparePage.tsx'];
   if (clean === 'guides') return ['src/pages/GuidesPage.tsx'];
   if (clean === 'tools') return ['src/pages/ToolsPage.tsx'];
@@ -233,6 +234,11 @@ function main() {
 
   // Process static pages
   for (const page of staticPages) {
+    // Skip noindex pages (e.g. paid landing pages) — they must not be in the sitemap.
+    if (page.noindex) {
+      console.log(`  SKIP (noindex): ${page.path}`);
+      continue;
+    }
     const urlPath = ensureTrailingSlash(page.path);
     const lastmod = getGitLastmod(page.path);
 

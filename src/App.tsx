@@ -118,6 +118,10 @@ const BestBrokersUK = lazy(() => import("./pages/BestBrokersUK"));
 const BestBrokersCanada = lazy(() => import("./pages/BestBrokersCanada"));
 const BestBrokersSingapore = lazy(() => import("./pages/BestBrokersSingapore"));
 const BestBrokersEU = lazy(() => import("./pages/BestBrokersEU"));
+const BestBrokersUSA = lazy(() => import("./pages/BestBrokersUSA"));
+
+// Paid landing page (Bing Ads /us — offshore intent), noindex
+const USOffshore = lazy(() => import("./pages/USOffshore"));
 
 // Broker Info - Programmatic SEO pages
 const BrokerMinDeposit = lazy(() => import("./pages/broker-info/BrokerMinDeposit"));
@@ -215,6 +219,11 @@ const App = () => (
             <Route path="/review/fxtm" element={<FXTMReview />} />
             <Route path="/review/fbs" element={<FBSReview />} />
 
+            {/* Paid landing page (Bing Ads — offshore intent), noindex */}
+            <Route path="/us" element={<USOffshore />} />
+            <Route path="/us/fxglory" element={<USOffshore focusBroker="fxglory" />} />
+            <Route path="/us/lmfx" element={<USOffshore focusBroker="lmfx" />} />
+
             {/* Main Pages */}
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/brokers" element={<BrokersPage />} />
@@ -223,6 +232,7 @@ const App = () => (
             <Route path="/brokers/canada" element={<BestBrokersCanada />} />
             <Route path="/brokers/singapore" element={<BestBrokersSingapore />} />
             <Route path="/brokers/eu" element={<BestBrokersEU />} />
+            <Route path="/brokers/usa" element={<BestBrokersUSA />} />
             <Route path="/brokers/:brokerId/minimum-deposit" element={<BrokerMinDeposit />} />
             <Route path="/brokers/:brokerId/spreads" element={<BrokerSpreads />} />
             <Route path="/brokers/:brokerId/fees" element={<BrokerFees />} />

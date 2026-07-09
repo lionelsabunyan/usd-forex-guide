@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { captureAttribution } from "@/lib/attribution";
 
 type GoogleAnalyticsProps = {
   gaId?: string;
@@ -10,6 +11,11 @@ type GoogleAnalyticsProps = {
 
 const GoogleAnalytics = ({ gaId, gtmId, uetId, ymId, clarityId }: GoogleAnalyticsProps) => {
   useEffect(() => {
+    // Capture paid-search click ids (msclkid/gclid) + keyword to localStorage.
+    // Runs unconditionally — the Bing UET tag loads from index.html, so this must NOT be
+    // gated on `uetId` (which is "" in production). See src/lib/attribution.ts.
+    captureAttribution();
+
     // Google Analytics 4 (GA4) — uses separate "gtagLayer" to isolate from GTM's dataLayer
     if (gaId) {
       // GA4 script with custom dataLayer name to prevent GTM conflict
@@ -66,28 +72,8 @@ const GoogleAnalytics = ({ gaId, gtmId, uetId, ymId, clarityId }: GoogleAnalytic
         })(window,document,"script","//bat.bing.com/bat.js","uetq");
       `;
       document.head.appendChild(script);
-
-      // UTM Auto-Inject: Bing msclkid varsa GA4'e Bing paid search olarak kaydet
-      const uetScript2 = document.createElement("script");
-      uetScript2.textContent = `
-        (function() {
-          try {
-            var params = new URLSearchParams(window.location.search);
-            var msclkid = params.get('msclkid');
-            if (msclkid) {
-              sessionStorage.setItem('bing_msclkid', msclkid);
-              if (window.gtag) {
-                window.gtag('set', {'campaign': {source:'bing', medium:'cpc'}});
-              }
-            }
-            if ((msclkid || sessionStorage.getItem('bing_msclkid')) && !params.get('utm_source')) {
-              var sep = window.location.href.includes('?') ? '&' : '?';
-              history.replaceState(null, '', window.location.href + sep + 'utm_source=bing&utm_medium=cpc');
-            }
-          } catch(e) {}
-        })();
-      `;
-      document.head.appendChild(uetScript2);
+      // NOTE: msclkid capture moved out of this (production-dead) branch into
+      // captureAttribution() above, which runs regardless of how UET is loaded.
     }
 
     // Yandex.Metrica

@@ -34,6 +34,12 @@ const staticPages = [
   { path: '/brokers/canada', title: 'Best Forex Brokers in Canada 2026 | US Forex Guide', desc: 'Compare the best forex brokers in Canada. IIROC alternatives with high leverage, CAD accounts, and competitive spreads for Canadian traders.' },
   { path: '/brokers/singapore', title: 'Best Forex Brokers in Singapore 2026 | US Forex Guide', desc: 'Compare the best forex brokers in Singapore. MAS alternatives with high leverage, competitive spreads, and reliable platforms for Singapore traders.' },
   { path: '/brokers/eu', title: 'Best Forex Brokers in the EU 2026 | US Forex Guide', desc: 'Compare the best forex brokers in the EU. ESMA alternatives with high leverage, CySEC/FCA regulation, and competitive spreads for European traders.' },
+  { path: '/brokers/usa', title: 'Best Forex Brokers USA 2026 | Offshore High-Leverage & CFTC-Regulated', desc: 'The best forex brokers for US traders in 2026 — offshore brokers accepting US clients with 1:500–1:3000 leverage and bonuses, plus CFTC/NFA-regulated options.' },
+
+  // Paid landing pages (Bing Ads — offshore intent). noindex so they never compete with /brokers/usa.
+  { path: '/us', title: 'Offshore Forex Brokers Accepting US Traders 2026 | High Leverage + Bonus', desc: 'US residents can still trade forex with high-leverage offshore brokers. Compare FXGlory, LMFX & Coinexx — 1:500 to 1:3000 leverage, deposit bonuses, and a step-by-step crypto funding guide.', noindex: true },
+  { path: '/us/fxglory', title: 'FXGlory for US Traders 2026 — 1:3000 Leverage, Crypto Funding | US Forex Guide', desc: 'Open an FXGlory account as a US trader: 1:3000 leverage, $1 minimum, deposit bonus, and crypto funding in minutes. Step-by-step guide.', noindex: true },
+  { path: '/us/lmfx', title: 'LMFX for US Traders 2026 — 100% Deposit Bonus, High Leverage | US Forex Guide', desc: 'Open an LMFX account as a US trader: 100% deposit bonus, 1:1000 leverage, and crypto funding. Step-by-step guide for American traders.', noindex: true },
 
   // Programmatic SEO — Broker Info Pages (auto-generated)
   ...(() => {
@@ -225,7 +231,7 @@ function escapeHtml(str) {
 }
 
 // ─── Core: inject meta tags into HTML template ───────────────────────────────
-function injectMeta(template, { title, desc, canonical, ogImage }) {
+function injectMeta(template, { title, desc, canonical, ogImage, noindex }) {
   const safeTitle = escapeHtml(title);
   const safeDesc = escapeHtml(desc);
   const safeCanonical = escapeHtml(canonical);
@@ -237,6 +243,11 @@ function injectMeta(template, { title, desc, canonical, ogImage }) {
 
   // Replace <title>
   html = html.replace(/<title>[^<]*<\/title>/, `<title>${safeTitle}</title>`);
+
+  // Robots directive — paid landing pages are noindex so they don't compete with the
+  // organic /brokers/usa page and stay out of the search index.
+  const robots = noindex ? 'noindex, nofollow' : 'index, follow';
+  html = html.replace(/<meta\s+name="robots"\s+content="[^"]*"\s*\/?>/, `<meta name="robots" content="${robots}" />`);
 
   // Replace or insert meta description (handles multi-line <meta\n  name="description"...> format)
   const metaDescMultiline = /<meta\s+name="description"\s+content="[^"]*"\s*\/?>/s;
@@ -474,6 +485,7 @@ function main() {
       desc: page.desc,
       canonical,
       ogImage: page.ogImage || getOgImageForPath(page.path),
+      noindex: page.noindex,
     });
 
     // Inject BreadcrumbList schema for all pages

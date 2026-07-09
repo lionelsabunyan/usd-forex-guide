@@ -105,6 +105,60 @@ test.describe("Affiliate Redirects", () => {
   }
 });
 
+// ─── US Offshore Paid Landing Page (/us) + Organic USA page ─────
+test.describe("US Offshore Funnel", () => {
+  test("/us paid LP loads with offshore content", async ({ page }) => {
+    const response = await page.goto("/us");
+    expect(response?.status()).toBeLessThan(400);
+    await expect(page.locator("h1").first()).toBeVisible();
+    const body = await page.textContent("body");
+    expect(body).toMatch(/offshore|FXGlory|US Traders/i);
+  });
+
+  test("/us is noindex (must not compete with organic page)", async ({ page }) => {
+    await page.goto("/us");
+    await expect(page.locator("h1").first()).toBeVisible();
+    // Robust across dev (base HTML robots + Helmet robots) and prod (single injected tag):
+    // assert at least one robots meta declares noindex.
+    const contents = await page
+      .locator('meta[name="robots"]')
+      .evaluateAll((els) => els.map((e) => e.getAttribute("content") || ""));
+    expect(contents.some((c) => /noindex/i.test(c))).toBeTruthy();
+  });
+
+  test("msclkid is captured to localStorage and appended as subid on affiliate CTA", async ({ page }) => {
+    await page.goto("/us?msclkid=pw_test_123&keyword=fxglory");
+    await expect(page.locator('a[rel*="sponsored"]').first()).toBeVisible();
+
+    const stored = await page.evaluate(() => window.localStorage.getItem("bfx_attribution"));
+    expect(stored).toContain("pw_test_123");
+
+    const href = await page.locator('a[rel*="sponsored"]').first().getAttribute("href");
+    expect(href).toContain("subid=pw_test_123");
+  });
+
+  test("/us/fxglory variant loads and leads with FXGlory", async ({ page }) => {
+    const response = await page.goto("/us/fxglory");
+    expect(response?.status()).toBeLessThan(400);
+    const body = await page.textContent("body");
+    expect(body).toMatch(/FXGlory/i);
+  });
+
+  test("/brokers/usa organic page loads and is indexable", async ({ page }) => {
+    const response = await page.goto("/brokers/usa/");
+    expect(response?.status()).toBeLessThan(400);
+    await expect(page).toHaveTitle(/USA|US Traders|forex/i);
+  });
+
+  test("/us has no JS errors", async ({ page }) => {
+    const errors: string[] = [];
+    page.on("pageerror", (err) => errors.push(err.message));
+    await page.goto("/us");
+    await page.waitForTimeout(2000);
+    expect(errors).toEqual([]);
+  });
+});
+
 // ─── 404 Handling ───────────────────────────────────────────────
 test.describe("404 Pages", () => {
   test("non-existent EN page shows 404 content", async ({ page }) => {

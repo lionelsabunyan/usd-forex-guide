@@ -1,5 +1,6 @@
 import { BrokerId, brokers } from "./brokers";
 import { getVariant, EXP_CTA_COLOR, EXP_CTA_COPY } from "./abtest";
+import { getAttribution, logAffiliateClick } from "./attribution";
 
 /** GA4 Measurement ID — used in send_to to prevent GTM from re-firing events */
 const GA_MEASUREMENT_ID = "G-P860PCCF1T";
@@ -53,11 +54,16 @@ export const getAffiliateUrl = (
   const baseUrl = broker.affiliateUrl;
   const separator = baseUrl.includes("?") ? "&" : "?";
 
+  // Attach the Microsoft ad click id as a subid so any broker whose IB portal echoes
+  // custom params can report it back (harmless — ignored by brokers that don't).
+  const { msclkid } = getAttribution();
+
   const params = new URLSearchParams({
     utm_source: `bfxguide_${utm.source}`,
     utm_medium: utm.medium,
     ...(utm.campaign && { utm_campaign: utm.campaign }),
     ...(utm.content && { utm_content: utm.content }),
+    ...(msclkid && { subid: msclkid }),
   });
 
   return `${baseUrl}${separator}${params.toString()}`;
@@ -75,6 +81,9 @@ export const trackAffiliateClick = (
 ): void => {
   const isIB = isIBBroker(brokerId);
   const brokerName = brokers[brokerId]?.name || brokerId;
+
+  // First-party click log for offshore FTD reconciliation (fire-and-forget)
+  logAffiliateClick(brokerId, location);
 
   // Detect region from cookie if not provided
   const region = userRegion || (() => {
@@ -247,4 +256,8 @@ export const UTM_CONFIGS = {
 
   // Newsletter
   NEWSLETTER_WELCOME: { source: "newsletter", medium: "email", campaign: "welcome_series" },
+
+  // US offshore paid landing page (Bing Ads /us)
+  US_LP: { source: "us_lp", medium: "cta", campaign: "bing_usa", content: "open_account" },
+  US_LP_STICKY: { source: "us_lp", medium: "sticky", campaign: "bing_usa", content: "open_account" },
 } as const;
