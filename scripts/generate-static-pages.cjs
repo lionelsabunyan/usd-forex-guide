@@ -39,7 +39,8 @@ const staticPages = [
   // Paid landing pages (Bing Ads — offshore intent). noindex so they never compete with /brokers/usa.
   { path: '/us', title: 'Offshore Forex Brokers Accepting US Traders 2026 | High Leverage + Bonus', desc: 'US residents can still trade forex with high-leverage offshore brokers. Compare FXGlory, LMFX & Coinexx — 1:500 to 1:3000 leverage, deposit bonuses, and a step-by-step crypto funding guide.', noindex: true },
   { path: '/us/fxglory', title: 'FXGlory for US Traders 2026 — 1:3000 Leverage, Crypto Funding | US Forex Guide', desc: 'Open an FXGlory account as a US trader: 1:3000 leverage, $1 minimum, deposit bonus, and crypto funding in minutes. Step-by-step guide.', noindex: true },
-  { path: '/us/lmfx', title: 'LMFX for US Traders 2026 — 100% Deposit Bonus, High Leverage | US Forex Guide', desc: 'Open an LMFX account as a US trader: 100% deposit bonus, 1:1000 leverage, and crypto funding. Step-by-step guide for American traders.', noindex: true },
+  { path: '/us/coinexx', title: 'Coinexx for US Traders 2026 — Crypto ECN, 1:500 Leverage | US Forex Guide', desc: 'Open a Coinexx account as a US trader: true ECN, 0.0 pip spreads, 1:500 leverage, crypto funding. Step-by-step guide for American traders.', noindex: true },
+  { path: '/us/unitedpips', title: 'UnitedPips for US Traders 2026 — Card & PayPal Funding, 1:1000 | US Forex Guide', desc: 'Open a UnitedPips account as a US trader: 1:1000 leverage, $10 minimum, 40% deposit bonus, and card/PayPal funding (not crypto-only). Step-by-step guide.', noindex: true },
 
   // Programmatic SEO — Broker Info Pages (auto-generated)
   ...(() => {

@@ -1,4 +1,4 @@
-export type BrokerId = "fxglory" | "hankotrade" | "midasfx" | "n1cm" | "hfm" | "lmfx" | "coinexx" | "plexytrade" | "exness" | "pepperstone" | "xm" | "fxtm" | "fbs" | "etoro" | "fxpro" | "oanda" | "ig" | "forexcom" | "interactivebrokers" | "avatrade" | "charlesschwab" | "tastyfx";
+export type BrokerId = "fxglory" | "hankotrade" | "midasfx" | "n1cm" | "hfm" | "lmfx" | "coinexx" | "plexytrade" | "exness" | "pepperstone" | "xm" | "fxtm" | "fbs" | "etoro" | "fxpro" | "oanda" | "ig" | "forexcom" | "interactivebrokers" | "avatrade" | "charlesschwab" | "tastyfx" | "unitedpips";
 
 export type BrokerType = "offshore" | "regulated";
 
@@ -54,6 +54,9 @@ export type Broker = {
 
   // Bonus
   bonus?: string;
+
+  // Paid-funnel-only: excluded from organic listings (topBrokers), used only on the /us LP
+  paidOnly?: boolean;
 };
 
 const env = import.meta.env as unknown as Record<string, string | undefined>;
@@ -1051,6 +1054,52 @@ export const brokers: Record<BrokerId, Broker> = {
     siteUrl: "https://www.avatrade.com",
     logoSrc: "/images/brokers/avatrade.svg",
   },
+  unitedpips: {
+    id: "unitedpips",
+    name: "UnitedPips",
+    type: "offshore",
+    region: "BOTH",
+    rating: 3.9,
+    minDeposit: 10,
+    minDepositDisplay: "$10",
+    leverage: "1:1000",
+    leverageValue: 1000,
+    spreads: "1.0 pips",
+    spreadsFrom: 1.0,
+    regulation: "Unregulated (St. Lucia)",
+    headquarters: "St. Lucia",
+    foundedYear: 2016,
+    usAccepted: true,
+    platforms: ["UniTrader"],
+    accountTypes: ["Standard", "Premium", "VIP"],
+    paymentMethods: ["Credit Card", "PayPal", "E-Wallets", "Crypto", "Perfect Money"],
+    cryptoDeposits: true,
+    negativeBalanceProtection: false,
+    scores: {
+      tradingConditions: 3.8,
+      platformTools: 3.4,
+      customerSupport: 3.5,
+      depositWithdrawal: 3.9,
+      trustReputation: 3.0,
+    },
+    pros: [
+      "US clients accepted",
+      "Card & PayPal funding (not crypto-only)",
+      "High leverage up to 1:1000",
+      "Low $10 minimum deposit",
+    ],
+    cons: [
+      "Unregulated (St. Lucia)",
+      "Proprietary UniTrader platform (no MT4/MT5)",
+      "Reports of large-withdrawal delays/denials",
+    ],
+    reviewUrl: "/us",
+    siteUrl: env.VITE_UNITEDPIPS_VISIT_URL || "https://app.unitedpips.com/auth/register?ib=88703",
+    affiliateUrl: env.VITE_UNITEDPIPS_AFFILIATE_URL || "https://app.unitedpips.com/auth/register?ib=88703",
+    logoSrc: "",
+    paidOnly: true,
+    bonus: "40% Deposit Bonus",
+  },
 };
 
 // Helper function to get average score
@@ -1060,8 +1109,8 @@ export const getAverageScore = (broker: Broker): number => {
   return Math.round((total / 5) * 10) / 10;
 };
 
-// Sorted broker lists
-export const topBrokers = Object.values(brokers).sort((a, b) => b.rating - a.rating);
+// Sorted broker lists (paidOnly brokers are excluded from organic listings)
+export const topBrokers = Object.values(brokers).filter((b) => !b.paidOnly).sort((a, b) => b.rating - a.rating);
 
 export const reviewedBrokers = topBrokers;
 

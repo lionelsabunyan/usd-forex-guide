@@ -25,7 +25,7 @@ import { subscribeNewsletter } from "@/lib/newsletterService";
  */
 
 const CURRENT_YEAR = 2026;
-const DEFAULT_ORDER: BrokerId[] = ["fxglory", "lmfx", "coinexx"];
+const DEFAULT_ORDER: BrokerId[] = ["fxglory", "coinexx", "unitedpips"];
 
 const fundBadge = (method: string) => {
   const m = method.toLowerCase();

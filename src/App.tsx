@@ -222,7 +222,8 @@ const App = () => (
             {/* Paid landing page (Bing Ads — offshore intent), noindex */}
             <Route path="/us" element={<USOffshore />} />
             <Route path="/us/fxglory" element={<USOffshore focusBroker="fxglory" />} />
-            <Route path="/us/lmfx" element={<USOffshore focusBroker="lmfx" />} />
+            <Route path="/us/coinexx" element={<USOffshore focusBroker="coinexx" />} />
+            <Route path="/us/unitedpips" element={<USOffshore focusBroker="unitedpips" />} />
 
             {/* Main Pages */}
             <Route path="/faq" element={<FAQPage />} />
