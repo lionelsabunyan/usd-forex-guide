@@ -3,22 +3,17 @@
 /**
  * Daily Content Freshness Cron Job
  *
- * Runs daily (via n8n, cron, or Paperclip scheduler):
+ * Runs daily (via n8n or cron):
  * 1. Queries content_freshness for overdue pages
- * 2. Creates Paperclip tasks for overdue content reviews
- * 3. Outputs a weekly summary of upcoming reviews
+ * 2. Sends an optional Telegram summary and logs them
+ * 3. Outputs a weekly summary of upcoming reviews (Mondays)
  *
  * Usage:
  *   node scripts/freshness-cron.cjs
  *
  * Env vars:
  *   SUPABASE_URL, SUPABASE_SERVICE_KEY — Supabase access
- *   PAPERCLIP_API_URL, PAPERCLIP_API_KEY — Paperclip task creation (optional)
- *   PAPERCLIP_COMPANY_ID — Company for task creation
- *   PAPERCLIP_PROJECT_ID — Project to assign tasks to
- *   PAPERCLIP_GOAL_ID — Goal for content freshness tasks
- *   PAPERCLIP_PARENT_ID — Parent issue for freshness tasks
- *   CONTENT_AGENT_ID — Agent to assign review tasks to (optional)
+ *   TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID — optional summary notifications
  */
 
 const { createClient } = require("@supabase/supabase-js");
@@ -59,76 +54,6 @@ async function sendTelegram(text) {
     );
   } catch (err) {
     console.error("Telegram error:", err.message);
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Paperclip integration (optional)
-// ---------------------------------------------------------------------------
-
-async function createPaperclipTask(page) {
-  const apiUrl = process.env.PAPERCLIP_API_URL;
-  const apiKey = process.env.PAPERCLIP_API_KEY;
-  const companyId = process.env.PAPERCLIP_COMPANY_ID;
-  const projectId = process.env.PAPERCLIP_PROJECT_ID;
-  const goalId = process.env.PAPERCLIP_GOAL_ID;
-  const parentId = process.env.PAPERCLIP_PARENT_ID;
-  const contentAgentId = process.env.CONTENT_AGENT_ID;
-
-  if (!apiUrl || !apiKey || !companyId) {
-    return null; // Paperclip not configured
-  }
-
-  const daysOverdue = Math.floor(
-    (Date.now() - new Date(page.next_review).getTime()) / 86400000
-  );
-
-  const body = {
-    title: `İçerik güncelle: ${page.page_title}`,
-    description: [
-      `Bu sayfa ${daysOverdue} gün gecikmiş durumda ve güncellenmesi gerekiyor.`,
-      "",
-      `- **Sayfa:** ${page.page_path}`,
-      `- **Tür:** ${page.page_type}`,
-      `- **Son İnceleme:** ${page.last_reviewed}`,
-      `- **Planlanan İnceleme:** ${page.next_review}`,
-      "",
-      "Yapılacaklar:",
-      "1. Broker verilerini (spread, minimum depozit, düzenleyici durumu) kontrol et",
-      "2. Değişen bilgileri güncelle",
-      "3. `lastUpdated` tarihini güncelle",
-      "4. `node scripts/content-freshness.cjs update ${page.page_path}` ile takip tablosunu güncelle",
-    ].join("\n"),
-    status: "todo",
-    priority: daysOverdue > 14 ? "high" : "medium",
-    projectId: projectId || undefined,
-    goalId: goalId || undefined,
-    parentId: parentId || undefined,
-    assigneeAgentId: contentAgentId || undefined,
-  };
-
-  try {
-    const res = await fetch(`${apiUrl}/api/companies/${companyId}/issues`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    });
-
-    if (!res.ok) {
-      const text = await res.text();
-      console.error(`  Paperclip task creation failed: ${res.status} ${text}`);
-      return null;
-    }
-
-    const task = await res.json();
-    console.log(`  ✅ Created task ${task.identifier}: ${body.title}`);
-    return task;
-  } catch (err) {
-    console.error(`  Paperclip error: ${err.message}`);
-    return null;
   }
 }
 
@@ -177,38 +102,6 @@ async function run() {
   if (overdue.length > 0) {
     console.log(`\n🔴 ${overdue.length} overdue page(s):`);
 
-    // Check for existing Paperclip tasks to avoid duplicates
-    const existingTasks = new Set();
-    const apiUrl = process.env.PAPERCLIP_API_URL;
-    const apiKey = process.env.PAPERCLIP_API_KEY;
-    const companyId = process.env.PAPERCLIP_COMPANY_ID;
-
-    if (apiUrl && apiKey && companyId) {
-      try {
-        const res = await fetch(
-          `${apiUrl}/api/companies/${companyId}/issues?q=İçerik+güncelle&status=todo,in_progress`,
-          {
-            headers: { Authorization: `Bearer ${apiKey}` },
-          }
-        );
-        if (res.ok) {
-          const existing = await res.json();
-          const issues = existing.issues || existing;
-          if (Array.isArray(issues)) {
-            for (const issue of issues) {
-              // Extract page path from description
-              const match = issue.description?.match(
-                /\*\*Sayfa:\*\*\s+(\S+)/
-              );
-              if (match) existingTasks.add(match[1]);
-            }
-          }
-        }
-      } catch {
-        // Non-critical — proceed without dedup
-      }
-    }
-
     for (const page of overdue) {
       const daysOverdue = Math.floor(
         (new Date(today) - new Date(page.next_review)) / 86400000
@@ -216,13 +109,6 @@ async function run() {
       console.log(
         `  ${page.page_type.padEnd(15)} ${page.page_path.padEnd(45)} ${daysOverdue}d overdue`
       );
-
-      // Create Paperclip task if not already created
-      if (!existingTasks.has(page.page_path)) {
-        await createPaperclipTask(page);
-      } else {
-        console.log(`  ⏭️  Task already exists for ${page.page_path}`);
-      }
     }
   }
 
