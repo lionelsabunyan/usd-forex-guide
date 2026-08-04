@@ -174,7 +174,9 @@ export const brokers: Record<BrokerId, Broker> = {
     usAccepted: true,
     platforms: ["MT4", "MT5", "GloryTrader"],
     accountTypes: ["Standard", "Premium", "VIP", "CIP"],
-    paymentMethods: ["Crypto", "Wire Transfer", "Credit Card"],
+    // "Credit Card" removed: US cards are declined in practice and the deposit page
+    // redirects to SticPay/crypto. Promising it broke trust at the deposit step.
+    paymentMethods: ["Crypto", "Wire Transfer"],
     cryptoDeposits: true,
     negativeBalanceProtection: true,
     scores: {
@@ -187,7 +189,9 @@ export const brokers: Record<BrokerId, Broker> = {
     pros: [
       "Lowest minimum deposit ($1)",
       "Highest leverage (1:3000)",
-      "Multiple deposit methods",
+      // Was "Multiple deposit methods" — untrue since the card rail closed for US clients.
+      // paymentMethods is Crypto + Wire only, so the pro has to say the same thing.
+      "Crypto & wire funding",
       "US clients accepted",
       "24/7 customer support",
     ],
@@ -656,7 +660,10 @@ export const brokers: Record<BrokerId, Broker> = {
     usAccepted: true,
     platforms: ["MT4"],
     accountTypes: ["Premium", "Fixed", "Zero"],
-    paymentMethods: ["Credit Card", "Wire Transfer", "Crypto", "Skrill", "Neteller"],
+    // No direct card rail (dead for US-issued cards industry-wide, MCC 6211/VIRP) — cards
+    // work INDIRECTLY via the Instacoins & PayRedeem on-ramps listed on LMFX's US funding
+    // page. Skrill/Neteller removed: the merchant side doesn't accept US-resident wallets.
+    paymentMethods: ["Card via Instacoins", "PayRedeem eCard", "Crypto", "Wire Transfer"],
     cryptoDeposits: true,
     negativeBalanceProtection: true,
     scores: {
@@ -669,20 +676,21 @@ export const brokers: Record<BrokerId, Broker> = {
     pros: [
       "Accepts US clients",
       "High leverage (1:1000)",
-      "Multiple deposit options including crypto",
+      "Card funding via Instacoins & PayRedeem on-ramps",
       "Established since 2015",
-      "$25K trading contest",
+      "MT4 platform",
     ],
     cons: [
       "Unregulated broker",
       "MT4 only (no MT5)",
       "Higher spreads than ECN brokers",
+      "Withdrawal complaints incl. a large US profit-withholding case (FPA)",
     ],
     reviewUrl: "/review/lmfx",
     siteUrl: "https://www.lmfx.com",
-    affiliateUrl: env.VITE_LMFX_AFFILIATE_URL || "https://lmfx.com/en/landing-pages/landing-page-04?refid=136384",
+    affiliateUrl: env.VITE_LMFX_AFFILIATE_URL || "https://lmfx.com/promotions/cashback?refid=136384",
     logoSrc: "/images/brokers/lmfx.svg",
-    bonus: "100% up to $30K",
+    bonus: "10% Loss Cashback",
   },
   coinexx: {
     id: "coinexx",
@@ -1093,7 +1101,7 @@ export const brokers: Record<BrokerId, Broker> = {
       "Proprietary UniTrader platform (no MT4/MT5)",
       "Reports of large-withdrawal delays/denials",
     ],
-    reviewUrl: "/us",
+    reviewUrl: "/review/unitedpips",
     siteUrl: env.VITE_UNITEDPIPS_VISIT_URL || "https://app.unitedpips.com/auth/register?ib=88703",
     affiliateUrl: env.VITE_UNITEDPIPS_AFFILIATE_URL || "https://app.unitedpips.com/auth/register?ib=88703",
     logoSrc: "",
@@ -1124,3 +1132,18 @@ export const regulatedBrokers = topBrokers.filter(b => b.type === "regulated");
 export const usBrokers = topBrokers.filter(b => b.region === "US" || b.region === "BOTH");
 
 export const intlBrokers = topBrokers.filter(b => b.region === "INTL" || b.region === "BOTH");
+
+/**
+ * Paid /us funnel order — ordered by what actually converts, not by rating: UnitedPips
+ * produced 2 of the 3 real signups (proven card+PayPal rail). LMFX replaces FXGlory
+ * (0 funded accounts, US card rail dead): it answers the campaign's MetaTrader promise
+ * with MT4 AND has card-adjacent funding via the Instacoins/PayRedeem on-ramps.
+ * Coinexx = pure-crypto ECN third.
+ *
+ * Single source of truth: /us LP (USOffshore.tsx) AND the exit-intent popup read this,
+ * so the last-chance offer can never contradict the page the visitor is leaving.
+ */
+export const US_LP_ORDER: BrokerId[] = ["unitedpips", "lmfx", "coinexx"];
+
+/** Best organic offer for US visitors (paidOnly brokers excluded by construction). */
+export const usOffshoreLead = usAcceptedBrokers.find(b => b.type === "offshore") ?? topBrokers[0];
