@@ -1,5 +1,6 @@
 import { BrokerId, brokers } from "./brokers";
 import { trBrokerInfo } from "./brokersTR";
+import { logAffiliateClick } from "./attribution";
 
 /** GA4 Measurement ID — used in send_to to prevent GTM from re-firing events */
 const GA_MEASUREMENT_ID = "G-P860PCCF1T";
@@ -56,6 +57,9 @@ export const trackTRBrokerClick = (
   const brokerName = broker.name;
   const hasBonus = trInfo?.hasBonus || false;
   const bonusValue = hasBonus ? trInfo?.welcomeBonus || '' : '';
+
+  // Supabase affiliate_clicks → Telegram bildirimi (US tarafıyla aynı yol)
+  logAffiliateClick(brokerId, location);
 
   // 1. YANDEX METRIKA - Primary Conversion Goal
   if (typeof window !== "undefined" && (window as any).ym) {
