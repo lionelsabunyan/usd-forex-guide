@@ -6,11 +6,11 @@ export const lmfxData: BrokerReviewData = {
   brokerName: "LMFX",
   subtitle: "Offshore Broker Since 2015 - High Leverage",
   heroDescription:
-    'LMFX is an offshore forex broker established in 2015 that <strong class="text-success">fully accepts US clients</strong>. With leverage up to 1:1000, multiple crypto deposit options, and $25,000 trading contests, it\'s a solid choice for American traders seeking offshore alternatives.',
+    'LMFX is an offshore forex broker established in 2015 with leverage up to 1:1000, multiple crypto deposit options and $25,000 trading contests. <strong class="text-destructive">LMFX no longer accepts US residents</strong> — it exited the US market in 2024 and closed existing US accounts, so American traders should look at the alternatives below.',
 
-  seoTitle: "LMFX Review 2026 - US Accepted Broker with 1:1000 Leverage",
+  seoTitle: "LMFX Review 2026 - 1:1000 Leverage (No US Clients)",
   seoDescription:
-    "Complete LMFX review for US traders. High leverage up to 1:1000, crypto deposits, $25K trading contests. Accepts US clients with no restrictions.",
+    "Complete LMFX review: leverage up to 1:1000, crypto deposits and $25K trading contests. LMFX does not accept US residents — see the US-accepted alternatives.",
   canonical: "/review/lmfx",
 
   overallRating: 4.6,
@@ -20,6 +20,8 @@ export const lmfxData: BrokerReviewData = {
 
   heroBadge: {
     icon: Shield,
+    // NOTE: ReviewHero renders the trust score here, not this text — colouring it red would
+    // mislabel the score, so the "no US clients" warning lives in heroDescription/cons/FAQ.
     text: "US OK",
     colorClass: "bg-success/10 border border-success/20 text-success",
   },
@@ -32,11 +34,10 @@ export const lmfxData: BrokerReviewData = {
   },
 
   warningBanner: {
-    text: "LMFX is an offshore broker with trading operations based in North Macedonia and payment services registered in St. Vincent and the Grenadines. While they've operated since 2015 and accept US clients, trading with offshore brokers carries additional risks. Only trade with funds you can afford to lose and consider your risk tolerance before opening an account.",
+    text: "LMFX is an offshore broker with trading operations based in North Macedonia and payment services registered in St. Vincent and the Grenadines. They have operated since 2015, but as of 2024 they no longer accept US residents. Trading with offshore brokers carries additional risks. Only trade with funds you can afford to lose and consider your risk tolerance before opening an account.",
   },
 
   trustFeatures: [
-    { icon: Check, text: "US Clients Accepted" },
     { icon: TrendingUp, text: "1:1000 Leverage" },
     { icon: Bitcoin, text: "Crypto Deposits" },
     { icon: Award, text: "$25K Contests" },
@@ -91,7 +92,7 @@ export const lmfxData: BrokerReviewData = {
   ],
 
   competitorComparison: [
-    { feature: "US Clients Accepted", broker: "Yes", competitor1: "Yes", competitor2: "Yes" },
+    { feature: "US Clients Accepted", broker: "No", competitor1: "Yes", competitor2: "Yes" },
     { feature: "Minimum Deposit", broker: "$50", competitor1: "$10", competitor2: "$10" },
     { feature: "Maximum Leverage", broker: "1:1000", competitor1: "1:1000", competitor2: "1:500" },
     { feature: "Spreads From", broker: "0.0 pips", competitor1: "0.0 pips", competitor2: "0.0 pips" },
@@ -103,7 +104,6 @@ export const lmfxData: BrokerReviewData = {
 
   communityFeedback: {
     positiveThemes: [
-      "Accepts US clients without restrictions",
       "High leverage (1:1000) available",
       "Multiple deposit methods including crypto",
       "Regular trading contests with prizes",
@@ -120,7 +120,7 @@ export const lmfxData: BrokerReviewData = {
     {
       question: "Does LMFX accept US clients?",
       answer:
-        "Yes, LMFX fully accepts US clients without restrictions. As an offshore broker registered in St. Vincent and the Grenadines, they're able to serve American traders who want access to higher leverage and more trading flexibility.",
+        "No. LMFX exited the US market in 2024 and force-closed existing US accounts, so US residents can no longer open or fund an account there. US traders should use an offshore broker that still accepts them — see our US-accepted broker list.",
     },
     {
       question: "What is the minimum deposit at LMFX?",
@@ -150,7 +150,6 @@ export const lmfxData: BrokerReviewData = {
   ],
 
   pros: [
-    "Fully accepts US clients",
     "High leverage up to 1:1000",
     "Multiple crypto deposit options (BTC, ETH, USDT)",
     "Established since 2015",
@@ -164,6 +163,7 @@ export const lmfxData: BrokerReviewData = {
   ],
 
   cons: [
+    "Does not accept US residents (exited the US market in 2024)",
     "Offshore broker (North Macedonia / St. Vincent registered)",
     "MT4 only - no MT5 platform",
   ],

@@ -39,6 +39,7 @@ const TastyfxReview = lazy(() => import("./pages/TastyfxReview"));
 const HFMReview = lazy(() => import("./pages/HFMReview"));
 const LMFXReview = lazy(() => import("./pages/LMFXReview"));
 const CoinexxReview = lazy(() => import("./pages/CoinexxReview"));
+const UnitedPipsReview = lazy(() => import("./pages/UnitedPipsReview"));
 const PlexyTradeReview = lazy(() => import("./pages/PlexyTradeReview"));
 const ExnessReview = lazy(() => import("./pages/ExnessReview"));
 const PepperstoneReview = lazy(() => import("./pages/PepperstoneReview"));
@@ -122,6 +123,7 @@ const BestBrokersUSA = lazy(() => import("./pages/BestBrokersUSA"));
 
 // Paid landing page (Bing Ads /us — offshore intent), noindex
 const USOffshore = lazy(() => import("./pages/USOffshore"));
+const BROffshore = lazy(() => import("./pages/BROffshore"));
 
 // Broker Info - Programmatic SEO pages
 const BrokerMinDeposit = lazy(() => import("./pages/broker-info/BrokerMinDeposit"));
@@ -179,6 +181,11 @@ const CLARITY_ID = import.meta.env.VITE_CLARITY_ID || "";
 // Disable analytics during react-snap prerendering to prevent networkidle0 timeout
 const isReactSnap = typeof navigator !== "undefined" && navigator.userAgent === "ReactSnap";
 
+// No route-change page_view here on purpose. GA4 Enhanced Measurement already sends one on
+// browser-history changes, so a hand-rolled listener double-counts every SPA navigation
+// (measured 2026-07-28: two identical page_view hits per click). If Enhanced Measurement is
+// ever turned off in the GA4 stream settings, this is what has to come back.
+
 const App = () => (
   <HelmetProvider>
     <ThemeProvider defaultTheme="system" storageKey="bfxg-theme">
@@ -212,6 +219,7 @@ const App = () => (
             <Route path="/review/hfm" element={<HFMReview />} />
             <Route path="/review/lmfx" element={<LMFXReview />} />
             <Route path="/review/coinexx" element={<CoinexxReview />} />
+            <Route path="/review/unitedpips" element={<UnitedPipsReview />} />
             <Route path="/review/plexytrade" element={<PlexyTradeReview />} />
             <Route path="/review/exness" element={<ExnessReview />} />
             <Route path="/review/pepperstone" element={<PepperstoneReview />} />
@@ -224,6 +232,11 @@ const App = () => (
             <Route path="/us/fxglory" element={<USOffshore focusBroker="fxglory" />} />
             <Route path="/us/coinexx" element={<USOffshore focusBroker="coinexx" />} />
             <Route path="/us/unitedpips" element={<USOffshore focusBroker="unitedpips" />} />
+
+            {/* Paid landing page (Bing Ads — Brazil / Pix), noindex */}
+            <Route path="/br" element={<BROffshore />} />
+            <Route path="/br/exness" element={<BROffshore focusBroker="exness" />} />
+            <Route path="/br/xm" element={<BROffshore focusBroker="xm" />} />
 
             {/* Main Pages */}
             <Route path="/faq" element={<FAQPage />} />

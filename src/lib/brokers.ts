@@ -657,12 +657,13 @@ export const brokers: Record<BrokerId, Broker> = {
     regulation: "Unregulated (North Macedonia)",
     headquarters: "North Macedonia",
     foundedYear: 2015,
-    usAccepted: true,
+    // Confirmed with LMFX 2026-08-04: US residents are NOT accepted (they exited the US in
+    // June 2024 and force-closed US accounts). This flag is what keeps LMFX out of every
+    // US-facing list — do not flip it back without a written confirmation from the broker.
+    usAccepted: false,
     platforms: ["MT4"],
     accountTypes: ["Premium", "Fixed", "Zero"],
-    // No direct card rail (dead for US-issued cards industry-wide, MCC 6211/VIRP) — cards
-    // work INDIRECTLY via the Instacoins & PayRedeem on-ramps listed on LMFX's US funding
-    // page. Skrill/Neteller removed: the merchant side doesn't accept US-resident wallets.
+    // Cards work INDIRECTLY via the Instacoins & PayRedeem on-ramps (no direct card rail).
     paymentMethods: ["Card via Instacoins", "PayRedeem eCard", "Crypto", "Wire Transfer"],
     cryptoDeposits: true,
     negativeBalanceProtection: true,
@@ -674,13 +675,13 @@ export const brokers: Record<BrokerId, Broker> = {
       trustReputation: 3.3,
     },
     pros: [
-      "Accepts US clients",
       "High leverage (1:1000)",
       "Card funding via Instacoins & PayRedeem on-ramps",
       "Established since 2015",
       "MT4 platform",
     ],
     cons: [
+      "Does not accept US residents (exited the US market in 2024)",
       "Unregulated broker",
       "MT4 only (no MT5)",
       "Higher spreads than ECN brokers",
@@ -1134,16 +1135,24 @@ export const usBrokers = topBrokers.filter(b => b.region === "US" || b.region ==
 export const intlBrokers = topBrokers.filter(b => b.region === "INTL" || b.region === "BOTH");
 
 /**
- * Paid /us funnel order — ordered by what actually converts, not by rating: UnitedPips
- * produced 2 of the 3 real signups (proven card+PayPal rail). LMFX replaces FXGlory
- * (0 funded accounts, US card rail dead): it answers the campaign's MetaTrader promise
- * with MT4 AND has card-adjacent funding via the Instacoins/PayRedeem on-ramps.
- * Coinexx = pure-crypto ECN third.
+ * Paid /us funnel order — ordered by what actually converts, not by rating.
+ *
+ * 1. UnitedPips — produced 2 of the 3 real signups; the only proven card+PayPal rail.
+ *    No MetaTrader though (proprietary UniTrader), so it cannot carry the ad's MT promise.
+ * 2. FXGlory — carries the "MetaTrader 4 & 5" promise in the live Bing ad, is #1 in our own
+ *    broker evaluation (26.5) and is the only US-accepting partner that has actually paid us.
+ *    It replaces LMFX, which does not accept US residents at all (confirmed 2026-08-04).
+ *    The earlier FXGlory→LMFX swap was made on "0 funded accounts" out of 2 clicks in 90
+ *    days — noise, not evidence.
+ * 3. Coinexx — pure-crypto ECN third.
+ *
+ * Ruled out: Hankotrade (CFTC RED list — paid US promotion is a legal risk),
+ * MidasFX (crypto-only funding, lowest evaluation score, no payment history with us).
  *
  * Single source of truth: /us LP (USOffshore.tsx) AND the exit-intent popup read this,
  * so the last-chance offer can never contradict the page the visitor is leaving.
  */
-export const US_LP_ORDER: BrokerId[] = ["unitedpips", "lmfx", "coinexx"];
+export const US_LP_ORDER: BrokerId[] = ["unitedpips", "fxglory", "coinexx"];
 
 /** Best organic offer for US visitors (paidOnly brokers excluded by construction). */
 export const usOffshoreLead = usAcceptedBrokers.find(b => b.type === "offshore") ?? topBrokers[0];

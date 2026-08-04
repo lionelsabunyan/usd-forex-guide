@@ -87,20 +87,22 @@ export const hankotradeData: BrokerReviewData = {
     { method: "Neteller", deposit: "Instant", withdrawal: "24 hours", fee: "Free" },
   ],
 
+  // LMFX swapped out 2026-08-04 — it no longer accepts US residents, so comparing it on a
+  // US-facing review page sends readers to a broker that cannot open their account.
   competitors: [
     { name: "MidasFX", id: "midasfx" },
-    { name: "LMFX", id: "lmfx" },
+    { name: "FXGlory", id: "fxglory" },
   ],
 
   competitorComparison: [
     { feature: "US Clients Accepted", broker: "Yes", competitor1: "Yes", competitor2: "Yes" },
-    { feature: "Minimum Deposit", broker: "$10", competitor1: "$10", competitor2: "$50" },
-    { feature: "Maximum Leverage", broker: "1:500", competitor1: "1:1000", competitor2: "1:1000" },
-    { feature: "Spreads From", broker: "0.0 pips", competitor1: "0.0 pips", competitor2: "0.0 pips" },
-    { feature: "Trading Platforms", broker: "MT4, MT5", competitor1: "MT5", competitor2: "MT4" },
+    { feature: "Minimum Deposit", broker: "$10", competitor1: "$10", competitor2: "$1" },
+    { feature: "Maximum Leverage", broker: "1:500", competitor1: "1:1000", competitor2: "1:3000" },
+    { feature: "Spreads From", broker: "0.0 pips", competitor1: "0.0 pips", competitor2: "0.1 pips" },
+    { feature: "Trading Platforms", broker: "MT4, MT5", competitor1: "MT5", competitor2: "MT4, MT5" },
     { feature: "Trustpilot Rating", broker: "4.8/5", competitor1: "4.2/5", competitor2: "N/A" },
     { feature: "Crypto Deposits", broker: "Yes", competitor1: "Yes", competitor2: "Yes" },
-    { feature: "Same-Day Withdrawals", broker: "Yes", competitor1: "Yes", competitor2: "No" },
+    { feature: "Same-Day Withdrawals", broker: "Yes", competitor1: "Yes", competitor2: "Yes" },
   ],
 
   communityFeedback: {

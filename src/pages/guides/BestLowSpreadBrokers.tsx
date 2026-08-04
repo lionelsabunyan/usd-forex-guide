@@ -210,7 +210,7 @@ const BestLowSpreadBrokers = () => {
     },
     {
       question: "Can US traders get zero spread accounts?",
-      answer: "US-regulated brokers (CFTC/NFA) don't typically offer zero spread accounts — tastyfx at 0.2 pips is the tightest available. However, US traders can access offshore brokers like MidasFX, Hankotrade, and LMFX that offer 0.0 pip raw spreads. Note that offshore brokers lack US regulatory protections.",
+      answer: "US-regulated brokers (CFTC/NFA) don't typically offer zero spread accounts — tastyfx at 0.2 pips is the tightest available. However, US traders can access offshore brokers like MidasFX, Hankotrade, and Coinexx that offer 0.0 pip raw spreads. Note that offshore brokers lack US regulatory protections.",
     },
     {
       question: "What is the difference between ECN and STP spreads?",

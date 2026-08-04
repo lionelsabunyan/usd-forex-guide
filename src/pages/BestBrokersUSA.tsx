@@ -24,7 +24,7 @@ const BestBrokersUSA = () => {
     brokers.fxglory,            // SVG FSA, 1:3000, $1 ✅ Affiliate
     brokers.midasfx,            // FSA, 1:500 ✅ Affiliate
     brokers.hankotrade,         // Seychelles FSA, 1:500 ✅ Affiliate
-    brokers.lmfx,               // Unregulated, 1:1000, 100% bonus ✅ Affiliate
+    // LMFX removed 2026-08-04 — exited the US market, cannot open accounts for US residents.
     brokers.coinexx,            // Unregulated, 1:500, crypto ECN ✅ Affiliate
     brokers.oanda,              // CFTC/NFA ❌ Non-affiliate (authority)
     brokers.forexcom,           // CFTC/NFA ❌ Non-affiliate (authority)
@@ -47,7 +47,7 @@ const BestBrokersUSA = () => {
     },
     {
       question: "Which offshore broker is best for beginners in the US?",
-      answer: "FXGlory is a popular starting point: $1 minimum deposit, up to 1:3000 leverage, multiple funding methods, and 24/7 support. LMFX is favored for its 100% deposit bonus, and Coinexx for pure-crypto ECN trading with tight spreads. Start small, test a withdrawal early, and scale only once you trust the broker.",
+      answer: "FXGlory is a popular starting point: $1 minimum deposit, up to 1:3000 leverage, MT4 and MT5, and 24/7 support. Hankotrade is favored for its low $10 minimum, and Coinexx for pure-crypto ECN trading with tight spreads. Start small, test a withdrawal early, and scale only once you trust the broker.",
     },
     {
       question: "Are US-regulated brokers safer than offshore ones?",

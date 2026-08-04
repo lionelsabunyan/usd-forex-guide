@@ -37,10 +37,15 @@ const staticPages = [
   { path: '/brokers/usa', title: 'Best Forex Brokers USA 2026 | Offshore High-Leverage & CFTC-Regulated', desc: 'The best forex brokers for US traders in 2026 — offshore brokers accepting US clients with 1:500–1:3000 leverage and bonuses, plus CFTC/NFA-regulated options.' },
 
   // Paid landing pages (Bing Ads — offshore intent). noindex so they never compete with /brokers/usa.
-  { path: '/us', title: 'Offshore Forex Brokers Accepting US Traders 2026 | High Leverage + Bonus', desc: 'US residents can still trade forex with high-leverage offshore brokers. Compare FXGlory, LMFX & Coinexx — 1:500 to 1:3000 leverage, deposit bonuses, and a step-by-step crypto funding guide.', noindex: true },
-  { path: '/us/fxglory', title: 'FXGlory for US Traders 2026 — 1:3000 Leverage, Crypto Funding | US Forex Guide', desc: 'Open an FXGlory account as a US trader: 1:3000 leverage, $1 minimum, deposit bonus, and crypto funding in minutes. Step-by-step guide.', noindex: true },
+  { path: '/us', title: 'Offshore Forex Brokers Accepting US Traders 2026 | High Leverage + Bonus', desc: 'US residents can still trade forex with high-leverage offshore brokers. Compare UnitedPips, FXGlory & Coinexx — up to 1:3000 leverage, MT4/MT5, bonuses, card/PayPal or crypto funding, and a step-by-step funding guide.', noindex: true },
+  { path: '/us/fxglory', title: 'FXGlory for US Traders 2026 — MT4 & MT5, 1:3000 Leverage, $1 Minimum | US Forex Guide', desc: 'Open an FXGlory account as a US trader: MT4 and MT5, up to 1:3000 leverage, $1 minimum deposit, 50% deposit bonus and 24/7 support. Step-by-step guide.', noindex: true },
   { path: '/us/coinexx', title: 'Coinexx for US Traders 2026 — Crypto ECN, 1:500 Leverage | US Forex Guide', desc: 'Open a Coinexx account as a US trader: true ECN, 0.0 pip spreads, 1:500 leverage, crypto funding. Step-by-step guide for American traders.', noindex: true },
   { path: '/us/unitedpips', title: 'UnitedPips for US Traders 2026 — Card & PayPal Funding, 1:1000 | US Forex Guide', desc: 'Open a UnitedPips account as a US trader: 1:1000 leverage, $10 minimum, 40% deposit bonus, and card/PayPal funding (not crypto-only). Step-by-step guide.', noindex: true },
+
+  // Paid landing pages (Bing Ads — Brazil, pt-BR, Pix). noindex.
+  { path: '/br', title: 'Melhores Corretoras de Forex para Brasileiros 2026 — Depósito via Pix', desc: 'Brasileiros podem operar forex com corretoras internacionais reguladas e depósito via Pix instantâneo. Compare Exness e XM — alavancagem alta, bônus e passo a passo do Pix.', noindex: true },
+  { path: '/br/exness', title: 'Exness para Brasileiros 2026 — Depósito via Pix, Spreads Baixos | Guia', desc: 'Abra conta na Exness como brasileiro: depósito via Pix instantâneo, spreads baixos, alavancagem alta e saque rápido. Passo a passo em português.', noindex: true },
+  { path: '/br/xm', title: 'XM para Brasileiros 2026 — Bônus de Depósito, Suporte em Português | Guia', desc: 'Abra conta na XM como brasileiro: bônus de depósito, Pix, suporte em português e alavancagem até 1:1000. Passo a passo.', noindex: true },
 
   // Programmatic SEO — Broker Info Pages (auto-generated)
   ...(() => {
@@ -87,8 +92,9 @@ const staticPages = [
   { path: '/review/fxpro', title: 'FxPro Review 2026 | US Forex Guide', desc: 'FxPro review for US traders. Multi-regulated broker with 4 platforms. We tested execution, spreads, and US trader eligibility.' },
   { path: '/review/avatrade', title: 'AvaTrade Review 2026 | US Forex Guide', desc: 'AvaTrade review for US traders. Multi-regulated broker with fixed spreads. Platforms, account types, and US accessibility explained.' },
   { path: '/review/hfm', title: 'HFM Review 2026 | US Forex Guide', desc: 'HFM (HF Markets) review for US traders. CySEC-regulated broker with low spreads. Platforms, bonuses, and US account availability.' },
-  { path: '/review/lmfx', title: 'LMFX Review 2026 | US Forex Guide', desc: 'LMFX review for US traders. Offshore broker with no minimum deposit. Spreads, leverage, and US trader eligibility analysis.' },
+  { path: '/review/lmfx', title: 'LMFX Review 2026 — No US Clients | US Forex Guide', desc: 'LMFX review: 1:1000 leverage, MT4, crypto funding and $25K contests. LMFX exited the US market in 2024 and no longer accepts US residents — see the US-accepted alternatives.' },
   { path: '/review/coinexx', title: 'Coinexx Review 2026 | US Forex Guide', desc: 'Coinexx review for US traders. Crypto-based offshore forex broker. Bitcoin deposits, spreads, and US trader access reviewed.' },
+  { path: '/review/unitedpips', title: 'UnitedPips Review 2026 — Card & PayPal Funding, 1:1000 Leverage | US Forex Guide', desc: 'Honest UnitedPips review for US traders: card and PayPal deposits that actually clear, 1:1000 leverage, $10 minimum, 40% bonus — plus the withdrawal-denial reports and leverage cuts to know first.' },
   { path: '/review/plexytrade', title: 'PlexyTrade Review 2026 | US Forex Guide', desc: 'PlexyTrade review for US traders. Offshore broker with multiple account types. We reviewed spreads, leverage, and withdrawals.' },
   { path: '/review/exness', title: 'Exness Review 2026 | US Forex Guide', desc: 'Exness review for US traders. Highly regulated broker with ultra-low spreads. Do they accept US clients? Full analysis.' },
   { path: '/review/pepperstone', title: 'Pepperstone Review 2026 | US Forex Guide', desc: 'Pepperstone review for US traders. FCA/ASIC regulated broker with RAW spreads. US account eligibility and trading conditions.' },

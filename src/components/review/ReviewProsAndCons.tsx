@@ -2,7 +2,7 @@ import { Check, AlertTriangle, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { getAffiliateUrl, trackAffiliateClick, UTM_CONFIGS } from "@/lib/tracking";
-import type { BrokerId } from "@/lib/brokers";
+import { brokers, type BrokerId } from "@/lib/brokers";
 
 interface ReviewProsAndConsProps {
   pros: string[];
@@ -59,7 +59,11 @@ const ReviewProsAndCons = ({ pros, cons, brokerId, brokerName }: ReviewProsAndCo
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </Button>
-                <p className="text-xs text-muted-foreground mt-2">US Clients Accepted · Takes 2 minutes · No hidden fees</p>
+                {/* Was hardcoded — it claimed "US Clients Accepted" on every review page,
+                    including brokers that do not accept US residents at all. */}
+                <p className="text-xs text-muted-foreground mt-2">
+                  {brokers[brokerId]?.usAccepted ? "US Clients Accepted · " : ""}Takes 2 minutes · No hidden fees
+                </p>
               </div>
             </div>
           )}

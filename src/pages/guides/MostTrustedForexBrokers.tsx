@@ -173,7 +173,7 @@ const offshoreBrokers = [
   { name: "FXGlory", regulation: "SVG FSA", trustScore: 4.5, usAccepted: true, reviewUrl: "/review/fxglory" },
   { name: "HFM (HotForex)", regulation: "CySEC, FCA, DFSA, FSCA, FSA", trustScore: 4.2, usAccepted: false, reviewUrl: "/review/hfm" },
   { name: "XM", regulation: "CySEC, ASIC, DFSA, FSC", trustScore: 4.2, usAccepted: false, reviewUrl: "/review/xm" },
-  { name: "LMFX", regulation: "Unregulated (North Macedonia)", trustScore: 3.3, usAccepted: true, reviewUrl: "/review/lmfx" },
+  { name: "LMFX", regulation: "Unregulated (North Macedonia)", trustScore: 3.3, usAccepted: false, reviewUrl: "/review/lmfx" },
   { name: "Coinexx", regulation: "Unregulated (St. Vincent)", trustScore: 3.5, usAccepted: true, reviewUrl: "/review/coinexx" },
   { name: "PlexyTrade", regulation: "Unregulated (St. Lucia)", trustScore: 2.5, usAccepted: false, reviewUrl: "/review/plexytrade" },
 ];
