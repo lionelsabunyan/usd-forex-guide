@@ -26,6 +26,7 @@
 | Lokal build için `node_modules/.vite` cache'i temizle | `rm -rf node_modules/.vite` — yoksa Radix UI export hatası alırsın |
 | Yeni sayfa eklendiğinde `scripts/generate-static-pages.cjs`'e meta tag girişi de ekle | Yoksa tüm SEO meta'ları (`<title>`, og:*, canonical) eksik kalır |
 | CF Pages Git entegrasyonu kopuksa `wrangler pages deploy dist/` kullan | Manuel deploy gerektiğinde lokal build + wrangler deploy |
+| 🔴 **`git push` SİTEYİ BOZAR — her push'tan sonra `bash scripts/deploy.sh` çalıştır** | CF Pages Git entegrasyonu AÇIK ama **build komutu tanımlı DEĞİL** → push, repo kökünü ham haliyle yayınlıyor; `index.html` build edilmemiş `<script src="/src/main.tsx">` ile geliyor ve site ölüyor (2026-08-08'de bizzat yaşandı). Kalıcı çözüm: CF panelinden ya Git entegrasyonunu kapat ya build komutunu `npm run build` + output `dist` olarak ayarla |
 
 ## 📁 Anahtar Dosyalar
 
