@@ -4,7 +4,7 @@
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' www.googletagmanager.com www.google-analytics.com bat.bing.com mc.yandex.ru www.clarity.ms s3.tradingview.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: images.unsplash.com mc.yandex.ru www.googletagmanager.com ads.pipaffiliates.com *.unsplash.com; font-src 'self' data:; connect-src 'self' *.supabase.co api.emailjs.com ipapi.co www.google-analytics.com region1.google-analytics.com mc.yandex.ru bat.bing.com www.clarity.ms; frame-src www.googletagmanager.com s3.tradingview.com; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' www.googletagmanager.com www.google-analytics.com *.google-analytics.com bat.bing.com mc.yandex.ru mc.yandex.com www.clarity.ms scripts.clarity.ms s3.tradingview.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; img-src 'self' data: images.unsplash.com mc.yandex.ru mc.yandex.com www.googletagmanager.com www.google-analytics.com *.google-analytics.com bat.bing.com *.clarity.ms ads.pipaffiliates.com *.unsplash.com; font-src 'self' data: fonts.gstatic.com; connect-src 'self' *.supabase.co api.emailjs.com ipapi.co www.google-analytics.com region1.google-analytics.com *.google-analytics.com analytics.google.com *.analytics.google.com www.google.com mc.yandex.ru mc.yandex.com bat.bing.com *.clarity.ms; frame-src www.googletagmanager.com s3.tradingview.com; frame-ancestors 'none'
 
 /*.js
   Cache-Control: public, max-age=31536000, immutable
@@ -12,8 +12,15 @@
 /*.css
   Cache-Control: public, max-age=31536000, immutable
 
+# s-maxage caps the EDGE copy at 10 minutes; browsers still keep these forever (max-age +
+# immutable), and the filenames are content-hashed so that stays safe. Without the cap, an
+# asset request that lands during the deploy switchover gets the SPA fallback — index.html
+# with status 200 — and Cloudflare cached that HTML under the asset URL for a full YEAR,
+# leaving the page blank on that edge node. 2026-07-28: exactly this happened to
+# triangle-alert-*.js, on the CORS variant only, so curl never saw it and only real
+# browsers broke. Now the same accident heals itself in 10 minutes.
 /assets/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=31536000, immutable, s-maxage=600
 
 /*.svg
   Cache-Control: public, max-age=86400

@@ -30,7 +30,7 @@ export interface UTMParams {
  * IB (Introducing Broker) partnerships - these are our main revenue sources
  * Track these separately for better conversion analysis
  */
-export const IB_BROKERS: BrokerId[] = ["fxglory", "coinexx", "midasfx", "hankotrade", "n1cm", "unitedpips"];
+export const IB_BROKERS: BrokerId[] = ["fxglory", "coinexx", "midasfx", "hankotrade", "n1cm", "unitedpips", "lmfx"];
 
 /**
  * Check if a broker is an IB partner
@@ -44,26 +44,30 @@ export const isIBBroker = (brokerId: BrokerId): boolean => {
  */
 export const getAffiliateUrl = (
   brokerId: BrokerId,
-  utm: UTMParams
+  utm: UTMParams,
+  baseUrlOverride?: string
 ): string => {
   const broker = brokers[brokerId];
-  if (!broker?.affiliateUrl) {
+  // Per-page/geo override (e.g. /br uses Brazil-specific pt affiliate links) — falls
+  // back to the broker's global affiliateUrl when not provided.
+  const baseUrl = baseUrlOverride || broker?.affiliateUrl;
+  if (!baseUrl) {
     return broker?.siteUrl || "#";
   }
-
-  const baseUrl = broker.affiliateUrl;
   const separator = baseUrl.includes("?") ? "&" : "?";
 
-  // Attach the Microsoft ad click id as a subid so any broker whose IB portal echoes
-  // custom params can report it back (harmless — ignored by brokers that don't).
-  const { msclkid } = getAttribution();
+  // Always attach a subid so a broker whose IB portal echoes custom params can tell us
+  // which channel produced a signup — the ad click id when we have one, otherwise the
+  // coarse channel label. Previously only paid clicks carried a subid, which left every
+  // organic signup unattributable. (Harmless — ignored by brokers that don't echo it.)
+  const { msclkid, source } = getAttribution();
 
   const params = new URLSearchParams({
     utm_source: `bfxguide_${utm.source}`,
     utm_medium: utm.medium,
     ...(utm.campaign && { utm_campaign: utm.campaign }),
     ...(utm.content && { utm_content: utm.content }),
-    ...(msclkid && { subid: msclkid }),
+    subid: msclkid || source || 'direct',
   });
 
   return `${baseUrl}${separator}${params.toString()}`;
@@ -260,4 +264,8 @@ export const UTM_CONFIGS = {
   // US offshore paid landing page (Bing Ads /us)
   US_LP: { source: "us_lp", medium: "cta", campaign: "bing_usa", content: "open_account" },
   US_LP_STICKY: { source: "us_lp", medium: "sticky", campaign: "bing_usa", content: "open_account" },
+
+  // Brazil regulated-broker paid landing page (Bing Ads /br)
+  BR_LP: { source: "br_lp", medium: "cta", campaign: "bing_brazil", content: "open_account" },
+  BR_LP_STICKY: { source: "br_lp", medium: "sticky", campaign: "bing_brazil", content: "open_account" },
 } as const;

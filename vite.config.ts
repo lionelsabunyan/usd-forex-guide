@@ -27,6 +27,12 @@ export default defineConfig(() => ({
           if (id.includes('node_modules/@radix-ui/')) {
             return 'vendor-ui';
           }
+          // Icons in ONE chunk. Left unsplit, lucide emitted ~150 one-icon files, and every
+          // one of them is a URL the deploy race can poison (see _headers /assets/*): a single
+          // poisoned icon takes the whole page down, since its importer never resolves.
+          if (id.includes('node_modules/lucide-react/')) {
+            return 'vendor-icons';
+          }
           // Supabase client (heavy — keep in its own cached chunk)
           if (id.includes('node_modules/@supabase/')) {
             return 'vendor-supabase';

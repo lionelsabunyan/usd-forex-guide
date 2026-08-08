@@ -30,3 +30,9 @@ dist-ssr
 
 # Local Netlify folder
 .netlify
+
+# Cloudflare deploy secrets (never commit)
+.cf-deploy.env
+
+# Google service account key for the GA4 Data API (private key — never commit)
+ga4-credentials.json

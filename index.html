@@ -99,6 +99,25 @@
       ]
     }
     </script>
+
+    <!-- Blank-page guard. A deploy renames every bundle, so an HTML page cached from an
+         earlier deploy asks for a bundle that no longer exists; the SPA fallback answers
+         with index.html, the module fails its MIME check and NOTHING of the app ever runs
+         (so no recovery inside the app can help). This inline listener runs first, catches
+         the failed asset load, and reloads once past the cache. -->
+    <script>
+      window.addEventListener('error', function (e) {
+        var t = e.target;
+        if (!t || t.tagName !== 'SCRIPT' || !t.src || t.src.indexOf('/assets/') === -1) return;
+        try {
+          if (sessionStorage.getItem('bfx_asset_reload')) return;
+          sessionStorage.setItem('bfx_asset_reload', '1');
+          var u = new URL(window.location.href);
+          u.searchParams.set('_cb', Date.now());
+          window.location.replace(u.toString());
+        } catch (_) {}
+      }, true);
+    </script>
   </head>
 
   <body>

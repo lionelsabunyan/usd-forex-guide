@@ -45,6 +45,27 @@ export function getAttribution(): Attribution {
  * Only (re)writes when a fresh msclkid/gclid is present, so the first-touch id is
  * preserved across SPA navigation and later organic pageviews.
  */
+/**
+ * Coarse channel label for visits that carry no ad click id. Without this an organic
+ * visitor got no attribution at all, so their affiliate URL went out with no subid and
+ * the broker panel could not say where the signup came from.
+ */
+function channelFromReferrer(): string {
+  const ref = document.referrer;
+  if (!ref) return 'direct';
+  try {
+    const host = new URL(ref).hostname.replace(/^www\./, '');
+    if (host === window.location.hostname) return 'direct';
+    if (/(^|\.)google\./.test(host)) return 'seo_google';
+    if (/(^|\.)(bing|duckduckgo|ecosia|yahoo)\./.test(host)) return 'seo_bing';
+    if (/(^|\.)(youtube\.|youtu\.be)/.test(host)) return 'youtube';
+    if (/(^|\.)reddit\./.test(host)) return 'reddit';
+    return host.slice(0, 30);
+  } catch {
+    return 'direct';
+  }
+}
+
 export function captureAttribution(): void {
   if (typeof window === 'undefined') return;
   try {
@@ -54,14 +75,20 @@ export function captureAttribution(): void {
     const keyword =
       params.get('keyword') || params.get('utm_term') || params.get('kw') || undefined;
 
-    if (!msclkid && !gclid) return;
-
     const existing = getAttribution();
+    // First touch wins: an ad click id always (re)writes, but a later organic pageview
+    // must not overwrite an attribution we already hold.
+    if (!msclkid && !gclid && existing.source) return;
+
     const data: Attribution = {
       msclkid: msclkid || existing.msclkid,
       gclid: gclid || existing.gclid,
       keyword: keyword || existing.keyword,
-      source: msclkid ? 'bing' : gclid ? 'google' : existing.source,
+      source: msclkid
+        ? 'bing'
+        : gclid
+          ? 'google'
+          : params.get('utm_source') || channelFromReferrer(),
       ts: Date.now(),
     };
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(data));

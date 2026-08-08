@@ -27,6 +27,8 @@ const BrokerLogo = ({ broker, className, imgClassName }: Props) => {
         // white logos need contrast
         broker.id === "n1cm" ? "bg-[hsl(var(--patriot-blue))] border-white/10" : "",
         broker.id === "fxglory" ? "bg-black border-black/60 shadow-md" : "",
+        // exness-new.svg is near-black (#141D22) — needs a light tile or it vanishes on dark cards
+        broker.id === "exness" ? "bg-white border-black/10" : "",
         className
       )}
       aria-label={`${broker.name} logo`}
