@@ -62,7 +62,7 @@ wrangler pages deploy dist/ --project-name=beginnerfxguide --branch=main --commi
 > Bing'in landing-page kalite botu boş sayfa gördüğü için `/us` LPE skoru 1-2/3'te takılmıştı.
 
 - **Cloudflare Pages** deploy — Git entegrasyonu varsa otomatik, yoksa `wrangler pages deploy` ile manuel
-- `beginnerfxguide-prerender` worker: bot isteklerini prerender.io'ya yönlendirir (SEO)
+- **SEO rendering: build-time prerender** (`scripts/prerender.cjs`, Playwright). Prerender.io Nisan 2026'da iptal edildi; `beginnerfxguide-prerender` worker'ı artık bot trafiğini KESMİYOR — bingbot/Googlebot da tarayıcıyla aynı statik HTML'i alıyor (2026-08-08 doğrulandı). Bot render'ını test etmek için: `curl -A "…bingbot…" https://beginnerfxguide.com/us/unitedpips/`
 - Zorunlu env var: `VITE_GA_ID` | Opsiyonel: `VITE_GTM_ID`, broker affiliate URL'leri
 
 ---
