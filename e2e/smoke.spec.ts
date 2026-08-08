@@ -142,6 +142,26 @@ test.describe("US Offshore Funnel", () => {
     expect(response?.status()).toBeLessThan(400);
     const body = await page.textContent("body");
     expect(body).toMatch(/FXGlory/i);
+    // Headline numbers must follow the lead broker. They were hardcoded to UnitedPips'
+    // figures, so this variant advertised 1:1000 next to a 1:3000 card.
+    expect(body).toContain("1:3000");
+  });
+
+  // The old local accordion rendered only the OPEN answer, so four of five answers never
+  // reached the prerendered HTML that Bing's landing-page quality bot reads.
+  test("/us renders every FAQ answer in the DOM, not just the open one", async ({ page }) => {
+    await page.goto("/us");
+    await expect(page.locator("h1").first()).toBeVisible();
+    const body = await page.textContent("body");
+    for (const snippet of [
+      "it is legal for US residents to open and trade",
+      "US banks decline direct card payments",
+      "Create a free Coinbase, Kraken, or Cash App account",
+      "withdrawals are typically processed within 24 hours",
+      "Pick by the funding method you can actually complete today",
+    ]) {
+      expect(body).toContain(snippet);
+    }
   });
 
   test("/brokers/usa organic page loads and is indexable", async ({ page }) => {

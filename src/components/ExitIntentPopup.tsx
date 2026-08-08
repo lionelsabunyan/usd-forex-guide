@@ -9,7 +9,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { brokers, US_LP_ORDER, usOffshoreLead, type Broker } from "@/lib/brokers";
+import { brokers, US_LP_ORDER, usOffshoreLead, type Broker, type BrokerId } from "@/lib/brokers";
 import { getAffiliateUrl, trackAffiliateClick } from "@/lib/tracking";
 import { getVariant, trackExposure, type Experiment } from "@/lib/abtest";
 import BrokerLogo from "@/components/BrokerLogo";
@@ -120,8 +120,12 @@ const ExitIntentPopup = () => {
   const { pathname } = useLocation();
 
   // Same offer the visitor was already looking at — paid LP leads, organic falls back.
+  // The variant routes (/us/fxglory, /us/coinexx) lead with THAT broker, so read it off the
+  // path first: hardcoding US_LP_ORDER[0] made the popup pitch UnitedPips on a page whose
+  // whole job was to answer a MetaTrader query with FXGlory.
   const isPaidLp = pathname === "/us" || pathname.startsWith("/us/");
-  const broker = (isPaidLp && brokers[US_LP_ORDER[0]]) || usOffshoreLead;
+  const pathBroker = isPaidLp ? brokers[pathname.split("/")[2] as BrokerId] : undefined;
+  const broker = pathBroker || (isPaidLp && brokers[US_LP_ORDER[0]]) || usOffshoreLead;
 
   const variantResult = getVariant(EXP_EXIT_CTA);
   const copy = CTA_VARIANTS[variantResult.variant];

@@ -48,10 +48,18 @@ rm -rf node_modules/.vite && fnm exec --using=22 npx vite build
 fnm exec --using=22 node scripts/generate-static-pages.cjs
 fnm exec --using=22 node scripts/fix-tr-title.cjs
 fnm exec --using=22 node scripts/fix-spa-fallback.cjs
+fnm exec --using=22 node scripts/prerender.cjs   # ⚠️ ATLAMA — yoksa dist tamamen boş <div id="root"></div> çıkar
+
+# Deploy öncesi kapı: gövde gerçekten basıldı mı?
+grep -o 'id="root">.\{0,60\}' dist/us/unitedpips/index.html   # içerik GÖRÜNMELİ
 
 # Deploy (CF Pages Git entegrasyonu kopuksa)
 wrangler pages deploy dist/ --project-name=beginnerfxguide --branch=main --commit-dirty=true
 ```
+
+> ⚠️ **`prerender.cjs` bu tarifte eksikti ve Ağustos 2026'ya kadar canlıda hiçbir sayfanın
+> gövdesi yoktu** — `npm run build` zinciri onu içeriyor ama elle deploy edenler atlıyordu.
+> Bing'in landing-page kalite botu boş sayfa gördüğü için `/us` LPE skoru 1-2/3'te takılmıştı.
 
 - **Cloudflare Pages** deploy — Git entegrasyonu varsa otomatik, yoksa `wrangler pages deploy` ile manuel
 - `beginnerfxguide-prerender` worker: bot isteklerini prerender.io'ya yönlendirir (SEO)
